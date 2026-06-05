@@ -57,18 +57,18 @@ utl::report "###################################################################
 utl::report "# 01-02: Core and Die Area"
 utl::report "###############################################################################"
 # Dimensions:                          [um]
-#   final chip size (4sqmm) 2000.0 x 2000.0
+#   final chip size (5sqmm) 2500.0 x 2000.0
 #   seal ring thickness       42.0 ,   42.0 x2
 #   bonding pad               70.0 ,   70.0 x2
 #   io cell depth            180.0 ,  180.0 x2
 #   ---------------------------------------
-#   -> OR die area          1916.0 x 1916.0
-#   -> OR core area         1416.0 x 1416.0
+#   -> OR die area          2416.0 x 1916.0
+#   -> OR core area         1916.0 x 1416.0
 # The sealring is added after OpenROAD
 # hence the OR die area is the final chip size minus the sealring thickness on each side
 
 set chipH    1916; # OR die height (top to bottom)
-set chipW    1916; # OR die width (left to right)
+set chipW    2416; # OR die width (left to right)
 set padD      180; # pad depth (edge to core)
 set padW       80; # pad width (beachfront)
 set padBond    70; # bonding pad size
@@ -93,9 +93,9 @@ source src/padring.tcl
 ##########################################################################
 # RAM sizes
 ##########################################################################
-set RamMaster512x32   [[ord::get_db] findMaster "RM_IHPSG13_1P_512x32_c2_bm_bist"]
-set RamSize512x32_W   [ord::dbu_to_microns [$RamMaster512x32 getWidth]]
-set RamSize512x32_H   [ord::dbu_to_microns [$RamMaster512x32 getHeight]]
+set RamMaster512x64   [[ord::get_db] findMaster "RM_IHPSG13_1P_512x64_c2_bm_bist"]
+set RamSize512x64_W   [ord::dbu_to_microns [$RamMaster512x64 getWidth]]
+set RamSize512x64_H   [ord::dbu_to_microns [$RamMaster512x64 getHeight]]
 
 
 ##########################################################################
@@ -144,18 +144,18 @@ utl::report "Place Macros"
 
 # Bank0: top-left, pins facing down
 set bank0X $floor_leftX
-set bankY [expr $floor_topY - $RamSize512x32_H]
+set bankY [expr $floor_topY - $RamSize512x64_H]
 placeInstance $bank0_sram0 $bank0X $bankY R0
 
 # Bank1: top-right, pins facing down
-set bank1X [expr $floor_rightX - $RamSize512x32_W]
+set bank1X [expr $floor_rightX - $RamSize512x64_W]
 placeInstance $bank1_sram0 $bank1X $bankY R0
 
-utl::report "SRAM macro box: width ${RamSize512x32_W} height ${RamSize512x32_H}"
-utl::report "SRAM bank0 bbox: ($bank0X, $bankY) - ([expr {$bank0X + $RamSize512x32_W}], [expr {$bankY + $RamSize512x32_H}]) R0"
-utl::report "SRAM bank1 bbox: ($bank1X, $bankY) - ([expr {$bank1X + $RamSize512x32_W}], [expr {$bankY + $RamSize512x32_H}]) R0"
-utl::report "SRAM horizontal gaps to core boundary: left [expr {$bank0X - $core_leftX}] between [expr {$bank1X - ($bank0X + $RamSize512x32_W)}] right [expr {$core_rightX - ($bank1X + $RamSize512x32_W)}]"
-utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bankY + $RamSize512x32_H)}]"
+utl::report "SRAM macro box: width ${RamSize512x64_W} height ${RamSize512x64_H}"
+utl::report "SRAM bank0 bbox: ($bank0X, $bankY) - ([expr {$bank0X + $RamSize512x64_W}], [expr {$bankY + $RamSize512x64_H}]) R0"
+utl::report "SRAM bank1 bbox: ($bank1X, $bankY) - ([expr {$bank1X + $RamSize512x64_W}], [expr {$bankY + $RamSize512x64_H}]) R0"
+utl::report "SRAM horizontal gaps to core boundary: left [expr {$bank0X - $core_leftX}] between [expr {$bank1X - ($bank0X + $RamSize512x64_W)}] right [expr {$core_rightX - ($bank1X + $RamSize512x64_W)}]"
+utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bankY + $RamSize512x64_H)}]"
 utl::report "SRAM row-cut halo: x $sramHaloX y $sramHaloY"
 
 # defined in init_tech.tcl
