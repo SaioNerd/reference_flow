@@ -1,0 +1,4430 @@
+
+33. Printing statistics.
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      587 wire bits
+        7 public wires
+      587 public wire bits
+        7 ports
+      587 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync
+
+   Estimated number of transistors:      21774
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
+
+   Estimated number of transistors:      10802
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
+
+   Estimated number of transistors:      10802
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
+
+   Estimated number of transistors:      10802
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
+
+   Estimated number of transistors:      10802
+
+=== addr_decode$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      105 wire bits
+        7 public wires
+      105 public wire bits
+        7 ports
+      105 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
+
+   Estimated number of transistors:       2648
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1368 wires
+     4396 wire bits
+        8 public wires
+      588 public wire bits
+        8 ports
+      588 port bits
+     3398 cells
+     1473   $_AND_
+       83   $_MUX_
+      546   $_NOT_
+      784   $_OR_
+      512   $_XOR_
+
+   Estimated number of transistors:      21774
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      688 wires
+     2210 wire bits
+        8 public wires
+      314 public wire bits
+        8 ports
+      314 port bits
+     1693 cells
+      737   $_AND_
+       34   $_MUX_
+      274   $_NOT_
+      392   $_OR_
+      256   $_XOR_
+
+   Estimated number of transistors:      10802
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      688 wires
+     2210 wire bits
+        8 public wires
+      314 public wire bits
+        8 ports
+      314 port bits
+     1693 cells
+      737   $_AND_
+       34   $_MUX_
+      274   $_NOT_
+      392   $_OR_
+      256   $_XOR_
+
+   Estimated number of transistors:      10802
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      688 wires
+     2210 wire bits
+        8 public wires
+      314 public wire bits
+        8 ports
+      314 port bits
+     1693 cells
+      737   $_AND_
+       34   $_MUX_
+      274   $_NOT_
+      392   $_OR_
+      256   $_XOR_
+
+   Estimated number of transistors:      10802
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      688 wires
+     2210 wire bits
+        8 public wires
+      314 public wire bits
+        8 ports
+      314 port bits
+     1693 cells
+      737   $_AND_
+       34   $_MUX_
+      274   $_NOT_
+      392   $_OR_
+      256   $_XOR_
+
+   Estimated number of transistors:      10802
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      178 wires
+      576 wire bits
+        8 public wires
+      106 public wire bits
+        8 ports
+      106 port bits
+      421 cells
+      186   $_AND_
+        3   $_MUX_
+       70   $_NOT_
+       98   $_OR_
+       64   $_XOR_
+
+   Estimated number of transistors:       2648
+
+=== bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       85 wires
+      913 wire bits
+       11 public wires
+      167 public wire bits
+        4 ports
+      115 port bits
+      474 cells
+       88   $_AND_
+       15   $_DFF_PN0_
+      266   $_MUX_
+       18   $_NOT_
+       82   $_OR_
+        5   $_XOR_
+
+   Estimated number of transistors:       4308+
+
+=== cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      149 wire bits
+       25 public wires
+      145 public wire bits
+       14 ports
+       94 port bits
+       10 cells
+        4   $_AND_
+        4   $_DFF_PN0_
+        2   $_NOT_
+        3 submodules
+        1   cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst
+        1   cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src
+        1   cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr
+
+   Estimated number of transistors:       3814+
+
+=== cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      128 wire bits
+       25 public wires
+      124 public wire bits
+       14 ports
+       80 port bits
+       10 cells
+        4   $_AND_
+        4   $_DFF_PN0_
+        2   $_NOT_
+        3 submodules
+        1   cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst
+        1   cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src
+        1   cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr
+
+   Estimated number of transistors:       3574+
+
+=== cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       21 wires
+      181 wire bits
+       15 public wires
+      175 public wire bits
+        9 ports
+       89 port bits
+       92 cells
+        2   $_AND_
+        1   $_DFFE_PN0P_
+       41   $_DFFE_PP_
+        1   $_DFF_PN0_
+       42   $_MUX_
+        2   $_NOT_
+        1   $_OR_
+        2   $_XOR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst.i_sync
+
+   Estimated number of transistors:        550+
+
+=== cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       21 wires
+      153 wire bits
+       15 public wires
+      147 public wire bits
+        9 ports
+       75 port bits
+       78 cells
+        2   $_AND_
+        1   $_DFFE_PN0P_
+       34   $_DFFE_PP_
+        1   $_DFF_PN0_
+       35   $_MUX_
+        2   $_NOT_
+        1   $_OR_
+        2   $_XOR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst.i_sync
+
+   Estimated number of transistors:        466+
+
+=== cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       21 wires
+      221 wire bits
+       14 public wires
+      174 public wire bits
+        9 ports
+       89 port bits
+      132 cells
+        2   $_AND_
+        1   $_DFFE_PN0P_
+       41   $_DFFE_PP_
+       83   $_MUX_
+        3   $_NOT_
+        1   $_OR_
+        1   $_XOR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync
+
+   Estimated number of transistors:       1032+
+
+=== cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       21 wires
+      186 wire bits
+       14 public wires
+      146 public wire bits
+        9 ports
+       75 port bits
+      111 cells
+        2   $_AND_
+        1   $_DFFE_PN0P_
+       34   $_DFFE_PP_
+       69   $_MUX_
+        3   $_NOT_
+        1   $_OR_
+        1   $_XOR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src.i_sync
+
+   Estimated number of transistors:        864+
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+       50 wire bits
+       13 public wires
+       17 public wire bits
+        8 ports
+       10 port bits
+       32 cells
+        7   $_AND_
+        2   $_DFFE_PN0P_
+        1   $_DFF_PN0_
+        4   $_MUX_
+        7   $_NOT_
+       11   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+
+   Estimated number of transistors:        170+
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+       50 wire bits
+       13 public wires
+       17 public wire bits
+        8 ports
+       10 port bits
+       32 cells
+        7   $_AND_
+        2   $_DFFE_PN0P_
+        1   $_DFF_PN0_
+        4   $_MUX_
+        7   $_NOT_
+       11   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+
+   Estimated number of transistors:        170+
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+       50 wire bits
+       13 public wires
+       17 public wire bits
+        8 ports
+       10 port bits
+       32 cells
+        7   $_AND_
+        2   $_DFFE_PN0P_
+        1   $_DFF_PN0_
+        4   $_MUX_
+        7   $_NOT_
+       11   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+
+   Estimated number of transistors:        170+
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+       50 wire bits
+       13 public wires
+       17 public wire bits
+        8 ports
+       10 port bits
+       32 cells
+        7   $_AND_
+        2   $_DFFE_PN0P_
+        1   $_DFF_PN0_
+        4   $_MUX_
+        7   $_NOT_
+       11   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+
+   Estimated number of transistors:        170+
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       32 wires
+       44 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+       31 cells
+        5   $_AND_
+        3   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        1   $_DFF_PN1_
+        7   $_MUX_
+        6   $_NOT_
+        8   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+
+   Estimated number of transistors:        174+
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       32 wires
+       44 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+       31 cells
+        5   $_AND_
+        3   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        1   $_DFF_PN1_
+        7   $_MUX_
+        6   $_NOT_
+        8   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+
+   Estimated number of transistors:        174+
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       32 wires
+       44 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+       31 cells
+        5   $_AND_
+        3   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        1   $_DFF_PN1_
+        7   $_MUX_
+        6   $_NOT_
+        8   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+
+   Estimated number of transistors:        174+
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       32 wires
+       44 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+       31 cells
+        5   $_AND_
+        3   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        1   $_DFF_PN1_
+        7   $_MUX_
+        6   $_NOT_
+        8   $_OR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+
+   Estimated number of transistors:        174+
+
+=== cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       22 wire bits
+       20 public wires
+       22 public wire bits
+       14 ports
+       14 port bits
+        2 submodules
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+
+   Estimated number of transistors:       2204+
+
+=== cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       22 wire bits
+       20 public wires
+       22 public wire bits
+       14 ports
+       14 port bits
+        2 submodules
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+
+   Estimated number of transistors:       2216+
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      116 wires
+      215 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+      139 cells
+       18   $_AND_
+        5   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+       12   $_MUX_
+       28   $_NOT_
+       75   $_OR_
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+
+   Estimated number of transistors:       1102+
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      116 wires
+      215 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+      139 cells
+       18   $_AND_
+        5   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+       12   $_MUX_
+       28   $_NOT_
+       75   $_OR_
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+
+   Estimated number of transistors:       1102+
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      117 wires
+      216 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+      141 cells
+       18   $_AND_
+        5   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+       12   $_MUX_
+       28   $_NOT_
+       77   $_OR_
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+
+   Estimated number of transistors:       1114+
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      116 wires
+      215 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+      139 cells
+       18   $_AND_
+        5   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+       12   $_MUX_
+       28   $_NOT_
+       75   $_OR_
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+
+   Estimated number of transistors:       1102+
+
+=== clint$croc_chip.i_croc_soc.i_croc.i_clint ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      296 wires
+     1580 wire bits
+       15 public wires
+      283 public wire bits
+        7 ports
+      118 port bits
+     1290 cells
+      536   $_AND_
+      129   $_DFFE_PN0P_
+       38   $_DFF_PN0_
+       97   $_MUX_
+       93   $_NOT_
+      270   $_OR_
+      127   $_XOR_
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_clint.i_sync
+
+   Estimated number of transistors:       7710+
+
+=== core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       25 wires
+      229 wire bits
+       25 public wires
+      229 public wire bits
+       25 ports
+      229 port bits
+        1 submodules
+        1   cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core
+
+   Estimated number of transistors:     102506+
+
+=== counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        9 wires
+       15 wire bits
+        9 public wires
+       15 public wire bits
+        9 ports
+       15 port bits
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter.i_counter
+
+   Estimated number of transistors:        452+
+
+=== counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        9 wires
+       39 wire bits
+        9 public wires
+       39 public wire bits
+        9 ports
+       39 port bits
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter.i_counter
+
+   Estimated number of transistors:       1892+
+
+=== counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        9 wires
+       17 wire bits
+        9 public wires
+       17 public wire bits
+        9 ports
+       17 port bits
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter.i_counter
+
+   Estimated number of transistors:        552+
+
+=== croc_chip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       67 wires
+      160 wire bits
+       67 public wires
+      160 public wire bits
+       52 ports
+       52 port bits
+       64 cells
+        4   sg13cmos5l_IOPadIOVdd
+        4   sg13cmos5l_IOPadIOVss
+        9   sg13cmos5l_IOPadIn
+       32   sg13cmos5l_IOPadInOut30mA
+        7   sg13cmos5l_IOPadOut16mA
+        4   sg13cmos5l_IOPadVdd
+        4   sg13cmos5l_IOPadVss
+        1 submodules
+        1   croc_soc$croc_chip.i_croc_soc
+
+   Estimated number of transistors:     415124+
+
+=== croc_domain$croc_chip.i_croc_soc.i_croc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       72 wires
+     3094 wire bits
+       72 public wires
+     3094 public wire bits
+       29 ports
+      527 port bits
+       17 submodules
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs
+        1   bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom
+        1   clint$croc_chip.i_croc_soc.i_croc.i_clint
+        1   core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap
+        1   dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top
+        1   dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag
+        1   gpio$croc_chip.i_croc_soc.i_croc.i_gpio
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err
+        1   obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim
+        1   obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim
+        1   obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer
+        1   obi_uart$croc_chip.i_croc_soc.i_croc.i_uart
+        1   obi_xbar$croc_chip.i_croc_soc.i_croc.i_main_xbar
+        1   soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl
+
+   Estimated number of transistors:     398228+
+
+=== croc_soc$croc_chip.i_croc_soc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       30 wires
+      528 wire bits
+       30 public wires
+      528 public wire bits
+       15 ports
+      108 port bits
+        3 submodules
+        1   croc_domain$croc_chip.i_croc_soc.i_croc
+        1   rstgen$croc_chip.i_croc_soc.i_rstgen
+        1   user_domain$croc_chip.i_croc_soc.i_user
+
+   Estimated number of transistors:     415124+
+
+=== cve2_alu$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i.alu_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      293 wires
+     1760 wire bits
+       34 public wires
+      712 public wire bits
+       15 ports
+      369 port bits
+     1265 cells
+      383   $_AND_
+      360   $_MUX_
+       69   $_NOT_
+      351   $_OR_
+      102   $_XOR_
+
+   Estimated number of transistors:      10086
+
+=== cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      232 wires
+     1642 wire bits
+        7 public wires
+       69 public wire bits
+        7 ports
+       69 port bits
+      921 cells
+      293   $_AND_
+      247   $_MUX_
+       38   $_NOT_
+      343   $_OR_
+
+   Estimated number of transistors:       6856
+
+=== cve2_controller$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      358 wires
+     1246 wire bits
+       94 public wires
+      272 public wire bits
+       56 ports
+      225 port bits
+      842 cells
+      226   $_AND_
+        6   $_DFFE_PN0P_
+        6   $_DFF_PN0_
+      326   $_MUX_
+       35   $_NOT_
+      213   $_OR_
+       30   $_XOR_
+
+   Estimated number of transistors:       6976+
+
+=== cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      157 wires
+     1952 wire bits
+      155 public wires
+     1950 public wire bits
+       43 ports
+      747 port bits
+       17 cells
+        1   $_AND_
+       12   $_MUX_
+        1   $_NOT_
+        3   $_OR_
+        7 submodules
+        1   cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i
+        1   cve2_ex_block$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i
+        1   cve2_id_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i
+        1   cve2_if_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i
+        1   cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i
+        1   cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i
+        1   cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i
+
+   Estimated number of transistors:     102506+
+
+=== cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.mcycle_counter_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       72 wires
+      481 wire bits
+       12 public wires
+      358 public wire bits
+        8 ports
+      165 port bits
+      378 cells
+      116   $_AND_
+       64   $_DFFE_PN0P_
+      128   $_MUX_
+        3   $_NOT_
+        4   $_OR_
+       63   $_XOR_
+
+   Estimated number of transistors:       3018+
+
+=== cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.minstret_counter_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       71 wires
+      417 wire bits
+       11 public wires
+      294 public wire bits
+        8 ports
+      165 port bits
+      378 cells
+      116   $_AND_
+       64   $_DFFE_PN0P_
+      128   $_MUX_
+        3   $_NOT_
+        4   $_OR_
+       63   $_XOR_
+
+   Estimated number of transistors:       3018+
+
+=== cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      753 wires
+     9242 wire bits
+      106 public wires
+     3286 public wire bits
+       56 ports
+      581 port bits
+     3137 cells
+      689   $_AND_
+        2   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+      966   $_MUX_
+      209   $_NOT_
+     1235   $_OR_
+       34   $_XOR_
+       19 submodules
+        1   cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.mcycle_counter_i
+        1   cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.minstret_counter_i
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_control_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.u_tselect_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dcsr_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_depc_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch0_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch1_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mcause_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mepc_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mie_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mscratch_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_cause_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_epc_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstatus_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtval_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtvec_csr
+
+   Estimated number of transistors:      29998+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_control_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+        6 wire bits
+        6 public wires
+        6 public wire bits
+        6 ports
+        6 port bits
+        1 cells
+        1   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.u_tselect_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+        6 wire bits
+        6 public wires
+        6 public wire bits
+        6 ports
+        6 port bits
+        1 cells
+        1   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dcsr_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       29   $_DFFE_PN0P_
+        3   $_DFFE_PN1P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_depc_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch0_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch1_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mcause_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       18 wire bits
+        6 public wires
+       18 public wire bits
+        6 ports
+       18 port bits
+        7 cells
+        7   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mepc_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mie_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       42 wire bits
+        6 public wires
+       42 public wire bits
+        6 ports
+       42 port bits
+       19 cells
+       19   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mscratch_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_cause_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       18 wire bits
+        6 public wires
+       18 public wire bits
+        6 ports
+       18 port bits
+        7 cells
+        7   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       10 wire bits
+        6 public wires
+       10 public wire bits
+        6 ports
+       10 port bits
+        3 cells
+        2   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_epc_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstatus_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       16 wire bits
+        6 public wires
+       16 public wire bits
+        6 ports
+       16 port bits
+        6 cells
+        4   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtval_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       32   $_DFFE_PN0P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtvec_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+       68 wire bits
+        6 public wires
+       68 public wire bits
+        6 ports
+       68 port bits
+       32 cells
+       31   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+
+   Estimated number of transistors:          0+
+
+=== cve2_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.decoder_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      497 wires
+     1336 wire bits
+       49 public wires
+      324 public wire bits
+       48 ports
+      322 port bits
+      689 cells
+       57   $_AND_
+       83   $_MUX_
+      128   $_NOT_
+      421   $_OR_
+
+   Estimated number of transistors:       4120
+
+=== cve2_ex_block$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       26 wires
+      482 wire bits
+       25 public wires
+      481 public wire bits
+       22 ports
+      382 port bits
+        2 cells
+        1   $_NOT_
+        1   $_OR_
+        1 submodules
+        1   cve2_alu$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i.alu_i
+
+   Estimated number of transistors:      10094
+
+=== cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       96 wires
+      609 wire bits
+       37 public wires
+      459 public wire bits
+       14 ports
+      139 port bits
+      441 cells
+       76   $_AND_
+      130   $_DFFE_PN0P_
+        3   $_DFF_PN0_
+      171   $_MUX_
+       14   $_NOT_
+       15   $_OR_
+       32   $_XOR_
+
+   Estimated number of transistors:       3010+
+
+=== cve2_id_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      405 wires
+     2289 wire bits
+      157 public wires
+     1389 public wire bits
+      104 ports
+     1082 port bits
+      897 cells
+      304   $_AND_
+       69   $_DFFE_PN0P_
+        2   $_DFF_PN0_
+      183   $_MUX_
+       53   $_NOT_
+      286   $_OR_
+        2 submodules
+        1   cve2_controller$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i
+        1   cve2_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.decoder_i
+
+   Estimated number of transistors:      16938+
+
+=== cve2_if_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      154 wires
+     1121 wire bits
+       51 public wires
+      602 public wire bits
+       37 ports
+      464 port bits
+      573 cells
+      224   $_AND_
+       84   $_DFFE_PN0P_
+        2   $_DFF_PN0_
+       68   $_MUX_
+       19   $_NOT_
+      176   $_OR_
+        2 submodules
+        1   cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i
+        1   cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i
+
+   Estimated number of transistors:      14726+
+
+=== cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      283 wires
+     1229 wire bits
+       50 public wires
+      424 public wire bits
+       28 ports
+      249 port bits
+      868 cells
+      328   $_AND_
+       68   $_DFFE_PN0P_
+      156   $_MUX_
+       40   $_NOT_
+      276   $_OR_
+
+   Estimated number of transistors:       5576+
+
+=== cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       79 wires
+      393 wire bits
+       37 public wires
+      292 public wire bits
+       18 ports
+      173 port bits
+      243 cells
+       64   $_AND_
+       60   $_DFFE_PN0P_
+        6   $_DFF_PN0_
+       64   $_MUX_
+        5   $_NOT_
+       14   $_OR_
+       30   $_XOR_
+        1 submodules
+        1   cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i
+
+   Estimated number of transistors:       4616+
+
+=== cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      109 wires
+     3185 wire bits
+       12 public wires
+     1170 public wire bits
+       10 ports
+      115 port bits
+     3098 cells
+       31   $_AND_
+      992   $_DFFE_PN0P_
+     1984   $_MUX_
+       36   $_NOT_
+       55   $_OR_
+
+   Estimated number of transistors:      24396+
+
+=== cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       22 wires
+      185 wire bits
+       17 public wires
+      118 public wire bits
+       17 ports
+      118 port bits
+      102 cells
+       68   $_AND_
+        1   $_NOT_
+       33   $_OR_
+
+   Estimated number of transistors:        608
+
+=== debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       16 wires
+      466 wire bits
+        6 public wires
+      136 public wire bits
+        5 ports
+      131 port bits
+      210 cells
+        2   $_AND_
+        5   $_DFFE_PN0P_
+      197   $_MUX_
+        5   $_NOT_
+        1   $_OR_
+
+   Estimated number of transistors:       2392+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       11 public wires
+       12 public wire bits
+       10 ports
+       10 port bits
+       17 cells
+        1   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_MUX_
+        3   $_NOT_
+        3   $_OR_
+        3   $_XOR_
+
+   Estimated number of transistors:        126+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       11 public wires
+       12 public wire bits
+       10 ports
+       10 port bits
+       17 cells
+        1   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_MUX_
+        3   $_NOT_
+        3   $_OR_
+        3   $_XOR_
+
+   Estimated number of transistors:        126+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       11 public wires
+       12 public wire bits
+       10 ports
+       10 port bits
+       17 cells
+        1   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_MUX_
+        3   $_NOT_
+        3   $_OR_
+        3   $_XOR_
+
+   Estimated number of transistors:        126+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       11 public wires
+       12 public wire bits
+       10 ports
+       10 port bits
+       17 cells
+        1   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_MUX_
+        3   $_NOT_
+        3   $_OR_
+        3   $_XOR_
+
+   Estimated number of transistors:        126+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       11 public wires
+       12 public wire bits
+       10 ports
+       10 port bits
+       17 cells
+        1   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_MUX_
+        3   $_NOT_
+        3   $_OR_
+        3   $_XOR_
+
+   Estimated number of transistors:        126+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       30 wires
+       83 wire bits
+       11 public wires
+       24 public wire bits
+       10 ports
+       19 port bits
+       61 cells
+       13   $_AND_
+        5   $_DFFE_PN0P_
+       14   $_MUX_
+       10   $_NOT_
+        7   $_OR_
+       12   $_XOR_
+
+   Estimated number of transistors:        452+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       82 wires
+      303 wire bits
+       11 public wires
+       72 public wire bits
+       10 ports
+       55 port bits
+      257 cells
+       79   $_AND_
+       17   $_DFFE_PN0P_
+       50   $_MUX_
+       34   $_NOT_
+       29   $_OR_
+       48   $_XOR_
+
+   Estimated number of transistors:       1892+
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       31 wires
+       98 wire bits
+       11 public wires
+       28 public wire bits
+       10 ports
+       22 port bits
+       74 cells
+       16   $_AND_
+        6   $_DFFE_PN0P_
+       17   $_MUX_
+       12   $_NOT_
+        8   $_OR_
+       15   $_XOR_
+
+   Estimated number of transistors:        552+
+
+=== delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       11 public wires
+       12 public wire bits
+       10 ports
+       10 port bits
+       17 cells
+        1   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_MUX_
+        3   $_NOT_
+        3   $_OR_
+        3   $_XOR_
+
+   Estimated number of transistors:        126+
+
+=== dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      427 wires
+     4416 wire bits
+       68 public wires
+     1529 public wire bits
+       46 ports
+      742 port bits
+     3018 cells
+      395   $_AND_
+      443   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+       72   $_DFF_PN0_
+        1   $_DFF_PN1_
+     1628   $_MUX_
+       44   $_NOT_
+      433   $_OR_
+        1   $_XOR_
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo
+
+   Estimated number of transistors:      25182+
+
+=== dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      358 wires
+     4479 wire bits
+       41 public wires
+     1273 public wire bits
+       25 ports
+      554 port bits
+     1752 cells
+      283   $_AND_
+       67   $_DFFE_PN0P_
+        3   $_DFF_PN0_
+     1080   $_MUX_
+       58   $_NOT_
+      254   $_OR_
+        7   $_XOR_
+        1 submodules
+        1   debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom
+
+   Estimated number of transistors:      18774+
+
+=== dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       35 wires
+      335 wire bits
+       35 public wires
+      335 public wire bits
+       35 ports
+      335 port bits
+        4 cells
+        3   $_DFFE_PN0P_
+        1   $_DFF_PN0_
+        1 submodules
+        1   dm_top$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top
+
+   Estimated number of transistors:      47832+
+
+=== dm_sba$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_sba ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      170 wires
+      944 wire bits
+       35 public wires
+      329 public wire bits
+       28 ports
+      252 port bits
+      432 cells
+      101   $_AND_
+        3   $_DFFE_PN0P_
+      196   $_MUX_
+       27   $_NOT_
+       66   $_OR_
+       39   $_XOR_
+
+   Estimated number of transistors:       3876+
+
+=== dm_top$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       63 wires
+      951 wire bits
+       63 public wires
+      951 public wire bits
+       33 ports
+      360 port bits
+        3 submodules
+        1   dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs
+        1   dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem
+        1   dm_sba$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_sba
+
+   Estimated number of transistors:      47832+
+
+=== dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+      169 wire bits
+       21 public wires
+      167 public wire bits
+       18 ports
+      164 port bits
+        5 cells
+        1   $_AND_
+        1   $_DFF_PN0_
+        1   $_DFF_PN1_
+        2   $_NOT_
+        2 submodules
+        1   cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req
+        1   cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp
+
+   Estimated number of transistors:       7398+
+
+=== dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      139 wires
+     1055 wire bits
+       43 public wires
+      411 public wire bits
+       16 ports
+       89 port bits
+      798 cells
+       55   $_AND_
+       44   $_DFFE_PN0P_
+       73   $_DFF_PN0_
+      529   $_MUX_
+       24   $_NOT_
+       73   $_OR_
+        2 submodules
+        1   dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc
+        1   dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap
+
+   Estimated number of transistors:      17440+
+
+=== dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      110 wires
+      422 wire bits
+       34 public wires
+      118 public wire bits
+       17 ports
+       17 port bits
+      361 cells
+       21   $_AND_
+        9   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+       24   $_DFF_PN0_
+       15   $_DFF_PN1_
+      185   $_MUX_
+       26   $_NOT_
+       80   $_OR_
+        2 submodules
+        1   tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux
+
+   Estimated number of transistors:       2878+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       27 wires
+       36 wire bits
+       13 public wires
+       19 public wire bits
+       11 ports
+       15 port bits
+       24 cells
+        6   $_AND_
+        5   $_DFFE_PN0P_
+        2   $_MUX_
+        4   $_NOT_
+        5   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        122+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+      176 wire bits
+       18 public wires
+      153 public wire bits
+       11 ports
+       77 port bits
+      133 cells
+        8   $_AND_
+       72   $_DFFE_PN0P_
+       38   $_MUX_
+        7   $_NOT_
+        6   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        578+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+       48 wire bits
+       18 public wires
+       25 public wire bits
+       11 ports
+       13 port bits
+       37 cells
+        8   $_AND_
+        8   $_DFFE_PN0P_
+        6   $_MUX_
+        7   $_NOT_
+        6   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        194+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+       48 wire bits
+       18 public wires
+       25 public wire bits
+       11 ports
+       13 port bits
+       37 cells
+        8   $_AND_
+        8   $_DFFE_PN0P_
+        6   $_MUX_
+        7   $_NOT_
+        6   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        194+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+       48 wire bits
+       18 public wires
+       25 public wire bits
+       11 ports
+       13 port bits
+       37 cells
+        8   $_AND_
+        8   $_DFFE_PN0P_
+        6   $_MUX_
+        7   $_NOT_
+        6   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        194+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+       48 wire bits
+       18 public wires
+       25 public wire bits
+       11 ports
+       13 port bits
+       37 cells
+        8   $_AND_
+        8   $_DFFE_PN0P_
+        6   $_MUX_
+        7   $_NOT_
+        6   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        194+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+       48 wire bits
+       18 public wires
+       25 public wire bits
+       11 ports
+       13 port bits
+       37 cells
+        8   $_AND_
+        8   $_DFFE_PN0P_
+        6   $_MUX_
+        7   $_NOT_
+        6   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        194+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       27 wires
+       36 wire bits
+       13 public wires
+       19 public wire bits
+       11 ports
+       15 port bits
+       24 cells
+        6   $_AND_
+        5   $_DFFE_PN0P_
+        2   $_MUX_
+        4   $_NOT_
+        5   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        122+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_fifo_v3 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       73 wires
+      499 wire bits
+       18 public wires
+      236 public wire bits
+       11 ports
+       34 port bits
+      461 cells
+       57   $_AND_
+      189   $_DFFE_PN0P_
+      178   $_MUX_
+       10   $_NOT_
+       13   $_OR_
+       14   $_XOR_
+
+   Estimated number of transistors:       2744+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       73 wires
+      403 wire bits
+       18 public wires
+      182 public wire bits
+       11 ports
+       28 port bits
+      368 cells
+       57   $_AND_
+      141   $_DFFE_PN0P_
+      133   $_MUX_
+       10   $_NOT_
+       13   $_OR_
+       14   $_XOR_
+
+   Estimated number of transistors:       2204+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       27 wires
+       36 wire bits
+       13 public wires
+       19 public wire bits
+       11 ports
+       15 port bits
+       24 cells
+        6   $_AND_
+        5   $_DFFE_PN0P_
+        2   $_MUX_
+        4   $_NOT_
+        5   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        122+
+
+=== fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       27 wires
+       36 wire bits
+       13 public wires
+       19 public wire bits
+       11 ports
+       15 port bits
+       24 cells
+        6   $_AND_
+        5   $_DFFE_PN0P_
+        2   $_MUX_
+        4   $_NOT_
+        5   $_OR_
+        2   $_XOR_
+
+   Estimated number of transistors:        122+
+
+=== gpio$croc_chip.i_croc_soc.i_croc.i_gpio ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      395 wires
+     1074 wire bits
+      205 public wires
+      884 public wire bits
+        9 ports
+      244 port bits
+      543 cells
+      288   $_AND_
+       32   $_DFF_PN0_
+       64   $_MUX_
+      128   $_NOT_
+       31   $_OR_
+       33 submodules
+        1   gpio_reg_top$croc_chip.i_croc_soc.i_croc.i_gpio.i_reg_file
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[0].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[10].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[11].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[12].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[13].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[14].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[15].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[16].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[17].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[18].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[19].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[1].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[20].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[21].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[22].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[23].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[24].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[25].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[26].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[27].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[28].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[29].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[2].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[30].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[31].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[3].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[4].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[5].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[6].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[7].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[8].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync
+
+   Estimated number of transistors:      12130+
+
+=== gpio_reg_top$croc_chip.i_croc_soc.i_croc.i_gpio.i_reg_file ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      178 wires
+     2451 wire bits
+       19 public wires
+     1319 public wire bits
+        6 ports
+      499 port bits
+     1467 cells
+      455   $_AND_
+      128   $_DFFE_PN0P_
+      110   $_DFF_PN0_
+      321   $_MUX_
+       27   $_NOT_
+      426   $_OR_
+
+   Estimated number of transistors:       9192+
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+       19 wire bits
+        5 public wires
+       19 public wire bits
+        3 ports
+        7 port bits
+        8 cells
+        1   $_MUX_
+        4   $_NOT_
+        3   $_OR_
+
+   Estimated number of transistors:         38
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+     2761 wire bits
+       12 public wires
+      666 public wire bits
+        7 ports
+      659 port bits
+     1336 cells
+       16   $_AND_
+        3   $_DFFE_PN0P_
+     1304   $_MUX_
+        5   $_NOT_
+        4   $_OR_
+        4   $_XOR_
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter
+
+   Estimated number of transistors:      15952+
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+     2761 wire bits
+       12 public wires
+      666 public wire bits
+        7 ports
+      659 port bits
+     1336 cells
+       16   $_AND_
+        3   $_DFFE_PN0P_
+     1304   $_MUX_
+        5   $_NOT_
+        4   $_OR_
+        4   $_XOR_
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter
+
+   Estimated number of transistors:      15952+
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+     2761 wire bits
+       12 public wires
+      666 public wire bits
+        7 ports
+      659 port bits
+     1336 cells
+       16   $_AND_
+        3   $_DFFE_PN0P_
+     1304   $_MUX_
+        5   $_NOT_
+        4   $_OR_
+        4   $_XOR_
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter
+
+   Estimated number of transistors:      15952+
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+     2761 wire bits
+       12 public wires
+      666 public wire bits
+        7 ports
+      659 port bits
+     1336 cells
+       16   $_AND_
+        3   $_DFFE_PN0P_
+     1304   $_MUX_
+        5   $_NOT_
+        4   $_OR_
+        4   $_XOR_
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter
+
+   Estimated number of transistors:      15952+
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       43 wires
+     5429 wire bits
+       12 public wires
+     1144 public wire bits
+        7 ports
+     1136 port bits
+     2478 cells
+       28   $_AND_
+        4   $_DFFE_PN0P_
+     2430   $_MUX_
+        6   $_NOT_
+        5   $_OR_
+        5   $_XOR_
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter
+
+   Estimated number of transistors:      29556+
+
+=== obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       26 wires
+      804 wire bits
+       12 public wires
+      347 public wire bits
+        7 ports
+      342 port bits
+      496 cells
+        5   $_AND_
+        1   $_DFFE_PN0P_
+      483   $_MUX_
+        3   $_NOT_
+        2   $_OR_
+        2   $_XOR_
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter
+
+   Estimated number of transistors:       5994+
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      123 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        3 cells
+        1   $_AND_
+        2   $_NOT_
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo
+
+   Estimated number of transistors:        132+
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      123 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        3 cells
+        1   $_AND_
+        2   $_NOT_
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo
+
+   Estimated number of transistors:        132+
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      123 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        3 cells
+        1   $_AND_
+        2   $_NOT_
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo
+
+   Estimated number of transistors:        132+
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      123 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        3 cells
+        1   $_AND_
+        2   $_NOT_
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
+
+   Estimated number of transistors:        132+
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      644 wire bits
+       13 public wires
+      633 public wire bits
+        7 ports
+      552 port bits
+      154 cells
+      139   $_AND_
+       12   $_MUX_
+        3   $_NOT_
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
+
+   Estimated number of transistors:       4158+
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      644 wire bits
+       13 public wires
+      633 public wire bits
+        7 ports
+      552 port bits
+      154 cells
+      139   $_AND_
+       12   $_MUX_
+        3   $_NOT_
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb
+
+   Estimated number of transistors:       4158+
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      644 wire bits
+       13 public wires
+      633 public wire bits
+        7 ports
+      552 port bits
+      154 cells
+      139   $_AND_
+       12   $_MUX_
+        3   $_NOT_
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb
+
+   Estimated number of transistors:       4158+
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      644 wire bits
+       13 public wires
+      633 public wire bits
+        7 ports
+      552 port bits
+      154 cells
+      139   $_AND_
+       12   $_MUX_
+        3   $_NOT_
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb
+
+   Estimated number of transistors:       4158+
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      644 wire bits
+       13 public wires
+      633 public wire bits
+        7 ports
+      552 port bits
+      154 cells
+      139   $_AND_
+       12   $_MUX_
+        3   $_NOT_
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb
+
+   Estimated number of transistors:       4158+
+
+=== obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+      220 wire bits
+       13 public wires
+      220 public wire bits
+       11 ports
+      218 port bits
+        5 cells
+        1   $_AND_
+        4   $_DFF_PN0_
+
+   Estimated number of transistors:          6+
+
+=== obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+      220 wire bits
+       13 public wires
+      220 public wire bits
+       11 ports
+      218 port bits
+        5 cells
+        1   $_AND_
+        4   $_DFF_PN0_
+
+   Estimated number of transistors:          6+
+
+=== obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      169 wires
+     1299 wire bits
+       18 public wires
+      253 public wire bits
+        6 ports
+      117 port bits
+     1039 cells
+      352   $_AND_
+       34   $_DFFE_PN0P_
+       71   $_DFF_PN0_
+      264   $_MUX_
+       45   $_NOT_
+      210   $_OR_
+       63   $_XOR_
+
+   Estimated number of transistors:       7386+
+
+=== obi_uart$croc_chip.i_croc_soc.i_croc.i_uart ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       25 wires
+      249 wire bits
+       25 public wires
+      249 public wire bits
+       16 ports
+      127 port bits
+        2 cells
+        1   $_MUX_
+        1   $_OR_
+        6 submodules
+        1   obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen
+        1   obi_uart_interrupts$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_interrupts
+        1   obi_uart_modem$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem
+        1   obi_uart_register$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_register
+        1   obi_uart_rx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx
+        1   obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx
+
+   Estimated number of transistors:      17144+
+
+=== obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       72 wires
+      252 wire bits
+       15 public wires
+      117 public wire bits
+        6 ports
+       75 port bits
+      156 cells
+       33   $_AND_
+        1   $_DFF_PN0_
+       20   $_NOT_
+       71   $_OR_
+       31   $_XOR_
+        2 submodules
+        1   counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter
+        1   counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter
+
+   Estimated number of transistors:       3380+
+
+=== obi_uart_interrupts$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_interrupts ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      162 wire bits
+       11 public wires
+      139 public wire bits
+        9 ports
+      129 port bits
+       36 cells
+        7   $_AND_
+        5   $_DFF_PN0_
+       13   $_MUX_
+        1   $_NOT_
+       10   $_OR_
+
+   Estimated number of transistors:        260+
+
+=== obi_uart_modem$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      105 wire bits
+       24 public wires
+      100 public wire bits
+       12 ports
+       88 port bits
+       25 cells
+        1   $_AND_
+        4   $_DFF_PN1_
+        4   $_MUX_
+        9   $_NOT_
+        4   $_OR_
+        3   $_XOR_
+        4 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cd
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cts
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_dsr
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_ri
+
+   Estimated number of transistors:        132+
+
+=== obi_uart_register$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_register ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      109 wires
+      773 wire bits
+       16 public wires
+      479 public wire bits
+        6 ports
+      230 port bits
+      345 cells
+       78   $_AND_
+       67   $_DFFE_PN0P_
+        3   $_DFFE_PN1P_
+       17   $_DFF_PN0_
+       70   $_MUX_
+       24   $_NOT_
+       86   $_OR_
+
+   Estimated number of transistors:       1872+
+
+=== obi_uart_rx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      278 wires
+      737 wire bits
+       50 public wires
+      208 public wire bits
+        9 ports
+      100 port bits
+      534 cells
+       88   $_AND_
+        2   $_DFFE_PN0N_
+       11   $_DFFE_PN0P_
+       18   $_DFF_PN0_
+        1   $_DFF_PN1_
+      199   $_MUX_
+       66   $_NOT_
+      110   $_OR_
+       39   $_XOR_
+        3 submodules
+        1   counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_fifo_v3
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync
+
+   Estimated number of transistors:       7472+
+
+=== obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      154 wires
+      396 wire bits
+       28 public wires
+      143 public wire bits
+        7 ports
+       81 port bits
+      244 cells
+       35   $_AND_
+        8   $_DFFE_PN0N_
+        6   $_DFFE_PN0P_
+        1   $_DFFE_PN1P_
+        1   $_DFF_PN0_
+       82   $_MUX_
+       33   $_NOT_
+       65   $_OR_
+       13   $_XOR_
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3
+
+   Estimated number of transistors:       4010+
+
+=== obi_xbar$croc_chip.i_croc_soc.i_croc.i_main_xbar ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+     3484 wire bits
+       13 public wires
+     3484 public wire bits
+       10 ports
+     1292 port bits
+       13 submodules
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux
+
+   Estimated number of transistors:     127806+
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       47 wires
+      644 wire bits
+       28 public wires
+      621 public wire bits
+       11 ports
+      372 port bits
+      269 cells
+       17   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_DFF_PN0_
+      228   $_MUX_
+        9   $_NOT_
+        8   $_OR_
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+   Estimated number of transistors:       2980+
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       47 wires
+      644 wire bits
+       28 public wires
+      621 public wire bits
+       11 ports
+      372 port bits
+      269 cells
+       17   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_DFF_PN0_
+      228   $_MUX_
+        9   $_NOT_
+        8   $_OR_
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+   Estimated number of transistors:       2980+
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       47 wires
+      644 wire bits
+       28 public wires
+      621 public wire bits
+       11 ports
+      372 port bits
+      269 cells
+       17   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_DFF_PN0_
+      228   $_MUX_
+        9   $_NOT_
+        8   $_OR_
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+   Estimated number of transistors:       2980+
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       47 wires
+      644 wire bits
+       28 public wires
+      621 public wire bits
+       11 ports
+      372 port bits
+      269 cells
+       17   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_DFF_PN0_
+      228   $_MUX_
+        9   $_NOT_
+        8   $_OR_
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+   Estimated number of transistors:       2980+
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       47 wires
+      644 wire bits
+       28 public wires
+      621 public wire bits
+       11 ports
+      372 port bits
+      269 cells
+       17   $_AND_
+        2   $_DFFE_PN0P_
+        5   $_DFF_PN0_
+      228   $_MUX_
+        9   $_NOT_
+        8   $_OR_
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+   Estimated number of transistors:       2980+
+
+=== rstgen$croc_chip.i_croc_soc.i_rstgen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        5 public wires
+        5 public wire bits
+        5 ports
+        5 port bits
+        1 submodules
+        1   rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass
+
+   Estimated number of transistors:          0+
+
+=== rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        8 wires
+       11 wire bits
+        8 public wires
+       11 public wire bits
+        6 ports
+        6 port bits
+        4 cells
+        4   $_DFF_PN0_
+        3 submodules
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no
+
+   Estimated number of transistors:          0+
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       81 wires
+      125 wire bits
+       10 public wires
+       48 public wire bits
+        4 ports
+       23 port bits
+      110 cells
+        3   $_AND_
+       25   $_NOT_
+       48   $_OR_
+       34   $_XOR_
+
+   Estimated number of transistors:        764
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+       38 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       22 cells
+        5   $_NOT_
+       17   $_XOR_
+
+   Estimated number of transistors:        214
+
+=== soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      567 wire bits
+       12 public wires
+      187 public wire bits
+        6 ports
+      117 port bits
+      362 cells
+      106   $_AND_
+       65   $_DFFE_PN0P_
+        2   $_DFFE_PN1P_
+        8   $_DFF_PN0_
+       97   $_MUX_
+       19   $_NOT_
+       65   $_OR_
+
+   Estimated number of transistors:       2228+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_clint.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        7 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        3 cells
+        3   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        7 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        3 cells
+        3   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        7 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        3 cells
+        3   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        7 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        3 cells
+        3   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[0].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[10].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[11].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[12].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[13].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[14].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[15].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[16].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[17].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[18].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[19].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[1].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[20].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[21].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[22].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[23].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[24].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[25].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[26].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[27].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[28].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[29].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[2].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[30].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[31].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[3].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[4].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[5].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[6].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[7].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[8].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cd ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cts ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_dsr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_ri ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        6 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        2 cells
+        2   $_DFF_PN0_
+
+   Estimated number of transistors:          0+
+
+=== tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        2 wires
+        2 wire bits
+        2 public wires
+        2 public wire bits
+        2 ports
+        2 port bits
+        1 cells
+        1   INVX2
+
+   Estimated number of transistors:          0+
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+   Estimated number of transistors:          0+
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+   Estimated number of transistors:          0+
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+   Estimated number of transistors:          0+
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+   Estimated number of transistors:          0+
+
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+      208 wire bits
+       10 public wires
+      207 public wire bits
+       10 ports
+      207 port bits
+        2 cells
+        1   $_NOT_
+        1   RM_IHPSG13_1P_512x64_c2_bm_bist
+
+   Estimated number of transistors:          2+
+
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       11 wires
+      208 wire bits
+       10 public wires
+      207 public wire bits
+       10 ports
+      207 port bits
+        2 cells
+        1   $_NOT_
+        1   RM_IHPSG13_1P_512x64_c2_bm_bist
+
+   Estimated number of transistors:          2+
+
+=== user_domain$croc_chip.i_croc_soc.i_user ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       50 wires
+      962 wire bits
+       50 public wires
+      962 public wire bits
+       18 ports
+      423 port bits
+       22 submodules
+        1   addr_decode$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs
+        1   obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+        1   user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
+
+   Estimated number of transistors:      16896+
+
+=== user_rom$croc_chip.i_croc_soc.i_user.i_user_rom ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+      227 wire bits
+        8 public wires
+      150 public wire bits
+        4 ports
+      115 port bits
+       40 cells
+        1   $_AND_
+        7   $_DFF_PN0_
+       20   $_MUX_
+        6   $_NOT_
+        6   $_OR_
+
+   Estimated number of transistors:        294+
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+    52695 croc_chip
+     3398       addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync
+      474     bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom
+     1290     clint$croc_chip.i_croc_soc.i_croc.i_clint
+        2       sync$croc_chip.i_croc_soc.i_croc.i_clint.i_sync
+       17       cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core
+     3137         cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i
+      378           cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.mcycle_counter_i
+      378           cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.minstret_counter_i
+        1           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_control_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr
+        1           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.u_tselect_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dcsr_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_depc_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch0_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch1_csr
+        7           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mcause_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mepc_csr
+       19           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mie_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mscratch_csr
+        7           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_cause_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_epc_csr
+        6           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstatus_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtval_csr
+       32           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtvec_csr
+        2         cve2_ex_block$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i
+     1265           cve2_alu$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i.alu_i
+      897         cve2_id_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i
+      842           cve2_controller$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i
+      689           cve2_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.decoder_i
+      573         cve2_if_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i
+      921           cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i
+      243           cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i
+      441             cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i
+      868         cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i
+     3098         cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i
+      102         cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i
+        4     dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top
+     3018         dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs
+      133           fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo
+     1752         dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem
+      210           debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom
+      432         dm_sba$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_sba
+      798     dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag
+        5       dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc
+       10         cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req
+       92           cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst.i_sync
+      132           cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync
+      139             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+       32               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+       31               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+      139             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+       32               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+       31               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+       10         cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp
+       78           cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst.i_sync
+      111           cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src.i_sync
+      141             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+       32               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+       31               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+      139             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+       32               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+       31               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+        2                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+      361       dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap
+        1         tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv
+        1         tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux
+      543     gpio$croc_chip.i_croc_soc.i_croc.i_gpio
+     1467       gpio_reg_top$croc_chip.i_croc_soc.i_croc.i_gpio.i_reg_file
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[0].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[10].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[11].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[12].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[13].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[14].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[15].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[16].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[17].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[18].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[19].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[1].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[20].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[21].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[22].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[23].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[24].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[25].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[26].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[27].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[28].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[29].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[2].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[30].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[31].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[3].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[4].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[5].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[6].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[7].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[8].i_sync
+        2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync
+     2478     obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux
+       17       delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg
+       24       fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err
+       24       fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err
+       24       fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo
+        5     obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim
+        5     obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim
+     1039     obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer
+        2     obi_uart$croc_chip.i_croc_soc.i_croc.i_uart
+      156       obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen
+       61           delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter.i_counter
+      257           delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter.i_counter
+       36       obi_uart_interrupts$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_interrupts
+       25       obi_uart_modem$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem
+        2         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cd
+        2         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cts
+        2         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_dsr
+        2         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_ri
+      345       obi_uart_register$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_register
+      534       obi_uart_rx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx
+       74           delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter.i_counter
+      461         fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_fifo_v3
+        2         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync
+      244       obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx
+      368         fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3
+     1693         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
+     1693         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
+     1693         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
+     1693         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
+     1336       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux
+       17         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter
+     1336       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux
+       17         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter
+     1336       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux
+       17         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter
+     1336       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux
+       17         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter
+      154       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux
+       37         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo
+      269         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+      154       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux
+       37         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo
+      269         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+      154       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux
+       37         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo
+      269         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+      154       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux
+       37         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo
+      269         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+      154       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux
+       37         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo
+      269         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        8           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+      362     soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl
+        4     rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass
+        1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no
+        1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n
+        1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no
+      421       addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
+      496     obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
+       17       delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
+       24       fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode
+      110     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode
+       22     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode
+        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
+        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+       40     user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
+
+        +----------Count including submodules.
+        | 
+    14979 wires
+   107981 wire bits
+     3586 public wires
+    50455 public wire bits
+     2120 ports
+    29345 port bits
+        - memories
+        - memory bits
+        - processes
+    52695 cells
+    11852   $_AND_
+       10   $_DFFE_PN0N_
+     3483   $_DFFE_PN0P_
+       25   $_DFFE_PN1P_
+      150   $_DFFE_PP_
+      671   $_DFF_PN0_
+       26   $_DFF_PN1_
+    20569   $_MUX_
+     3751   $_NOT_
+     9227   $_OR_
+     2860   $_XOR_
+        1   INVX2
+        4   MUX2X2
+        2   RM_IHPSG13_1P_512x64_c2_bm_bist
+        4   sg13cmos5l_IOPadIOVdd
+        4   sg13cmos5l_IOPadIOVss
+        9   sg13cmos5l_IOPadIn
+       32   sg13cmos5l_IOPadInOut30mA
+        7   sg13cmos5l_IOPadOut16mA
+        4   sg13cmos5l_IOPadVdd
+        4   sg13cmos5l_IOPadVss
+        1 submodules
+        1   croc_soc$croc_chip.i_croc_soc
+
+   Estimated number of transistors:     415124+
+

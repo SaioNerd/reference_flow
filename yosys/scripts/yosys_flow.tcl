@@ -3,7 +3,7 @@
 # Run non interactive
 # oseda -2026.02 yosys -c scripts/yosys_flow.tcl
 
-# Run interactive
+# Run interactive (to run scripts sequentially and keep the memory state active)
 # oseda -2026.02 yosys -C 
 # yosys> source scripts/yosys_flow.tcl
 
@@ -92,16 +92,38 @@ yosys tee -q -o "reports/croc_cellsubstitution.rpt" stat
 
 # Gate-level Technology Mapping
 yosys dfflibmap -liberty /scratch/vlsi2_14fs26/reference_flow/technology/lib/sg13cmos5l_stdcell_typ_1p20V_25C.lib
-yosys abc -liberty /scratch/vlsi2_14fs26/reference_flow/technology/lib/sg13cmos5l_stdcell_typ_1p20V_25C.lib -D ${period_ps} -constr src/abc.constr -script scripts/abc-opt.script
+yosys abc -liberty /scratch/vlsi2_14fs26/reference_flow/technology/lib/sg13cmos5l_stdcell_typ_1p20V_25C.lib -D $period_ps -constr src/abc.constr -script scripts/abc-opt.script
 yosys clean -purge
 
 # Prepare netlist for OpenROAD
-yosys splitnets -ports -format __v
+yosys splitnets
 yosys setundef -zero
 yosys clean -purge
-yosys hilomap -singleton -hicell {*}$tech_cell_tiehi -locell {*}$tech_cell_tielo
+yosys hilomap 
+yosys clean -purge
 
 # print the report at the end of the Synthesis
-yosys stat -liberty /scratch/vlsi2_14fs26/reference_flow/technology/lib/sg13cmos5l_stdcell_typ_1p20V_25C.lib
+#yosys stat -liberty /scratch/vlsi2_14fs26/reference_flow/technology/lib/sg13cmos5l_stdcell_typ_1p20V_25C.lib
 yosys write_verilog out/croc_netlist.v
 
+yosys splitnets -ports -format __v
+
+
+
+yosys autoname
+
+
+
+yosys setundef -zero
+
+
+
+yosys hilomap -singleton -hicell TIEHIX1 Y -locell TIELOX1 Y
+
+
+
+yosys clean -purge
+
+
+
+yosys write_verilog -noexpr -noattr -nohex
