@@ -39,6 +39,7 @@ utl::report "###################################################################
 # Read and check design
 utl::report "Read netlist: ${netlist}"
 read_verilog $netlist
+source scripts/init_tech.tcl
 link_design $top_design
 
 utl::report "Read constraints"
