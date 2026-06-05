@@ -1,5 +1,5 @@
-reports
-out
+#reports
+#out
 WORK
 tmp
 *.log

@@ -1,0 +1,4978 @@
+10. Printing statistics.
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       33 wires
+       42 wire bits
+       15 public wires
+       19 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+       10 cells
+        1   $aldff_1
+        1   $aldff_2
+        4   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+       49 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+        9 cells
+        1   $aldff_1
+        2   $aldff_2
+        2   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       33 wires
+       42 wire bits
+       15 public wires
+       19 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+       10 cells
+        1   $aldff_1
+        1   $aldff_2
+        4   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+       49 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+        9 cells
+        1   $aldff_1
+        2   $aldff_2
+        2   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       33 wires
+       42 wire bits
+       15 public wires
+       19 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+       10 cells
+        1   $aldff_1
+        1   $aldff_2
+        4   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+       49 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+        9 cells
+        1   $aldff_1
+        2   $aldff_2
+        2   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+
+=== cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       33 wires
+       42 wire bits
+       15 public wires
+       19 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+       10 cells
+        1   $aldff_1
+        1   $aldff_2
+        4   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+
+=== cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+       49 wire bits
+       15 public wires
+       21 public wire bits
+        8 ports
+       10 port bits
+        3 processes
+        9 cells
+        1   $aldff_1
+        2   $aldff_2
+        2   $eq_1
+        4   $logic_not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       64 wires
+      122 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+        4 processes
+       11 cells
+        1   $aldff_2
+        1   $aldff_4
+        3   $logic_and_1
+        4   $logic_not_1
+        2   $logic_or_1
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       64 wires
+      122 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+        4 processes
+       11 cells
+        1   $aldff_2
+        1   $aldff_4
+        3   $logic_and_1
+        4   $logic_not_1
+        2   $logic_or_1
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        9 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_3
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        9 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_3
+        2   $logic_not_1
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       64 wires
+      122 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+        4 processes
+       11 cells
+        1   $aldff_2
+        1   $aldff_4
+        3   $logic_and_1
+        4   $logic_not_1
+        2   $logic_or_1
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+
+=== cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       64 wires
+      122 wire bits
+       26 public wires
+       37 public wire bits
+       13 ports
+       15 port bits
+        4 processes
+       11 cells
+        1   $aldff_2
+        1   $aldff_4
+        3   $logic_and_1
+        4   $logic_not_1
+        2   $logic_or_1
+        2 submodules
+        1   cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        1   cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        9 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_3
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        9 wire bits
+        5 public wires
+        7 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_3
+        2   $logic_not_1
+
+=== cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      135 wires
+      956 wire bits
+       40 public wires
+      523 public wire bits
+       14 ports
+      139 port bits
+        6 processes
+       91 cells
+        1   $add_31
+        3   $aldff_1
+        1   $aldff_3
+        1   $aldff_31
+        3   $aldff_32
+       27   $and_1
+       10   $logic_not_1
+       10   $mux_1
+        1   $mux_31
+        4   $mux_32
+        2   $ne_2
+       17   $not_1
+       11   $or_1
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       72 wire bits
+       12 public wires
+       34 public wire bits
+       10 ports
+       22 port bits
+        2 processes
+        5 cells
+        1   $add_6
+        1   $aldff_6
+        2   $logic_not_1
+        1   $sub_6
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       61 wire bits
+       12 public wires
+       29 public wire bits
+       10 ports
+       19 port bits
+        2 processes
+        5 cells
+        1   $add_5
+        1   $aldff_5
+        2   $logic_not_1
+        1   $sub_5
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+      193 wire bits
+       12 public wires
+       89 public wire bits
+       10 ports
+       55 port bits
+        2 processes
+        5 cells
+        1   $add_17
+        1   $aldff_17
+        2   $logic_not_1
+        1   $sub_17
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+       46 wire bits
+        7 public wires
+       31 public wire bits
+        3 ports
+        7 port bits
+       12 cells
+        3   $eq_1
+        3   $mux_2
+        2   $not_1
+        3   $or_1
+        1   $reduce_or_4
+
+=== debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       16 wires
+     1622 wire bits
+        8 public wires
+     1421 public wire bits
+        5 ports
+      131 port bits
+        2 processes
+        8 cells
+        1   $aldff_5
+        1   $bmux_64_5
+        2   $logic_not_1
+        1   $lt_5
+        1   $lt_7
+        1   $mux_5
+        1   $mux_64
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      832 wire bits
+       20 public wires
+      222 public wire bits
+       11 ports
+       77 port bits
+        3 processes
+       40 cells
+        3   $add_32
+        2   $aldff_1
+        1   $aldff_2
+        2   $aldff_34
+        2   $and_1
+        1   $bmux_34_1
+        1   $bwmux
+        2   $demux_34_1
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_3
+        2   $mux_34
+        5   $not_1
+        1   $sub_32
+
+=== cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       22 wire bits
+       20 public wires
+       22 public wire bits
+       14 ports
+       14 port bits
+        2 submodules
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+
+=== cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       26 wires
+      191 wire bits
+       15 public wires
+      147 public wire bits
+        9 ports
+       75 port bits
+        4 processes
+       12 cells
+        2   $aldff_1
+        1   $dff_2
+        1   $dff_32
+        2   $logic_and_1
+        3   $logic_not_1
+        2   $ne_1
+        1   $not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst.i_sync
+
+=== cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+      221 wire bits
+       14 public wires
+      146 public wire bits
+        9 ports
+       75 port bits
+        3 processes
+        8 cells
+        1   $aldff_1
+        1   $dff_2
+        1   $dff_32
+        1   $eq_1
+        1   $logic_and_1
+        2   $logic_not_1
+        1   $not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src.i_sync
+
+=== cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       22 wire bits
+       20 public wires
+       22 public wire bits
+       14 ports
+       14 port bits
+        2 submodules
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+        1   cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+
+=== cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       26 wires
+      226 wire bits
+       15 public wires
+      175 public wire bits
+        9 ports
+       89 port bits
+        4 processes
+       13 cells
+        2   $aldff_1
+        1   $dff_2
+        1   $dff_32
+        1   $dff_7
+        2   $logic_and_1
+        3   $logic_not_1
+        2   $ne_1
+        1   $not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst.i_sync
+
+=== cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+      263 wire bits
+       14 public wires
+      174 public wire bits
+        9 ports
+       89 port bits
+        3 processes
+        9 cells
+        1   $aldff_1
+        1   $dff_2
+        1   $dff_32
+        1   $dff_7
+        1   $eq_1
+        1   $logic_and_1
+        2   $logic_not_1
+        1   $not_1
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_control_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       10 wire bits
+        7 public wires
+        7 public wire bits
+        6 ports
+        6 port bits
+        1 processes
+        3 cells
+        1   $aldff_1
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.u_tselect_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       10 wire bits
+        7 public wires
+        7 public wire bits
+        6 ports
+        6 port bits
+        1 processes
+        3 cells
+        1   $aldff_1
+        2   $logic_not_1
+
+=== cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.minstret_counter_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       21 wires
+      745 wire bits
+       14 public wires
+      486 public wire bits
+        8 ports
+      165 port bits
+        2 processes
+        5 cells
+        1   $add_64
+        1   $aldff_64
+        2   $logic_not_1
+        1   $or_1
+
+=== cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.mcycle_counter_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       21 wires
+      745 wire bits
+       14 public wires
+      486 public wire bits
+        8 ports
+      165 port bits
+        2 processes
+        5 cells
+        1   $add_64
+        1   $aldff_64
+        2   $logic_not_1
+        1   $or_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_cause_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       34 wire bits
+        7 public wires
+       25 public wire bits
+        6 ports
+       18 port bits
+        1 processes
+        3 cells
+        1   $aldff_7
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_epc_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       18 wire bits
+        7 public wires
+       13 public wire bits
+        6 ports
+       10 port bits
+        1 processes
+        3 cells
+        1   $aldff_3
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch1_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch0_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_depc_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dcsr_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtvec_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtval_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mcause_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       34 wire bits
+        7 public wires
+       25 public wire bits
+        6 ports
+       18 port bits
+        1 processes
+        3 cells
+        1   $aldff_7
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mscratch_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mie_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       82 wire bits
+        7 public wires
+       61 public wire bits
+        6 ports
+       42 port bits
+        1 processes
+        3 cells
+        1   $aldff_19
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mepc_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+      134 wire bits
+        7 public wires
+      100 public wire bits
+        6 ports
+       68 port bits
+        1 processes
+        3 cells
+        1   $aldff_32
+        2   $logic_not_1
+
+=== cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstatus_csr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       30 wire bits
+        7 public wires
+       22 public wire bits
+        6 ports
+       16 port bits
+        1 processes
+        3 cells
+        1   $aldff_6
+        2   $logic_not_1
+
+=== cve2_alu$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i.alu_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      120 wires
+     2075 wire bits
+       71 public wires
+     1477 public wire bits
+       15 ports
+      369 port bits
+       12 processes
+       35 cells
+        1   $add_34
+        2   $and_1
+        1   $and_32
+        2   $eq_1
+        1   $eq_32
+        5   $eq_7
+        2   $logic_and_1
+        4   $mux_32
+        3   $mux_5
+        3   $not_1
+        3   $or_1
+        1   $or_32
+        1   $reduce_or_4
+        1   $sshr_33
+        1   $sub_32
+        2   $xor_1
+        1   $xor_32
+        1   $xor_33
+
+=== cve2_controller$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      327 wires
+      869 wire bits
+      102 public wires
+      280 public wire bits
+       56 ports
+      225 port bits
+        4 processes
+       97 cells
+        1   $add_32
+        8   $aldff_1
+        1   $aldff_4
+       20   $and_1
+        1   $eq_1
+        3   $eq_2
+        7   $logic_and_1
+        8   $logic_not_1
+        9   $logic_or_1
+        3   $mux_1
+        1   $mux_2
+        2   $mux_32
+        1   $mux_7
+        1   $ne_16
+        1   $ne_2
+        2   $ne_4
+       10   $not_1
+       18   $or_1
+
+=== cve2_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.decoder_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      227 wires
+      717 wire bits
+       66 public wires
+      440 public wire bits
+       48 ports
+      322 port bits
+        3 processes
+       32 cells
+        2   $and_1
+        2   $eq_1
+        4   $eq_2
+        3   $eq_3
+        4   $eq_5
+        1   $logic_and_1
+        1   $logic_not_1
+        2   $logic_or_1
+        4   $mux_1
+        1   $mux_5
+        1   $ne_3
+        2   $ne_5
+        4   $not_1
+        1   $or_1
+
+=== cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       46 wires
+      449 wire bits
+        8 public wires
+       70 public wire bits
+        7 ports
+       69 port bits
+        1 processes
+       13 cells
+        3   $eq_1
+        4   $eq_5
+        1   $eq_6
+        1   $eq_8
+        1   $ne_2
+        2   $ne_5
+        1   $not_1
+
+=== cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      100 wires
+      669 wire bits
+       45 public wires
+      425 public wire bits
+       18 ports
+      173 port bits
+        3 processes
+       59 cells
+        1   $add_32
+        2   $aldff_1
+        2   $aldff_2
+        2   $aldff_32
+       19   $and_1
+        7   $logic_not_1
+        2   $mux_2
+        3   $mux_32
+        7   $not_1
+       11   $or_1
+        1   $or_2
+        1   $reduce_and_2
+        1   $reduce_or_2
+        1 submodules
+        1   cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+     1173 wire bits
+       20 public wires
+      311 public wire bits
+       11 ports
+       28 port bits
+        3 processes
+       54 cells
+        3   $add_32
+        2   $aldff_4
+        1   $aldff_5
+       16   $aldff_8
+        2   $and_1
+        1   $bmux_8_4
+        1   $bwmux
+        2   $demux_8_4
+        3   $eq_32
+        1   $eq_5
+        1   $ge_5
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_6
+        2   $mux_8
+        5   $not_1
+        1   $sub_32
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_fifo_v3 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+     1524 wire bits
+       20 public wires
+      413 public wire bits
+       11 ports
+       34 port bits
+        3 processes
+       54 cells
+        3   $add_32
+       16   $aldff_11
+        2   $aldff_4
+        1   $aldff_5
+        2   $and_1
+        1   $bmux_11_4
+        1   $bwmux
+        2   $demux_11_4
+        3   $eq_32
+        1   $eq_5
+        1   $ge_5
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_6
+        2   $mux_11
+        5   $not_1
+        1   $sub_32
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        9 wires
+       17 wire bits
+        9 public wires
+       17 public wire bits
+        9 ports
+       17 port bits
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter.i_counter
+
+=== counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        9 wires
+       15 wire bits
+        9 public wires
+       15 public wire bits
+        9 ports
+       15 port bits
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter.i_counter
+
+=== counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        9 wires
+       39 wire bits
+        9 public wires
+       39 public wire bits
+        9 ports
+       39 port bits
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter.i_counter
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cd ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_ri ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_dsr ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cts ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      224 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       13 port bits
+        3 processes
+       40 cells
+        3   $add_32
+        2   $aldff_1
+        3   $aldff_2
+        2   $and_1
+        1   $bmux_2_1
+        1   $bwmux
+        2   $demux_2_1
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_3
+        2   $mux_2
+        5   $not_1
+        1   $sub_32
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       91 wires
+      910 wire bits
+       31 public wires
+      630 public wire bits
+       11 ports
+      372 port bits
+        3 processes
+       60 cells
+        1   $aldff_1
+        1   $aldff_2
+        1   $aldff_4
+       14   $and_1
+        3   $gt_32
+        3   $le_32
+        1   $logic_and_1
+        6   $logic_not_1
+        6   $mux_1
+        3   $mux_2
+        1   $mux_4
+        3   $mux_71
+        7   $not_1
+       10   $or_1
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      224 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       13 port bits
+        3 processes
+       40 cells
+        3   $add_32
+        2   $aldff_1
+        3   $aldff_2
+        2   $and_1
+        1   $bmux_2_1
+        1   $bwmux
+        2   $demux_2_1
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_3
+        2   $mux_2
+        5   $not_1
+        1   $sub_32
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       91 wires
+      910 wire bits
+       31 public wires
+      630 public wire bits
+       11 ports
+      372 port bits
+        3 processes
+       60 cells
+        1   $aldff_1
+        1   $aldff_2
+        1   $aldff_4
+       14   $and_1
+        3   $gt_32
+        3   $le_32
+        1   $logic_and_1
+        6   $logic_not_1
+        6   $mux_1
+        3   $mux_2
+        1   $mux_4
+        3   $mux_71
+        7   $not_1
+       10   $or_1
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      224 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       13 port bits
+        3 processes
+       40 cells
+        3   $add_32
+        2   $aldff_1
+        3   $aldff_2
+        2   $and_1
+        1   $bmux_2_1
+        1   $bwmux
+        2   $demux_2_1
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_3
+        2   $mux_2
+        5   $not_1
+        1   $sub_32
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       91 wires
+      910 wire bits
+       31 public wires
+      630 public wire bits
+       11 ports
+      372 port bits
+        3 processes
+       60 cells
+        1   $aldff_1
+        1   $aldff_2
+        1   $aldff_4
+       14   $and_1
+        3   $gt_32
+        3   $le_32
+        1   $logic_and_1
+        6   $logic_not_1
+        6   $mux_1
+        3   $mux_2
+        1   $mux_4
+        3   $mux_71
+        7   $not_1
+       10   $or_1
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      224 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       13 port bits
+        3 processes
+       40 cells
+        3   $add_32
+        2   $aldff_1
+        3   $aldff_2
+        2   $and_1
+        1   $bmux_2_1
+        1   $bwmux
+        2   $demux_2_1
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_3
+        2   $mux_2
+        5   $not_1
+        1   $sub_32
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       91 wires
+      910 wire bits
+       31 public wires
+      630 public wire bits
+       11 ports
+      372 port bits
+        3 processes
+       60 cells
+        1   $aldff_1
+        1   $aldff_2
+        1   $aldff_4
+       14   $and_1
+        3   $gt_32
+        3   $le_32
+        1   $logic_and_1
+        6   $logic_not_1
+        6   $mux_1
+        3   $mux_2
+        1   $mux_4
+        3   $mux_71
+        7   $not_1
+       10   $or_1
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       68 wires
+      224 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       13 port bits
+        3 processes
+       40 cells
+        3   $add_32
+        2   $aldff_1
+        3   $aldff_2
+        2   $and_1
+        1   $bmux_2_1
+        1   $bwmux
+        2   $demux_2_1
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_3
+        2   $mux_2
+        5   $not_1
+        1   $sub_32
+
+=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       91 wires
+      910 wire bits
+       31 public wires
+      630 public wire bits
+       11 ports
+      372 port bits
+        3 processes
+       60 cells
+        1   $aldff_1
+        1   $aldff_2
+        1   $aldff_4
+       14   $and_1
+        3   $gt_32
+        3   $le_32
+        1   $logic_and_1
+        6   $logic_not_1
+        6   $mux_1
+        3   $mux_2
+        1   $mux_4
+        3   $mux_71
+        7   $not_1
+       10   $or_1
+        2 submodules
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       12 public wires
+       14 public wire bits
+       10 ports
+       10 port bits
+        2 processes
+        5 cells
+        1   $add_2
+        1   $aldff_2
+        2   $logic_not_1
+        1   $sub_2
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       67 wires
+      394 wire bits
+        9 public wires
+      318 public wire bits
+        8 ports
+      314 port bits
+        1 processes
+       42 cells
+        4   $eq_32
+        4   $ge_32
+        8   $logic_and_1
+        8   $logic_or_1
+        4   $lt_32
+        1   $mux_1
+        5   $mux_3
+        8   $not_1
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       12 public wires
+       14 public wire bits
+       10 ports
+       10 port bits
+        2 processes
+        5 cells
+        1   $add_2
+        1   $aldff_2
+        2   $logic_not_1
+        1   $sub_2
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       67 wires
+      394 wire bits
+        9 public wires
+      318 public wire bits
+        8 ports
+      314 port bits
+        1 processes
+       42 cells
+        4   $eq_32
+        4   $ge_32
+        8   $logic_and_1
+        8   $logic_or_1
+        4   $lt_32
+        1   $mux_1
+        5   $mux_3
+        8   $not_1
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       12 public wires
+       14 public wire bits
+       10 ports
+       10 port bits
+        2 processes
+        5 cells
+        1   $add_2
+        1   $aldff_2
+        2   $logic_not_1
+        1   $sub_2
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       67 wires
+      394 wire bits
+        9 public wires
+      318 public wire bits
+        8 ports
+      314 port bits
+        1 processes
+       42 cells
+        4   $eq_32
+        4   $ge_32
+        8   $logic_and_1
+        8   $logic_or_1
+        4   $lt_32
+        1   $mux_1
+        5   $mux_3
+        8   $not_1
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       12 public wires
+       14 public wire bits
+       10 ports
+       10 port bits
+        2 processes
+        5 cells
+        1   $add_2
+        1   $aldff_2
+        2   $logic_not_1
+        1   $sub_2
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       67 wires
+      394 wire bits
+        9 public wires
+      318 public wire bits
+        8 ports
+      314 port bits
+        1 processes
+       42 cells
+        4   $eq_32
+        4   $ge_32
+        8   $logic_and_1
+        8   $logic_or_1
+        4   $lt_32
+        1   $mux_1
+        5   $mux_3
+        8   $not_1
+
+=== dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      347 wires
+     5611 wire bits
+       59 public wires
+     1828 public wire bits
+       25 ports
+      554 port bits
+        5 processes
+      165 cells
+        1   $add_9
+        4   $aldff_1
+        1   $aldff_2
+        1   $aldff_64
+        2   $and_1
+        2   $and_12
+        8   $bmux_1_1
+        2   $bmux_32_1
+        1   $bmux_64_2
+        1   $bmux_64_3
+        6   $bwmux
+       10   $demux_1_1
+        2   $demux_8_3
+        1   $eq_1
+        6   $eq_12
+        2   $eq_32
+        2   $eq_5
+        1   $eq_8
+        6   $ge_12
+        1   $ge_13
+        5   $ge_2
+        1   $ge_32
+        5   $le_12
+       30   $logic_and_1
+       12   $logic_not_1
+        1   $logic_or_1
+        1   $lt_13
+       15   $lt_3
+        2   $lt_32
+        1   $lt_4
+        1   $lt_5
+       13   $mux_1
+        3   $mux_32
+        3   $mux_64
+        1   $mux_8
+        2   $ne_2
+        2   $shl_32
+        1   $sub_12
+        2   $sub_32
+        4   $sub_9
+        1 submodules
+        1   debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom
+
+=== dm_sba$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_sba ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      114 wires
+      834 wire bits
+       41 public wires
+      370 public wire bits
+       28 ports
+      252 port bits
+        3 processes
+       35 cells
+        1   $add_32
+        1   $aldff_3
+        1   $and_2
+        1   $and_32
+        2   $bwmux
+        2   $demux_1_2
+        1   $ge_3
+        1   $gt_32
+        5   $logic_and_1
+        2   $logic_not_1
+        1   $lt_4
+        2   $mul_32
+        1   $mux_1
+        1   $mux_32
+        3   $ne_3
+        2   $neg_33
+        1   $not_32
+        1   $reduce_or_32
+        1   $shift_33
+        1   $shiftx_33
+        3   $shl_32
+        1   $shr_32
+
+=== dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      431 wires
+     7083 wire bits
+      101 public wires
+     2541 public wire bits
+       46 ports
+      742 port bits
+        8 processes
+      257 cells
+       22   $aldff_1
+        2   $aldff_10
+        1   $aldff_12
+        1   $aldff_16
+        1   $aldff_2
+        1   $aldff_24
+        4   $aldff_3
+       10   $aldff_32
+        1   $aldff_4
+        1   $aldff_6
+        2   $aldff_64
+        1   $aldff_7
+        1   $aldff_8
+        8   $and_1
+        1   $and_3
+        1   $and_32
+       14   $bmux_1_1
+        2   $bmux_1_4
+        2   $bmux_1_5
+        2   $bmux_32_1
+        1   $bmux_32_3
+        5   $bwmux
+        2   $demux_1_1
+        2   $demux_32_1
+        2   $demux_32_3
+        2   $eq_2
+       10   $eq_3
+       28   $eq_8
+        4   $ge_2
+        1   $ge_4
+        4   $ge_8
+        2   $gt_32
+        1   $le_1
+        4   $le_8
+       15   $logic_and_1
+       11   $logic_not_1
+        6   $logic_or_1
+        1   $lt_10
+        1   $lt_11
+        1   $lt_15
+        1   $lt_16
+        2   $lt_2
+       18   $lt_3
+        3   $lt_5
+        3   $lt_6
+        2   $lt_7
+       21   $mux_1
+        1   $mux_3
+        8   $mux_32
+       11   $not_1
+        1   $not_3
+        1   $reduce_or_3
+        3   $reduce_or_32
+        1   $sub_8
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo
+
+=== cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       39 wires
+      138 wire bits
+       27 public wires
+      126 public wire bits
+       14 ports
+       80 port bits
+        2 processes
+       16 cells
+        4   $aldff_1
+        4   $and_1
+        8   $logic_not_1
+        3 submodules
+        1   cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst
+        1   cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src
+        1   cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr
+
+=== cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       39 wires
+      159 wire bits
+       27 public wires
+      147 public wire bits
+       14 ports
+       94 port bits
+        2 processes
+       16 cells
+        4   $aldff_1
+        4   $and_1
+        8   $logic_not_1
+        3 submodules
+        1   cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst
+        1   cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src
+        1   cdc_reset_ctrlr$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+=== tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        2 wires
+        2 wire bits
+        2 public wires
+        2 public wire bits
+        2 ports
+        2 port bits
+        1 cells
+        1   INVX2
+
+=== cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      339 wires
+     7172 wire bits
+      142 public wires
+     5514 public wire bits
+       56 ports
+      581 port bits
+        8 processes
+      111 cells
+        1   $aldff_2
+        1   $aldff_3
+       14   $and_1
+        1   $and_19
+        1   $and_32
+        1   $bmux_32_5
+        2   $bmux_64_5
+        2   $bwmux
+        4   $demux_1_5
+        3   $eq_1
+       23   $eq_12
+        4   $eq_2
+        1   $eq_32
+        5   $ge_6
+        1   $gt_2
+        5   $logic_and_1
+        5   $logic_not_1
+        1   $lt_32
+        2   $lt_7
+        3   $mux_1
+        1   $mux_2
+        3   $mux_32
+        4   $mux_64
+        5   $ne_2
+        7   $not_1
+        1   $not_32
+        3   $not_6
+        2   $or_1
+        1   $or_32
+        1   $reduce_bool_20
+        1   $reduce_bool_3
+        1   $reduce_or_1
+        1   $reduce_or_19
+       19 submodules
+        1   cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.mcycle_counter_i
+        1   cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.minstret_counter_i
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_control_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.u_tselect_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dcsr_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_depc_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch0_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch1_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mcause_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mepc_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mie_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mscratch_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_cause_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_epc_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstatus_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtval_csr
+        1   cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtvec_csr
+
+=== cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      175 wires
+     3409 wire bits
+       14 public wires
+     2163 public wire bits
+       10 ports
+      115 port bits
+       32 processes
+      161 cells
+       31   $aldff_32
+        2   $bmux_32_5
+       31   $eq_5
+       62   $logic_not_1
+        2   $lt_7
+       31   $mux_1
+        2   $mux_32
+
+=== cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       28 wires
+      286 wire bits
+       19 public wires
+      184 public wire bits
+       17 ports
+      118 port bits
+        9 cells
+        4   $and_1
+        2   $and_32
+        1   $not_1
+        1   $or_32
+        1   $reduce_or_2
+
+=== cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      187 wires
+     1253 wire bits
+       57 public wires
+      590 public wire bits
+       28 ports
+      249 port bits
+       11 processes
+       69 cells
+        5   $aldff_1
+        2   $aldff_2
+        1   $aldff_24
+        1   $aldff_3
+        1   $aldff_32
+        9   $and_1
+        3   $eq_2
+        2   $eq_3
+        2   $logic_and_1
+       18   $logic_not_1
+        4   $logic_or_1
+        3   $mux_3
+        1   $mux_32
+        1   $ne_2
+        1   $ne_3
+       10   $not_1
+        5   $or_1
+
+=== cve2_ex_block$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       43 wires
+      855 wire bits
+       36 public wires
+      750 public wire bits
+       22 ports
+      382 port bits
+        7 cells
+        1   $mux_1
+        1   $mux_2
+        1   $mux_32
+        2   $mux_34
+        1   $not_1
+        1   $reduce_or_2
+        1 submodules
+        1   cve2_alu$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i.alu_i
+
+=== cve2_id_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      347 wires
+     2113 wire bits
+      187 public wires
+     1698 public wire bits
+      104 ports
+     1082 port bits
+       10 processes
+      116 cells
+        3   $aldff_1
+        2   $aldff_34
+       34   $and_1
+        5   $eq_1
+        7   $eq_12
+        2   $eq_2
+        1   $eq_7
+        2   $logic_and_1
+       10   $logic_not_1
+        7   $logic_or_1
+        6   $mux_1
+        1   $mux_2
+        1   $mux_3
+        3   $mux_32
+        1   $ne_2
+       21   $not_1
+       10   $or_1
+        2 submodules
+        1   cve2_controller$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i
+        1   cve2_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.decoder_i
+
+=== cve2_if_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      102 wires
+      907 wire bits
+       64 public wires
+      668 public wire bits
+       37 ports
+      464 port bits
+        4 processes
+       38 cells
+        6   $aldff_1
+        1   $aldff_16
+        3   $aldff_32
+       11   $and_1
+        1   $eq_2
+        1   $eq_3
+        4   $logic_not_1
+        1   $mux_32
+        6   $not_1
+        4   $or_1
+        2 submodules
+        1   cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i
+        1   cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i
+
+=== fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+      213 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       15 port bits
+        3 processes
+       36 cells
+        3   $add_32
+        2   $aldff_1
+        1   $aldff_2
+        1   $aldff_3
+        2   $and_1
+        1   $bwmux
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_2
+        2   $mux_3
+        5   $not_1
+        1   $sub_32
+
+=== delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       12 public wires
+       14 public wire bits
+       10 ports
+       10 port bits
+        2 processes
+        5 cells
+        1   $add_2
+        1   $aldff_2
+        2   $logic_not_1
+        1   $sub_2
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       25 wires
+      123 wire bits
+        9 public wires
+      107 public wire bits
+        8 ports
+      106 port bits
+        1 processes
+       12 cells
+        1   $eq_32
+        1   $ge_32
+        2   $logic_and_1
+        2   $logic_or_1
+        1   $lt_32
+        3   $mux_1
+        2   $not_1
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+      213 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       15 port bits
+        3 processes
+       36 cells
+        3   $add_32
+        2   $aldff_1
+        1   $aldff_2
+        1   $aldff_3
+        2   $and_1
+        1   $bwmux
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_2
+        2   $mux_3
+        5   $not_1
+        1   $sub_32
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_clint.i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[31].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[30].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[29].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[28].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[27].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[26].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[25].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[24].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[23].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[22].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[21].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[20].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[19].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[18].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[17].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[16].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[15].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[14].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[13].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[12].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[11].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[10].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[8].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[7].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[6].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[5].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[4].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[3].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[2].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[1].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[0].i_sync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+        8 wire bits
+        5 public wires
+        6 public wire bits
+        4 ports
+        4 port bits
+        1 processes
+        3 cells
+        1   $aldff_2
+        2   $logic_not_1
+
+=== gpio_reg_top$croc_chip.i_croc_soc.i_croc.i_gpio.i_reg_file ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      182 wires
+     2777 wire bits
+       30 public wires
+     1476 public wire bits
+        6 ports
+      499 port bits
+       10 processes
+      148 cells
+        5   $aldff_1
+        1   $aldff_12
+        8   $aldff_32
+       34   $and_1
+       11   $and_32
+       14   $logic_not_1
+       64   $mux_1
+        1   $not_1
+        5   $not_32
+        5   $or_32
+
+=== obi_uart_interrupts$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_interrupts ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       41 wires
+      180 wire bits
+       11 public wires
+      139 public wire bits
+        9 ports
+      129 port bits
+        3 processes
+       24 cells
+        5   $aldff_1
+        7   $and_1
+        2   $logic_not_1
+        3   $not_1
+        6   $or_1
+        1   $reduce_or_5
+
+=== obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      141 wires
+      633 wire bits
+       29 public wires
+      151 public wire bits
+        7 ports
+       81 port bits
+        6 processes
+       46 cells
+        1   $add_32
+        2   $aldff_1
+        2   $aldff_3
+        1   $aldff_8
+        5   $and_1
+        2   $and_8
+        1   $bmux_1_3
+        3   $eq_3
+        1   $le_3
+        7   $le_32
+       10   $logic_not_1
+        1   $lt_5
+        2   $mux_1
+        6   $not_1
+        2   $reduce_xor_8
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3
+
+=== obi_uart_rx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      288 wires
+      856 wire bits
+       58 public wires
+      233 public wire bits
+        9 ports
+      100 port bits
+       14 processes
+      112 cells
+        3   $add_32
+        4   $add_6
+        6   $aldff_1
+        1   $aldff_2
+        2   $aldff_3
+        1   $aldff_4
+        1   $aldff_6
+        1   $aldff_8
+        9   $and_1
+        1   $bwmux
+        2   $demux_1_3
+        1   $eq_1
+        2   $eq_2
+        6   $eq_3
+        1   $eq_4
+        4   $eq_5
+        1   $eq_6
+        1   $eq_8
+        1   $ge_4
+        1   $le_3
+        1   $le_4
+        2   $logic_and_1
+       25   $logic_not_1
+        1   $logic_or_1
+        2   $lt_5
+        4   $mux_1
+        1   $ne_1
+        1   $ne_4
+       13   $not_1
+       10   $or_1
+        1   $reduce_xor_8
+        1   $shl_32
+        1   $sub_32
+        3 submodules
+        1   counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_fifo_v3
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync
+
+=== obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       31 wires
+      148 wire bits
+       17 public wires
+      119 public wire bits
+        6 ports
+       75 port bits
+        1 processes
+       15 cells
+        1   $aldff_1
+        3   $and_1
+        2   $eq_16
+        1   $eq_3
+        1   $eq_32
+        2   $logic_not_1
+        2   $not_1
+        2   $or_1
+        1   $sub_16
+        2 submodules
+        1   counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter
+        1   counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter
+
+=== obi_uart_modem$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       58 wires
+      134 wire bits
+       24 public wires
+      100 public wire bits
+       12 ports
+       88 port bits
+        5 processes
+       30 cells
+        4   $aldff_1
+        1   $and_1
+        1   $eq_1
+        8   $logic_not_1
+       13   $not_1
+        3   $xor_1
+        4 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cd
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cts
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_dsr
+        1   sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_ri
+
+=== obi_uart_register$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_register ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       89 wires
+      861 wire bits
+       25 public wires
+      548 public wire bits
+        6 ports
+      230 port bits
+       10 processes
+       91 cells
+       49   $aldff_1
+        2   $aldff_2
+        1   $aldff_3
+        4   $aldff_8
+        3   $and_1
+       14   $logic_not_1
+       10   $mux_1
+        1   $mux_8
+        3   $not_1
+        4   $or_1
+
+=== delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       28 wire bits
+       12 public wires
+       14 public wire bits
+       10 ports
+       10 port bits
+        2 processes
+        5 cells
+        1   $add_2
+        1   $aldff_2
+        2   $logic_not_1
+        1   $sub_2
+
+=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      123 wires
+      761 wire bits
+        9 public wires
+      596 public wire bits
+        8 ports
+      588 port bits
+        1 processes
+       82 cells
+        8   $eq_32
+        8   $ge_32
+       16   $logic_and_1
+       16   $logic_or_1
+        8   $lt_32
+        1   $mux_1
+        9   $mux_4
+       16   $not_1
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+      213 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       15 port bits
+        3 processes
+       36 cells
+        3   $add_32
+        2   $aldff_1
+        1   $aldff_2
+        1   $aldff_3
+        2   $and_1
+        1   $bwmux
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_2
+        2   $mux_3
+        5   $not_1
+        1   $sub_32
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       59 wires
+     2920 wire bits
+       19 public wires
+     1067 public wire bits
+        7 ports
+      552 port bits
+        2 processes
+       40 cells
+        5   $bwmux
+        2   $demux_1_2
+        8   $demux_35_2
+        5   $ge_3
+        8   $logic_and_1
+        5   $lt_4
+        1   $mux_1
+        4   $mux_35
+        2   $not_1
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       59 wires
+     2920 wire bits
+       19 public wires
+     1067 public wire bits
+        7 ports
+      552 port bits
+        2 processes
+       40 cells
+        5   $bwmux
+        2   $demux_1_2
+        8   $demux_35_2
+        5   $ge_3
+        8   $logic_and_1
+        5   $lt_4
+        1   $mux_1
+        4   $mux_35
+        2   $not_1
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       59 wires
+     2920 wire bits
+       19 public wires
+     1067 public wire bits
+        7 ports
+      552 port bits
+        2 processes
+       40 cells
+        5   $bwmux
+        2   $demux_1_2
+        8   $demux_35_2
+        5   $ge_3
+        8   $logic_and_1
+        5   $lt_4
+        1   $mux_1
+        4   $mux_35
+        2   $not_1
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       59 wires
+     2920 wire bits
+       19 public wires
+     1067 public wire bits
+        7 ports
+      552 port bits
+        2 processes
+       40 cells
+        5   $bwmux
+        2   $demux_1_2
+        8   $demux_35_2
+        5   $ge_3
+        8   $logic_and_1
+        5   $lt_4
+        1   $mux_1
+        4   $mux_35
+        2   $not_1
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb
+
+=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       59 wires
+     2920 wire bits
+       19 public wires
+     1067 public wire bits
+        7 ports
+      552 port bits
+        2 processes
+       40 cells
+        5   $bwmux
+        2   $demux_1_2
+        8   $demux_35_2
+        5   $ge_3
+        8   $logic_and_1
+        5   $lt_4
+        1   $mux_1
+        4   $mux_35
+        2   $not_1
+        2 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo
+        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+     5103 wire bits
+       15 public wires
+      671 public wire bits
+        7 ports
+      659 port bits
+        2 processes
+       45 cells
+        1   $aldff_3
+        5   $bmux_37_3
+        1   $bmux_72_3
+        2   $bwmux
+        4   $demux_72_3
+        1   $eq_1
+        1   $eq_3
+        1   $eq_32
+        2   $ge_4
+        5   $logic_and_1
+        3   $logic_not_1
+        2   $logic_or_1
+        8   $lt_5
+        5   $mux_37
+        3   $mux_72
+        1   $xor_1
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+     5103 wire bits
+       15 public wires
+      671 public wire bits
+        7 ports
+      659 port bits
+        2 processes
+       45 cells
+        1   $aldff_3
+        5   $bmux_37_3
+        1   $bmux_72_3
+        2   $bwmux
+        4   $demux_72_3
+        1   $eq_1
+        1   $eq_3
+        1   $eq_32
+        2   $ge_4
+        5   $logic_and_1
+        3   $logic_not_1
+        2   $logic_or_1
+        8   $lt_5
+        5   $mux_37
+        3   $mux_72
+        1   $xor_1
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+     5103 wire bits
+       15 public wires
+      671 public wire bits
+        7 ports
+      659 port bits
+        2 processes
+       45 cells
+        1   $aldff_3
+        5   $bmux_37_3
+        1   $bmux_72_3
+        2   $bwmux
+        4   $demux_72_3
+        1   $eq_1
+        1   $eq_3
+        1   $eq_32
+        2   $ge_4
+        5   $logic_and_1
+        3   $logic_not_1
+        2   $logic_or_1
+        8   $lt_5
+        5   $mux_37
+        3   $mux_72
+        1   $xor_1
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+     5103 wire bits
+       15 public wires
+      671 public wire bits
+        7 ports
+      659 port bits
+        2 processes
+       45 cells
+        1   $aldff_3
+        5   $bmux_37_3
+        1   $bmux_72_3
+        2   $bwmux
+        4   $demux_72_3
+        1   $eq_1
+        1   $eq_3
+        1   $eq_32
+        2   $ge_4
+        5   $logic_and_1
+        3   $logic_not_1
+        2   $logic_or_1
+        8   $lt_5
+        5   $mux_37
+        3   $mux_72
+        1   $xor_1
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      313 wire bits
+        7 public wires
+      313 public wire bits
+        7 ports
+      313 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
+
+=== dm_top$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       64 wires
+      952 wire bits
+       64 public wires
+      952 public wire bits
+       33 ports
+      360 port bits
+        3 submodules
+        1   dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs
+        1   dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem
+        1   dm_sba$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_sba
+
+=== dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       27 wires
+      173 wire bits
+       22 public wires
+      168 public wire bits
+       18 ports
+      164 port bits
+        1 processes
+        7 cells
+        2   $aldff_1
+        1   $logic_and_1
+        3   $logic_not_1
+        1   $not_1
+        2 submodules
+        1   cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req
+        1   cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp
+
+=== dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       92 wires
+      433 wire bits
+       39 public wires
+      123 public wire bits
+       17 ports
+       17 port bits
+        8 processes
+       31 cells
+        3   $aldff_1
+        1   $aldff_32
+        1   $aldff_4
+        2   $aldff_5
+        6   $logic_not_1
+       16   $mux_4
+        1   $or_1
+        1   $shr_32
+        2 submodules
+        1   tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux
+
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+      213 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       15 port bits
+        3 processes
+       36 cells
+        3   $add_32
+        2   $aldff_1
+        1   $aldff_2
+        1   $aldff_3
+        2   $and_1
+        1   $bwmux
+        1   $eq_2
+        3   $eq_32
+        1   $ge_2
+        6   $logic_and_1
+        5   $logic_not_1
+        2   $lt_2
+        2   $mux_3
+        5   $not_1
+        1   $sub_32
+
+=== cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      175 wires
+     2175 wire bits
+      167 public wires
+     2156 public wire bits
+       43 ports
+      747 port bits
+        8 cells
+        2   $and_1
+        1   $mux_12
+        2   $not_1
+        3   $or_1
+        7 submodules
+        1   cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i
+        1   cve2_ex_block$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i
+        1   cve2_id_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i
+        1   cve2_if_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i
+        1   cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i
+        1   cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i
+        1   cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+=== tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        4 wires
+        4 wire bits
+        4 public wires
+        4 public wire bits
+        4 ports
+        4 port bits
+        1 cells
+        1   MUX2X2
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       12 wires
+      125 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        1 processes
+        3 cells
+        1   $logic_and_1
+        2   $not_1
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
+
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+      464 wire bits
+       14 public wires
+      463 public wire bits
+       10 ports
+      207 port bits
+        2 cells
+        1   $not_1
+        1   RM_IHPSG13_1P_512x64_c2_bm_bist
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+      464 wire bits
+       14 public wires
+      463 public wire bits
+       10 ports
+      207 port bits
+        2 cells
+        1   $not_1
+        1   RM_IHPSG13_1P_512x64_c2_bm_bist
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       14   $eq_5
+        3   $logic_and_1
+        2   $logic_not_1
+       13   $logic_or_1
+        1   $not_1
+        1   $not_5
+        1   $reduce_xor_5
+       19   $xor_1
+        1   $xor_5
+        1   $xor_8
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not_5
+       19   $xor_1
+
+=== user_rom$croc_chip.i_croc_soc.i_user.i_user_rom ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+      325 wire bits
+       15 public wires
+      224 public wire bits
+        4 ports
+      115 port bits
+        2 processes
+        7 cells
+        2   $aldff_1
+        1   $aldff_3
+        1   $aldff_32
+        2   $logic_not_1
+        1   $not_1
+
+=== obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+     2248 wire bits
+       15 public wires
+      350 public wire bits
+        7 ports
+      342 port bits
+        2 processes
+       45 cells
+        1   $aldff_1
+        5   $bmux_39_1
+        1   $bmux_74_1
+        2   $bwmux
+        4   $demux_74_1
+        2   $eq_1
+        1   $eq_32
+        2   $ge_2
+        5   $logic_and_1
+        3   $logic_not_1
+        2   $logic_or_1
+        8   $lt_3
+        5   $mux_39
+        3   $mux_74
+        1   $xor_1
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter
+
+=== addr_decode$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      105 wire bits
+        7 public wires
+      105 public wire bits
+        7 ports
+      105 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       12 wires
+      125 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        1 processes
+        3 cells
+        1   $logic_and_1
+        2   $not_1
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo
+
+=== bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       56 wires
+      727 wire bits
+       18 public wires
+      195 public wire bits
+        4 ports
+      115 port bits
+        6 processes
+       37 cells
+        2   $aldff_1
+        1   $aldff_10
+        1   $aldff_3
+        1   $bmux_32_3
+        1   $bmux_32_4
+        2   $bmux_32_5
+        1   $ge_6
+        4   $ge_7
+        2   $logic_and_1
+       10   $logic_not_1
+        8   $mux_32
+        4   $not_7
+
+=== obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       86 wires
+     1180 wire bits
+       27 public wires
+      501 public wire bits
+        6 ports
+      117 port bits
+        3 processes
+       43 cells
+        1   $add_32
+        8   $aldff_1
+        1   $aldff_3
+        5   $aldff_32
+        1   $aldff_4
+        6   $and_1
+        4   $and_32
+        1   $eq_32
+        1   $le_32
+        4   $logic_and_1
+        2   $logic_not_1
+        1   $ne_32
+        2   $not_1
+        2   $not_32
+        2   $or_1
+        2   $or_32
+
+=== clint$croc_chip.i_croc_soc.i_croc.i_clint ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       56 wires
+     1314 wire bits
+       23 public wires
+      625 public wire bits
+        7 ports
+      118 port bits
+        4 processes
+       32 cells
+        1   $add_64
+        6   $aldff_1
+        1   $aldff_3
+        3   $aldff_32
+        1   $aldff_4
+        2   $aldff_64
+        3   $and_1
+        4   $and_32
+        1   $ge_64
+        2   $logic_not_1
+        1   $mux_1
+        2   $not_1
+        2   $not_32
+        1   $or_1
+        2   $or_32
+        1 submodules
+        1   sync$croc_chip.i_croc_soc.i_croc.i_clint.i_sync
+
+=== gpio$croc_chip.i_croc_soc.i_croc.i_gpio ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      783 wires
+     1525 wire bits
+      207 public wires
+      917 public wire bits
+        9 ports
+      244 port bits
+       65 processes
+      576 cells
+       32   $aldff_1
+      288   $and_1
+       64   $logic_not_1
+       32   $mux_1
+      128   $not_1
+       32   $or_1
+       33 submodules
+        1   gpio_reg_top$croc_chip.i_croc_soc.i_croc.i_gpio.i_reg_file
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[0].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[10].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[11].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[12].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[13].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[14].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[15].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[16].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[17].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[18].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[19].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[1].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[20].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[21].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[22].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[23].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[24].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[25].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[26].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[27].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[28].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[29].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[2].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[30].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[31].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[3].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[4].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[5].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[6].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[7].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[8].i_sync
+        1   sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync
+
+=== obi_uart$croc_chip.i_croc_soc.i_croc.i_uart ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      253 wire bits
+       25 public wires
+      249 public wire bits
+       16 ports
+      127 port bits
+        4 cells
+        2   $eq_1
+        2   $mux_1
+        6 submodules
+        1   obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen
+        1   obi_uart_interrupts$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_interrupts
+        1   obi_uart_modem$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem
+        1   obi_uart_register$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_register
+        1   obi_uart_rx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx
+        1   obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx
+
+=== soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       63 wires
+      612 wire bits
+       21 public wires
+      291 public wire bits
+        6 ports
+      117 port bits
+       11 processes
+       34 cells
+        5   $aldff_1
+        2   $aldff_3
+        2   $aldff_32
+        3   $and_1
+        2   $and_32
+        1   $logic_and_1
+       19   $logic_not_1
+
+=== obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       65 wires
+     9267 wire bits
+       15 public wires
+     1150 public wire bits
+        7 ports
+     1136 port bits
+        2 processes
+       45 cells
+        1   $aldff_4
+        5   $bmux_39_4
+        1   $bmux_74_4
+        2   $bwmux
+        4   $demux_74_4
+        1   $eq_1
+        1   $eq_32
+        1   $eq_4
+        2   $ge_5
+        5   $logic_and_1
+        3   $logic_not_1
+        2   $logic_or_1
+        8   $lt_6
+        5   $mux_39
+        3   $mux_74
+        1   $xor_1
+        1 submodules
+        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter
+
+=== addr_decode$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        7 wires
+      587 wire bits
+        7 public wires
+      587 public wire bits
+        7 ports
+      587 port bits
+        1 submodules
+        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       12 wires
+      125 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        1 processes
+        3 cells
+        1   $logic_and_1
+        2   $not_1
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo
+
+=== obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       18 wires
+      229 wire bits
+       15 public wires
+      226 public wire bits
+       11 ports
+      218 port bits
+        2 processes
+        5 cells
+        1   $aldff_1
+        1   $aldff_3
+        1   $and_1
+        2   $logic_not_1
+
+=== obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       18 wires
+      229 wire bits
+       15 public wires
+      226 public wire bits
+       11 ports
+      218 port bits
+        2 processes
+        5 cells
+        1   $aldff_1
+        1   $aldff_3
+        1   $and_1
+        2   $logic_not_1
+
+=== obi_xbar$croc_chip.i_croc_soc.i_croc.i_main_xbar ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+     5664 wire bits
+       15 public wires
+     5664 public wire bits
+       10 ports
+     1292 port bits
+       13 submodules
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux
+        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux
+
+=== dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       42 wires
+      346 wire bits
+       37 public wires
+      339 public wire bits
+       35 ports
+      335 port bits
+        1 processes
+        5 cells
+        1   $aldff_1
+        1   $aldff_3
+        1   $logic_and_1
+        2   $logic_not_1
+        1 submodules
+        1   dm_top$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top
+
+=== dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      128 wires
+     1169 wire bits
+       47 public wires
+      455 public wire bits
+       16 ports
+       89 port bits
+        5 processes
+       45 cells
+        3   $aldff_1
+        1   $aldff_14
+        2   $aldff_2
+        2   $aldff_3
+        1   $aldff_32
+        1   $aldff_4
+        1   $aldff_41
+        1   $aldff_6
+        1   $aldff_7
+        7   $eq_2
+        3   $eq_3
+       11   $logic_and_1
+        5   $logic_not_1
+        2   $logic_or_1
+        1   $mux_2
+        1   $ne_3
+        1   $reduce_bool_2
+        1   $shr_32
+        2 submodules
+        1   dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc
+        1   dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap
+
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       12 wires
+      125 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        1 processes
+        3 cells
+        1   $logic_and_1
+        2   $not_1
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo
+
+=== core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      371 wire bits
+       28 public wires
+      339 public wire bits
+       25 ports
+      229 port bits
+        1 processes
+        1 cells
+        1   $and_32
+        1 submodules
+        1   cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core
+
+=== rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       10 wires
+       13 wire bits
+        8 public wires
+       11 public wire bits
+        6 ports
+        6 port bits
+        1 processes
+        3 cells
+        1   $aldff_4
+        2   $logic_not_1
+        3 submodules
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n
+        1   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no
+
+=== user_domain$croc_chip.i_croc_soc.i_user ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       77 wires
+     1657 wire bits
+       66 public wires
+     1550 public wire bits
+       18 ports
+      423 port bits
+       11 cells
+        8   $mux_13
+        1   $reduce_or_2
+        2   $reduce_or_4
+       22 submodules
+        1   addr_decode$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs
+        1   obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+        1   user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
+
+=== croc_domain$croc_chip.i_croc_soc.i_croc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      103 wires
+     4861 wire bits
+      103 public wires
+     4861 public wire bits
+       29 ports
+      527 port bits
+        1 processes
+       17 submodules
+        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs
+        1   bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom
+        1   clint$croc_chip.i_croc_soc.i_croc.i_clint
+        1   core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap
+        1   dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top
+        1   dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag
+        1   gpio$croc_chip.i_croc_soc.i_croc.i_gpio
+        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err
+        1   obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim
+        1   obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim
+        1   obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer
+        1   obi_uart$croc_chip.i_croc_soc.i_croc.i_uart
+        1   obi_xbar$croc_chip.i_croc_soc.i_croc.i_main_xbar
+        1   soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl
+
+=== rstgen$croc_chip.i_croc_soc.i_rstgen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        5 wires
+        5 wire bits
+        5 public wires
+        5 public wire bits
+        5 ports
+        5 port bits
+        1 submodules
+        1   rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass
+
+=== croc_soc$croc_chip.i_croc_soc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       30 wires
+      528 wire bits
+       30 public wires
+      528 public wire bits
+       15 ports
+      108 port bits
+        3 submodules
+        1   croc_domain$croc_chip.i_croc_soc.i_croc
+        1   rstgen$croc_chip.i_croc_soc.i_rstgen
+        1   user_domain$croc_chip.i_croc_soc.i_user
+
+=== croc_chip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       67 wires
+      160 wire bits
+       67 public wires
+      160 public wire bits
+       52 ports
+       52 port bits
+       64 cells
+        4   sg13cmos5l_IOPadIOVdd
+        4   sg13cmos5l_IOPadIOVss
+        9   sg13cmos5l_IOPadIn
+       32   sg13cmos5l_IOPadInOut30mA
+        7   sg13cmos5l_IOPadOut16mA
+        4   sg13cmos5l_IOPadVdd
+        4   sg13cmos5l_IOPadVss
+        1 submodules
+        1   croc_soc$croc_chip.i_croc_soc
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     5410 croc_chip
+       82       addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync
+       37     bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom
+       32     clint$croc_chip.i_croc_soc.i_croc.i_clint
+        3       sync$croc_chip.i_croc_soc.i_croc.i_clint.i_sync
+        1     core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap
+        8       cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core
+      111         cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i
+        5           cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.mcycle_counter_i
+        5           cve2_counter$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.minstret_counter_i
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_control_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.u_tselect_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dcsr_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_depc_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch0_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_dscratch1_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mcause_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mepc_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mie_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mscratch_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_cause_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstack_epc_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mstatus_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtval_csr
+        3           cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.u_mtvec_csr
+        7         cve2_ex_block$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i
+       35           cve2_alu$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.ex_block_i.alu_i
+      116         cve2_id_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i
+       97           cve2_controller$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.controller_i
+       32           cve2_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.id_stage_i.decoder_i
+       38         cve2_if_stage$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i
+       13           cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i
+       59           cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i
+       91             cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i
+       69         cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i
+      161         cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i
+        9         cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i
+        5     dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top
+      257         dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs
+       40           fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo
+      165         dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem
+        8           debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom
+       35         dm_sba$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_sba
+       45     dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag
+        7       dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc
+       16         cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req
+       13           cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst.i_sync
+        9           cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync
+       11             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+       10               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+        9               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+       11             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+       10               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+        9               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+       16         cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp
+       12           cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst.i_sync
+        8           cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src
+        3             sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src.i_sync
+       11             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a
+       10               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync
+        9               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync
+       11             cdc_reset_ctrlr_half$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b
+       10               cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync
+        9               cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src
+        3                 sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync
+       31       dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap
+        1         tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv
+        1         tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux
+      576     gpio$croc_chip.i_croc_soc.i_croc.i_gpio
+      148       gpio_reg_top$croc_chip.i_croc_soc.i_croc.i_gpio.i_reg_file
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[0].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[10].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[11].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[12].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[13].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[14].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[15].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[16].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[17].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[18].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[19].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[1].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[20].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[21].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[22].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[23].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[24].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[25].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[26].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[27].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[28].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[29].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[2].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[30].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[31].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[3].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[4].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[5].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[6].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[7].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[8].i_sync
+        3       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync
+       45     obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux
+        5       delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg
+       36       fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err
+       36       fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err
+       36       fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo
+        5     obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim
+        5     obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim
+       43     obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer
+        4     obi_uart$croc_chip.i_croc_soc.i_croc.i_uart
+       15       obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen
+        5           delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_baudrate_counter.i_counter
+        5           delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen.i_oversample_counter.i_counter
+       24       obi_uart_interrupts$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_interrupts
+       30       obi_uart_modem$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem
+        3         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cd
+        3         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_cts
+        3         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_dsr
+        3         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_modem.i_sync_ri
+       91       obi_uart_register$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_register
+      112       obi_uart_rx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx
+        5           delta_counter$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_counter.i_counter
+       54         fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_fifo_v3
+        3         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync
+       46       obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx
+       54         fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3
+       42         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
+       42         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
+       42         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
+       42         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
+       45       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux
+        5         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter
+       45       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux
+        5         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter
+       45       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux
+        5         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter
+       45       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux
+        5         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter
+       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux
+       40         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo
+       60         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux
+       40         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo
+       60         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux
+       40         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo
+       60         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux
+       40         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo
+       60         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux
+       40         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo
+       60         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+       12           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       34     soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl
+        3     rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass
+        1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no
+        1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n
+        1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no
+       11   user_domain$croc_chip.i_croc_soc.i_user
+       12       addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
+       45     obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
+        5       delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
+       36       fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode
+        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
+        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+        7     user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
+
+        +----------Count including submodules.
+        | 
+    10851 wires
+   137801 wire bits
+     4182 public wires
+    68701 public wire bits
+     2120 ports
+    29345 port bits
+        - memories
+        - memory bits
+      504 processes
+     5410 cells
+        1   $add_17
+        6   $add_2
+        1   $add_31
+       44   $add_32
+        1   $add_34
+        1   $add_5
+        5   $add_6
+        3   $add_64
+        1   $add_9
+      241   $aldff_1
+        3   $aldff_10
+       16   $aldff_11
+        2   $aldff_12
+        1   $aldff_14
+        2   $aldff_16
+        1   $aldff_17
+        1   $aldff_19
+      105   $aldff_2
+        2   $aldff_24
+       37   $aldff_3
+        1   $aldff_31
+       81   $aldff_32
+        4   $aldff_34
+       22   $aldff_4
+        1   $aldff_41
+        6   $aldff_5
+        5   $aldff_6
+        7   $aldff_64
+        4   $aldff_7
+       23   $aldff_8
+      620   $and_1
+        2   $and_12
+        1   $and_19
+        1   $and_2
+        1   $and_3
+       28   $and_32
+        2   $and_8
+        1   $bmux_11_4
+       22   $bmux_1_1
+        1   $bmux_1_3
+        2   $bmux_1_4
+        2   $bmux_1_5
+        5   $bmux_2_1
+        4   $bmux_32_1
+        2   $bmux_32_3
+        1   $bmux_32_4
+        5   $bmux_32_5
+        1   $bmux_34_1
+       20   $bmux_37_3
+        5   $bmux_39_1
+        5   $bmux_39_4
+        1   $bmux_64_2
+        1   $bmux_64_3
+        3   $bmux_64_5
+        4   $bmux_72_3
+        1   $bmux_74_1
+        1   $bmux_74_4
+        1   $bmux_8_4
+       65   $bwmux
+        2   $demux_11_4
+       12   $demux_1_1
+       12   $demux_1_2
+        2   $demux_1_3
+        4   $demux_1_5
+       10   $demux_2_1
+        2   $demux_32_1
+        2   $demux_32_3
+        2   $demux_34_1
+       40   $demux_35_2
+       16   $demux_72_3
+        4   $demux_74_1
+        4   $demux_74_4
+        2   $demux_8_3
+        2   $demux_8_4
+        4   $dff_2
+        4   $dff_32
+        2   $dff_7
+       84   $eq_1
+       36   $eq_12
+        2   $eq_16
+       38   $eq_2
+       33   $eq_3
+       73   $eq_32
+        2   $eq_4
+      159   $eq_5
+        2   $eq_6
+        6   $eq_7
+       31   $eq_8
+        6   $ge_12
+        1   $ge_13
+       21   $ge_2
+       26   $ge_3
+       26   $ge_32
+       10   $ge_4
+        4   $ge_5
+        6   $ge_6
+        1   $ge_64
+        4   $ge_7
+        4   $ge_8
+        1   $gt_2
+       18   $gt_32
+        1   $le_1
+        5   $le_12
+        2   $le_3
+       23   $le_32
+        1   $le_4
+        4   $le_8
+      334   $logic_and_1
+      702   $logic_not_1
+      206   $logic_or_1
+        1   $lt_10
+        1   $lt_11
+        1   $lt_13
+        1   $lt_15
+        1   $lt_16
+       10   $lt_2
+       53   $lt_3
+       28   $lt_32
+       27   $lt_4
+       40   $lt_5
+       15   $lt_6
+        7   $lt_7
+        2   $mul_32
+      251   $mux_1
+        2   $mux_11
+        1   $mux_12
+        8   $mux_13
+       62   $mux_2
+       33   $mux_3
+        1   $mux_31
+       44   $mux_32
+        4   $mux_34
+       20   $mux_35
+       20   $mux_37
+       10   $mux_39
+       30   $mux_4
+        5   $mux_5
+        8   $mux_64
+        1   $mux_7
+       15   $mux_71
+       12   $mux_72
+        6   $mux_74
+        4   $mux_8
+        5   $ne_1
+        1   $ne_16
+       13   $ne_2
+        6   $ne_3
+        1   $ne_32
+        3   $ne_4
+        4   $ne_5
+        2   $neg_33
+      473   $not_1
+        1   $not_3
+       11   $not_32
+       16   $not_5
+        3   $not_6
+        4   $not_7
+      208   $or_1
+        1   $or_2
+       12   $or_32
+        1   $reduce_and_2
+        1   $reduce_bool_2
+        1   $reduce_bool_20
+        1   $reduce_bool_3
+        1   $reduce_or_1
+        1   $reduce_or_19
+        4   $reduce_or_2
+        1   $reduce_or_3
+        4   $reduce_or_32
+       13   $reduce_or_4
+        1   $reduce_or_5
+        8   $reduce_xor_5
+        3   $reduce_xor_8
+        1   $shift_33
+        1   $shiftx_33
+        6   $shl_32
+        3   $shr_32
+        1   $sshr_33
+        1   $sub_12
+        1   $sub_16
+        1   $sub_17
+        6   $sub_2
+       16   $sub_32
+        1   $sub_5
+        1   $sub_6
+        1   $sub_8
+        4   $sub_9
+      315   $xor_1
+        1   $xor_32
+        1   $xor_33
+        8   $xor_5
+        8   $xor_8
+        1   INVX2
+        4   MUX2X2
+        2   RM_IHPSG13_1P_512x64_c2_bm_bist
+        4   sg13cmos5l_IOPadIOVdd
+        4   sg13cmos5l_IOPadIOVss
+        9   sg13cmos5l_IOPadIn
+       32   sg13cmos5l_IOPadInOut30mA
+        7   sg13cmos5l_IOPadOut16mA
+        4   sg13cmos5l_IOPadVdd
+        4   sg13cmos5l_IOPadVss
+        1 submodules
+        1   croc_soc$croc_chip.i_croc_soc
+
