@@ -1,0 +1,1 @@
+/usr/pack/ihp-sg13-kgf/eth/ez130_8t_stdcell/v1.0/verilog/ez130_8t.v

@@ -1,0 +1,1 @@
+/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/verilog/RM_IHPSG13_1P_512x32_c2_bm_bist.v
