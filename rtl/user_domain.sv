@@ -173,7 +173,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
   logic [NumSramBanks-1:0] bank_double_err;
 
-  for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_banks
+  for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
     
     logic [63:0] sram_wdata_64;
     logic [63:0] sram_rdata_64;
