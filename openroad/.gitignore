@@ -1,6 +1,6 @@
 *.log
 #save
-#reports
+reports
 logs
 #out
 IHP_rcx_patterns.rules

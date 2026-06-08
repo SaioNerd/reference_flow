@@ -76,7 +76,8 @@
 /klayout/start_klayout
 #openroad
 #/openroad/out
-#/openroad/save
+/openroad/save
+/openroad/reports
 #/openroad/src
 #yosys
 #/yosys/out
