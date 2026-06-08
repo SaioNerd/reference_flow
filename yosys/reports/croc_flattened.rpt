@@ -1,4 +1,4 @@
-33. Printing statistics.
+34. Printing statistics.
 
 === cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst ===
 
@@ -410,10 +410,10 @@
 
         +----------Local Count, excluding submodules.
         | 
-     3977 wires
-    46098 wire bits
-     1338 public wires
-    20233 public wire bits
+     3969 wires
+    45994 wire bits
+     1330 public wires
+    20129 public wire bits
        52 ports
        52 port bits
      4898 cells
@@ -656,10 +656,10 @@
 
         +----------Count including submodules.
         | 
-     4589 wires
-    47138 wire bits
-     1684 public wires
-    20967 public wire bits
+     4581 wires
+    47034 wire bits
+     1676 public wires
+    20863 public wire bits
       280 ports
       596 port bits
         - memories

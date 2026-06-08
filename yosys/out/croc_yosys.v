@@ -197008,7 +197008,7 @@ module \tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_
   );
 endmodule
 
-module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_, wdata_i_6_
+module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_, wdata_i_6_
 , wdata_i_7_, wdata_i_8_, wdata_i_9_, wdata_i_10_, wdata_i_11_, wdata_i_12_, wdata_i_13_, wdata_i_14_, wdata_i_15_, wdata_i_16_, wdata_i_17_, wdata_i_18_, wdata_i_19_, wdata_i_20_, wdata_i_21_, wdata_i_22_, wdata_i_23_, wdata_i_24_, wdata_i_25_, wdata_i_26_, wdata_i_27_
 , wdata_i_28_, wdata_i_29_, wdata_i_30_, wdata_i_31_, wdata_i_32_, wdata_i_33_, wdata_i_34_, wdata_i_35_, wdata_i_36_, wdata_i_37_, wdata_i_38_, wdata_i_39_, wdata_i_40_, wdata_i_41_, wdata_i_42_, wdata_i_43_, wdata_i_44_, wdata_i_45_, wdata_i_46_, wdata_i_47_, wdata_i_48_
 , wdata_i_49_, wdata_i_50_, wdata_i_51_, wdata_i_52_, wdata_i_53_, wdata_i_54_, wdata_i_55_, wdata_i_56_, wdata_i_57_, wdata_i_58_, wdata_i_59_, wdata_i_60_, wdata_i_61_, wdata_i_62_, wdata_i_63_, be_i_0_, be_i_1_, be_i_2_, be_i_3_, be_i_4_, be_i_5_
@@ -197463,7 +197463,7 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram (clk_i
   assign impl_o = _0_;
 endmodule
 
-module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_, wdata_i_6_
+module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_, wdata_i_6_
 , wdata_i_7_, wdata_i_8_, wdata_i_9_, wdata_i_10_, wdata_i_11_, wdata_i_12_, wdata_i_13_, wdata_i_14_, wdata_i_15_, wdata_i_16_, wdata_i_17_, wdata_i_18_, wdata_i_19_, wdata_i_20_, wdata_i_21_, wdata_i_22_, wdata_i_23_, wdata_i_24_, wdata_i_25_, wdata_i_26_, wdata_i_27_
 , wdata_i_28_, wdata_i_29_, wdata_i_30_, wdata_i_31_, wdata_i_32_, wdata_i_33_, wdata_i_34_, wdata_i_35_, wdata_i_36_, wdata_i_37_, wdata_i_38_, wdata_i_39_, wdata_i_40_, wdata_i_41_, wdata_i_42_, wdata_i_43_, wdata_i_44_, wdata_i_45_, wdata_i_46_, wdata_i_47_, wdata_i_48_
 , wdata_i_49_, wdata_i_50_, wdata_i_51_, wdata_i_52_, wdata_i_53_, wdata_i_54_, wdata_i_55_, wdata_i_56_, wdata_i_57_, wdata_i_58_, wdata_i_59_, wdata_i_60_, wdata_i_61_, wdata_i_62_, wdata_i_63_, be_i_0_, be_i_1_, be_i_2_, be_i_3_, be_i_4_, be_i_5_
@@ -199146,174 +199146,174 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire all_user_sbr_obi_req_76_;
   wire all_user_sbr_obi_req_77_;
   wire all_user_sbr_obi_req_78_;
-  wire \gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_0_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_10_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_11_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_12_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_13_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_14_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_15_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_16_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_17_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_18_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_19_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_1_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_20_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_21_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_22_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_23_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_24_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_25_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_26_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_27_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_28_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_29_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_2_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_30_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_31_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_32_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_33_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_34_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_35_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_36_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_37_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_38_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_39_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_3_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_40_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_41_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_42_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_43_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_44_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_45_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_46_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_47_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_48_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_49_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_4_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_50_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_51_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_52_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_53_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_54_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_55_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_56_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_57_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_58_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_59_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_5_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_60_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_61_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_62_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_63_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_6_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_7_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_8_ ;
-  wire \gen_sram_banks[0].sram_rdata_64_9_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_10_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_11_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_12_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_8_ ;
-  wire \gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_9_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_0_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_10_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_11_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_12_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_13_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_14_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_15_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_16_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_17_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_18_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_19_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_1_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_20_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_21_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_22_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_23_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_24_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_25_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_26_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_27_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_28_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_29_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_2_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_30_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_31_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_32_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_33_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_34_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_35_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_36_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_37_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_38_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_39_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_3_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_40_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_41_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_42_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_43_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_44_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_45_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_46_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_47_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_48_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_49_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_4_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_50_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_51_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_52_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_53_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_54_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_55_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_56_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_57_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_58_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_59_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_5_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_60_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_61_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_62_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_63_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_6_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_7_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_8_ ;
-  wire \gen_sram_banks[1].sram_rdata_64_9_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_0_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_10_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_11_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_12_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_13_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_14_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_15_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_16_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_17_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_18_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_19_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_1_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_20_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_21_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_22_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_23_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_24_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_25_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_26_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_27_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_28_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_29_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_2_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_30_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_31_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_32_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_33_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_34_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_35_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_36_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_37_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_38_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_39_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_3_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_40_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_41_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_42_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_43_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_44_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_45_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_46_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_47_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_48_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_49_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_4_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_50_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_51_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_52_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_53_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_54_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_55_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_56_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_57_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_58_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_59_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_5_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_60_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_61_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_62_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_63_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_6_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_7_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_8_ ;
+  wire \gen_sram_bank[0].sram_rdata_64_9_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_10_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_11_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_12_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_8_ ;
+  wire \gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_9_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_0_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_10_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_11_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_12_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_13_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_14_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_15_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_16_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_17_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_18_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_19_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_1_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_20_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_21_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_22_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_23_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_24_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_25_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_26_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_27_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_28_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_29_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_2_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_30_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_31_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_32_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_33_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_34_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_35_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_36_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_37_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_38_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_39_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_3_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_40_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_41_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_42_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_43_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_44_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_45_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_46_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_47_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_48_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_49_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_4_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_50_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_51_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_52_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_53_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_54_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_55_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_56_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_57_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_58_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_59_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_5_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_60_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_61_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_62_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_63_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_6_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_7_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_8_ ;
+  wire \gen_sram_bank[1].sram_rdata_64_9_ ;
   wire \i_obi_demux.i_counter.overflow_o ;
   wire \i_obi_demux.i_counter.q_o ;
   wire \i_obi_demux.mgr_ports_rsp_i_39_ ;
@@ -199471,7 +199471,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _379_ (
     .A(_022_),
     .B(_023_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_10_ )
   );
   XOR2X2 _380_ (
     .A(sram_wdata_i_5_),
@@ -199482,7 +199482,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_1_),
     .B(sram_wdata_i_3_),
     .C(_024_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_11_ )
   );
   XOR2X2 _382_ (
     .A(sram_wdata_i_5_),
@@ -199493,7 +199493,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_7_),
     .B(sram_wdata_i_4_),
     .C(_025_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_12_ )
   );
   XOR2X2 _384_ (
     .A(sram_wdata_i_1_),
@@ -199504,7 +199504,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_022_),
     .B(_025_),
     .C(_026_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_8_ )
   );
   XOR2X2 _386_ (
     .A(sram_wdata_i_2_),
@@ -199514,7 +199514,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _387_ (
     .A(_023_),
     .B(_027_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_9_ )
   );
   XOR2X2 _388_ (
     .A(sram_wdata_i_12_),
@@ -199530,7 +199530,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _390_ (
     .A(_028_),
     .B(_029_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_10_ )
   );
   XOR2X2 _391_ (
     .A(sram_wdata_i_13_),
@@ -199545,7 +199545,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XNOR2X1 _393_ (
     .A(_030_),
     .B(_031_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_11_ )
   );
   XOR2X2 _394_ (
     .A(sram_wdata_i_15_),
@@ -199556,7 +199556,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_13_),
     .B(sram_wdata_i_12_),
     .C(_032_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_12_ )
   );
   XOR2X2 _396_ (
     .A(sram_wdata_i_10_),
@@ -199567,13 +199567,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_028_),
     .B(_030_),
     .C(_033_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _398_ (
     .A(sram_wdata_i_8_),
     .B(_031_),
     .C(_032_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_9_ )
   );
   XOR2X2 _399_ (
     .A(sram_wdata_i_23_),
@@ -199589,7 +199589,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_16_),
     .B(_034_),
     .C(_035_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_10_ )
   );
   XOR2X2 _402_ (
     .A(sram_wdata_i_21_),
@@ -199600,7 +199600,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_22_),
     .B(sram_wdata_i_19_),
     .C(_036_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_11_ )
   );
   XOR2X2 _404_ (
     .A(sram_wdata_i_21_),
@@ -199611,7 +199611,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_18_),
     .B(sram_wdata_i_20_),
     .C(_037_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_12_ )
   );
   XOR2X2 _406_ (
     .A(sram_wdata_i_18_),
@@ -199622,13 +199622,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_035_),
     .B(_036_),
     .C(_038_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _408_ (
     .A(sram_wdata_i_17_),
     .B(_034_),
     .C(_038_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_9_ )
   );
   XOR2X2 _409_ (
     .A(sram_wdata_i_30_),
@@ -199644,7 +199644,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_31_),
     .B(_039_),
     .C(_040_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_10_ )
   );
   XOR2X2 _412_ (
     .A(sram_wdata_i_29_),
@@ -199654,7 +199654,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XNOR2X1 _413_ (
     .A(_039_),
     .B(_041_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_11_ )
   );
   XOR2X2 _414_ (
     .A(sram_wdata_i_31_),
@@ -199665,7 +199665,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_29_),
     .B(sram_wdata_i_28_),
     .C(_042_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_12_ )
   );
   XOR2X2 _416_ (
     .A(sram_wdata_i_26_),
@@ -199676,7 +199676,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_040_),
     .B(_041_),
     .C(_043_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _418_ (
     .A(sram_wdata_i_30_),
@@ -199687,7 +199687,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _419_ (
     .A(_042_),
     .B(_044_),
-    .Y(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_9_ )
   );
   XOR2X2 _420_ (
     .A(sram_wdata_i_39_),
@@ -199703,7 +199703,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_32_),
     .B(_045_),
     .C(_046_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_10_ )
   );
   XOR2X2 _423_ (
     .A(sram_wdata_i_37_),
@@ -199714,7 +199714,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_38_),
     .B(sram_wdata_i_35_),
     .C(_047_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_11_ )
   );
   XOR2X2 _425_ (
     .A(sram_wdata_i_37_),
@@ -199725,7 +199725,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_34_),
     .B(sram_wdata_i_36_),
     .C(_048_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_12_ )
   );
   XOR2X2 _427_ (
     .A(sram_wdata_i_34_),
@@ -199736,13 +199736,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_046_),
     .B(_047_),
     .C(_049_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _429_ (
     .A(sram_wdata_i_33_),
     .B(_045_),
     .C(_049_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_9_ )
   );
   XOR2X2 _430_ (
     .A(sram_wdata_i_47_),
@@ -199758,7 +199758,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_44_),
     .B(_050_),
     .C(_051_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_10_ )
   );
   XOR2X2 _433_ (
     .A(sram_wdata_i_45_),
@@ -199769,7 +199769,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_46_),
     .B(sram_wdata_i_43_),
     .C(_052_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_11_ )
   );
   XNOR2X1 _435_ (
     .A(sram_wdata_i_42_),
@@ -199784,7 +199784,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _437_ (
     .A(_053_),
     .B(_054_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_12_ )
   );
   XOR2X2 _438_ (
     .A(_052_),
@@ -199794,7 +199794,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _439_ (
     .A(_051_),
     .B(_055_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _440_ (
     .A(sram_wdata_i_40_),
@@ -199805,7 +199805,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _441_ (
     .A(_050_),
     .B(_056_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_9_ )
   );
   XOR2X2 _442_ (
     .A(sram_wdata_i_55_),
@@ -199821,7 +199821,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_54_),
     .B(_057_),
     .C(_058_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_10_ )
   );
   XOR2X2 _445_ (
     .A(sram_wdata_i_54_),
@@ -199832,7 +199832,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_53_),
     .B(sram_wdata_i_51_),
     .C(_059_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_11_ )
   );
   XOR2X2 _447_ (
     .A(sram_wdata_i_53_),
@@ -199842,7 +199842,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XNOR2X1 _448_ (
     .A(_057_),
     .B(_060_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_12_ )
   );
   XOR2X2 _449_ (
     .A(sram_wdata_i_52_),
@@ -199853,7 +199853,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_058_),
     .B(_060_),
     .C(_061_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _451_ (
     .A(sram_wdata_i_55_),
@@ -199864,7 +199864,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   XOR2X2 _452_ (
     .A(_059_),
     .B(_062_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_9_ )
   );
   XOR2X2 _453_ (
     .A(sram_wdata_i_63_),
@@ -199880,7 +199880,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_56_),
     .B(_063_),
     .C(_064_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_10_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_10_ )
   );
   XOR2X2 _456_ (
     .A(sram_wdata_i_61_),
@@ -199891,7 +199891,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_62_),
     .B(sram_wdata_i_59_),
     .C(_065_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_11_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_11_ )
   );
   XOR2X2 _458_ (
     .A(sram_wdata_i_61_),
@@ -199902,7 +199902,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(sram_wdata_i_58_),
     .B(sram_wdata_i_60_),
     .C(_066_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_12_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_12_ )
   );
   XOR2X2 _460_ (
     .A(sram_wdata_i_58_),
@@ -199913,13 +199913,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .A(_064_),
     .B(_065_),
     .C(_067_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_8_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_8_ )
   );
   XNOR3X1 _462_ (
     .A(sram_wdata_i_57_),
     .B(_063_),
     .C(_067_),
-    .Y(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_9_ )
+    .Y(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_9_ )
   );
   NOR2X1 _463_ (
     .A(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
@@ -200138,14 +200138,14 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_007_)
   );
   XOR2X2 _501_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_42_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_40_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_42_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_40_ ),
     .Y(_097_)
   );
   XNOR3X1 _502_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_44_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_45_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_50_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_44_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_45_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_50_ ),
     .Y(_098_)
   );
   XOR2X2 _503_ (
@@ -200154,14 +200154,14 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_099_)
   );
   XOR2X2 _504_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_44_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_43_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_44_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_43_ ),
     .Y(_100_)
   );
   XNOR3X1 _505_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_46_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_51_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_41_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_46_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_51_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_41_ ),
     .Y(_101_)
   );
   XOR2X2 _506_ (
@@ -200175,19 +200175,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_103_)
   );
   XNOR2X1 _508_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_39_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_42_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_39_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_42_ ),
     .Y(_104_)
   );
   XOR2X2 _509_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_40_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_41_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_40_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_41_ ),
     .Y(_105_)
   );
   XNOR3X1 _510_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_44_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_47_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_43_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_44_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_47_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_43_ ),
     .Y(_106_)
   );
   XNOR3X1 _511_ (
@@ -200197,13 +200197,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_107_)
   );
   XOR2X2 _512_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_46_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_45_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_46_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_45_ ),
     .Y(_108_)
   );
   XOR2X2 _513_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_49_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_43_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_49_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_43_ ),
     .Y(_109_)
   );
   XNOR3X1 _514_ (
@@ -200213,8 +200213,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_110_)
   );
   XNOR2X1 _515_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_48_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_39_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_48_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_39_ ),
     .Y(_111_)
   );
   XNOR3X1 _516_ (
@@ -200235,7 +200235,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_114_)
   );
   XOR2X1 _519_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_46_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_46_ ),
     .B(_114_),
     .Y(sram_rdata_o_63_)
   );
@@ -200250,23 +200250,23 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_116_)
   );
   XOR2X1 _522_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_45_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_45_ ),
     .B(_116_),
     .Y(sram_rdata_o_62_)
   );
   XOR2X2 _523_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_33_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_30_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_33_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_30_ ),
     .Y(_117_)
   );
   XOR2X2 _524_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_32_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_26_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_32_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_26_ ),
     .Y(_118_)
   );
   XOR2X2 _525_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_36_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_29_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_36_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_29_ ),
     .Y(_119_)
   );
   XNOR3X1 _526_ (
@@ -200276,19 +200276,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_120_)
   );
   XOR2X2 _527_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_31_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_31_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_28_ ),
     .Y(_121_)
   );
   XOR2X2 _528_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_29_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_27_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_29_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_27_ ),
     .Y(_122_)
   );
   XNOR3X1 _529_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_34_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_26_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_30_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_34_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_26_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_30_ ),
     .Y(_123_)
   );
   XNOR3X1 _530_ (
@@ -200298,15 +200298,15 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_124_)
   );
   XNOR3X1 _531_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_38_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_38_ ),
     .B(_117_),
     .C(_121_),
     .Y(_125_)
   );
   XNOR3X1 _532_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_31_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_32_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_37_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_31_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_32_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_37_ ),
     .Y(_126_)
   );
   XOR2X2 _533_ (
@@ -200315,13 +200315,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_127_)
   );
   XOR2X2 _534_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_33_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_33_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_28_ ),
     .Y(_128_)
   );
   XNOR2X1 _535_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_35_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_27_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_35_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_27_ ),
     .Y(_129_)
   );
   XNOR3X1 _536_ (
@@ -200343,7 +200343,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_132_)
   );
   XOR2X1 _539_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_31_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_31_ ),
     .B(_132_),
     .Y(sram_rdata_o_53_)
   );
@@ -200353,8 +200353,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_133_)
   );
   XNOR2X1 _541_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_31_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_31_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_28_ ),
     .Y(_134_)
   );
   XNOR3X1 _542_ (
@@ -200375,7 +200375,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_137_)
   );
   XOR2X2 _545_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_30_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_30_ ),
     .B(_137_),
     .Y(sram_rdata_o_52_)
   );
@@ -200390,7 +200390,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_139_)
   );
   XOR2X2 _548_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_29_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_29_ ),
     .B(_139_),
     .Y(sram_rdata_o_51_)
   );
@@ -200406,7 +200406,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_141_)
   );
   XOR2X2 _551_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_28_ ),
     .B(_141_),
     .Y(sram_rdata_o_50_)
   );
@@ -200416,7 +200416,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_142_)
   );
   XOR2X2 _553_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_27_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_27_ ),
     .B(_142_),
     .Y(sram_rdata_o_49_)
   );
@@ -200433,19 +200433,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_144_)
   );
   XOR2X1 _556_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_26_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_26_ ),
     .B(_144_),
     .Y(sram_rdata_o_48_)
   );
   XOR2X2 _557_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_15_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_15_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_17_ ),
     .Y(_145_)
   );
   XNOR3X1 _558_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_18_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_20_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_25_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_18_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_20_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_25_ ),
     .Y(_146_)
   );
   XOR2X2 _559_ (
@@ -200454,18 +200454,18 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_147_)
   );
   XOR2X2 _560_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_20_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_19_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_20_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_19_ ),
     .Y(_148_)
   );
   XOR2X2 _561_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_23_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_23_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_17_ ),
     .Y(_149_)
   );
   XOR2X2 _562_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_13_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_16_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_13_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_16_ ),
     .Y(_150_)
   );
   XNOR3X1 _563_ (
@@ -200475,14 +200475,14 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_151_)
   );
   XNOR2X1 _564_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_18_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_16_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_18_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_16_ ),
     .Y(_152_)
   );
   XNOR3X1 _565_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_19_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_24_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_14_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_19_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_24_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_14_ ),
     .Y(_153_)
   );
   XOR2X1 _566_ (
@@ -200497,19 +200497,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_155_)
   );
   XOR2X2 _568_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_18_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_16_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_18_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_16_ ),
     .Y(_156_)
   );
   XOR2X2 _569_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_13_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_14_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_13_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_14_ ),
     .Y(_157_)
   );
   XNOR3X1 _570_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_21_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_15_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_21_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_15_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_17_ ),
     .Y(_158_)
   );
   XNOR3X1 _571_ (
@@ -200519,8 +200519,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_159_)
   );
   XOR2X2 _572_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_22_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_15_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_22_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_15_ ),
     .Y(_160_)
   );
   XNOR3X1 _573_ (
@@ -200540,7 +200540,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_163_)
   );
   XOR2X1 _576_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_20_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_20_ ),
     .B(_163_),
     .Y(sram_rdata_o_47_)
   );
@@ -200556,7 +200556,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_165_)
   );
   XOR2X1 _579_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_19_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_19_ ),
     .B(_165_),
     .Y(sram_rdata_o_46_)
   );
@@ -200573,7 +200573,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_167_)
   );
   XOR2X1 _582_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_18_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_18_ ),
     .B(_167_),
     .Y(sram_rdata_o_45_)
   );
@@ -200584,13 +200584,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_168_)
   );
   XOR2X1 _584_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_17_ ),
     .B(_168_),
     .Y(sram_rdata_o_44_)
   );
   XOR2X2 _585_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_39_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_42_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_39_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_42_ ),
     .Y(_169_)
   );
   XNOR3X1 _586_ (
@@ -200612,7 +200612,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_172_)
   );
   XOR2X1 _589_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_44_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_44_ ),
     .B(_172_),
     .Y(sram_rdata_o_61_)
   );
@@ -200622,7 +200622,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_173_)
   );
   XOR2X1 _591_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_16_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_16_ ),
     .B(_173_),
     .Y(sram_rdata_o_43_)
   );
@@ -200645,7 +200645,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_176_)
   );
   XOR2X1 _595_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_15_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_15_ ),
     .B(_176_),
     .Y(sram_rdata_o_42_)
   );
@@ -200662,7 +200662,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_178_)
   );
   XOR2X1 _598_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_14_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_14_ ),
     .B(_178_),
     .Y(sram_rdata_o_41_)
   );
@@ -200672,19 +200672,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_179_)
   );
   XOR2X1 _600_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_13_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_13_ ),
     .B(_179_),
     .Y(sram_rdata_o_40_)
   );
   XOR2X2 _601_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_6_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_1_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_6_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_1_ ),
     .Y(_180_)
   );
   XNOR3X1 _602_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_5_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_11_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_3_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_5_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_11_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_3_ ),
     .Y(_181_)
   );
   XOR2X2 _603_ (
@@ -200693,17 +200693,17 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_182_)
   );
   XOR2X2 _604_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_7_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_2_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_7_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_2_ ),
     .Y(_183_)
   );
   XOR2X2 _605_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_5_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_5_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_4_ ),
     .Y(_184_)
   );
   XNOR3X1 _606_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_12_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_12_ ),
     .B(_183_),
     .C(_184_),
     .Y(_185_)
@@ -200714,14 +200714,14 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_186_)
   );
   XOR2X2 _608_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_0_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_3_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_0_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_3_ ),
     .Y(_187_)
   );
   XNOR3X1 _609_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_8_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_1_ ),
-    .C(\gen_sram_banks[1].sram_rdata_64_2_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_8_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_1_ ),
+    .C(\gen_sram_bank[1].sram_rdata_64_2_ ),
     .Y(_188_)
   );
   XNOR3X1 _610_ (
@@ -200731,13 +200731,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_189_)
   );
   XOR2X2 _611_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_7_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_7_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_4_ ),
     .Y(_190_)
   );
   XOR2X2 _612_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_6_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_10_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_6_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_10_ ),
     .Y(_191_)
   );
   XNOR3X1 _613_ (
@@ -200747,8 +200747,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_192_)
   );
   XOR2X2 _614_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_9_ ),
-    .B(\gen_sram_banks[1].sram_rdata_64_0_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_9_ ),
+    .B(\gen_sram_bank[1].sram_rdata_64_0_ ),
     .Y(_193_)
   );
   XNOR3X1 _615_ (
@@ -200769,7 +200769,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_196_)
   );
   XOR2X1 _618_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_7_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_7_ ),
     .B(_196_),
     .Y(sram_rdata_o_39_)
   );
@@ -200784,7 +200784,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_198_)
   );
   XOR2X2 _621_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_6_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_6_ ),
     .B(_198_),
     .Y(sram_rdata_o_38_)
   );
@@ -200801,7 +200801,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_200_)
   );
   XOR2X1 _624_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_5_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_5_ ),
     .B(_200_),
     .Y(sram_rdata_o_37_)
   );
@@ -200817,7 +200817,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_202_)
   );
   XOR2X1 _627_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_4_ ),
     .B(_202_),
     .Y(sram_rdata_o_36_)
   );
@@ -200827,7 +200827,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_203_)
   );
   XOR2X2 _629_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_3_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_3_ ),
     .B(_203_),
     .Y(sram_rdata_o_35_)
   );
@@ -200843,7 +200843,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_205_)
   );
   XOR2X2 _632_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_2_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_2_ ),
     .B(_205_),
     .Y(sram_rdata_o_34_)
   );
@@ -200859,7 +200859,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_207_)
   );
   XOR2X2 _635_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_43_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_43_ ),
     .B(_207_),
     .Y(sram_rdata_o_60_)
   );
@@ -200869,7 +200869,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_208_)
   );
   XOR2X2 _637_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_1_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_1_ ),
     .B(_208_),
     .Y(sram_rdata_o_33_)
   );
@@ -200886,19 +200886,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_210_)
   );
   XOR2X1 _640_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_0_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_0_ ),
     .B(_210_),
     .Y(sram_rdata_o_32_)
   );
   XNOR2X2 _641_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_44_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_42_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_44_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_42_ ),
     .Y(_211_)
   );
   XNOR3X1 _642_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_45_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_50_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_40_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_45_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_50_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_40_ ),
     .Y(_212_)
   );
   XNOR2X2 _643_ (
@@ -200907,18 +200907,18 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_213_)
   );
   XOR2X2 _644_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_39_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_40_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_39_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_40_ ),
     .Y(_214_)
   );
   BUFX6 _645_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_41_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_41_ ),
     .Y(_215_)
   );
   XNOR3X1 _646_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_47_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_47_ ),
     .B(_215_),
-    .C(\gen_sram_banks[0].sram_rdata_64_43_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_43_ ),
     .Y(_216_)
   );
   XNOR3X2 _647_ (
@@ -200928,12 +200928,12 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_217_)
   );
   XOR2X2 _648_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_46_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_45_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_46_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_45_ ),
     .Y(_218_)
   );
   XOR2X2 _649_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_48_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_48_ ),
     .B(_215_),
     .Y(_219_)
   );
@@ -200950,13 +200950,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   );
   XOR2X2 _652_ (
     .A(_215_),
-    .B(\gen_sram_banks[0].sram_rdata_64_43_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_43_ ),
     .Y(_222_)
   );
   XNOR3X1 _653_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_44_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_46_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_51_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_44_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_46_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_51_ ),
     .Y(_223_)
   );
   XOR2X2 _654_ (
@@ -200965,13 +200965,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_224_)
   );
   XOR2X2 _655_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_49_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_43_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_49_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_43_ ),
     .Y(_225_)
   );
   XOR2X2 _656_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_39_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_42_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_39_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_42_ ),
     .Y(_226_)
   );
   XNOR3X1 _657_ (
@@ -200992,7 +200992,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_229_)
   );
   XOR2X1 _660_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_46_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_46_ ),
     .B(_229_),
     .Y(sram_rdata_o_31_)
   );
@@ -201013,12 +201013,12 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_232_)
   );
   XOR2X1 _664_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_45_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_45_ ),
     .B(_232_),
     .Y(sram_rdata_o_30_)
   );
   XNOR2X1 _665_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_48_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_48_ ),
     .B(_215_),
     .Y(_233_)
   );
@@ -201041,7 +201041,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_236_)
   );
   XOR2X1 _669_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_44_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_44_ ),
     .B(_236_),
     .Y(sram_rdata_o_29_)
   );
@@ -201053,7 +201053,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_237_)
   );
   XOR2X1 _671_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_43_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_43_ ),
     .B(_237_),
     .Y(sram_rdata_o_28_)
   );
@@ -201063,7 +201063,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_238_)
   );
   XOR2X2 _673_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_42_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_42_ ),
     .B(_238_),
     .Y(sram_rdata_o_27_)
   );
@@ -201097,7 +201097,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_242_)
   );
   XOR2X1 _679_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_40_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_40_ ),
     .B(_242_),
     .Y(sram_rdata_o_25_)
   );
@@ -201107,7 +201107,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_243_)
   );
   XOR2X1 _681_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_39_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_39_ ),
     .B(_243_),
     .Y(sram_rdata_o_24_)
   );
@@ -201117,24 +201117,24 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_244_)
   );
   XOR2X2 _683_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_42_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_42_ ),
     .B(_244_),
     .Y(sram_rdata_o_59_)
   );
   XNOR3X1 _684_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_26_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_29_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_30_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_26_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_29_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_30_ ),
     .Y(_245_)
   );
   XNOR2X1 _685_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_31_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_27_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_31_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_27_ ),
     .Y(_246_)
   );
   XOR2X2 _686_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_34_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_34_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_28_ ),
     .Y(_247_)
   );
   XNOR3X2 _687_ (
@@ -201144,18 +201144,18 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_248_)
   );
   XOR2X2 _688_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_33_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_32_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_33_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_32_ ),
     .Y(_249_)
   );
   XOR2X2 _689_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_35_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_35_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_28_ ),
     .Y(_250_)
   );
   XOR2X1 _690_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_26_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_27_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_26_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_27_ ),
     .Y(_251_)
   );
   XNOR3X1 _691_ (
@@ -201170,32 +201170,32 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_253_)
   );
   XNOR2X1 _693_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_33_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_32_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_33_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_32_ ),
     .Y(_254_)
   );
   XNOR3X2 _694_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_36_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_36_ ),
     .B(_245_),
     .C(_254_),
     .Y(_255_)
   );
   XNOR3X1 _695_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_31_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_33_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_38_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_31_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_33_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_38_ ),
     .Y(_256_)
   );
   XNOR3X1 _696_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_28_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_30_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_28_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_30_ ),
     .C(_256_),
     .Y(_257_)
   );
   XNOR3X1 _697_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_32_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_37_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_29_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_32_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_37_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_29_ ),
     .Y(_258_)
   );
   XNOR2X2 _698_ (
@@ -201215,7 +201215,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_261_)
   );
   XOR2X1 _701_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_33_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_33_ ),
     .B(_261_),
     .Y(sram_rdata_o_23_)
   );
@@ -201231,7 +201231,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_263_)
   );
   XOR2X1 _704_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_32_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_32_ ),
     .B(_263_),
     .Y(sram_rdata_o_22_)
   );
@@ -201258,7 +201258,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_267_)
   );
   XOR2X1 _709_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_31_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_31_ ),
     .B(_267_),
     .Y(sram_rdata_o_21_)
   );
@@ -201268,7 +201268,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_268_)
   );
   XOR2X1 _711_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_30_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_30_ ),
     .B(_268_),
     .Y(sram_rdata_o_20_)
   );
@@ -201278,7 +201278,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_269_)
   );
   XOR2X1 _713_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_29_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_29_ ),
     .B(_269_),
     .Y(sram_rdata_o_19_)
   );
@@ -201295,7 +201295,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_271_)
   );
   XOR2X1 _716_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_28_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_28_ ),
     .B(_271_),
     .Y(sram_rdata_o_18_)
   );
@@ -201306,7 +201306,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_272_)
   );
   XOR2X1 _718_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_27_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_27_ ),
     .B(_272_),
     .Y(sram_rdata_o_17_)
   );
@@ -201322,35 +201322,35 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_274_)
   );
   XOR2X1 _721_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_26_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_26_ ),
     .B(_274_),
     .Y(sram_rdata_o_16_)
   );
   XOR2X2 _722_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_19_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_16_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_19_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_16_ ),
     .Y(_275_)
   );
   XOR2X2 _723_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_18_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_14_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_18_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_14_ ),
     .Y(_276_)
   );
   XNOR3X1 _724_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_24_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_24_ ),
     .B(_275_),
     .C(_276_),
     .Y(_277_)
   );
   XOR2X2 _725_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_20_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_15_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_20_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_15_ ),
     .Y(_278_)
   );
   XNOR3X1 _726_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_18_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_25_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_18_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_25_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_17_ ),
     .Y(_279_)
   );
   XOR2X2 _727_ (
@@ -201364,14 +201364,14 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_281_)
   );
   XOR2X2 _729_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_13_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_13_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_17_ ),
     .Y(_282_)
   );
   XNOR3X1 _730_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_21_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_16_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_15_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_21_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_16_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_15_ ),
     .Y(_283_)
   );
   XNOR3X1 _731_ (
@@ -201381,13 +201381,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_284_)
   );
   XOR2X2 _732_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_19_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_14_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_19_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_14_ ),
     .Y(_285_)
   );
   XOR2X2 _733_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_22_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_13_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_22_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_13_ ),
     .Y(_286_)
   );
   XNOR3X1 _734_ (
@@ -201397,8 +201397,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_287_)
   );
   XOR2X2 _735_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_20_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_23_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_20_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_23_ ),
     .Y(_288_)
   );
   XNOR3X1 _736_ (
@@ -201419,7 +201419,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_291_)
   );
   XOR2X1 _739_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_20_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_20_ ),
     .B(_291_),
     .Y(sram_rdata_o_15_)
   );
@@ -201434,7 +201434,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_293_)
   );
   XOR2X1 _742_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_19_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_19_ ),
     .B(_293_),
     .Y(sram_rdata_o_14_)
   );
@@ -201450,7 +201450,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_295_)
   );
   XOR2X1 _745_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_41_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_41_ ),
     .B(_295_),
     .Y(sram_rdata_o_58_)
   );
@@ -201467,7 +201467,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_297_)
   );
   XOR2X1 _748_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_18_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_18_ ),
     .B(_297_),
     .Y(sram_rdata_o_13_)
   );
@@ -201483,7 +201483,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_299_)
   );
   XOR2X2 _751_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_17_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_17_ ),
     .B(_299_),
     .Y(sram_rdata_o_12_)
   );
@@ -201493,7 +201493,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_300_)
   );
   XOR2X2 _753_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_16_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_16_ ),
     .B(_300_),
     .Y(sram_rdata_o_11_)
   );
@@ -201509,7 +201509,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_302_)
   );
   XOR2X2 _756_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_15_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_15_ ),
     .B(_302_),
     .Y(sram_rdata_o_10_)
   );
@@ -201519,7 +201519,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_303_)
   );
   XOR2X2 _758_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_14_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_14_ ),
     .B(_303_),
     .Y(sram_rdata_o_9_)
   );
@@ -201536,19 +201536,19 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_305_)
   );
   XOR2X1 _761_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_13_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_13_ ),
     .B(_305_),
     .Y(sram_rdata_o_8_)
   );
   XOR2X2 _762_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_6_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_3_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_6_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_3_ ),
     .Y(_306_)
   );
   XNOR3X1 _763_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_5_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_11_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_1_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_5_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_11_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_1_ ),
     .Y(_307_)
   );
   XOR2X2 _764_ (
@@ -201557,14 +201557,14 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_308_)
   );
   XNOR3X1 _765_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_5_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_2_ ),
-    .C(\gen_sram_banks[0].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_5_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_2_ ),
+    .C(\gen_sram_bank[0].sram_rdata_64_4_ ),
     .Y(_309_)
   );
   XOR2X2 _766_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_7_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_12_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_7_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_12_ ),
     .Y(_310_)
   );
   XOR2X1 _767_ (
@@ -201578,13 +201578,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_312_)
   );
   XOR2X2 _769_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_8_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_1_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_8_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_1_ ),
     .Y(_313_)
   );
   XNOR2X1 _770_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_0_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_3_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_0_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_3_ ),
     .Y(_314_)
   );
   XNOR3X2 _771_ (
@@ -201594,18 +201594,18 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_315_)
   );
   XOR2X1 _772_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_7_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_0_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_7_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_0_ ),
     .Y(_316_)
   );
   XOR2X2 _773_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_6_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_2_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_6_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_2_ ),
     .Y(_317_)
   );
   XOR2X2 _774_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_9_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_1_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_9_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_1_ ),
     .Y(_318_)
   );
   XNOR3X1 _775_ (
@@ -201615,8 +201615,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_319_)
   );
   XOR2X2 _776_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_10_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_10_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_4_ ),
     .Y(_320_)
   );
   XNOR3X1 _777_ (
@@ -201637,7 +201637,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_323_)
   );
   XOR2X1 _780_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_7_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_7_ ),
     .B(_323_),
     .Y(sram_rdata_o_7_)
   );
@@ -201652,13 +201652,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_325_)
   );
   XOR2X1 _783_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_6_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_6_ ),
     .B(_325_),
     .Y(sram_rdata_o_6_)
   );
   XNOR2X1 _784_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_10_ ),
-    .B(\gen_sram_banks[0].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_10_ ),
+    .B(\gen_sram_bank[0].sram_rdata_64_4_ ),
     .Y(_326_)
   );
   XNOR3X1 _785_ (
@@ -201680,7 +201680,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_329_)
   );
   XOR2X1 _788_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_5_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_5_ ),
     .B(_329_),
     .Y(sram_rdata_o_5_)
   );
@@ -201696,7 +201696,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_331_)
   );
   XOR2X1 _791_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_4_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_4_ ),
     .B(_331_),
     .Y(sram_rdata_o_4_)
   );
@@ -201706,7 +201706,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_332_)
   );
   XOR2X1 _793_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_40_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_40_ ),
     .B(_332_),
     .Y(sram_rdata_o_57_)
   );
@@ -201716,7 +201716,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_333_)
   );
   XOR2X1 _795_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_3_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_3_ ),
     .B(_333_),
     .Y(sram_rdata_o_3_)
   );
@@ -201732,7 +201732,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_335_)
   );
   XOR2X1 _798_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_2_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_2_ ),
     .B(_335_),
     .Y(sram_rdata_o_2_)
   );
@@ -201742,7 +201742,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_336_)
   );
   XOR2X1 _800_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_1_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_1_ ),
     .B(_336_),
     .Y(sram_rdata_o_1_)
   );
@@ -201759,7 +201759,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_338_)
   );
   XOR2X1 _803_ (
-    .A(\gen_sram_banks[0].sram_rdata_64_0_ ),
+    .A(\gen_sram_bank[0].sram_rdata_64_0_ ),
     .B(_338_),
     .Y(sram_rdata_o_0_)
   );
@@ -201776,7 +201776,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_340_)
   );
   XOR2X1 _806_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_39_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_39_ ),
     .B(_340_),
     .Y(sram_rdata_o_56_)
   );
@@ -201792,7 +201792,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_342_)
   );
   XOR2X1 _809_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_33_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_33_ ),
     .B(_342_),
     .Y(sram_rdata_o_55_)
   );
@@ -201802,7 +201802,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Y(_343_)
   );
   XOR2X2 _811_ (
-    .A(\gen_sram_banks[1].sram_rdata_64_32_ ),
+    .A(\gen_sram_bank[1].sram_rdata_64_32_ ),
     .B(_343_),
     .Y(sram_rdata_o_54_)
   );
@@ -202022,7 +202022,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   TIELO _854_ (
     .Y(_353_)
   );
-  \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram  \gen_sram_banks[0].i_sram  (
+  \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram  \gen_sram_bank[0].i_sram  (
     .addr_i_0_(sram_addr_i_0_),
     .addr_i_1_(sram_addr_i_1_),
     .addr_i_2_(sram_addr_i_2_),
@@ -202098,76 +202098,76 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .be_i_9_(sram_be_i_0_),
     .clk_i(clk_i),
     .impl_i(sram_impl_i),
-    .rdata_o_0_(\gen_sram_banks[0].sram_rdata_64_0_ ),
-    .rdata_o_10_(\gen_sram_banks[0].sram_rdata_64_10_ ),
-    .rdata_o_11_(\gen_sram_banks[0].sram_rdata_64_11_ ),
-    .rdata_o_12_(\gen_sram_banks[0].sram_rdata_64_12_ ),
-    .rdata_o_13_(\gen_sram_banks[0].sram_rdata_64_13_ ),
-    .rdata_o_14_(\gen_sram_banks[0].sram_rdata_64_14_ ),
-    .rdata_o_15_(\gen_sram_banks[0].sram_rdata_64_15_ ),
-    .rdata_o_16_(\gen_sram_banks[0].sram_rdata_64_16_ ),
-    .rdata_o_17_(\gen_sram_banks[0].sram_rdata_64_17_ ),
-    .rdata_o_18_(\gen_sram_banks[0].sram_rdata_64_18_ ),
-    .rdata_o_19_(\gen_sram_banks[0].sram_rdata_64_19_ ),
-    .rdata_o_1_(\gen_sram_banks[0].sram_rdata_64_1_ ),
-    .rdata_o_20_(\gen_sram_banks[0].sram_rdata_64_20_ ),
-    .rdata_o_21_(\gen_sram_banks[0].sram_rdata_64_21_ ),
-    .rdata_o_22_(\gen_sram_banks[0].sram_rdata_64_22_ ),
-    .rdata_o_23_(\gen_sram_banks[0].sram_rdata_64_23_ ),
-    .rdata_o_24_(\gen_sram_banks[0].sram_rdata_64_24_ ),
-    .rdata_o_25_(\gen_sram_banks[0].sram_rdata_64_25_ ),
-    .rdata_o_26_(\gen_sram_banks[0].sram_rdata_64_26_ ),
-    .rdata_o_27_(\gen_sram_banks[0].sram_rdata_64_27_ ),
-    .rdata_o_28_(\gen_sram_banks[0].sram_rdata_64_28_ ),
-    .rdata_o_29_(\gen_sram_banks[0].sram_rdata_64_29_ ),
-    .rdata_o_2_(\gen_sram_banks[0].sram_rdata_64_2_ ),
-    .rdata_o_30_(\gen_sram_banks[0].sram_rdata_64_30_ ),
-    .rdata_o_31_(\gen_sram_banks[0].sram_rdata_64_31_ ),
-    .rdata_o_32_(\gen_sram_banks[0].sram_rdata_64_32_ ),
-    .rdata_o_33_(\gen_sram_banks[0].sram_rdata_64_33_ ),
-    .rdata_o_34_(\gen_sram_banks[0].sram_rdata_64_34_ ),
-    .rdata_o_35_(\gen_sram_banks[0].sram_rdata_64_35_ ),
-    .rdata_o_36_(\gen_sram_banks[0].sram_rdata_64_36_ ),
-    .rdata_o_37_(\gen_sram_banks[0].sram_rdata_64_37_ ),
-    .rdata_o_38_(\gen_sram_banks[0].sram_rdata_64_38_ ),
-    .rdata_o_39_(\gen_sram_banks[0].sram_rdata_64_39_ ),
-    .rdata_o_3_(\gen_sram_banks[0].sram_rdata_64_3_ ),
-    .rdata_o_40_(\gen_sram_banks[0].sram_rdata_64_40_ ),
-    .rdata_o_41_(\gen_sram_banks[0].sram_rdata_64_41_ ),
-    .rdata_o_42_(\gen_sram_banks[0].sram_rdata_64_42_ ),
-    .rdata_o_43_(\gen_sram_banks[0].sram_rdata_64_43_ ),
-    .rdata_o_44_(\gen_sram_banks[0].sram_rdata_64_44_ ),
-    .rdata_o_45_(\gen_sram_banks[0].sram_rdata_64_45_ ),
-    .rdata_o_46_(\gen_sram_banks[0].sram_rdata_64_46_ ),
-    .rdata_o_47_(\gen_sram_banks[0].sram_rdata_64_47_ ),
-    .rdata_o_48_(\gen_sram_banks[0].sram_rdata_64_48_ ),
-    .rdata_o_49_(\gen_sram_banks[0].sram_rdata_64_49_ ),
-    .rdata_o_4_(\gen_sram_banks[0].sram_rdata_64_4_ ),
-    .rdata_o_50_(\gen_sram_banks[0].sram_rdata_64_50_ ),
-    .rdata_o_51_(\gen_sram_banks[0].sram_rdata_64_51_ ),
-    .rdata_o_52_(\gen_sram_banks[0].sram_rdata_64_52_ ),
-    .rdata_o_53_(\gen_sram_banks[0].sram_rdata_64_53_ ),
-    .rdata_o_54_(\gen_sram_banks[0].sram_rdata_64_54_ ),
-    .rdata_o_55_(\gen_sram_banks[0].sram_rdata_64_55_ ),
-    .rdata_o_56_(\gen_sram_banks[0].sram_rdata_64_56_ ),
-    .rdata_o_57_(\gen_sram_banks[0].sram_rdata_64_57_ ),
-    .rdata_o_58_(\gen_sram_banks[0].sram_rdata_64_58_ ),
-    .rdata_o_59_(\gen_sram_banks[0].sram_rdata_64_59_ ),
-    .rdata_o_5_(\gen_sram_banks[0].sram_rdata_64_5_ ),
-    .rdata_o_60_(\gen_sram_banks[0].sram_rdata_64_60_ ),
-    .rdata_o_61_(\gen_sram_banks[0].sram_rdata_64_61_ ),
-    .rdata_o_62_(\gen_sram_banks[0].sram_rdata_64_62_ ),
-    .rdata_o_63_(\gen_sram_banks[0].sram_rdata_64_63_ ),
-    .rdata_o_6_(\gen_sram_banks[0].sram_rdata_64_6_ ),
-    .rdata_o_7_(\gen_sram_banks[0].sram_rdata_64_7_ ),
-    .rdata_o_8_(\gen_sram_banks[0].sram_rdata_64_8_ ),
-    .rdata_o_9_(\gen_sram_banks[0].sram_rdata_64_9_ ),
+    .rdata_o_0_(\gen_sram_bank[0].sram_rdata_64_0_ ),
+    .rdata_o_10_(\gen_sram_bank[0].sram_rdata_64_10_ ),
+    .rdata_o_11_(\gen_sram_bank[0].sram_rdata_64_11_ ),
+    .rdata_o_12_(\gen_sram_bank[0].sram_rdata_64_12_ ),
+    .rdata_o_13_(\gen_sram_bank[0].sram_rdata_64_13_ ),
+    .rdata_o_14_(\gen_sram_bank[0].sram_rdata_64_14_ ),
+    .rdata_o_15_(\gen_sram_bank[0].sram_rdata_64_15_ ),
+    .rdata_o_16_(\gen_sram_bank[0].sram_rdata_64_16_ ),
+    .rdata_o_17_(\gen_sram_bank[0].sram_rdata_64_17_ ),
+    .rdata_o_18_(\gen_sram_bank[0].sram_rdata_64_18_ ),
+    .rdata_o_19_(\gen_sram_bank[0].sram_rdata_64_19_ ),
+    .rdata_o_1_(\gen_sram_bank[0].sram_rdata_64_1_ ),
+    .rdata_o_20_(\gen_sram_bank[0].sram_rdata_64_20_ ),
+    .rdata_o_21_(\gen_sram_bank[0].sram_rdata_64_21_ ),
+    .rdata_o_22_(\gen_sram_bank[0].sram_rdata_64_22_ ),
+    .rdata_o_23_(\gen_sram_bank[0].sram_rdata_64_23_ ),
+    .rdata_o_24_(\gen_sram_bank[0].sram_rdata_64_24_ ),
+    .rdata_o_25_(\gen_sram_bank[0].sram_rdata_64_25_ ),
+    .rdata_o_26_(\gen_sram_bank[0].sram_rdata_64_26_ ),
+    .rdata_o_27_(\gen_sram_bank[0].sram_rdata_64_27_ ),
+    .rdata_o_28_(\gen_sram_bank[0].sram_rdata_64_28_ ),
+    .rdata_o_29_(\gen_sram_bank[0].sram_rdata_64_29_ ),
+    .rdata_o_2_(\gen_sram_bank[0].sram_rdata_64_2_ ),
+    .rdata_o_30_(\gen_sram_bank[0].sram_rdata_64_30_ ),
+    .rdata_o_31_(\gen_sram_bank[0].sram_rdata_64_31_ ),
+    .rdata_o_32_(\gen_sram_bank[0].sram_rdata_64_32_ ),
+    .rdata_o_33_(\gen_sram_bank[0].sram_rdata_64_33_ ),
+    .rdata_o_34_(\gen_sram_bank[0].sram_rdata_64_34_ ),
+    .rdata_o_35_(\gen_sram_bank[0].sram_rdata_64_35_ ),
+    .rdata_o_36_(\gen_sram_bank[0].sram_rdata_64_36_ ),
+    .rdata_o_37_(\gen_sram_bank[0].sram_rdata_64_37_ ),
+    .rdata_o_38_(\gen_sram_bank[0].sram_rdata_64_38_ ),
+    .rdata_o_39_(\gen_sram_bank[0].sram_rdata_64_39_ ),
+    .rdata_o_3_(\gen_sram_bank[0].sram_rdata_64_3_ ),
+    .rdata_o_40_(\gen_sram_bank[0].sram_rdata_64_40_ ),
+    .rdata_o_41_(\gen_sram_bank[0].sram_rdata_64_41_ ),
+    .rdata_o_42_(\gen_sram_bank[0].sram_rdata_64_42_ ),
+    .rdata_o_43_(\gen_sram_bank[0].sram_rdata_64_43_ ),
+    .rdata_o_44_(\gen_sram_bank[0].sram_rdata_64_44_ ),
+    .rdata_o_45_(\gen_sram_bank[0].sram_rdata_64_45_ ),
+    .rdata_o_46_(\gen_sram_bank[0].sram_rdata_64_46_ ),
+    .rdata_o_47_(\gen_sram_bank[0].sram_rdata_64_47_ ),
+    .rdata_o_48_(\gen_sram_bank[0].sram_rdata_64_48_ ),
+    .rdata_o_49_(\gen_sram_bank[0].sram_rdata_64_49_ ),
+    .rdata_o_4_(\gen_sram_bank[0].sram_rdata_64_4_ ),
+    .rdata_o_50_(\gen_sram_bank[0].sram_rdata_64_50_ ),
+    .rdata_o_51_(\gen_sram_bank[0].sram_rdata_64_51_ ),
+    .rdata_o_52_(\gen_sram_bank[0].sram_rdata_64_52_ ),
+    .rdata_o_53_(\gen_sram_bank[0].sram_rdata_64_53_ ),
+    .rdata_o_54_(\gen_sram_bank[0].sram_rdata_64_54_ ),
+    .rdata_o_55_(\gen_sram_bank[0].sram_rdata_64_55_ ),
+    .rdata_o_56_(\gen_sram_bank[0].sram_rdata_64_56_ ),
+    .rdata_o_57_(\gen_sram_bank[0].sram_rdata_64_57_ ),
+    .rdata_o_58_(\gen_sram_bank[0].sram_rdata_64_58_ ),
+    .rdata_o_59_(\gen_sram_bank[0].sram_rdata_64_59_ ),
+    .rdata_o_5_(\gen_sram_bank[0].sram_rdata_64_5_ ),
+    .rdata_o_60_(\gen_sram_bank[0].sram_rdata_64_60_ ),
+    .rdata_o_61_(\gen_sram_bank[0].sram_rdata_64_61_ ),
+    .rdata_o_62_(\gen_sram_bank[0].sram_rdata_64_62_ ),
+    .rdata_o_63_(\gen_sram_bank[0].sram_rdata_64_63_ ),
+    .rdata_o_6_(\gen_sram_bank[0].sram_rdata_64_6_ ),
+    .rdata_o_7_(\gen_sram_bank[0].sram_rdata_64_7_ ),
+    .rdata_o_8_(\gen_sram_bank[0].sram_rdata_64_8_ ),
+    .rdata_o_9_(\gen_sram_bank[0].sram_rdata_64_9_ ),
     .req_i(sram_req_i_0_),
     .rst_ni(rst_ni),
     .wdata_i_0_(sram_wdata_i_0_),
-    .wdata_i_10_(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_10_ ),
-    .wdata_i_11_(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_11_ ),
-    .wdata_i_12_(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_12_ ),
+    .wdata_i_10_(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_10_ ),
+    .wdata_i_11_(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_11_ ),
+    .wdata_i_12_(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_12_ ),
     .wdata_i_13_(sram_wdata_i_8_),
     .wdata_i_14_(sram_wdata_i_9_),
     .wdata_i_15_(sram_wdata_i_10_),
@@ -202177,11 +202177,11 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_19_(sram_wdata_i_14_),
     .wdata_i_1_(sram_wdata_i_1_),
     .wdata_i_20_(sram_wdata_i_15_),
-    .wdata_i_21_(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_8_ ),
-    .wdata_i_22_(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_9_ ),
-    .wdata_i_23_(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_10_ ),
-    .wdata_i_24_(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_11_ ),
-    .wdata_i_25_(\gen_sram_banks[0].gen_secded_bytes[1].i_encode.encoded_out_12_ ),
+    .wdata_i_21_(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_8_ ),
+    .wdata_i_22_(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_9_ ),
+    .wdata_i_23_(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_10_ ),
+    .wdata_i_24_(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_11_ ),
+    .wdata_i_25_(\gen_sram_bank[0].gen_secded_bytes[1].i_encode.encoded_out_12_ ),
     .wdata_i_26_(sram_wdata_i_16_),
     .wdata_i_27_(sram_wdata_i_17_),
     .wdata_i_28_(sram_wdata_i_18_),
@@ -202191,11 +202191,11 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_31_(sram_wdata_i_21_),
     .wdata_i_32_(sram_wdata_i_22_),
     .wdata_i_33_(sram_wdata_i_23_),
-    .wdata_i_34_(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_8_ ),
-    .wdata_i_35_(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_9_ ),
-    .wdata_i_36_(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_10_ ),
-    .wdata_i_37_(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_11_ ),
-    .wdata_i_38_(\gen_sram_banks[0].gen_secded_bytes[2].i_encode.encoded_out_12_ ),
+    .wdata_i_34_(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_8_ ),
+    .wdata_i_35_(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_9_ ),
+    .wdata_i_36_(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_10_ ),
+    .wdata_i_37_(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_11_ ),
+    .wdata_i_38_(\gen_sram_bank[0].gen_secded_bytes[2].i_encode.encoded_out_12_ ),
     .wdata_i_39_(sram_wdata_i_24_),
     .wdata_i_3_(sram_wdata_i_3_),
     .wdata_i_40_(sram_wdata_i_25_),
@@ -202205,12 +202205,12 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_44_(sram_wdata_i_29_),
     .wdata_i_45_(sram_wdata_i_30_),
     .wdata_i_46_(sram_wdata_i_31_),
-    .wdata_i_47_(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_8_ ),
-    .wdata_i_48_(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_9_ ),
-    .wdata_i_49_(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_10_ ),
+    .wdata_i_47_(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_8_ ),
+    .wdata_i_48_(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_9_ ),
+    .wdata_i_49_(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_10_ ),
     .wdata_i_4_(sram_wdata_i_4_),
-    .wdata_i_50_(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_11_ ),
-    .wdata_i_51_(\gen_sram_banks[0].gen_secded_bytes[3].i_encode.encoded_out_12_ ),
+    .wdata_i_50_(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_11_ ),
+    .wdata_i_51_(\gen_sram_bank[0].gen_secded_bytes[3].i_encode.encoded_out_12_ ),
     .wdata_i_52_(_353_),
     .wdata_i_53_(_353_),
     .wdata_i_54_(_353_),
@@ -202226,11 +202226,11 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_63_(_353_),
     .wdata_i_6_(sram_wdata_i_6_),
     .wdata_i_7_(sram_wdata_i_7_),
-    .wdata_i_8_(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_8_ ),
-    .wdata_i_9_(\gen_sram_banks[0].gen_secded_bytes[0].i_encode.encoded_out_9_ ),
+    .wdata_i_8_(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_8_ ),
+    .wdata_i_9_(\gen_sram_bank[0].gen_secded_bytes[0].i_encode.encoded_out_9_ ),
     .we_i(sram_we_i_0_)
   );
-  \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram  \gen_sram_banks[1].i_sram  (
+  \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram  \gen_sram_bank[1].i_sram  (
     .addr_i_0_(sram_addr_i_9_),
     .addr_i_1_(sram_addr_i_10_),
     .addr_i_2_(sram_addr_i_11_),
@@ -202306,76 +202306,76 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .be_i_9_(sram_be_i_4_),
     .clk_i(clk_i),
     .impl_i(sram_impl_i),
-    .rdata_o_0_(\gen_sram_banks[1].sram_rdata_64_0_ ),
-    .rdata_o_10_(\gen_sram_banks[1].sram_rdata_64_10_ ),
-    .rdata_o_11_(\gen_sram_banks[1].sram_rdata_64_11_ ),
-    .rdata_o_12_(\gen_sram_banks[1].sram_rdata_64_12_ ),
-    .rdata_o_13_(\gen_sram_banks[1].sram_rdata_64_13_ ),
-    .rdata_o_14_(\gen_sram_banks[1].sram_rdata_64_14_ ),
-    .rdata_o_15_(\gen_sram_banks[1].sram_rdata_64_15_ ),
-    .rdata_o_16_(\gen_sram_banks[1].sram_rdata_64_16_ ),
-    .rdata_o_17_(\gen_sram_banks[1].sram_rdata_64_17_ ),
-    .rdata_o_18_(\gen_sram_banks[1].sram_rdata_64_18_ ),
-    .rdata_o_19_(\gen_sram_banks[1].sram_rdata_64_19_ ),
-    .rdata_o_1_(\gen_sram_banks[1].sram_rdata_64_1_ ),
-    .rdata_o_20_(\gen_sram_banks[1].sram_rdata_64_20_ ),
-    .rdata_o_21_(\gen_sram_banks[1].sram_rdata_64_21_ ),
-    .rdata_o_22_(\gen_sram_banks[1].sram_rdata_64_22_ ),
-    .rdata_o_23_(\gen_sram_banks[1].sram_rdata_64_23_ ),
-    .rdata_o_24_(\gen_sram_banks[1].sram_rdata_64_24_ ),
-    .rdata_o_25_(\gen_sram_banks[1].sram_rdata_64_25_ ),
-    .rdata_o_26_(\gen_sram_banks[1].sram_rdata_64_26_ ),
-    .rdata_o_27_(\gen_sram_banks[1].sram_rdata_64_27_ ),
-    .rdata_o_28_(\gen_sram_banks[1].sram_rdata_64_28_ ),
-    .rdata_o_29_(\gen_sram_banks[1].sram_rdata_64_29_ ),
-    .rdata_o_2_(\gen_sram_banks[1].sram_rdata_64_2_ ),
-    .rdata_o_30_(\gen_sram_banks[1].sram_rdata_64_30_ ),
-    .rdata_o_31_(\gen_sram_banks[1].sram_rdata_64_31_ ),
-    .rdata_o_32_(\gen_sram_banks[1].sram_rdata_64_32_ ),
-    .rdata_o_33_(\gen_sram_banks[1].sram_rdata_64_33_ ),
-    .rdata_o_34_(\gen_sram_banks[1].sram_rdata_64_34_ ),
-    .rdata_o_35_(\gen_sram_banks[1].sram_rdata_64_35_ ),
-    .rdata_o_36_(\gen_sram_banks[1].sram_rdata_64_36_ ),
-    .rdata_o_37_(\gen_sram_banks[1].sram_rdata_64_37_ ),
-    .rdata_o_38_(\gen_sram_banks[1].sram_rdata_64_38_ ),
-    .rdata_o_39_(\gen_sram_banks[1].sram_rdata_64_39_ ),
-    .rdata_o_3_(\gen_sram_banks[1].sram_rdata_64_3_ ),
-    .rdata_o_40_(\gen_sram_banks[1].sram_rdata_64_40_ ),
-    .rdata_o_41_(\gen_sram_banks[1].sram_rdata_64_41_ ),
-    .rdata_o_42_(\gen_sram_banks[1].sram_rdata_64_42_ ),
-    .rdata_o_43_(\gen_sram_banks[1].sram_rdata_64_43_ ),
-    .rdata_o_44_(\gen_sram_banks[1].sram_rdata_64_44_ ),
-    .rdata_o_45_(\gen_sram_banks[1].sram_rdata_64_45_ ),
-    .rdata_o_46_(\gen_sram_banks[1].sram_rdata_64_46_ ),
-    .rdata_o_47_(\gen_sram_banks[1].sram_rdata_64_47_ ),
-    .rdata_o_48_(\gen_sram_banks[1].sram_rdata_64_48_ ),
-    .rdata_o_49_(\gen_sram_banks[1].sram_rdata_64_49_ ),
-    .rdata_o_4_(\gen_sram_banks[1].sram_rdata_64_4_ ),
-    .rdata_o_50_(\gen_sram_banks[1].sram_rdata_64_50_ ),
-    .rdata_o_51_(\gen_sram_banks[1].sram_rdata_64_51_ ),
-    .rdata_o_52_(\gen_sram_banks[1].sram_rdata_64_52_ ),
-    .rdata_o_53_(\gen_sram_banks[1].sram_rdata_64_53_ ),
-    .rdata_o_54_(\gen_sram_banks[1].sram_rdata_64_54_ ),
-    .rdata_o_55_(\gen_sram_banks[1].sram_rdata_64_55_ ),
-    .rdata_o_56_(\gen_sram_banks[1].sram_rdata_64_56_ ),
-    .rdata_o_57_(\gen_sram_banks[1].sram_rdata_64_57_ ),
-    .rdata_o_58_(\gen_sram_banks[1].sram_rdata_64_58_ ),
-    .rdata_o_59_(\gen_sram_banks[1].sram_rdata_64_59_ ),
-    .rdata_o_5_(\gen_sram_banks[1].sram_rdata_64_5_ ),
-    .rdata_o_60_(\gen_sram_banks[1].sram_rdata_64_60_ ),
-    .rdata_o_61_(\gen_sram_banks[1].sram_rdata_64_61_ ),
-    .rdata_o_62_(\gen_sram_banks[1].sram_rdata_64_62_ ),
-    .rdata_o_63_(\gen_sram_banks[1].sram_rdata_64_63_ ),
-    .rdata_o_6_(\gen_sram_banks[1].sram_rdata_64_6_ ),
-    .rdata_o_7_(\gen_sram_banks[1].sram_rdata_64_7_ ),
-    .rdata_o_8_(\gen_sram_banks[1].sram_rdata_64_8_ ),
-    .rdata_o_9_(\gen_sram_banks[1].sram_rdata_64_9_ ),
+    .rdata_o_0_(\gen_sram_bank[1].sram_rdata_64_0_ ),
+    .rdata_o_10_(\gen_sram_bank[1].sram_rdata_64_10_ ),
+    .rdata_o_11_(\gen_sram_bank[1].sram_rdata_64_11_ ),
+    .rdata_o_12_(\gen_sram_bank[1].sram_rdata_64_12_ ),
+    .rdata_o_13_(\gen_sram_bank[1].sram_rdata_64_13_ ),
+    .rdata_o_14_(\gen_sram_bank[1].sram_rdata_64_14_ ),
+    .rdata_o_15_(\gen_sram_bank[1].sram_rdata_64_15_ ),
+    .rdata_o_16_(\gen_sram_bank[1].sram_rdata_64_16_ ),
+    .rdata_o_17_(\gen_sram_bank[1].sram_rdata_64_17_ ),
+    .rdata_o_18_(\gen_sram_bank[1].sram_rdata_64_18_ ),
+    .rdata_o_19_(\gen_sram_bank[1].sram_rdata_64_19_ ),
+    .rdata_o_1_(\gen_sram_bank[1].sram_rdata_64_1_ ),
+    .rdata_o_20_(\gen_sram_bank[1].sram_rdata_64_20_ ),
+    .rdata_o_21_(\gen_sram_bank[1].sram_rdata_64_21_ ),
+    .rdata_o_22_(\gen_sram_bank[1].sram_rdata_64_22_ ),
+    .rdata_o_23_(\gen_sram_bank[1].sram_rdata_64_23_ ),
+    .rdata_o_24_(\gen_sram_bank[1].sram_rdata_64_24_ ),
+    .rdata_o_25_(\gen_sram_bank[1].sram_rdata_64_25_ ),
+    .rdata_o_26_(\gen_sram_bank[1].sram_rdata_64_26_ ),
+    .rdata_o_27_(\gen_sram_bank[1].sram_rdata_64_27_ ),
+    .rdata_o_28_(\gen_sram_bank[1].sram_rdata_64_28_ ),
+    .rdata_o_29_(\gen_sram_bank[1].sram_rdata_64_29_ ),
+    .rdata_o_2_(\gen_sram_bank[1].sram_rdata_64_2_ ),
+    .rdata_o_30_(\gen_sram_bank[1].sram_rdata_64_30_ ),
+    .rdata_o_31_(\gen_sram_bank[1].sram_rdata_64_31_ ),
+    .rdata_o_32_(\gen_sram_bank[1].sram_rdata_64_32_ ),
+    .rdata_o_33_(\gen_sram_bank[1].sram_rdata_64_33_ ),
+    .rdata_o_34_(\gen_sram_bank[1].sram_rdata_64_34_ ),
+    .rdata_o_35_(\gen_sram_bank[1].sram_rdata_64_35_ ),
+    .rdata_o_36_(\gen_sram_bank[1].sram_rdata_64_36_ ),
+    .rdata_o_37_(\gen_sram_bank[1].sram_rdata_64_37_ ),
+    .rdata_o_38_(\gen_sram_bank[1].sram_rdata_64_38_ ),
+    .rdata_o_39_(\gen_sram_bank[1].sram_rdata_64_39_ ),
+    .rdata_o_3_(\gen_sram_bank[1].sram_rdata_64_3_ ),
+    .rdata_o_40_(\gen_sram_bank[1].sram_rdata_64_40_ ),
+    .rdata_o_41_(\gen_sram_bank[1].sram_rdata_64_41_ ),
+    .rdata_o_42_(\gen_sram_bank[1].sram_rdata_64_42_ ),
+    .rdata_o_43_(\gen_sram_bank[1].sram_rdata_64_43_ ),
+    .rdata_o_44_(\gen_sram_bank[1].sram_rdata_64_44_ ),
+    .rdata_o_45_(\gen_sram_bank[1].sram_rdata_64_45_ ),
+    .rdata_o_46_(\gen_sram_bank[1].sram_rdata_64_46_ ),
+    .rdata_o_47_(\gen_sram_bank[1].sram_rdata_64_47_ ),
+    .rdata_o_48_(\gen_sram_bank[1].sram_rdata_64_48_ ),
+    .rdata_o_49_(\gen_sram_bank[1].sram_rdata_64_49_ ),
+    .rdata_o_4_(\gen_sram_bank[1].sram_rdata_64_4_ ),
+    .rdata_o_50_(\gen_sram_bank[1].sram_rdata_64_50_ ),
+    .rdata_o_51_(\gen_sram_bank[1].sram_rdata_64_51_ ),
+    .rdata_o_52_(\gen_sram_bank[1].sram_rdata_64_52_ ),
+    .rdata_o_53_(\gen_sram_bank[1].sram_rdata_64_53_ ),
+    .rdata_o_54_(\gen_sram_bank[1].sram_rdata_64_54_ ),
+    .rdata_o_55_(\gen_sram_bank[1].sram_rdata_64_55_ ),
+    .rdata_o_56_(\gen_sram_bank[1].sram_rdata_64_56_ ),
+    .rdata_o_57_(\gen_sram_bank[1].sram_rdata_64_57_ ),
+    .rdata_o_58_(\gen_sram_bank[1].sram_rdata_64_58_ ),
+    .rdata_o_59_(\gen_sram_bank[1].sram_rdata_64_59_ ),
+    .rdata_o_5_(\gen_sram_bank[1].sram_rdata_64_5_ ),
+    .rdata_o_60_(\gen_sram_bank[1].sram_rdata_64_60_ ),
+    .rdata_o_61_(\gen_sram_bank[1].sram_rdata_64_61_ ),
+    .rdata_o_62_(\gen_sram_bank[1].sram_rdata_64_62_ ),
+    .rdata_o_63_(\gen_sram_bank[1].sram_rdata_64_63_ ),
+    .rdata_o_6_(\gen_sram_bank[1].sram_rdata_64_6_ ),
+    .rdata_o_7_(\gen_sram_bank[1].sram_rdata_64_7_ ),
+    .rdata_o_8_(\gen_sram_bank[1].sram_rdata_64_8_ ),
+    .rdata_o_9_(\gen_sram_bank[1].sram_rdata_64_9_ ),
     .req_i(sram_req_i_1_),
     .rst_ni(rst_ni),
     .wdata_i_0_(sram_wdata_i_32_),
-    .wdata_i_10_(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_10_ ),
-    .wdata_i_11_(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_11_ ),
-    .wdata_i_12_(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_12_ ),
+    .wdata_i_10_(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_10_ ),
+    .wdata_i_11_(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_11_ ),
+    .wdata_i_12_(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_12_ ),
     .wdata_i_13_(sram_wdata_i_40_),
     .wdata_i_14_(sram_wdata_i_41_),
     .wdata_i_15_(sram_wdata_i_42_),
@@ -202385,11 +202385,11 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_19_(sram_wdata_i_46_),
     .wdata_i_1_(sram_wdata_i_33_),
     .wdata_i_20_(sram_wdata_i_47_),
-    .wdata_i_21_(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_8_ ),
-    .wdata_i_22_(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_9_ ),
-    .wdata_i_23_(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_10_ ),
-    .wdata_i_24_(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_11_ ),
-    .wdata_i_25_(\gen_sram_banks[1].gen_secded_bytes[1].i_encode.encoded_out_12_ ),
+    .wdata_i_21_(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_8_ ),
+    .wdata_i_22_(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_9_ ),
+    .wdata_i_23_(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_10_ ),
+    .wdata_i_24_(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_11_ ),
+    .wdata_i_25_(\gen_sram_bank[1].gen_secded_bytes[1].i_encode.encoded_out_12_ ),
     .wdata_i_26_(sram_wdata_i_48_),
     .wdata_i_27_(sram_wdata_i_49_),
     .wdata_i_28_(sram_wdata_i_50_),
@@ -202399,11 +202399,11 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_31_(sram_wdata_i_53_),
     .wdata_i_32_(sram_wdata_i_54_),
     .wdata_i_33_(sram_wdata_i_55_),
-    .wdata_i_34_(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_8_ ),
-    .wdata_i_35_(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_9_ ),
-    .wdata_i_36_(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_10_ ),
-    .wdata_i_37_(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_11_ ),
-    .wdata_i_38_(\gen_sram_banks[1].gen_secded_bytes[2].i_encode.encoded_out_12_ ),
+    .wdata_i_34_(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_8_ ),
+    .wdata_i_35_(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_9_ ),
+    .wdata_i_36_(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_10_ ),
+    .wdata_i_37_(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_11_ ),
+    .wdata_i_38_(\gen_sram_bank[1].gen_secded_bytes[2].i_encode.encoded_out_12_ ),
     .wdata_i_39_(sram_wdata_i_56_),
     .wdata_i_3_(sram_wdata_i_35_),
     .wdata_i_40_(sram_wdata_i_57_),
@@ -202413,12 +202413,12 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_44_(sram_wdata_i_61_),
     .wdata_i_45_(sram_wdata_i_62_),
     .wdata_i_46_(sram_wdata_i_63_),
-    .wdata_i_47_(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_8_ ),
-    .wdata_i_48_(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_9_ ),
-    .wdata_i_49_(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_10_ ),
+    .wdata_i_47_(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_8_ ),
+    .wdata_i_48_(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_9_ ),
+    .wdata_i_49_(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_10_ ),
     .wdata_i_4_(sram_wdata_i_36_),
-    .wdata_i_50_(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_11_ ),
-    .wdata_i_51_(\gen_sram_banks[1].gen_secded_bytes[3].i_encode.encoded_out_12_ ),
+    .wdata_i_50_(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_11_ ),
+    .wdata_i_51_(\gen_sram_bank[1].gen_secded_bytes[3].i_encode.encoded_out_12_ ),
     .wdata_i_52_(_353_),
     .wdata_i_53_(_353_),
     .wdata_i_54_(_353_),
@@ -202434,8 +202434,8 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .wdata_i_63_(_353_),
     .wdata_i_6_(sram_wdata_i_38_),
     .wdata_i_7_(sram_wdata_i_39_),
-    .wdata_i_8_(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_8_ ),
-    .wdata_i_9_(\gen_sram_banks[1].gen_secded_bytes[0].i_encode.encoded_out_9_ ),
+    .wdata_i_8_(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_8_ ),
+    .wdata_i_9_(\gen_sram_bank[1].gen_secded_bytes[0].i_encode.encoded_out_9_ ),
     .we_i(sram_we_i_1_)
   );
   DFFRQX3 \i_obi_demux.i_counter.overflow_o_reg  (

@@ -1,2 +1,2 @@
-tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram/gen_512x64xBx1.i_cut
-tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram/gen_512x64xBx1.i_cut
+tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram/gen_512x64xBx1.i_cut
+tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram/gen_512x64xBx1.i_cut

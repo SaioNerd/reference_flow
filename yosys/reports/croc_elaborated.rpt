@@ -1,5 +1,5 @@
 
-11. Printing statistics.
+12. Printing statistics.
 
 === sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync ===
 
@@ -3294,7 +3294,7 @@
         1 submodules
         1   fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
 
-=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram ===
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3308,7 +3308,7 @@
         1   $not
         1   RM_IHPSG13_1P_512x64_c2_bm_bist
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[3].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3327,7 +3327,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[3].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3341,7 +3341,7 @@
         1   $not
        19   $xor
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[2].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3360,7 +3360,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[2].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3374,7 +3374,7 @@
         1   $not
        19   $xor
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[1].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3393,7 +3393,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[1].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3407,7 +3407,7 @@
         1   $not
        19   $xor
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[0].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3426,7 +3426,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[0].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3440,7 +3440,7 @@
         1   $not
        19   $xor
 
-=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram ===
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3454,7 +3454,7 @@
         1   $not
         1   RM_IHPSG13_1P_512x64_c2_bm_bist
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[3].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3473,7 +3473,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[3].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3487,7 +3487,7 @@
         1   $not
        19   $xor
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[2].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3506,7 +3506,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[2].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3520,7 +3520,7 @@
         1   $not
        19   $xor
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[1].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3539,7 +3539,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[1].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3553,7 +3553,7 @@
         1   $not
        19   $xor
 
-=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode ===
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[0].i_decode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -3572,7 +3572,7 @@
         1   $reduce_xor
        21   $xor
 
-=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode ===
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[0].i_encode ===
 
         +----------Local Count, excluding submodules.
         | 
@@ -4038,24 +4038,24 @@
         1   addr_decode$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs
         1   obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
         1   obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode
-        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode
-        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode
-        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
-        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[3].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[3].i_decode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[3].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[3].i_encode
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram
         1   user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
 
 === croc_domain$croc_chip.i_croc_soc.i_croc ===
@@ -4329,24 +4329,24 @@
        14       delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter
         3     obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
        45       fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_decode
-       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_decode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[0].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[1].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[2].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].gen_secded_bytes[3].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[0].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[1].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[2].i_encode
-       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].gen_secded_bytes[3].i_encode
-        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
-        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[0].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[1].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[2].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[3].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[0].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[1].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[2].i_decode
+       56     secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[3].i_decode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[0].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[1].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[2].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].gen_secded_bytes[3].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[0].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[1].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[2].i_encode
+       20     secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].gen_secded_bytes[3].i_encode
+        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram
+        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram
        19     user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
 
         +----------Count including submodules.

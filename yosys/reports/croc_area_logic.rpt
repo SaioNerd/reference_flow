@@ -1,4 +1,4 @@
-47. Printing statistics.
+48. Printing statistics.
 
 === bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom ===
 
@@ -909,6 +909,7 @@
         1        -   croc_soc$croc_chip.i_croc_soc
 
    Area for cell type $scopeinfo is unknown!
+   Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
    Area for cell type \sg13cmos5l_IOPadIOVdd is unknown!
    Area for cell type \sg13cmos5l_IOPadIOVss is unknown!
    Area for cell type \sg13cmos5l_IOPadIn is unknown!
@@ -916,7 +917,6 @@
    Area for cell type \sg13cmos5l_IOPadOut16mA is unknown!
    Area for cell type \sg13cmos5l_IOPadVdd is unknown!
    Area for cell type \sg13cmos5l_IOPadVss is unknown!
-   Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
 
    Chip area for module '\croc_chip': 0.000000
      of which used for sequential elements: 0.000000 (-nan%)
@@ -2657,7 +2657,7 @@
    Chip area for module '\tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no': 12.700800
      of which used for sequential elements: 0.000000 (0.00%)
 
-=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram ===
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
@@ -2675,10 +2675,10 @@
 
    Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
 
-   Chip area for module '\tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram': 8.467200
+   Chip area for module '\tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram': 8.467200
      of which used for sequential elements: 0.000000 (0.00%)
 
-=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram ===
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram ===
 
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
@@ -2696,7 +2696,7 @@
 
    Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
 
-   Chip area for module '\tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram': 8.467200
+   Chip area for module '\tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram': 8.467200
      of which used for sequential elements: 0.000000 (0.00%)
 
 === user_domain$croc_chip.i_croc_soc.i_user ===
@@ -2766,8 +2766,8 @@
        53  673.142   XOR2X1
       122 1.21E+03   XOR2X2
         2        - submodules
-        1        -   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
-        1        -   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+        1        -   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram
+        1        -   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram
 
    Area for cell type $scopeinfo is unknown!
    Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
@@ -2868,8 +2868,8 @@
         1   12.701   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n
         1   12.701   tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no
       539 5.95E+03   user_domain$croc_chip.i_croc_soc.i_user
-        3    8.467     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[0].i_sram
-        3    8.467     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_banks[1].i_sram
+        3    8.467     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram
+        3    8.467     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram
 
         +----------Count including submodules.
         |        +-Area including submodules.
@@ -3026,6 +3026,7 @@
         1 3.29E+05   croc_soc$croc_chip.i_croc_soc
 
    Area for cell type $scopeinfo is unknown!
+   Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
    Area for cell type \sg13cmos5l_IOPadIOVdd is unknown!
    Area for cell type \sg13cmos5l_IOPadIOVss is unknown!
    Area for cell type \sg13cmos5l_IOPadIn is unknown!
@@ -3033,7 +3034,6 @@
    Area for cell type \sg13cmos5l_IOPadOut16mA is unknown!
    Area for cell type \sg13cmos5l_IOPadVdd is unknown!
    Area for cell type \sg13cmos5l_IOPadVss is unknown!
-   Area for cell type \RM_IHPSG13_1P_512x64_c2_bm_bist is unknown!
 
    Chip area for top module '\croc_chip': 328558.406400
      of which used for sequential elements: 119867.328000 (36.48%)

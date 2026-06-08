@@ -5,6 +5,13 @@
 # Authors:
 # - Philippe Sauter <phsauter@iis.ee.ethz.ch>
 
+# Run non interactive
+# oseda -2026.02 yosys -c scripts/yosys_synthesis.tcl
+
+# Run interactive (to run scripts sequentially and keep the memory state active)
+# oseda -2026.02 yosys -C 
+# yosys> source scripts/yosys_synthesis.tcl
+
 # This flows assumes it is beign executed in the yosys/ directory
 # but just to be sure, we go there
 if {[info script] ne ""} {
