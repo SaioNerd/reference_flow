@@ -21,7 +21,7 @@
 set CROC            i_croc_soc/i_croc
 set USER            i_croc_soc/i_user
 set IBEX            $CROC/i_core_wrap.i_ibex
-set SRAM            $CROC/gen_sram_bank
+set SRAM            $USER/gen_sram_bank
 set JTAG            $CROC/i_dmi_jtag
 set SRAM_512x64     gen_512x64xBx1.i_cut
 

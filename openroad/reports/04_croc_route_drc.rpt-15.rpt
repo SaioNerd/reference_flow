@@ -1,0 +1,147 @@
+violation type: Metal Spacing
+	srcs: net:VDD net:net6523
+	bbox = (738.8900, 1374.3850) - (739.0900, 1374.5800) on Layer Metal4
+violation type: Metal Spacing
+	srcs: net:VDD net:net6533
+	bbox = (739.7300, 1374.3850) - (739.9300, 1374.5800) on Layer Metal4
+violation type: Metal Spacing
+	srcs: net:VSS net:i_croc_soc/i_user/gen_sram_bank\[0\].i_sram/gen_512x64xBx1.i_cut_A_REN
+	bbox = (740.1050, 1373.5800) - (740.8250, 1373.7200) on Layer Metal3
+violation type: Metal Spacing
+	srcs: net:net8196 net:net7738
+	bbox = (1158.2500, 1267.8800) - (1158.4350, 1268.0800) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8196 net:net7737
+	bbox = (1151.9950, 1288.0400) - (1152.1350, 1288.2400) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9900, 1261.3600) - (1140.1900, 1261.3700) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9450, 1261.3600) - (1140.1900, 1261.3700) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net7643
+	bbox = (1139.9450, 1261.5700) - (1140.1900, 1261.5800) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7738
+	bbox = (1147.7500, 1261.2050) - (1147.9250, 1261.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7738
+	bbox = (1147.7500, 1261.1600) - (1147.9250, 1261.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7738
+	bbox = (1147.7950, 1261.2050) - (1147.9700, 1261.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7738
+	bbox = (1147.7950, 1261.2050) - (1147.9250, 1261.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7738
+	bbox = (1147.7950, 1261.1600) - (1147.9700, 1261.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7738
+	bbox = (1147.7950, 1261.1600) - (1147.9250, 1261.3600) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net2337 net:net2242
+	bbox = (1123.2000, 1271.4400) - (1123.3850, 1271.5950) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net2337 net:net2242
+	bbox = (1123.1900, 1271.4400) - (1123.3850, 1271.5950) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net8197 net:net7737
+	bbox = (1124.6450, 1274.6000) - (1124.8350, 1274.8000) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2020_
+	bbox = (1123.6100, 1267.2850) - (1123.8100, 1267.3700) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2020_
+	bbox = (1123.6100, 1267.2850) - (1123.8200, 1267.3700) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/i_dmi_jtag/i_dmi_cdc.i_cdc_resp/i_cdc_reset_ctrlr/i_cdc_reset_ctrlr_half_a/i_state_transition_cdc_src/_00_
+	bbox = (502.2550, 882.0700) - (502.4250, 882.1050) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/i_main_xbar.gen_demux\[1\].i_demux.i_counter.overflow_o
+	bbox = (1042.3750, 1144.1500) - (1042.5450, 1144.1850) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2331_
+	bbox = (1067.9500, 1321.6350) - (1068.1250, 1321.8450) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2331_
+	bbox = (1067.9500, 1321.6650) - (1068.1250, 1321.8450) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:net7729 net:net8194
+	bbox = (1125.0700, 1247.7200) - (1125.2550, 1247.9200) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net7729 net:net8194
+	bbox = (1128.0050, 1247.7200) - (1128.1950, 1247.9200) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_1327_
+	bbox = (1126.7500, 1314.9150) - (1126.9250, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_1327_
+	bbox = (1126.7500, 1314.9450) - (1126.9250, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/i_dmi_jtag/dtmcs_q_6_
+	bbox = (444.7150, 929.1100) - (444.8850, 929.1450) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/i_dmi_jtag/i_dmi_cdc.i_cdc_resp/i_cdc_reset_ctrlr/i_cdc_reset_ctrlr_half_b/i_state_transition_cdc_src/_00_
+	bbox = (517.3750, 908.9500) - (517.5450, 908.9850) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/i_core_wrap/_2559_
+	bbox = (1294.7500, 1251.0750) - (1294.9250, 1251.2850) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2335_
+	bbox = (1097.3500, 1314.9150) - (1097.5250, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2335_
+	bbox = (1097.3500, 1314.9450) - (1097.5250, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2313_
+	bbox = (1101.9700, 1314.9150) - (1102.1450, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2313_
+	bbox = (1101.9700, 1314.9450) - (1102.1450, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2381_
+	bbox = (1110.3700, 1314.9150) - (1110.5450, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2381_
+	bbox = (1110.3700, 1314.9450) - (1110.5450, 1315.1250) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2350_
+	bbox = (1092.3100, 1321.6350) - (1092.4850, 1321.8450) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:i_croc_soc/i_croc/_2350_
+	bbox = (1092.3100, 1321.6650) - (1092.4850, 1321.8450) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:net8196 net:net7738
+	bbox = (1169.3900, 1265.1400) - (1169.5900, 1265.2100) on Layer Metal2
+violation type: Metal Spacing
+	srcs: net:net2712
+	bbox = (1542.9700, 1193.9550) - (1543.1450, 1194.1650) on Layer Metal1
+violation type: Metal Spacing
+	srcs: net:net2712
+	bbox = (1542.9700, 1193.9850) - (1543.1450, 1194.1650) on Layer Metal1
+violation type: Short
+	srcs: net:VSS net:i_croc_soc/i_croc/_0625_
+	bbox = (1146.2900, 1266.5750) - (1146.4900, 1266.8650) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9900, 1261.3700) - (1140.1450, 1261.7800) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9450, 1261.3700) - (1140.1450, 1261.5700) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9900, 1261.3700) - (1140.1450, 1261.5700) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9450, 1261.5800) - (1140.1450, 1261.7800) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/i_croc/_1935_ net:net7643
+	bbox = (1139.9900, 1261.5800) - (1140.1450, 1261.7800) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/user_sbr_obi_rsp_38_ net:net8197
+	bbox = (1124.4500, 1266.2000) - (1124.6500, 1266.4000) on Layer Metal2
+violation type: Short
+	srcs: net:i_croc_soc/user_sbr_obi_rsp_38_ net:net8197
+	bbox = (1124.4500, 1266.2000) - (1124.6150, 1266.4000) on Layer Metal2

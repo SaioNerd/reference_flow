@@ -33,4 +33,4 @@ source scripts/checkpoint.tcl
 source scripts/floorplan_util.tcl
 
 # Initialize technology data (PDK libraries, LEFs, etc.)
-#source scripts/init_tech.tcl
+source scripts/init_tech.tcl
