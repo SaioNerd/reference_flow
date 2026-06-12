@@ -51,7 +51,7 @@ package croc_pkg;
 
   /// Number of SRAM banks, each bank has its own OBI port (accessible in parallel)
   localparam int unsigned NumSramBanks      = 32'd2;
-  /// Physical SRAM depth per bank (64-bit words). Used to calculate address width via cf_math_pkg::idx_width().
+  /// Physical SRAM depth per bank (64-bit words in new design). Used to calculate address width via cf_math_pkg::idx_width().
   localparam int unsigned SramBankNumWords  = 512;
 
   /// Flag to enable SECDED bypass mode: direct 32-bit to 64-bit SRAM mapping
