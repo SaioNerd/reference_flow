@@ -51,8 +51,14 @@ package croc_pkg;
 
   /// Number of SRAM banks, each bank has its own OBI port (accessible in parallel)
   localparam int unsigned NumSramBanks      = 32'd2;
-  /// Number of 32-bit words per SRAM bank, determines the depth of each SRAM bank
+  /// Physical SRAM depth per bank (64-bit words). Used to calculate address width via cf_math_pkg::idx_width().
   localparam int unsigned SramBankNumWords  = 512;
+
+  /// Flag to enable SECDED bypass mode: direct 32-bit to 64-bit SRAM mapping
+  /// When set to 1: Use address bit [2] to select upper/lower 32-bit half of 64-bit SRAM
+  /// This effectively doubles addressable memory from software perspective (no ECC encoding)
+  /// When set to 0: Use hardware SECDED encoding/decoding per byte (current configuration)
+  localparam bit SECDEDBypass = 1'b0;
 
 
   //////////////////////
@@ -85,12 +91,31 @@ package croc_pkg;
   } croc_xbar_outputs_e;
 
   /// Address map given to the main crossbar
-  localparam addr_map_rule_t [3:0] CrocAddrMap = '{
-    '{ idx: XbarPeriph,  start_addr: 32'h0000_0000, end_addr: 32'h1000_0000 },
-    '{ idx: XbarUser,    start_addr: 32'h2000_0000, end_addr: 32'h8000_0000 },
-    '{ idx: XbarBank0,   start_addr: 32'h1000_0000, end_addr: 32'h1000_0800 },
-    '{ idx: XbarBank0+1, start_addr: 32'h1000_0800, end_addr: 32'h1000_1000 }
-  };
+  /// In SECDEDBypass mode: each bank addresses 1024 effective 32-bit words (doubling effective memory)
+  /// In SECDED mode: each bank addresses 512 physical 32-bit words
+  function automatic addr_map_rule_t [3:0] gen_croc_addr_map();
+    addr_map_rule_t [3:0] addr_map;
+    if (SECDEDBypass == 1'b1) begin
+      // Bypass mode: doubled addressable memory (bit[2] selects upper/lower half of 64-bit word)
+      addr_map = '{
+        '{ idx: XbarPeriph,  start_addr: 32'h0000_0000, end_addr: 32'h1000_0000 },
+        '{ idx: XbarUser,    start_addr: 32'h2000_0000, end_addr: 32'h8000_0000 },
+        '{ idx: XbarBank0,   start_addr: 32'h1000_0000, end_addr: 32'h1000_1000 },
+        '{ idx: XbarBank0+1, start_addr: 32'h1000_1000, end_addr: 32'h1000_2000 }
+      };
+    end else begin
+      // SECDED mode: original addressing (hardware ECC)
+      addr_map = '{
+        '{ idx: XbarPeriph,  start_addr: 32'h0000_0000, end_addr: 32'h1000_0000 },
+        '{ idx: XbarUser,    start_addr: 32'h2000_0000, end_addr: 32'h8000_0000 },
+        '{ idx: XbarBank0,   start_addr: 32'h1000_0000, end_addr: 32'h1000_0800 },
+        '{ idx: XbarBank0+1, start_addr: 32'h1000_0800, end_addr: 32'h1000_1000 }
+      };
+    end
+    return addr_map;
+  endfunction
+
+  localparam addr_map_rule_t [3:0] CrocAddrMap = gen_croc_addr_map();
 
   // +1 for additional OBI error
   localparam int unsigned NumXbarSubordinates = $size(CrocAddrMap) + 1;
