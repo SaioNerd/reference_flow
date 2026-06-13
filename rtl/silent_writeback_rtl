@@ -1,4 +1,4 @@
-// ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
   // SRAM + SECDED Implementation
   // ---------------------------------------------------------------------------
   
@@ -10,26 +10,31 @@
     
     logic [63:0] sram_wdata_64;
     logic [63:0] sram_rdata_64;
-    logic [63:0] sram_be_64; // bit enable
+    logic [63:0] sram_be_64;
 
     logic [3:0] byte_single_err;
     logic [3:0] byte_double_err;
 
-    // --- NEW: Byte-Granular Repair Logic ---
+    // --- Repair Registers ---
     logic        repair_pending;
     logic [12:0] repair_addr;
     logic [31:0] repair_data;
-    logic [3:0]  repair_be; // Tracks exactly which bytes need correction
+    logic [3:0]  repair_be; 
     logic [12:0] addr_q;
     
-    logic        same_addr_write;
-    logic        do_standalone_repair;
+    // --- NEW: Cleaned Bank-Level Repair Flags ---
+    logic is_standalone_repair;
+    logic is_merged_repair;
+    logic bank_repair_active;
 
-    // Detect if CPU is writing to the exact address pending repair
-    assign same_addr_write = sram_req_i[i] && sram_we_i[i] && (sram_addr_i[i] == repair_addr);
+    // 1. Standalone: CPU is idle, so we steal the cycle to repair.
+    assign is_standalone_repair = repair_pending && !sram_req_i[i];
     
-    // Standalone repair occurs only when the CPU is completely idle for this bank
-    assign do_standalone_repair = repair_pending && !sram_req_i[i];
+    // 2. Merged: CPU is writing to the exact address that needs repair.
+    assign is_merged_repair     = repair_pending && sram_req_i[i] && sram_we_i[i] && (sram_addr_i[i] == repair_addr);
+    
+    // 3. Active: A repair operation of either type is happening THIS cycle.
+    assign bank_repair_active   = is_standalone_repair || is_merged_repair;
 
     // --- 1. SECDED: Byte level Encode and Decode ---
     for (genvar b = 0; b < 4; b++) begin : gen_secded_bytes
@@ -37,50 +42,50 @@
       logic [12:0] dec_data;
       logic [7:0]  tmp_data_out;
 
-      // NEW: Byte-level execution flag
-      logic do_byte_repair;
-      // Repair this specific byte IF it has an error AND the CPU isn't currently overwriting it
-      assign do_byte_repair = repair_pending && repair_be[b] && 
-                              (do_standalone_repair || (same_addr_write && !sram_be_i[i][b]));
+      // Cleaned Byte-Level CPU Write Flag
+      logic cpu_byte_we;
+      assign cpu_byte_we = sram_req_i[i] && sram_we_i[i] && sram_be_i[i][b];
 
+      // Cleaned Byte-Level Repair Flag
+      logic do_byte_repair;
+      // We repair this specific byte IF: 
+      // The bank is repairing AND this byte is broken AND the CPU isn't overwriting it right now.
+      assign do_byte_repair = bank_repair_active && repair_be[b] && !cpu_byte_we;
+
+      // Data Routing
       logic [7:0] data_to_encode;
       assign data_to_encode = do_byte_repair ? repair_data[b*8 +: 8] : sram_wdata_i[i][b*8 +: 8];
 
-      // Encoding: Parity bits calculation (13 bit output per byte)
+      // Encoder
       secded_byte_encode i_encode (
         .data_in     ( data_to_encode ),
         .encoded_out ( enc_data       )
       );
       
-      // Mapping of 13 bit bytes to physical SRAM
       assign sram_wdata_64[b*13 +: 13] = enc_data;
       
-      // NEW: Byte-level write enable
+      // The bitmask allows the write if the CPU requested it OR if we are doing a silent repair
       logic byte_write_enable;
-      // Enable write if CPU targets this byte OR if we are executing a silent repair on it
-      assign byte_write_enable = (sram_req_i[i] && sram_we_i[i] && sram_be_i[i][b]) || do_byte_repair;
-
-      // Creating the Bitmask
+      assign byte_write_enable = cpu_byte_we || do_byte_repair;
       assign sram_be_64[b*13 +: 13] = byte_write_enable ? 13'h1FFF : 13'h0000;
 
-      // In reading: Extract the 13 bits from the physical memory and correct them
+      // Decoder
       assign dec_data = sram_rdata_64[b*13 +: 13];
-
       secded_byte_decode i_decode (
         .encoded_in   ( dec_data           ),
         .data_out     ( tmp_data_out       ), 
         .single_err_o ( byte_single_err[b] ), 
-        .double_err_o ( byte_double_err[b] ) // capture the DED
+        .double_err_o ( byte_double_err[b] )
       );
 
       assign sram_rdata_o[i][b*8 +: 8] = tmp_data_out;
     end
 
-    // Combine all 4 bytes in this bank
-    assign bank_single_err[i] = |byte_single_err; // OR Reduction
-    assign bank_double_err[i] = |byte_double_err; // OR Reduction
+    // Error Combination
+    assign bank_single_err[i] = |byte_single_err;
+    assign bank_double_err[i] = |byte_double_err;
 
-    // Set repair and Clear repair
+    // State Machine
     always_ff @(posedge clk_i or negedge rst_ni) begin
       if (!rst_ni) begin
         repair_pending <= 1'b0;
@@ -91,36 +96,35 @@
       end else begin
         addr_q <= sram_addr_i[i];
 
-        // Clear repair if executed (either standalone or merged into CPU write)
-        // Separated from the latching logic to allow back-to-back error handling
-        if (repair_pending && (do_standalone_repair || same_addr_write)) begin
+        // Clear repair if executed this cycle
+        if (bank_repair_active) begin
             repair_pending <= 1'b0;
             repair_be      <= '0;
         end 
-
         // Latch new error state
-        if (bank_single_err && !bank_double_err[i]) begin
+        else if (bank_single_err && !bank_double_err[i]) begin
             repair_pending <= 1'b1;
             repair_addr    <= addr_q;          
             repair_data    <= sram_rdata_o[i]; 
-            repair_be      <= byte_single_err; // Latch exactly which bytes failed
+            repair_be      <= byte_single_err;
         end
       end
     end
 
-    // Filling last empty bits with zeros
+    // Padding
     assign sram_wdata_64[63:52] = '0;
     assign sram_be_64[63:52]    = '0;
 
-    // Multiplexers for addressing and control
+    // SRAM Request Multiplexing
     logic        mux_req;
     logic        mux_we;
     logic [12:0] mux_addr;
 
-    assign mux_req  = do_standalone_repair ? 1'b1 : sram_req_i[i];
-    assign mux_we   = do_standalone_repair ? 1'b1 : sram_we_i[i];
-    assign mux_addr = do_standalone_repair ? repair_addr : sram_addr_i[i];
-    // mux_be_64 is no longer needed; sram_be_64 inherently handles both paths now.
+    // The wrapper receives a request if the CPU wants one OR if we are doing a standalone repair.
+    // (If it's a merged repair, sram_req_i is already high, so this still works perfectly).
+    assign mux_req  = is_standalone_repair ? 1'b1 : sram_req_i[i];
+    assign mux_we   = is_standalone_repair ? 1'b1 : sram_we_i[i];
+    assign mux_addr = is_standalone_repair ? repair_addr : sram_addr_i[i];
 
     // --- 2. SRAM Wrapper  ---
     tc_sram_impl #(
@@ -141,7 +145,7 @@
       .addr_i  ( mux_addr ),
 
       .wdata_i ( sram_wdata_64  ),
-      .be_i    ( sram_be_64     ), // Feeds the newly merged bitmask directly
+      .be_i    ( sram_be_64     ), 
       .rdata_o ( sram_rdata_64  )
     );
 
