@@ -160,9 +160,10 @@ utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bankY
 utl::report "SRAM row-cut halo: x $sramHaloX y $sramHaloY"
 
 # defined in init_tech.tcl
-insertTapCells
+#insertTapCells
 
 cut_rows -halo_width_x $sramHaloX -halo_width_y $sramHaloY
+insertTapCells
 global_connect
 
 # Save an image before PDN insertion. PDN channel-repair failures are easier to
