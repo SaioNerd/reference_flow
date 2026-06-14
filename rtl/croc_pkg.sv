@@ -58,7 +58,7 @@ package croc_pkg;
   /// When set to 1: Use address bit [2] to select upper/lower 32-bit half of 64-bit SRAM
   /// This effectively doubles addressable memory from software perspective (no ECC encoding)
   /// When set to 0: Use hardware SECDED encoding/decoding per byte (current configuration)
-  localparam bit SECDEDBypass = 1'b0;
+  localparam bit SECDEDBypass = 1'b1;
 
 
   //////////////////////

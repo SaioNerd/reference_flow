@@ -12,16 +12,7 @@ ENTRY(_start)
 
 MEMORY
 {
-	/* unified on-chip SRAM region used for all code and data */
-	/* Length depends on SECDEDBypass flag:
-	   - SECDEDBypass=0 (SECDED mode): 4K (2 banks × 2KB each)
-	   - SECDEDBypass=1 (Bypass mode): 8K (2 banks × 4KB each)
-	   Pass -DSECDED_BYPASS=1 to linker if using bypass mode */
-#ifdef SECDED_BYPASS
-	SRAM (rwxail) : ORIGIN = 0x10000000, LENGTH = 8K
-#else
 	SRAM (rwxail) : ORIGIN = 0x10000000, LENGTH = 4K
-#endif
 }
 
 PHDRS

@@ -184,5 +184,5 @@
 ../rtl/test/tb_croc_pkg.sv
 ../rtl/test/croc_vip.sv
 ../rtl/test/tb_croc_soc.sv
-../rtl/test/tb_secded_comparison.sv
+../rtl/test/tb_secded_testbench.sv
 

@@ -20,9 +20,9 @@ RISCV_AR      ?= $(RISCV_PREFIX)ar
 RISCV_LD      ?= $(RISCV_PREFIX)ld
 RISCV_STRIP   ?= $(RISCV_PREFIX)strip
 
-# Check SECDED bypass mode from croc_pkg.sv
-CROC_PKG_PATH ?= ../rtl/croc_pkg.sv
-SECDED_BYPASS_ENABLED := $(shell grep -o "SECDEDBypass = 1'b[01]" $(CROC_PKG_PATH) | grep -o "[01]$$")
+# # Check SECDED bypass mode from croc_pkg.sv
+# CROC_PKG_PATH ?= ../rtl/croc_pkg.sv
+# SECDED_BYPASS_ENABLED := $(shell grep -o "SECDEDBypass = 1'b[01]" $(CROC_PKG_PATH) | grep -o "[01]$$")
 
 # Compiler and linker flags
 RISCV_FLAGS ?= -march=$(RISCV_MARCH) -mabi=$(RISCV_MABI) -mcmodel=medany \

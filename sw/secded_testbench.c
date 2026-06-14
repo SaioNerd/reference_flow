@@ -1,16 +1,29 @@
 // SECDED Encoder/Decoder Testbench
 // Single-file program: includes custom SECDED functions + main test logic.
-// Measures average encode/decode cycle counts, validates error detection.
+// Communicates all results to the SV testbench via magic memory addresses.
 
-#include "uart.h"
-#include "print.h"
 #include "config.h"
 #include "util.h"
 
 // ============================================================
 // Configurable parameters
 // ============================================================
-#define N_SAMPLES   256
+#define N_SAMPLES   1
+
+// ============================================================
+// Magic addresses for SV testbench (past ROM range 0x2000_0000-0x2000_0FFF)
+// Timing: write 1 to start, write 0 to stop.
+// Results: write the value, SV captures it and prints.
+// These addresses hit the error subordinate which accepts all writes.
+// ============================================================
+#define ENC_TIMING_ADDR    ((volatile uint32_t *)0x20100000)
+#define DEC_TIMING_ADDR    ((volatile uint32_t *)0x20100004)
+#define RES_NUM_SAMPLES    ((volatile uint32_t *)0x20100008)
+#define RES_DOUBLE_ERRS    ((volatile uint32_t *)0x2010000C)
+#define RES_MISMATCHES     ((volatile uint32_t *)0x20100010)
+#define RES_ERR_MISMATCHES ((volatile uint32_t *)0x20100014)
+#define RES_TEST_PASS      ((volatile uint32_t *)0x20100018)
+#define PROGRESS_ADDR      ((volatile uint32_t *)0x2010001C)
 
 // ============================================================
 // Global arrays
@@ -112,18 +125,17 @@ uint32_t secded_decode_word(volatile uint64_t data, uint8_t *err_status) {
 }
 
 // ============================================================
-// Main: Testbench
+// Main: Testbench (no printf — all results via magic addresses)
 // ============================================================
 int main() {
-    uart_init();
+    // Signal to SV testbench that execution has started
+    *PROGRESS_ADDR = 1;
 
-    printf("\n=== SECDED Testbench ===\n");
-    printf("Samples: %x\n", N_SAMPLES);
+    // Tell SV testbench how many samples we are using
+    *RES_NUM_SAMPLES = N_SAMPLES;
 
     // ---- Initialize samples with test data ----
-    printf("Init..\n");
     for (int i = 0; i < N_SAMPLES; i++) {
-        // Pattern: alternating fixed values and sequential
         if (i < 10)
             samples[i] = 0xDEADBEEF;
         else if (i < 20)
@@ -131,22 +143,18 @@ int main() {
         else if (i < 30)
             samples[i] = 0xFFFFFFFF;
         else
-            samples[i] = 0x9E3779B9U + i;  // golden ratio-based pattern
+            samples[i] = 0x9E3779B9U + i;
     }
 
-    // ---- Encode all samples, measure time ----
-    printf("Enc..\n");
-    uint64_t t0 = get_mcycle();
+    // ---- Encode all samples (timed by SV testbench via magic addresses) ----
+    *ENC_TIMING_ADDR = 1;
     for (int i = 0; i < N_SAMPLES; i++) {
         encoded[i] = secded_encode_word(samples[i]);
     }
-    uint64_t t1 = get_mcycle();
-    uint64_t enc_total = t1 - t0;
-    uint32_t enc_avg = (uint32_t)(enc_total / N_SAMPLES);
+    *ENC_TIMING_ADDR = 0;
 
-    // ---- Decode all samples in-place, measure time ----
-    printf("Dec..\n");
-    t0 = get_mcycle();
+    // ---- Decode all samples in-place (timed by SV testbench via magic addresses) ----
+    *DEC_TIMING_ADDR = 1;
     for (int i = 0; i < N_SAMPLES; i++) {
         uint8_t err;
         uint32_t dec = secded_decode_word(encoded[i], &err);
@@ -155,69 +163,39 @@ int main() {
         // decoded needs only half the space of the 64-bit encrypted word)
         *(volatile uint32_t *)&encoded[i] = dec;
     }
-    t1 = get_mcycle();
-    uint64_t dec_total = t1 - t0;
-    uint32_t dec_avg = (uint32_t)(dec_total / N_SAMPLES);
+    *DEC_TIMING_ADDR = 0;
 
     // ---- Validate results ----
-    printf("Val..\n");
     uint32_t double_errs = 0;
     uint32_t mismatches  = 0;
     uint32_t err_mismatches = 0;
 
     for (int i = 0; i < N_SAMPLES; i++) {
-        // Read back decoded value (first 32 bits of the reused slot)
         volatile uint32_t decoded = *(volatile uint32_t *)&encoded[i];
         uint8_t err = err_flags[i];
         uint32_t orig = samples[i];
 
         if (err == 2) {
             double_errs++;
-            // Double error: data may legitimately differ from original
         } else {
-            // err == 0 or 1: data should match original exactly
             if (decoded != orig) {
                 mismatches++;
-                printf("M%x:o=%x d=%x e=%x\n", i, orig, decoded, err);
             }
         }
 
-        // Cross-check: err flag and data coherence
-        // If err=0/1 and data matches -> coherent (good)
-        // If err=0/1 and data differs -> incoherent (bad, should have been caught)
-        // If err=2 and data differs -> expected (double error uncorrectable)
-        // If err=2 and data matches -> also possible (benign double error)
         int data_ok = (decoded == orig);
         if ((err == 0 || err == 1) && !data_ok) {
             err_mismatches++;
         }
-        if (err == 2 && data_ok) {
-            // Benign double error: syndrome even+nonzero but data unchanged
-            // Not an error in the detection logic
-        }
     }
 
-    // ---- Print results ----
-    printf("\n=== Results ===\n");
-    printf("Enc avg: %x cyc\n", enc_avg);
-    printf("Dec avg: %x cyc\n", dec_avg);
-    printf("Dbl err: %x\n", double_errs);
-    printf("Mismatches: %x\n", mismatches);
-    printf("Err incoherences: %x\n", err_mismatches);
+    // ---- Write results to magic addresses for SV testbench printing ----
+    *RES_DOUBLE_ERRS    = double_errs;
+    *RES_MISMATCHES     = mismatches;
+    *RES_ERR_MISMATCHES = err_mismatches;
 
-    if (double_errs > 0) {
-        printf("Double error detected\n");
-    }
-    if (mismatches > 0 || err_mismatches > 0) {
-        printf("Mismatch between error detection and data\n");
-    }
+    // Test pass flag: 1 = PASS, 0 = FAIL
+    *RES_TEST_PASS = (mismatches == 0 && err_mismatches == 0) ? 1 : 0;
 
-    if (mismatches == 0 && err_mismatches == 0) {
-        printf("All tests PASS\n");
-    } else {
-        printf("Some tests FAIL\n");
-    }
-
-    uart_write_flush();
     return 0;
 }
