@@ -27,7 +27,7 @@
 #   - pads start cornerToPad microns away from the corner (pad -> bond -> gap)
 #   - the remaining usable edge length is split into (numPads-1) equal gaps
 
-set numPadsPerEdge 16
+#set numPadsPerEdge 16
 # corner width is equal to padD, bondpad outside
 set cornerToPad [expr {$padBond + $padD}]
 
@@ -42,8 +42,9 @@ make_io_sites -horizontal_site sg13cmos5l_ioSite \
 ##########################################################################
 # Edge: LEFT (top to bottom)                                             #
 ##########################################################################
+set numPadsWest 14
 set westSpan  [expr {$chipH - 2*$cornerToPad - $padW}]; # -padW because we place the lower-left corner
-set westPitch [expr {floor($westSpan / double($numPadsPerEdge - 1))}]
+set westPitch [expr {floor($westSpan / double($numPadsWest - 1))}]
 set westStart [expr {$chipH - $cornerToPad - $padW}]
 
 place_pad -row IO_WEST -location [expr {$westStart -  0*$westPitch}] "pad_vddio0"       ; # pin no:  1
@@ -64,8 +65,9 @@ place_pad -row IO_WEST -location [expr {$westStart - 13*$westPitch}] "pad_vdd0" 
 ##########################################################################
 # Edge: BOTTOM (left to right)                                           #
 ##########################################################################
+set numPadsSouth 18
 set southSpan  [expr {$chipW - 2*$cornerToPad - $padW}]
-set southPitch [expr {floor($southSpan / double($numPadsPerEdge - 1))}]
+set southPitch [expr {floor($southSpan / double($numPadsSouth - 1))}]
 set southStart $cornerToPad
 
 place_pad -row IO_SOUTH -location [expr {$southStart +  0*$southPitch}] "pad_vss0"         ; # pin no:  1
@@ -90,8 +92,9 @@ place_pad -row IO_SOUTH -location [expr {$southStart + 17*$southPitch}] "pad_vss
 ##########################################################################
 # Edge: RIGHT (bottom to top)                                            #
 ##########################################################################
+set numPadsEast 14
 set eastSpan  [expr {$chipH - 2*$cornerToPad - $padW}]
-set eastPitch [expr {floor($eastSpan / double($numPadsPerEdge - 1))}]
+set eastPitch [expr {floor($eastSpan / double($numPadsEast - 1))}]
 set eastStart $cornerToPad
 
 place_pad -row IO_EAST  -location [expr {$eastStart +  0*$eastPitch}] "pad_vddio2"       ; # pin no:  1
@@ -112,8 +115,9 @@ place_pad -row IO_EAST  -location [expr {$eastStart + 13*$eastPitch}] "pad_vdd2"
 ##########################################################################
 # Edge: TOP (right to left)                                              #
 ##########################################################################
+set numPadsNorth 18
 set northSpan  [expr {$chipW - 2*$cornerToPad - $padW}]
-set northPitch [expr {floor($northSpan / double($numPadsPerEdge - 1))}]
+set northPitch [expr {floor($northSpan / double($numPadsNorth - 1))}]
 set northStart [expr {$chipW - $cornerToPad - $padW}]
 
 place_pad -row IO_NORTH -location [expr {$northStart -  0*$northPitch}] "pad_vss2"            ; # pin no:  1
