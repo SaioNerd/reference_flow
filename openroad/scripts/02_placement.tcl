@@ -92,7 +92,7 @@ save_checkpoint 02-02_${proj_name}.gpl1_repaired
 
 # Actual global placement with routability and timing driven
 utl::report "Global Placement (2)"
-global_placement -density 0.65 \
+global_placement -density 0.55 \
                  -routability_driven \
                  -routability_check_overflow 0.30 \
                  -timing_driven
