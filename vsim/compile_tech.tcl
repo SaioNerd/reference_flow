@@ -13,7 +13,7 @@ set ROOT ".."
 
 if {[catch { vlog -incr -sv \
     +define+FUNCTIONAL \
-    "$ROOT/technology/verilog/sg13cmos5l_stdcell.v" \ # Added to solve run_vsim.sh error
+    "$ROOT/technology/verilog/sg13cmos5l_stdcell.v" \
     "$ROOT/technology/verilog/ez130_8t.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_1P_512x32_c2_bm_bist.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_1P_512x64_c2_bm_bist.v" \
