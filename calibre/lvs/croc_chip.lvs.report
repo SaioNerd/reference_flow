@@ -1,0 +1,344 @@
+
+LVS Netlist Compiler - Errors and Warnings for "/scratch/vlsi2_14fs26/reference_flow/calibre/lvs/croc_chip.spice"
+-----------------------------------------------------------------------------------------------------------------
+
+Warning: Duplicate subckt definition "RSC_IHPSG13_CBUFX4" at line 163 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 165 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_WLDRVX4" at line 200 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 202 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_FILLCAP8" at line 227 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 229 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_LHPQX2" at line 233 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 235 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_NAND2X2" at line 258 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 260 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CINVX4" at line 265 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 267 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CINVX2" at line 269 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 271 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_INVX2" at line 273 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 275 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_NAND3X2" at line 277 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 279 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_NOR3X2" at line 286 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 288 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_FILLCAP4" at line 294 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 296 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_MET2RES" at line 300 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 302 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CINVX8" at line 361 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 363 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_DFNQMX2IX1" at line 365 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 367 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CDLYX1" at line 467 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 469 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CDLYX1_DUMMY" at line 485 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 487 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_MX2IX1" at line 493 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 495 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_DFNQX2" at line 516 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 518 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CNAND2X2" at line 566 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 568 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CGATEPX4" at line 573 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 575 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CBUFX8" at line 608 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 610 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CDLYX2" at line 614 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 616 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_MX2X2" at line 623 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 625 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_AND2X2" at line 647 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 649 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_TIEL" at line 658 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 660 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_XOR2X2" at line 664 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 666 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_OA12X1" at line 690 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 692 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_NOR2X2" at line 802 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 804 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CINVX4_WN" at line 808 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 810 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_TIEH" at line 836 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 838 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_MET3RES" at line 842 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 844 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_DFPQD_MSAFFX2" at line 845 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 847 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CBUFX2" at line 870 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 872 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_INVX4" at line 878 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 880 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_AND2X4" at line 985 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 987 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CBUFX12" at line 1444 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 1446 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_WLDRVX12" at line 1489 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 1491 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_AND2X6" at line 2505 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 2507 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_CBUFX16" at line 2968 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 2970 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_WLDRVX16" at line 3011 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 3013 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_DFPQD_MSAFFX2P" at line 3818 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 3820 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Warning: Duplicate subckt definition "RSC_IHPSG13_WLDRVX8" at line 4599 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl"
+         previously defined at line 4601 in file "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x32_c2_bm_bist.cdl"
+Error: No matching pin name "\VSS!" in subcircuit "RM_IHPSG13_1P_512x64_c2_bm_bist" in file "/scratch/vlsi2_14fs26/reference_flow/calibre/lvs/croc_chip.spice" at line 96520
+Error: No matching pin name "\VSS!" in subcircuit "RM_IHPSG13_1P_512x64_c2_bm_bist" in file "/scratch/vlsi2_14fs26/reference_flow/calibre/lvs/croc_chip.spice" at line 96691
+
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         croc_chip.lvs.report
+LAYOUT NAME:              /scratch/vlsi2_14fs26/reference_flow/calibre/../calibre/lvs/croc_chip.lay.net ('croc_chip')
+SOURCE NAME:              /scratch/vlsi2_14fs26/reference_flow/calibre/lvs/croc_chip.spice ('croc_chip')
+RULE FILE:                /scratch/vlsi2_14fs26/reference_flow/calibre/../calibre/lvs/_lvs.tvf_
+CREATION TIME:            Mon Jun 15 10:17:13 2026
+CURRENT DIRECTORY:        /scratch/vlsi2_14fs26/reference_flow/calibre/lvs
+USER NAME:                vlsi2_14fs26
+CALIBRE VERSION:          v2021.3_35.19    Wed Sep 1 15:25:28 PDT 2021
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                 #   #         ########################  
+                  # #          #                      #  
+                   #           #     NOT COMPARED     #  
+                  # #          #                      #  
+                 #   #         ########################  
+
+
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   // LVS POWER NAME
+   // LVS GROUND NAME
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    ALL
+   // LVS HCELL REPORT
+   LVS IGNORE PORTS                       NO
+   LVS CHECK PORT NAMES                   NO
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       YES
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  NO
+   LVS REVERSE WL                         NO
+   // LVS NETLIST FILTER DEVICES          NO
+   // LVS PRESERVE BOX PORTS              NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   LVS SPICE ALLOW INLINE PARAMETERS      NO
+   LVS SPICE ALLOW UNQUOTED STRINGS       YES
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   YES
+   // LVS SPICE EXCLUDE CELL SOURCE
+   // LVS SPICE EXCLUDE CELL LAYOUT
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            LPI 
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            YES
+   SOURCE CASE                            YES
+   LVS COMPARE CASE                       NAMES
+   LVS COMPARE CASE STRICT                NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     50
+   LVS PROPERTY RESOLUTION MAXIMUM        32
+   // LVS SIGNATURE MAXIMUM
+   // LVS FILTER UNUSED OPTION
+   LVS REPORT OPTION                      E
+   LVS REPORT UNITS                       YES
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+   // LVS PREFER NETS FILTER SOURCE
+   // LVS PREFER NETS FILTER LAYOUT
+   LVS PREFER PORT NETS                   NO
+   LVS EXPAND ON ERROR                    NO
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 NO
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           YES
+   LVS REDUCE PARALLEL CAPACITORS         YES
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+
+   LVS REDUCE  Q(npn13G2)  PARALLEL
+   LVS REDUCE  Q(npn13G2l)  PARALLEL
+   LVS REDUCE  Q(npn13G2v)  PARALLEL
+   LVS REDUCE  M(sg13_lv_pmos)  PARALLEL
+   LVS REDUCE  M(sg13_hv_pmos)  PARALLEL
+   LVS REDUCE  M(rfpmos)  PARALLEL
+   LVS REDUCE  M(rfpmosHV)  PARALLEL
+   LVS REDUCE  M(sg13_lv_nmos)  PARALLEL
+   LVS REDUCE  M(sg13_hv_nmos)  PARALLEL
+   LVS REDUCE  M(rfnmos)  PARALLEL
+   LVS REDUCE  M(rfnmosHV)  PARALLEL
+   LVS REDUCE  MN(nmoselt)  PARALLEL
+   LVS REDUCE  ptap1  PARALLEL
+   LVS REDUCE  ntap1  PARALLEL
+   LVS REDUCE  D(dantenna)  PARALLEL
+   LVS REDUCE  D(dpantenna)  PARALLEL
+   LVS REDUCE  pnpMPA(pnpMPA)  PARALLEL
+   LVS REDUCE  sg13_hv_svaricap  PARALLEL
+   LVS REDUCE  isolbox(isolbox)  PARALLEL NO
+   LVS REDUCE  iprobe  PARALLEL NO
+   LVS REDUCE  iprobe  SERIES PLUS MINUS NO
+   LVS REDUCE  diffstbprobe  PARALLEL NO
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Filter
+
+   LVS FILTER  ptap1  SHORT
+
+   // Trace Property
+
+   TRACE PROPERTY  q(npn13g2)  le le 0
+   TRACE PROPERTY  q(npn13g2)  we we 0
+   TRACE PROPERTY  q(npn13g2)  nx nx 0
+   TRACE PROPERTY  q(npn13g2)  ny ny 0
+   TRACE PROPERTY  q(npn13g2)  m m 0
+   TRACE PROPERTY  q(npn13g2l)  le le 0
+   TRACE PROPERTY  q(npn13g2l)  we we 0
+   TRACE PROPERTY  q(npn13g2l)  nx nx 0
+   TRACE PROPERTY  q(npn13g2l)  ny ny 0
+   TRACE PROPERTY  q(npn13g2l)  m m 0
+   TRACE PROPERTY  q(npn13g2v)  le le 0
+   TRACE PROPERTY  q(npn13g2v)  we we 0
+   TRACE PROPERTY  q(npn13g2v)  nx nx 0
+   TRACE PROPERTY  q(npn13g2v)  ny ny 0
+   TRACE PROPERTY  q(npn13g2v)  m m 0
+   TRACE PROPERTY  m(sg13_lv_pmos)  l l 0
+   TRACE PROPERTY  m(sg13_lv_pmos)  w w 0
+   TRACE PROPERTY  m(sg13_lv_pmos)  ng ng 0
+   TRACE PROPERTY  m(sg13_hv_pmos)  l l 0
+   TRACE PROPERTY  m(sg13_hv_pmos)  w w 0
+   TRACE PROPERTY  m(sg13_hv_pmos)  ng ng 0
+   TRACE PROPERTY  m(rfpmos)  l l 0
+   TRACE PROPERTY  m(rfpmos)  w w 0
+   TRACE PROPERTY  m(rfpmos)  ng ng 0
+   TRACE PROPERTY  m(rfpmoshv)  l l 0
+   TRACE PROPERTY  m(rfpmoshv)  w w 0
+   TRACE PROPERTY  m(rfpmoshv)  ng ng 0
+   TRACE PROPERTY  m(sg13_lv_nmos)  l l 0
+   TRACE PROPERTY  m(sg13_lv_nmos)  w w 0
+   TRACE PROPERTY  m(sg13_lv_nmos)  ng ng 0
+   TRACE PROPERTY  m(sg13_hv_nmos)  l l 0
+   TRACE PROPERTY  m(sg13_hv_nmos)  w w 0
+   TRACE PROPERTY  m(sg13_hv_nmos)  ng ng 0
+   TRACE PROPERTY  m(rfnmos)  l l 0
+   TRACE PROPERTY  m(rfnmos)  w w 0
+   TRACE PROPERTY  m(rfnmos)  ng ng 0
+   TRACE PROPERTY  m(rfnmoshv)  l l 0
+   TRACE PROPERTY  m(rfnmoshv)  w w 0
+   TRACE PROPERTY  m(rfnmoshv)  ng ng 0
+   TRACE PROPERTY  mn(nmoselt)  l l 0
+   TRACE PROPERTY  mn(nmoselt)  w w 8
+   TRACE PROPERTY  mn(nmoselt)  ng ng 0
+   TRACE PROPERTY  ptap1  a a 10
+   TRACE PROPERTY  ntap1  a a 10
+   TRACE PROPERTY  d(dantenna)  a a 0
+   TRACE PROPERTY  d(dantenna)  p p 0
+   TRACE PROPERTY  d(dpantenna)  a a 0
+   TRACE PROPERTY  d(dpantenna)  p p 0
+   TRACE PROPERTY  pnpmpa(pnpmpa)  w w 0
+   TRACE PROPERTY  pnpmpa(pnpmpa)  l l 0
+   TRACE PROPERTY  d(dpsd)  a a 0
+   TRACE PROPERTY  d(dpsd)  p p 0
+   TRACE PROPERTY  pdnw(pdnw)  a a 0
+   TRACE PROPERTY  pdnw(pdnw)  p p 0
+   TRACE PROPERTY  schottky_nbl1(schottky_nbl1)  l l 0
+   TRACE PROPERTY  schottky_nbl1(schottky_nbl1)  w w 0
+   TRACE PROPERTY  schottky_nbl1(schottky_nbl1)  nx nx 0
+   TRACE PROPERTY  schottky_nbl1(schottky_nbl1)  ny ny 0
+   TRACE PROPERTY  schottky_nbl1(schottky_nbl1)  m m 0
+   TRACE PROPERTY  r(res_rsil)  w w 0
+   TRACE PROPERTY  r(res_rsil)  l l 0
+   TRACE PROPERTY  r(res_rsil)  r r 0.3
+   TRACE PROPERTY  r(res_rppd)  w w 0
+   TRACE PROPERTY  r(res_rppd)  l l 0
+   TRACE PROPERTY  r(res_rppd)  r r 0.3
+   TRACE PROPERTY  r(res_rhigh)  w w 0
+   TRACE PROPERTY  r(res_rhigh)  l l 0
+   TRACE PROPERTY  r(res_rhigh)  r r 0.3
+   TRACE PROPERTY  r(lvsres)  length l 0
+   TRACE PROPERTY  r(lvsres)  width w 0
+   TRACE PROPERTY  sg13_hv_svaricap  nx nx 0
+   TRACE PROPERTY  sg13_hv_svaricap  w w 0
+   TRACE PROPERTY  sg13_hv_svaricap  l l 0
+   TRACE PROPERTY  isolbox(isolbox)  a a 0
+   TRACE PROPERTY  isolbox(isolbox)  p p 0
+   TRACE PROPERTY  iprobe  width width 0.1
+   TRACE PROPERTY  iprobe  length length 0
+   TRACE PROPERTY  diffstbprobe  width width 0.1
+   TRACE PROPERTY  diffstbprobe  length length 0
+   TRACE PROPERTY  tsv(tsv)  nx nx 0
+   TRACE PROPERTY  tsv(tsv)  ny ny 0
+   TRACE PROPERTY  l2_ind_lvs(inductor)  mergestat mergestat 0
+   TRACE PROPERTY  l2_ind_lvs(inductor)  length length 0.1
+   TRACE PROPERTY  l2_ind_lvs(inductor)  width width 0.1
+
+   TRACE PROPERTY  iprobe  layer layer STRING
+   TRACE PROPERTY  diffstbprobe  layer layer STRING
+
+   // LVS SPICE RENAME PARAMETER
+   
+   LVS SPICE RENAME PARAMETER A AREA D RIGHT LEFT SOURCE COMMENT NOCOMMENT
+   LVS SPICE RENAME PARAMETER P PJ D RIGHT LEFT SOURCE COMMENT NOCOMMENT
+   
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+
+Total CPU Time:      0 sec
+Total Elapsed Time:  0 sec
