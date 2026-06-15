@@ -177,12 +177,15 @@
 ../rtl/obi_timer/obi_timer.sv
 ../rtl/croc_domain.sv
 ../rtl/user_domain.sv
-../rtl/user_domain/secded_byte.sv
-../rtl/user_domain/user_rom.sv
 ../rtl/croc_soc.sv
 ../rtl/croc_chip.sv
+../rtl/user_domain/user_rom.sv
+../rtl/user_domain/user_design_sink.sv
+../rtl/user_domain/secded_byte.sv
+../rtl/user_domain/secded_sram_impl.sv
 ../rtl/test/tb_croc_pkg.sv
 ../rtl/test/croc_vip.sv
 ../rtl/test/tb_croc_soc.sv
-../rtl/test/tb_secded_testbench.sv
+../rtl/test/tb_secded_bench.sv
+../rtl/test/tb_secded_byte.sv
 

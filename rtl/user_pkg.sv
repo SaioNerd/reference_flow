@@ -22,45 +22,46 @@ package user_pkg;
 
   // The base address of the user domain can be retrived from `croc_pkg::UserBaseAddr`
   // Recommended: place subordinates at 4KB boundaries (32'hXXXX_X000)
-  //Added by Giulio following ex03 solution
-  localparam int unsigned NumUserDomainSubordinates = 1;
 
-  localparam bit [31:0] UserRomAddrOffset   = croc_pkg::UserBaseAddr; // 32'h2000_0000;
-  localparam bit [31:0] UserRomAddrRange    = 32'h0000_1000;          // every subordinate has at least 4KB
-
-  localparam int unsigned NumDemuxSbrRules  = NumUserDomainSubordinates; // number of address rules in the decoder
-  localparam int unsigned NumDemuxSbr       = NumDemuxSbrRules + 1; // additional OBI error, used for signal arrays
-
-
-  /// Enum with user domain demultiplexer subordinate idxs 
+  /// Enum with user domain demultiplexer subordinate idxs
   typedef enum bit [4:0]  {
-    UserError  = 0,
-    UserRom = 1 // Added by Giulio
+    UserError   = 0,
+    UserBank0   = 1,
+    UserRom     = 3,
+    UserDesign  = 4
   } user_demux_outputs_e;
 
   /// Address rules given to user domain demultiplexer (see croc_pkg.sv for examples)
-  // localparam croc_pkg::addr_map_rule_t [0:0] UserAddrMap = '{
-  //   '{
-  //     idx:        UserDesign,
-  //     start_addr: croc_pkg::UserBaseAddr,
-  //     end_addr:   croc_pkg::UserBaseAddr + 32'h1000_0000
-  //   }
-  // };
-
-  // Added by Giulio to integrate ROM
-  localparam croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] UserAddrMap = '{
-    '{ 
-      idx:          UserRom, 
-      start_addr:   UserRomAddrOffset,
-      end_addr:     UserRomAddrOffset + UserRomAddrRange
+  localparam croc_pkg::addr_map_rule_t [3:0] UserAddrMap = '{
+    '{
+      idx:        UserBank0,
+      start_addr: croc_pkg::UserBaseAddr,                // 32'h1000_0000
+      end_addr:   croc_pkg::UserBaseAddr + 32'h0800
+    },
+    '{
+      idx:        UserBank0+1,
+      start_addr: croc_pkg::UserBaseAddr + 32'h0800,    //MODIFIED FOR SW TB
+      end_addr:   croc_pkg::UserBaseAddr + 32'h1000
+    },
+    '{
+      idx:        UserRom,
+      start_addr: croc_pkg::UserBaseAddr + 32'h1000_0000, // = 32'h2000_0000
+      end_addr:   croc_pkg::UserBaseAddr + 32'h1000_1000
+    },
+    '{
+      idx:        UserDesign,
+      start_addr: croc_pkg::UserBaseAddr + 32'h1000_1000,
+      end_addr:   croc_pkg::UserBaseAddr + 32'h1000_2000
     }
   };
   // All addresses outside the defined address rules go to the error subordinate
 
-  // +1 for additional OBI error
+  // SECDED Feature Toggle
+  // 1'b1 = Use standard 32-bit SRAM (No Encryption/ECC)
+  // 1'b0 = Use 64-bit SRAM with Byte-wise SECDED
+  localparam bit SECDEDBypass = 1'b0;
   
-  // Comment by Giulio 
-  //localparam int unsigned NumDemuxSbr = $size(UserAddrMap) + 1;
+  // +1 for additional OBI error
+  localparam int unsigned NumDemuxSbr = $size(UserAddrMap) + 1;
 
 endpackage
-

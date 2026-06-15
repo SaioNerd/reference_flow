@@ -50,15 +50,8 @@ localparam int unsigned NumExternalIrqs = 4;
 logic [NumExternalIrqs-1:0] interrupts;
 logic [      GpioCount-1:0] gpio_in_sync;
 
-// ---- NEW MEMORY INTERFACE SIGNALS (Connecting Croc and User Domains) ----
-  logic                                                                  sram_impl;
-  logic [NumSramBanks-1:0]                                               sram_req;
-  logic [NumSramBanks-1:0]                                               sram_we;
-  logic [NumSramBanks-1:0][cf_math_pkg::idx_width(SramBankNumWords)-1:0] sram_addr;
-  logic [NumSramBanks-1:0][SbrObiCfg.DataWidth-1:0]                      sram_wdata;
-  logic [NumSramBanks-1:0][(SbrObiCfg.DataWidth/8)-1:0]                  sram_be;
-  logic [NumSramBanks-1:0]                                               sram_gnt;
-  logic [NumSramBanks-1:0][SbrObiCfg.DataWidth-1:0]                      sram_rdata;
+//Added by Giulio: control signal from croc to user SRAM
+logic sram_impl;
 
 croc_domain #(
   .GpioCount       ( GpioCount       ),
@@ -92,19 +85,7 @@ croc_domain #(
 
   .interrupts_i ( interrupts ),
   .core_busy_o  ( status_o   ),
-
-  // Memory Interface Output to User Domain
-  .sram_impl    ( sram_impl    ),
-  .sram_req_o   ( sram_req     ),
-  .sram_we_o    ( sram_we      ),
-  .sram_addr_o  ( sram_addr    ),
-  .sram_wdata_o ( sram_wdata   ),
-  .sram_be_o    ( sram_be      ),
-
-  // Memory Interface Return from User Domain
-  .sram_gnt_i   ( sram_gnt     ),
-  .sram_rdata_i ( sram_rdata   )
-
+  .sram_impl_o  ( sram_impl  ) // Not connected to anything, but we need to connect it to avoid an error
 );
 
 user_domain #(
@@ -124,18 +105,7 @@ user_domain #(
 
   .gpio_in_sync_i ( gpio_in_sync ),
   .interrupts_o   ( interrupts   ),
-
-  // Memory Interface Input from Croc Domain
-  .sram_impl_i  ( sram_impl    ),
-  .sram_req_i   ( sram_req     ),
-  .sram_we_i    ( sram_we      ),
-  .sram_addr_i  ( sram_addr    ),
-  .sram_wdata_i ( sram_wdata   ),
-  .sram_be_i    ( sram_be      ),
-
-  // Memory Interface Return to Croc Domain
-  .sram_gnt_o   ( sram_gnt     ),
-  .sram_rdata_o ( sram_rdata   )
+  .sram_impl_i    ( sram_impl    ) // Not connected to anything, but we need to connect it to avoid an error
 );
 
 endmodule

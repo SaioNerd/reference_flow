@@ -23,19 +23,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  logic [      GpioCount-1:0] gpio_in_sync_i, // synchronized GPIO inputs
   output logic [NumExternalIrqs-1:0] interrupts_o,    // interrupts to core
 
-  // ---- NEW MEMORY INTEFACE SIGNALS (form croc_domain) ----
-  input  logic  sram_impl_i,
-  
-  // Input signals from OBI Shim
-  input  logic [NumSramBanks-1:0]                                               sram_req_i,
-  input  logic [NumSramBanks-1:0]                                               sram_we_i,
-  input  logic [NumSramBanks-1:0][cf_math_pkg::idx_width(SramBankNumWords)-1:0]  sram_addr_i, // word address
-  input  logic [NumSramBanks-1:0][SbrObiCfg.DataWidth-1:0]                      sram_wdata_i,
-  input  logic [NumSramBanks-1:0][(SbrObiCfg.DataWidth/8)-1:0]                  sram_be_i,
-  
-  // Return signals to OBI Shim
-  output logic [NumSramBanks-1:0]                                               sram_gnt_o,
-  output logic [NumSramBanks-1:0][SbrObiCfg.DataWidth-1:0]                      sram_rdata_o
+  input  logic      sram_impl_i //Added by Giulio : control signal from croc to user SRAM
 );
 
   assign interrupts_o = '0;
@@ -61,31 +49,37 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   sbr_obi_req_t [NumDemuxSbr-1:0] all_user_sbr_obi_req;
   sbr_obi_rsp_t [NumDemuxSbr-1:0] all_user_sbr_obi_rsp;
 
-  // ROM Subordinate Bus //Added by Giulio
-  sbr_obi_req_t user_rom_obi_req;
-  sbr_obi_rsp_t user_rom_obi_rsp;
-
   // Error Subordinate Bus
   sbr_obi_req_t user_error_obi_req;
   sbr_obi_rsp_t user_error_obi_rsp;
 
-  // Comment by Giulio: We don't have a user design, so we don't need to define the bus for it
   // OBI bus to your design
-  // sbr_obi_req_t user_design_obi_req;
-  // sbr_obi_rsp_t user_design_obi_rsp;
+  sbr_obi_req_t user_design_obi_req;
+  sbr_obi_rsp_t user_design_obi_rsp;
+
+  // ROM Subordinate Bus //Added by Giulio
+  sbr_obi_req_t user_rom_obi_req;
+  sbr_obi_rsp_t user_rom_obi_rsp;
+
+  // SRAM bank buses
+  sbr_obi_req_t [NumSramBanks-1:0] user_mem_bank_obi_req;
+  sbr_obi_rsp_t [NumSramBanks-1:0] user_mem_bank_obi_rsp;
 
   // Fanout into more readable signals
   assign user_error_obi_req               = all_user_sbr_obi_req[UserError];
   assign all_user_sbr_obi_rsp[UserError]  = user_error_obi_rsp;
-
-  // Comment by Giulio: We don't have a user design
-  // assign user_design_obi_req              = all_user_sbr_obi_req[UserDesign];
-  // assign all_user_sbr_obi_rsp[UserDesign] = user_design_obi_rsp;
-
+  assign user_design_obi_req              = all_user_sbr_obi_req[UserDesign];
+  assign all_user_sbr_obi_rsp[UserDesign] = user_design_obi_rsp;
 
   //Added by Giulio : Fanout for the ROM subordinate
   assign user_rom_obi_req                = all_user_sbr_obi_req[UserRom];
   assign all_user_sbr_obi_rsp[UserRom]   = user_rom_obi_rsp;
+
+  //Added by Giulio: Fanout of SRAM bank buses
+  for (genvar i = 0; i < NumSramBanks; i++) begin : gen_mem_sbr_connect
+    assign user_mem_bank_obi_req[i]     = all_user_sbr_obi_req[UserBank0+i];
+    assign all_user_sbr_obi_rsp[UserBank0+i] = user_mem_bank_obi_rsp[i];
+  end
 
 
   //-----------------------------------------------------------------------------------------------
@@ -133,22 +127,19 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 // User Subordinates
 //-------------------------------------------------------------------------------------------------
 
-  ///////////////////////////////////
-  // Replace this with your Design //
-  ///////////////////////////////////
-  // obi_err_sbr #(
-  //   .ObiCfg      ( SbrObiCfg     ),
-  //   .obi_req_t   ( sbr_obi_req_t ),
-  //   .obi_rsp_t   ( sbr_obi_rsp_t ),
-  //   .NumMaxTrans ( 1             ),
-  //   .RspData     ( 32'hBADCAB1E  )
-  // ) i_your_design_goes_here (
-  //   .clk_i,
-  //   .rst_ni,
-  //   .testmode_i ( testmode_i          ),
-  //   .obi_req_i  ( user_design_obi_req ),
-  //   .obi_rsp_o  ( user_design_obi_rsp )
-  // );
+  // //////////////////////////////
+  // // User Design (OBI Data Sink) //
+  // //////////////////////////////
+  user_design_sink #(
+    .ObiCfg      ( SbrObiCfg     ),
+    .obi_req_t   ( sbr_obi_req_t ),
+    .obi_rsp_t   ( sbr_obi_rsp_t )
+  ) i_user_design_sink (
+    .clk_i,
+    .rst_ni,
+    .obi_req_i  ( user_design_obi_req ),
+    .obi_rsp_o  ( user_design_obi_rsp )
+  );
 
   // Added by Giulio
   // User ROM 
@@ -162,199 +153,6 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .obi_req_i  ( user_rom_obi_req ),
     .obi_rsp_o  ( user_rom_obi_rsp )
   );
-
-
-  // ---------------------------------------------------------------------------
-  // SRAM + SECDED Implementation / Bypass Mode
-  // ---------------------------------------------------------------------------
-  
-  localparam int unsigned SramBankAddrWidth = cf_math_pkg::idx_width(SramBankNumWords);
-
-  logic [NumSramBanks-1:0] bank_double_err;
-
-  generate
-    if (croc_pkg::SECDEDBypass == 1'b0) begin : gen_secded_mode
-      // ================= HARDWARE SECDED MODE (Current Configuration) =================
-      
-      for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
-        
-        logic [63:0] sram_wdata_64;
-        logic [63:0] sram_rdata_64;
-        logic [63:0] sram_be_64; //bit enable
-
-        logic [3:0] byte_double_err;
-        
-        // --- 1. SECDED: Byte level Encode and Decode ---
-        for (genvar b = 0; b < 4; b++) begin : gen_secded_bytes
-          logic [12:0] enc_data;
-          logic [12:0] dec_data;
-
-          // NEW: Intermediate wires for unsupported EDA compilers features
-          logic [7:0] tmp_data_out;
-          logic       tmp_single_err;
-
-          // Encoding: Parity bits calculation (13 bit output per byte)
-          secded_byte_encode i_encode (
-            .data_in     ( sram_wdata_i[i][b*8 +: 8] ),
-            .encoded_out ( enc_data                  )
-          );
-          
-          // Mapping of 13 bit bytes to physical SRAM
-          assign sram_wdata_64[b*13 +: 13] = enc_data;
-          
-          // Creating the Bitmask: if the byte needs to be written, enable all 13 corresponding bits!
-          assign sram_be_64[b*13 +: 13] = sram_be_i[i][b] ? 13'h1FFF : 13'h0000;
-
-          // In reading: Extract the 13 bits from the physical memory and correct them
-          assign dec_data = sram_rdata_64[b*13 +: 13];
-
-          secded_byte_decode i_decode (
-            .encoded_in   ( dec_data                  ),
-            .data_out     ( tmp_data_out              ), // Safe connection to simple wire
-            .single_err_o ( tmp_single_err   /* connectable to a register to monitor errors */), // Safe connection to simple wire 
-            .double_err_o ( byte_double_err[b]       ) //capture the DED
-          );
-
-          // NEW: Assign the simple wire back to the complex multi-dimensional slice
-          assign sram_rdata_o[i][b*8 +: 8] = tmp_data_out;
-
-        end
-
-
-        //Filling last empty bits with zeros to match the 64 bit interface of the SRAM wrapper
-        assign sram_wdata_64[63:52] = '0;
-        assign sram_be_64[63:52]    = '0;
-
-        // Combine all 4 bytes in this bank: if any byte has a DED, the bank fails
-        assign bank_double_err[i] = |byte_double_err; //OR Reduction
-
-
-
-
-        // --- 2. SRAM Wrapper  ---
-        tc_sram_impl #(
-          .NumWords  ( SramBankNumWords ), 
-          .DataWidth ( 64               ), // Extended for SECDED bits compatibility
-          .ByteWidth ( 1                ), // Allow us to control writes bit by bit per encoded data storage
-          .NumPorts  ( 1                ),
-          .Latency   ( 1                )
-        ) i_sram (
-          .clk_i,
-          .rst_ni,
-
-          .impl_i  ( sram_impl_i    ),
-          .impl_o  (                ),
-
-          .req_i   ( sram_req_i[i]  ),
-          .we_i    ( sram_we_i[i]   ),
-          .addr_i  ( sram_addr_i[i] ),
-
-          .wdata_i ( sram_wdata_64  ),
-          .be_i    ( sram_be_64     ), // New bitmask
-          .rdata_o ( sram_rdata_64  )
-        );
-
-        // --- 3. Handshake ---
-        assign sram_gnt_o[i] = 1'b1; // always ready for request
-      end
-
-      // Combine all banks into one global interrupt signal
-      assign interrupts_o[0] = |bank_double_err; //OR Reduction
-      assign interrupts_o[3:1] = '0; // Tie off the unused ones for now
-
-    end else begin : gen_secded_bypass_mode
-      // ================= BYPASS MODE (Direct 32-bit ↔ 64-bit mapping) =================
-      // Address bit [2] selects upper/lower 32-bit half of 64-bit SRAM word
-      // Effectively doubles addressable memory from software perspective (no ECC)
-      
-      for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
-
-        logic addr_half; // Address bit [2]: 0=lower half, 1=upper half
-        logic [63:0] sram_wdata_64;
-        logic [63:0] sram_rdata_64;
-        logic [7:0]  sram_be_64;   // 8 byte enables for 64-bit word
-
-        assign addr_half = sram_addr_i[i][2];
-
-        // --- WRITE PATH ---
-        // Map 32-bit write data and byte enables to appropriate half of 64-bit word
-        always_comb begin
-          sram_wdata_64 = '0;
-          sram_be_64 = '0;
-          
-          if (addr_half == 1'b0) begin
-            // Lower 32-bit half (bits [31:0] of 64-bit word)
-            sram_wdata_64[31:0] = sram_wdata_i[i][31:0];
-            sram_be_64[3:0] = sram_be_i[i][3:0];
-          end else begin
-            // Upper 32-bit half (bits [63:32] of 64-bit word)
-            sram_wdata_64[63:32] = sram_wdata_i[i][31:0];
-            sram_be_64[7:4] = sram_be_i[i][3:0];
-          end
-        end
-
-        // --- READ PATH ---
-        // Select appropriate half of 64-bit read data with pipeline delay
-        logic [31:0] rdata_selected;
-        logic [31:0] rdata_q;
-        logic addr_half_q;
-
-        assign rdata_selected = (addr_half == 1'b0) ? sram_rdata_64[31:0] : sram_rdata_64[63:32];
-
-        always_ff @(posedge clk_i or negedge rst_ni) begin
-          if (!rst_ni) begin
-            rdata_q <= '0;
-            addr_half_q <= 1'b0;
-          end else begin
-            rdata_q <= rdata_selected;
-            addr_half_q <= addr_half;
-          end
-        end
-
-        assign sram_rdata_o[i][31:0] = rdata_q;
-
-        // Physical SRAM address uses all 9 bits [8:0] to address 512 64-bit words
-        // Bit [2] is used for half-selection (upper/lower 32-bit half)
-        // This allows 1024 addressable 32-bit words (512 64-bit words * 2 halves)
-        // without changing CrocAddrMap - software simply uses different values of bit [2]
-
-        // --- 2. SRAM Wrapper (64-bit width) ---
-        tc_sram_impl #(
-          .NumWords  ( SramBankNumWords ), 
-          .DataWidth ( 64               ), // Full 64-bit width for bypass mode
-          .ByteWidth ( 8                ), // 8 bytes for 64-bit word
-          .NumPorts  ( 1                ),
-          .Latency   ( 1                )
-        ) i_sram (
-          .clk_i,
-          .rst_ni,
-
-          .impl_i  ( sram_impl_i           ),
-          .impl_o  (                       ),
-
-          .req_i   ( sram_req_i[i]         ),
-          .we_i    ( sram_we_i[i]          ),
-          .addr_i  ( sram_addr_i[i][8:0]   ), // Use all 9 bits to address all 512 words
-
-          .wdata_i ( sram_wdata_64         ),
-          .be_i    ( sram_be_64            ),
-          .rdata_o ( sram_rdata_64         )
-        );
-
-        // --- 3. Handshake ---
-        assign sram_gnt_o[i] = 1'b1; // always ready for request
-
-      end
-
-      // No double error detection in bypass mode (no ECC)
-      assign bank_double_err = '0;
-      assign interrupts_o = '0;
-
-    end
-  endgenerate
-
-  // Combine all banks into one global interrupt signal (SECDED mode only)
-  // In bypass mode, interrupts are tied to zero above
 
   // Error Subordinate
   obi_err_sbr #(
@@ -371,6 +169,108 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .obi_rsp_o  ( user_error_obi_rsp )
   );
 
+  // -----------------
+  // Memories
+  // -----------------
+  localparam int unsigned SramBankAddrWidth = cf_math_pkg::idx_width(SramBankNumWords);
+
+  // =========================================================================
+  // SRAM SECDED Error Aggregation Buses
+  // =========================================================================
+  logic [NumSramBanks-1:0] all_banks_single_err;
+  logic [NumSramBanks-1:0] all_banks_double_err;
+
+  // Route any error from any bank to the CPU interrupts.
+  // IRQ0 = Single Error (Correctable)
+  // IRQ1 = Double Error (Uncorrectable/Fatal)
+  always_comb begin
+    interrupts_o = '0;
+    //interrupts_o[0] = |all_banks_single_err;
+    interrupts_o[0] = |all_banks_double_err;
+  end
+
+  for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
+    logic bank_req, bank_we, bank_gnt;
+    logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;
+    logic [SramBankAddrWidth-1:0] bank_word_addr;
+    logic [SbrObiCfg.DataWidth-1:0] bank_wdata, bank_rdata;
+    logic [SbrObiCfg.DataWidth/8-1:0] bank_be;
+
+    obi_sram_shim #(
+      .ObiCfg    ( SbrObiCfg     ),
+      .obi_req_t ( sbr_obi_req_t ),
+      .obi_rsp_t ( sbr_obi_rsp_t )
+    ) i_sram_shim (
+      .clk_i,
+      .rst_ni,
+
+      .obi_req_i ( user_mem_bank_obi_req[i] ),
+      .obi_rsp_o ( user_mem_bank_obi_rsp[i] ),
+
+      .req_o   ( bank_req       ),
+      .we_o    ( bank_we        ),
+      .addr_o  ( bank_byte_addr ),
+      .wdata_o ( bank_wdata     ),
+      .be_o    ( bank_be        ),
+
+      .gnt_i   ( bank_gnt   ),
+      .rdata_i ( bank_rdata )
+    );
+
+    assign bank_word_addr = bank_byte_addr[SbrObiCfg.AddrWidth-1:2];
+
+
+    // Error signals for this specific bank
+    logic bank_double_err, bank_single_err;
+
+    // Map this bank's errors to the global error aggregation buses
+    assign all_banks_single_err[i] = bank_single_err;
+    assign all_banks_double_err[i] = bank_double_err;
+
+    // SECDED SRAM Implementation wrapper
+    secded_sram_impl #(
+      .NumWords   ( SramBankNumWords    ),
+      .DataWidth  ( SbrObiCfg.DataWidth ), // 32 bits
+      .ByteWidth  ( 8                   ),
+      .NumPorts   ( 1                   ),
+      .Latency    ( 1                   )
+    ) i_sram_macro (
+      .clk_i        ( clk_i           ),
+      .rst_ni       ( rst_ni          ),
+      .impl_i       ( sram_impl_i     ), // Passed from user_domain inputs
+      .impl_o       ( /* unused */    ),
+      .req_i        ( bank_req        ),
+      .we_i         ( bank_we         ),
+      .addr_i       ( bank_word_addr  ),
+      .wdata_i      ( bank_wdata      ),
+      .be_i         ( bank_be         ),
+      .rdata_o      ( bank_rdata      ),
+      .single_err_o ( bank_single_err ),
+      .double_err_o ( bank_double_err )
+    );
+    // tc_sram_impl #(
+    //   .NumWords  ( SramBankNumWords ),
+    //   .DataWidth ( 32 ),
+    //   .NumPorts  (  1 ),
+    //   .Latency   (  1 )
+    // ) i_sram (
+    //   .clk_i,
+    //   .rst_ni,
+
+    //   .impl_i  ( sram_impl_i    ),
+    //   .impl_o  (),
+
+    //   .req_i   ( bank_req       ),
+    //   .we_i    ( bank_we        ),
+    //   .addr_i  ( bank_word_addr ),
+
+    //   .wdata_i ( bank_wdata ),
+    //   .be_i    ( bank_be    ),
+    //   .rdata_o ( bank_rdata )
+    // );
+
+    assign bank_gnt = 1'b1; // always ready for request
+  end
+
+
 endmodule
-
-

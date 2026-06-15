@@ -20,20 +20,11 @@ RISCV_AR      ?= $(RISCV_PREFIX)ar
 RISCV_LD      ?= $(RISCV_PREFIX)ld
 RISCV_STRIP   ?= $(RISCV_PREFIX)strip
 
-# # Check SECDED bypass mode from croc_pkg.sv
-# CROC_PKG_PATH ?= ../rtl/croc_pkg.sv
-# SECDED_BYPASS_ENABLED := $(shell grep -o "SECDEDBypass = 1'b[01]" $(CROC_PKG_PATH) | grep -o "[01]$$")
-
 # Compiler and linker flags
 RISCV_FLAGS ?= -march=$(RISCV_MARCH) -mabi=$(RISCV_MABI) -mcmodel=medany \
 	-static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding
 RISCV_CCFLAGS ?= $(RISCV_FLAGS) -Iinclude -I$(INCDIR) -I$(CURDIR)
 RISCV_LDFLAGS ?= -static -nostartfiles -lm -lgcc $(RISCV_FLAGS)
-
-# Add SECDED_BYPASS flag to linker if enabled
-ifeq ($(SECDED_BYPASS_ENABLED),1)
-RISCV_LDFLAGS += -DSECDED_BYPASS=1
-endif
 
 
 # Directory defaults

@@ -81,3 +81,5 @@
 #/openroad/src
 #yosys
 /yosys/out
+/rtl_old
+/sw_old

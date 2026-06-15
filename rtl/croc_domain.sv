@@ -42,25 +42,13 @@ module croc_domain import croc_pkg::*; #(
   input  logic [NumExternalIrqs-1:0] interrupts_i,
   output logic core_busy_o,
 
-  ///--- NEW MEMORY INTERFACE SIGNALS (to user_domain) ---
-  output logic  sram_impl, // soc_ctrl -> SRAM config signals
-
-  // ---- Signals to the external SRAM (after Shim) ----
-  output logic [NumSramBanks-1:0]                                      sram_req_o,
-  output logic [NumSramBanks-1:0]                                      sram_we_o,
-  output logic [NumSramBanks-1:0][cf_math_pkg::idx_width(SramBankNumWords)-1:0] sram_addr_o, // word address
-  output logic [NumSramBanks-1:0][SbrObiCfg.DataWidth-1:0]             sram_wdata_o,
-  output logic [NumSramBanks-1:0][(SbrObiCfg.DataWidth/8)-1:0]         sram_be_o,
-  
-  // ---- Return signals from external SRAM ----
-  input  logic [NumSramBanks-1:0]                                      sram_gnt_i, // external handshaking
-  input  logic [NumSramBanks-1:0][SbrObiCfg.DataWidth-1:0]             sram_rdata_i
+  output logic sram_impl_o
 );
 
   // -----------------
   // Control Signals
   // -----------------
-  // logic sram_impl; // there is another definition above
+  // logic sram_impl; // soc_ctrl -> SRAM config signals  || Brought to output then user domain
   logic debug_req;
   logic fetch_enable;
 
@@ -137,9 +125,10 @@ module croc_domain import croc_pkg::*; #(
 
   // user bus defined in module port
 
-  // mem bank buses
-  sbr_obi_req_t [NumSramBanks-1:0] xbar_mem_bank_obi_req;
-  sbr_obi_rsp_t [NumSramBanks-1:0] xbar_mem_bank_obi_rsp;
+  //Moved to user domain
+  // // mem bank buses
+  // sbr_obi_req_t [NumSramBanks-1:0] xbar_mem_bank_obi_req;
+  // sbr_obi_rsp_t [NumSramBanks-1:0] xbar_mem_bank_obi_rsp;
 
   // periph bus
   sbr_obi_req_t xbar_periph_obi_req;
@@ -155,10 +144,11 @@ module croc_domain import croc_pkg::*; #(
   assign xbar_periph_obi_req         = all_sbr_obi_req[XbarPeriph];
   assign all_sbr_obi_rsp[XbarPeriph] = xbar_periph_obi_rsp;
 
-  for (genvar i = 0; i < NumSramBanks; i++) begin : gen_xbar_sbr_connect
-    assign xbar_mem_bank_obi_req[i]     = all_sbr_obi_req[XbarBank0+i];
-    assign all_sbr_obi_rsp[XbarBank0+i] = xbar_mem_bank_obi_rsp[i];
-  end
+  // Moved to user domain
+  // for (genvar i = 0; i < NumSramBanks; i++) begin : gen_xbar_sbr_connect
+  //   assign xbar_mem_bank_obi_req[i]     = all_sbr_obi_req[XbarBank0+i];
+  //   assign all_sbr_obi_rsp[XbarBank0+i] = xbar_mem_bank_obi_rsp[i];
+  // end
 
   assign user_sbr_obi_req_o          = all_sbr_obi_req[XbarUser];
   assign all_sbr_obi_rsp[XbarUser]   = user_sbr_obi_rsp_i;
@@ -450,75 +440,70 @@ module croc_domain import croc_pkg::*; #(
     .en_default_idx_i ( '1 ),
     .default_idx_i    ( '0 )
   );
+  
+  /////////////////////////////////////////////////////////////////////////////////////
+  // MOVED TO USER DOMAIN
 
-  // -----------------
-  // Memories
-  // -----------------
-  localparam int unsigned SramBankAddrWidth = cf_math_pkg::idx_width(SramBankNumWords);
+  // // -----------------
+  // // Memories
+  // // -----------------
+  // localparam int unsigned SramBankAddrWidth = cf_math_pkg::idx_width(SramBankNumWords);
 
-  for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
-    logic bank_req, bank_we, bank_gnt, bank_single_err;
-    logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;
-    logic [SramBankAddrWidth-1:0] bank_word_addr;
-    logic [SbrObiCfg.DataWidth-1:0] bank_wdata; //Removed bank_rdata from generator because we get it as input now
-    logic [SbrObiCfg.DataWidth/8-1:0] bank_be;
+  // for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
+  //   logic bank_req, bank_we, bank_gnt, bank_single_err;
+  //   logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;
+  //   logic [SramBankAddrWidth-1:0] bank_word_addr;
+  //   logic [SbrObiCfg.DataWidth-1:0] bank_wdata, bank_rdata;
+  //   logic [SbrObiCfg.DataWidth/8-1:0] bank_be;
 
-    obi_sram_shim #(
-      .ObiCfg    ( SbrObiCfg     ),
-      .obi_req_t ( sbr_obi_req_t ),
-      .obi_rsp_t ( sbr_obi_rsp_t )
-    ) i_sram_shim (
-      .clk_i,
-      .rst_ni,
+  //   obi_sram_shim #(
+  //     .ObiCfg    ( SbrObiCfg     ),
+  //     .obi_req_t ( sbr_obi_req_t ),
+  //     .obi_rsp_t ( sbr_obi_rsp_t )
+  //   ) i_sram_shim (
+  //     .clk_i,
+  //     .rst_ni,
 
-      .obi_req_i ( xbar_mem_bank_obi_req[i] ),
-      .obi_rsp_o ( xbar_mem_bank_obi_rsp[i] ),
+  //     .obi_req_i ( xbar_mem_bank_obi_req[i] ),
+  //     .obi_rsp_o ( xbar_mem_bank_obi_rsp[i] ),
 
-      .req_o   ( bank_req       ),
-      .we_o    ( bank_we        ),
-      .addr_o  ( bank_byte_addr ),
-      .wdata_o ( bank_wdata     ),
-      .be_o    ( bank_be        ),
+  //     .req_o   ( bank_req       ),
+  //     .we_o    ( bank_we        ),
+  //     .addr_o  ( bank_byte_addr ),
+  //     .wdata_o ( bank_wdata     ),
+  //     .be_o    ( bank_be        ),
 
-      .gnt_i   ( sram_gnt_i[i]   ), //external handshaking
-      .rdata_i ( sram_rdata_i[i] )  //input signal from ext SRAM
-    );
+  //     .gnt_i   ( bank_gnt   ),
+  //     .rdata_i ( bank_rdata )
+  //   );
 
-    assign bank_word_addr = bank_byte_addr[SbrObiCfg.AddrWidth-1:2];
+  //   assign bank_word_addr = bank_byte_addr[SbrObiCfg.AddrWidth-1:2];
 
-    // Assign to output signal arrays of the module
-    assign sram_req_o[i]   = bank_req;
-    assign sram_we_o[i]    = bank_we;
-    assign sram_addr_o[i]  = bank_word_addr;
-    assign sram_wdata_o[i] = bank_wdata;
-    assign sram_be_o[i]    = bank_be;
+  //   tc_sram_impl #(
+  //     .NumWords  ( SramBankNumWords ),
+  //     .DataWidth ( 32 ),
+  //     .NumPorts  (  1 ),
+  //     .Latency   (  1 )
+  //   ) i_sram (
+  //     .clk_i,
+  //     .rst_ni,
 
+  //     .impl_i  ( sram_impl      ),
+  //     .impl_o  (),
 
-    /// --- New wrapper is instantiated in user_domain, and we get the SRAM signals as input/output of the croc_domain --- 
-    // tc_sram_impl #(
-    //   .NumWords  ( SramBankNumWords ),
-    //   .DataWidth ( 32 ),
-    //   .NumPorts  (  1 ),
-    //   .Latency   (  1 )
-    // ) i_sram (
-    //   .clk_i,
-    //   .rst_ni,
+  //     .req_i   ( bank_req       ),
+  //     .we_i    ( bank_we        ),
+  //     .addr_i  ( bank_word_addr ),
 
-    //   .impl_i  ( sram_impl      ),
-    //   .impl_o  (),
+  //     .wdata_i ( bank_wdata ),
+  //     .be_i    ( bank_be    ),
+  //     .rdata_o ( bank_rdata )
+  //   );
 
-    //   .req_i   ( bank_req       ),
-    //   .we_i    ( bank_we        ),
-    //   .addr_i  ( bank_word_addr ),
+  //   assign bank_gnt = 1'b1; // always ready for request
+  // end
 
-    //   .wdata_i ( bank_wdata ),
-    //   .be_i    ( bank_be    ),
-    //   .rdata_o ( bank_rdata )
-    // );
-
-    // assign bank_gnt = 1'b1; // always ready for request
-  end
-
+  ///////////////////////////////////////////////////////////////////////////////////////////
 
   // Xbar space error subordinate
   obi_err_sbr #(
@@ -588,7 +573,7 @@ module croc_domain import croc_pkg::*; #(
     .obi_req_i  ( soc_ctrl_obi_req ),
     .obi_rsp_o  ( soc_ctrl_obi_rsp ),
     .fetch_en_o ( fetch_enable     ),
-    .sram_dly_o ( sram_impl        )
+    .sram_dly_o ( sram_impl_o      )
   );
 
   // UART
