@@ -1,0 +1,173 @@
+//  v2lvs v2021.3_35.19    Wed Sep 1 15:25:12 PDT 2021
+//
+//  Copyright (c) 1992, 1993 Regents of the University of California
+//         All rights reserved.
+//
+//                   Copyright Siemens 1996-2021
+//                       All Rights Reserved.
+//   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+//      WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+//        OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+//  The registered trademark Linux is used pursuant to a sublicense from LMI, the
+//  exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
+//
+//  Mentor Graphics software executing under x86-64 Linux
+//
+Running /usr/pack/calibre-2021.3-bt/aoi_cal_2021.3_35.19/pkgs/icv/pvt/v2lvs -b -tcl v2lvs.tcl
+
+Warning: v2lvs::combine_interface_info is enabled, no warnings will be issued for non-sequential pins in spice
+Info: Creating Spice Library Database ...
+Warning: Duplicate declaration "RSC_IHPSG13_CBUFX4" at line 163 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CBUFX4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_WLDRVX4" at line 200 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_WLDRVX4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_FILLCAP8" at line 227 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_FILLCAP8" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_LHPQX2" at line 233 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_LHPQX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_NAND2X2" at line 258 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_NAND2X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CINVX4" at line 265 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CINVX4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CINVX2" at line 269 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CINVX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_INVX2" at line 273 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_INVX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_NAND3X2" at line 277 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_NAND3X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_NOR3X2" at line 286 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_NOR3X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_FILLCAP4" at line 294 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_FILLCAP4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_MET2RES" at line 300 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_MET2RES" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CINVX8" at line 361 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CINVX8" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_DFNQMX2IX1" at line 365 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_DFNQMX2IX1" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CDLYX1" at line 467 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CDLYX1" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CDLYX1_DUMMY" at line 485 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CDLYX1_DUMMY" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_MX2IX1" at line 493 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_MX2IX1" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_DFNQX2" at line 516 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_DFNQX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CNAND2X2" at line 566 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CNAND2X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CGATEPX4" at line 573 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CGATEPX4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CBUFX8" at line 608 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CBUFX8" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CDLYX2" at line 614 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CDLYX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_MX2X2" at line 623 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_MX2X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_AND2X2" at line 647 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_AND2X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_TIEL" at line 658 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_TIEL" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_XOR2X2" at line 664 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_XOR2X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_OA12X1" at line 690 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_OA12X1" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_NOR2X2" at line 802 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_NOR2X2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CINVX4_WN" at line 808 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CINVX4_WN" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_TIEH" at line 836 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_TIEH" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_MET3RES" at line 842 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_MET3RES" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_DFPQD_MSAFFX2" at line 845 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_DFPQD_MSAFFX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CBUFX2" at line 870 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CBUFX2" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_INVX4" at line 878 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_INVX4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_AND2X4" at line 985 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_AND2X4" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CBUFX12" at line 1444 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CBUFX12" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_WLDRVX12" at line 1489 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_WLDRVX12" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_AND2X6" at line 2505 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_AND2X6" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_CBUFX16" at line 2968 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_CBUFX16" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_WLDRVX16" at line 3011 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_WLDRVX16" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_DFPQD_MSAFFX2P" at line 3818 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_DFPQD_MSAFFX2P" declaration will be used in Verilog translation.
+Warning: Duplicate declaration "RSC_IHPSG13_WLDRVX8" at line 4599 in "/usr/pack/ihp-sg13-kgf/open_ihp_sg13g2/sg13g2_sram/v2.2/cdl.dz/RM_IHPSG13_1P_512x64_c2_bm_bist.cdl". First "RSC_IHPSG13_WLDRVX8" declaration will be used in Verilog translation.
+Info: Creating Library Database ...
+Info: Creating Design Database ...
+Info: Converting Design ...
+Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram/gen_512x64xBx1.i_cut calls port \VSS! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram/gen_512x64xBx1.i_cut calls port \VDD! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram/gen_512x64xBx1.i_cut calls port \VDDARRAY! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: Module instantiation croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram/gen_512x64xBx1.i_cut has pin mismatches with module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram/gen_512x64xBx1.i_cut calls port \VSS! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram/gen_512x64xBx1.i_cut calls port \VDD! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram/gen_512x64xBx1.i_cut calls port \VDDARRAY! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: Module instantiation croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram/gen_512x64xBx1.i_cut has pin mismatches with module RM_IHPSG13_1P_512x64_c2_bm_bist
+Warning: Module instantiation croc_chip/clkload15 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload14 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload4 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload3 has pin mismatches with module INVX64
+Warning: Module instantiation croc_chip/clkload2 has pin mismatches with module INVX64
+Warning: Module instantiation croc_chip/clkload1 has pin mismatches with module INVX64
+Warning: Module instantiation croc_chip/clkload0 has pin mismatches with module INVX32
+Warning: Module instantiation croc_chip/clkload13 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload12 has pin mismatches with module INVX14
+Warning: Module instantiation croc_chip/clkload7 has pin mismatches with module INVX2
+Warning: Module instantiation croc_chip/clkload5 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload6 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload11 has pin mismatches with module INVX2
+Warning: Module instantiation croc_chip/clkload10 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload9 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload8 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload55 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload20 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload17 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload16 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload19 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload18 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload54 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload53 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload21 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload52 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload32 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload23 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload22 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload31 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload24 has pin mismatches with module INVX14
+Warning: Module instantiation croc_chip/clkload30 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload29 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload26 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload25 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload28 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload27 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload51 has pin mismatches with module BUFX48
+Warning: Module instantiation croc_chip/clkload35 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload34 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload33 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload50 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload49 has pin mismatches with module INVX32
+Warning: Module instantiation croc_chip/clkload48 has pin mismatches with module INVX14
+Warning: Module instantiation croc_chip/clkload37 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload36 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload47 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload46 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload40 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload39 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload38 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload45 has pin mismatches with module BUFX48
+Warning: Module instantiation croc_chip/clkload44 has pin mismatches with module INVX2
+Warning: Module instantiation croc_chip/clkload43 has pin mismatches with module BUFX64
+Warning: Module instantiation croc_chip/clkload42 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload41 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload60 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload56 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload59 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload58 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload57 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload76 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload75 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload61 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload74 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload73 has pin mismatches with module INVX14
+Warning: Module instantiation croc_chip/clkload72 has pin mismatches with module INVX8
+Warning: Module instantiation croc_chip/clkload62 has pin mismatches with module INVX32
+Warning: Module instantiation croc_chip/clkload71 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload65 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload64 has pin mismatches with module INVX32
+Warning: Module instantiation croc_chip/clkload63 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload70 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload69 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload67 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload66 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload68 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload97 has pin mismatches with module INVX2
+Warning: Module instantiation croc_chip/clkload88 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload87 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload86 has pin mismatches with module BUFX32
+Warning: Module instantiation croc_chip/clkload85 has pin mismatches with module INVX8
+Warning: Module instantiation croc_chip/clkload84 has pin mismatches with module INVX8
+Warning: Module instantiation croc_chip/clkload77 has pin mismatches with module INVX2
+Warning: Module instantiation croc_chip/clkload83 has pin mismatches with module INVX8
+Warning: Module instantiation croc_chip/clkload82 has pin mismatches with module BUFX44
+Warning: Module instantiation croc_chip/clkload81 has pin mismatches with module INVX1
+Warning: Module instantiation croc_chip/clkload78 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload80 has pin mismatches with module BUFX48
+Warning: Module instantiation croc_chip/clkload79 has pin mismatches with module INVX4
+Warning: Module instantiation croc_chip/clkload91 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload90 has pin mismatches with module INVX8
+Warning: Module instantiation croc_chip/clkload89 has pin mismatches with module BUFX48
+Warning: Module instantiation croc_chip/clkload96 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload95 has pin mismatches with module INVX3
+Warning: Module instantiation croc_chip/clkload94 has pin mismatches with module INVX16
+Warning: Module instantiation croc_chip/clkload93 has pin mismatches with module INVX6
+Warning: Module instantiation croc_chip/clkload92 has pin mismatches with module BUFX32
+
+CPU TIME = 1  REAL TIME = 2  MALLOC = 91/91/91
