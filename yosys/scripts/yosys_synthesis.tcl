@@ -59,8 +59,6 @@ yosys setattr -set keep_hierarchy 1 "t:cdc*phase_*$*"
 yosys setattr -set keep_hierarchy 1 "t:cdc*_src*$*"
 yosys setattr -set keep_hierarchy 1 "t:cdc*_dst*$*"
 yosys setattr -set keep_hierarchy 1 "t:sync$*"
-# Preserve hierarchy for SECDED/ECC wrappers (data integrity critical)
-yosys setattr -set keep_hierarchy 1 secded_*
 
 # blackbox modules (applies the *blackbox* attribute)
 yosys blackbox "t:tc_sram_blackbox$*"

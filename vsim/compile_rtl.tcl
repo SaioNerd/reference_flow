@@ -400,6 +400,8 @@ if {[catch { vlog -incr -sv \
     "$ROOT/rtl/clint/clint.sv" \
     "$ROOT/rtl/obi_timer/obi_timer.sv" \
     "$ROOT/rtl/croc_domain.sv" \
+    "$ROOT/rtl/user_domain/secded_byte.sv" \
+    "$ROOT/rtl/user_domain/user_rom.sv" \
     "$ROOT/rtl/user_domain.sv" \
     "$ROOT/rtl/croc_soc.sv" \
 }]} {return 1}

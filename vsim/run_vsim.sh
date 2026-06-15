@@ -21,7 +21,7 @@ set -u  # Error on undefined vars
 # Source environment
 source "../env.sh"
 
-VSIM=${VSIM:-questa-2025.3 vsim}
+VSIM=${VSIM:-questa-2023.4 vsim}
 
 mkdir -p reports
 
