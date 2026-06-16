@@ -25,10 +25,10 @@
 ###############################################################################
 # Setup
 ###############################################################################
-source scripts/startup.tcl
+#source scripts/startup.tcl
 
 # Load checkpoint from previous stage
-load_checkpoint 02_${proj_name}.placed
+#load_checkpoint 02_${proj_name}.placed
 
 # Set layers used for estimate_parasitics
 setDefaultParasitics

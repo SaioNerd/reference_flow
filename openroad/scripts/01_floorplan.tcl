@@ -144,19 +144,20 @@ set sramHaloY          10.0
 utl::report "Place Macros"
 
 # Bank0: top-left, pins facing down
-set bank0X $floor_leftX
-set bankY [expr $floor_topY - $RamSize512x64_H]
-placeInstance $bank0_sram0 $bank0X $bankY R0
+set bank0X [expr $floor_leftX + $RamSize512x64_W/2]
+set bank0Y [expr $floor_topY - ($floor_topY - $floor_bottomY)/5]
+placeInstance $bank0_sram0 $bank0X $bank0Y R0
 
 # Bank1: top-right, pins facing down
-set bank1X [expr $floor_rightX - $RamSize512x64_W]
-placeInstance $bank1_sram0 $bank1X $bankY R0
+set bank1X [expr $floor_leftX + $RamSize512x64_W/2]
+set bank1Y [expr $floor_bottomY + ($floor_topY - $floor_bottomY)/5 -$RamSize512x64_H]
+placeInstance $bank1_sram0 $bank1X $bank1Y R180
 
 utl::report "SRAM macro box: width ${RamSize512x64_W} height ${RamSize512x64_H}"
-utl::report "SRAM bank0 bbox: ($bank0X, $bankY) - ([expr {$bank0X + $RamSize512x64_W}], [expr {$bankY + $RamSize512x64_H}]) R0"
-utl::report "SRAM bank1 bbox: ($bank1X, $bankY) - ([expr {$bank1X + $RamSize512x64_W}], [expr {$bankY + $RamSize512x64_H}]) R0"
+utl::report "SRAM bank0 bbox: ($bank0X, $bank0Y) - ([expr {$bank0X + $RamSize512x64_W}], [expr {$bank0Y + $RamSize512x64_H}]) R0"
+utl::report "SRAM bank1 bbox: ($bank1X, $bank1Y) - ([expr {$bank1X + $RamSize512x64_W}], [expr {$bank1Y + $RamSize512x64_H}]) R0"
 utl::report "SRAM horizontal gaps to core boundary: left [expr {$bank0X - $core_leftX}] between [expr {$bank1X - ($bank0X + $RamSize512x64_W)}] right [expr {$core_rightX - ($bank1X + $RamSize512x64_W)}]"
-utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bankY + $RamSize512x64_H)}]"
+utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bank0Y + $RamSize512x64_H)}]"
 utl::report "SRAM row-cut halo: x $sramHaloX y $sramHaloY"
 
 # defined in init_tech.tcl

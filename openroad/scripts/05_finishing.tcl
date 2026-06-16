@@ -24,10 +24,10 @@
 ###############################################################################
 # Setup
 ###############################################################################
-source scripts/startup.tcl
+#source scripts/startup.tcl
 
 # Load checkpoint from previous stage
-load_checkpoint 04_${proj_name}.routed
+#load_checkpoint 04_${proj_name}.routed
 
 # Set layers used for estimate_parasitics
 setDefaultParasitics
@@ -57,11 +57,11 @@ write_sdc                      ${out_dir}/${proj_name}.sdc
 
 # WARNING: Currently the extract_parasitics command removes metal patches (eg for min area)
 # So if you want to use it, do so at the very end after writing out the def and odb files
-define_process_corner -ext_model_index 0 X
-extract_parasitics -ext_model_file ../technology/rcx/IHP_rcx_patterns.rules
-write_spef ${out_dir}/${proj_name}.spef
-read_spef  ${out_dir}/${proj_name}.spef; # readback parasitics for OpenSTA
-report_metrics "05_${proj_name}.extract"
+# define_process_corner -ext_model_index 0 X
+# extract_parasitics -ext_model_file ../technology/rcx/IHP_rcx_patterns.rules
+# write_spef ${out_dir}/${proj_name}.spef
+# read_spef  ${out_dir}/${proj_name}.spef; # readback parasitics for OpenSTA
+# report_metrics "05_${proj_name}.extract"
 
 utl::report "###############################################################################"
 utl::report "# Stage 05 complete: Final outputs written to ${out_dir}/"
