@@ -145,12 +145,12 @@ utl::report "Place Macros"
 
 # Bank0: top-left, pins facing down
 set bank0X [expr $floor_leftX + $RamSize512x64_W/2]
-set bank0Y [expr $floor_topY - ($floor_topY - $floor_bottomY)/5]
+set bank0Y [expr $floor_topY - ($floor_topY - $floor_bottomY)/4]
 placeInstance $bank0_sram0 $bank0X $bank0Y R0
 
 # Bank1: top-right, pins facing down
 set bank1X [expr $floor_leftX + $RamSize512x64_W/2]
-set bank1Y [expr $floor_bottomY + ($floor_topY - $floor_bottomY)/5 -$RamSize512x64_H]
+set bank1Y [expr $floor_bottomY + $RamSize512x64_H/2]
 placeInstance $bank1_sram0 $bank1X $bank1Y R180
 
 utl::report "SRAM macro box: width ${RamSize512x64_W} height ${RamSize512x64_H}"
