@@ -417,131 +417,6 @@
         1   $aldff
         1   $logic_not
 
-=== passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[3].i_passthrough_stream_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      103 wires
-      536 wire bits
-       17 public wires
-       85 public wire bits
-       10 ports
-       24 port bits
-       53 cells
-        2   $add
-        5   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        4   $eq
-        1   $ge
-        2   $logic_and
-        5   $logic_not
-        1   $logic_or
-        2   $lt
-       25   $mux
-        2   $ne
-
-=== passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[2].i_passthrough_stream_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      103 wires
-      536 wire bits
-       17 public wires
-       85 public wire bits
-       10 ports
-       24 port bits
-       53 cells
-        2   $add
-        5   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        4   $eq
-        1   $ge
-        2   $logic_and
-        5   $logic_not
-        1   $logic_or
-        2   $lt
-       25   $mux
-        2   $ne
-
-=== passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[1].i_passthrough_stream_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      103 wires
-      536 wire bits
-       17 public wires
-       85 public wire bits
-       10 ports
-       24 port bits
-       53 cells
-        2   $add
-        5   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        4   $eq
-        1   $ge
-        2   $logic_and
-        5   $logic_not
-        1   $logic_or
-        2   $lt
-       25   $mux
-        2   $ne
-
-=== passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[0].i_passthrough_stream_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      103 wires
-      536 wire bits
-       17 public wires
-       85 public wire bits
-       10 ports
-       24 port bits
-       53 cells
-        2   $add
-        5   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        4   $eq
-        1   $ge
-        2   $logic_and
-        5   $logic_not
-        1   $logic_or
-        2   $lt
-       25   $mux
-        2   $ne
-
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last.gen_fifo.i_stream_fifo.fifo_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       98 wires
-      388 wire bits
-       20 public wires
-       56 public wire bits
-       11 ports
-       15 port bits
-       52 cells
-        3   $add
-        8   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        3   $eq
-        1   $ge
-        6   $logic_and
-        3   $logic_not
-        2   $lt
-       17   $mux
-        4   $not
-        1   $sub
-
 === cve2_fetch_fifo$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i.fifo_i ===
 
         +----------Local Count, excluding submodules.
@@ -613,164 +488,100 @@
        10   $mux
         1   $sub
 
-=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       28 wires
-       99 wire bits
-        7 public wires
-       66 public wire bits
-        3 ports
-       10 port bits
-       14 cells
-        6   $mux
-        2   $not
-        5   $or
-        1   $reduce_or
-
-=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       28 wires
-       99 wire bits
-        7 public wires
-       66 public wire bits
-        3 ports
-       10 port bits
-       14 cells
-        6   $mux
-        2   $not
-        5   $or
-        1   $reduce_or
-
-=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       28 wires
-       99 wire bits
-        7 public wires
-       66 public wire bits
-        3 ports
-       10 port bits
-       14 cells
-        6   $mux
-        2   $not
-        5   $or
-        1   $reduce_or
-
-=== lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       28 wires
-       99 wire bits
-        7 public wires
-       66 public wire bits
-        3 ports
-       10 port bits
-       14 cells
-        6   $mux
-        2   $not
-        5   $or
-        1   $reduce_or
-
 === lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
 
         +----------Local Count, excluding submodules.
         | 
-       28 wires
-       99 wire bits
+       19 wires
+       46 wire bits
         7 public wires
-       66 public wire bits
+       31 public wire bits
         3 ports
-       10 port bits
-       14 cells
-        6   $mux
+        7 port bits
+        9 cells
+        3   $mux
         2   $not
-        5   $or
+        3   $or
         1   $reduce_or
 
 === lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
 
         +----------Local Count, excluding submodules.
         | 
-       28 wires
-       99 wire bits
+       19 wires
+       46 wire bits
         7 public wires
-       66 public wire bits
+       31 public wire bits
         3 ports
-       10 port bits
-       14 cells
-        6   $mux
+        7 port bits
+        9 cells
+        3   $mux
         2   $not
-        5   $or
+        3   $or
         1   $reduce_or
 
 === lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
 
         +----------Local Count, excluding submodules.
         | 
-       28 wires
-       99 wire bits
+       19 wires
+       46 wire bits
         7 public wires
-       66 public wire bits
+       31 public wire bits
         3 ports
-       10 port bits
-       14 cells
-        6   $mux
+        7 port bits
+        9 cells
+        3   $mux
         2   $not
-        5   $or
+        3   $or
         1   $reduce_or
 
 === lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
 
         +----------Local Count, excluding submodules.
         | 
-       28 wires
-       99 wire bits
+       19 wires
+       46 wire bits
         7 public wires
-       66 public wire bits
+       31 public wire bits
         3 ports
-       10 port bits
-       14 cells
-        6   $mux
+        7 port bits
+        9 cells
+        3   $mux
         2   $not
-        5   $or
+        3   $or
         1   $reduce_or
 
 === lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower ===
 
         +----------Local Count, excluding submodules.
         | 
-       28 wires
-       99 wire bits
+       19 wires
+       46 wire bits
         7 public wires
-       66 public wire bits
+       31 public wire bits
         3 ports
-       10 port bits
-       14 cells
-        6   $mux
+        7 port bits
+        9 cells
+        3   $mux
         2   $not
-        5   $or
+        3   $or
         1   $reduce_or
 
 === lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper ===
 
         +----------Local Count, excluding submodules.
         | 
-       28 wires
-       99 wire bits
+       19 wires
+       46 wire bits
         7 public wires
-       66 public wire bits
+       31 public wire bits
         3 ports
-       10 port bits
-       14 cells
-        6   $mux
+        7 port bits
+        9 cells
+        3   $mux
         2   $not
-        5   $or
+        3   $or
         1   $reduce_or
 
 === debug_rom$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem.gen_rom_snd_scratch.i_debug_rom ===
@@ -926,241 +737,6 @@
         1   $not
         1 submodules
         1   sync$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src.i_sync
-
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.response_fifo_i.fifo_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      125 wires
-      706 wire bits
-       20 public wires
-      158 public wire bits
-       11 ports
-       79 port bits
-       62 cells
-        3   $add
-        7   $aldff
-        1   $and
-        1   $bwmux
-        1   $eq
-        1   $ge
-        7   $logic_and
-        4   $logic_not
-        2   $lt
-       27   $mux
-        7   $not
-        1   $sub
-
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.response_fifo_i.fifo_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      125 wires
-      706 wire bits
-       20 public wires
-      158 public wire bits
-       11 ports
-       79 port bits
-       62 cells
-        3   $add
-        7   $aldff
-        1   $and
-        1   $bwmux
-        1   $eq
-        1   $ge
-        7   $logic_and
-        4   $logic_not
-        2   $lt
-       27   $mux
-        7   $not
-        1   $sub
-
-=== spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_r_aw_bypass.i_aw_fifo.gen_spill.i_spill_register_flushable ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       56 wires
-      686 wire bits
-       17 public wires
-      297 public wire bits
-        9 ports
-      149 port bits
-       41 cells
-       14   $aldff
-        6   $logic_and
-       10   $logic_not
-        5   $logic_or
-        5   $mux
-        1   $or
-
-=== idma_obi_write$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_idma_obi_write ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       53 wires
-      636 wire bits
-       20 public wires
-      288 public wire bits
-       15 ports
-      249 port bits
-       25 cells
-        7   $and
-        1   $eq
-        1   $logic_not
-        9   $mux
-        1   $not
-        1   $reduce_and
-        2   $reduce_bool
-        1   $shl
-        1   $shr
-        1   $sub
-
-=== idma_dataflow_element$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        9 wires
-       83 wire bits
-        9 public wires
-       83 public wire bits
-        9 ports
-       83 port bits
-        4 submodules
-        1   passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[0].i_passthrough_stream_fifo
-        1   passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[1].i_passthrough_stream_fifo
-        1   passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[2].i_passthrough_stream_fifo
-        1   passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[3].i_passthrough_stream_fifo
-
-=== idma_obi_read$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_idma_obi_read ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       38 wires
-      331 wire bits
-       20 public wires
-      254 public wire bits
-       16 ports
-      244 port bits
-       18 cells
-        8   $and
-        2   $mux
-        1   $not
-        1   $or
-        1   $reduce_and
-        1   $reduce_bool
-        1   $shl
-        2   $shr
-        1   $sub
-
-=== stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last.gen_fifo.i_stream_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       21 wires
-       25 wire bits
-       15 public wires
-       19 public wire bits
-       11 ports
-       15 port bits
-        6 cells
-        2   $and
-        4   $not
-        1 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last.gen_fifo.i_stream_fifo.fifo_i
-
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_ar_fall_through_register.i_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      125 wires
-     1174 wire bits
-       20 public wires
-      302 public wire bits
-       11 ports
-      151 port bits
-       64 cells
-        3   $add
-        9   $aldff
-        1   $and
-        1   $bwmux
-        1   $eq
-        1   $ge
-        7   $logic_and
-        4   $logic_not
-        2   $lt
-       27   $mux
-        7   $not
-        1   $sub
-
-=== spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_dp_req.gen_spill.i_spill_register_flushable ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       56 wires
-      209 wire bits
-       17 public wires
-       85 public wire bits
-        9 ports
-       43 port bits
-       41 cells
-       14   $aldff
-        6   $logic_and
-       10   $logic_not
-        5   $logic_or
-        5   $mux
-        1   $or
-
-=== spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_r_dp_req.gen_spill.i_spill_register_flushable ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       56 wires
-      146 wire bits
-       17 public wires
-       57 public wire bits
-        9 ports
-       29 port bits
-       41 cells
-       14   $aldff
-        6   $logic_and
-       10   $logic_not
-        5   $logic_or
-        5   $mux
-        1   $or
-
-=== idma_legalizer_page_splitter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer.i_write_page_splitter ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       21 wires
-      194 wire bits
-        8 public wires
-       49 public wire bits
-        5 ports
-       40 port bits
-       11 cells
-        1   $add
-        3   $gt
-        5   $mux
-        1   $shl
-        1   $sub
-
-=== idma_legalizer_page_splitter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer.i_read_page_splitter ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       21 wires
-      194 wire bits
-        8 public wires
-       49 public wire bits
-        5 ports
-       40 port bits
-       11 cells
-        1   $add
-        3   $gt
-        5   $mux
-        1   $shl
-        1   $sub
 
 === cve2_csr$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i.gen_trigger_regs.g_dbg_tmatch_reg[0].u_tmatch_value_csr ===
 
@@ -1727,114 +1303,16 @@
         1   $aldff
         1   $logic_not
 
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       98 wires
-      287 wire bits
-       20 public wires
-       36 public wire bits
-       11 ports
-       15 port bits
-       45 cells
-        3   $add
-        5   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        1   $eq
-        1   $ge
-        6   $logic_and
-        3   $logic_not
-        2   $lt
-       15   $mux
-        4   $not
-        1   $sub
-
-=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      139 wires
-     1655 wire bits
-       35 public wires
-     1102 public wire bits
-       11 ports
-      520 port bits
-       82 cells
-        3   $aldff
-       18   $and
-        5   $gt
-        5   $le
-        1   $logic_and
-        3   $logic_not
-       25   $mux
-       12   $not
-       10   $or
-        2 submodules
-        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
-
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       98 wires
-      287 wire bits
-       20 public wires
-       36 public wire bits
-       11 ports
-       15 port bits
-       45 cells
-        3   $add
-        5   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        1   $eq
-        1   $ge
-        6   $logic_and
-        3   $logic_not
-        2   $lt
-       15   $mux
-        4   $not
-        1   $sub
-
-=== rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      139 wires
-     1655 wire bits
-       35 public wires
-     1102 public wire bits
-       11 ports
-      520 port bits
-       82 cells
-        3   $aldff
-       18   $and
-        5   $gt
-        5   $le
-        1   $logic_and
-        3   $logic_not
-       25   $mux
-       12   $not
-       10   $or
-        2 submodules
-        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-        1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
-
 === fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo ===
 
         +----------Local Count, excluding submodules.
         | 
        98 wires
-      287 wire bits
+      264 wire bits
        20 public wires
-       36 public wire bits
+       30 public wire bits
        11 ports
-       15 port bits
+       13 port bits
        45 cells
         3   $add
         5   $aldff
@@ -1854,22 +1332,22 @@
 
         +----------Local Count, excluding submodules.
         | 
-      139 wires
-     1655 wire bits
-       35 public wires
-     1102 public wire bits
+       97 wires
+      920 wire bits
+       31 public wires
+      630 public wire bits
        11 ports
-      520 port bits
-       82 cells
+      372 port bits
+       52 cells
         3   $aldff
-       18   $and
-        5   $gt
-        5   $le
+       10   $and
+        3   $gt
+        3   $le
         1   $logic_and
         3   $logic_not
-       25   $mux
-       12   $not
-       10   $or
+       16   $mux
+        7   $not
+        6   $or
         2 submodules
         1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
         1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
@@ -1879,11 +1357,11 @@
         +----------Local Count, excluding submodules.
         | 
        98 wires
-      287 wire bits
+      264 wire bits
        20 public wires
-       36 public wire bits
+       30 public wire bits
        11 ports
-       15 port bits
+       13 port bits
        45 cells
         3   $add
         5   $aldff
@@ -1903,22 +1381,22 @@
 
         +----------Local Count, excluding submodules.
         | 
-      139 wires
-     1655 wire bits
-       35 public wires
-     1102 public wire bits
+       97 wires
+      920 wire bits
+       31 public wires
+      630 public wire bits
        11 ports
-      520 port bits
-       82 cells
+      372 port bits
+       52 cells
         3   $aldff
-       18   $and
-        5   $gt
-        5   $le
+       10   $and
+        3   $gt
+        3   $le
         1   $logic_and
         3   $logic_not
-       25   $mux
-       12   $not
-       10   $or
+       16   $mux
+        7   $not
+        6   $or
         2 submodules
         1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
         1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
@@ -1928,11 +1406,11 @@
         +----------Local Count, excluding submodules.
         | 
        98 wires
-      287 wire bits
+      264 wire bits
        20 public wires
-       36 public wire bits
+       30 public wire bits
        11 ports
-       15 port bits
+       13 port bits
        45 cells
         3   $add
         5   $aldff
@@ -1952,97 +1430,25 @@
 
         +----------Local Count, excluding submodules.
         | 
-      139 wires
-     1655 wire bits
-       35 public wires
-     1102 public wire bits
+       97 wires
+      920 wire bits
+       31 public wires
+      630 public wire bits
        11 ports
-      520 port bits
-       82 cells
+      372 port bits
+       52 cells
         3   $aldff
-       18   $and
-        5   $gt
-        5   $le
+       10   $and
+        3   $gt
+        3   $le
         1   $logic_and
         3   $logic_not
-       25   $mux
-       12   $not
-       10   $or
+       16   $mux
+        7   $not
+        6   $or
         2 submodules
         1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
         1   lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
-
-=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_demux.i_counter ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       40 wires
-       58 wire bits
-       12 public wires
-       14 public wire bits
-       10 ports
-       10 port bits
-       14 cells
-        1   $add
-        1   $aldff
-        1   $logic_not
-       10   $mux
-        1   $sub
-
-=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_addr_decode.i_addr_decode_dync ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       99 wires
-      434 wire bits
-        9 public wires
-      318 public wire bits
-        8 ports
-      314 port bits
-       50 cells
-        4   $ge
-        4   $logic_and
-        4   $logic_not
-        4   $logic_or
-        4   $lt
-       22   $mux
-        8   $not
-
-=== delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_demux.i_counter ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       40 wires
-       58 wire bits
-       12 public wires
-       14 public wire bits
-       10 ports
-       10 port bits
-       14 cells
-        1   $add
-        1   $aldff
-        1   $logic_not
-       10   $mux
-        1   $sub
-
-=== addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_addr_decode.i_addr_decode_dync ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       99 wires
-      434 wire bits
-        9 public wires
-      318 public wire bits
-        8 ports
-      314 port bits
-       50 cells
-        4   $ge
-        4   $logic_and
-        4   $logic_not
-        4   $logic_or
-        4   $lt
-       22   $mux
-        8   $not
 
 === delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter ===
 
@@ -2065,20 +1471,20 @@
 
         +----------Local Count, excluding submodules.
         | 
-       99 wires
-      434 wire bits
+       55 wires
+      231 wire bits
         9 public wires
-      318 public wire bits
+      178 public wire bits
         8 ports
-      314 port bits
-       50 cells
-        4   $ge
-        4   $logic_and
-        4   $logic_not
-        4   $logic_or
-        4   $lt
-       22   $mux
-        8   $not
+      176 port bits
+       26 cells
+        2   $ge
+        2   $logic_and
+        2   $logic_not
+        2   $logic_or
+        2   $lt
+       12   $mux
+        4   $not
 
 === delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter ===
 
@@ -2101,20 +1507,20 @@
 
         +----------Local Count, excluding submodules.
         | 
-       99 wires
-      434 wire bits
+       55 wires
+      231 wire bits
         9 public wires
-      318 public wire bits
+      178 public wire bits
         8 ports
-      314 port bits
-       50 cells
-        4   $ge
-        4   $logic_and
-        4   $logic_not
-        4   $logic_or
-        4   $lt
-       22   $mux
-        8   $not
+      176 port bits
+       26 cells
+        2   $ge
+        2   $logic_and
+        2   $logic_not
+        2   $logic_or
+        2   $lt
+       12   $mux
+        4   $not
 
 === delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux.i_counter ===
 
@@ -2137,20 +1543,20 @@
 
         +----------Local Count, excluding submodules.
         | 
-       99 wires
-      434 wire bits
+       55 wires
+      231 wire bits
         9 public wires
-      318 public wire bits
+      178 public wire bits
         8 ports
-      314 port bits
-       50 cells
-        4   $ge
-        4   $logic_and
-        4   $logic_not
-        4   $logic_or
-        4   $lt
-       22   $mux
-        8   $not
+      176 port bits
+       26 cells
+        2   $ge
+        2   $logic_and
+        2   $logic_not
+        2   $logic_or
+        2   $lt
+       12   $mux
+        4   $not
 
 === delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter ===
 
@@ -2173,20 +1579,20 @@
 
         +----------Local Count, excluding submodules.
         | 
-       99 wires
-      434 wire bits
+       55 wires
+      231 wire bits
         9 public wires
-      318 public wire bits
+      178 public wire bits
         8 ports
-      314 port bits
-       50 cells
-        4   $ge
-        4   $logic_and
-        4   $logic_not
-        4   $logic_or
-        4   $lt
-       22   $mux
-        8   $not
+      176 port bits
+       26 cells
+        2   $ge
+        2   $logic_and
+        2   $logic_not
+        2   $logic_or
+        2   $lt
+       12   $mux
+        4   $not
 
 === dm_mem$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_mem ===
 
@@ -2348,247 +1754,6 @@
         2 port bits
         1 cells
         1   INVX2
-
-=== credit_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.credit_cntr_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       35 wires
-       97 wire bits
-       13 public wires
-       13 public wire bits
-        9 ports
-        9 port bits
-       13 cells
-        1   $add
-        1   $aldff
-        2   $and
-        1   $logic_not
-        4   $mux
-        3   $not
-        1   $sub
-
-=== stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.response_fifo_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       21 wires
-       89 wire bits
-       15 public wires
-       83 public wire bits
-       11 ports
-       79 port bits
-        6 cells
-        2   $and
-        4   $not
-        1 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.response_fifo_i.fifo_i
-
-=== credit_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.credit_cntr_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       35 wires
-       97 wire bits
-       13 public wires
-       13 public wire bits
-        9 ports
-        9 port bits
-       13 cells
-        1   $add
-        1   $aldff
-        2   $and
-        1   $logic_not
-        4   $mux
-        3   $not
-        1   $sub
-
-=== stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.response_fifo_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       21 wires
-       89 wire bits
-       15 public wires
-       83 public wire bits
-       11 ports
-       79 port bits
-        6 cells
-        2   $and
-        4   $not
-        1 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.response_fifo_i.fifo_i
-
-=== stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_r_aw_bypass.i_aw_fifo ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       11 wires
-      151 wire bits
-       11 public wires
-      151 public wire bits
-       11 ports
-      151 port bits
-        1 submodules
-        1   spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_r_aw_bypass.i_aw_fifo.gen_spill.i_spill_register_flushable
-
-=== idma_transport_layer_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       52 wires
-      859 wire bits
-       43 public wires
-      699 public wire bits
-       31 ports
-      419 port bits
-        9 cells
-        2   $mul
-        1   $neg
-        1   $or
-        1   $reduce_or
-        4   $shr
-        3 submodules
-        1   idma_dataflow_element$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element
-        1   idma_obi_read$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_idma_obi_read
-        1   idma_obi_write$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_idma_obi_write
-
-=== stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       11 wires
-       15 wire bits
-       11 public wires
-       15 public wire bits
-       11 ports
-       15 port bits
-        1 submodules
-        1   stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last.gen_fifo.i_stream_fifo
-
-=== fall_through_register$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_ar_fall_through_register ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       18 wires
-      158 wire bits
-       12 public wires
-      152 public wire bits
-       10 ports
-      150 port bits
-        6 cells
-        2   $and
-        4   $not
-        1 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_ar_fall_through_register.i_fifo
-
-=== stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_dp_req ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       11 wires
-       45 wire bits
-       11 public wires
-       45 public wire bits
-       11 ports
-       45 port bits
-        1 submodules
-        1   spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_dp_req.gen_spill.i_spill_register_flushable
-
-=== stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_r_dp_req ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       11 wires
-       31 wire bits
-       11 public wires
-       31 public wire bits
-       11 ports
-       31 port bits
-        1 submodules
-        1   spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_r_dp_req.gen_spill.i_spill_register_flushable
-
-=== idma_legalizer_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      166 wires
-     2695 wire bits
-       36 public wires
-      880 public wire bits
-       15 ports
-      337 port bits
-      115 cells
-        4   $add
-       34   $aldff
-       21   $and
-        4   $eq
-        3   $gt
-        1   $le
-       12   $logic_not
-        4   $logic_or
-       25   $mux
-        1   $neg
-        4   $or
-        2   $sub
-        2 submodules
-        1   idma_legalizer_page_splitter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer.i_read_page_splitter
-        1   idma_legalizer_page_splitter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer.i_write_page_splitter
-
-=== popcount$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend.i_popcount ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        3 wires
-        3 wire bits
-        2 public wires
-        2 public wire bits
-        2 ports
-        2 port bits
-        1 cells
-        1   $add
-
-=== idma_nd_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend.gen_dim_counters[2].i_num_rep_counter ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       20 wires
-      299 wire bits
-        8 public wires
-      101 public wire bits
-        6 ports
-       37 port bits
-        7 cells
-        1   $add
-        1   $aldff
-        1   $eq
-        1   $logic_not
-        3   $mux
-
-=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_stream_fifo_jobs.fifo_i ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       98 wires
-     5899 wire bits
-       20 public wires
-     1500 public wire bits
-       11 ports
-      503 port bits
-      101 cells
-        3   $add
-       61   $aldff
-        1   $bmux
-        1   $bwmux
-        2   $demux
-        1   $eq
-        1   $ge
-        6   $logic_and
-        3   $logic_not
-        2   $lt
-       15   $mux
-        4   $not
-        1   $sub
 
 === cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i ===
 
@@ -2762,16 +1927,308 @@
         1   cve2_compressed_decoder$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.compressed_decoder_i
         1   cve2_prefetch_buffer$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.if_stage_i.prefetch_buffer_i
 
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+      404 wire bits
+       14 public wires
+      403 public wire bits
+       10 ports
+      147 port bits
+        2 cells
+        1   $not
+        1   RM_IHPSG13_1P_512x64_c2_bm_bist
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_decode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       69 wires
+      129 wire bits
+       13 public wires
+       58 public wire bits
+        4 ports
+       23 port bits
+       56 cells
+       13   $eq
+        3   $logic_and
+        3   $logic_not
+       13   $logic_or
+        2   $not
+        1   $reduce_xor
+       21   $xor
+
+=== secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_encode ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       23 wires
+       50 wire bits
+        3 public wires
+       26 public wire bits
+        2 ports
+       21 port bits
+       20 cells
+        1   $not
+       19   $xor
+
+=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+      404 wire bits
+       14 public wires
+      403 public wire bits
+       10 ports
+      147 port bits
+        2 cells
+        1   $not
+        1   RM_IHPSG13_1P_512x64_c2_bm_bist
+
 === fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo ===
 
         +----------Local Count, excluding submodules.
         | 
        95 wires
-      262 wire bits
+      251 wire bits
        20 public wires
-       34 public wire bits
+       30 public wire bits
        11 ports
-       17 port bits
+       15 port bits
        45 cells
         3   $add
         4   $aldff
@@ -2806,31 +2263,31 @@
 
         +----------Local Count, excluding submodules.
         | 
-       33 wires
-      131 wire bits
+       99 wires
+      434 wire bits
         9 public wires
-      107 public wire bits
+      318 public wire bits
         8 ports
-      106 port bits
-       14 cells
-        1   $ge
-        1   $logic_and
-        1   $logic_not
-        1   $logic_or
-        1   $lt
-        7   $mux
-        2   $not
+      314 port bits
+       50 cells
+        4   $ge
+        4   $logic_and
+        4   $logic_not
+        4   $logic_or
+        4   $lt
+       22   $mux
+        8   $not
 
 === fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo ===
 
         +----------Local Count, excluding submodules.
         | 
        95 wires
-      262 wire bits
+      251 wire bits
        20 public wires
-       34 public wire bits
+       30 public wire bits
        11 ports
-       17 port bits
+       15 port bits
        45 cells
         3   $add
         4   $aldff
@@ -3311,11 +2768,11 @@
         +----------Local Count, excluding submodules.
         | 
       259 wires
-     3601 wire bits
+     3599 wire bits
        30 public wires
-     1478 public wire bits
+     1476 public wire bits
         6 ports
-      501 port bits
+      499 port bits
       199 cells
        14   $aldff
        45   $and
@@ -3457,11 +2914,11 @@
         +----------Local Count, excluding submodules.
         | 
       295 wires
-     1551 wire bits
+     1549 wire bits
        25 public wires
-      550 public wire bits
+      548 public wire bits
         6 ports
-      232 port bits
+      230 port bits
       218 cells
        56   $aldff
         3   $and
@@ -3513,11 +2970,11 @@
         +----------Local Count, excluding submodules.
         | 
        95 wires
-      262 wire bits
+      251 wire bits
        20 public wires
-       34 public wire bits
+       30 public wire bits
        11 ports
-       17 port bits
+       15 port bits
        45 cells
         3   $add
         4   $aldff
@@ -3531,62 +2988,16 @@
         6   $not
         1   $sub
 
-=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       61 wires
-     4986 wire bits
-       19 public wires
-     1507 public wire bits
-        7 ports
-      772 port bits
-       40 cells
-        2   $and
-        3   $bwmux
-       10   $demux
-        5   $ge
-        8   $logic_and
-        5   $lt
-        5   $mux
-        2   $not
-        2 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo
-        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb
-
-=== obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       61 wires
-     4986 wire bits
-       19 public wires
-     1507 public wire bits
-        7 ports
-      772 port bits
-       40 cells
-        2   $and
-        3   $bwmux
-       10   $demux
-        5   $ge
-        8   $logic_and
-        5   $lt
-        5   $mux
-        2   $not
-        2 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo
-        1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb
-
 === obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux ===
 
         +----------Local Count, excluding submodules.
         | 
        61 wires
-     4986 wire bits
+     3064 wire bits
        19 public wires
-     1507 public wire bits
+     1067 public wire bits
         7 ports
-      772 port bits
+      552 port bits
        40 cells
         2   $and
         3   $bwmux
@@ -3605,11 +3016,11 @@
         +----------Local Count, excluding submodules.
         | 
        61 wires
-     4986 wire bits
+     3064 wire bits
        19 public wires
-     1507 public wire bits
+     1067 public wire bits
         7 ports
-      772 port bits
+      552 port bits
        40 cells
         2   $and
         3   $bwmux
@@ -3628,11 +3039,11 @@
         +----------Local Count, excluding submodules.
         | 
        61 wires
-     4986 wire bits
+     3064 wire bits
        19 public wires
-     1507 public wire bits
+     1067 public wire bits
         7 ports
-      772 port bits
+      552 port bits
        40 cells
         2   $and
         3   $bwmux
@@ -3646,98 +3057,16 @@
         1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo
         1   rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
 
-=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_demux ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       82 wires
-     6558 wire bits
-       15 public wires
-      671 public wire bits
-        7 ports
-      659 port bits
-       50 cells
-        1   $aldff
-        1   $and
-        6   $bmux
-        1   $bwmux
-        4   $demux
-        1   $eq
-        2   $ge
-        4   $logic_and
-        2   $logic_not
-        2   $logic_or
-        8   $lt
-       16   $mux
-        1   $not
-        1   $xor
-        1 submodules
-        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_demux.i_counter
-
-=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_addr_decode ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        7 wires
-      313 wire bits
-        7 public wires
-      313 public wire bits
-        7 ports
-      313 port bits
-        1 submodules
-        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_addr_decode.i_addr_decode_dync
-
-=== obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_demux ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       82 wires
-     6558 wire bits
-       15 public wires
-      671 public wire bits
-        7 ports
-      659 port bits
-       50 cells
-        1   $aldff
-        1   $and
-        6   $bmux
-        1   $bwmux
-        4   $demux
-        1   $eq
-        2   $ge
-        4   $logic_and
-        2   $logic_not
-        2   $logic_or
-        8   $lt
-       16   $mux
-        1   $not
-        1   $xor
-        1 submodules
-        1   delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_demux.i_counter
-
-=== addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_addr_decode ===
-
-        +----------Local Count, excluding submodules.
-        | 
-        7 wires
-      313 wire bits
-        7 public wires
-      313 public wire bits
-        7 ports
-      313 port bits
-        1 submodules
-        1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_addr_decode.i_addr_decode_dync
-
 === obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux ===
 
         +----------Local Count, excluding submodules.
         | 
        82 wires
-     6558 wire bits
+     4031 wire bits
        15 public wires
-      671 public wire bits
+      450 public wire bits
         7 ports
-      659 port bits
+      440 port bits
        50 cells
         1   $aldff
         1   $and
@@ -3761,11 +3090,11 @@
         +----------Local Count, excluding submodules.
         | 
         7 wires
-      313 wire bits
+      175 wire bits
         7 public wires
-      313 public wire bits
+      175 public wire bits
         7 ports
-      313 port bits
+      175 port bits
         1 submodules
         1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
 
@@ -3774,11 +3103,11 @@
         +----------Local Count, excluding submodules.
         | 
        82 wires
-     6558 wire bits
+     4031 wire bits
        15 public wires
-      671 public wire bits
+      450 public wire bits
         7 ports
-      659 port bits
+      440 port bits
        50 cells
         1   $aldff
         1   $and
@@ -3802,11 +3131,11 @@
         +----------Local Count, excluding submodules.
         | 
         7 wires
-      313 wire bits
+      175 wire bits
         7 public wires
-      313 public wire bits
+      175 public wire bits
         7 ports
-      313 port bits
+      175 port bits
         1 submodules
         1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
 
@@ -3815,11 +3144,11 @@
         +----------Local Count, excluding submodules.
         | 
        82 wires
-     6558 wire bits
+     4031 wire bits
        15 public wires
-      671 public wire bits
+      450 public wire bits
         7 ports
-      659 port bits
+      440 port bits
        50 cells
         1   $aldff
         1   $and
@@ -3843,11 +3172,11 @@
         +----------Local Count, excluding submodules.
         | 
         7 wires
-      313 wire bits
+      175 wire bits
         7 public wires
-      313 public wire bits
+      175 public wire bits
         7 ports
-      313 port bits
+      175 port bits
         1 submodules
         1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
 
@@ -3856,11 +3185,11 @@
         +----------Local Count, excluding submodules.
         | 
        82 wires
-     6558 wire bits
+     4031 wire bits
        15 public wires
-      671 public wire bits
+      450 public wire bits
         7 ports
-      659 port bits
+      440 port bits
        50 cells
         1   $aldff
         1   $and
@@ -3884,11 +3213,11 @@
         +----------Local Count, excluding submodules.
         | 
         7 wires
-      313 wire bits
+      175 wire bits
         7 public wires
-      313 public wire bits
+      175 public wire bits
         7 ports
-      313 port bits
+      175 port bits
         1 submodules
         1   addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
 
@@ -3947,119 +3276,28 @@
         1   tc_clk_inverter$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_tck_inv
         1   tc_clk_mux2$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap.i_dft_tck_mux
 
-=== obi_rready_converter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write ===
+=== fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo ===
 
         +----------Local Count, excluding submodules.
         | 
-       26 wires
-      234 wire bits
-       16 public wires
-      224 public wire bits
-       14 ports
-      222 port bits
-        8 cells
-        6   $and
-        2   $or
-        2 submodules
-        1   credit_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.credit_cntr_i
-        1   stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.response_fifo_i
-
-=== obi_rready_converter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       26 wires
-      234 wire bits
-       16 public wires
-      224 public wire bits
-       14 ports
-      222 port bits
-        4 cells
-        4   $and
-        2 submodules
-        1   credit_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.credit_cntr_i
-        1   stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.response_fifo_i
-
-=== idma_backend_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       82 wires
-      947 wire bits
-       59 public wires
-      850 public wire bits
-       17 ports
-      427 port bits
-       17 cells
-        8   $and
-        2   $logic_and
-        1   $logic_not
-        4   $mux
-        2   $or
-        7 submodules
-        1   fall_through_register$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_ar_fall_through_register
-        1   idma_legalizer_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer
-        1   idma_transport_layer_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer
-        1   stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_r_aw_bypass.i_aw_fifo
-        1   stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_r_dp_req
-        1   stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_dp_req
-        1   stream_fifo_optimal_wrap$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last
-
-=== idma_nd_midend$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend ===
-
-        +----------Local Count, excluding submodules.
-        | 
-      105 wires
-     1522 wire bits
-       31 public wires
-      657 public wire bits
-       15 ports
-      485 port bits
-       43 cells
-        2   $add
+       95 wires
+      251 wire bits
+       20 public wires
+       30 public wire bits
+       11 ports
+       15 port bits
+       45 cells
+        3   $add
         4   $aldff
-        9   $and
-        6   $logic_not
+        1   $bwmux
+        1   $eq
+        1   $ge
+        6   $logic_and
+        3   $logic_not
         2   $lt
        17   $mux
-        2   $reduce_and
-        1   $reduce_or
-        2 submodules
-        1   idma_nd_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend.gen_dim_counters[2].i_num_rep_counter
-        1   popcount$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend.i_popcount
-
-=== stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_stream_fifo_jobs ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       21 wires
-      513 wire bits
-       15 public wires
-      507 public wire bits
-       11 ports
-      503 port bits
-        6 cells
-        2   $and
-        4   $not
-        1 submodules
-        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_stream_fifo_jobs.fifo_i
-
-=== idma_transfer_id_gen$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_transfer_id_gen ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       42 wires
-      786 wire bits
-       10 public wires
-      196 public wire bits
-        6 ports
-       68 port bits
-       17 cells
-        2   $add
-        2   $aldff
-        2   $eq
-        1   $logic_not
-       10   $mux
+        6   $not
+        1   $sub
 
 === cve2_core$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core ===
 
@@ -4124,60 +3362,118 @@
         1 cells
         1   MUX2X2
 
+=== secded_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+      368 wire bits
+       30 public wires
+      360 public wire bits
+       12 ports
+       85 port bits
+        8 cells
+        1   $aldff
+        1   $and
+        1   $logic_not
+        2   $mux
+        1   $not
+        2   $reduce_or
+        9 submodules
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_decode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_encode
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram
+
+=== obi_sram_shim$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_shim ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       18 wires
+      229 wire bits
+       15 public wires
+      226 public wire bits
+       11 ports
+      218 port bits
+        4 cells
+        2   $aldff
+        1   $and
+        1   $logic_not
+
+=== secded_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+      368 wire bits
+       30 public wires
+      360 public wire bits
+       12 ports
+       85 port bits
+        8 cells
+        1   $aldff
+        1   $and
+        1   $logic_not
+        2   $mux
+        1   $not
+        2   $reduce_or
+        9 submodules
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_decode
+        1   secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_decode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_encode
+        1   secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_encode
+        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram
+
+=== obi_sram_shim$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_shim ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       18 wires
+      229 wire bits
+       15 public wires
+      226 public wire bits
+       11 ports
+      218 port bits
+        4 cells
+        2   $aldff
+        1   $and
+        1   $logic_not
+
 === obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err ===
 
         +----------Local Count, excluding submodules.
         | 
        12 wires
-      128 wire bits
+      125 wire bits
         9 public wires
-      125 public wire bits
+      122 public wire bits
         5 ports
-      118 port bits
+      116 port bits
         3 cells
         1   $logic_and
         2   $not
         1 submodules
         1   fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
 
-=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_secded_bypass_mode.gen_sram_bank[1].i_sram ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       15 wires
-      408 wire bits
-       14 public wires
-      407 public wire bits
-       10 ports
-      151 port bits
-        2 cells
-        1   $not
-        1   RM_IHPSG13_1P_512x64_c2_bm_bist
-
-=== tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_secded_bypass_mode.gen_sram_bank[0].i_sram ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       15 wires
-      408 wire bits
-       14 public wires
-      407 public wire bits
-       10 ports
-      151 port bits
-        2 cells
-        1   $not
-        1   RM_IHPSG13_1P_512x64_c2_bm_bist
-
 === user_rom$croc_chip.i_croc_soc.i_user.i_user_rom ===
 
         +----------Local Count, excluding submodules.
         | 
        44 wires
-      536 wire bits
+      532 wire bits
        15 public wires
-      228 public wire bits
+      224 public wire bits
         4 ports
-      117 port bits
+      115 port bits
        19 cells
         4   $aldff
         3   $eq
@@ -4186,16 +3482,30 @@
         1   $not
         1   $pmux
 
+=== user_design_sink$croc_chip.i_croc_soc.i_user.i_user_design_sink ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        8 wires
+      121 wire bits
+        6 public wires
+      119 public wire bits
+        4 ports
+      115 port bits
+        3 cells
+        2   $aldff
+        1   $logic_not
+
 === obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux ===
 
         +----------Local Count, excluding submodules.
         | 
        82 wires
-     2897 wire bits
+     6754 wire bits
        15 public wires
-      356 public wire bits
+      695 public wire bits
         7 ports
-      348 port bits
+      683 port bits
        50 cells
         1   $aldff
         1   $and
@@ -4219,11 +3529,11 @@
         +----------Local Count, excluding submodules.
         | 
         7 wires
-      105 wire bits
+      313 wire bits
         7 public wires
-      105 public wire bits
+      313 public wire bits
         7 ports
-      105 port bits
+      313 port bits
         1 submodules
         1   addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
 
@@ -4232,11 +3542,11 @@
         +----------Local Count, excluding submodules.
         | 
        12 wires
-      128 wire bits
+      125 wire bits
         9 public wires
-      125 public wire bits
+      122 public wire bits
         5 ports
-      118 port bits
+      116 port bits
         3 cells
         1   $logic_and
         2   $not
@@ -4248,11 +3558,11 @@
         +----------Local Count, excluding submodules.
         | 
        74 wires
-      878 wire bits
+      874 wire bits
        18 public wires
-      199 public wire bits
+      195 public wire bits
         4 ports
-      117 port bits
+      115 port bits
        47 cells
         4   $aldff
         4   $bmux
@@ -4269,11 +3579,11 @@
         +----------Local Count, excluding submodules.
         | 
       224 wires
-     1973 wire bits
+     1969 wire bits
        27 public wires
-      505 public wire bits
+      501 public wire bits
         6 ports
-      119 port bits
+      117 port bits
       127 cells
         1   $add
        15   $aldff
@@ -4293,11 +3603,11 @@
         +----------Local Count, excluding submodules.
         | 
       128 wires
-     2014 wire bits
+     2010 wire bits
        23 public wires
-      629 public wire bits
+      625 public wire bits
         7 ports
-      120 port bits
+      118 port bits
        78 cells
         1   $add
        13   $aldff
@@ -4317,11 +3627,11 @@
         +----------Local Count, excluding submodules.
         | 
       847 wires
-     1623 wire bits
+     1621 wire bits
       207 public wires
-      919 public wire bits
+      917 public wire bits
         9 ports
-      246 port bits
+      244 port bits
       575 cells
        32   $aldff
       288   $and
@@ -4369,11 +3679,11 @@
         +----------Local Count, excluding submodules.
         | 
        29 wires
-      255 wire bits
+      253 wire bits
        25 public wires
-      251 public wire bits
+      249 public wire bits
        16 ports
-      129 port bits
+      127 port bits
         2 cells
         2   $mux
         6 submodules
@@ -4389,11 +3699,11 @@
         +----------Local Count, excluding submodules.
         | 
       134 wires
-     1062 wire bits
+     1059 wire bits
        21 public wires
-      294 public wire bits
+      291 public wire bits
         6 ports
-      119 port bits
+      117 port bits
        78 cells
         9   $aldff
         5   $and
@@ -4409,11 +3719,11 @@
         +----------Local Count, excluding submodules.
         | 
        82 wires
-    12117 wire bits
+    11947 wire bits
        15 public wires
-     1170 public wire bits
+     1150 public wire bits
         7 ports
-     1156 port bits
+     1136 port bits
        50 cells
         1   $aldff
         1   $and
@@ -4450,86 +3760,50 @@
         +----------Local Count, excluding submodules.
         | 
        12 wires
-      128 wire bits
+      125 wire bits
         9 public wires
-      125 public wire bits
+      122 public wire bits
         5 ports
-      118 port bits
+      116 port bits
         3 cells
         1   $logic_and
         2   $not
         1 submodules
         1   fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo
 
-=== obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       18 wires
-      233 wire bits
-       15 public wires
-      230 public wire bits
-       11 ports
-      220 port bits
-        4 cells
-        2   $aldff
-        1   $and
-        1   $logic_not
-
-=== obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim ===
-
-        +----------Local Count, excluding submodules.
-        | 
-       18 wires
-      233 wire bits
-       15 public wires
-      230 public wire bits
-       11 ports
-      220 port bits
-        4 cells
-        2   $aldff
-        1   $and
-        1   $logic_not
-
 === obi_xbar$croc_chip.i_croc_soc.i_croc.i_main_xbar ===
 
         +----------Local Count, excluding submodules.
         | 
        15 wires
-     8086 wire bits
+     3550 wire bits
        15 public wires
-     8086 public wire bits
+     3550 public wire bits
        10 ports
-     1528 port bits
-       17 submodules
+      926 port bits
+       11 submodules
         1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode
         1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode
         1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode
         1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode
-        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_addr_decode
-        1   addr_decode$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_addr_decode
         1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux
         1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux
         1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux
         1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux
-        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_demux
-        1   obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_demux
         1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux
         1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux
         1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux
-        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux
-        1   obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux
 
 === dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top ===
 
         +----------Local Count, excluding submodules.
         | 
        46 wires
-      357 wire bits
+      352 wire bits
        37 public wires
-      342 public wire bits
+      339 public wire bits
        35 ports
-      337 port bits
+      335 port bits
         5 cells
         2   $aldff
         1   $logic_not
@@ -4560,33 +3834,21 @@
         1   dmi_cdc$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc
         1   dmi_jtag_tap$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_jtag_tap
 
-=== croc_idma$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma ===
+=== obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg ===
 
         +----------Local Count, excluding submodules.
         | 
-      241 wires
-     4317 wire bits
-       59 public wires
-     1806 public wire bits
-       10 ports
-      337 port bits
-      130 cells
-       12   $aldff
-       19   $and
-       30   $eq
-       16   $logic_not
-       33   $mux
-        8   $not
-        8   $or
-        3   $pmux
-        1   $reduce_or
-        6 submodules
-        1   idma_backend_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi
-        1   idma_nd_midend$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend
-        1   idma_transfer_id_gen$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_transfer_id_gen
-        1   obi_rready_converter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read
-        1   obi_rready_converter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write
-        1   stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_stream_fifo_jobs
+       12 wires
+      125 wire bits
+        9 public wires
+      122 public wire bits
+        5 ports
+      116 port bits
+        3 cells
+        1   $logic_and
+        2   $not
+        1 submodules
+        1   fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo
 
 === core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap ===
 
@@ -4623,49 +3885,47 @@
 
         +----------Local Count, excluding submodules.
         | 
-       70 wires
-     1660 wire bits
-       40 public wires
-     1292 public wire bits
-       18 ports
-      425 port bits
-       20 cells
-        4   $aldff
-        2   $logic_not
-       10   $mux
-        4   $not
-        6 submodules
+       45 wires
+     1629 wire bits
+       44 public wires
+     1628 public wire bits
+       11 ports
+      263 port bits
+        1 cells
+        1   $reduce_or
+        9 submodules
         1   addr_decode$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs
         1   obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
         1   obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
-        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_secded_bypass_mode.gen_sram_bank[0].i_sram
-        1   tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_secded_bypass_mode.gen_sram_bank[1].i_sram
+        1   obi_sram_shim$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_shim
+        1   obi_sram_shim$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_shim
+        1   secded_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro
+        1   secded_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro
+        1   user_design_sink$croc_chip.i_croc_soc.i_user.i_user_design_sink
         1   user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
 
 === croc_domain$croc_chip.i_croc_soc.i_croc ===
 
         +----------Local Count, excluding submodules.
         | 
-      103 wires
-     5135 wire bits
-      103 public wires
-     5135 public wire bits
-       29 ports
-      529 port bits
-       17 submodules
+       78 wires
+     4087 wire bits
+       78 public wires
+     4087 public wire bits
+       22 ports
+      367 port bits
+       15 submodules
         1   addr_decode$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs
         1   bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom
         1   clint$croc_chip.i_croc_soc.i_croc.i_clint
         1   core_wrap$croc_chip.i_croc_soc.i_croc.i_core_wrap
-        1   croc_idma$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma
         1   dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top
         1   dmi_jtag$croc_chip.i_croc_soc.i_croc.i_dmi_jtag
         1   gpio$croc_chip.i_croc_soc.i_croc.i_gpio
         1   obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux
+        1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg
         1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err
         1   obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err
-        1   obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim
-        1   obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim
         1   obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer
         1   obi_uart$croc_chip.i_croc_soc.i_croc.i_uart
         1   obi_xbar$croc_chip.i_croc_soc.i_croc.i_main_xbar
@@ -4688,10 +3948,10 @@
 
         +----------Local Count, excluding submodules.
         | 
-       30 wires
-      530 wire bits
-       30 public wires
-      530 public wire bits
+       23 wires
+      368 wire bits
+       23 public wires
+      368 public wire bits
        15 ports
       108 port bits
         3 submodules
@@ -4724,7 +3984,7 @@
 
         +----------Count including submodules.
         | 
-    11122 croc_chip
+     9832 croc_chip
        98       addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_addr_decode_periphs.i_addr_decode_dync
        47     bootrom$croc_chip.i_croc_soc.i_croc.i_bootrom
        78     clint$croc_chip.i_croc_soc.i_croc.i_clint
@@ -4762,39 +4022,6 @@
       319         cve2_load_store_unit$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.load_store_unit_i
       161         cve2_register_file_ff$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.register_file_i
         9         cve2_wb$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.wb_i
-      130     croc_idma$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma
-       17       idma_backend_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi
-        6         fall_through_register$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_ar_fall_through_register
-       64           fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_ar_fall_through_register.i_fifo
-      115         idma_legalizer_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer
-       11           idma_legalizer_page_splitter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer.i_read_page_splitter
-       11           idma_legalizer_page_splitter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_hw_legalizer.i_idma_legalizer.i_write_page_splitter
-        9         idma_transport_layer_rw_obi$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer
-       53             passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[0].i_passthrough_stream_fifo
-       53             passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[1].i_passthrough_stream_fifo
-       53             passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[2].i_passthrough_stream_fifo
-       53             passthrough_stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_dataflow_element.gen_fifo_buffer[3].i_passthrough_stream_fifo
-       18           idma_obi_read$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_idma_obi_read
-       25           idma_obi_write$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_idma_transport_layer.i_idma_obi_write
-       41           spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.gen_r_aw_bypass.i_aw_fifo.gen_spill.i_spill_register_flushable
-       41           spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_r_dp_req.gen_spill.i_spill_register_flushable
-       41           spill_register_flushable$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_dp_req.gen_spill.i_spill_register_flushable
-        6           stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last.gen_fifo.i_stream_fifo
-       52             fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_backend_rw_obi.i_w_last.gen_fifo.i_stream_fifo.fifo_i
-       43       idma_nd_midend$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend
-        7         idma_nd_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend.gen_dim_counters[2].i_num_rep_counter
-        1         popcount$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_nd_midend.i_popcount
-       17       idma_transfer_id_gen$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_idma_transfer_id_gen
-        4       obi_rready_converter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read
-       13         credit_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.credit_cntr_i
-        6         stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.response_fifo_i
-       62           fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_read.response_fifo_i.fifo_i
-        8       obi_rready_converter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write
-       13         credit_counter$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.credit_cntr_i
-        6         stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.response_fifo_i
-       62           fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_obi_rready_converter_write.response_fifo_i.fifo_i
-        6       stream_fifo$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_stream_fifo_jobs
-      101         fifo_v3$croc_chip.i_croc_soc.i_croc.gen_dma.i_croc_idma.i_stream_fifo_jobs.fifo_i
         5     dm_obi_top$croc_chip.i_croc_soc.i_croc.i_dm_top
       533         dm_csrs$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs
        45           fifo_v3$croc_chip.i_croc_soc.i_croc.i_dm_top.i_dm_top.i_dm_csrs.i_fifo
@@ -4872,12 +4099,12 @@
         2       sync$croc_chip.i_croc_soc.i_croc.i_gpio.gen_gpios[9].i_sync
        50     obi_demux$croc_chip.i_croc_soc.i_croc.i_obi_demux
        14       delta_counter$croc_chip.i_croc_soc.i_croc.i_obi_demux.i_counter
+        3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg
+       45       fifo_v3$croc_chip.i_croc_soc.i_croc.gen_no_dma.i_obi_err_sbr_idma_cfg.i_id_fifo
         3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_periph_err
        45       fifo_v3$croc_chip.i_croc_soc.i_croc.i_periph_err.i_id_fifo
         3     obi_err_sbr$croc_chip.i_croc_soc.i_croc.i_xbar_err
        45       fifo_v3$croc_chip.i_croc_soc.i_croc.i_xbar_err.i_id_fifo
-        4     obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[0].i_sram_shim
-        4     obi_sram_shim$croc_chip.i_croc_soc.i_croc.gen_sram_bank[1].i_sram_shim
       127     obi_timer$croc_chip.i_croc_soc.i_croc.i_obi_timer
         2     obi_uart$croc_chip.i_croc_soc.i_croc.i_uart
        14       obi_uart_baudgen$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_baudgen
@@ -4896,12 +4123,10 @@
         2         sync$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_rx.i_sync
       243       obi_uart_tx$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx
        59         fifo_v3$croc_chip.i_croc_soc.i_croc.i_uart.i_uart_tx.i_fifo_v3
-       50         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
-       50         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
-       50         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
-       50         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
-       50         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_addr_decode.i_addr_decode_dync
-       50         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_addr_decode.i_addr_decode_dync
+       26         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_addr_decode.i_addr_decode_dync
+       26         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_addr_decode.i_addr_decode_dync
+       26         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_addr_decode.i_addr_decode_dync
+       26         addr_decode_dync$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_addr_decode.i_addr_decode_dync
        50       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux
        14         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[0].i_demux.i_counter
        50       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[1].i_demux
@@ -4910,97 +4135,104 @@
        14         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[2].i_demux.i_counter
        50       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux
        14         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[3].i_demux.i_counter
-       50       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_demux
-       14         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[4].i_demux.i_counter
-       50       obi_demux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_demux
-       14         delta_counter$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_demux[5].i_demux.i_counter
        40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux
        45         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.gen_no_id_assign.i_fifo
-       82         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       52         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb
+        9           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        9           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[0].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
        40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux
        45         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.gen_no_id_assign.i_fifo
-       82         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       52         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb
+        9           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        9           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[1].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
        40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux
        45         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.gen_no_id_assign.i_fifo
-       82         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
-       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux
-       45         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.gen_no_id_assign.i_fifo
-       82         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[3].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
-       40       obi_mux$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux
-       45         fifo_v3$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.gen_no_id_assign.i_fifo
-       82         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
-       14           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
+       52         rr_arb_tree$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb
+        9           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_lower
+        9           lzc$croc_chip.i_croc_soc.i_croc.i_main_xbar.gen_mux[2].i_mux.i_rr_arb.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper
        78     soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl
         2     rstgen_bypass$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass
         1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no
         1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_n
         1       tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no
-       20   user_domain$croc_chip.i_croc_soc.i_user
-       14       addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
+        1   user_domain$croc_chip.i_croc_soc.i_user
+       50       addr_decode_dync$croc_chip.i_croc_soc.i_user.i_addr_decode_periphs.i_addr_decode_dync
        50     obi_demux$croc_chip.i_croc_soc.i_user.i_obi_demux
        14       delta_counter$croc_chip.i_croc_soc.i_user.i_obi_demux.i_counter
         3     obi_err_sbr$croc_chip.i_croc_soc.i_user.i_user_err
        45       fifo_v3$croc_chip.i_croc_soc.i_user.i_user_err.i_id_fifo
-        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_secded_bypass_mode.gen_sram_bank[0].i_sram
-        2     tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_secded_bypass_mode.gen_sram_bank[1].i_sram
+        4     obi_sram_shim$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_shim
+        4     obi_sram_shim$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_shim
+        8     secded_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_decode
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_decode
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_decode
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_decode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_encode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_encode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_encode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_encode
+        2       tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram
+        8     secded_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_decode
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_decode
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_decode
+       56       secded_byte_decode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_decode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].i_encode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].i_encode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].i_encode
+       20       secded_byte_encode$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].i_encode
+        2       tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram
+        3     user_design_sink$croc_chip.i_croc_soc.i_user.i_user_design_sink
        19     user_rom$croc_chip.i_croc_soc.i_user.i_user_rom
 
         +----------Count including submodules.
         | 
-    20782 wires
-   240282 wire bits
-     4811 public wires
-    88289 public wire bits
-     2538 ports
-    38966 port bits
+    17926 wires
+   165768 wire bits
+     4026 public wires
+    61640 public wire bits
+     2064 ports
+    25699 port bits
         1 memories
        32 memory bits
         - processes
-    11122 cells
-       99   $add
-      778   $aldff
-      761   $and
-      106   $bmux
-       46   $bwmux
-      136   $demux
+     9832 cells
+       57   $add
+      553   $aldff
+      598   $and
+       86   $bmux
+       28   $bwmux
+       92   $demux
        10   $dff
-     1826   $eq
-      129   $ge
-       38   $gt
-       47   $le
-      344   $logic_and
-      838   $logic_not
-      112   $logic_or
-      226   $lt
+     1866   $eq
+       92   $ge
+       13   $gt
+       30   $le
+      263   $logic_and
+      727   $logic_not
+      176   $logic_or
+      165   $lt
         1   $meminit
         1   $memrd_v2
-        4   $mul
-     4236   $mux
-       22   $ne
-        4   $neg
-      631   $not
-      260   $or
-      231   $pmux
-        5   $reduce_and
-       25   $reduce_bool
-       54   $reduce_or
-        3   $reduce_xor
+        2   $mul
+     3618   $mux
+       14   $ne
+        2   $neg
+      509   $not
+      175   $or
+      228   $pmux
+        1   $reduce_and
+       22   $reduce_bool
+       52   $reduce_or
+       11   $reduce_xor
         1   $shift
         1   $shiftx
-        7   $shl
-        8   $shr
+        3   $shl
+        1   $shr
         1   $sshr
-       46   $sub
-       14   $xor
+       30   $sub
+      332   $xor
         1   INVX2
         4   MUX2X2
         2   RM_IHPSG13_1P_512x64_c2_bm_bist
