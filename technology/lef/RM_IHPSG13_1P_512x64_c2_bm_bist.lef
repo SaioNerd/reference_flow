@@ -142,10 +142,10 @@ MACRO RM_IHPSG13_1P_512x64_c2_bm_bist
         RECT 359.06 0 359.32 0.26 ;
     END
   END A_DOUT[31]
-  PIN VSS!
+  PIN VSS
     DIRECTION INOUT ;
     USE GROUND ;
-    NETEXPR "vss VSS!" ;
+    NETEXPR "vss VSS" ;
     PORT
       LAYER Metal4 ;
         RECT 771.79 0 774.6 191.34 ;
@@ -418,11 +418,11 @@ MACRO RM_IHPSG13_1P_512x64_c2_bm_bist
       LAYER Metal4 ;
         RECT 9.88 0 12.69 191.34 ;
     END
-  END VSS!
-  PIN VDD!
+  END VSS
+  PIN VDD
     DIRECTION INOUT ;
     USE POWER ;
-    NETEXPR "vdd VDD!" ;
+    NETEXPR "vdd VDD" ;
     PORT
       LAYER Metal4 ;
         RECT 777.41 0 780.22 38.825 ;
@@ -695,11 +695,11 @@ MACRO RM_IHPSG13_1P_512x64_c2_bm_bist
       LAYER Metal4 ;
         RECT 4.26 0 7.07 38.825 ;
     END
-  END VDD!
-  PIN VDDARRAY!
+  END VDD
+  PIN VDDARRAY
     DIRECTION INOUT ;
     USE POWER ;
-    NETEXPR "vddarray VDDARRAY!" ;
+    NETEXPR "vddarray VDDARRAY" ;
     PORT
       LAYER Metal4 ;
         RECT 777.41 45.465 780.22 191.34 ;
@@ -956,7 +956,7 @@ MACRO RM_IHPSG13_1P_512x64_c2_bm_bist
       LAYER Metal4 ;
         RECT 4.26 45.465 7.07 191.34 ;
     END
-  END VDDARRAY!
+  END VDDARRAY
   PIN A_DIN[33]
     DIRECTION INPUT ;
     USE SIGNAL ;
