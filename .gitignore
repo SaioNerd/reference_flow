@@ -10,7 +10,7 @@
 /tmp
 /calibre
 /docs
-/technology
+#/technology
 /.setPDK.csh
 # dfii
 /dfii/.cdsinit
@@ -77,9 +77,6 @@
 #openroad
 /openroad/out
 /openroad/save
-/openroad/reports
 #/openroad/src
 #yosys
 /yosys/out
-/rtl_old
-/sw_old

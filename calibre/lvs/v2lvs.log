@@ -50,14 +50,6 @@ Warning: Module instantiation croc_chip/clkload25 has pin mismatches with module
 Warning: Module instantiation croc_chip/clkload24 has pin mismatches with module BUFX44
 Warning: Module instantiation croc_chip/clkload29 has pin mismatches with module BUFX48
 Warning: Module instantiation croc_chip/clkload28 has pin mismatches with module INVX16
-Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut calls port \VSS! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut calls port \VDD! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut calls port \VDDARRAY! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: Module instantiation croc_chip/\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut has pin mismatches with module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut calls port \VSS! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut calls port \VDD! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut calls port \VDDARRAY! not declared in module RM_IHPSG13_1P_512x64_c2_bm_bist
-Warning: Module instantiation croc_chip/\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_512x64xBx1.i_cut has pin mismatches with module RM_IHPSG13_1P_512x64_c2_bm_bist
 Warning: Module instantiation croc_chip/clkload8 has pin mismatches with module INVX6
 Warning: Module instantiation croc_chip/clkload7 has pin mismatches with module INVX32
 Warning: Module instantiation croc_chip/clkload78 has pin mismatches with module INVX6
@@ -121,4 +113,4 @@ Warning: Module instantiation croc_chip/clkload87 has pin mismatches with module
 Warning: Module instantiation croc_chip/clkload86 has pin mismatches with module INVX32
 Warning: Module instantiation croc_chip/clkload90 has pin mismatches with module INVX16
 
-CPU TIME = 1  REAL TIME = 2  MALLOC = 89/89/89
+CPU TIME = 2  REAL TIME = 2  MALLOC = 89/89/89

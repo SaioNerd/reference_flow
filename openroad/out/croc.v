@@ -137138,11 +137138,11 @@ module croc_chip (clk_i,
     .c2p_en(soc_gpio_out_en_o_11_),
     .p2c(soc_gpio_i_11_),
     .pad(gpio11_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio12_io (.c2p(net7478),
+ sg13cmos5l_IOPadInOut30mA pad_gpio12_io (.c2p(net7480),
     .c2p_en(net6588),
     .p2c(soc_gpio_i_12_),
     .pad(gpio12_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio13_io (.c2p(net7479),
+ sg13cmos5l_IOPadInOut30mA pad_gpio13_io (.c2p(net7481),
     .c2p_en(net6587),
     .p2c(soc_gpio_i_13_),
     .pad(gpio13_io));
@@ -137182,19 +137182,19 @@ module croc_chip (clk_i,
     .c2p_en(net7485),
     .p2c(soc_gpio_i_21_),
     .pad(gpio21_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio22_io (.c2p(net7466),
+ sg13cmos5l_IOPadInOut30mA pad_gpio22_io (.c2p(net7477),
     .c2p_en(net7484),
     .p2c(soc_gpio_i_22_),
     .pad(gpio22_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio23_io (.c2p(net7467),
+ sg13cmos5l_IOPadInOut30mA pad_gpio23_io (.c2p(net7478),
     .c2p_en(net6585),
     .p2c(soc_gpio_i_23_),
     .pad(gpio23_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio24_io (.c2p(net7468),
+ sg13cmos5l_IOPadInOut30mA pad_gpio24_io (.c2p(net7479),
     .c2p_en(net6584),
     .p2c(soc_gpio_i_24_),
     .pad(gpio24_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio25_io (.c2p(net7469),
+ sg13cmos5l_IOPadInOut30mA pad_gpio25_io (.c2p(net7466),
     .c2p_en(net6583),
     .p2c(soc_gpio_i_25_),
     .pad(gpio25_io));
@@ -137206,43 +137206,43 @@ module croc_chip (clk_i,
     .c2p_en(net7483),
     .p2c(soc_gpio_i_27_),
     .pad(gpio27_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio28_io (.c2p(net7471),
+ sg13cmos5l_IOPadInOut30mA pad_gpio28_io (.c2p(net7468),
     .c2p_en(net6581),
     .p2c(soc_gpio_i_28_),
     .pad(gpio28_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio29_io (.c2p(net7477),
+ sg13cmos5l_IOPadInOut30mA pad_gpio29_io (.c2p(net7474),
     .c2p_en(net6580),
     .p2c(soc_gpio_i_29_),
     .pad(gpio29_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio2_io (.c2p(net7470),
+ sg13cmos5l_IOPadInOut30mA pad_gpio2_io (.c2p(net7467),
     .c2p_en(net6579),
     .p2c(soc_gpio_i_2_),
     .pad(gpio2_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio30_io (.c2p(net7480),
+ sg13cmos5l_IOPadInOut30mA pad_gpio30_io (.c2p(net7475),
     .c2p_en(net6578),
     .p2c(soc_gpio_i_30_),
     .pad(gpio30_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio31_io (.c2p(net7481),
+ sg13cmos5l_IOPadInOut30mA pad_gpio31_io (.c2p(net7476),
     .c2p_en(net6577),
     .p2c(soc_gpio_i_31_),
     .pad(gpio31_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio3_io (.c2p(net7472),
+ sg13cmos5l_IOPadInOut30mA pad_gpio3_io (.c2p(net7469),
     .c2p_en(net6576),
     .p2c(soc_gpio_i_3_),
     .pad(gpio3_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio4_io (.c2p(net7473),
+ sg13cmos5l_IOPadInOut30mA pad_gpio4_io (.c2p(net7470),
     .c2p_en(net6575),
     .p2c(soc_gpio_i_4_),
     .pad(gpio4_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio5_io (.c2p(net7474),
+ sg13cmos5l_IOPadInOut30mA pad_gpio5_io (.c2p(net7471),
     .c2p_en(net6574),
     .p2c(soc_gpio_i_5_),
     .pad(gpio5_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio6_io (.c2p(net7475),
+ sg13cmos5l_IOPadInOut30mA pad_gpio6_io (.c2p(net7472),
     .c2p_en(net6573),
     .p2c(soc_gpio_i_6_),
     .pad(gpio6_io));
- sg13cmos5l_IOPadInOut30mA pad_gpio7_io (.c2p(net7476),
+ sg13cmos5l_IOPadInOut30mA pad_gpio7_io (.c2p(net7473),
     .c2p_en(net6572),
     .p2c(soc_gpio_i_7_),
     .pad(gpio7_io));
@@ -146861,14 +146861,14 @@ module croc_chip (clk_i,
     .Y(net7487));
  BUFX3 rebuffer7487 (.A(net2649),
     .Y(net7486));
- BUFX16 wire7480 (.A(soc_gpio_o_13_),
+ BUFX16 wire7480 (.A(soc_gpio_o_24_),
     .Y(net7479));
  INVX16 clkload90 (.A(clknet_leaf_4_soc_jtag_tck_i_regs));
- BUFX16 wire7479 (.A(soc_gpio_o_12_),
+ BUFX16 wire7479 (.A(soc_gpio_o_23_),
     .Y(net7478));
- BUFX16 wire7478 (.A(soc_gpio_o_29_),
+ BUFX16 wire7478 (.A(soc_gpio_o_22_),
     .Y(net7477));
- BUFX16 wire7467 (.A(soc_gpio_o_22_),
+ BUFX16 wire7467 (.A(soc_gpio_o_25_),
     .Y(net7466));
  BUFX64 \clkbuf_1_1__f_i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n  (.A(\clknet_0_i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n ),
     .Y(\clknet_1_1__leaf_i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n ));
@@ -146876,25 +146876,25 @@ module croc_chip (clk_i,
     .Y(\clknet_1_0__leaf_i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n ));
  BUFX64 \clkbuf_0_i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n  (.A(\i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n ),
     .Y(\clknet_0_i_croc_soc/i_croc/i_dmi_jtag/i_dmi_jtag_tap.tck_n ));
- BUFX16 wire7477 (.A(soc_gpio_o_7_),
+ BUFX16 wire7477 (.A(soc_gpio_o_31_),
     .Y(net7476));
- BUFX16 wire7476 (.A(soc_gpio_o_6_),
+ BUFX16 wire7476 (.A(soc_gpio_o_30_),
     .Y(net7475));
- BUFX16 wire7475 (.A(soc_gpio_o_5_),
+ BUFX16 wire7475 (.A(soc_gpio_o_29_),
     .Y(net7474));
- BUFX16 wire7474 (.A(soc_gpio_o_4_),
+ BUFX16 wire7474 (.A(soc_gpio_o_7_),
     .Y(net7473));
- BUFX16 wire7469 (.A(soc_gpio_o_24_),
+ BUFX16 wire7469 (.A(soc_gpio_o_28_),
     .Y(net7468));
- BUFX16 wire7468 (.A(soc_gpio_o_23_),
+ BUFX16 wire7468 (.A(soc_gpio_o_2_),
     .Y(net7467));
- BUFX16 wire7473 (.A(soc_gpio_o_3_),
+ BUFX16 wire7473 (.A(soc_gpio_o_6_),
     .Y(net7472));
- BUFX16 wire7471 (.A(soc_gpio_o_2_),
+ BUFX16 wire7471 (.A(soc_gpio_o_4_),
     .Y(net7470));
- BUFX16 wire7470 (.A(soc_gpio_o_25_),
+ BUFX16 wire7470 (.A(soc_gpio_o_3_),
     .Y(net7469));
- BUFX16 wire7472 (.A(soc_gpio_o_28_),
+ BUFX16 wire7472 (.A(soc_gpio_o_5_),
     .Y(net7471));
  BUFX16 wire7486 (.A(soc_gpio_out_en_o_21_),
     .Y(net7485));
@@ -146904,9 +146904,9 @@ module croc_chip (clk_i,
     .Y(net7483));
  BUFX16 wire7483 (.A(soc_uart_tx_o),
     .Y(net7482));
- BUFX16 wire7482 (.A(soc_gpio_o_31_),
+ BUFX16 wire7482 (.A(soc_gpio_o_13_),
     .Y(net7481));
- BUFX16 wire7481 (.A(soc_gpio_o_30_),
+ BUFX16 wire7481 (.A(soc_gpio_o_12_),
     .Y(net7480));
  BUFX3 hold7590 (.A(net14637),
     .Y(net7589));
