@@ -10,6 +10,8 @@
 # OpenROAD Backend Flow Script
 # Runs the complete backend flow or individual steps
 
+# oseda -2025.12 bash ./run_backend.sh --all
+
 set -e  # Exit on error
 set -u  # Error on undefined vars
 
