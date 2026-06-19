@@ -76,9 +76,9 @@ build_verilator() {
         --x-assign fast \
         --x-initial fast \
         -O3 \
-        --top tb_croc_soc \
+        --top tb_secded_byte \
         -f croc.f 2>&1 | \
-        tee croc_soc_build.log"
+        tee secded_byte_build.log"
 }
 
 
@@ -101,7 +101,7 @@ generate_flist() {
 
 run_binary() {
     run_cmd "echo [INFO][Verilator] Running $1"
-    run_cmd "obj_dir/Vtb_croc_soc +binary="$1" | tee ${PROJ_NAME}.log"
+    run_cmd "obj_dir/Vtb_secded_byte +binary="$1" | tee ${PROJ_NAME}.log"
 }
 
 
