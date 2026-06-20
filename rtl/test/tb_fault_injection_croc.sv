@@ -9,13 +9,17 @@
 // Testbench for SECDED SRAM Fault Injection
 // - Uses croc_vip for clock/reset generation, JTAG, UART, and GPIO
 // - Instantiates croc_soc with SECDED-protected SRAM banks
-// - Monitors OBI writes to the UserDesign trigger address (0x2000_1000)
-// - Injects single-bit or double-bit faults into SRAM write data on trigger
+// - The C code passes the faulty array address via MMIO write to 0x2000_1000
+// - The testbench captures this address, determines which bank it's in,
+//   computes the word address range, and injects faults into the 64-bit
+//   encoded data on writes to that range.
 
 `define TRACE_WAVE
 
 module tb_fault_injection_croc #(
-  parameter int unsigned GpioCount = 32
+  parameter int unsigned GpioCount = 32,
+  // Fault type: 1 = single-bit error, 2 = double-bit error
+  parameter int unsigned FaultType = 2
 );
 
   import tb_croc_pkg::*;
@@ -52,6 +56,11 @@ module tb_fault_injection_croc #(
       $display("No binary path provided. Running bitflip_verify.");
       binary_path = "../sw/bin/bitflip_verify.hex";
     end
+    if (FaultType == 2) begin
+      $display("Fault mode: DOUBLE-bit error injection");
+    end else begin
+      $display("Fault mode: SINGLE-bit error injection");
+    end
   end
 
   ////////////
@@ -80,9 +89,13 @@ module tb_fault_injection_croc #(
   //  DUT   //
   ////////////
 
+  `ifdef TARGET_NETLIST_YOSYS
+  \croc_soc$croc_chip.i_croc_soc i_croc_soc (
+  `else
   croc_soc #(
     .GpioCount ( GpioCount )
   ) i_croc_soc (
+  `endif
     .clk_i         ( sys_clk     ),
     .rst_ni        ( rst_n       ),
     .ref_clk_i     ( ref_clk     ),
@@ -100,125 +113,200 @@ module tb_fault_injection_croc #(
     .gpio_out_en_o ( gpio_out_en )
   );
 
-  //////////////////////////////////////////////////
-  //  Fault Injection Control via OBI Bus Monitor //
-  //////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////
+  // OBI Bus Monitor: Capture Faulty Array Address from C Code
+  //////////////////////////////////////////////////////////////////
+  // The C code writes the address of its faulty array to 0x2000_1000
+  // (UserDesign space) before writing any data. The testbench captures
+  // this address, determines which bank it's in, computes the word
+  // address range, and starts fault injection on writes to that range.
+  //////////////////////////////////////////////////////////////////
 
-  // Trigger address in UserDesign address space
-  // (UserBaseAddr + 0x1000_1000 = 0x2000_1000)
-  localparam bit [31:0] TriggerAddr = 32'h20001000;
+  // Probe the OBI request entering the user domain (from croc_domain)
+  wire        obi_arm_req   = i_croc_soc.i_user.user_sbr_obi_req_i.req;
+  wire        obi_arm_we    = i_croc_soc.i_user.user_sbr_obi_req_i.a.we;
+  wire [31:0] obi_arm_addr  = i_croc_soc.i_user.user_sbr_obi_req_i.a.addr;
+  wire [31:0] obi_arm_wdata = i_croc_soc.i_user.user_sbr_obi_req_i.a.wdata;
 
-  // Probe the OBI request entering the user domain
-  // This is the input port of i_user that carries requests from croc_domain
-  wire        obi_req   = i_croc_soc.i_user.user_sbr_obi_req_i.req;
-  wire        obi_we    = i_croc_soc.i_user.user_sbr_obi_req_i.a.we;
-  wire [31:0] obi_addr  = i_croc_soc.i_user.user_sbr_obi_req_i.a.addr;
-  wire [31:0] obi_wdata = i_croc_soc.i_user.user_sbr_obi_req_i.a.wdata;
+  // Address where the C code writes the faulty array pointer to arm the TB
+  localparam bit [31:0] ArmAddr = 32'h2000_1000;
 
-  // Fault injection state
-  // fault_type[1:0] selects the fault mode:
-  //   2'b00 = no fault
-  //   2'b01 = single-bit error (SEC)
-  //   2'b10 = double-bit error (DED)
-  //   2'b11 = reserved
-  logic [1:0] fault_type_q;
-  logic       inject_single;
-  logic       inject_double;
+  // Bank base addresses
+  localparam bit [31:0] Bank0Base = 32'h1000_0000;
+  localparam bit [31:0] Bank1Base = 32'h1000_0800;
+  // Each bank is 2KB (0x800 bytes)
+  localparam bit [31:0] BankSize  = 32'h0000_0800;
+  // Array max size in bytes
+  localparam int unsigned ArrayMaxBytes = 256;
+  // Number of 64-bit words for the array (each 64-bit word = 8 bytes)
+  localparam int unsigned ArrayNumWords = ArrayMaxBytes / 4; // 64
 
-  // Detect writes to the trigger address and latch fault type
+  // Captured faulty array info from the C code
+  logic [31:0] faulty_base_addr;
+  logic        armed;
+  logic        in_bank0;
+  logic        in_bank1;
+
+  // Computed word address range within the target bank
+  logic [8:0] target_start_word;
+  logic [8:0] target_end_word;
+
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
-      fault_type_q  <= '0;
-      inject_single <= 1'b0;
-      inject_double <= 1'b0;
+      armed            <= 1'b0;
+      faulty_base_addr <= '0;
+      in_bank0         <= 1'b0;
+      in_bank1         <= 1'b0;
+      target_start_word <= '0;
+      target_end_word   <= '0;
     end else begin
-      // Default: no new injection
-      inject_single <= 1'b0;
-      inject_double <= 1'b0;
+      if (!armed && obi_arm_req && obi_arm_we && (obi_arm_addr == ArmAddr)) begin
+        armed            <= 1'b1;
+        faulty_base_addr <= obi_arm_wdata;
 
-      // Detect write to trigger address
-      if (obi_req && obi_we && obi_addr == TriggerAddr) begin
-        fault_type_q <= obi_wdata[1:0];
-        if (obi_wdata[1:0] == 2'b01) begin
-          inject_single <= 1'b1;
-          $display("@%t | [FAULT] Trigger: Single-bit error injection", $time);
-        end else if (obi_wdata[1:0] == 2'b10) begin
-          inject_double <= 1'b1;
-          $display("@%t | [FAULT] Trigger: Double-bit error injection", $time);
+        // Determine which bank and compute word address range
+        if (obi_arm_wdata >= Bank0Base && obi_arm_wdata < Bank0Base + BankSize) begin
+          in_bank0 <= 1'b1;
+          in_bank1 <= 1'b0;
+          // Word address = (byte_addr - bank_base) >> 2 (32-bit words)
+          // But the 64-bit SRAM uses the same address, so each 64-bit word
+          // corresponds to one 32-bit word (4 bytes → 64-bit encoded)
+          target_start_word <= (obi_arm_wdata - Bank0Base) >> 2;
+          target_end_word   <= ((obi_arm_wdata - Bank0Base) >> 2) + ArrayNumWords - 1;
+          $display("@%t | [TB] Armed! Array at 0x%08h in BANK 0, words [%0d..%0d]",
+                   $time, obi_arm_wdata,
+                   (obi_arm_wdata - Bank0Base) >> 2,
+                   ((obi_arm_wdata - Bank0Base) >> 2) + ArrayNumWords - 1);
+        end else if (obi_arm_wdata >= Bank1Base && obi_arm_wdata < Bank1Base + BankSize) begin
+          in_bank0 <= 1'b0;
+          in_bank1 <= 1'b1;
+          target_start_word <= (obi_arm_wdata - Bank1Base) >> 2;
+          target_end_word   <= ((obi_arm_wdata - Bank1Base) >> 2) + ArrayNumWords - 1;
+          $display("@%t | [TB] Armed! Array at 0x%08h in BANK 1, words [%0d..%0d]",
+                   $time, obi_arm_wdata,
+                   (obi_arm_wdata - Bank1Base) >> 2,
+                   ((obi_arm_wdata - Bank1Base) >> 2) + ArrayNumWords - 1);
+        end else begin
+          in_bank0 <= 1'b0;
+          in_bank1 <= 1'b0;
+          $display("@%t | [WARNING] Array at 0x%08h is NOT in any SRAM bank! No faults injected.",
+                   $time, obi_arm_wdata);
         end
       end
     end
   end
 
-  // -------------------------------------------------
-  // Fault Injection into SRAM Write Data
-  // -------------------------------------------------
-  // We inject errors into the write data of SRAM banks
-  // by XOR-ing with an error mask. The SECDED decoder
-  // will then detect/correct these errors on read-back.
-  // -------------------------------------------------
+  //////////////////////////////////////////////////////////////////
+  // Fault Injection: Direct SRAM Bus Monitoring
+  //////////////////////////////////////////////////////////////////
+  // We monitor the correct bank's internal 64-bit SRAM signals.
+  // When a write occurs with address in the target word range,
+  // we inject a single-bit or double-bit error into the encoded
+  // 64-bit data word.
+  //
+  // The 64-bit word layout (from secded_sram_impl.sv):
+  //   bits 0:15   = encoded byte 0 (13-bit SECDED code in bits 0:12)
+  //   bits 16:31  = encoded byte 1 (13-bit SECDED code in bits 16:28)
+  //   bits 32:47  = encoded byte 2 (13-bit SECDED code in bits 32:44)
+  //   bits 48:63  = encoded byte 3 (13-bit SECDED code in bits 48:60)
+  //////////////////////////////////////////////////////////////////
 
-  // Error masks (inject into byte 0 of bank 0)
-  localparam logic [31:0] SecMaskSingle = 32'h0000_0001; // single-bit flip
-  localparam logic [31:0] SecMaskDouble = 32'h0000_0003; // two-bit flip
+  // Select the correct bank signals based on where the array is
+  wire        bank_req    = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.req_i[0] :
+                           in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.req_i[0] :
+                           1'b0;
+  wire        bank_we     = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.we_i[0] :
+                           in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.we_i[0] :
+                           1'b0;
+  wire [8:0]  bank_addr   = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.addr_i[0] :
+                           in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.addr_i[0] :
+                           9'd0;
+  wire [63:0] bank_wdata  = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] :
+                           in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] :
+                           64'd0;
 
-  // Per-bank fault injection
-  // Uses hierarchical references into the generate blocks of user_domain
-  for (genvar b = 0; b < croc_pkg::NumSramBanks; b++) begin : gen_fault_inject
-    always_ff @(posedge sys_clk or negedge rst_n) begin
-      if (!rst_n) begin
-        // No action on reset
-      end else begin
-        // Inject single-bit error into bank write data
-        if (inject_single) begin
-          // Flip bit 0 of the write data going into the SECDED SRAM
-          `ifndef VERILATOR
-            force i_croc_soc.i_user.gen_sram_bank[b].bank_wdata =
-              i_croc_soc.i_user.gen_sram_bank[b].bank_wdata ^ SecMaskSingle;
-            #(ClkPeriodSys);
-            release i_croc_soc.i_user.gen_sram_bank[b].bank_wdata;
-          `else
-            // Verilator does not support force/release;
-            // use direct assignment via the continuous assignment below
-          `endif
-        end
+  // Trigger when writing to the target bank with address in the target range
+  wire bank_write_active = bank_req && bank_we;
+  wire bank_in_range     = (bank_addr >= target_start_word) && (bank_addr <= target_end_word);
+  wire bank_write_target = bank_write_active && bank_in_range && armed;
 
-        // Inject double-bit error into bank write data
-        if (inject_double) begin
-          `ifndef VERILATOR
-            force i_croc_soc.i_user.gen_sram_bank[b].bank_wdata =
-              i_croc_soc.i_user.gen_sram_bank[b].bank_wdata ^ SecMaskDouble;
-            #(ClkPeriodSys);
-            release i_croc_soc.i_user.gen_sram_bank[b].bank_wdata;
-          `endif
+  // Error masks for the 64-bit encoded data (applied to the SECDED code regions)
+  // Single-bit error: flip bit 0 (within byte 0's SECDED code at bits 0:12)
+  // Double-bit error: flip bits 0 and 1 (within byte 0's SECDED code at bits 0:12)
+  localparam logic [63:0] SecMaskSingle = 64'h0000_0000_0000_0001;
+  localparam logic [63:0] SecMaskDouble = 64'h0000_0000_0000_0003;
+
+  // Track which addresses have been corrupted (to avoid double-corruption)
+  logic [563:0] addr_corrupted;
+
+  // Fault injection control
+  logic [1:0] fault_type;
+  logic       inject_now;
+
+  // Detect a write to the target range and schedule fault injection
+  always_ff @(posedge sys_clk or negedge rst_n) begin
+    if (!rst_n) begin
+      inject_now     <= 1'b0;
+      fault_type     <= 2'b00;
+      addr_corrupted <= '0;
+    end else begin
+      inject_now <= 1'b0;
+
+      if (bank_write_target && !addr_corrupted[bank_addr]) begin
+        // Mark this address as corrupted
+        addr_corrupted[bank_addr] <= 1'b1;
+
+        // Use the module parameter FaultType to decide error type
+        fault_type <= (FaultType == 2) ? 2'b10 : 2'b01;
+        inject_now <= 1'b1;
+        if (FaultType == 2) begin
+          $display("@%t | [FAULT] Injecting DOUBLE-bit error in Bank[%0d] addr=%0d wdata=0x%016h",
+                   $time, in_bank1 ? 1 : 0, bank_addr, bank_wdata);
+        end else begin
+          $display("@%t | [FAULT] Injecting SINGLE-bit error in Bank[%0d] addr=%0d wdata=0x%016h",
+                   $time, in_bank1 ? 1 : 0, bank_addr, bank_wdata);
         end
       end
     end
   end
 
-  // For Verilator compatibility: inject fault by XOR-ing on the
-  // continuous assignment level using an intermediate wire.
-  // This only works if bank_wdata is a wire rather than a logic variable.
-  // In the user_domain, bank_wdata is declared as 'logic' inside the
-  // generate block, so force/release is the correct approach for
-  // simulators that support it. For Verilator-based fault injection,
-  // use the JTAG write-back approach instead (see below).
-
-  //////////////////////////////////////////////////////////////////
-  // Alternate Fault Injection via JTAG (Verilator-compatible)
-  //////////////////////////////////////////////////////////////////
-
-  logic jtag_fault_trigger;
-
+  // Inject the fault into the 64-bit write data using force/release
+  // Select the correct force target based on which bank
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
-      jtag_fault_trigger <= 1'b0;
+      // Nothing on reset
     end else begin
-      // Latch when injection is requested (used by non-Verilator path above)
-      if (inject_single || inject_double) begin
-        jtag_fault_trigger <= 1'b1;
-      end else if (jtag_fault_trigger) begin
-        jtag_fault_trigger <= 1'b0;
+      if (inject_now) begin
+        `ifndef VERILATOR
+          if (fault_type == 2'b01) begin
+            if (in_bank0) begin
+              force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
+                bank_wdata ^ SecMaskSingle;
+            end else if (in_bank1) begin
+              force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
+                bank_wdata ^ SecMaskSingle;
+            end
+            $display("@%t | [FAULT] Forced wdata to 0x%016h (mask=0x%016h)",
+                     $time, bank_wdata ^ SecMaskSingle, SecMaskSingle);
+          end else if (fault_type == 2'b10) begin
+            if (in_bank0) begin
+              force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
+                bank_wdata ^ SecMaskDouble;
+            end else if (in_bank1) begin
+              force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
+                bank_wdata ^ SecMaskDouble;
+            end
+            $display("@%t | [FAULT] Forced wdata to 0x%016h (mask=0x%016h)",
+                     $time, bank_wdata ^ SecMaskDouble, SecMaskDouble);
+          end
+          // Keep the force for one cycle, then release
+          @(posedge sys_clk);
+          if (in_bank0) begin
+            release i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0];
+          end else if (in_bank1) begin
+            release i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0];
+          end
+        `endif
       end
     end
   end

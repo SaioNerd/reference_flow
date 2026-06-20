@@ -8,7 +8,7 @@
 #include "print.h"
 #include "config.h"
 
-#define BASE ((volatile uint32_t *)0x10000C00)
+#define BASE ((volatile uint32_t *)0x10000800)
 #define N 100
 
 int main() {

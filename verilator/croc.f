@@ -188,4 +188,5 @@
 ../rtl/test/tb_croc_soc.sv
 ../rtl/test/tb_secded_bench.sv
 ../rtl/test/tb_secded_byte.sv
+../rtl/test/tb_fault_injection_croc.sv
 
