@@ -104,7 +104,7 @@
   # RM_IHPSG13_2P_1024x16_c2_bm_bist    9.47
   # RM_IHPSG13_2P_1024x32_c2_bm_bist    8.06
 
-  macros  = RM_IHPSG13_1P_1024x64_c2_bm_bist
+  macros  = RM_IHPSG13_1P_512x64_c2_bm_bist
             
   
 [version]
