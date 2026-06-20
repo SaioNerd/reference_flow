@@ -33,7 +33,7 @@ Options:
     --dry-run, -n       Only print commands instead of executing
     --verbose, -v       Print commands while executing
     --flist             Regenerate flist (croc.f)
-    --build             Build croc_soc Verilator binary
+    --build             Build fault_injection_croc Verilator binary
     --run BINARY        Run binary in Verilator
 
 Example:
@@ -76,9 +76,9 @@ build_verilator() {
         --x-assign fast \
         --x-initial fast \
         -O3 \
-        --top tb_secded_byte \
+        --top tb_fault_injection_croc \
         -f croc.f 2>&1 | \
-        tee secded_byte_build.log"
+        tee fault_injection_croc_build.log"
 }
 
 
@@ -101,7 +101,7 @@ generate_flist() {
 
 run_binary() {
     run_cmd "echo [INFO][Verilator] Running $1"
-    run_cmd "obj_dir/Vtb_secded_byte +binary="$1" | tee ${PROJ_NAME}.log"
+    run_cmd "obj_dir/Vtb_fault_injection_croc +binary="$1" | tee ${PROJ_NAME}.log"
 }
 
 
