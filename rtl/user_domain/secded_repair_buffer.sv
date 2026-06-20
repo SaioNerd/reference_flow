@@ -52,6 +52,8 @@ module secded_repair_buffer #(
   // =========================================================================
   // If the CPU tries to read an address that is waiting to be repaired,
   // we bypass the SRAM read and directly feed the CPU the corrected data.
+  // Avoid that if we read the same address 100 times before an idle cycle then
+  // the SRAM will return the bad data and single_err_o HIGH 100 times. 
   assign snoop_match_o = cpu_is_reading_match;
   assign snoop_data_o  = buf_data_q;
 
@@ -85,6 +87,7 @@ module secded_repair_buffer #(
   // Stage 3: Buffer State Machine & Partial Write Logic
   // =========================================================================
   logic [NumBytes-1:0] merged_be;
+  localparam int unsigned ChunkSize = DataWidth / NumBytes; // 64 / 4 = 16 bits!
 
   always_comb begin
     merged_be = buf_be_q;
@@ -113,15 +116,13 @@ module secded_repair_buffer #(
       // Priority 2: CPU writes to the same address (Write-After-Write Hazard)
       else if (cpu_is_writing_match) begin
         if (merged_be == '0) begin
-          // The CPU overwrote all the broken bytes. The problem is gone.
           buf_valid_q <= 1'b0;
         end else begin
-          // The CPU only did a partial write (e.g., overwrote Byte 0, but Byte 3 is broken).
-          // We must merge the CPU's new data into our buffer and wait to drain.
           buf_be_q <= merged_be;
           for (int i = 0; i < NumBytes; i++) begin
             if (cpu_be_i[i]) begin
-              buf_data_q[i*8 +: 8] <= cpu_wdata_i[i*8 +: 8];
+              // Use ChunkSize instead of hardcoded 8
+              buf_data_q[i*ChunkSize +: ChunkSize] <= cpu_wdata_i[i*ChunkSize +: ChunkSize];
             end
           end
         end

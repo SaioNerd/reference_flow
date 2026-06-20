@@ -1,5 +1,5 @@
 // ============================================================================
-// Module: secded_sram_impl
+// Module: secded_sram_impl2
 // Description: Drop-in replacement for tc_sram_impl. 
 // Transparently adds byte-wise SECDED protection by mapping 32-bit data 
 // to an internal 64-bit SRAM (16-bits per byte chunk).
@@ -7,7 +7,7 @@
 
 `default_nettype none
 
-module secded_sram_impl #(
+module secded_sram_impl2 #(
   parameter int unsigned NumWords     = 32'd512,
   parameter int unsigned DataWidth    = 32'd32, // External Data Width (e.g. 32)
   parameter int unsigned ByteWidth    = 32'd8,  // External Byte Width (e.g. 8)
@@ -89,7 +89,21 @@ module secded_sram_impl #(
       secded_data_t [NumPorts-1:0] secded_wdata;
       secded_data_t [NumPorts-1:0] secded_rdata;
 
+      // --------------------------------------------------------------------
+      // EXPLICIT SIGNAL DECLARATIONS (Must be BEFORE i_sram instantiation)
+      // --------------------------------------------------------------------
+      logic [NumPorts-1:0]                sram_req_to_macro;
+      logic [NumPorts-1:0]                sram_we_to_macro;
+      logic [NumPorts-1:0][AddrWidth-1:0] sram_addr_to_macro;
+      secded_data_t [NumPorts-1:0]        sram_wdata_to_macro;
+      logic [NumPorts-1:0][BeWidth-1:0]   sram_be_to_macro;
+      
+      logic [NumPorts-1:0]                snoop_hit;
+      secded_data_t [NumPorts-1:0]        snoop_data;
+
+      // ====================================================================
       // The underlying 64-bit SRAM bank
+      // ====================================================================
       tc_sram_impl #(
         .NumWords   (NumWords),
         .DataWidth  (SecdedDataWidth),
@@ -111,99 +125,101 @@ module secded_sram_impl #(
         .be_i    (sram_be_to_macro),
         .rdata_o (secded_rdata)
       );
- 
-      // Added by Ale
-      logic [NumPorts-1:0] sram_req_to_macro;
-      logic [NumPorts-1:0] sram_we_to_macro;
 
       // Per-port SECDED Logic
       for (genvar p = 0; p < NumPorts; p++) begin : gen_ports
         logic [BeWidth-1:0] byte_single_err;
         logic [BeWidth-1:0] byte_double_err;
 
-        // Shift register to delay read_valid by `Latency` cycles.
-        // This ensures we only report errors when valid data is flowing out.
+        // --- The Snoop Multiplexer ---
+        // If the buffer hits, we feed the buffer's data into the decoders 
+        // instead of the physical SRAM data.
+        logic [SecdedDataWidth-1:0] dec_in_muxed;
+        assign dec_in_muxed = (snoop_hit[p]) ? snoop_data[p] : secded_rdata[p];
+
         logic [Latency:0] rvalid_q;
         assign rvalid_q[0] = req_i[p] & ~we_i[p];
 
-        // Added by Ale
-        secded_repair_buffer #(
-            .AddrWidth(AddrWidth),
-            .DataWidth(SecdedDataWidth),
-            .NumBytes (BeWidth) // Note: Buffer uses byte-enables for 16-bit chunks
-            ) i_repair_buffer (
-            .clk_i, .rst_ni,
-            .cpu_req_i(req_i[p]),
-            .cpu_we_i(we_i[p]),
-            .cpu_addr_i(addr_i[p]),
-            .cpu_wdata_i(secded_wdata[p]), // CPU request data
-            .cpu_be_i(be_i[p]),
-            
-            .repair_valid_i(read_valid && (|byte_single_err)),
-            .repair_addr_i(addr_i[p]),
-            .repair_data_i(secded_wdata_generated), // You need to generate this before
-            .repair_be_i(byte_single_err),
-            
-            .sram_req_o(sram_req_to_macro[p]),
-            .sram_we_o(sram_we_to_macro[p]),
-            .sram_addr_o(sram_addr_to_macro[p]),
-            .sram_wdata_o(sram_wdata_to_macro[p]),
-            .sram_be_o(sram_be_to_macro[p]),
-            
-            .snoop_match_o(snoop_hit[p]),
-            .snoop_data_o(snoop_data[p])
-        );
-
         if (Latency > 0) begin : gen_rvalid_delay
           always_ff @(posedge clk_i or negedge rst_ni) begin
-            if (!rst_ni) begin
-              rvalid_q[Latency:1] <= '0;
-            end else begin
-              for (int i = 1; i <= Latency; i++) begin
-                rvalid_q[i] <= rvalid_q[i-1];
-              end
-            end
+            if (!rst_ni) rvalid_q[Latency:1] <= '0;
+            else for (int i = 1; i <= Latency; i++) rvalid_q[i] <= rvalid_q[i-1];
           end
         end
         logic read_valid;
         assign read_valid = rvalid_q[Latency];
 
-        assign rdata_o[p] = (snoop_hit[p]) ? snoop_data[p] : decoder_output_logic;
+        // Signals for the repair path
+        logic [SecdedDataWidth-1:0] repair_wdata_generated;
+        logic [DataWidth-1:0] assembled_rdata;
 
         // Process each byte independently
         for (genvar b = 0; b < BeWidth; b++) begin : gen_bytes
           
-          // --- ENCODER (Write Path) ---
+          // --- 1. CPU ENCODER (Normal Write Path) ---
           logic [12:0] enc_out;
           secded_byte_encode i_encode (
             .data_in     (wdata_i[p][b*8 +: 8]),
             .encoded_out (enc_out)
           );
-          // Pad 13 bits to 16 bits and map to the 64-bit word
           assign secded_wdata[p][b*16 +: 16] = {3'b000, enc_out};
 
-
-          // --- DECODER (Read Path) ---
-          logic [12:0] dec_in;
+          // --- 2. DECODER (Read Path - using the Muxed Input) ---
+          logic [12:0] dec_in = dec_in_muxed[b*16 +: 13];
           logic [7:0]  dec_out;
           
-          assign dec_in = secded_rdata[p][b*16 +: 13];
-
           secded_byte_decode i_decode (
             .encoded_in   (dec_in),
             .data_out     (dec_out),
             .single_err_o (byte_single_err[b]),
             .double_err_o (byte_double_err[b])
           );
+          assign assembled_rdata[b*8 +: 8] = dec_out;
 
-          // Map the corrected 8-bit output back to the external 32-bit word
-          assign rdata_o[p][b*8 +: 8] = dec_out;
+          // --- 3. REPAIR ENCODER (Silent Writeback Path) ---
+          // Re-encodes the clean dec_out so the buffer has perfect 64-bit data to write
+          logic [12:0] repair_enc_out;
+          secded_byte_encode i_encode_repair (
+            .data_in     (dec_out),
+            .encoded_out (repair_enc_out)
+          );
+          assign repair_wdata_generated[b*16 +: 16] = {3'b000, repair_enc_out};
         end
 
-        // Aggregate Error Flags for this port
-        // Only trigger if an error happened AND we are actually doing a read cycle
+        // Output to CPU
+        assign rdata_o[p] = assembled_rdata;
+
+        // Aggregate Error Flags
         assign single_err_o[p] = read_valid ? (|byte_single_err) : 1'b0;
         assign double_err_o[p] = read_valid ? (|byte_double_err) : 1'b0;
+
+        // --- BUFFER INSTANTIATION ---
+        secded_repair_buffer #(
+            .AddrWidth(AddrWidth),
+            .DataWidth(SecdedDataWidth), // 64
+            .NumBytes (BeWidth)          // 4
+        ) i_repair_buffer (
+            .clk_i, .rst_ni,
+            .cpu_req_i      (req_i[p]),
+            .cpu_we_i       (we_i[p]),
+            .cpu_addr_i     (addr_i[p]),
+            .cpu_wdata_i    (secded_wdata[p]), 
+            .cpu_be_i       (be_i[p]),
+            
+            .repair_valid_i (read_valid && (|byte_single_err)),
+            .repair_addr_i  (addr_i[p]),
+            .repair_data_i  (repair_wdata_generated), // Use the newly encoded repair data!
+            .repair_be_i    (byte_single_err),
+            
+            .sram_req_o     (sram_req_to_macro[p]),
+            .sram_we_o      (sram_we_to_macro[p]),
+            .sram_addr_o    (sram_addr_to_macro[p]),
+            .sram_wdata_o   (sram_wdata_to_macro[p]),
+            .sram_be_o      (sram_be_to_macro[p]),
+            
+            .snoop_match_o  (snoop_hit[p]),
+            .snoop_data_o   (snoop_data[p])
+        );
       end
     end
   endgenerate

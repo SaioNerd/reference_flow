@@ -18,7 +18,7 @@ module secded_sram_impl #(
   parameter impl_out_t   ImplOutSim   = '0,
   
   // Set default from package, but allow override
-  parameter bit          SECDEDBypass = user_pkg::SECDEDBypass, 
+  parameter bit          SECDEDBypass = 1'b0, 
 
   // Derived Parameters (Match external expectations)
   parameter int unsigned AddrWidth    = (NumWords > 32'd1) ? $clog2(NumWords) : 32'd1,

@@ -48,6 +48,8 @@ sources:
       - rtl/obi_timer/obi_timer.sv
       - rtl/user_domain/user_rom.sv
       - rtl/user_domain/secded_byte.sv
+      - rtl/user_domain/secded_repair_buffer.sv
+      - rtl/user_domain/secded_sram_impl2.sv
       # Level 2
       - rtl/croc_domain.sv
       - rtl/user_domain.sv
@@ -70,6 +72,8 @@ sources:
       - rtl/test/tb_croc_pkg.sv
       - rtl/test/croc_vip.sv
       - rtl/test/tb_croc_soc.sv
+      - rtl/test/tb_fault_injection_croc2.sv
+
 
   - target: genesys2
     files:

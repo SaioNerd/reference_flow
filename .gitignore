@@ -10,7 +10,7 @@
 /tmp
 /calibre
 /docs
-#/technology
+/technology
 /.setPDK.csh
 # dfii
 /dfii/.cdsinit

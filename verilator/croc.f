@@ -183,9 +183,11 @@
 ../rtl/user_domain/user_design_sink.sv
 ../rtl/user_domain/secded_byte.sv
 ../rtl/user_domain/secded_sram_impl.sv
+../rtl/user_domain/secded_repair_buffer.sv
+../rtl/user_domain/secded_sram_impl2.sv
 ../rtl/test/tb_croc_pkg.sv
 ../rtl/test/croc_vip.sv
 ../rtl/test/tb_croc_soc.sv
 ../rtl/test/tb_secded_bench.sv
 ../rtl/test/tb_secded_byte.sv
-
+../rtl/test/tb_fault_injection_croc2.sv
