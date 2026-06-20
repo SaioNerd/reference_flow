@@ -217,7 +217,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       .rdata_i ( bank_rdata )
     );
 
-    assign bank_word_addr = bank_byte_addr[SbrObiCfg.AddrWidth-1:2];
+    assign bank_word_addr = (bank_byte_addr - i * SramBankNumWords * (SbrObiCfg.DataWidth/8))[SbrObiCfg.AddrWidth-1:2];
 
 
     // Error signals for this specific bank
