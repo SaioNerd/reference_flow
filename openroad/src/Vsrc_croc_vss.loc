@@ -1,0 +1,4 @@
+255.000,  -35.000,  70.000, 0.00   # IO_BOND_pad_vss0 (SOUTH)
+1983.000, -35.000,  70.000, 0.00   # IO_BOND_pad_vss1 (SOUTH)
+2071.000, 1951.000, 70.000, 0.00   # IO_BOND_pad_vss2 (NORTH)
+343.000,  1951.000, 70.000, 0.00   # IO_BOND_pad_vss3 (NORTH)
