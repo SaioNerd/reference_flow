@@ -25,6 +25,7 @@ int main() {
     //    This is the arm signal: the testbench captures the address and starts
     //    monitoring writes to that region.
     printf("Arming testbench with array address 0x%08x...\n", (uint32_t)faulty_array);
+    uart_write_flush();  // Ensure the printf is fully transmitted before the arm write
     *ARM_ADDR = (uint32_t)faulty_array;
 
     // Compiler barrier: ensure the arm write happens BEFORE the array writes
@@ -32,6 +33,10 @@ int main() {
 
     // 3. Initialize both arrays with identical data (0..255)
     printf("Writing data to arrays...\n");
+    // NOTE: Fault injection happens during this loop!
+    // The TB monitors the SRAM bus and injects bit-flips into the 64-bit
+    // encoded data on writes to the array's address range.
+    // No flush needed here — we WANT the writes to happen immediately.
     for (i = 0; i < ARRAY_SIZE; i++) {
         faulty_array[i] = (uint8_t)i;
         ref_array[i]    = (uint8_t)i;
@@ -43,9 +48,11 @@ int main() {
     // 4. Wait a few cycles for the testbench to inject faults
     //    while the faulty_array data is being written to Bank 1.
     printf("Waiting for fault injection...\n");
+    uart_write_flush();  // Ensure printf is transmitted before the wait begins
     asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
     asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
     printf("Done waiting.\n");
+    uart_write_flush();  // Ensure the above printf is transmitted
 
     // 5. Read back and compare the arrays
     int mismatch_count = 0;

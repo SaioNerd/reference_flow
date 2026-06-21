@@ -233,80 +233,57 @@ module tb_fault_injection_croc #(
   // Error masks for the 64-bit encoded data (applied to the SECDED code regions)
   // Single-bit error: flip bit 0 (within byte 0's SECDED code at bits 0:12)
   // Double-bit error: flip bits 0 and 1 (within byte 0's SECDED code at bits 0:12)
-  localparam logic [63:0] SecMaskSingle = 64'h0000_0000_0000_0001;
-  localparam logic [63:0] SecMaskDouble = 64'h0000_0000_0000_0003;
+  localparam logic [63:0] SecMaskSingle = 64'h0001_0001_0001_0001;
+  localparam logic [63:0] SecMaskDouble = 64'h0003_0003_0003_0003;
 
-  // Track which addresses have been corrupted (to avoid double-corruption)
-  logic [563:0] addr_corrupted;
+  // Track which addresses have been corrupted per chunk (4 chunks per word)
+  logic [511:0][3:0] chunks_corrupted;
 
-  // Fault injection control
-  logic [1:0] fault_type;
-  logic       inject_now;
-
-  // Detect a write to the target range and schedule fault injection
-  always_ff @(posedge sys_clk or negedge rst_n) begin
+  // Force/release logic: uses a procedural always block (not always_ff) so that
+  // @(posedge sys_clk) advances time correctly between force and release.
+  // The forced signal is the 64-bit wdata_i[0] of the internal i_sram instance.
+  always @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
-      inject_now     <= 1'b0;
-      fault_type     <= 2'b00;
-      addr_corrupted <= '0;
+      chunks_corrupted <= '0;
     end else begin
-      inject_now <= 1'b0;
+      if (bank_write_target) begin
+        // Determine which chunks (byte lanes) are being written this cycle
+        // and which of those have not been corrupted yet
+        automatic logic [3:0] be_val = (in_bank0) ? i_croc_soc.i_user.gen_sram_bank[0].bank_be :
+                                       (in_bank1) ? i_croc_soc.i_user.gen_sram_bank[1].bank_be :
+                                       4'd0;
+        automatic logic [3:0] new_chunks = be_val & ~chunks_corrupted[bank_addr];
 
-      if (bank_write_target && !addr_corrupted[bank_addr]) begin
-        // Mark this address as corrupted
-        addr_corrupted[bank_addr] <= 1'b1;
+        if (new_chunks != 4'd0) begin
+          // Mark chunks as corrupted
+          chunks_corrupted[bank_addr] <= chunks_corrupted[bank_addr] | new_chunks;
 
-        // Use the module parameter FaultType to decide error type
-        fault_type <= (FaultType == 2) ? 2'b10 : 2'b01;
-        inject_now <= 1'b1;
-        if (FaultType == 2) begin
-          $display("@%t | [FAULT] Injecting DOUBLE-bit error in Bank[%0d] addr=%0d wdata=0x%016h",
-                   $time, in_bank1 ? 1 : 0, bank_addr, bank_wdata);
-        end else begin
-          $display("@%t | [FAULT] Injecting SINGLE-bit error in Bank[%0d] addr=%0d wdata=0x%016h",
-                   $time, in_bank1 ? 1 : 0, bank_addr, bank_wdata);
+          `ifndef VERILATOR
+            // Apply force to the 64-bit SRAM write data
+            if (in_bank0) begin
+              force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
+                bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
+            end else if (in_bank1) begin
+              force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
+                bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
+            end
+
+            if (FaultType == 2) begin
+              $display("@%t | [FAULT] DOUBLE-bit error in Bank[%0d] addr=%0d wdata=0x%016h be=0x%01x",
+                       $time, in_bank1 ? 1 : 0, bank_addr, bank_wdata, be_val);
+            end else begin
+              $display("@%t | [FAULT] SINGLE-bit error in Bank[%0d] addr=%0d wdata=0x%016h be=0x%01x",
+                       $time, in_bank1 ? 1 : 0, bank_addr, bank_wdata, be_val);
+            end
+
+            // Wait for the next clock edge, then release
+            @(posedge sys_clk);
+            if (in_bank0)
+              release i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0];
+            else if (in_bank1)
+              release i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0];
+          `endif
         end
-      end
-    end
-  end
-
-  // Inject the fault into the 64-bit write data using force/release
-  // Select the correct force target based on which bank
-  always_ff @(posedge sys_clk or negedge rst_n) begin
-    if (!rst_n) begin
-      // Nothing on reset
-    end else begin
-      if (inject_now) begin
-        `ifndef VERILATOR
-          if (fault_type == 2'b01) begin
-            if (in_bank0) begin
-              force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-                bank_wdata ^ SecMaskSingle;
-            end else if (in_bank1) begin
-              force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-                bank_wdata ^ SecMaskSingle;
-            end
-            $display("@%t | [FAULT] Forced wdata to 0x%016h (mask=0x%016h)",
-                     $time, bank_wdata ^ SecMaskSingle, SecMaskSingle);
-          end else if (fault_type == 2'b10) begin
-            if (in_bank0) begin
-              force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-                bank_wdata ^ SecMaskDouble;
-            end else if (in_bank1) begin
-              force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-                bank_wdata ^ SecMaskDouble;
-            end
-            $display("@%t | [FAULT] Forced wdata to 0x%016h (mask=0x%016h)",
-                     $time, bank_wdata ^ SecMaskDouble, SecMaskDouble);
-          end
-          // Keep the force for one cycle, then release
-          @(posedge sys_clk);
-          if (in_bank0) begin
-            release i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0];
-          end else if (in_bank1) begin
-            release i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0];
-          end
-        `endif
       end
     end
   end
