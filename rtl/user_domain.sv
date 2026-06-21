@@ -23,7 +23,11 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  logic [      GpioCount-1:0] gpio_in_sync_i, // synchronized GPIO inputs
   output logic [NumExternalIrqs-1:0] interrupts_o,    // interrupts to core
 
-  input  logic      sram_impl_i //Added by Giulio : control signal from croc to user SRAM
+  input  logic      sram_impl_i, //Added by Giulio : control signal from croc to user SRAM
+
+  // Fault injection ports (combinational, for testbench use)
+  input  logic [NumSramBanks-1:0] sram_fault_inject_i,  // per-bank fault inject
+  input  logic                     sram_fault_sel_i      // 0=single, 1=double
 );
 
 
@@ -238,18 +242,20 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       .NumPorts   ( 1                   ),
       .Latency    ( 1                   )
     ) i_sram_macro (
-      .clk_i        ( clk_i           ),
-      .rst_ni       ( rst_ni          ),
-      .impl_i       ( sram_impl_i     ), // Passed from user_domain inputs
-      .impl_o       ( /* unused */    ),
-      .req_i        ( bank_req        ),
-      .we_i         ( bank_we         ),
-      .addr_i       ( bank_word_addr  ),
-      .wdata_i      ( bank_wdata      ),
-      .be_i         ( bank_be         ),
-      .rdata_o      ( bank_rdata      ),
-      .single_err_o ( bank_single_err ),
-      .double_err_o ( bank_double_err )
+      .clk_i          ( clk_i                ),
+      .rst_ni         ( rst_ni               ),
+      .impl_i         ( sram_impl_i          ), // Passed from user_domain inputs
+      .impl_o         ( /* unused */         ),
+      .req_i          ( bank_req             ),
+      .we_i           ( bank_we              ),
+      .addr_i         ( bank_word_addr       ),
+      .wdata_i        ( bank_wdata           ),
+      .be_i           ( bank_be              ),
+      .rdata_o        ( bank_rdata           ),
+      .single_err_o   ( bank_single_err      ),
+      .double_err_o   ( bank_double_err      ),
+      .fault_inject_i ( sram_fault_inject_i[i] ),
+      .fault_sel_i    ( sram_fault_sel_i       )
     );
     // tc_sram_impl #(
     //   .NumWords  ( SramBankNumWords ),

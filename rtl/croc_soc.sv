@@ -25,7 +25,11 @@ module croc_soc import croc_pkg::*; #(
 
   input  logic [GpioCount-1:0] gpio_i,       // Input from GPIO pins
   output logic [GpioCount-1:0] gpio_o,       // Output to GPIO pins
-  output logic [GpioCount-1:0] gpio_out_en_o // Output enable signal; 0 -> input, 1 -> output
+  output logic [GpioCount-1:0] gpio_out_en_o, // Output enable signal; 0 -> input, 1 -> output
+
+  // Fault injection ports (combinational, for testbench use)
+  input  logic [1:0] sram_fault_inject_i,  // per-bank fault inject (bank0=bit0, bank1=bit1)
+  input  logic       sram_fault_sel_i      // 0=single-bit, 1=double-bit error
 );
 
   logic synced_rst_n;
@@ -105,7 +109,11 @@ user_domain #(
 
   .gpio_in_sync_i ( gpio_in_sync ),
   .interrupts_o   ( interrupts   ),
-  .sram_impl_i    ( sram_impl    ) // Not connected to anything, but we need to connect it to avoid an error
+  .sram_impl_i    ( sram_impl    ),
+
+  // Fault injection ports
+  .sram_fault_inject_i ( sram_fault_inject_i ),
+  .sram_fault_sel_i    ( sram_fault_sel_i    )
 );
 
 endmodule

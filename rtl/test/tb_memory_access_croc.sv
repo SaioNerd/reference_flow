@@ -88,6 +88,11 @@ module tb_memory_access_croc #(
   //  DUT   //
   ////////////
 
+  // Fault injection signals: driven combinatorially into the RTL
+  // (via croc_soc → user_domain → secded_sram_impl ports)
+  logic [1:0] sram_fault_inject;  // bit0=bank0, bit1=bank1
+  logic       sram_fault_sel;     // 0=single, 1=double
+
   `ifdef TARGET_NETLIST_YOSYS
   \croc_soc$croc_chip.i_croc_soc i_croc_soc (
   `else
@@ -109,7 +114,9 @@ module tb_memory_access_croc #(
     .uart_tx_o     ( uart_tx     ),
     .gpio_i        ( gpio_in     ),
     .gpio_o        ( gpio_out    ),
-    .gpio_out_en_o ( gpio_out_en )
+    .gpio_out_en_o ( gpio_out_en ),
+    .sram_fault_inject_i ( sram_fault_inject ),
+    .sram_fault_sel_i    ( sram_fault_sel    )
   );
 
   //////////////////////////////////////////////////////////////////
@@ -222,55 +229,29 @@ module tb_memory_access_croc #(
   localparam logic [63:0] SecMaskDouble = 64'h0005_0005_0005_0005;
 
   // Track whether the target word has already been corrupted
-  logic        word_corrupted;
-  logic [1:0]  force_bank;  // 0=none, 1=bank0, 2=bank1
-  logic        force_pending;
+  logic word_corrupted;
 
-  // Detect writes on posedge
+  // Combinational fault injection: sram_fault_inject and sram_fault_sel
+  // are driven combinatorially. The secded_sram_impl module XORs the
+  // encoded data with the error mask before the SRAM captures it on posedge.
+  wire inject_now = bank_write_target && !word_corrupted;
+
+  assign sram_fault_inject = {in_bank1 && inject_now, in_bank0 && inject_now};
+  assign sram_fault_sel    = (FaultType == 2);
+
+  // Track corruption on posedge and display both clean (pre-fault)
+  // and final (post-fault) 64-bit encoded data.
+  // bank_wdata already probes i_sram.wdata_i[0] (= secded_wdata[0], post-fault).
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
       word_corrupted <= 1'b0;
-      force_pending  <= 1'b0;
-      force_bank     <= 2'd0;
-    end else begin
-      force_pending <= 1'b0;
-      force_bank    <= 2'd0;
-
-      if (bank_write_target && !word_corrupted) begin
-        word_corrupted <= 1'b1;
-        force_pending  <= 1'b1;
-        force_bank     <= in_bank1 ? 2'd2 : 2'd1;
-
-        $display("@%t | [FAULT] %s-bit error injected at Bank[%0d] addr=%0d",
-                 $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
-                 in_bank1 ? 1 : 0, bank_addr);
-      end
+    end else if (inject_now) begin
+      word_corrupted <= 1'b1;
+      $display("@%t | [FAULT] %s-bit error injected at Bank[%0d] addr=%0d",
+               $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
+               in_bank1 ? 1 : 0, bank_addr);
+      $display("@%t | [FAULT]   64-bit encoded wdata (post-fault) = 0x%016h", $time, bank_wdata);
     end
-  end
-
-  // Apply force on negedge (half cycle before SRAM captures on next posedge)
-  always @(negedge sys_clk) begin
-    `ifndef VERILATOR
-      if (force_pending) begin
-        if (force_bank == 2'd1) begin
-          $display("@%t | [FAULT] Forcing Bank0 wdata: original=0x%016h, corrupted=0x%016h",
-                   $time, bank_wdata, bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle));
-          force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-            bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
-        end else if (force_bank == 2'd2) begin
-          $display("@%t | [FAULT] Forcing Bank1 wdata: original=0x%016h, corrupted=0x%016h",
-                   $time, bank_wdata, bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle));
-          force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-            bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
-        end
-      end else begin
-        // Release on negedge when no pending force
-        if (force_bank == 2'd1)
-          release i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0];
-        else if (force_bank == 2'd2)
-          release i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0];
-      end
-    `endif
   end
 
   ////////////////////

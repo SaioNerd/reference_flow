@@ -110,7 +110,9 @@ module tb_fault_injection_croc #(
     .uart_tx_o     ( uart_tx     ),
     .gpio_i        ( gpio_in     ),
     .gpio_o        ( gpio_out    ),
-    .gpio_out_en_o ( gpio_out_en )
+    .gpio_out_en_o ( gpio_out_en ),
+    .sram_fault_inject_i ( sram_fault_inject ),
+    .sram_fault_sel_i    ( sram_fault_sel    )
   );
 
   //////////////////////////////////////////////////////////////////
@@ -236,61 +238,47 @@ module tb_fault_injection_croc #(
   localparam logic [63:0] SecMaskSingle = 64'h0001_0001_0001_0001;
   localparam logic [63:0] SecMaskDouble = 64'h0003_0003_0003_0003;
 
+  // Fault injection signals: driven combinatorially into the RTL
+  // (via croc_soc → user_domain → secded_sram_impl ports)
+  logic [1:0] sram_fault_inject;  // bit0=bank0, bit1=bank1
+  logic       sram_fault_sel;     // 0=single, 1=double
+
   // Track which addresses have been corrupted per chunk (4 chunks per word)
   logic [511:0][3:0] chunks_corrupted;
 
-  // Fault injection: detect writes on posedge, apply force on negedge,
-  // release on next posedge. This avoids the race condition where the
-  // SRAM's always_ff block samples its inputs before the force takes effect.
-  logic       force_pending;
-  logic [1:0] force_bank;  // 0=none, 1=bank0, 2=bank1
+  // Combinational fault injection activation
+  wire inject_bank0 = in_bank0 && bank_write_target &&
+                      (|((in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].bank_be : 4'd0) &
+                         ~chunks_corrupted[bank_addr]));
+  wire inject_bank1 = in_bank1 && bank_write_target &&
+                      (|((in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].bank_be : 4'd0) &
+                         ~chunks_corrupted[bank_addr]));
 
-  // Detect writes on posedge
+  assign sram_fault_inject = {inject_bank1, inject_bank0};
+  assign sram_fault_sel    = (FaultType == 2);
+
+  // Track corrupted chunks (registered on posedge)
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
       chunks_corrupted <= '0;
-      force_pending    <= 1'b0;
-      force_bank       <= 2'd0;
     end else begin
-      force_pending <= 1'b0;
-      force_bank    <= 2'd0;
-
-      if (bank_write_target) begin
-        automatic logic [3:0] be_val = (in_bank0) ? i_croc_soc.i_user.gen_sram_bank[0].bank_be :
-                                       (in_bank1) ? i_croc_soc.i_user.gen_sram_bank[1].bank_be : 4'd0;
-        automatic logic [3:0] new_chunks = be_val & ~chunks_corrupted[bank_addr];
-
-        if (new_chunks != 4'd0) begin
-          chunks_corrupted[bank_addr] <= chunks_corrupted[bank_addr] | new_chunks;
-          force_pending <= 1'b1;
-          force_bank    <= in_bank1 ? 2'd2 : 2'd1;
-
-          $display("@%t | [FAULT] %s-bit error in Bank[%0d] addr=%0d be=0x%01x",
-                   $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
-                   in_bank1 ? 1 : 0, bank_addr, be_val);
-        end
+      if (inject_bank0) begin
+        automatic logic [3:0] be_val = i_croc_soc.i_user.gen_sram_bank[0].bank_be;
+        chunks_corrupted[bank_addr] <= chunks_corrupted[bank_addr] | be_val;
+        $display("@%t | [FAULT] %s-bit error in Bank[0] addr=%0d be=0x%01x",
+                 $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
+                 i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.addr_i[0],
+                 be_val);
+      end
+      if (inject_bank1) begin
+        automatic logic [3:0] be_val = i_croc_soc.i_user.gen_sram_bank[1].bank_be;
+        chunks_corrupted[bank_addr] <= chunks_corrupted[bank_addr] | be_val;
+        $display("@%t | [FAULT] %s-bit error in Bank[1] addr=%0d be=0x%01x",
+                 $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
+                 i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.addr_i[0],
+                 be_val);
       end
     end
-  end
-
-  // Apply force on negedge (half cycle before SRAM captures on next posedge)
-  always @(negedge sys_clk) begin
-    `ifndef VERILATOR
-      if (force_pending) begin
-        if (force_bank == 2'd1)
-          force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-            bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
-        else if (force_bank == 2'd2)
-          force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
-            bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
-      end else begin
-        // Release on negedge when no pending force
-        if (force_bank == 2'd1)
-          release i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0];
-        else if (force_bank == 2'd2)
-          release i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0];
-      end
-    `endif
   end
 
   ////////////////////
