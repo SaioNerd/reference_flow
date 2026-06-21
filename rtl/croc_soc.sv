@@ -39,8 +39,10 @@ module croc_soc import croc_pkg::*; #(
   );
 
 // Connection between Croc_domain and User_domain: User Sbr, Croc Mgr
-sbr_obi_req_t user_sbr_obi_req;
-sbr_obi_rsp_t user_sbr_obi_rsp;
+sbr_obi_req_t user_sbr_obi_req_croc;
+sbr_obi_rsp_t user_sbr_obi_rsp_croc;
+sbr_obi_req_t user_sbr_obi_req_user;
+sbr_obi_rsp_t user_sbr_obi_rsp_user;
 
 // Connection between Croc_domain and User_domain: Croc Sbr, User Mgr
 mgr_obi_req_t user_mgr_obi_req;
@@ -77,8 +79,8 @@ croc_domain #(
 
   .gpio_in_sync_o ( gpio_in_sync ),
 
-  .user_sbr_obi_req_o  ( user_sbr_obi_req ),
-  .user_sbr_obi_rsp_i  ( user_sbr_obi_rsp ),
+  .user_sbr_obi_req_o  ( user_sbr_obi_req_croc ),
+  .user_sbr_obi_rsp_i  ( user_sbr_obi_rsp_croc ),
 
   .user_mgr_obi_req_i  ( user_mgr_obi_req ),
   .user_mgr_obi_rsp_o  ( user_mgr_obi_rsp ),
@@ -87,6 +89,23 @@ croc_domain #(
   .core_busy_o  ( status_o   ),
   .sram_impl_o  ( sram_impl  ) // Not connected to anything, but we need to connect it to avoid an error
 );
+
+
+// Cut for Croc (Manager) to User (Subordinate)
+obi_cut #(
+  .obi_req_t ( sbr_obi_req_t ),
+  .obi_rsp_t ( sbr_obi_rsp_t )
+  // Note: If obi_a_chan_t and obi_r_chan_t are defined in croc_pkg, 
+  // assign them here to override the default 'logic' type. 
+) i_obi_cut_croc2user (
+  .clk_i          ( clk_i                 ),
+  .rst_ni         ( synced_rst_n          ),
+  .sbr_port_req_i ( user_sbr_obi_req_croc ), // From Croc
+  .sbr_port_rsp_o ( user_sbr_obi_rsp_croc ), // To Croc
+  .mgr_port_req_o ( user_sbr_obi_req_user ), // To User
+  .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User [cite: 4]
+);
+
 
 user_domain #(
   .GpioCount       ( GpioCount       ),
@@ -97,8 +116,8 @@ user_domain #(
   .ref_clk_i,
   .testmode_i,
 
-  .user_sbr_obi_req_i ( user_sbr_obi_req ),
-  .user_sbr_obi_rsp_o ( user_sbr_obi_rsp ),
+  .user_sbr_obi_req_i ( user_sbr_obi_req_user ),
+  .user_sbr_obi_rsp_o ( user_sbr_obi_rsp_user ),
 
   .user_mgr_obi_req_o ( user_mgr_obi_req ),
   .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
