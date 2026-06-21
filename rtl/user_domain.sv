@@ -23,7 +23,11 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  logic [      GpioCount-1:0] gpio_in_sync_i, // synchronized GPIO inputs
   output logic [NumExternalIrqs-1:0] interrupts_o,    // interrupts to core
 
-  input  logic      sram_impl_i //Added by Giulio : control signal from croc to user SRAM
+  input  logic      sram_impl_i, //Added by Giulio : control signal from croc to user SRAM
+
+  // Added by Ale: for PIN
+  output logic      bank0_double_err_o,
+  output logic      bank1_double_err_o
 );
 
   assign interrupts_o = '0;
@@ -277,5 +281,8 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     assign bank_gnt = 1'b1; // always ready for request
   end
 
+// Added by Ale: for PIN
+  assign bank0_double_err_o = all_banks_double_err[0];
+  assign bank1_double_err_o = all_banks_double_err[1];
 
 endmodule

@@ -55,6 +55,13 @@ logic [      GpioCount-1:0] gpio_in_sync;
 //Added by Giulio: control signal from croc to user SRAM
 logic sram_impl;
 
+// Internal wires to capture the core's original GPIO outputs
+logic [GpioCount-1:0] croc_gpio_o;
+logic [GpioCount-1:0] croc_gpio_out_en_o;
+
+logic bank0_double_err;
+logic bank1_double_err;
+
 croc_domain #(
   .GpioCount       ( GpioCount       ),
   .NumExternalIrqs ( NumExternalIrqs )
@@ -73,9 +80,10 @@ croc_domain #(
   .uart_rx_i,
   .uart_tx_o,
 
-  .gpio_i,
-  .gpio_o,
-  .gpio_out_en_o,
+  // Added by Ale: for PIN
+  .gpio_i         ( gpio_i ),
+  .gpio_o         ( croc_gpio_o ),
+  .gpio_out_en_o  ( croc_gpio_out_en_o ),
 
   .gpio_in_sync_o ( gpio_in_sync ),
 
@@ -124,7 +132,25 @@ user_domain #(
 
   .gpio_in_sync_i ( gpio_in_sync ),
   .interrupts_o   ( interrupts   ),
-  .sram_impl_i    ( sram_impl    ) // Not connected to anything, but we need to connect it to avoid an error
+  .sram_impl_i    ( sram_impl    ), // Not connected to anything, but we need to connect it to avoid an error
+
+// Added by Ale: for PIN
+  .bank0_double_err_o ( bank0_double_err ),
+  .bank1_double_err_o ( bank1_double_err )
 );
+
+// Added by Ale: for PIN
+always_comb begin
+  gpio_o        = croc_gpio_o;
+  gpio_out_en_o = croc_gpio_out_en_o;
+
+  // Override Bank 0 pins
+  gpio_o[20]        = bank0_double_err;
+  gpio_out_en_o[20] = 1'b1; 
+
+  // Override Bank 1 pins
+  gpio_o[15]        = bank1_double_err;
+  gpio_out_en_o[15] = 1'b1; 
+end
 
 endmodule
