@@ -8,7 +8,7 @@
 `default_nettype none
 
 module secded_sram_impl #(
-  parameter int unsigned NumWords     = 32'd512,
+  parameter int unsigned NumWords     = 32'd1024,
   parameter int unsigned DataWidth    = 32'd32, // External Data Width (e.g. 32)
   parameter int unsigned ByteWidth    = 32'd8,  // External Byte Width (e.g. 8)
   parameter int unsigned NumPorts     = 32'd1,

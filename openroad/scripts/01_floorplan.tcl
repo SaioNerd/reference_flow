@@ -94,9 +94,9 @@ source src/padring.tcl
 ##########################################################################
 # RAM sizes
 ##########################################################################
-set RamMaster512x64   [[ord::get_db] findMaster "RM_IHPSG13_1P_512x64_c2_bm_bist"]
-set RamSize512x64_W   [ord::dbu_to_microns [$RamMaster512x64 getWidth]]
-set RamSize512x64_H   [ord::dbu_to_microns [$RamMaster512x64 getHeight]]
+set RamMaster1024x64   [[ord::get_db] findMaster "RM_IHPSG13_1P_1024x64_c2_bm_bist"]
+set RamSize1024x64_W   [ord::dbu_to_microns [$RamMaster1024x64 getWidth]]
+set RamSize1024x64_H   [ord::dbu_to_microns [$RamMaster1024x64 getHeight]]
 
 
 ##########################################################################
@@ -141,23 +141,26 @@ set floor_midpointY   [expr $floor_bottomY + ($floor_topY - $floor_bottomY)/2]
 set sramHaloX          10.0
 set sramHaloY          10.0
 
+# Routing margin to keep the macros slightly away from the top/bottom edges
+set routingMarginY     20.0
+
 utl::report "Place Macros"
 
 # Bank0: top-left, pins facing down
-set bank0X [expr $floor_leftX + $RamSize512x64_W/2]
-set bank0Y [expr $floor_topY - ($floor_topY - $floor_bottomY)/4]
+set bank0X [expr $floor_leftX + $RamSize1024x64_W/2]
+set bank0Y [expr $floor_topY - $RamSize1024x64_H - $routingMarginY]
 placeInstance $bank0_sram0 $bank0X $bank0Y R0
 
 # Bank1: top-right, pins facing down
-set bank1X [expr $floor_leftX + $RamSize512x64_W/2]
-set bank1Y [expr $floor_bottomY + $RamSize512x64_H/2]
+set bank1X [expr $floor_leftX + $RamSize1024x64_W/2]
+set bank1Y [expr $floor_bottomY + $routingMarginY]
 placeInstance $bank1_sram0 $bank1X $bank1Y R180
 
-utl::report "SRAM macro box: width ${RamSize512x64_W} height ${RamSize512x64_H}"
-utl::report "SRAM bank0 bbox: ($bank0X, $bank0Y) - ([expr {$bank0X + $RamSize512x64_W}], [expr {$bank0Y + $RamSize512x64_H}]) R0"
-utl::report "SRAM bank1 bbox: ($bank1X, $bank1Y) - ([expr {$bank1X + $RamSize512x64_W}], [expr {$bank1Y + $RamSize512x64_H}]) R0"
-utl::report "SRAM horizontal gaps to core boundary: left [expr {$bank0X - $core_leftX}] between [expr {$bank1X - ($bank0X + $RamSize512x64_W)}] right [expr {$core_rightX - ($bank1X + $RamSize512x64_W)}]"
-utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bank0Y + $RamSize512x64_H)}]"
+utl::report "SRAM macro box: width ${RamSize1024x64_W} height ${RamSize1024x64_H}"
+utl::report "SRAM bank0 bbox: ($bank0X, $bank0Y) - ([expr {$bank0X + $RamSize1024x64_W}], [expr {$bank0Y + $RamSize1024x64_H}]) R0"
+utl::report "SRAM bank1 bbox: ($bank1X, $bank1Y) - ([expr {$bank1X + $RamSize1024x64_W}], [expr {$bank1Y + $RamSize1024x64_H}]) R0"
+utl::report "SRAM horizontal gaps to core boundary: left [expr {$bank0X - $core_leftX}] between [expr {$bank1X - ($bank0X + $RamSize1024x64_W)}] right [expr {$core_rightX - ($bank1X + $RamSize1024x64_W)}]"
+utl::report "SRAM vertical gap to core boundary: top [expr {$core_topY - ($bank0Y + $RamSize1024x64_H)}]"
 utl::report "SRAM row-cut halo: x $sramHaloX y $sramHaloY"
 
 # defined in init_tech.tcl

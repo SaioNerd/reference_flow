@@ -17,6 +17,7 @@ if {[catch { vlog -incr -sv \
     "$ROOT/technology/verilog/ez130_8t.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_1P_512x32_c2_bm_bist.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_1P_512x64_c2_bm_bist.v" \
+    "$ROOT/technology/verilog/RM_IHPSG13_1P_1024x64_c2_bm_bist.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_1P_core_behavioral_bm_bist.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_1P_core_behavioral.v" \
     "$ROOT/technology/verilog/RM_IHPSG13_2P_core_behavioral_bm_bist_ideal.v" \

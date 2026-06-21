@@ -52,7 +52,7 @@ package croc_pkg;
   /// Number of SRAM banks, each bank has its own OBI port (accessible in parallel)
   localparam int unsigned NumSramBanks      = 32'd2;
   /// Number of 32-bit words per SRAM bank, determines the depth of each SRAM bank
-  localparam int unsigned SramBankNumWords  = 512;
+  localparam int unsigned SramBankNumWords  = 1024; //per 1024
 
 
   //////////////////////

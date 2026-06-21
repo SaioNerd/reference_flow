@@ -36,12 +36,12 @@ package user_pkg;
     '{
       idx:        UserBank0,
       start_addr: croc_pkg::UserBaseAddr,                // 32'h1000_0000
-      end_addr:   croc_pkg::UserBaseAddr + 32'h0800
+      end_addr:   croc_pkg::UserBaseAddr + 32'h1000
     },
     '{
       idx:        UserBank0+1,
-      start_addr: croc_pkg::UserBaseAddr + 32'h0800,    //MODIFIED FOR SW TB
-      end_addr:   croc_pkg::UserBaseAddr + 32'h1000
+      start_addr: croc_pkg::UserBaseAddr + 32'h1000,    //MODIFIED FOR SW TB
+      end_addr:   croc_pkg::UserBaseAddr + 32'h2000
     },
     '{
       idx:        UserRom,

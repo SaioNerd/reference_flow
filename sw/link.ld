@@ -13,8 +13,9 @@ ENTRY(_start)
 MEMORY
 {
 	/* unified on-chip SRAM region used for all code and data  
-	MODIFIED TO 8K BEACUSE AUGMENTED NUMWORDS param IN CROCPKG*/
-	SRAM (rwxail) : ORIGIN = 0x10000000, LENGTH = 4K
+	MODIFIED TO 8K BEACUSE AUGMENTED NUMWORDS param IN CROCPKG
+	MODIFIED for 1024x64*/
+	SRAM (rwxail) : ORIGIN = 0x10000000, LENGTH = 8K 
 }
 
 PHDRS

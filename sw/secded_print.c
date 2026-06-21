@@ -8,21 +8,21 @@
 #include "print.h"
 #include "config.h"
 
-#define BASE ((volatile uint32_t *)0x10000800)
+// #define BASE ((volatile uint32_t *)0x10000800)
 #define N 100
 
 int main() {
     uint32_t ok, r;
     int i;
-
+    volatile uint32_t p[N];
     uart_init();
     printf("SRAM test N=100\n");
 
     ok = 1;
     for (i = 0; i < N; i++) {
         uint32_t w = 0xDEADBEEF ^ i;
-        *(BASE + i) = w;
-        r = *(BASE + i);
+        p[i] = w;
+        r = p[i];
         if (w != r) {
             printf("%x:FAIL w=0x", i);
             printf("%x", w);
