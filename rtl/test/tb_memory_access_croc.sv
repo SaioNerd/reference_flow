@@ -6,17 +6,16 @@
 // - Philippe Sauter <phsauter@iis.ee.ethz.ch>
 // - Enrico Zelioli <ezelioli@iis.ee.ethz.ch>
 
-// Testbench for SECDED SRAM Fault Injection
+// Testbench for 32-bit Word Memory Access with Data Corruption
 // - Uses croc_vip for clock/reset generation, JTAG, UART, and GPIO
 // - Instantiates croc_soc with SECDED-protected SRAM banks
-// - The C code passes the faulty array address via MMIO write to 0x2000_1000
+// - The C code passes the target address via MMIO write to 0x2000_1000
 // - The testbench captures this address, determines which bank it's in,
-//   computes the word address range, and injects faults into the 64-bit
-//   encoded data on writes to that range.
+//   and corrupts the 64-bit encoded data on writes to that address
 
 `define TRACE_WAVE
 
-module tb_fault_injection_croc #(
+module tb_memory_access_croc #(
   parameter int unsigned GpioCount = 32,
   // Fault type: 1 = single-bit error, 2 = double-bit error
   parameter int unsigned FaultType = 2
@@ -53,8 +52,8 @@ module tb_fault_injection_croc #(
     if ($value$plusargs("binary=%s", binary_path)) begin
       $display("Running program: %s", binary_path);
     end else begin
-      $display("No binary path provided. Running bitflip_verify.");
-      binary_path = "../sw/bin/bitflip_verify.hex";
+      $display("No binary path provided. Running memory_access_test.");
+      binary_path = "../sw/bin/memory_access_test.hex";
     end
     if (FaultType == 2) begin
       $display("Fault mode: DOUBLE-bit error injection");
@@ -114,12 +113,12 @@ module tb_fault_injection_croc #(
   );
 
   //////////////////////////////////////////////////////////////////
-  // OBI Bus Monitor: Capture Faulty Array Address from C Code
+  // OBI Bus Monitor: Capture Target Address from C Code
   //////////////////////////////////////////////////////////////////
-  // The C code writes the address of its faulty array to 0x2000_1000
+  // The C code writes the address of its 32-bit word to 0x2000_1000
   // (UserDesign space) before writing any data. The testbench captures
-  // this address, determines which bank it's in, computes the word
-  // address range, and starts fault injection on writes to that range.
+  // this address, determines which bank it's in, and injects faults
+  // on writes to that specific address.
   //////////////////////////////////////////////////////////////////
 
   // Probe the OBI request entering the user domain (from croc_domain)
@@ -128,7 +127,7 @@ module tb_fault_injection_croc #(
   wire [31:0] obi_arm_addr  = i_croc_soc.i_user.user_sbr_obi_req_i.a.addr;
   wire [31:0] obi_arm_wdata = i_croc_soc.i_user.user_sbr_obi_req_i.a.wdata;
 
-  // Address where the C code writes the faulty array pointer to arm the TB
+  // Address where the C code writes the target pointer to arm the TB
   localparam bit [31:0] ArmAddr = 32'h2000_1000;
 
   // Bank base addresses
@@ -136,60 +135,46 @@ module tb_fault_injection_croc #(
   localparam bit [31:0] Bank1Base = 32'h1000_0800;
   // Each bank is 2KB (0x800 bytes)
   localparam bit [31:0] BankSize  = 32'h0000_0800;
-  // Array max size in bytes
-  localparam int unsigned ArrayMaxBytes = 256;
-  // Number of 64-bit words for the array (each 64-bit word = 8 bytes)
-  localparam int unsigned ArrayNumWords = ArrayMaxBytes / 4; // 64
 
-  // Captured faulty array info from the C code
-  logic [31:0] faulty_base_addr;
+  // Captured target info from the C code
+  logic [31:0] target_base_addr;
   logic        armed;
   logic        in_bank0;
   logic        in_bank1;
 
-  // Computed word address range within the target bank
-  logic [8:0] target_start_word;
-  logic [8:0] target_end_word;
+  // Computed word address within the target bank
+  logic [8:0] target_word_addr;
 
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
       armed            <= 1'b0;
-      faulty_base_addr <= '0;
+      target_base_addr <= '0;
       in_bank0         <= 1'b0;
       in_bank1         <= 1'b0;
-      target_start_word <= '0;
-      target_end_word   <= '0;
+      target_word_addr <= '0;
     end else begin
       if (!armed && obi_arm_req && obi_arm_we && (obi_arm_addr == ArmAddr)) begin
         armed            <= 1'b1;
-        faulty_base_addr <= obi_arm_wdata;
+        target_base_addr <= obi_arm_wdata;
+        $display("@%t | [TB] obi_arm_wdata = 0x%h", $time, obi_arm_wdata);
 
-        // Determine which bank and compute word address range
+        // Determine which bank and compute word address
         if (obi_arm_wdata >= Bank0Base && obi_arm_wdata < Bank0Base + BankSize) begin
           in_bank0 <= 1'b1;
           in_bank1 <= 1'b0;
-          // Word address = (byte_addr - bank_base) >> 2 (32-bit words)
-          // But the 64-bit SRAM uses the same address, so each 64-bit word
-          // corresponds to one 32-bit word (4 bytes → 64-bit encoded)
-          target_start_word <= (obi_arm_wdata - Bank0Base) >> 2;
-          target_end_word   <= ((obi_arm_wdata - Bank0Base) >> 2) + ArrayNumWords - 1;
-          $display("@%t | [TB] Armed! Array at 0x%08h in BANK 0, words [%0d..%0d]",
-                   $time, obi_arm_wdata,
-                   (obi_arm_wdata - Bank0Base) >> 2,
-                   ((obi_arm_wdata - Bank0Base) >> 2) + ArrayNumWords - 1);
+          target_word_addr <= (obi_arm_wdata - Bank0Base) >> 2;
+          $display("@%t | [TB] Armed! Target at 0x%08h in BANK 0, word addr %0d",
+                   $time, obi_arm_wdata, (obi_arm_wdata - Bank0Base) >> 2);
         end else if (obi_arm_wdata >= Bank1Base && obi_arm_wdata < Bank1Base + BankSize) begin
           in_bank0 <= 1'b0;
           in_bank1 <= 1'b1;
-          target_start_word <= (obi_arm_wdata - Bank1Base) >> 2;
-          target_end_word   <= ((obi_arm_wdata - Bank1Base) >> 2) + ArrayNumWords - 1;
-          $display("@%t | [TB] Armed! Array at 0x%08h in BANK 1, words [%0d..%0d]",
-                   $time, obi_arm_wdata,
-                   (obi_arm_wdata - Bank1Base) >> 2,
-                   ((obi_arm_wdata - Bank1Base) >> 2) + ArrayNumWords - 1);
+          target_word_addr <= (obi_arm_wdata - Bank1Base) >> 2;
+          $display("@%t | [TB] Armed! Target at 0x%08h in BANK 1, word addr %0d",
+                   $time, obi_arm_wdata, (obi_arm_wdata - Bank1Base) >> 2);
         end else begin
           in_bank0 <= 1'b0;
           in_bank1 <= 1'b0;
-          $display("@%t | [WARNING] Array at 0x%08h is NOT in any SRAM bank! No faults injected.",
+          $display("@%t | [WARNING] Target at 0x%08h is NOT in any SRAM bank! No faults injected.",
                    $time, obi_arm_wdata);
         end
       end
@@ -200,7 +185,7 @@ module tb_fault_injection_croc #(
   // Fault Injection: Direct SRAM Bus Monitoring
   //////////////////////////////////////////////////////////////////
   // We monitor the correct bank's internal 64-bit SRAM signals.
-  // When a write occurs with address in the target word range,
+  // When a write occurs with address matching the target word address,
   // we inject a single-bit or double-bit error into the encoded
   // 64-bit data word.
   //
@@ -211,7 +196,7 @@ module tb_fault_injection_croc #(
   //   bits 48:63  = encoded byte 3 (13-bit SECDED code in bits 48:60)
   //////////////////////////////////////////////////////////////////
 
-  // Select the correct bank signals based on where the array is
+  // Select the correct bank signals based on where the target is
   wire        bank_req    = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.req_i[0] :
                            in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.req_i[0] :
                            1'b0;
@@ -225,50 +210,40 @@ module tb_fault_injection_croc #(
                            in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] :
                            64'd0;
 
-  // Trigger when writing to the target bank with address in the target range
+  // Trigger when writing to the target bank with address matching the target word
   wire bank_write_active = bank_req && bank_we;
-  wire bank_in_range     = (bank_addr >= target_start_word) && (bank_addr <= target_end_word);
-  wire bank_write_target = bank_write_active && bank_in_range && armed;
+  wire bank_addr_match   = (bank_addr == target_word_addr);
+  wire bank_write_target = bank_write_active && bank_addr_match && armed;
 
   // Error masks for the 64-bit encoded data (applied to the SECDED code regions)
   // Single-bit error: flip bit 0 (within byte 0's SECDED code at bits 0:12)
   // Double-bit error: flip bits 0 and 1 (within byte 0's SECDED code at bits 0:12)
   localparam logic [63:0] SecMaskSingle = 64'h0001_0001_0001_0001;
-  localparam logic [63:0] SecMaskDouble = 64'h0003_0003_0003_0003;
+  localparam logic [63:0] SecMaskDouble = 64'h0005_0005_0005_0005;
 
-  // Track which addresses have been corrupted per chunk (4 chunks per word)
-  logic [511:0][3:0] chunks_corrupted;
-
-  // Fault injection: detect writes on posedge, apply force on negedge,
-  // release on next posedge. This avoids the race condition where the
-  // SRAM's always_ff block samples its inputs before the force takes effect.
-  logic       force_pending;
-  logic [1:0] force_bank;  // 0=none, 1=bank0, 2=bank1
+  // Track whether the target word has already been corrupted
+  logic        word_corrupted;
+  logic [1:0]  force_bank;  // 0=none, 1=bank0, 2=bank1
+  logic        force_pending;
 
   // Detect writes on posedge
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
-      chunks_corrupted <= '0;
-      force_pending    <= 1'b0;
-      force_bank       <= 2'd0;
+      word_corrupted <= 1'b0;
+      force_pending  <= 1'b0;
+      force_bank     <= 2'd0;
     end else begin
       force_pending <= 1'b0;
       force_bank    <= 2'd0;
 
-      if (bank_write_target) begin
-        automatic logic [3:0] be_val = (in_bank0) ? i_croc_soc.i_user.gen_sram_bank[0].bank_be :
-                                       (in_bank1) ? i_croc_soc.i_user.gen_sram_bank[1].bank_be : 4'd0;
-        automatic logic [3:0] new_chunks = be_val & ~chunks_corrupted[bank_addr];
+      if (bank_write_target && !word_corrupted) begin
+        word_corrupted <= 1'b1;
+        force_pending  <= 1'b1;
+        force_bank     <= in_bank1 ? 2'd2 : 2'd1;
 
-        if (new_chunks != 4'd0) begin
-          chunks_corrupted[bank_addr] <= chunks_corrupted[bank_addr] | new_chunks;
-          force_pending <= 1'b1;
-          force_bank    <= in_bank1 ? 2'd2 : 2'd1;
-
-          $display("@%t | [FAULT] %s-bit error in Bank[%0d] addr=%0d be=0x%01x",
-                   $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
-                   in_bank1 ? 1 : 0, bank_addr, be_val);
-        end
+        $display("@%t | [FAULT] %s-bit error injected at Bank[%0d] addr=%0d",
+                 $time, (FaultType == 2) ? "DOUBLE" : "SINGLE",
+                 in_bank1 ? 1 : 0, bank_addr);
       end
     end
   end
@@ -277,12 +252,17 @@ module tb_fault_injection_croc #(
   always @(negedge sys_clk) begin
     `ifndef VERILATOR
       if (force_pending) begin
-        if (force_bank == 2'd1)
+        if (force_bank == 2'd1) begin
+          $display("@%t | [FAULT] Forcing Bank0 wdata: original=0x%016h, corrupted=0x%016h",
+                   $time, bank_wdata, bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle));
           force i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
             bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
-        else if (force_bank == 2'd2)
+        end else if (force_bank == 2'd2) begin
+          $display("@%t | [FAULT] Forcing Bank1 wdata: original=0x%016h, corrupted=0x%016h",
+                   $time, bank_wdata, bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle));
           force i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] =
             bank_wdata ^ (FaultType == 2 ? SecMaskDouble : SecMaskSingle);
+        end
       end else begin
         // Release on negedge when no pending force
         if (force_bank == 2'd1)
@@ -340,13 +320,13 @@ module tb_fault_injection_croc #(
   initial begin
     `ifdef TRACE_WAVE
       `ifdef VERILATOR
-        $dumpfile("fault_injection.fst");
+        $dumpfile("memory_access.fst");
         $dumpvars(1, i_croc_soc);
-        $dumpvars(1, tb_fault_injection_croc);
+        $dumpvars(1, tb_memory_access_croc);
       `else
-        $dumpfile("fault_injection.vcd");
+        $dumpfile("memory_access.vcd");
         $dumpvars(1, i_croc_soc);
-        $dumpvars(1, tb_fault_injection_croc);
+        $dumpvars(1, tb_memory_access_croc);
       `endif
     `endif
   end

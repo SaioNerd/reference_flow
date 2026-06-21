@@ -26,8 +26,6 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  logic      sram_impl_i //Added by Giulio : control signal from croc to user SRAM
 );
 
-  assign interrupts_o = '0;
-
 
   //////////////////////
   // User Manager MUX //
@@ -183,11 +181,11 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   // Route any error from any bank to the CPU interrupts.
   // IRQ0 = Single Error (Correctable)
   // IRQ1 = Double Error (Uncorrectable/Fatal)
-  always_comb begin
-    interrupts_o = '0;
-    //interrupts_o[0] = |all_banks_single_err;
-    interrupts_o[0] = |all_banks_double_err;
-  end
+  // Route any double-bit error from any SRAM bank to the first CPU interrupt line
+  assign interrupts_o[0] = |all_banks_double_err; 
+  
+  // Tie the remaining unused interrupt lines to zero
+  assign interrupts_o[NumExternalIrqs-1:1] = '0;
 
   for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
     logic bank_req, bank_we, bank_gnt;
