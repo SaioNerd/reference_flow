@@ -6,7 +6,7 @@
 // - Philippe Sauter <phsauter@iis.ee.ethz.ch>
 
 module croc_soc import croc_pkg::*; #(
-  parameter int unsigned GpioCount = 16
+  parameter int unsigned GpioCount = 32
 ) (
   input  logic clk_i,
   input  logic rst_ni,
@@ -25,7 +25,7 @@ module croc_soc import croc_pkg::*; #(
 
   input  logic [GpioCount-1:0] gpio_i,       // Input from GPIO pins
   output logic [GpioCount-1:0] gpio_o,       // Output to GPIO pins
-  output logic [GpioCount-1:0] gpio_out_en_o, // Output enable signal; 0 -> input, 1 -> output
+  output logic [GpioCount-1:0] gpio_out_en_o // Output enable signal; 0 -> input, 1 -> output
 
 );
 
@@ -63,9 +63,10 @@ logic [GpioCount-1:0] croc_gpio_out_en_o;
 logic bank0_double_err;
 logic bank1_double_err;
 
-// Fault injection ports (combinational, for testbench use)
-input  logic [1:0] sram_fault_inject_i;  // per-bank fault inject (bank0=bit0, bank1=bit1)
-input  logic       sram_fault_sel_i;      // 0=single-bit, 1=doub
+// Fault injection signals extracted from GPIO inputs
+// gpio_i[16] = bank1 fault inject, gpio_i[18] = fault sel, gpio_i[19] = bank0 fault inject
+wire [1:0] sram_fault_inject_i = {gpio_i[16], gpio_i[19]};  // {bank1, bank0}
+wire       sram_fault_sel_i    = gpio_i[18];                  // 0=single, 1=double
 
 croc_domain #(
   .GpioCount       ( GpioCount       ),
@@ -105,23 +106,26 @@ croc_domain #(
 
 
 // Cut for Croc (Manager) to User (Subordinate)
-// obi_cut #(
-//   .obi_req_t ( sbr_obi_req_t ),
-//   .obi_rsp_t ( sbr_obi_rsp_t ),
-//   .Bypass    ( 1'b0          )
-//   // Note: If obi_a_chan_t and obi_r_chan_t are defined in croc_pkg, 
-//   // assign them here to override the default 'logic' type. 
-// ) i_obi_cut_croc2user (
-//   .clk_i          ( clk_i                 ),
-//   .rst_ni         ( synced_rst_n          ),
-//   .sbr_port_req_i ( user_sbr_obi_req_croc ), // From Croc
-//   .sbr_port_rsp_o ( user_sbr_obi_rsp_croc ), // To Croc
-//   .mgr_port_req_o ( user_sbr_obi_req_user ), // To User
-//   .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User [cite: 4]
-// );
+obi_cut #(
+  .ObiCfg    ( SbrObiCfg     ),
+  .obi_req_t ( sbr_obi_req_t ),
+  .obi_rsp_t ( sbr_obi_rsp_t ),
+  .Bypass    ( 1'b0          ),
+  .obi_a_chan_t(sbr_obi_a_chan_t),
+  .obi_r_chan_t(sbr_obi_r_chan_t)
+  // Note: If obi_a_chan_t and obi_r_chan_t are defined in croc_pkg, 
+  // assign them here to override the default 'logic' type. 
+) i_obi_cut_croc2user (
+  .clk_i          ( clk_i                 ),
+  .rst_ni         ( synced_rst_n          ),
+  .sbr_port_req_i ( user_sbr_obi_req_croc ), // From Croc
+  .sbr_port_rsp_o ( user_sbr_obi_rsp_croc ), // To Croc
+  .mgr_port_req_o ( user_sbr_obi_req_user ), // To User
+  .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User [cite: 4]
+);
 
-assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
-assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
+// assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
+// assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
 
 user_domain #(
   .GpioCount       ( GpioCount       ),
@@ -159,15 +163,6 @@ always_comb begin
   // Override Bank 0 pins
   gpio_o[20]        = bank0_double_err;
   gpio_out_en_o[20] = 1'b1; 
-
-  //Error injection type: single-bit or double-bit error
-  gpio_i[18]        = sram_fault_sel_i; // 0=single-bit, 1=double-bit error
-
-  //Error injecting pins for Bank 0 
-  gpio_i[19]        = sram_faultInject_i[0]; // Inject single-bit error into Bank 0
-
-  //Error injecting pins for Bank 1
-  gpio_i[16]        = sram_faultInject_i[1]; // Inject single
 
   // Override Bank 1 pins
   gpio_o[15]        = bank1_double_err;
