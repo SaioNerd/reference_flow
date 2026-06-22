@@ -23,6 +23,8 @@ module tb_fault_injection_croc #(
 );
 
   import tb_croc_pkg::*;
+  import croc_pkg::*;
+  import user_pkg::*;
 
   // Signals fully controlled by the VIP
   logic rst_n;
@@ -133,15 +135,16 @@ module tb_fault_injection_croc #(
   // Address where the C code writes the faulty array pointer to arm the TB
   localparam bit [31:0] ArmAddr = 32'h2000_1000;
 
-  // Bank base addresses
-  localparam bit [31:0] Bank0Base = 32'h1000_0000;
-  localparam bit [31:0] Bank1Base = 32'h1000_0800;
-  // Each bank is 2KB (0x800 bytes)
-  localparam bit [31:0] BankSize  = 32'h0000_0800;
+  // Bank base addresses (derived from croc_pkg and user_pkg)
+  localparam bit [31:0] Bank0Base = UserBaseAddr;
+  localparam int unsigned BankSize = (SramBankNumWords * (SbrObiCfg.DataWidth / 8)); // 1024 * 4 = 0x1000
+  localparam bit [31:0] Bank1Base = Bank0Base + BankSize;
+  // Word address width (dynamically sized from SramBankNumWords)
+  localparam int unsigned SramBankAddrWidth = cf_math_pkg::idx_width(SramBankNumWords);
   // Array max size in bytes
   localparam int unsigned ArrayMaxBytes = 256;
   // Number of 64-bit words for the array (each 64-bit word = 8 bytes)
-  localparam int unsigned ArrayNumWords = ArrayMaxBytes / 4; // 64
+  localparam int unsigned ArrayNumWords = ArrayMaxBytes / (SbrObiCfg.DataWidth / 8); // 256/4 = 64
 
   // Captured faulty array info from the C code
   logic [31:0] faulty_base_addr;
@@ -150,8 +153,8 @@ module tb_fault_injection_croc #(
   logic        in_bank1;
 
   // Computed word address range within the target bank
-  logic [8:0] target_start_word;
-  logic [8:0] target_end_word;
+  logic [SramBankAddrWidth-1:0] target_start_word;
+  logic [SramBankAddrWidth-1:0] target_end_word;
 
   always_ff @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -220,9 +223,9 @@ module tb_fault_injection_croc #(
   wire        bank_we     = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.we_i[0] :
                            in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.we_i[0] :
                            1'b0;
-  wire [8:0]  bank_addr   = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.addr_i[0] :
-                           in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.addr_i[0] :
-                           9'd0;
+  wire [SramBankAddrWidth-1:0] bank_addr = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.addr_i[0] :
+                                           in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.addr_i[0] :
+                                           {SramBankAddrWidth{1'b0}};
   wire [63:0] bank_wdata  = in_bank0 ? i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram.wdata_i[0] :
                            in_bank1 ? i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram.wdata_i[0] :
                            64'd0;
@@ -232,19 +235,14 @@ module tb_fault_injection_croc #(
   wire bank_in_range     = (bank_addr >= target_start_word) && (bank_addr <= target_end_word);
   wire bank_write_target = bank_write_active && bank_in_range && armed;
 
-  // Error masks for the 64-bit encoded data (applied to the SECDED code regions)
-  // Single-bit error: flip bit 0 (within byte 0's SECDED code at bits 0:12)
-  // Double-bit error: flip bits 0 and 1 (within byte 0's SECDED code at bits 0:12)
-  localparam logic [63:0] SecMaskSingle = 64'h0001_0001_0001_0001;
-  localparam logic [63:0] SecMaskDouble = 64'h0003_0003_0003_0003;
-
   // Fault injection signals: driven combinatorially into the RTL
   // (via croc_soc → user_domain → secded_sram_impl ports)
   logic [1:0] sram_fault_inject;  // bit0=bank0, bit1=bank1
   logic       sram_fault_sel;     // 0=single, 1=double
 
   // Track which addresses have been corrupted per chunk (4 chunks per word)
-  logic [511:0][3:0] chunks_corrupted;
+  localparam int unsigned MaxWordAddr = 2**SramBankAddrWidth - 1;
+  logic [MaxWordAddr:0][3:0] chunks_corrupted;
 
   // Combinational fault injection activation
   wire inject_bank0 = in_bank0 && bank_write_target &&
