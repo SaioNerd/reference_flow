@@ -23,15 +23,15 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  logic [      GpioCount-1:0] gpio_in_sync_i, // synchronized GPIO inputs
   output logic [NumExternalIrqs-1:0] interrupts_o,    // interrupts to core
 
-  input  logic      sram_impl_i,, //Added by Giulio : control signal from croc to user SRAM
+  input  logic      sram_impl_i, //Added by Giulio : control signal from croc to user SRAM
 
   // Added by Ale: for PIN
   output logic      bank0_double_err_o,
-  output logic      bank1_double_err_o
+  output logic      bank1_double_err_o,
 
   // Fault injection ports (combinational, for testbench use)
   input  logic [NumSramBanks-1:0] sram_fault_inject_i,  // per-bank fault inject
-  input  logic                     sram_fault_sel_i      // 0=single, 1=double
+  input  logic                    sram_fault_sel_i      // 0=single, 1=double
 );
 
 

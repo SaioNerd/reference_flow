@@ -136,11 +136,11 @@ user_domain #(
 
   .gpio_in_sync_i ( gpio_in_sync ),
   .interrupts_o   ( interrupts   ),
-  .sram_impl_i    ( sram_impl    ),,
+  .sram_impl_i    ( sram_impl    ),
 
   // Fault injection ports
   .sram_fault_inject_i ( sram_fault_inject_i ),
-  .sram_fault_sel_i    ( sram_fault_sel_i    )
+  .sram_fault_sel_i    ( sram_fault_sel_i    ),
 
 // Added by Ale: for PIN
   .bank0_double_err_o ( bank0_double_err ),
