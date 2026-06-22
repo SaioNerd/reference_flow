@@ -239,7 +239,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     assign all_banks_double_err[i] = bank_double_err;
 
     // SECDED SRAM Implementation wrapper
-    secded_sram_impl #(
+    secded_sram_impl2 #(
       .NumWords   ( SramBankNumWords    ),
       .DataWidth  ( SbrObiCfg.DataWidth ), // 32 bits
       .ByteWidth  ( 8                   ),

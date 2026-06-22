@@ -19,16 +19,12 @@ module secded_repair_buffer #(
   input  logic [DataWidth-1:0] repair_data_i, // Fully corrected word from decoder
   input  logic [NumBytes-1:0]  repair_be_i,   // Bitmask
 
-  // Interface C: Physical SRAM Macro (Driver)
+  // Interface C: Physical SRAM Macro
   output logic                 sram_req_o,
   output logic                 sram_we_o,
   output logic [AddrWidth-1:0] sram_addr_o,
   output logic [DataWidth-1:0] sram_wdata_o,
-  output logic [NumBytes-1:0]  sram_be_o,
-
-  // Interface D: Snoop Forwarding (Read-After-Write Hazard Mitigation)
-  output logic                 snoop_match_o,
-  output logic [DataWidth-1:0] snoop_data_o
+  output logic [NumBytes-1:0]  sram_be_o
 );
 
   // --- Internal Buffer State (1-Entry) ---
@@ -44,19 +40,8 @@ module secded_repair_buffer #(
   logic cpu_is_writing_match;
   assign cpu_is_writing_match = cpu_req_i && cpu_we_i && cpu_addr_match;
 
-  logic cpu_is_reading_match;
-  assign cpu_is_reading_match = cpu_req_i && !cpu_we_i && cpu_addr_match;
-
   // =========================================================================
-  // Stage 1: Snoop Forwarding (RAW Hazard)
-  // =========================================================================
-  // If the CPU tries to read an address that is waiting to be repaired,
-  // we bypass the SRAM read and directly feed the CPU the corrected data.
-  assign snoop_match_o = cpu_is_reading_match;
-  assign snoop_data_o  = buf_data_q;
-
-  // =========================================================================
-  // Stage 2: Port Arbiter (The Multiplexer)
+  // Stage 1: The Multiplexer
   // =========================================================================
   // The CPU has strict priority. The buffer only steals cycles when cpu_req_i is 0.
   always_comb begin
@@ -82,7 +67,7 @@ module secded_repair_buffer #(
   end
 
   // =========================================================================
-  // Stage 3: Buffer State Machine & Partial Write Logic
+  // Stage 2: Buffer State Machine & Partial Write Logic
   // =========================================================================
   logic [NumBytes-1:0] merged_be;
 

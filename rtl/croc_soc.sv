@@ -126,6 +126,8 @@ obi_cut #(
 
 // assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
 // assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
+// assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
+// assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
 
 user_domain #(
   .GpioCount       ( GpioCount       ),
@@ -155,17 +157,31 @@ user_domain #(
   .bank1_double_err_o ( bank1_double_err )
 );
 
+logic bank0_double_err_o;
+logic bank1_double_err_o;
+
+// Added by Ale: Pipeline registers
+always_ff @(posedge clk_i or negedge rst_ni) begin
+  if (!rst_ni) begin
+    bank0_double_err_o <= 1'b0;
+    bank1_double_err_o <= 1'b0;
+  end else begin
+    bank0_double_err_o <= bank0_double_err;
+    bank1_double_err_o <= bank1_double_err;
+  end
+end
+
 // Added by Ale: for PIN
 always_comb begin
   gpio_o        = croc_gpio_o;
   gpio_out_en_o = croc_gpio_out_en_o;
 
   // Override Bank 0 pins
-  gpio_o[20]        = bank0_double_err;
+  gpio_o[20]        = bank0_double_err_o;
   gpio_out_en_o[20] = 1'b1; 
 
   // Override Bank 1 pins
-  gpio_o[15]        = bank1_double_err;
+  gpio_o[15]        = bank1_double_err_o;
   gpio_out_en_o[15] = 1'b1; 
 end
 
