@@ -23,14 +23,16 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  logic [      GpioCount-1:0] gpio_in_sync_i, // synchronized GPIO inputs
   output logic [NumExternalIrqs-1:0] interrupts_o,    // interrupts to core
 
-  input  logic      sram_impl_i, //Added by Giulio : control signal from croc to user SRAM
+  input  logic      sram_impl_i,, //Added by Giulio : control signal from croc to user SRAM
 
   // Added by Ale: for PIN
   output logic      bank0_double_err_o,
   output logic      bank1_double_err_o
-);
 
-  assign interrupts_o = '0;
+  // Fault injection ports (combinational, for testbench use)
+  input  logic [NumSramBanks-1:0] sram_fault_inject_i,  // per-bank fault inject
+  input  logic                     sram_fault_sel_i      // 0=single, 1=double
+);
 
 
   //////////////////////
@@ -187,11 +189,11 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   // Route any error from any bank to the CPU interrupts.
   // IRQ0 = Single Error (Correctable)
   // IRQ1 = Double Error (Uncorrectable/Fatal)
-  always_comb begin
-    interrupts_o = '0;
-    //interrupts_o[0] = |all_banks_single_err;
-    interrupts_o[0] = |all_banks_double_err;
-  end
+  // Route any double-bit error from any SRAM bank to the first CPU interrupt line
+  assign interrupts_o[0] = |all_banks_double_err; 
+  
+  // Tie the remaining unused interrupt lines to zero
+  assign interrupts_o[NumExternalIrqs-1:1] = '0;
 
   for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
     logic bank_req, bank_we, bank_gnt;
@@ -244,18 +246,20 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       .NumPorts   ( 1                   ),
       .Latency    ( 1                   )
     ) i_sram_macro (
-      .clk_i        ( clk_i           ),
-      .rst_ni       ( rst_ni          ),
-      .impl_i       ( sram_impl_i     ), // Passed from user_domain inputs
-      .impl_o       ( /* unused */    ),
-      .req_i        ( bank_req        ),
-      .we_i         ( bank_we         ),
-      .addr_i       ( bank_word_addr  ),
-      .wdata_i      ( bank_wdata      ),
-      .be_i         ( bank_be         ),
-      .rdata_o      ( bank_rdata      ),
-      .single_err_o ( bank_single_err ),
-      .double_err_o ( bank_double_err )
+      .clk_i          ( clk_i                ),
+      .rst_ni         ( rst_ni               ),
+      .impl_i         ( sram_impl_i          ), // Passed from user_domain inputs
+      .impl_o         ( /* unused */         ),
+      .req_i          ( bank_req             ),
+      .we_i           ( bank_we              ),
+      .addr_i         ( bank_word_addr       ),
+      .wdata_i        ( bank_wdata           ),
+      .be_i           ( bank_be              ),
+      .rdata_o        ( bank_rdata           ),
+      .single_err_o   ( bank_single_err      ),
+      .double_err_o   ( bank_double_err      ),
+      .fault_inject_i ( sram_fault_inject_i[i] ),
+      .fault_sel_i    ( sram_fault_sel_i       )
     );
     // tc_sram_impl #(
     //   .NumWords  ( SramBankNumWords ),

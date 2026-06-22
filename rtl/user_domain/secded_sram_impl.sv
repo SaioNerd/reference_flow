@@ -44,8 +44,20 @@ module secded_sram_impl #(
 
   // SECDED specific outputs
   output logic  [NumPorts-1:0] single_err_o,
-  output logic  [NumPorts-1:0] double_err_o
+  output logic  [NumPorts-1:0] double_err_o,
+
+  // Fault injection ports (combinational, for testbench use)
+  // When fault_inject_i is high, the encoded write data is XORed with
+  // the selected mask before being stored in the 64-bit SRAM.
+  input  logic                 fault_inject_i,  // 0=normal, 1=inject fault on write
+  input  logic                 fault_sel_i      // 0=single-bit error, 1=double-bit error
 );
+
+  // Fixed error masks for the 64-bit encoded data
+  // Single-bit: flips one bit in each 16-bit chunk
+  // Double-bit: flips two bits in each 16-bit chunk
+  localparam logic [63:0] SecMaskSingle = 64'h0008_0004_0002_0001;
+  localparam logic [63:0] SecMaskDouble = 64'h00c0_0030_000c_0003;
 
   generate
     if (SECDEDBypass) begin : gen_bypass
@@ -136,6 +148,10 @@ module secded_sram_impl #(
         logic read_valid;
         assign read_valid = rvalid_q[Latency];
 
+        // Intermediate signal for raw (uncorrupted) encoded data
+        // (one per port, inside gen_ports[p])
+        secded_data_t raw_secded_wdata;
+
         // Process each byte independently
         for (genvar b = 0; b < BeWidth; b++) begin : gen_bytes
           
@@ -146,7 +162,8 @@ module secded_sram_impl #(
             .encoded_out (enc_out)
           );
           // Pad 13 bits to 16 bits and map to the 64-bit word
-          assign secded_wdata[p][b*16 +: 16] = {3'b000, enc_out};
+          // raw_secded_wdata is already inside gen_ports[p], so no [p] needed
+          assign raw_secded_wdata[b*16 +: 16] = {3'b000, enc_out};
 
 
           // --- DECODER (Read Path) ---
@@ -165,6 +182,13 @@ module secded_sram_impl #(
           // Map the corrected 8-bit output back to the external 32-bit word
           assign rdata_o[p][b*8 +: 8] = dec_out;
         end
+
+        // Apply fault injection: XOR the encoded data with the selected mask
+        // This is combinational, so it happens in the same delta cycle as the
+        // encoder output. The SRAM's always_ff sees the corrupted value.
+        assign secded_wdata[p] = fault_inject_i ? 
+          (raw_secded_wdata ^ (fault_sel_i ? SecMaskDouble : SecMaskSingle)) :
+          raw_secded_wdata;
 
         // Aggregate Error Flags for this port
         // Only trigger if an error happened AND we are actually doing a read cycle
