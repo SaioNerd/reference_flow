@@ -41,6 +41,12 @@ int main() {
     // Compiler barrier: ensure the write completes before reading back
     asm volatile("" ::: "memory");
 
+    asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
+    asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
+    asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
+    asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
+    asm volatile("nop; nop; nop; nop; nop; nop; nop; nop;");
+
     // 4. Read back the 32-bit word from memory
     uint32_t read_back = test_word;
     printf("Read back  0x%08x from 0x%08x\n", read_back, (uint32_t)&test_word);

@@ -18,7 +18,7 @@
 module tb_sec_repair #(
   parameter int unsigned GpioCount = 32,
   // Fault type: 1 = single-bit error, 2 = double-bit error
-  parameter int unsigned FaultType = 1
+  parameter int unsigned FaultType = 2
 );
 
   import tb_croc_pkg::*;
@@ -46,6 +46,8 @@ module tb_sec_repair #(
 
   // VIP‑driven GPIO defaults; testbench overrides bits 16,18,19 for fault injection
   logic [GpioCount-1:0] vip_gpio_in;
+
+  logic [GpioCount-1:0] gpio_in_sync;
 
   /////////////////////////////
   //  Command Line Arguments //
@@ -105,7 +107,7 @@ module tb_sec_repair #(
   `ifdef TARGET_NETLIST_YOSYS
   \croc_soc$croc_chip.i_croc_soc i_croc_soc (
   `else
-  croc_soc #(
+  croc_soc_sim #(
     .GpioCount ( GpioCount )
   ) i_croc_soc (
   `endif
@@ -123,7 +125,8 @@ module tb_sec_repair #(
     .uart_tx_o     ( uart_tx     ),
     .gpio_i        ( gpio_in     ),
     .gpio_o        ( gpio_out    ),
-    .gpio_out_en_o ( gpio_out_en )
+    .gpio_out_en_o ( gpio_out_en ),
+    .gpio_in_sync  ( gpio_in_sync)
   );
 
   //////////////////////////////////////////////////////////////////
@@ -238,8 +241,15 @@ module tb_sec_repair #(
   // encoded data with the error mask before the SRAM captures it on posedge.
   wire inject_now = bank_write_target && !word_corrupted;
 
-  assign sram_fault_inject = {in_bank1 && inject_now, in_bank0 && inject_now};
-  assign sram_fault_sel    = (FaultType == 2);
+  // assign sram_fault_inject = {in_bank1 && inject_now, in_bank0 && inject_now};
+  // assign sram_fault_sel    = (FaultType == 2);
+
+  always_comb begin
+    gpio_in_sync = gpio_in;
+    gpio_in_sync[16] = in_bank1 && inject_now;
+    gpio_in_sync[19] = in_bank0 && inject_now;
+    gpio_in_sync[18] = (FaultType == 2);
+  end 
 
   // Track corruption on posedge and display both clean (pre-fault)
   // and final (post-fault) 64-bit encoded data.
@@ -257,19 +267,17 @@ module tb_sec_repair #(
   end
 
   //////////////////////////////////////////////////////////////////
-  // Single-Error Monitor: Detect single-bit errors via GPIO outputs
-  // gpio_o[12] = bank0_single_err (pipelined)
-  // gpio_o[13] = bank1_single_err (pipelined)
-  // These are top-level ports of croc_soc — Verilator cannot optimize them away
+  // Single-Error Monitor: Detect single-bit errors via all_banks_single_err_o
+  // all_banks_single_err_o[0] = bank0_single_err
+  // all_banks_single_err_o[1] = bank1_single_err
   //////////////////////////////////////////////////////////////////
-  logic gpio12_q, gpio13_q;
+  logic [NumSramBanks-1:0] single_err_q;
 
   always_ff @(posedge sys_clk) begin
-    gpio12_q <= gpio_out[12];
-    gpio13_q <= gpio_out[13];
-    if (gpio_out[12] && !gpio12_q)
+    single_err_q <= i_croc_soc.all_banks_single_err_o;
+    if (i_croc_soc.all_banks_single_err_o[0] && !single_err_q[0])
       $display("@%t | [SINGLE_ERR] Bank[0] single-bit error detected!", $time);
-    if (gpio_out[13] && !gpio13_q)
+    if (i_croc_soc.all_banks_single_err_o[1] && !single_err_q[1])
       $display("@%t | [SINGLE_ERR] Bank[1] single-bit error detected!", $time);
   end
 

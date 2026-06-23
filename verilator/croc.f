@@ -192,5 +192,6 @@
 ../rtl/test/tb_fault_injection_croc.sv
 ../rtl/test/tb_memory_access_croc.sv
 ../rtl/test/tb_sec_repair.sv
+../rtl/croc_soc_sim.sv
 
 
