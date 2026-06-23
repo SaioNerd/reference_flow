@@ -60,13 +60,43 @@ logic sram_impl;
 logic [GpioCount-1:0] croc_gpio_o;
 logic [GpioCount-1:0] croc_gpio_out_en_o;
 
-logic bank0_double_err;
-logic bank1_double_err;
+//////////////////////
+// GPIO mapping //
+/////////////////////
+always_comb begin
+  gpio_o        = croc_gpio_o;
+  gpio_out_en_o = croc_gpio_out_en_o;
 
-// Fault injection signals extracted from GPIO inputs
-// gpio_i[16] = bank1 fault inject, gpio_i[18] = fault sel, gpio_i[19] = bank0 fault inject
-wire [1:0] sram_fault_inject_i = {gpio_i[16], gpio_i[19]};  // {bank1, bank0}
-wire       sram_fault_sel_i    = gpio_i[18];                  // 0=single, 1=double
+  // Bank 0 double error mapping
+  gpio_o[20]        = all_banks_double_err_o_q[0];
+  gpio_out_en_o[20] = 1'b1; 
+
+  // Bank 1 double error mapping
+  gpio_o[15]        = all_banks_double_err_o_q[1];
+  gpio_out_en_o[15] = 1'b1; 
+
+  //Use pin 16, 18 and 19 as input for error injection
+  gpio_out_en_o[16] = 1'b0;
+  gpio_out_en_o[18] = 1'b0;
+  gpio_out_en_o[19] = 1'b0;
+end
+
+//ERROR FLAGS map to Output Pins
+logic [NumSramBanks-1:0] all_banks_double_err_o_d , all_banks_double_err_o_q;
+logic [NumSramBanks-1:0] all_banks_single_err_o;
+
+// Added by Ale: Pipeline registers
+always_ff @(posedge clk_i or negedge rst_ni) begin
+  if (!rst_ni) begin
+    all_banks_double_err_o_q <= '0;
+
+  end else begin
+    all_banks_double_err_o_q <= all_banks_double_err_o_d;
+
+  end
+end
+
+
 
 croc_domain #(
   .GpioCount       ( GpioCount       ),
@@ -126,8 +156,6 @@ obi_cut #(
 
 // assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
 // assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
-// assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
-// assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
 
 user_domain #(
   .GpioCount       ( GpioCount       ),
@@ -148,41 +176,9 @@ user_domain #(
   .interrupts_o   ( interrupts   ),
   .sram_impl_i    ( sram_impl    ),
 
-  // Fault injection ports
-  .sram_fault_inject_i ( sram_fault_inject_i ),
-  .sram_fault_sel_i    ( sram_fault_sel_i    ),
-
 // Added by Ale: for PIN
-  .bank0_double_err_o ( bank0_double_err ),
-  .bank1_double_err_o ( bank1_double_err )
+  .all_banks_double_err_o ( all_banks_double_err_o_d ),
+  .all_banks_single_err_o ( all_banks_single_err_o   )
 );
-
-logic bank0_double_err_o;
-logic bank1_double_err_o;
-
-// Added by Ale: Pipeline registers
-always_ff @(posedge clk_i or negedge rst_ni) begin
-  if (!rst_ni) begin
-    bank0_double_err_o <= 1'b0;
-    bank1_double_err_o <= 1'b0;
-  end else begin
-    bank0_double_err_o <= bank0_double_err;
-    bank1_double_err_o <= bank1_double_err;
-  end
-end
-
-// Added by Ale: for PIN
-always_comb begin
-  gpio_o        = croc_gpio_o;
-  gpio_out_en_o = croc_gpio_out_en_o;
-
-  // Override Bank 0 pins
-  gpio_o[20]        = bank0_double_err_o;
-  gpio_out_en_o[20] = 1'b1; 
-
-  // Override Bank 1 pins
-  gpio_o[15]        = bank1_double_err_o;
-  gpio_out_en_o[15] = 1'b1; 
-end
 
 endmodule

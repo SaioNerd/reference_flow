@@ -6,7 +6,7 @@
 // - Philippe Sauter <phsauter@iis.ee.ethz.ch>
 
 module user_domain import user_pkg::*; import croc_pkg::*; #(
-  parameter int unsigned GpioCount = 16,
+  parameter int unsigned GpioCount = 32,
   parameter int unsigned NumExternalIrqs = 4
 ) (
   input  logic      clk_i,
@@ -25,14 +25,22 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
   input  logic      sram_impl_i, //Added by Giulio : control signal from croc to user SRAM
 
-  // Added by Ale: for PIN
-  output logic      bank0_double_err_o,
-  output logic      bank1_double_err_o,
+  // Ouutput error flags
+  output logic [NumSramBanks-1:0] all_banks_single_err_o,
+  output logic [NumSramBanks-1:0] all_banks_double_err_o
 
-  // Fault injection ports (combinational, for testbench use)
-  input  logic [NumSramBanks-1:0] sram_fault_inject_i,  // per-bank fault inject
-  input  logic                    sram_fault_sel_i      // 0=single, 1=double
 );
+
+  //////////////////////
+  // GPIO mapping //
+  /////////////////////
+  logic [NumSramBanks-1:0] sram_fault_inject_i,  // per-bank fault inject
+  logic                    sram_fault_sel_i      // 0=single, 1=double
+
+  assign sram_fault_inject_i[0] = gpio_in_sync_i[16];
+  assign sram_fault_inject_i[1] = gpio_in_sync_i[19];
+
+  assign sram_fault_sel_i       = gpio_in_sync_i[18];
 
 
   //////////////////////
@@ -42,6 +50,18 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   // No manager so we don't need a obi_mux module and just terminate the request properly
   assign user_mgr_obi_req_o = '0;
 
+
+  //////////////////////
+  //    INTERRUPTS    //
+  /////////////////////
+  // Route any error from any bank to the CPU interrupts.
+  // IRQ0 = Double Error (Uncorrectable/Fatal)
+  // IRQ1 = Single Error (Correctable)
+  always_comb begin
+    interrupts_o = '0;
+    interrupts_o[0] = |all_banks_double_err_o;
+    // interrupts_o[1] = |all_banks_single_err_o;  //No interrupt for single error
+  end
 
   ////////////////////////////
   // User Subordinate DEMUX //
@@ -175,25 +195,14 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .obi_rsp_o  ( user_error_obi_rsp )
   );
 
-  // -----------------
-  // Memories
-  // -----------------
+  // =========================================================================
+  // MEMORY
+  // =========================================================================
   localparam int unsigned SramBankAddrWidth = cf_math_pkg::idx_width(SramBankNumWords);
 
   // =========================================================================
-  // SRAM SECDED Error Aggregation Buses
+  // MEMORY BANKS and WRITEBACK gen loop
   // =========================================================================
-  logic [NumSramBanks-1:0] all_banks_single_err;
-  logic [NumSramBanks-1:0] all_banks_double_err;
-
-  // Route any error from any bank to the CPU interrupts.
-  // IRQ0 = Single Error (Correctable)
-  // IRQ1 = Double Error (Uncorrectable/Fatal)
-  // Route any double-bit error from any SRAM bank to the first CPU interrupt line
-  assign interrupts_o[0] = |all_banks_double_err; 
-  
-  // Tie the remaining unused interrupt lines to zero
-  assign interrupts_o[NumExternalIrqs-1:1] = '0;
 
   for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
     logic bank_req, bank_we, bank_gnt;
@@ -229,8 +238,12 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     assign bank_word_addr    = bank_byte_offset[SbrObiCfg.AddrWidth-1:2];
 
     // =========================================================================
+    // REPAIR MODULE Signal Instantiation
+    // ========================================================================= 
+
+    // -------------------------------------------------------------------------
     // Read-address delay register (align with SECDED read latency = 1 cycle)
-    // =========================================================================
+    // -------------------------------------------------------------------------
     logic [SramBankAddrWidth-1:0] bank_word_addr_q;
 
     always_ff @(posedge clk_i or negedge rst_ni) begin
@@ -241,20 +254,15 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       end
     end
 
-    // =========================================================================
+    // -------------------------------------------------------------------------
     // Per-bank SECDED status signals
-    // =========================================================================
-    logic                         bank_double_err, bank_single_err;
+    // -------------------------------------------------------------------------
     logic [SbrObiCfg.DataWidth/8-1:0] bank_byte_single_err;
-    logic                         bank_read_valid;
+    logic                             bank_read_valid;
 
-    // Map this bank's errors to the global error aggregation buses
-    assign all_banks_single_err[i] = bank_single_err;
-    assign all_banks_double_err[i] = bank_double_err;
-
-    // =========================================================================
+    // -------------------------------------------------------------------------
     // Muxed signals between shim (CPU) and secded_sram_impl
-    // =========================================================================
+    // -------------------------------------------------------------------------
     logic                         bank_sram_req;
     logic                         bank_sram_we;
     logic [SramBankAddrWidth-1:0] bank_sram_addr;
@@ -293,6 +301,15 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       .sram_be_o    ( bank_sram_be    )
     );
 
+    // -------------------------------------------------------------------------
+    // ERROR status signals routing
+    // -------------------------------------------------------------------------
+    logic                             bank_double_err, bank_single_err;
+
+    assign all_banks_single_err_o[i] = bank_single_err;
+    assign all_banks_double_err_o[i] = bank_double_err;
+
+
     // =========================================================================
     // SECDED SRAM Implementation wrapper
     // =========================================================================
@@ -323,9 +340,5 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
     assign bank_gnt = 1'b1; // always ready for request
   end
-
-// Added by Ale: for PIN
-  assign bank0_double_err_o = all_banks_double_err[0];
-  assign bank1_double_err_o = all_banks_double_err[1];
 
 endmodule
