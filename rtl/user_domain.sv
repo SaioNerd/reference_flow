@@ -241,7 +241,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     // SECDED SRAM Implementation wrapper
     secded_sram_impl2 #(
       .NumWords   ( SramBankNumWords    ),
-      .DataWidth  ( SbrObiCfg.DataWidth ), // 32 bits
+      .DataWidth  ( 32                  ), 
       .ByteWidth  ( 8                   ),
       .NumPorts   ( 1                   ),
       .Latency    ( 1                   )
