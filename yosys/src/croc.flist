@@ -177,7 +177,6 @@
 ../rtl/user_domain/secded_byte.sv
 ../rtl/user_domain/secded_sram_impl.sv
 ../rtl/user_domain/secded_repair_buffer.sv
-../rtl/user_domain/secded_sram_impl2.sv
 ../rtl/user_domain/user_design_sink.sv
 ../rtl/user_domain/user_rom.sv
 ../rtl/croc_domain.sv

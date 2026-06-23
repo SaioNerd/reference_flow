@@ -35,8 +35,9 @@ def parse_power_report(filepath):
                 }
     return data
 
-baseline_file = "Croc_Files/openroad/reports/test_power_original_no_global.rpt"
-our_file = "Croc_Files/openroad/reports/power_statistical_tt.rpt"
+# To be modified
+baseline_file = "../../reference_flow/openroad/reports/reference_post_layout_statistical_power_tt.rpt"
+our_file = "../openroad/reports/post_layout_statistical_power_tt.rpt"
 
 baseline_data = parse_power_report(baseline_file)
 our_data = parse_power_report(our_file)
@@ -60,8 +61,8 @@ ax.set_xticks(x)
 ax.set_xticklabels(groups)
 ax.legend()
 plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.savefig(os.path.join(OUTPUT_DIR, "03a_power_by_groups.pdf"))
-plt.savefig(os.path.join(OUTPUT_DIR, "03a_power_by_groups.png"))
+plt.savefig(os.path.join(OUTPUT_DIR, "power_by_groups.pdf"))
+plt.savefig(os.path.join(OUTPUT_DIR, "power_by_groups.png"))
 plt.close()
 
 # Plot 2: By category (Internal, Switching, Leakage)
@@ -80,8 +81,8 @@ ax.set_xticks(x_cat)
 ax.set_xticklabels(categories)
 ax.legend()
 plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.savefig(os.path.join(OUTPUT_DIR, "03a_power_by_category.pdf"))
-plt.savefig(os.path.join(OUTPUT_DIR, "03a_power_by_category.png"))
+plt.savefig(os.path.join(OUTPUT_DIR, "power_by_category.pdf"))
+plt.savefig(os.path.join(OUTPUT_DIR, "power_by_category.png"))
 plt.close()
 
-print("Generated 03a_power_by_groups.pdf/png and 03a_power_by_category.pdf/png")
+print("Generated power_by_groups.pdf/png and power_by_category.pdf/png")

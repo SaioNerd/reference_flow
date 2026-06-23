@@ -47,13 +47,13 @@ def plot_die_area(area_report):
     
     plt.title('Total Die Area Breakdown')
     plt.tight_layout()
-    plt.savefig(os.path.join(OUTPUT_DIR, "03b_die_area_breakdown.pdf"))
-    plt.savefig(os.path.join(OUTPUT_DIR, "03b_die_area_breakdown.png"))
+    plt.savefig(os.path.join(OUTPUT_DIR, "die_area_breakdown.pdf"))
+    plt.savefig(os.path.join(OUTPUT_DIR, "die_area_breakdown.png"))
     plt.close()
-    print("Generated 03b_die_area_breakdown.pdf and .png")
+    print("Generated die_area_breakdown.pdf and .png")
 
 if __name__ == "__main__":
-    report_path = "Croc_Files/openroad/reports/04_croc.routed.rpt"
+    report_path = "../openroad/reports/04_croc.routed.rpt"
     if len(sys.argv) > 1:
         report_path = sys.argv[1]
     plot_die_area(report_path)

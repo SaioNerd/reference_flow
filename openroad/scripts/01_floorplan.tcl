@@ -141,19 +141,18 @@ set floor_midpointY   [expr $floor_bottomY + ($floor_topY - $floor_bottomY)/2]
 set sramHaloX          10.0
 set sramHaloY          10.0
 
-# Routing margin to keep the macros slightly away from the top/bottom edges
-set routingMarginY     20.0
+set shiftX 70
 
 utl::report "Place Macros"
 
 # Bank0: top-left, pins facing down
-set bank0X [expr $floor_leftX + $RamSize1024x64_W/2]
-set bank0Y [expr $floor_topY - $RamSize1024x64_H - $routingMarginY]
+set bank0X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]
+set bank0Y [expr $floor_topY - $RamSize1024x64_H - $sramHaloY]
 placeInstance $bank0_sram0 $bank0X $bank0Y R0
 
 # Bank1: top-right, pins facing down
-set bank1X [expr $floor_leftX + $RamSize1024x64_W/2]
-set bank1Y [expr $floor_bottomY + $routingMarginY]
+set bank1X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]
+set bank1Y [expr $floor_bottomY + $sramHaloY]
 placeInstance $bank1_sram0 $bank1X $bank1Y R180
 
 utl::report "SRAM macro box: width ${RamSize1024x64_W} height ${RamSize1024x64_H}"
