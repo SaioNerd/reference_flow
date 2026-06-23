@@ -78,5 +78,5 @@
 /openroad/out
 /openroad/save
 #/openroad/src
-#yosys
-/yosys/out
+/yosys/reports
+#/yosys/out

@@ -6,7 +6,7 @@
 // - Philippe Sauter <phsauter@iis.ee.ethz.ch>
 
 module croc_soc import croc_pkg::*; #(
-  parameter int unsigned GpioCount = 32
+  parameter int unsigned GpioCount = 16
 ) (
   input  logic clk_i,
   input  logic rst_ni,
@@ -151,7 +151,7 @@ obi_cut #(
   .sbr_port_req_i ( user_sbr_obi_req_croc ), // From Croc
   .sbr_port_rsp_o ( user_sbr_obi_rsp_croc ), // To Croc
   .mgr_port_req_o ( user_sbr_obi_req_user ), // To User
-  .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User [cite: 4]
+  .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User
 );
 
 // assign user_sbr_obi_req_user = user_sbr_obi_req_croc;

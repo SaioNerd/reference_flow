@@ -34,8 +34,8 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   //////////////////////
   // GPIO mapping //
   /////////////////////
-  logic [NumSramBanks-1:0] sram_fault_inject_i,  // per-bank fault inject
-  logic                    sram_fault_sel_i      // 0=single, 1=double
+  logic [NumSramBanks-1:0] sram_fault_inject_i;  // per-bank fault inject
+  logic                    sram_fault_sel_i;      // 0=single, 1=double
 
   assign sram_fault_inject_i[0] = gpio_in_sync_i[16];
   assign sram_fault_inject_i[1] = gpio_in_sync_i[19];

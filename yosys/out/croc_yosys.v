@@ -3433,15 +3433,19 @@ module \cdc_2phase_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_
   );
 endmodule
 
-module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst (clk_i, rst_ni, data_o_0_, data_o_1_, data_o_2_, data_o_3_, data_o_4_, data_o_5_, data_o_6_, data_o_7_, data_o_8_, data_o_9_, data_o_10_, data_o_11_, data_o_12_, data_o_13_, data_o_14_, data_o_15_, data_o_16_, data_o_17_, data_o_18_
-, data_o_19_, data_o_20_, data_o_21_, data_o_22_, data_o_23_, data_o_24_, data_o_25_, data_o_26_, data_o_27_, data_o_28_, data_o_29_, data_o_30_, data_o_31_, data_o_32_, data_o_33_, data_o_34_, data_o_35_, data_o_36_, data_o_37_, data_o_38_, data_o_39_
-, data_o_40_, clear_i, ready_i, valid_o, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_, async_data_i_2_, async_data_i_3_, async_data_i_4_, async_data_i_5_, async_data_i_6_, async_data_i_7_, async_data_i_8_, async_data_i_9_, async_data_i_10_, async_data_i_11_, async_data_i_12_, async_data_i_13_, async_data_i_14_
+module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_dst (clk_i, rst_ni, ready_i, valid_o, data_o_0_, data_o_1_, data_o_2_, data_o_3_, data_o_4_, data_o_5_, data_o_6_, data_o_7_, data_o_8_, data_o_9_, data_o_10_, data_o_11_, data_o_12_, data_o_13_, data_o_14_, data_o_15_, data_o_16_
+, data_o_17_, data_o_18_, data_o_19_, data_o_20_, data_o_21_, data_o_22_, data_o_23_, data_o_24_, data_o_25_, data_o_26_, data_o_27_, data_o_28_, data_o_29_, data_o_30_, data_o_31_, data_o_32_, data_o_33_, data_o_34_, data_o_35_, data_o_36_, data_o_37_
+, data_o_38_, data_o_39_, data_o_40_, clear_i, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_, async_data_i_2_, async_data_i_3_, async_data_i_4_, async_data_i_5_, async_data_i_6_, async_data_i_7_, async_data_i_8_, async_data_i_9_, async_data_i_10_, async_data_i_11_, async_data_i_12_, async_data_i_13_, async_data_i_14_
 , async_data_i_15_, async_data_i_16_, async_data_i_17_, async_data_i_18_, async_data_i_19_, async_data_i_20_, async_data_i_21_, async_data_i_22_, async_data_i_23_, async_data_i_24_, async_data_i_25_, async_data_i_26_, async_data_i_27_, async_data_i_28_, async_data_i_29_, async_data_i_30_, async_data_i_31_, async_data_i_32_, async_data_i_33_, async_data_i_34_, async_data_i_35_
 , async_data_i_36_, async_data_i_37_, async_data_i_38_, async_data_i_39_, async_data_i_40_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  input ready_i;
+  wire ready_i;
+  output valid_o;
+  wire valid_o;
   output data_o_0_;
   wire data_o_0_;
   output data_o_1_;
@@ -3526,10 +3530,6 @@ module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   wire data_o_40_;
   input clear_i;
   wire clear_i;
-  input ready_i;
-  wire ready_i;
-  output valid_o;
-  wire valid_o;
   input async_req_i;
   wire async_req_i;
   output async_ack_o;
@@ -4590,14 +4590,18 @@ module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   assign data_dst_q_9_ = data_o_9_;
 endmodule
 
-module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst (clk_i, rst_ni, data_o_0_, data_o_1_, data_o_2_, data_o_3_, data_o_4_, data_o_5_, data_o_6_, data_o_7_, data_o_8_, data_o_9_, data_o_10_, data_o_11_, data_o_12_, data_o_13_, data_o_14_, data_o_15_, data_o_16_, data_o_17_, data_o_18_
-, data_o_19_, data_o_20_, data_o_21_, data_o_22_, data_o_23_, data_o_24_, data_o_25_, data_o_26_, data_o_27_, data_o_28_, data_o_29_, data_o_30_, data_o_31_, data_o_32_, data_o_33_, clear_i, ready_i, valid_o, async_req_i, async_ack_o, async_data_i_0_
+module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_dst (clk_i, rst_ni, ready_i, valid_o, data_o_0_, data_o_1_, data_o_2_, data_o_3_, data_o_4_, data_o_5_, data_o_6_, data_o_7_, data_o_8_, data_o_9_, data_o_10_, data_o_11_, data_o_12_, data_o_13_, data_o_14_, data_o_15_, data_o_16_
+, data_o_17_, data_o_18_, data_o_19_, data_o_20_, data_o_21_, data_o_22_, data_o_23_, data_o_24_, data_o_25_, data_o_26_, data_o_27_, data_o_28_, data_o_29_, data_o_30_, data_o_31_, data_o_32_, data_o_33_, clear_i, async_req_i, async_ack_o, async_data_i_0_
 , async_data_i_1_, async_data_i_2_, async_data_i_3_, async_data_i_4_, async_data_i_5_, async_data_i_6_, async_data_i_7_, async_data_i_8_, async_data_i_9_, async_data_i_10_, async_data_i_11_, async_data_i_12_, async_data_i_13_, async_data_i_14_, async_data_i_15_, async_data_i_16_, async_data_i_17_, async_data_i_18_, async_data_i_19_, async_data_i_20_, async_data_i_21_
 , async_data_i_22_, async_data_i_23_, async_data_i_24_, async_data_i_25_, async_data_i_26_, async_data_i_27_, async_data_i_28_, async_data_i_29_, async_data_i_30_, async_data_i_31_, async_data_i_32_, async_data_i_33_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  input ready_i;
+  wire ready_i;
+  output valid_o;
+  wire valid_o;
   output data_o_0_;
   wire data_o_0_;
   output data_o_1_;
@@ -4668,10 +4672,6 @@ module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   wire data_o_33_;
   input clear_i;
   wire clear_i;
-  input ready_i;
-  wire ready_i;
-  output valid_o;
-  wire valid_o;
   input async_req_i;
   wire async_req_i;
   output async_ack_o;
@@ -5561,15 +5561,19 @@ module \cdc_2phase_dst_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   assign data_dst_q_9_ = data_o_9_;
 endmodule
 
-module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src (clk_i, rst_ni, data_i_0_, data_i_1_, data_i_2_, data_i_3_, data_i_4_, data_i_5_, data_i_6_, data_i_7_, data_i_8_, data_i_9_, data_i_10_, data_i_11_, data_i_12_, data_i_13_, data_i_14_, data_i_15_, data_i_16_, data_i_17_, data_i_18_
-, data_i_19_, data_i_20_, data_i_21_, data_i_22_, data_i_23_, data_i_24_, data_i_25_, data_i_26_, data_i_27_, data_i_28_, data_i_29_, data_i_30_, data_i_31_, data_i_32_, data_i_33_, data_i_34_, data_i_35_, data_i_36_, data_i_37_, data_i_38_, data_i_39_
-, data_i_40_, clear_i, valid_i, ready_o, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_, async_data_o_2_, async_data_o_3_, async_data_o_4_, async_data_o_5_, async_data_o_6_, async_data_o_7_, async_data_o_8_, async_data_o_9_, async_data_o_10_, async_data_o_11_, async_data_o_12_, async_data_o_13_, async_data_o_14_
+module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_src (clk_i, rst_ni, ready_o, valid_i, data_i_0_, data_i_1_, data_i_2_, data_i_3_, data_i_4_, data_i_5_, data_i_6_, data_i_7_, data_i_8_, data_i_9_, data_i_10_, data_i_11_, data_i_12_, data_i_13_, data_i_14_, data_i_15_, data_i_16_
+, data_i_17_, data_i_18_, data_i_19_, data_i_20_, data_i_21_, data_i_22_, data_i_23_, data_i_24_, data_i_25_, data_i_26_, data_i_27_, data_i_28_, data_i_29_, data_i_30_, data_i_31_, data_i_32_, data_i_33_, data_i_34_, data_i_35_, data_i_36_, data_i_37_
+, data_i_38_, data_i_39_, data_i_40_, clear_i, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_, async_data_o_2_, async_data_o_3_, async_data_o_4_, async_data_o_5_, async_data_o_6_, async_data_o_7_, async_data_o_8_, async_data_o_9_, async_data_o_10_, async_data_o_11_, async_data_o_12_, async_data_o_13_, async_data_o_14_
 , async_data_o_15_, async_data_o_16_, async_data_o_17_, async_data_o_18_, async_data_o_19_, async_data_o_20_, async_data_o_21_, async_data_o_22_, async_data_o_23_, async_data_o_24_, async_data_o_25_, async_data_o_26_, async_data_o_27_, async_data_o_28_, async_data_o_29_, async_data_o_30_, async_data_o_31_, async_data_o_32_, async_data_o_33_, async_data_o_34_, async_data_o_35_
 , async_data_o_36_, async_data_o_37_, async_data_o_38_, async_data_o_39_, async_data_o_40_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  output ready_o;
+  wire ready_o;
+  input valid_i;
+  wire valid_i;
   input data_i_0_;
   wire data_i_0_;
   input data_i_1_;
@@ -5654,10 +5658,6 @@ module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   wire data_i_40_;
   input clear_i;
   wire clear_i;
-  input valid_i;
-  wire valid_i;
-  output ready_o;
-  wire ready_o;
   output async_req_o;
   wire async_req_o;
   input async_ack_i;
@@ -6699,14 +6699,18 @@ module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   assign req_src_q = async_req_o;
 endmodule
 
-module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src (clk_i, rst_ni, data_i_0_, data_i_1_, data_i_2_, data_i_3_, data_i_4_, data_i_5_, data_i_6_, data_i_7_, data_i_8_, data_i_9_, data_i_10_, data_i_11_, data_i_12_, data_i_13_, data_i_14_, data_i_15_, data_i_16_, data_i_17_, data_i_18_
-, data_i_19_, data_i_20_, data_i_21_, data_i_22_, data_i_23_, data_i_24_, data_i_25_, data_i_26_, data_i_27_, data_i_28_, data_i_29_, data_i_30_, data_i_31_, data_i_32_, data_i_33_, clear_i, valid_i, ready_o, async_req_o, async_ack_i, async_data_o_0_
+module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_src (clk_i, rst_ni, ready_o, valid_i, data_i_0_, data_i_1_, data_i_2_, data_i_3_, data_i_4_, data_i_5_, data_i_6_, data_i_7_, data_i_8_, data_i_9_, data_i_10_, data_i_11_, data_i_12_, data_i_13_, data_i_14_, data_i_15_, data_i_16_
+, data_i_17_, data_i_18_, data_i_19_, data_i_20_, data_i_21_, data_i_22_, data_i_23_, data_i_24_, data_i_25_, data_i_26_, data_i_27_, data_i_28_, data_i_29_, data_i_30_, data_i_31_, data_i_32_, data_i_33_, clear_i, async_req_o, async_ack_i, async_data_o_0_
 , async_data_o_1_, async_data_o_2_, async_data_o_3_, async_data_o_4_, async_data_o_5_, async_data_o_6_, async_data_o_7_, async_data_o_8_, async_data_o_9_, async_data_o_10_, async_data_o_11_, async_data_o_12_, async_data_o_13_, async_data_o_14_, async_data_o_15_, async_data_o_16_, async_data_o_17_, async_data_o_18_, async_data_o_19_, async_data_o_20_, async_data_o_21_
 , async_data_o_22_, async_data_o_23_, async_data_o_24_, async_data_o_25_, async_data_o_26_, async_data_o_27_, async_data_o_28_, async_data_o_29_, async_data_o_30_, async_data_o_31_, async_data_o_32_, async_data_o_33_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  output ready_o;
+  wire ready_o;
+  input valid_i;
+  wire valid_i;
   input data_i_0_;
   wire data_i_0_;
   input data_i_1_;
@@ -6777,10 +6781,6 @@ module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   wire data_i_33_;
   input clear_i;
   wire clear_i;
-  input valid_i;
-  wire valid_i;
-  output ready_o;
-  wire ready_o;
   output async_req_o;
   wire async_req_o;
   input async_ack_i;
@@ -7656,19 +7656,19 @@ module \cdc_2phase_src_clearable$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cd
   assign req_src_q = async_req_o;
 endmodule
 
-module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst (clk_i, rst_ni, data_o_0_, data_o_1_, ready_i, valid_o, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
+module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst (clk_i, rst_ni, ready_i, valid_o, data_o_0_, data_o_1_, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
-  output data_o_0_;
-  wire data_o_0_;
-  output data_o_1_;
-  wire data_o_1_;
   input ready_i;
   wire ready_i;
   output valid_o;
   wire valid_o;
+  output data_o_0_;
+  wire data_o_0_;
+  output data_o_1_;
+  wire data_o_1_;
   input async_req_i;
   wire async_req_i;
   output async_ack_o;
@@ -7762,19 +7762,19 @@ module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign ack_dst_q = async_ack_o;
 endmodule
 
-module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst (clk_i, rst_ni, data_o_0_, data_o_1_, ready_i, valid_o, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
+module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst (clk_i, rst_ni, ready_i, valid_o, data_o_0_, data_o_1_, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
-  output data_o_0_;
-  wire data_o_0_;
-  output data_o_1_;
-  wire data_o_1_;
   input ready_i;
   wire ready_i;
   output valid_o;
   wire valid_o;
+  output data_o_0_;
+  wire data_o_0_;
+  output data_o_1_;
+  wire data_o_1_;
   input async_req_i;
   wire async_req_i;
   output async_ack_o;
@@ -7868,19 +7868,19 @@ module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign ack_dst_q = async_ack_o;
 endmodule
 
-module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst (clk_i, rst_ni, data_o_0_, data_o_1_, ready_i, valid_o, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
+module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst (clk_i, rst_ni, ready_i, valid_o, data_o_0_, data_o_1_, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
-  output data_o_0_;
-  wire data_o_0_;
-  output data_o_1_;
-  wire data_o_1_;
   input ready_i;
   wire ready_i;
   output valid_o;
   wire valid_o;
+  output data_o_0_;
+  wire data_o_0_;
+  output data_o_1_;
+  wire data_o_1_;
   input async_req_i;
   wire async_req_i;
   output async_ack_o;
@@ -7974,19 +7974,19 @@ module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign ack_dst_q = async_ack_o;
 endmodule
 
-module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst (clk_i, rst_ni, data_o_0_, data_o_1_, ready_i, valid_o, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
+module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst (clk_i, rst_ni, ready_i, valid_o, data_o_0_, data_o_1_, async_req_i, async_ack_o, async_data_i_0_, async_data_i_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
-  output data_o_0_;
-  wire data_o_0_;
-  output data_o_1_;
-  wire data_o_1_;
   input ready_i;
   wire ready_i;
   output valid_o;
   wire valid_o;
+  output data_o_0_;
+  wire data_o_0_;
+  output data_o_1_;
+  wire data_o_1_;
   input async_req_i;
   wire async_req_i;
   output async_ack_o;
@@ -8080,19 +8080,19 @@ module \cdc_4phase_dst$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign ack_dst_q = async_ack_o;
 endmodule
 
-module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src (clk_i, rst_ni, data_i_0_, data_i_1_, valid_i, ready_o, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
+module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src (clk_i, rst_ni, ready_o, valid_i, data_i_0_, data_i_1_, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  output ready_o;
+  wire ready_o;
+  input valid_i;
+  wire valid_i;
   input data_i_0_;
   wire data_i_0_;
   input data_i_1_;
   wire data_i_1_;
-  input valid_i;
-  wire valid_i;
-  output ready_o;
-  wire ready_o;
   output async_req_o;
   wire async_req_o;
   input async_ack_i;
@@ -8244,19 +8244,19 @@ module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign req_src_q = async_req_o;
 endmodule
 
-module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src (clk_i, rst_ni, data_i_0_, data_i_1_, valid_i, ready_o, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
+module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src (clk_i, rst_ni, ready_o, valid_i, data_i_0_, data_i_1_, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  output ready_o;
+  wire ready_o;
+  input valid_i;
+  wire valid_i;
   input data_i_0_;
   wire data_i_0_;
   input data_i_1_;
   wire data_i_1_;
-  input valid_i;
-  wire valid_i;
-  output ready_o;
-  wire ready_o;
   output async_req_o;
   wire async_req_o;
   input async_ack_i;
@@ -8408,19 +8408,19 @@ module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign req_src_q = async_req_o;
 endmodule
 
-module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src (clk_i, rst_ni, data_i_0_, data_i_1_, valid_i, ready_o, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
+module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src (clk_i, rst_ni, ready_o, valid_i, data_i_0_, data_i_1_, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  output ready_o;
+  wire ready_o;
+  input valid_i;
+  wire valid_i;
   input data_i_0_;
   wire data_i_0_;
   input data_i_1_;
   wire data_i_1_;
-  input valid_i;
-  wire valid_i;
-  output ready_o;
-  wire ready_o;
   output async_req_o;
   wire async_req_o;
   input async_ack_i;
@@ -8572,19 +8572,19 @@ module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_re
   assign req_src_q = async_req_o;
 endmodule
 
-module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src (clk_i, rst_ni, data_i_0_, data_i_1_, valid_i, ready_o, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
+module \cdc_4phase_src$croc_chip.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src (clk_i, rst_ni, ready_o, valid_i, data_i_0_, data_i_1_, async_req_o, async_ack_i, async_data_o_0_, async_data_o_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
   wire rst_ni;
+  output ready_o;
+  wire ready_o;
+  input valid_i;
+  wire valid_i;
   input data_i_0_;
   wire data_i_0_;
   input data_i_1_;
   wire data_i_1_;
-  input valid_i;
-  wire valid_i;
-  output ready_o;
-  wire ready_o;
   output async_req_o;
   wire async_req_o;
   input async_ack_i;
@@ -71396,7 +71396,279 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
   wire gpio_out_en_o_30_;
   output gpio_out_en_o_31_;
   wire gpio_out_en_o_31_;
-  wire _0_;
+  wire _000_;
+  wire _001_;
+  wire _002_;
+  wire _003_;
+  wire _004_;
+  wire _005_;
+  wire _006_;
+  wire _007_;
+  wire _008_;
+  wire _009_;
+  wire _010_;
+  wire _011_;
+  wire _012_;
+  wire _013_;
+  wire _014_;
+  wire _015_;
+  wire _016_;
+  wire _017_;
+  wire _018_;
+  wire _019_;
+  wire _020_;
+  wire _021_;
+  wire _022_;
+  wire _023_;
+  wire _024_;
+  wire _025_;
+  wire _026_;
+  wire _027_;
+  wire _028_;
+  wire _029_;
+  wire _030_;
+  wire _031_;
+  wire _032_;
+  wire _033_;
+  wire _034_;
+  wire _035_;
+  wire _036_;
+  wire _037_;
+  wire _038_;
+  wire _039_;
+  wire _040_;
+  wire _041_;
+  wire _042_;
+  wire _043_;
+  wire _044_;
+  wire _045_;
+  wire _046_;
+  wire _047_;
+  wire _048_;
+  wire _049_;
+  wire _050_;
+  wire _051_;
+  wire _052_;
+  wire _053_;
+  wire _054_;
+  wire _055_;
+  wire _056_;
+  wire _057_;
+  wire _058_;
+  wire _059_;
+  wire _060_;
+  wire _061_;
+  wire _062_;
+  wire _063_;
+  wire _064_;
+  wire _065_;
+  wire _066_;
+  wire _067_;
+  wire _068_;
+  wire _069_;
+  wire _070_;
+  wire _071_;
+  wire _072_;
+  wire _073_;
+  wire _074_;
+  wire _075_;
+  wire _076_;
+  wire _077_;
+  wire _078_;
+  wire _079_;
+  wire _080_;
+  wire _081_;
+  wire _082_;
+  wire _083_;
+  wire _084_;
+  wire _085_;
+  wire _086_;
+  wire _087_;
+  wire _088_;
+  wire _089_;
+  wire _090_;
+  wire _091_;
+  wire _092_;
+  wire _093_;
+  wire _094_;
+  wire _095_;
+  wire _096_;
+  wire _097_;
+  wire _098_;
+  wire _099_;
+  wire _100_;
+  wire _101_;
+  wire _102_;
+  wire _103_;
+  wire _104_;
+  wire _105_;
+  wire _106_;
+  wire _107_;
+  wire _108_;
+  wire _109_;
+  wire _110_;
+  wire _111_;
+  wire _112_;
+  wire _113_;
+  wire _114_;
+  wire _115_;
+  wire _116_;
+  wire _117_;
+  wire _118_;
+  wire _119_;
+  wire _120_;
+  wire _121_;
+  wire _122_;
+  wire _123_;
+  wire _124_;
+  wire _125_;
+  wire _126_;
+  wire _127_;
+  wire _128_;
+  wire _129_;
+  wire _130_;
+  wire _131_;
+  wire _132_;
+  wire _133_;
+  wire _134_;
+  wire _135_;
+  wire _136_;
+  wire _137_;
+  wire _138_;
+  wire _139_;
+  wire _140_;
+  wire _141_;
+  wire _142_;
+  wire _143_;
+  wire _144_;
+  wire _145_;
+  wire _146_;
+  wire _147_;
+  wire _148_;
+  wire _149_;
+  wire _150_;
+  wire _151_;
+  wire _152_;
+  wire _153_;
+  wire _154_;
+  wire _155_;
+  wire _156_;
+  wire _157_;
+  wire _158_;
+  wire _159_;
+  wire _160_;
+  wire _161_;
+  wire _162_;
+  wire _163_;
+  wire _164_;
+  wire _165_;
+  wire _166_;
+  wire _167_;
+  wire _168_;
+  wire _169_;
+  wire _170_;
+  wire _171_;
+  wire _172_;
+  wire _173_;
+  wire _174_;
+  wire _175_;
+  wire _176_;
+  wire _177_;
+  wire _178_;
+  wire _179_;
+  wire _180_;
+  wire _181_;
+  wire _182_;
+  wire _183_;
+  wire _184_;
+  wire _185_;
+  wire _186_;
+  wire _187_;
+  wire _188_;
+  wire _189_;
+  wire _190_;
+  wire _191_;
+  wire _192_;
+  wire _193_;
+  wire _194_;
+  wire _195_;
+  wire _196_;
+  wire _197_;
+  wire _198_;
+  wire _199_;
+  wire _200_;
+  wire _201_;
+  wire _202_;
+  wire _203_;
+  wire _204_;
+  wire _205_;
+  wire _206_;
+  wire _207_;
+  wire _208_;
+  wire _209_;
+  wire _210_;
+  wire _211_;
+  wire _212_;
+  wire _213_;
+  wire _214_;
+  wire _215_;
+  wire _216_;
+  wire _217_;
+  wire _218_;
+  wire _219_;
+  wire _220_;
+  wire _221_;
+  wire _222_;
+  wire _223_;
+  wire _224_;
+  wire _225_;
+  wire _226_;
+  wire _227_;
+  wire _228_;
+  wire _229_;
+  wire _230_;
+  wire _231_;
+  wire _232_;
+  wire _233_;
+  wire _234_;
+  wire _235_;
+  wire _236_;
+  wire _237_;
+  wire _238_;
+  wire _239_;
+  wire _240_;
+  wire _241_;
+  wire _242_;
+  wire _243_;
+  wire _244_;
+  wire _245_;
+  wire _246_;
+  wire _247_;
+  wire _248_;
+  wire _249_;
+  wire _250_;
+  wire _251_;
+  wire _252_;
+  wire _253_;
+  wire _254_;
+  wire _255_;
+  wire _256_;
+  wire _257_;
+  wire _258_;
+  wire _259_;
+  wire _260_;
+  wire _261_;
+  wire all_banks_double_err_o_d_0_;
+  wire all_banks_double_err_o_d_1_;
+  wire all_banks_single_err_o_0_;
+  wire all_banks_single_err_o_1_;
+  wire croc_gpio_o_15_;
+  wire croc_gpio_o_20_;
+  wire croc_gpio_out_en_o_15_;
+  wire croc_gpio_out_en_o_16_;
+  wire croc_gpio_out_en_o_18_;
+  wire croc_gpio_out_en_o_19_;
+  wire croc_gpio_out_en_o_20_;
   wire gpio_in_sync_0_;
   wire gpio_in_sync_10_;
   wire gpio_in_sync_11_;
@@ -71429,9 +71701,459 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
   wire gpio_in_sync_7_;
   wire gpio_in_sync_8_;
   wire gpio_in_sync_9_;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_0_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_10_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_11_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_12_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_13_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_14_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_15_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_16_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_17_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_18_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_19_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_1_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_20_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_21_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_22_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_23_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_24_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_25_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_26_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_27_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_28_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_29_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_2_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_30_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_31_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_32_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_33_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_34_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_35_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_36_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_37_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_38_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_39_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_3_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_40_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_41_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_42_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_43_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_44_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_45_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_46_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_47_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_48_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_49_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_4_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_50_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_51_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_52_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_53_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_54_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_55_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_56_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_57_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_58_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_59_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_5_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_60_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_61_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_62_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_63_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_64_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_65_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_66_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_67_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_68_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_69_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_6_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_70_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_71_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_72_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_7_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_8_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.data_o_9_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.ready_o ;
+  wire \i_obi_cut_croc2user.i_reg_a.rst_ni ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_37_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_38_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_39_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_40_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_41_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_42_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_43_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_44_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_45_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_46_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_47_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_48_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_49_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_50_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_51_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_52_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_53_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_54_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_55_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_56_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_57_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_58_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_59_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_60_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_61_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_62_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_63_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_64_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_65_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_66_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_67_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_68_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_69_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_70_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_71_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_72_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_37_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_38_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_39_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_40_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_41_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_42_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_43_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_44_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_45_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_46_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_47_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_48_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_49_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_50_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_51_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_52_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_53_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_54_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_55_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_56_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_57_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_58_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_59_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_60_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_61_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_62_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_63_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_64_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_65_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_66_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_67_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_68_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_69_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_70_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_71_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_72_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_full_q ;
+  wire \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.valid_o ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_0_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_10_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_11_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_12_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_13_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_14_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_15_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_16_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_17_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_18_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_19_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_1_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_20_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_21_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_22_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_23_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_24_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_25_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_26_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_27_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_28_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_29_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_2_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_30_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_31_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_32_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_33_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_34_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_35_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_36_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_3_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_4_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_5_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_6_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_7_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_8_ ;
+  wire \i_obi_cut_croc2user.i_req_r.data_o_9_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_full_q ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q ;
+  wire \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.valid_o ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_0_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_10_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_11_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_12_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_13_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_14_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_15_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_16_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_17_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_18_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_19_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_1_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_20_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_21_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_22_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_23_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_24_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_25_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_26_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_27_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_28_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_29_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_2_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_30_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_31_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_32_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_33_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_34_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_35_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_36_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_37_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_38_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_3_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_4_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_5_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_6_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_7_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_8_ ;
+  wire \i_obi_cut_croc2user.mgr_port_rsp_i_9_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_0_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_10_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_11_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_12_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_13_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_14_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_15_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_16_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_17_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_18_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_19_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_1_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_20_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_21_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_22_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_23_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_24_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_25_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_26_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_27_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_28_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_29_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_2_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_30_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_31_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_32_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_33_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_34_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_35_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_36_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_37_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_38_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_39_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_3_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_40_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_41_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_42_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_43_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_44_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_45_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_46_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_47_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_48_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_49_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_4_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_50_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_51_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_52_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_53_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_54_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_55_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_56_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_57_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_58_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_59_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_5_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_60_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_61_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_62_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_63_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_64_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_65_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_66_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_67_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_68_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_69_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_6_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_70_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_71_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_72_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_73_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_7_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_8_ ;
+  wire \i_obi_cut_croc2user.sbr_port_req_i_9_ ;
   wire \i_rstgen.i_rstgen_bypass.init_no ;
   wire \i_rstgen.i_rstgen_bypass.rst_n ;
-  wire \i_rstgen.i_rstgen_bypass.rst_no ;
   wire \i_rstgen.i_rstgen_bypass.synch_regs_q_0_ ;
   wire \i_rstgen.i_rstgen_bypass.synch_regs_q_1_ ;
   wire \i_rstgen.i_rstgen_bypass.synch_regs_q_2_ ;
@@ -71550,121 +72272,2114 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
   wire user_mgr_obi_rsp_7_;
   wire user_mgr_obi_rsp_8_;
   wire user_mgr_obi_rsp_9_;
-  wire user_sbr_obi_req_0_;
-  wire user_sbr_obi_req_10_;
-  wire user_sbr_obi_req_11_;
-  wire user_sbr_obi_req_12_;
-  wire user_sbr_obi_req_13_;
-  wire user_sbr_obi_req_14_;
-  wire user_sbr_obi_req_15_;
-  wire user_sbr_obi_req_16_;
-  wire user_sbr_obi_req_17_;
-  wire user_sbr_obi_req_18_;
-  wire user_sbr_obi_req_19_;
-  wire user_sbr_obi_req_1_;
-  wire user_sbr_obi_req_20_;
-  wire user_sbr_obi_req_21_;
-  wire user_sbr_obi_req_22_;
-  wire user_sbr_obi_req_23_;
-  wire user_sbr_obi_req_24_;
-  wire user_sbr_obi_req_25_;
-  wire user_sbr_obi_req_26_;
-  wire user_sbr_obi_req_27_;
-  wire user_sbr_obi_req_28_;
-  wire user_sbr_obi_req_29_;
-  wire user_sbr_obi_req_2_;
-  wire user_sbr_obi_req_30_;
-  wire user_sbr_obi_req_31_;
-  wire user_sbr_obi_req_32_;
-  wire user_sbr_obi_req_33_;
-  wire user_sbr_obi_req_34_;
-  wire user_sbr_obi_req_35_;
-  wire user_sbr_obi_req_36_;
-  wire user_sbr_obi_req_37_;
-  wire user_sbr_obi_req_38_;
-  wire user_sbr_obi_req_39_;
-  wire user_sbr_obi_req_3_;
-  wire user_sbr_obi_req_40_;
-  wire user_sbr_obi_req_41_;
-  wire user_sbr_obi_req_42_;
-  wire user_sbr_obi_req_43_;
-  wire user_sbr_obi_req_44_;
-  wire user_sbr_obi_req_45_;
-  wire user_sbr_obi_req_46_;
-  wire user_sbr_obi_req_47_;
-  wire user_sbr_obi_req_48_;
-  wire user_sbr_obi_req_49_;
-  wire user_sbr_obi_req_4_;
-  wire user_sbr_obi_req_50_;
-  wire user_sbr_obi_req_51_;
-  wire user_sbr_obi_req_52_;
-  wire user_sbr_obi_req_53_;
-  wire user_sbr_obi_req_54_;
-  wire user_sbr_obi_req_55_;
-  wire user_sbr_obi_req_56_;
-  wire user_sbr_obi_req_57_;
-  wire user_sbr_obi_req_58_;
-  wire user_sbr_obi_req_59_;
-  wire user_sbr_obi_req_5_;
-  wire user_sbr_obi_req_60_;
-  wire user_sbr_obi_req_61_;
-  wire user_sbr_obi_req_62_;
-  wire user_sbr_obi_req_63_;
-  wire user_sbr_obi_req_64_;
-  wire user_sbr_obi_req_65_;
-  wire user_sbr_obi_req_66_;
-  wire user_sbr_obi_req_67_;
-  wire user_sbr_obi_req_68_;
-  wire user_sbr_obi_req_69_;
-  wire user_sbr_obi_req_6_;
-  wire user_sbr_obi_req_70_;
-  wire user_sbr_obi_req_71_;
-  wire user_sbr_obi_req_72_;
-  wire user_sbr_obi_req_73_;
-  wire user_sbr_obi_req_7_;
-  wire user_sbr_obi_req_8_;
-  wire user_sbr_obi_req_9_;
-  wire user_sbr_obi_rsp_0_;
-  wire user_sbr_obi_rsp_10_;
-  wire user_sbr_obi_rsp_11_;
-  wire user_sbr_obi_rsp_12_;
-  wire user_sbr_obi_rsp_13_;
-  wire user_sbr_obi_rsp_14_;
-  wire user_sbr_obi_rsp_15_;
-  wire user_sbr_obi_rsp_16_;
-  wire user_sbr_obi_rsp_17_;
-  wire user_sbr_obi_rsp_18_;
-  wire user_sbr_obi_rsp_19_;
-  wire user_sbr_obi_rsp_1_;
-  wire user_sbr_obi_rsp_20_;
-  wire user_sbr_obi_rsp_21_;
-  wire user_sbr_obi_rsp_22_;
-  wire user_sbr_obi_rsp_23_;
-  wire user_sbr_obi_rsp_24_;
-  wire user_sbr_obi_rsp_25_;
-  wire user_sbr_obi_rsp_26_;
-  wire user_sbr_obi_rsp_27_;
-  wire user_sbr_obi_rsp_28_;
-  wire user_sbr_obi_rsp_29_;
-  wire user_sbr_obi_rsp_2_;
-  wire user_sbr_obi_rsp_30_;
-  wire user_sbr_obi_rsp_31_;
-  wire user_sbr_obi_rsp_32_;
-  wire user_sbr_obi_rsp_33_;
-  wire user_sbr_obi_rsp_34_;
-  wire user_sbr_obi_rsp_35_;
-  wire user_sbr_obi_rsp_36_;
-  wire user_sbr_obi_rsp_37_;
-  wire user_sbr_obi_rsp_38_;
-  wire user_sbr_obi_rsp_3_;
-  wire user_sbr_obi_rsp_4_;
-  wire user_sbr_obi_rsp_5_;
-  wire user_sbr_obi_rsp_6_;
-  wire user_sbr_obi_rsp_7_;
-  wire user_sbr_obi_rsp_8_;
-  wire user_sbr_obi_rsp_9_;
-  TIEHI _1_ (
-    .Y(_0_)
+  BUFX3 _262_ (
+    .A(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .Y(_223_)
+  );
+  BUFX3 _263_ (
+    .A(_223_),
+    .Y(_224_)
+  );
+  BUFX3 _264_ (
+    .A(_224_),
+    .Y(_225_)
+  );
+  MUX2X1 _265_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_0_ )
+  );
+  MUX2X1 _266_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_10_ )
+  );
+  MUX2X1 _267_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_11_ )
+  );
+  MUX2X1 _268_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_12_ )
+  );
+  MUX2X1 _269_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_13_ )
+  );
+  MUX2X1 _270_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_14_ )
+  );
+  MUX2X1 _271_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_15_ )
+  );
+  MUX2X1 _272_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_16_ )
+  );
+  MUX2X1 _273_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_17_ )
+  );
+  MUX2X1 _274_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ),
+    .S0(_225_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_18_ )
+  );
+  BUFX3 _275_ (
+    .A(_224_),
+    .Y(_226_)
+  );
+  MUX2X1 _276_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_19_ )
+  );
+  MUX2X1 _277_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_1_ )
+  );
+  MUX2X1 _278_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_20_ )
+  );
+  MUX2X1 _279_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_21_ )
+  );
+  MUX2X1 _280_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_22_ )
+  );
+  MUX2X1 _281_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_23_ )
+  );
+  MUX2X1 _282_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_24_ )
+  );
+  MUX2X1 _283_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_25_ )
+  );
+  MUX2X1 _284_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_26_ )
+  );
+  MUX2X1 _285_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ),
+    .S0(_226_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_27_ )
+  );
+  BUFX3 _286_ (
+    .A(_224_),
+    .Y(_227_)
+  );
+  MUX2X1 _287_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_28_ )
+  );
+  MUX2X1 _288_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_29_ )
+  );
+  MUX2X1 _289_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_2_ )
+  );
+  MUX2X1 _290_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_30_ )
+  );
+  MUX2X1 _291_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_31_ )
+  );
+  MUX2X1 _292_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_32_ )
+  );
+  MUX2X1 _293_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_33_ )
+  );
+  MUX2X1 _294_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_34_ )
+  );
+  MUX2X1 _295_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_35_ )
+  );
+  MUX2X1 _296_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ),
+    .S0(_227_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_36_ )
+  );
+  BUFX3 _297_ (
+    .A(_224_),
+    .Y(_228_)
+  );
+  MUX2X1 _298_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_37_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_37_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_37_ )
+  );
+  MUX2X1 _299_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_38_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_38_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_38_ )
+  );
+  MUX2X1 _300_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_39_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_39_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_39_ )
+  );
+  MUX2X1 _301_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_3_ )
+  );
+  MUX2X1 _302_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_40_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_40_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_40_ )
+  );
+  MUX2X1 _303_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_41_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_41_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_41_ )
+  );
+  MUX2X1 _304_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_42_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_42_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_42_ )
+  );
+  MUX2X1 _305_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_43_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_43_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_43_ )
+  );
+  MUX2X1 _306_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_44_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_44_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_44_ )
+  );
+  MUX2X1 _307_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_45_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_45_ ),
+    .S0(_228_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_45_ )
+  );
+  BUFX3 _308_ (
+    .A(_224_),
+    .Y(_229_)
+  );
+  MUX2X1 _309_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_46_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_46_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_46_ )
+  );
+  MUX2X1 _310_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_47_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_47_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_47_ )
+  );
+  MUX2X1 _311_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_48_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_48_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_48_ )
+  );
+  MUX2X1 _312_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_49_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_49_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_49_ )
+  );
+  MUX2X1 _313_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_4_ )
+  );
+  MUX2X1 _314_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_50_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_50_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_50_ )
+  );
+  MUX2X1 _315_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_51_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_51_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_51_ )
+  );
+  MUX2X1 _316_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_52_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_52_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_52_ )
+  );
+  MUX2X1 _317_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_53_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_53_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_53_ )
+  );
+  MUX2X1 _318_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_54_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_54_ ),
+    .S0(_229_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_54_ )
+  );
+  BUFX3 _319_ (
+    .A(_223_),
+    .Y(_230_)
+  );
+  MUX2X1 _320_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_55_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_55_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_55_ )
+  );
+  MUX2X1 _321_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_56_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_56_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_56_ )
+  );
+  MUX2X1 _322_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_57_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_57_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_57_ )
+  );
+  MUX2X1 _323_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_58_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_58_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_58_ )
+  );
+  MUX2X1 _324_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_59_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_59_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_59_ )
+  );
+  MUX2X1 _325_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_5_ )
+  );
+  MUX2X1 _326_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_60_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_60_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_60_ )
+  );
+  MUX2X1 _327_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_61_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_61_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_61_ )
+  );
+  MUX2X1 _328_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_62_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_62_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_62_ )
+  );
+  MUX2X1 _329_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_63_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_63_ ),
+    .S0(_230_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_63_ )
+  );
+  BUFX3 _330_ (
+    .A(_223_),
+    .Y(_231_)
+  );
+  MUX2X1 _331_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_64_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_64_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_64_ )
+  );
+  MUX2X1 _332_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_65_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_65_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_65_ )
+  );
+  MUX2X1 _333_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_66_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_66_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_66_ )
+  );
+  MUX2X1 _334_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_67_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_67_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_67_ )
+  );
+  MUX2X1 _335_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_68_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_68_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_68_ )
+  );
+  MUX2X1 _336_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_69_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_69_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_69_ )
+  );
+  MUX2X1 _337_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_6_ )
+  );
+  MUX2X1 _338_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_70_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_70_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_70_ )
+  );
+  MUX2X1 _339_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_71_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_71_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_71_ )
+  );
+  MUX2X1 _340_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_72_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_72_ ),
+    .S0(_231_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_72_ )
+  );
+  MUX2X1 _341_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ),
+    .S0(_224_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_7_ )
+  );
+  MUX2X1 _342_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ),
+    .S0(_224_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_8_ )
+  );
+  MUX2X1 _343_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ),
+    .S0(_224_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.data_o_9_ )
+  );
+  NAND2X1 _344_ (
+    .A(_224_),
+    .B(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .Y(\i_obi_cut_croc2user.i_reg_a.ready_o )
+  );
+  AOI21BX1 _345_ (
+    .A(_223_),
+    .B(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .CB(\i_obi_cut_croc2user.sbr_port_req_i_0_ ),
+    .Y(_232_)
+  );
+  BUFX3 _346_ (
+    .A(_232_),
+    .Y(_233_)
+  );
+  BUFX6 _347_ (
+    .A(_233_),
+    .Y(_234_)
+  );
+  MUX2X1 _348_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_1_ ),
+    .S0(_234_),
+    .Y(_000_)
+  );
+  MUX2X1 _349_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_11_ ),
+    .S0(_234_),
+    .Y(_001_)
+  );
+  MUX2X1 _350_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_12_ ),
+    .S0(_234_),
+    .Y(_002_)
+  );
+  MUX2X1 _351_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_13_ ),
+    .S0(_234_),
+    .Y(_003_)
+  );
+  MUX2X1 _352_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_14_ ),
+    .S0(_234_),
+    .Y(_004_)
+  );
+  MUX2X1 _353_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_15_ ),
+    .S0(_234_),
+    .Y(_005_)
+  );
+  MUX2X1 _354_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_16_ ),
+    .S0(_234_),
+    .Y(_006_)
+  );
+  MUX2X1 _355_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_17_ ),
+    .S0(_234_),
+    .Y(_007_)
+  );
+  MUX2X1 _356_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_18_ ),
+    .S0(_234_),
+    .Y(_008_)
+  );
+  MUX2X1 _357_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_19_ ),
+    .S0(_234_),
+    .Y(_009_)
+  );
+  BUFX6 _358_ (
+    .A(_233_),
+    .Y(_235_)
+  );
+  MUX2X1 _359_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_20_ ),
+    .S0(_235_),
+    .Y(_010_)
+  );
+  MUX2X1 _360_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_2_ ),
+    .S0(_235_),
+    .Y(_011_)
+  );
+  MUX2X1 _361_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_21_ ),
+    .S0(_235_),
+    .Y(_012_)
+  );
+  MUX2X1 _362_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_22_ ),
+    .S0(_235_),
+    .Y(_013_)
+  );
+  MUX2X1 _363_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_23_ ),
+    .S0(_235_),
+    .Y(_014_)
+  );
+  MUX2X1 _364_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_24_ ),
+    .S0(_235_),
+    .Y(_015_)
+  );
+  MUX2X1 _365_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_25_ ),
+    .S0(_235_),
+    .Y(_016_)
+  );
+  MUX2X1 _366_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_26_ ),
+    .S0(_235_),
+    .Y(_017_)
+  );
+  MUX2X1 _367_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_27_ ),
+    .S0(_235_),
+    .Y(_018_)
+  );
+  MUX2X1 _368_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_28_ ),
+    .S0(_235_),
+    .Y(_019_)
+  );
+  BUFX6 _369_ (
+    .A(_233_),
+    .Y(_236_)
+  );
+  MUX2X1 _370_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_29_ ),
+    .S0(_236_),
+    .Y(_020_)
+  );
+  MUX2X1 _371_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_30_ ),
+    .S0(_236_),
+    .Y(_021_)
+  );
+  MUX2X1 _372_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_3_ ),
+    .S0(_236_),
+    .Y(_022_)
+  );
+  MUX2X1 _373_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_31_ ),
+    .S0(_236_),
+    .Y(_023_)
+  );
+  MUX2X1 _374_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_32_ ),
+    .S0(_236_),
+    .Y(_024_)
+  );
+  MUX2X1 _375_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_33_ ),
+    .S0(_236_),
+    .Y(_025_)
+  );
+  MUX2X1 _376_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_34_ ),
+    .S0(_236_),
+    .Y(_026_)
+  );
+  MUX2X1 _377_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_35_ ),
+    .S0(_236_),
+    .Y(_027_)
+  );
+  MUX2X1 _378_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_36_ ),
+    .S0(_236_),
+    .Y(_028_)
+  );
+  MUX2X1 _379_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_37_ ),
+    .S0(_236_),
+    .Y(_029_)
+  );
+  BUFX6 _380_ (
+    .A(_233_),
+    .Y(_237_)
+  );
+  MUX2X1 _381_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_37_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_38_ ),
+    .S0(_237_),
+    .Y(_030_)
+  );
+  MUX2X1 _382_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_38_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_39_ ),
+    .S0(_237_),
+    .Y(_031_)
+  );
+  MUX2X1 _383_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_39_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_40_ ),
+    .S0(_237_),
+    .Y(_032_)
+  );
+  MUX2X1 _384_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_4_ ),
+    .S0(_237_),
+    .Y(_033_)
+  );
+  MUX2X1 _385_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_40_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_41_ ),
+    .S0(_237_),
+    .Y(_034_)
+  );
+  MUX2X1 _386_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_41_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_42_ ),
+    .S0(_237_),
+    .Y(_035_)
+  );
+  MUX2X1 _387_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_42_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_43_ ),
+    .S0(_237_),
+    .Y(_036_)
+  );
+  MUX2X1 _388_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_43_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_44_ ),
+    .S0(_237_),
+    .Y(_037_)
+  );
+  MUX2X1 _389_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_44_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_45_ ),
+    .S0(_237_),
+    .Y(_038_)
+  );
+  MUX2X1 _390_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_45_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_46_ ),
+    .S0(_237_),
+    .Y(_039_)
+  );
+  BUFX6 _391_ (
+    .A(_233_),
+    .Y(_238_)
+  );
+  MUX2X1 _392_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_46_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_47_ ),
+    .S0(_238_),
+    .Y(_040_)
+  );
+  MUX2X1 _393_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_47_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_48_ ),
+    .S0(_238_),
+    .Y(_041_)
+  );
+  MUX2X1 _394_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_48_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_49_ ),
+    .S0(_238_),
+    .Y(_042_)
+  );
+  MUX2X1 _395_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_49_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_50_ ),
+    .S0(_238_),
+    .Y(_043_)
+  );
+  MUX2X1 _396_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_5_ ),
+    .S0(_238_),
+    .Y(_044_)
+  );
+  MUX2X1 _397_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_50_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_51_ ),
+    .S0(_238_),
+    .Y(_045_)
+  );
+  MUX2X1 _398_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_51_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_52_ ),
+    .S0(_238_),
+    .Y(_046_)
+  );
+  MUX2X1 _399_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_52_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_53_ ),
+    .S0(_238_),
+    .Y(_047_)
+  );
+  MUX2X1 _400_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_53_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_54_ ),
+    .S0(_238_),
+    .Y(_048_)
+  );
+  MUX2X1 _401_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_54_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_55_ ),
+    .S0(_238_),
+    .Y(_049_)
+  );
+  BUFX6 _402_ (
+    .A(_233_),
+    .Y(_239_)
+  );
+  MUX2X1 _403_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_55_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_56_ ),
+    .S0(_239_),
+    .Y(_050_)
+  );
+  MUX2X1 _404_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_56_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_57_ ),
+    .S0(_239_),
+    .Y(_051_)
+  );
+  MUX2X1 _405_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_57_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_58_ ),
+    .S0(_239_),
+    .Y(_052_)
+  );
+  MUX2X1 _406_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_58_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_59_ ),
+    .S0(_239_),
+    .Y(_053_)
+  );
+  MUX2X1 _407_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_59_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_60_ ),
+    .S0(_239_),
+    .Y(_054_)
+  );
+  MUX2X1 _408_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_6_ ),
+    .S0(_239_),
+    .Y(_055_)
+  );
+  MUX2X1 _409_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_60_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_61_ ),
+    .S0(_239_),
+    .Y(_056_)
+  );
+  MUX2X1 _410_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_61_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_62_ ),
+    .S0(_239_),
+    .Y(_057_)
+  );
+  MUX2X1 _411_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_62_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_63_ ),
+    .S0(_239_),
+    .Y(_058_)
+  );
+  MUX2X1 _412_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_63_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_64_ ),
+    .S0(_239_),
+    .Y(_059_)
+  );
+  BUFX6 _413_ (
+    .A(_233_),
+    .Y(_240_)
+  );
+  MUX2X1 _414_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_64_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_65_ ),
+    .S0(_240_),
+    .Y(_060_)
+  );
+  MUX2X1 _415_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_65_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_66_ ),
+    .S0(_240_),
+    .Y(_061_)
+  );
+  MUX2X1 _416_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_66_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_67_ ),
+    .S0(_240_),
+    .Y(_062_)
+  );
+  MUX2X1 _417_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_67_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_68_ ),
+    .S0(_240_),
+    .Y(_063_)
+  );
+  MUX2X1 _418_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_68_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_69_ ),
+    .S0(_240_),
+    .Y(_064_)
+  );
+  MUX2X1 _419_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_69_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_70_ ),
+    .S0(_240_),
+    .Y(_065_)
+  );
+  MUX2X1 _420_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_7_ ),
+    .S0(_240_),
+    .Y(_066_)
+  );
+  MUX2X1 _421_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_70_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_71_ ),
+    .S0(_240_),
+    .Y(_067_)
+  );
+  MUX2X1 _422_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_71_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_72_ ),
+    .S0(_240_),
+    .Y(_068_)
+  );
+  MUX2X1 _423_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_72_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_73_ ),
+    .S0(_240_),
+    .Y(_069_)
+  );
+  MUX2X1 _424_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_8_ ),
+    .S0(_233_),
+    .Y(_070_)
+  );
+  MUX2X1 _425_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_9_ ),
+    .S0(_233_),
+    .Y(_071_)
+  );
+  MUX2X1 _426_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .A1(\i_obi_cut_croc2user.sbr_port_req_i_10_ ),
+    .S0(_233_),
+    .Y(_072_)
+  );
+  NAND2BX1 _427_ (
+    .AB(\i_obi_cut_croc2user.sbr_port_req_i_0_ ),
+    .B(\i_obi_cut_croc2user.i_reg_a.ready_o ),
+    .Y(_073_)
+  );
+  OR3BX2 _428_ (
+    .AB(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .B(\i_obi_cut_croc2user.mgr_port_rsp_i_1_ ),
+    .C(_223_),
+    .Y(_241_)
+  );
+  BUFX16 _429_ (
+    .A(_241_),
+    .Y(_242_)
+  );
+  BUFX24 _430_ (
+    .A(_242_),
+    .Y(_243_)
+  );
+  MUX2X1 _431_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ),
+    .S0(_243_),
+    .Y(_074_)
+  );
+  MUX2X1 _432_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ),
+    .S0(_243_),
+    .Y(_075_)
+  );
+  MUX2X1 _433_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ),
+    .S0(_243_),
+    .Y(_076_)
+  );
+  MUX2X1 _434_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ),
+    .S0(_243_),
+    .Y(_077_)
+  );
+  MUX2X1 _435_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ),
+    .S0(_243_),
+    .Y(_078_)
+  );
+  MUX2X1 _436_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ),
+    .S0(_243_),
+    .Y(_079_)
+  );
+  MUX2X1 _437_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ),
+    .S0(_243_),
+    .Y(_080_)
+  );
+  MUX2X1 _438_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ),
+    .S0(_243_),
+    .Y(_081_)
+  );
+  MUX2X1 _439_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ),
+    .S0(_243_),
+    .Y(_082_)
+  );
+  MUX2X1 _440_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ),
+    .S0(_243_),
+    .Y(_083_)
+  );
+  BUFX24 _441_ (
+    .A(_242_),
+    .Y(_244_)
+  );
+  MUX2X1 _442_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ),
+    .S0(_244_),
+    .Y(_084_)
+  );
+  MUX2X1 _443_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ),
+    .S0(_244_),
+    .Y(_085_)
+  );
+  MUX2X1 _444_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ),
+    .S0(_244_),
+    .Y(_086_)
+  );
+  MUX2X1 _445_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ),
+    .S0(_244_),
+    .Y(_087_)
+  );
+  MUX2X1 _446_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ),
+    .S0(_244_),
+    .Y(_088_)
+  );
+  MUX2X1 _447_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ),
+    .S0(_244_),
+    .Y(_089_)
+  );
+  MUX2X1 _448_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ),
+    .S0(_244_),
+    .Y(_090_)
+  );
+  MUX2X1 _449_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ),
+    .S0(_244_),
+    .Y(_091_)
+  );
+  MUX2X1 _450_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ),
+    .S0(_244_),
+    .Y(_092_)
+  );
+  MUX2X1 _451_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ),
+    .S0(_244_),
+    .Y(_093_)
+  );
+  BUFX24 _452_ (
+    .A(_242_),
+    .Y(_245_)
+  );
+  MUX2X1 _453_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ),
+    .S0(_245_),
+    .Y(_094_)
+  );
+  MUX2X1 _454_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ),
+    .S0(_245_),
+    .Y(_095_)
+  );
+  MUX2X1 _455_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ),
+    .S0(_245_),
+    .Y(_096_)
+  );
+  MUX2X1 _456_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ),
+    .S0(_245_),
+    .Y(_097_)
+  );
+  MUX2X1 _457_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ),
+    .S0(_245_),
+    .Y(_098_)
+  );
+  MUX2X1 _458_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ),
+    .S0(_245_),
+    .Y(_099_)
+  );
+  MUX2X1 _459_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ),
+    .S0(_245_),
+    .Y(_100_)
+  );
+  MUX2X1 _460_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ),
+    .S0(_245_),
+    .Y(_101_)
+  );
+  MUX2X1 _461_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ),
+    .S0(_245_),
+    .Y(_102_)
+  );
+  MUX2X1 _462_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ),
+    .S0(_245_),
+    .Y(_103_)
+  );
+  BUFX24 _463_ (
+    .A(_242_),
+    .Y(_246_)
+  );
+  MUX2X1 _464_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_37_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_37_ ),
+    .S0(_246_),
+    .Y(_104_)
+  );
+  MUX2X1 _465_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_38_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_38_ ),
+    .S0(_246_),
+    .Y(_105_)
+  );
+  MUX2X1 _466_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_39_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_39_ ),
+    .S0(_246_),
+    .Y(_106_)
+  );
+  MUX2X1 _467_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ),
+    .S0(_246_),
+    .Y(_107_)
+  );
+  MUX2X1 _468_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_40_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_40_ ),
+    .S0(_246_),
+    .Y(_108_)
+  );
+  MUX2X1 _469_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_41_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_41_ ),
+    .S0(_246_),
+    .Y(_109_)
+  );
+  MUX2X1 _470_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_42_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_42_ ),
+    .S0(_246_),
+    .Y(_110_)
+  );
+  MUX2X1 _471_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_43_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_43_ ),
+    .S0(_246_),
+    .Y(_111_)
+  );
+  MUX2X1 _472_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_44_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_44_ ),
+    .S0(_246_),
+    .Y(_112_)
+  );
+  MUX2X1 _473_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_45_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_45_ ),
+    .S0(_246_),
+    .Y(_113_)
+  );
+  BUFX24 _474_ (
+    .A(_242_),
+    .Y(_247_)
+  );
+  MUX2X1 _475_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_46_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_46_ ),
+    .S0(_247_),
+    .Y(_114_)
+  );
+  MUX2X1 _476_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_47_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_47_ ),
+    .S0(_247_),
+    .Y(_115_)
+  );
+  MUX2X1 _477_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_48_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_48_ ),
+    .S0(_247_),
+    .Y(_116_)
+  );
+  MUX2X1 _478_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_49_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_49_ ),
+    .S0(_247_),
+    .Y(_117_)
+  );
+  MUX2X1 _479_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ),
+    .S0(_247_),
+    .Y(_118_)
+  );
+  MUX2X1 _480_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_50_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_50_ ),
+    .S0(_247_),
+    .Y(_119_)
+  );
+  MUX2X1 _481_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_51_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_51_ ),
+    .S0(_247_),
+    .Y(_120_)
+  );
+  MUX2X1 _482_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_52_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_52_ ),
+    .S0(_247_),
+    .Y(_121_)
+  );
+  MUX2X1 _483_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_53_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_53_ ),
+    .S0(_247_),
+    .Y(_122_)
+  );
+  MUX2X1 _484_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_54_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_54_ ),
+    .S0(_247_),
+    .Y(_123_)
+  );
+  BUFX24 _485_ (
+    .A(_242_),
+    .Y(_248_)
+  );
+  MUX2X1 _486_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_55_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_55_ ),
+    .S0(_248_),
+    .Y(_124_)
+  );
+  MUX2X1 _487_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_56_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_56_ ),
+    .S0(_248_),
+    .Y(_125_)
+  );
+  MUX2X1 _488_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_57_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_57_ ),
+    .S0(_248_),
+    .Y(_126_)
+  );
+  MUX2X1 _489_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_58_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_58_ ),
+    .S0(_248_),
+    .Y(_127_)
+  );
+  MUX2X1 _490_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_59_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_59_ ),
+    .S0(_248_),
+    .Y(_128_)
+  );
+  MUX2X1 _491_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ),
+    .S0(_248_),
+    .Y(_129_)
+  );
+  MUX2X1 _492_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_60_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_60_ ),
+    .S0(_248_),
+    .Y(_130_)
+  );
+  MUX2X1 _493_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_61_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_61_ ),
+    .S0(_248_),
+    .Y(_131_)
+  );
+  MUX2X1 _494_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_62_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_62_ ),
+    .S0(_248_),
+    .Y(_132_)
+  );
+  MUX2X1 _495_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_63_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_63_ ),
+    .S0(_248_),
+    .Y(_133_)
+  );
+  BUFX24 _496_ (
+    .A(_242_),
+    .Y(_249_)
+  );
+  MUX2X1 _497_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_64_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_64_ ),
+    .S0(_249_),
+    .Y(_134_)
+  );
+  MUX2X1 _498_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_65_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_65_ ),
+    .S0(_249_),
+    .Y(_135_)
+  );
+  MUX2X1 _499_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_66_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_66_ ),
+    .S0(_249_),
+    .Y(_136_)
+  );
+  MUX2X1 _500_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_67_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_67_ ),
+    .S0(_249_),
+    .Y(_137_)
+  );
+  MUX2X1 _501_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_68_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_68_ ),
+    .S0(_249_),
+    .Y(_138_)
+  );
+  MUX2X1 _502_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_69_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_69_ ),
+    .S0(_249_),
+    .Y(_139_)
+  );
+  MUX2X1 _503_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ),
+    .S0(_249_),
+    .Y(_140_)
+  );
+  MUX2X1 _504_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_70_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_70_ ),
+    .S0(_249_),
+    .Y(_141_)
+  );
+  MUX2X1 _505_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_71_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_71_ ),
+    .S0(_249_),
+    .Y(_142_)
+  );
+  MUX2X1 _506_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_72_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_72_ ),
+    .S0(_249_),
+    .Y(_143_)
+  );
+  MUX2X1 _507_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ),
+    .S0(_242_),
+    .Y(_144_)
+  );
+  MUX2X1 _508_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ),
+    .S0(_242_),
+    .Y(_145_)
+  );
+  MUX2X1 _509_ (
+    .A0(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .A1(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ),
+    .S0(_242_),
+    .Y(_146_)
+  );
+  NOR2X1 _510_ (
+    .A(_224_),
+    .B(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .Y(_250_)
+  );
+  NOR2X1 _511_ (
+    .A(\i_obi_cut_croc2user.mgr_port_rsp_i_1_ ),
+    .B(_250_),
+    .Y(_147_)
+  );
+  INVX1 _512_ (
+    .A(_250_),
+    .Y(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.valid_o )
+  );
+  BUFX3 _513_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .Y(_251_)
+  );
+  MUX2X1 _514_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_0_ )
+  );
+  MUX2X1 _515_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_10_ )
+  );
+  MUX2X1 _516_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_11_ )
+  );
+  MUX2X1 _517_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_12_ )
+  );
+  MUX2X1 _518_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_13_ )
+  );
+  MUX2X1 _519_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_14_ )
+  );
+  MUX2X1 _520_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_15_ )
+  );
+  MUX2X1 _521_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_16_ )
+  );
+  MUX2X1 _522_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ),
+    .S0(_251_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_17_ )
+  );
+  BUFX3 _523_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .Y(_252_)
+  );
+  BUFX3 _524_ (
+    .A(_252_),
+    .Y(_253_)
+  );
+  MUX2X1 _525_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_18_ )
+  );
+  MUX2X1 _526_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_19_ )
+  );
+  MUX2X1 _527_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_1_ )
+  );
+  MUX2X1 _528_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_20_ )
+  );
+  MUX2X1 _529_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_21_ )
+  );
+  MUX2X1 _530_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_22_ )
+  );
+  MUX2X1 _531_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_23_ )
+  );
+  MUX2X1 _532_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_24_ )
+  );
+  MUX2X1 _533_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_25_ )
+  );
+  MUX2X1 _534_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ),
+    .S0(_253_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_26_ )
+  );
+  BUFX3 _535_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .Y(_254_)
+  );
+  MUX2X1 _536_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_27_ )
+  );
+  MUX2X1 _537_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_28_ )
+  );
+  MUX2X1 _538_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_29_ )
+  );
+  MUX2X1 _539_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_2_ )
+  );
+  MUX2X1 _540_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_30_ )
+  );
+  MUX2X1 _541_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_31_ )
+  );
+  MUX2X1 _542_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_32_ )
+  );
+  MUX2X1 _543_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_33_ )
+  );
+  MUX2X1 _544_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_34_ )
+  );
+  MUX2X1 _545_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ),
+    .S0(_254_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_35_ )
+  );
+  MUX2X1 _546_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_36_ )
+  );
+  MUX2X1 _547_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_3_ )
+  );
+  MUX2X1 _548_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_4_ )
+  );
+  MUX2X1 _549_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_5_ )
+  );
+  MUX2X1 _550_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_6_ )
+  );
+  MUX2X1 _551_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_7_ )
+  );
+  MUX2X1 _552_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_8_ )
+  );
+  MUX2X1 _553_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .A1(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ),
+    .S0(_252_),
+    .Y(\i_obi_cut_croc2user.i_req_r.data_o_9_ )
+  );
+  AOI21BX1 _554_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .B(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .CB(\i_obi_cut_croc2user.mgr_port_rsp_i_0_ ),
+    .Y(_255_)
+  );
+  BUFX3 _555_ (
+    .A(_255_),
+    .Y(_256_)
+  );
+  BUFX3 _556_ (
+    .A(_256_),
+    .Y(_257_)
+  );
+  MUX2X1 _557_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_2_ ),
+    .S0(_257_),
+    .Y(_148_)
+  );
+  MUX2X1 _558_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_12_ ),
+    .S0(_257_),
+    .Y(_149_)
+  );
+  MUX2X1 _559_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_13_ ),
+    .S0(_257_),
+    .Y(_150_)
+  );
+  MUX2X1 _560_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_14_ ),
+    .S0(_257_),
+    .Y(_151_)
+  );
+  MUX2X1 _561_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_15_ ),
+    .S0(_257_),
+    .Y(_152_)
+  );
+  MUX2X1 _562_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_16_ ),
+    .S0(_257_),
+    .Y(_153_)
+  );
+  MUX2X1 _563_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_17_ ),
+    .S0(_257_),
+    .Y(_154_)
+  );
+  MUX2X1 _564_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_18_ ),
+    .S0(_257_),
+    .Y(_155_)
+  );
+  MUX2X1 _565_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_19_ ),
+    .S0(_257_),
+    .Y(_156_)
+  );
+  MUX2X1 _566_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_20_ ),
+    .S0(_257_),
+    .Y(_157_)
+  );
+  BUFX3 _567_ (
+    .A(_256_),
+    .Y(_258_)
+  );
+  MUX2X1 _568_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_21_ ),
+    .S0(_258_),
+    .Y(_158_)
+  );
+  MUX2X1 _569_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_3_ ),
+    .S0(_258_),
+    .Y(_159_)
+  );
+  MUX2X1 _570_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_22_ ),
+    .S0(_258_),
+    .Y(_160_)
+  );
+  MUX2X1 _571_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_23_ ),
+    .S0(_258_),
+    .Y(_161_)
+  );
+  MUX2X1 _572_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_24_ ),
+    .S0(_258_),
+    .Y(_162_)
+  );
+  MUX2X1 _573_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_25_ ),
+    .S0(_258_),
+    .Y(_163_)
+  );
+  MUX2X1 _574_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_26_ ),
+    .S0(_258_),
+    .Y(_164_)
+  );
+  MUX2X1 _575_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_27_ ),
+    .S0(_258_),
+    .Y(_165_)
+  );
+  MUX2X1 _576_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_28_ ),
+    .S0(_258_),
+    .Y(_166_)
+  );
+  MUX2X1 _577_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_29_ ),
+    .S0(_258_),
+    .Y(_167_)
+  );
+  BUFX3 _578_ (
+    .A(_256_),
+    .Y(_259_)
+  );
+  MUX2X1 _579_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_30_ ),
+    .S0(_259_),
+    .Y(_168_)
+  );
+  MUX2X1 _580_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_31_ ),
+    .S0(_259_),
+    .Y(_169_)
+  );
+  MUX2X1 _581_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_4_ ),
+    .S0(_259_),
+    .Y(_170_)
+  );
+  MUX2X1 _582_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_32_ ),
+    .S0(_259_),
+    .Y(_171_)
+  );
+  MUX2X1 _583_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_33_ ),
+    .S0(_259_),
+    .Y(_172_)
+  );
+  MUX2X1 _584_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_34_ ),
+    .S0(_259_),
+    .Y(_173_)
+  );
+  MUX2X1 _585_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_35_ ),
+    .S0(_259_),
+    .Y(_174_)
+  );
+  MUX2X1 _586_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_36_ ),
+    .S0(_259_),
+    .Y(_175_)
+  );
+  MUX2X1 _587_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_37_ ),
+    .S0(_259_),
+    .Y(_176_)
+  );
+  MUX2X1 _588_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_38_ ),
+    .S0(_259_),
+    .Y(_177_)
+  );
+  MUX2X1 _589_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_5_ ),
+    .S0(_256_),
+    .Y(_178_)
+  );
+  MUX2X1 _590_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_6_ ),
+    .S0(_256_),
+    .Y(_179_)
+  );
+  MUX2X1 _591_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_7_ ),
+    .S0(_256_),
+    .Y(_180_)
+  );
+  MUX2X1 _592_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_8_ ),
+    .S0(_256_),
+    .Y(_181_)
+  );
+  MUX2X1 _593_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_9_ ),
+    .S0(_256_),
+    .Y(_182_)
+  );
+  MUX2X1 _594_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_10_ ),
+    .S0(_256_),
+    .Y(_183_)
+  );
+  MUX2X1 _595_ (
+    .A0(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .A1(\i_obi_cut_croc2user.mgr_port_rsp_i_11_ ),
+    .S0(_256_),
+    .Y(_184_)
+  );
+  AO21X2 _596_ (
+    .A(_252_),
+    .B(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .C(\i_obi_cut_croc2user.mgr_port_rsp_i_0_ ),
+    .Y(_185_)
+  );
+  BUFX3 _597_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ),
+    .Y(_186_)
+  );
+  BUFX3 _598_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ),
+    .Y(_187_)
+  );
+  BUFX3 _599_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ),
+    .Y(_188_)
+  );
+  BUFX3 _600_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ),
+    .Y(_189_)
+  );
+  BUFX3 _601_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ),
+    .Y(_190_)
+  );
+  BUFX3 _602_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ),
+    .Y(_191_)
+  );
+  BUFX3 _603_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ),
+    .Y(_192_)
+  );
+  BUFX3 _604_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ),
+    .Y(_193_)
+  );
+  BUFX3 _605_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ),
+    .Y(_194_)
+  );
+  BUFX3 _606_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ),
+    .Y(_195_)
+  );
+  BUFX3 _607_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ),
+    .Y(_196_)
+  );
+  BUFX3 _608_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ),
+    .Y(_197_)
+  );
+  BUFX3 _609_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ),
+    .Y(_198_)
+  );
+  BUFX3 _610_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ),
+    .Y(_199_)
+  );
+  BUFX3 _611_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ),
+    .Y(_200_)
+  );
+  BUFX3 _612_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ),
+    .Y(_201_)
+  );
+  BUFX3 _613_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ),
+    .Y(_202_)
+  );
+  BUFX3 _614_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ),
+    .Y(_203_)
+  );
+  BUFX3 _615_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ),
+    .Y(_204_)
+  );
+  BUFX3 _616_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ),
+    .Y(_205_)
+  );
+  BUFX3 _617_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ),
+    .Y(_206_)
+  );
+  BUFX3 _618_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ),
+    .Y(_207_)
+  );
+  BUFX3 _619_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ),
+    .Y(_208_)
+  );
+  BUFX3 _620_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ),
+    .Y(_209_)
+  );
+  BUFX3 _621_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ),
+    .Y(_210_)
+  );
+  BUFX3 _622_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ),
+    .Y(_211_)
+  );
+  BUFX3 _623_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ),
+    .Y(_212_)
+  );
+  BUFX3 _624_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ),
+    .Y(_213_)
+  );
+  BUFX3 _625_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ),
+    .Y(_214_)
+  );
+  BUFX3 _626_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ),
+    .Y(_215_)
+  );
+  BUFX3 _627_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ),
+    .Y(_216_)
+  );
+  BUFX3 _628_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ),
+    .Y(_217_)
+  );
+  BUFX3 _629_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ),
+    .Y(_218_)
+  );
+  BUFX3 _630_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ),
+    .Y(_219_)
+  );
+  BUFX3 _631_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ),
+    .Y(_220_)
+  );
+  BUFX3 _632_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ),
+    .Y(_221_)
+  );
+  BUFX3 _633_ (
+    .A(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ),
+    .Y(_222_)
+  );
+  OR2X2 _634_ (
+    .A(_251_),
+    .B(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .Y(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.valid_o )
+  );
+  TIEHI _635_ (
+    .Y(_260_)
+  );
+  TIELO _636_ (
+    .Y(_261_)
+  );
+  DFFRQX3 \gpio_o[15]_reg  (
+    .CK(clk_i),
+    .D(all_banks_double_err_o_d_1_),
+    .Q(gpio_o_15_),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gpio_o[20]_reg  (
+    .CK(clk_i),
+    .D(all_banks_double_err_o_d_0_),
+    .Q(gpio_o_20_),
+    .RB(rst_ni)
   );
   \croc_domain$croc_chip.i_croc_soc.i_croc  i_croc (
     .clk_i(clk_i),
@@ -71739,13 +74454,13 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .gpio_o_12_(gpio_o_12_),
     .gpio_o_13_(gpio_o_13_),
     .gpio_o_14_(gpio_o_14_),
-    .gpio_o_15_(gpio_o_15_),
+    .gpio_o_15_(croc_gpio_o_15_),
     .gpio_o_16_(gpio_o_16_),
     .gpio_o_17_(gpio_o_17_),
     .gpio_o_18_(gpio_o_18_),
     .gpio_o_19_(gpio_o_19_),
     .gpio_o_1_(gpio_o_1_),
-    .gpio_o_20_(gpio_o_20_),
+    .gpio_o_20_(croc_gpio_o_20_),
     .gpio_o_21_(gpio_o_21_),
     .gpio_o_22_(gpio_o_22_),
     .gpio_o_23_(gpio_o_23_),
@@ -71771,13 +74486,13 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .gpio_out_en_o_12_(gpio_out_en_o_12_),
     .gpio_out_en_o_13_(gpio_out_en_o_13_),
     .gpio_out_en_o_14_(gpio_out_en_o_14_),
-    .gpio_out_en_o_15_(gpio_out_en_o_15_),
-    .gpio_out_en_o_16_(gpio_out_en_o_16_),
+    .gpio_out_en_o_15_(croc_gpio_out_en_o_15_),
+    .gpio_out_en_o_16_(croc_gpio_out_en_o_16_),
     .gpio_out_en_o_17_(gpio_out_en_o_17_),
-    .gpio_out_en_o_18_(gpio_out_en_o_18_),
-    .gpio_out_en_o_19_(gpio_out_en_o_19_),
+    .gpio_out_en_o_18_(croc_gpio_out_en_o_18_),
+    .gpio_out_en_o_19_(croc_gpio_out_en_o_19_),
     .gpio_out_en_o_1_(gpio_out_en_o_1_),
-    .gpio_out_en_o_20_(gpio_out_en_o_20_),
+    .gpio_out_en_o_20_(croc_gpio_out_en_o_20_),
     .gpio_out_en_o_21_(gpio_out_en_o_21_),
     .gpio_out_en_o_22_(gpio_out_en_o_22_),
     .gpio_out_en_o_23_(gpio_out_en_o_23_),
@@ -71807,7 +74522,7 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .jtag_tms_i(jtag_tms_i),
     .jtag_trst_ni(jtag_trst_ni),
     .ref_clk_i(ref_clk_i),
-    .rst_ni(\i_rstgen.i_rstgen_bypass.rst_no ),
+    .rst_ni(\i_obi_cut_croc2user.i_reg_a.rst_ni ),
     .sram_impl_o(sram_impl),
     .testmode_i(testmode_i),
     .uart_rx_i(uart_rx_i),
@@ -71921,123 +74636,1467 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .user_mgr_obi_rsp_o_7_(user_mgr_obi_rsp_7_),
     .user_mgr_obi_rsp_o_8_(user_mgr_obi_rsp_8_),
     .user_mgr_obi_rsp_o_9_(user_mgr_obi_rsp_9_),
-    .user_sbr_obi_req_o_0_(user_sbr_obi_req_0_),
-    .user_sbr_obi_req_o_10_(user_sbr_obi_req_10_),
-    .user_sbr_obi_req_o_11_(user_sbr_obi_req_11_),
-    .user_sbr_obi_req_o_12_(user_sbr_obi_req_12_),
-    .user_sbr_obi_req_o_13_(user_sbr_obi_req_13_),
-    .user_sbr_obi_req_o_14_(user_sbr_obi_req_14_),
-    .user_sbr_obi_req_o_15_(user_sbr_obi_req_15_),
-    .user_sbr_obi_req_o_16_(user_sbr_obi_req_16_),
-    .user_sbr_obi_req_o_17_(user_sbr_obi_req_17_),
-    .user_sbr_obi_req_o_18_(user_sbr_obi_req_18_),
-    .user_sbr_obi_req_o_19_(user_sbr_obi_req_19_),
-    .user_sbr_obi_req_o_1_(user_sbr_obi_req_1_),
-    .user_sbr_obi_req_o_20_(user_sbr_obi_req_20_),
-    .user_sbr_obi_req_o_21_(user_sbr_obi_req_21_),
-    .user_sbr_obi_req_o_22_(user_sbr_obi_req_22_),
-    .user_sbr_obi_req_o_23_(user_sbr_obi_req_23_),
-    .user_sbr_obi_req_o_24_(user_sbr_obi_req_24_),
-    .user_sbr_obi_req_o_25_(user_sbr_obi_req_25_),
-    .user_sbr_obi_req_o_26_(user_sbr_obi_req_26_),
-    .user_sbr_obi_req_o_27_(user_sbr_obi_req_27_),
-    .user_sbr_obi_req_o_28_(user_sbr_obi_req_28_),
-    .user_sbr_obi_req_o_29_(user_sbr_obi_req_29_),
-    .user_sbr_obi_req_o_2_(user_sbr_obi_req_2_),
-    .user_sbr_obi_req_o_30_(user_sbr_obi_req_30_),
-    .user_sbr_obi_req_o_31_(user_sbr_obi_req_31_),
-    .user_sbr_obi_req_o_32_(user_sbr_obi_req_32_),
-    .user_sbr_obi_req_o_33_(user_sbr_obi_req_33_),
-    .user_sbr_obi_req_o_34_(user_sbr_obi_req_34_),
-    .user_sbr_obi_req_o_35_(user_sbr_obi_req_35_),
-    .user_sbr_obi_req_o_36_(user_sbr_obi_req_36_),
-    .user_sbr_obi_req_o_37_(user_sbr_obi_req_37_),
-    .user_sbr_obi_req_o_38_(user_sbr_obi_req_38_),
-    .user_sbr_obi_req_o_39_(user_sbr_obi_req_39_),
-    .user_sbr_obi_req_o_3_(user_sbr_obi_req_3_),
-    .user_sbr_obi_req_o_40_(user_sbr_obi_req_40_),
-    .user_sbr_obi_req_o_41_(user_sbr_obi_req_41_),
-    .user_sbr_obi_req_o_42_(user_sbr_obi_req_42_),
-    .user_sbr_obi_req_o_43_(user_sbr_obi_req_43_),
-    .user_sbr_obi_req_o_44_(user_sbr_obi_req_44_),
-    .user_sbr_obi_req_o_45_(user_sbr_obi_req_45_),
-    .user_sbr_obi_req_o_46_(user_sbr_obi_req_46_),
-    .user_sbr_obi_req_o_47_(user_sbr_obi_req_47_),
-    .user_sbr_obi_req_o_48_(user_sbr_obi_req_48_),
-    .user_sbr_obi_req_o_49_(user_sbr_obi_req_49_),
-    .user_sbr_obi_req_o_4_(user_sbr_obi_req_4_),
-    .user_sbr_obi_req_o_50_(user_sbr_obi_req_50_),
-    .user_sbr_obi_req_o_51_(user_sbr_obi_req_51_),
-    .user_sbr_obi_req_o_52_(user_sbr_obi_req_52_),
-    .user_sbr_obi_req_o_53_(user_sbr_obi_req_53_),
-    .user_sbr_obi_req_o_54_(user_sbr_obi_req_54_),
-    .user_sbr_obi_req_o_55_(user_sbr_obi_req_55_),
-    .user_sbr_obi_req_o_56_(user_sbr_obi_req_56_),
-    .user_sbr_obi_req_o_57_(user_sbr_obi_req_57_),
-    .user_sbr_obi_req_o_58_(user_sbr_obi_req_58_),
-    .user_sbr_obi_req_o_59_(user_sbr_obi_req_59_),
-    .user_sbr_obi_req_o_5_(user_sbr_obi_req_5_),
-    .user_sbr_obi_req_o_60_(user_sbr_obi_req_60_),
-    .user_sbr_obi_req_o_61_(user_sbr_obi_req_61_),
-    .user_sbr_obi_req_o_62_(user_sbr_obi_req_62_),
-    .user_sbr_obi_req_o_63_(user_sbr_obi_req_63_),
-    .user_sbr_obi_req_o_64_(user_sbr_obi_req_64_),
-    .user_sbr_obi_req_o_65_(user_sbr_obi_req_65_),
-    .user_sbr_obi_req_o_66_(user_sbr_obi_req_66_),
-    .user_sbr_obi_req_o_67_(user_sbr_obi_req_67_),
-    .user_sbr_obi_req_o_68_(user_sbr_obi_req_68_),
-    .user_sbr_obi_req_o_69_(user_sbr_obi_req_69_),
-    .user_sbr_obi_req_o_6_(user_sbr_obi_req_6_),
-    .user_sbr_obi_req_o_70_(user_sbr_obi_req_70_),
-    .user_sbr_obi_req_o_71_(user_sbr_obi_req_71_),
-    .user_sbr_obi_req_o_72_(user_sbr_obi_req_72_),
-    .user_sbr_obi_req_o_73_(user_sbr_obi_req_73_),
-    .user_sbr_obi_req_o_7_(user_sbr_obi_req_7_),
-    .user_sbr_obi_req_o_8_(user_sbr_obi_req_8_),
-    .user_sbr_obi_req_o_9_(user_sbr_obi_req_9_),
-    .user_sbr_obi_rsp_i_0_(user_sbr_obi_rsp_0_),
-    .user_sbr_obi_rsp_i_10_(user_sbr_obi_rsp_10_),
-    .user_sbr_obi_rsp_i_11_(user_sbr_obi_rsp_11_),
-    .user_sbr_obi_rsp_i_12_(user_sbr_obi_rsp_12_),
-    .user_sbr_obi_rsp_i_13_(user_sbr_obi_rsp_13_),
-    .user_sbr_obi_rsp_i_14_(user_sbr_obi_rsp_14_),
-    .user_sbr_obi_rsp_i_15_(user_sbr_obi_rsp_15_),
-    .user_sbr_obi_rsp_i_16_(user_sbr_obi_rsp_16_),
-    .user_sbr_obi_rsp_i_17_(user_sbr_obi_rsp_17_),
-    .user_sbr_obi_rsp_i_18_(user_sbr_obi_rsp_18_),
-    .user_sbr_obi_rsp_i_19_(user_sbr_obi_rsp_19_),
-    .user_sbr_obi_rsp_i_1_(user_sbr_obi_rsp_1_),
-    .user_sbr_obi_rsp_i_20_(user_sbr_obi_rsp_20_),
-    .user_sbr_obi_rsp_i_21_(user_sbr_obi_rsp_21_),
-    .user_sbr_obi_rsp_i_22_(user_sbr_obi_rsp_22_),
-    .user_sbr_obi_rsp_i_23_(user_sbr_obi_rsp_23_),
-    .user_sbr_obi_rsp_i_24_(user_sbr_obi_rsp_24_),
-    .user_sbr_obi_rsp_i_25_(user_sbr_obi_rsp_25_),
-    .user_sbr_obi_rsp_i_26_(user_sbr_obi_rsp_26_),
-    .user_sbr_obi_rsp_i_27_(user_sbr_obi_rsp_27_),
-    .user_sbr_obi_rsp_i_28_(user_sbr_obi_rsp_28_),
-    .user_sbr_obi_rsp_i_29_(user_sbr_obi_rsp_29_),
-    .user_sbr_obi_rsp_i_2_(user_sbr_obi_rsp_2_),
-    .user_sbr_obi_rsp_i_30_(user_sbr_obi_rsp_30_),
-    .user_sbr_obi_rsp_i_31_(user_sbr_obi_rsp_31_),
-    .user_sbr_obi_rsp_i_32_(user_sbr_obi_rsp_32_),
-    .user_sbr_obi_rsp_i_33_(user_sbr_obi_rsp_33_),
-    .user_sbr_obi_rsp_i_34_(user_sbr_obi_rsp_34_),
-    .user_sbr_obi_rsp_i_35_(user_sbr_obi_rsp_35_),
-    .user_sbr_obi_rsp_i_36_(user_sbr_obi_rsp_36_),
-    .user_sbr_obi_rsp_i_37_(user_sbr_obi_rsp_37_),
-    .user_sbr_obi_rsp_i_38_(user_sbr_obi_rsp_38_),
-    .user_sbr_obi_rsp_i_3_(user_sbr_obi_rsp_3_),
-    .user_sbr_obi_rsp_i_4_(user_sbr_obi_rsp_4_),
-    .user_sbr_obi_rsp_i_5_(user_sbr_obi_rsp_5_),
-    .user_sbr_obi_rsp_i_6_(user_sbr_obi_rsp_6_),
-    .user_sbr_obi_rsp_i_7_(user_sbr_obi_rsp_7_),
-    .user_sbr_obi_rsp_i_8_(user_sbr_obi_rsp_8_),
-    .user_sbr_obi_rsp_i_9_(user_sbr_obi_rsp_9_)
+    .user_sbr_obi_req_o_0_(\i_obi_cut_croc2user.sbr_port_req_i_0_ ),
+    .user_sbr_obi_req_o_10_(\i_obi_cut_croc2user.sbr_port_req_i_10_ ),
+    .user_sbr_obi_req_o_11_(\i_obi_cut_croc2user.sbr_port_req_i_11_ ),
+    .user_sbr_obi_req_o_12_(\i_obi_cut_croc2user.sbr_port_req_i_12_ ),
+    .user_sbr_obi_req_o_13_(\i_obi_cut_croc2user.sbr_port_req_i_13_ ),
+    .user_sbr_obi_req_o_14_(\i_obi_cut_croc2user.sbr_port_req_i_14_ ),
+    .user_sbr_obi_req_o_15_(\i_obi_cut_croc2user.sbr_port_req_i_15_ ),
+    .user_sbr_obi_req_o_16_(\i_obi_cut_croc2user.sbr_port_req_i_16_ ),
+    .user_sbr_obi_req_o_17_(\i_obi_cut_croc2user.sbr_port_req_i_17_ ),
+    .user_sbr_obi_req_o_18_(\i_obi_cut_croc2user.sbr_port_req_i_18_ ),
+    .user_sbr_obi_req_o_19_(\i_obi_cut_croc2user.sbr_port_req_i_19_ ),
+    .user_sbr_obi_req_o_1_(\i_obi_cut_croc2user.sbr_port_req_i_1_ ),
+    .user_sbr_obi_req_o_20_(\i_obi_cut_croc2user.sbr_port_req_i_20_ ),
+    .user_sbr_obi_req_o_21_(\i_obi_cut_croc2user.sbr_port_req_i_21_ ),
+    .user_sbr_obi_req_o_22_(\i_obi_cut_croc2user.sbr_port_req_i_22_ ),
+    .user_sbr_obi_req_o_23_(\i_obi_cut_croc2user.sbr_port_req_i_23_ ),
+    .user_sbr_obi_req_o_24_(\i_obi_cut_croc2user.sbr_port_req_i_24_ ),
+    .user_sbr_obi_req_o_25_(\i_obi_cut_croc2user.sbr_port_req_i_25_ ),
+    .user_sbr_obi_req_o_26_(\i_obi_cut_croc2user.sbr_port_req_i_26_ ),
+    .user_sbr_obi_req_o_27_(\i_obi_cut_croc2user.sbr_port_req_i_27_ ),
+    .user_sbr_obi_req_o_28_(\i_obi_cut_croc2user.sbr_port_req_i_28_ ),
+    .user_sbr_obi_req_o_29_(\i_obi_cut_croc2user.sbr_port_req_i_29_ ),
+    .user_sbr_obi_req_o_2_(\i_obi_cut_croc2user.sbr_port_req_i_2_ ),
+    .user_sbr_obi_req_o_30_(\i_obi_cut_croc2user.sbr_port_req_i_30_ ),
+    .user_sbr_obi_req_o_31_(\i_obi_cut_croc2user.sbr_port_req_i_31_ ),
+    .user_sbr_obi_req_o_32_(\i_obi_cut_croc2user.sbr_port_req_i_32_ ),
+    .user_sbr_obi_req_o_33_(\i_obi_cut_croc2user.sbr_port_req_i_33_ ),
+    .user_sbr_obi_req_o_34_(\i_obi_cut_croc2user.sbr_port_req_i_34_ ),
+    .user_sbr_obi_req_o_35_(\i_obi_cut_croc2user.sbr_port_req_i_35_ ),
+    .user_sbr_obi_req_o_36_(\i_obi_cut_croc2user.sbr_port_req_i_36_ ),
+    .user_sbr_obi_req_o_37_(\i_obi_cut_croc2user.sbr_port_req_i_37_ ),
+    .user_sbr_obi_req_o_38_(\i_obi_cut_croc2user.sbr_port_req_i_38_ ),
+    .user_sbr_obi_req_o_39_(\i_obi_cut_croc2user.sbr_port_req_i_39_ ),
+    .user_sbr_obi_req_o_3_(\i_obi_cut_croc2user.sbr_port_req_i_3_ ),
+    .user_sbr_obi_req_o_40_(\i_obi_cut_croc2user.sbr_port_req_i_40_ ),
+    .user_sbr_obi_req_o_41_(\i_obi_cut_croc2user.sbr_port_req_i_41_ ),
+    .user_sbr_obi_req_o_42_(\i_obi_cut_croc2user.sbr_port_req_i_42_ ),
+    .user_sbr_obi_req_o_43_(\i_obi_cut_croc2user.sbr_port_req_i_43_ ),
+    .user_sbr_obi_req_o_44_(\i_obi_cut_croc2user.sbr_port_req_i_44_ ),
+    .user_sbr_obi_req_o_45_(\i_obi_cut_croc2user.sbr_port_req_i_45_ ),
+    .user_sbr_obi_req_o_46_(\i_obi_cut_croc2user.sbr_port_req_i_46_ ),
+    .user_sbr_obi_req_o_47_(\i_obi_cut_croc2user.sbr_port_req_i_47_ ),
+    .user_sbr_obi_req_o_48_(\i_obi_cut_croc2user.sbr_port_req_i_48_ ),
+    .user_sbr_obi_req_o_49_(\i_obi_cut_croc2user.sbr_port_req_i_49_ ),
+    .user_sbr_obi_req_o_4_(\i_obi_cut_croc2user.sbr_port_req_i_4_ ),
+    .user_sbr_obi_req_o_50_(\i_obi_cut_croc2user.sbr_port_req_i_50_ ),
+    .user_sbr_obi_req_o_51_(\i_obi_cut_croc2user.sbr_port_req_i_51_ ),
+    .user_sbr_obi_req_o_52_(\i_obi_cut_croc2user.sbr_port_req_i_52_ ),
+    .user_sbr_obi_req_o_53_(\i_obi_cut_croc2user.sbr_port_req_i_53_ ),
+    .user_sbr_obi_req_o_54_(\i_obi_cut_croc2user.sbr_port_req_i_54_ ),
+    .user_sbr_obi_req_o_55_(\i_obi_cut_croc2user.sbr_port_req_i_55_ ),
+    .user_sbr_obi_req_o_56_(\i_obi_cut_croc2user.sbr_port_req_i_56_ ),
+    .user_sbr_obi_req_o_57_(\i_obi_cut_croc2user.sbr_port_req_i_57_ ),
+    .user_sbr_obi_req_o_58_(\i_obi_cut_croc2user.sbr_port_req_i_58_ ),
+    .user_sbr_obi_req_o_59_(\i_obi_cut_croc2user.sbr_port_req_i_59_ ),
+    .user_sbr_obi_req_o_5_(\i_obi_cut_croc2user.sbr_port_req_i_5_ ),
+    .user_sbr_obi_req_o_60_(\i_obi_cut_croc2user.sbr_port_req_i_60_ ),
+    .user_sbr_obi_req_o_61_(\i_obi_cut_croc2user.sbr_port_req_i_61_ ),
+    .user_sbr_obi_req_o_62_(\i_obi_cut_croc2user.sbr_port_req_i_62_ ),
+    .user_sbr_obi_req_o_63_(\i_obi_cut_croc2user.sbr_port_req_i_63_ ),
+    .user_sbr_obi_req_o_64_(\i_obi_cut_croc2user.sbr_port_req_i_64_ ),
+    .user_sbr_obi_req_o_65_(\i_obi_cut_croc2user.sbr_port_req_i_65_ ),
+    .user_sbr_obi_req_o_66_(\i_obi_cut_croc2user.sbr_port_req_i_66_ ),
+    .user_sbr_obi_req_o_67_(\i_obi_cut_croc2user.sbr_port_req_i_67_ ),
+    .user_sbr_obi_req_o_68_(\i_obi_cut_croc2user.sbr_port_req_i_68_ ),
+    .user_sbr_obi_req_o_69_(\i_obi_cut_croc2user.sbr_port_req_i_69_ ),
+    .user_sbr_obi_req_o_6_(\i_obi_cut_croc2user.sbr_port_req_i_6_ ),
+    .user_sbr_obi_req_o_70_(\i_obi_cut_croc2user.sbr_port_req_i_70_ ),
+    .user_sbr_obi_req_o_71_(\i_obi_cut_croc2user.sbr_port_req_i_71_ ),
+    .user_sbr_obi_req_o_72_(\i_obi_cut_croc2user.sbr_port_req_i_72_ ),
+    .user_sbr_obi_req_o_73_(\i_obi_cut_croc2user.sbr_port_req_i_73_ ),
+    .user_sbr_obi_req_o_7_(\i_obi_cut_croc2user.sbr_port_req_i_7_ ),
+    .user_sbr_obi_req_o_8_(\i_obi_cut_croc2user.sbr_port_req_i_8_ ),
+    .user_sbr_obi_req_o_9_(\i_obi_cut_croc2user.sbr_port_req_i_9_ ),
+    .user_sbr_obi_rsp_i_0_(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.valid_o ),
+    .user_sbr_obi_rsp_i_10_(\i_obi_cut_croc2user.i_req_r.data_o_8_ ),
+    .user_sbr_obi_rsp_i_11_(\i_obi_cut_croc2user.i_req_r.data_o_9_ ),
+    .user_sbr_obi_rsp_i_12_(\i_obi_cut_croc2user.i_req_r.data_o_10_ ),
+    .user_sbr_obi_rsp_i_13_(\i_obi_cut_croc2user.i_req_r.data_o_11_ ),
+    .user_sbr_obi_rsp_i_14_(\i_obi_cut_croc2user.i_req_r.data_o_12_ ),
+    .user_sbr_obi_rsp_i_15_(\i_obi_cut_croc2user.i_req_r.data_o_13_ ),
+    .user_sbr_obi_rsp_i_16_(\i_obi_cut_croc2user.i_req_r.data_o_14_ ),
+    .user_sbr_obi_rsp_i_17_(\i_obi_cut_croc2user.i_req_r.data_o_15_ ),
+    .user_sbr_obi_rsp_i_18_(\i_obi_cut_croc2user.i_req_r.data_o_16_ ),
+    .user_sbr_obi_rsp_i_19_(\i_obi_cut_croc2user.i_req_r.data_o_17_ ),
+    .user_sbr_obi_rsp_i_1_(\i_obi_cut_croc2user.i_reg_a.ready_o ),
+    .user_sbr_obi_rsp_i_20_(\i_obi_cut_croc2user.i_req_r.data_o_18_ ),
+    .user_sbr_obi_rsp_i_21_(\i_obi_cut_croc2user.i_req_r.data_o_19_ ),
+    .user_sbr_obi_rsp_i_22_(\i_obi_cut_croc2user.i_req_r.data_o_20_ ),
+    .user_sbr_obi_rsp_i_23_(\i_obi_cut_croc2user.i_req_r.data_o_21_ ),
+    .user_sbr_obi_rsp_i_24_(\i_obi_cut_croc2user.i_req_r.data_o_22_ ),
+    .user_sbr_obi_rsp_i_25_(\i_obi_cut_croc2user.i_req_r.data_o_23_ ),
+    .user_sbr_obi_rsp_i_26_(\i_obi_cut_croc2user.i_req_r.data_o_24_ ),
+    .user_sbr_obi_rsp_i_27_(\i_obi_cut_croc2user.i_req_r.data_o_25_ ),
+    .user_sbr_obi_rsp_i_28_(\i_obi_cut_croc2user.i_req_r.data_o_26_ ),
+    .user_sbr_obi_rsp_i_29_(\i_obi_cut_croc2user.i_req_r.data_o_27_ ),
+    .user_sbr_obi_rsp_i_2_(\i_obi_cut_croc2user.i_req_r.data_o_0_ ),
+    .user_sbr_obi_rsp_i_30_(\i_obi_cut_croc2user.i_req_r.data_o_28_ ),
+    .user_sbr_obi_rsp_i_31_(\i_obi_cut_croc2user.i_req_r.data_o_29_ ),
+    .user_sbr_obi_rsp_i_32_(\i_obi_cut_croc2user.i_req_r.data_o_30_ ),
+    .user_sbr_obi_rsp_i_33_(\i_obi_cut_croc2user.i_req_r.data_o_31_ ),
+    .user_sbr_obi_rsp_i_34_(\i_obi_cut_croc2user.i_req_r.data_o_32_ ),
+    .user_sbr_obi_rsp_i_35_(\i_obi_cut_croc2user.i_req_r.data_o_33_ ),
+    .user_sbr_obi_rsp_i_36_(\i_obi_cut_croc2user.i_req_r.data_o_34_ ),
+    .user_sbr_obi_rsp_i_37_(\i_obi_cut_croc2user.i_req_r.data_o_35_ ),
+    .user_sbr_obi_rsp_i_38_(\i_obi_cut_croc2user.i_req_r.data_o_36_ ),
+    .user_sbr_obi_rsp_i_3_(\i_obi_cut_croc2user.i_req_r.data_o_1_ ),
+    .user_sbr_obi_rsp_i_4_(\i_obi_cut_croc2user.i_req_r.data_o_2_ ),
+    .user_sbr_obi_rsp_i_5_(\i_obi_cut_croc2user.i_req_r.data_o_3_ ),
+    .user_sbr_obi_rsp_i_6_(\i_obi_cut_croc2user.i_req_r.data_o_4_ ),
+    .user_sbr_obi_rsp_i_7_(\i_obi_cut_croc2user.i_req_r.data_o_5_ ),
+    .user_sbr_obi_rsp_i_8_(\i_obi_cut_croc2user.i_req_r.data_o_6_ ),
+    .user_sbr_obi_rsp_i_9_(\i_obi_cut_croc2user.i_req_r.data_o_7_ )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_0__reg  (
+    .CK(clk_i),
+    .D(_000_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_10__reg  (
+    .CK(clk_i),
+    .D(_001_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_11__reg  (
+    .CK(clk_i),
+    .D(_002_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_12__reg  (
+    .CK(clk_i),
+    .D(_003_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_13__reg  (
+    .CK(clk_i),
+    .D(_004_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_14__reg  (
+    .CK(clk_i),
+    .D(_005_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_15__reg  (
+    .CK(clk_i),
+    .D(_006_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_16__reg  (
+    .CK(clk_i),
+    .D(_007_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_17__reg  (
+    .CK(clk_i),
+    .D(_008_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_18__reg  (
+    .CK(clk_i),
+    .D(_009_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_19__reg  (
+    .CK(clk_i),
+    .D(_010_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_1__reg  (
+    .CK(clk_i),
+    .D(_011_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_20__reg  (
+    .CK(clk_i),
+    .D(_012_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_21__reg  (
+    .CK(clk_i),
+    .D(_013_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_22__reg  (
+    .CK(clk_i),
+    .D(_014_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_23__reg  (
+    .CK(clk_i),
+    .D(_015_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_24__reg  (
+    .CK(clk_i),
+    .D(_016_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_25__reg  (
+    .CK(clk_i),
+    .D(_017_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_26__reg  (
+    .CK(clk_i),
+    .D(_018_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_27__reg  (
+    .CK(clk_i),
+    .D(_019_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_28__reg  (
+    .CK(clk_i),
+    .D(_020_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_29__reg  (
+    .CK(clk_i),
+    .D(_021_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_2__reg  (
+    .CK(clk_i),
+    .D(_022_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_30__reg  (
+    .CK(clk_i),
+    .D(_023_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_31__reg  (
+    .CK(clk_i),
+    .D(_024_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_32__reg  (
+    .CK(clk_i),
+    .D(_025_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_33__reg  (
+    .CK(clk_i),
+    .D(_026_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_34__reg  (
+    .CK(clk_i),
+    .D(_027_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_35__reg  (
+    .CK(clk_i),
+    .D(_028_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_36__reg  (
+    .CK(clk_i),
+    .D(_029_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_37__reg  (
+    .CK(clk_i),
+    .D(_030_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_37_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_38__reg  (
+    .CK(clk_i),
+    .D(_031_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_38_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_39__reg  (
+    .CK(clk_i),
+    .D(_032_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_39_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_3__reg  (
+    .CK(clk_i),
+    .D(_033_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_40__reg  (
+    .CK(clk_i),
+    .D(_034_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_40_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_41__reg  (
+    .CK(clk_i),
+    .D(_035_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_41_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_42__reg  (
+    .CK(clk_i),
+    .D(_036_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_42_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_43__reg  (
+    .CK(clk_i),
+    .D(_037_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_43_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_44__reg  (
+    .CK(clk_i),
+    .D(_038_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_44_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_45__reg  (
+    .CK(clk_i),
+    .D(_039_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_45_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_46__reg  (
+    .CK(clk_i),
+    .D(_040_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_46_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_47__reg  (
+    .CK(clk_i),
+    .D(_041_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_47_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_48__reg  (
+    .CK(clk_i),
+    .D(_042_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_48_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_49__reg  (
+    .CK(clk_i),
+    .D(_043_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_49_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_4__reg  (
+    .CK(clk_i),
+    .D(_044_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_50__reg  (
+    .CK(clk_i),
+    .D(_045_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_50_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_51__reg  (
+    .CK(clk_i),
+    .D(_046_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_51_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_52__reg  (
+    .CK(clk_i),
+    .D(_047_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_52_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_53__reg  (
+    .CK(clk_i),
+    .D(_048_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_53_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_54__reg  (
+    .CK(clk_i),
+    .D(_049_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_54_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_55__reg  (
+    .CK(clk_i),
+    .D(_050_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_55_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_56__reg  (
+    .CK(clk_i),
+    .D(_051_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_56_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_57__reg  (
+    .CK(clk_i),
+    .D(_052_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_57_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_58__reg  (
+    .CK(clk_i),
+    .D(_053_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_58_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_59__reg  (
+    .CK(clk_i),
+    .D(_054_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_59_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_5__reg  (
+    .CK(clk_i),
+    .D(_055_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_60__reg  (
+    .CK(clk_i),
+    .D(_056_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_60_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_61__reg  (
+    .CK(clk_i),
+    .D(_057_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_61_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_62__reg  (
+    .CK(clk_i),
+    .D(_058_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_62_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_63__reg  (
+    .CK(clk_i),
+    .D(_059_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_63_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_64__reg  (
+    .CK(clk_i),
+    .D(_060_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_64_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_65__reg  (
+    .CK(clk_i),
+    .D(_061_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_65_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_66__reg  (
+    .CK(clk_i),
+    .D(_062_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_66_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_67__reg  (
+    .CK(clk_i),
+    .D(_063_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_67_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_68__reg  (
+    .CK(clk_i),
+    .D(_064_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_68_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_69__reg  (
+    .CK(clk_i),
+    .D(_065_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_69_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_6__reg  (
+    .CK(clk_i),
+    .D(_066_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_70__reg  (
+    .CK(clk_i),
+    .D(_067_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_70_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_71__reg  (
+    .CK(clk_i),
+    .D(_068_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_71_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_72__reg  (
+    .CK(clk_i),
+    .D(_069_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_72_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_7__reg  (
+    .CK(clk_i),
+    .D(_070_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_8__reg  (
+    .CK(clk_i),
+    .D(_071_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_9__reg  (
+    .CK(clk_i),
+    .D(_072_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q_reg  (
+    .CK(clk_i),
+    .D(_073_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_0__reg  (
+    .CK(clk_i),
+    .D(_074_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_10__reg  (
+    .CK(clk_i),
+    .D(_075_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_11__reg  (
+    .CK(clk_i),
+    .D(_076_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_12__reg  (
+    .CK(clk_i),
+    .D(_077_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_13__reg  (
+    .CK(clk_i),
+    .D(_078_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_14__reg  (
+    .CK(clk_i),
+    .D(_079_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_15__reg  (
+    .CK(clk_i),
+    .D(_080_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_16__reg  (
+    .CK(clk_i),
+    .D(_081_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_17__reg  (
+    .CK(clk_i),
+    .D(_082_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_18__reg  (
+    .CK(clk_i),
+    .D(_083_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_19__reg  (
+    .CK(clk_i),
+    .D(_084_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_1__reg  (
+    .CK(clk_i),
+    .D(_085_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_20__reg  (
+    .CK(clk_i),
+    .D(_086_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_21__reg  (
+    .CK(clk_i),
+    .D(_087_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_22__reg  (
+    .CK(clk_i),
+    .D(_088_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_23__reg  (
+    .CK(clk_i),
+    .D(_089_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_24__reg  (
+    .CK(clk_i),
+    .D(_090_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_25__reg  (
+    .CK(clk_i),
+    .D(_091_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_26__reg  (
+    .CK(clk_i),
+    .D(_092_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_27__reg  (
+    .CK(clk_i),
+    .D(_093_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_28__reg  (
+    .CK(clk_i),
+    .D(_094_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_29__reg  (
+    .CK(clk_i),
+    .D(_095_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_2__reg  (
+    .CK(clk_i),
+    .D(_096_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_30__reg  (
+    .CK(clk_i),
+    .D(_097_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_31__reg  (
+    .CK(clk_i),
+    .D(_098_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_32__reg  (
+    .CK(clk_i),
+    .D(_099_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_33__reg  (
+    .CK(clk_i),
+    .D(_100_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_34__reg  (
+    .CK(clk_i),
+    .D(_101_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_35__reg  (
+    .CK(clk_i),
+    .D(_102_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_36__reg  (
+    .CK(clk_i),
+    .D(_103_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_37__reg  (
+    .CK(clk_i),
+    .D(_104_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_37_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_38__reg  (
+    .CK(clk_i),
+    .D(_105_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_38_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_39__reg  (
+    .CK(clk_i),
+    .D(_106_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_39_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_3__reg  (
+    .CK(clk_i),
+    .D(_107_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_40__reg  (
+    .CK(clk_i),
+    .D(_108_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_40_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_41__reg  (
+    .CK(clk_i),
+    .D(_109_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_41_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_42__reg  (
+    .CK(clk_i),
+    .D(_110_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_42_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_43__reg  (
+    .CK(clk_i),
+    .D(_111_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_43_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_44__reg  (
+    .CK(clk_i),
+    .D(_112_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_44_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_45__reg  (
+    .CK(clk_i),
+    .D(_113_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_45_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_46__reg  (
+    .CK(clk_i),
+    .D(_114_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_46_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_47__reg  (
+    .CK(clk_i),
+    .D(_115_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_47_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_48__reg  (
+    .CK(clk_i),
+    .D(_116_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_48_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_49__reg  (
+    .CK(clk_i),
+    .D(_117_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_49_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_4__reg  (
+    .CK(clk_i),
+    .D(_118_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_50__reg  (
+    .CK(clk_i),
+    .D(_119_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_50_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_51__reg  (
+    .CK(clk_i),
+    .D(_120_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_51_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_52__reg  (
+    .CK(clk_i),
+    .D(_121_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_52_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_53__reg  (
+    .CK(clk_i),
+    .D(_122_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_53_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_54__reg  (
+    .CK(clk_i),
+    .D(_123_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_54_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_55__reg  (
+    .CK(clk_i),
+    .D(_124_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_55_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_56__reg  (
+    .CK(clk_i),
+    .D(_125_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_56_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_57__reg  (
+    .CK(clk_i),
+    .D(_126_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_57_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_58__reg  (
+    .CK(clk_i),
+    .D(_127_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_58_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_59__reg  (
+    .CK(clk_i),
+    .D(_128_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_59_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_5__reg  (
+    .CK(clk_i),
+    .D(_129_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_60__reg  (
+    .CK(clk_i),
+    .D(_130_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_60_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_61__reg  (
+    .CK(clk_i),
+    .D(_131_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_61_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_62__reg  (
+    .CK(clk_i),
+    .D(_132_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_62_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_63__reg  (
+    .CK(clk_i),
+    .D(_133_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_63_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_64__reg  (
+    .CK(clk_i),
+    .D(_134_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_64_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_65__reg  (
+    .CK(clk_i),
+    .D(_135_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_65_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_66__reg  (
+    .CK(clk_i),
+    .D(_136_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_66_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_67__reg  (
+    .CK(clk_i),
+    .D(_137_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_67_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_68__reg  (
+    .CK(clk_i),
+    .D(_138_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_68_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_69__reg  (
+    .CK(clk_i),
+    .D(_139_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_69_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_6__reg  (
+    .CK(clk_i),
+    .D(_140_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_70__reg  (
+    .CK(clk_i),
+    .D(_141_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_70_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_71__reg  (
+    .CK(clk_i),
+    .D(_142_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_71_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_72__reg  (
+    .CK(clk_i),
+    .D(_143_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_72_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_7__reg  (
+    .CK(clk_i),
+    .D(_144_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_8__reg  (
+    .CK(clk_i),
+    .D(_145_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_9__reg  (
+    .CK(clk_i),
+    .D(_146_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_full_q_reg  (
+    .CK(clk_i),
+    .D(_147_),
+    .Q(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_0__reg  (
+    .CK(clk_i),
+    .D(_148_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_0_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_10__reg  (
+    .CK(clk_i),
+    .D(_149_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_10_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_11__reg  (
+    .CK(clk_i),
+    .D(_150_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_11_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_12__reg  (
+    .CK(clk_i),
+    .D(_151_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_12_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_13__reg  (
+    .CK(clk_i),
+    .D(_152_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_13_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_14__reg  (
+    .CK(clk_i),
+    .D(_153_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_14_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_15__reg  (
+    .CK(clk_i),
+    .D(_154_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_15_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_16__reg  (
+    .CK(clk_i),
+    .D(_155_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_16_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_17__reg  (
+    .CK(clk_i),
+    .D(_156_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_17_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_18__reg  (
+    .CK(clk_i),
+    .D(_157_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_18_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_19__reg  (
+    .CK(clk_i),
+    .D(_158_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_19_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_1__reg  (
+    .CK(clk_i),
+    .D(_159_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_1_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_20__reg  (
+    .CK(clk_i),
+    .D(_160_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_20_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_21__reg  (
+    .CK(clk_i),
+    .D(_161_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_21_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_22__reg  (
+    .CK(clk_i),
+    .D(_162_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_22_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_23__reg  (
+    .CK(clk_i),
+    .D(_163_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_23_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_24__reg  (
+    .CK(clk_i),
+    .D(_164_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_24_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_25__reg  (
+    .CK(clk_i),
+    .D(_165_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_25_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_26__reg  (
+    .CK(clk_i),
+    .D(_166_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_26_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_27__reg  (
+    .CK(clk_i),
+    .D(_167_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_27_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_28__reg  (
+    .CK(clk_i),
+    .D(_168_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_28_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_29__reg  (
+    .CK(clk_i),
+    .D(_169_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_29_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_2__reg  (
+    .CK(clk_i),
+    .D(_170_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_2_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_30__reg  (
+    .CK(clk_i),
+    .D(_171_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_30_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_31__reg  (
+    .CK(clk_i),
+    .D(_172_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_31_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_32__reg  (
+    .CK(clk_i),
+    .D(_173_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_32_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_33__reg  (
+    .CK(clk_i),
+    .D(_174_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_33_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_34__reg  (
+    .CK(clk_i),
+    .D(_175_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_34_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_35__reg  (
+    .CK(clk_i),
+    .D(_176_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_35_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_36__reg  (
+    .CK(clk_i),
+    .D(_177_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_36_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_3__reg  (
+    .CK(clk_i),
+    .D(_178_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_3_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_4__reg  (
+    .CK(clk_i),
+    .D(_179_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_4_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_5__reg  (
+    .CK(clk_i),
+    .D(_180_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_5_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_6__reg  (
+    .CK(clk_i),
+    .D(_181_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_6_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_7__reg  (
+    .CK(clk_i),
+    .D(_182_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_7_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_8__reg  (
+    .CK(clk_i),
+    .D(_183_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_8_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_9__reg  (
+    .CK(clk_i),
+    .D(_184_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_data_q_9_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_full_q_reg  (
+    .CK(clk_i),
+    .D(_185_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.a_full_q ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_0__reg  (
+    .CK(clk_i),
+    .D(_186_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_0_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_10__reg  (
+    .CK(clk_i),
+    .D(_187_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_10_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_11__reg  (
+    .CK(clk_i),
+    .D(_188_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_11_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_12__reg  (
+    .CK(clk_i),
+    .D(_189_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_12_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_13__reg  (
+    .CK(clk_i),
+    .D(_190_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_13_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_14__reg  (
+    .CK(clk_i),
+    .D(_191_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_14_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_15__reg  (
+    .CK(clk_i),
+    .D(_192_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_15_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_16__reg  (
+    .CK(clk_i),
+    .D(_193_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_16_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_17__reg  (
+    .CK(clk_i),
+    .D(_194_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_17_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_18__reg  (
+    .CK(clk_i),
+    .D(_195_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_18_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_19__reg  (
+    .CK(clk_i),
+    .D(_196_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_19_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_1__reg  (
+    .CK(clk_i),
+    .D(_197_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_1_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_20__reg  (
+    .CK(clk_i),
+    .D(_198_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_20_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_21__reg  (
+    .CK(clk_i),
+    .D(_199_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_21_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_22__reg  (
+    .CK(clk_i),
+    .D(_200_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_22_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_23__reg  (
+    .CK(clk_i),
+    .D(_201_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_23_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_24__reg  (
+    .CK(clk_i),
+    .D(_202_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_24_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_25__reg  (
+    .CK(clk_i),
+    .D(_203_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_25_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_26__reg  (
+    .CK(clk_i),
+    .D(_204_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_26_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_27__reg  (
+    .CK(clk_i),
+    .D(_205_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_27_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_28__reg  (
+    .CK(clk_i),
+    .D(_206_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_28_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_29__reg  (
+    .CK(clk_i),
+    .D(_207_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_29_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_2__reg  (
+    .CK(clk_i),
+    .D(_208_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_2_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_30__reg  (
+    .CK(clk_i),
+    .D(_209_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_30_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_31__reg  (
+    .CK(clk_i),
+    .D(_210_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_31_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_32__reg  (
+    .CK(clk_i),
+    .D(_211_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_32_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_33__reg  (
+    .CK(clk_i),
+    .D(_212_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_33_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_34__reg  (
+    .CK(clk_i),
+    .D(_213_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_34_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_35__reg  (
+    .CK(clk_i),
+    .D(_214_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_35_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_36__reg  (
+    .CK(clk_i),
+    .D(_215_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_36_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_3__reg  (
+    .CK(clk_i),
+    .D(_216_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_3_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_4__reg  (
+    .CK(clk_i),
+    .D(_217_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_4_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_5__reg  (
+    .CK(clk_i),
+    .D(_218_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_5_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_6__reg  (
+    .CK(clk_i),
+    .D(_219_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_6_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_7__reg  (
+    .CK(clk_i),
+    .D(_220_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_7_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_8__reg  (
+    .CK(clk_i),
+    .D(_221_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_8_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_9__reg  (
+    .CK(clk_i),
+    .D(_222_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_data_q_9_ ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
+  );
+  DFFRQX3 \i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q_reg  (
+    .CK(clk_i),
+    .D(_261_),
+    .Q(\i_obi_cut_croc2user.i_req_r.spill_register_flushable_i.gen_spill_reg.b_full_q ),
+    .RB(\i_obi_cut_croc2user.i_reg_a.rst_ni )
   );
   \tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no  \i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_init_no  (
     .clk0_i(\i_rstgen.i_rstgen_bypass.synch_regs_q_3_ ),
-    .clk1_i(_0_),
+    .clk1_i(_260_),
     .clk_o(\i_rstgen.i_rstgen_bypass.init_no ),
     .clk_sel_i(testmode_i)
   );
@@ -72050,12 +76109,12 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
   \tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no  \i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_rst_no  (
     .clk0_i(\i_rstgen.i_rstgen_bypass.synch_regs_q_3_ ),
     .clk1_i(rst_ni),
-    .clk_o(\i_rstgen.i_rstgen_bypass.rst_no ),
+    .clk_o(\i_obi_cut_croc2user.i_reg_a.rst_ni ),
     .clk_sel_i(testmode_i)
   );
   DFFRQX3 \i_rstgen.i_rstgen_bypass.synch_regs_q_0__reg  (
     .CK(clk_i),
-    .D(_0_),
+    .D(_260_),
     .Q(\i_rstgen.i_rstgen_bypass.synch_regs_q_0_ ),
     .RB(\i_rstgen.i_rstgen_bypass.rst_n )
   );
@@ -72078,6 +76137,10 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .RB(\i_rstgen.i_rstgen_bypass.rst_n )
   );
   \user_domain$croc_chip.i_croc_soc.i_user  i_user (
+    .all_banks_double_err_o_0_(all_banks_double_err_o_d_0_),
+    .all_banks_double_err_o_1_(all_banks_double_err_o_d_1_),
+    .all_banks_single_err_o_0_(all_banks_single_err_o_0_),
+    .all_banks_single_err_o_1_(all_banks_single_err_o_1_),
     .clk_i(clk_i),
     .gpio_in_sync_i_0_(gpio_in_sync_0_),
     .gpio_in_sync_i_10_(gpio_in_sync_10_),
@@ -72116,7 +76179,7 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .interrupts_o_2_(interrupts_2_),
     .interrupts_o_3_(interrupts_3_),
     .ref_clk_i(ref_clk_i),
-    .rst_ni(\i_rstgen.i_rstgen_bypass.rst_no ),
+    .rst_ni(\i_obi_cut_croc2user.i_reg_a.rst_ni ),
     .sram_impl_i(sram_impl),
     .testmode_i(testmode_i),
     .user_mgr_obi_req_o_0_(user_mgr_obi_req_0_),
@@ -72228,120 +76291,125 @@ module \croc_soc$croc_chip.i_croc_soc (clk_i, rst_ni, ref_clk_i, jtag_tck_i, jta
     .user_mgr_obi_rsp_i_7_(user_mgr_obi_rsp_7_),
     .user_mgr_obi_rsp_i_8_(user_mgr_obi_rsp_8_),
     .user_mgr_obi_rsp_i_9_(user_mgr_obi_rsp_9_),
-    .user_sbr_obi_req_i_0_(user_sbr_obi_req_0_),
-    .user_sbr_obi_req_i_10_(user_sbr_obi_req_10_),
-    .user_sbr_obi_req_i_11_(user_sbr_obi_req_11_),
-    .user_sbr_obi_req_i_12_(user_sbr_obi_req_12_),
-    .user_sbr_obi_req_i_13_(user_sbr_obi_req_13_),
-    .user_sbr_obi_req_i_14_(user_sbr_obi_req_14_),
-    .user_sbr_obi_req_i_15_(user_sbr_obi_req_15_),
-    .user_sbr_obi_req_i_16_(user_sbr_obi_req_16_),
-    .user_sbr_obi_req_i_17_(user_sbr_obi_req_17_),
-    .user_sbr_obi_req_i_18_(user_sbr_obi_req_18_),
-    .user_sbr_obi_req_i_19_(user_sbr_obi_req_19_),
-    .user_sbr_obi_req_i_1_(user_sbr_obi_req_1_),
-    .user_sbr_obi_req_i_20_(user_sbr_obi_req_20_),
-    .user_sbr_obi_req_i_21_(user_sbr_obi_req_21_),
-    .user_sbr_obi_req_i_22_(user_sbr_obi_req_22_),
-    .user_sbr_obi_req_i_23_(user_sbr_obi_req_23_),
-    .user_sbr_obi_req_i_24_(user_sbr_obi_req_24_),
-    .user_sbr_obi_req_i_25_(user_sbr_obi_req_25_),
-    .user_sbr_obi_req_i_26_(user_sbr_obi_req_26_),
-    .user_sbr_obi_req_i_27_(user_sbr_obi_req_27_),
-    .user_sbr_obi_req_i_28_(user_sbr_obi_req_28_),
-    .user_sbr_obi_req_i_29_(user_sbr_obi_req_29_),
-    .user_sbr_obi_req_i_2_(user_sbr_obi_req_2_),
-    .user_sbr_obi_req_i_30_(user_sbr_obi_req_30_),
-    .user_sbr_obi_req_i_31_(user_sbr_obi_req_31_),
-    .user_sbr_obi_req_i_32_(user_sbr_obi_req_32_),
-    .user_sbr_obi_req_i_33_(user_sbr_obi_req_33_),
-    .user_sbr_obi_req_i_34_(user_sbr_obi_req_34_),
-    .user_sbr_obi_req_i_35_(user_sbr_obi_req_35_),
-    .user_sbr_obi_req_i_36_(user_sbr_obi_req_36_),
-    .user_sbr_obi_req_i_37_(user_sbr_obi_req_37_),
-    .user_sbr_obi_req_i_38_(user_sbr_obi_req_38_),
-    .user_sbr_obi_req_i_39_(user_sbr_obi_req_39_),
-    .user_sbr_obi_req_i_3_(user_sbr_obi_req_3_),
-    .user_sbr_obi_req_i_40_(user_sbr_obi_req_40_),
-    .user_sbr_obi_req_i_41_(user_sbr_obi_req_41_),
-    .user_sbr_obi_req_i_42_(user_sbr_obi_req_42_),
-    .user_sbr_obi_req_i_43_(user_sbr_obi_req_43_),
-    .user_sbr_obi_req_i_44_(user_sbr_obi_req_44_),
-    .user_sbr_obi_req_i_45_(user_sbr_obi_req_45_),
-    .user_sbr_obi_req_i_46_(user_sbr_obi_req_46_),
-    .user_sbr_obi_req_i_47_(user_sbr_obi_req_47_),
-    .user_sbr_obi_req_i_48_(user_sbr_obi_req_48_),
-    .user_sbr_obi_req_i_49_(user_sbr_obi_req_49_),
-    .user_sbr_obi_req_i_4_(user_sbr_obi_req_4_),
-    .user_sbr_obi_req_i_50_(user_sbr_obi_req_50_),
-    .user_sbr_obi_req_i_51_(user_sbr_obi_req_51_),
-    .user_sbr_obi_req_i_52_(user_sbr_obi_req_52_),
-    .user_sbr_obi_req_i_53_(user_sbr_obi_req_53_),
-    .user_sbr_obi_req_i_54_(user_sbr_obi_req_54_),
-    .user_sbr_obi_req_i_55_(user_sbr_obi_req_55_),
-    .user_sbr_obi_req_i_56_(user_sbr_obi_req_56_),
-    .user_sbr_obi_req_i_57_(user_sbr_obi_req_57_),
-    .user_sbr_obi_req_i_58_(user_sbr_obi_req_58_),
-    .user_sbr_obi_req_i_59_(user_sbr_obi_req_59_),
-    .user_sbr_obi_req_i_5_(user_sbr_obi_req_5_),
-    .user_sbr_obi_req_i_60_(user_sbr_obi_req_60_),
-    .user_sbr_obi_req_i_61_(user_sbr_obi_req_61_),
-    .user_sbr_obi_req_i_62_(user_sbr_obi_req_62_),
-    .user_sbr_obi_req_i_63_(user_sbr_obi_req_63_),
-    .user_sbr_obi_req_i_64_(user_sbr_obi_req_64_),
-    .user_sbr_obi_req_i_65_(user_sbr_obi_req_65_),
-    .user_sbr_obi_req_i_66_(user_sbr_obi_req_66_),
-    .user_sbr_obi_req_i_67_(user_sbr_obi_req_67_),
-    .user_sbr_obi_req_i_68_(user_sbr_obi_req_68_),
-    .user_sbr_obi_req_i_69_(user_sbr_obi_req_69_),
-    .user_sbr_obi_req_i_6_(user_sbr_obi_req_6_),
-    .user_sbr_obi_req_i_70_(user_sbr_obi_req_70_),
-    .user_sbr_obi_req_i_71_(user_sbr_obi_req_71_),
-    .user_sbr_obi_req_i_72_(user_sbr_obi_req_72_),
-    .user_sbr_obi_req_i_73_(user_sbr_obi_req_73_),
-    .user_sbr_obi_req_i_7_(user_sbr_obi_req_7_),
-    .user_sbr_obi_req_i_8_(user_sbr_obi_req_8_),
-    .user_sbr_obi_req_i_9_(user_sbr_obi_req_9_),
-    .user_sbr_obi_rsp_o_0_(user_sbr_obi_rsp_0_),
-    .user_sbr_obi_rsp_o_10_(user_sbr_obi_rsp_10_),
-    .user_sbr_obi_rsp_o_11_(user_sbr_obi_rsp_11_),
-    .user_sbr_obi_rsp_o_12_(user_sbr_obi_rsp_12_),
-    .user_sbr_obi_rsp_o_13_(user_sbr_obi_rsp_13_),
-    .user_sbr_obi_rsp_o_14_(user_sbr_obi_rsp_14_),
-    .user_sbr_obi_rsp_o_15_(user_sbr_obi_rsp_15_),
-    .user_sbr_obi_rsp_o_16_(user_sbr_obi_rsp_16_),
-    .user_sbr_obi_rsp_o_17_(user_sbr_obi_rsp_17_),
-    .user_sbr_obi_rsp_o_18_(user_sbr_obi_rsp_18_),
-    .user_sbr_obi_rsp_o_19_(user_sbr_obi_rsp_19_),
-    .user_sbr_obi_rsp_o_1_(user_sbr_obi_rsp_1_),
-    .user_sbr_obi_rsp_o_20_(user_sbr_obi_rsp_20_),
-    .user_sbr_obi_rsp_o_21_(user_sbr_obi_rsp_21_),
-    .user_sbr_obi_rsp_o_22_(user_sbr_obi_rsp_22_),
-    .user_sbr_obi_rsp_o_23_(user_sbr_obi_rsp_23_),
-    .user_sbr_obi_rsp_o_24_(user_sbr_obi_rsp_24_),
-    .user_sbr_obi_rsp_o_25_(user_sbr_obi_rsp_25_),
-    .user_sbr_obi_rsp_o_26_(user_sbr_obi_rsp_26_),
-    .user_sbr_obi_rsp_o_27_(user_sbr_obi_rsp_27_),
-    .user_sbr_obi_rsp_o_28_(user_sbr_obi_rsp_28_),
-    .user_sbr_obi_rsp_o_29_(user_sbr_obi_rsp_29_),
-    .user_sbr_obi_rsp_o_2_(user_sbr_obi_rsp_2_),
-    .user_sbr_obi_rsp_o_30_(user_sbr_obi_rsp_30_),
-    .user_sbr_obi_rsp_o_31_(user_sbr_obi_rsp_31_),
-    .user_sbr_obi_rsp_o_32_(user_sbr_obi_rsp_32_),
-    .user_sbr_obi_rsp_o_33_(user_sbr_obi_rsp_33_),
-    .user_sbr_obi_rsp_o_34_(user_sbr_obi_rsp_34_),
-    .user_sbr_obi_rsp_o_35_(user_sbr_obi_rsp_35_),
-    .user_sbr_obi_rsp_o_36_(user_sbr_obi_rsp_36_),
-    .user_sbr_obi_rsp_o_37_(user_sbr_obi_rsp_37_),
-    .user_sbr_obi_rsp_o_38_(user_sbr_obi_rsp_38_),
-    .user_sbr_obi_rsp_o_3_(user_sbr_obi_rsp_3_),
-    .user_sbr_obi_rsp_o_4_(user_sbr_obi_rsp_4_),
-    .user_sbr_obi_rsp_o_5_(user_sbr_obi_rsp_5_),
-    .user_sbr_obi_rsp_o_6_(user_sbr_obi_rsp_6_),
-    .user_sbr_obi_rsp_o_7_(user_sbr_obi_rsp_7_),
-    .user_sbr_obi_rsp_o_8_(user_sbr_obi_rsp_8_),
-    .user_sbr_obi_rsp_o_9_(user_sbr_obi_rsp_9_)
+    .user_sbr_obi_req_i_0_(\i_obi_cut_croc2user.i_reg_a.spill_register_flushable_i.valid_o ),
+    .user_sbr_obi_req_i_10_(\i_obi_cut_croc2user.i_reg_a.data_o_9_ ),
+    .user_sbr_obi_req_i_11_(\i_obi_cut_croc2user.i_reg_a.data_o_10_ ),
+    .user_sbr_obi_req_i_12_(\i_obi_cut_croc2user.i_reg_a.data_o_11_ ),
+    .user_sbr_obi_req_i_13_(\i_obi_cut_croc2user.i_reg_a.data_o_12_ ),
+    .user_sbr_obi_req_i_14_(\i_obi_cut_croc2user.i_reg_a.data_o_13_ ),
+    .user_sbr_obi_req_i_15_(\i_obi_cut_croc2user.i_reg_a.data_o_14_ ),
+    .user_sbr_obi_req_i_16_(\i_obi_cut_croc2user.i_reg_a.data_o_15_ ),
+    .user_sbr_obi_req_i_17_(\i_obi_cut_croc2user.i_reg_a.data_o_16_ ),
+    .user_sbr_obi_req_i_18_(\i_obi_cut_croc2user.i_reg_a.data_o_17_ ),
+    .user_sbr_obi_req_i_19_(\i_obi_cut_croc2user.i_reg_a.data_o_18_ ),
+    .user_sbr_obi_req_i_1_(\i_obi_cut_croc2user.i_reg_a.data_o_0_ ),
+    .user_sbr_obi_req_i_20_(\i_obi_cut_croc2user.i_reg_a.data_o_19_ ),
+    .user_sbr_obi_req_i_21_(\i_obi_cut_croc2user.i_reg_a.data_o_20_ ),
+    .user_sbr_obi_req_i_22_(\i_obi_cut_croc2user.i_reg_a.data_o_21_ ),
+    .user_sbr_obi_req_i_23_(\i_obi_cut_croc2user.i_reg_a.data_o_22_ ),
+    .user_sbr_obi_req_i_24_(\i_obi_cut_croc2user.i_reg_a.data_o_23_ ),
+    .user_sbr_obi_req_i_25_(\i_obi_cut_croc2user.i_reg_a.data_o_24_ ),
+    .user_sbr_obi_req_i_26_(\i_obi_cut_croc2user.i_reg_a.data_o_25_ ),
+    .user_sbr_obi_req_i_27_(\i_obi_cut_croc2user.i_reg_a.data_o_26_ ),
+    .user_sbr_obi_req_i_28_(\i_obi_cut_croc2user.i_reg_a.data_o_27_ ),
+    .user_sbr_obi_req_i_29_(\i_obi_cut_croc2user.i_reg_a.data_o_28_ ),
+    .user_sbr_obi_req_i_2_(\i_obi_cut_croc2user.i_reg_a.data_o_1_ ),
+    .user_sbr_obi_req_i_30_(\i_obi_cut_croc2user.i_reg_a.data_o_29_ ),
+    .user_sbr_obi_req_i_31_(\i_obi_cut_croc2user.i_reg_a.data_o_30_ ),
+    .user_sbr_obi_req_i_32_(\i_obi_cut_croc2user.i_reg_a.data_o_31_ ),
+    .user_sbr_obi_req_i_33_(\i_obi_cut_croc2user.i_reg_a.data_o_32_ ),
+    .user_sbr_obi_req_i_34_(\i_obi_cut_croc2user.i_reg_a.data_o_33_ ),
+    .user_sbr_obi_req_i_35_(\i_obi_cut_croc2user.i_reg_a.data_o_34_ ),
+    .user_sbr_obi_req_i_36_(\i_obi_cut_croc2user.i_reg_a.data_o_35_ ),
+    .user_sbr_obi_req_i_37_(\i_obi_cut_croc2user.i_reg_a.data_o_36_ ),
+    .user_sbr_obi_req_i_38_(\i_obi_cut_croc2user.i_reg_a.data_o_37_ ),
+    .user_sbr_obi_req_i_39_(\i_obi_cut_croc2user.i_reg_a.data_o_38_ ),
+    .user_sbr_obi_req_i_3_(\i_obi_cut_croc2user.i_reg_a.data_o_2_ ),
+    .user_sbr_obi_req_i_40_(\i_obi_cut_croc2user.i_reg_a.data_o_39_ ),
+    .user_sbr_obi_req_i_41_(\i_obi_cut_croc2user.i_reg_a.data_o_40_ ),
+    .user_sbr_obi_req_i_42_(\i_obi_cut_croc2user.i_reg_a.data_o_41_ ),
+    .user_sbr_obi_req_i_43_(\i_obi_cut_croc2user.i_reg_a.data_o_42_ ),
+    .user_sbr_obi_req_i_44_(\i_obi_cut_croc2user.i_reg_a.data_o_43_ ),
+    .user_sbr_obi_req_i_45_(\i_obi_cut_croc2user.i_reg_a.data_o_44_ ),
+    .user_sbr_obi_req_i_46_(\i_obi_cut_croc2user.i_reg_a.data_o_45_ ),
+    .user_sbr_obi_req_i_47_(\i_obi_cut_croc2user.i_reg_a.data_o_46_ ),
+    .user_sbr_obi_req_i_48_(\i_obi_cut_croc2user.i_reg_a.data_o_47_ ),
+    .user_sbr_obi_req_i_49_(\i_obi_cut_croc2user.i_reg_a.data_o_48_ ),
+    .user_sbr_obi_req_i_4_(\i_obi_cut_croc2user.i_reg_a.data_o_3_ ),
+    .user_sbr_obi_req_i_50_(\i_obi_cut_croc2user.i_reg_a.data_o_49_ ),
+    .user_sbr_obi_req_i_51_(\i_obi_cut_croc2user.i_reg_a.data_o_50_ ),
+    .user_sbr_obi_req_i_52_(\i_obi_cut_croc2user.i_reg_a.data_o_51_ ),
+    .user_sbr_obi_req_i_53_(\i_obi_cut_croc2user.i_reg_a.data_o_52_ ),
+    .user_sbr_obi_req_i_54_(\i_obi_cut_croc2user.i_reg_a.data_o_53_ ),
+    .user_sbr_obi_req_i_55_(\i_obi_cut_croc2user.i_reg_a.data_o_54_ ),
+    .user_sbr_obi_req_i_56_(\i_obi_cut_croc2user.i_reg_a.data_o_55_ ),
+    .user_sbr_obi_req_i_57_(\i_obi_cut_croc2user.i_reg_a.data_o_56_ ),
+    .user_sbr_obi_req_i_58_(\i_obi_cut_croc2user.i_reg_a.data_o_57_ ),
+    .user_sbr_obi_req_i_59_(\i_obi_cut_croc2user.i_reg_a.data_o_58_ ),
+    .user_sbr_obi_req_i_5_(\i_obi_cut_croc2user.i_reg_a.data_o_4_ ),
+    .user_sbr_obi_req_i_60_(\i_obi_cut_croc2user.i_reg_a.data_o_59_ ),
+    .user_sbr_obi_req_i_61_(\i_obi_cut_croc2user.i_reg_a.data_o_60_ ),
+    .user_sbr_obi_req_i_62_(\i_obi_cut_croc2user.i_reg_a.data_o_61_ ),
+    .user_sbr_obi_req_i_63_(\i_obi_cut_croc2user.i_reg_a.data_o_62_ ),
+    .user_sbr_obi_req_i_64_(\i_obi_cut_croc2user.i_reg_a.data_o_63_ ),
+    .user_sbr_obi_req_i_65_(\i_obi_cut_croc2user.i_reg_a.data_o_64_ ),
+    .user_sbr_obi_req_i_66_(\i_obi_cut_croc2user.i_reg_a.data_o_65_ ),
+    .user_sbr_obi_req_i_67_(\i_obi_cut_croc2user.i_reg_a.data_o_66_ ),
+    .user_sbr_obi_req_i_68_(\i_obi_cut_croc2user.i_reg_a.data_o_67_ ),
+    .user_sbr_obi_req_i_69_(\i_obi_cut_croc2user.i_reg_a.data_o_68_ ),
+    .user_sbr_obi_req_i_6_(\i_obi_cut_croc2user.i_reg_a.data_o_5_ ),
+    .user_sbr_obi_req_i_70_(\i_obi_cut_croc2user.i_reg_a.data_o_69_ ),
+    .user_sbr_obi_req_i_71_(\i_obi_cut_croc2user.i_reg_a.data_o_70_ ),
+    .user_sbr_obi_req_i_72_(\i_obi_cut_croc2user.i_reg_a.data_o_71_ ),
+    .user_sbr_obi_req_i_73_(\i_obi_cut_croc2user.i_reg_a.data_o_72_ ),
+    .user_sbr_obi_req_i_7_(\i_obi_cut_croc2user.i_reg_a.data_o_6_ ),
+    .user_sbr_obi_req_i_8_(\i_obi_cut_croc2user.i_reg_a.data_o_7_ ),
+    .user_sbr_obi_req_i_9_(\i_obi_cut_croc2user.i_reg_a.data_o_8_ ),
+    .user_sbr_obi_rsp_o_0_(\i_obi_cut_croc2user.mgr_port_rsp_i_0_ ),
+    .user_sbr_obi_rsp_o_10_(\i_obi_cut_croc2user.mgr_port_rsp_i_10_ ),
+    .user_sbr_obi_rsp_o_11_(\i_obi_cut_croc2user.mgr_port_rsp_i_11_ ),
+    .user_sbr_obi_rsp_o_12_(\i_obi_cut_croc2user.mgr_port_rsp_i_12_ ),
+    .user_sbr_obi_rsp_o_13_(\i_obi_cut_croc2user.mgr_port_rsp_i_13_ ),
+    .user_sbr_obi_rsp_o_14_(\i_obi_cut_croc2user.mgr_port_rsp_i_14_ ),
+    .user_sbr_obi_rsp_o_15_(\i_obi_cut_croc2user.mgr_port_rsp_i_15_ ),
+    .user_sbr_obi_rsp_o_16_(\i_obi_cut_croc2user.mgr_port_rsp_i_16_ ),
+    .user_sbr_obi_rsp_o_17_(\i_obi_cut_croc2user.mgr_port_rsp_i_17_ ),
+    .user_sbr_obi_rsp_o_18_(\i_obi_cut_croc2user.mgr_port_rsp_i_18_ ),
+    .user_sbr_obi_rsp_o_19_(\i_obi_cut_croc2user.mgr_port_rsp_i_19_ ),
+    .user_sbr_obi_rsp_o_1_(\i_obi_cut_croc2user.mgr_port_rsp_i_1_ ),
+    .user_sbr_obi_rsp_o_20_(\i_obi_cut_croc2user.mgr_port_rsp_i_20_ ),
+    .user_sbr_obi_rsp_o_21_(\i_obi_cut_croc2user.mgr_port_rsp_i_21_ ),
+    .user_sbr_obi_rsp_o_22_(\i_obi_cut_croc2user.mgr_port_rsp_i_22_ ),
+    .user_sbr_obi_rsp_o_23_(\i_obi_cut_croc2user.mgr_port_rsp_i_23_ ),
+    .user_sbr_obi_rsp_o_24_(\i_obi_cut_croc2user.mgr_port_rsp_i_24_ ),
+    .user_sbr_obi_rsp_o_25_(\i_obi_cut_croc2user.mgr_port_rsp_i_25_ ),
+    .user_sbr_obi_rsp_o_26_(\i_obi_cut_croc2user.mgr_port_rsp_i_26_ ),
+    .user_sbr_obi_rsp_o_27_(\i_obi_cut_croc2user.mgr_port_rsp_i_27_ ),
+    .user_sbr_obi_rsp_o_28_(\i_obi_cut_croc2user.mgr_port_rsp_i_28_ ),
+    .user_sbr_obi_rsp_o_29_(\i_obi_cut_croc2user.mgr_port_rsp_i_29_ ),
+    .user_sbr_obi_rsp_o_2_(\i_obi_cut_croc2user.mgr_port_rsp_i_2_ ),
+    .user_sbr_obi_rsp_o_30_(\i_obi_cut_croc2user.mgr_port_rsp_i_30_ ),
+    .user_sbr_obi_rsp_o_31_(\i_obi_cut_croc2user.mgr_port_rsp_i_31_ ),
+    .user_sbr_obi_rsp_o_32_(\i_obi_cut_croc2user.mgr_port_rsp_i_32_ ),
+    .user_sbr_obi_rsp_o_33_(\i_obi_cut_croc2user.mgr_port_rsp_i_33_ ),
+    .user_sbr_obi_rsp_o_34_(\i_obi_cut_croc2user.mgr_port_rsp_i_34_ ),
+    .user_sbr_obi_rsp_o_35_(\i_obi_cut_croc2user.mgr_port_rsp_i_35_ ),
+    .user_sbr_obi_rsp_o_36_(\i_obi_cut_croc2user.mgr_port_rsp_i_36_ ),
+    .user_sbr_obi_rsp_o_37_(\i_obi_cut_croc2user.mgr_port_rsp_i_37_ ),
+    .user_sbr_obi_rsp_o_38_(\i_obi_cut_croc2user.mgr_port_rsp_i_38_ ),
+    .user_sbr_obi_rsp_o_3_(\i_obi_cut_croc2user.mgr_port_rsp_i_3_ ),
+    .user_sbr_obi_rsp_o_4_(\i_obi_cut_croc2user.mgr_port_rsp_i_4_ ),
+    .user_sbr_obi_rsp_o_5_(\i_obi_cut_croc2user.mgr_port_rsp_i_5_ ),
+    .user_sbr_obi_rsp_o_6_(\i_obi_cut_croc2user.mgr_port_rsp_i_6_ ),
+    .user_sbr_obi_rsp_o_7_(\i_obi_cut_croc2user.mgr_port_rsp_i_7_ ),
+    .user_sbr_obi_rsp_o_8_(\i_obi_cut_croc2user.mgr_port_rsp_i_8_ ),
+    .user_sbr_obi_rsp_o_9_(\i_obi_cut_croc2user.mgr_port_rsp_i_9_ )
   );
+  assign gpio_out_en_o_20_ = _260_;
+  assign gpio_out_en_o_19_ = _261_;
+  assign gpio_out_en_o_18_ = _261_;
+  assign gpio_out_en_o_16_ = _261_;
+  assign gpio_out_en_o_15_ = _260_;
 endmodule
 
 module \cve2_cs_registers$croc_chip.i_croc_soc.i_croc.i_core_wrap.i_core.cs_registers_i (clk_i, rst_ni, boot_addr_i_0_, boot_addr_i_1_, boot_addr_i_2_, boot_addr_i_3_, boot_addr_i_4_, boot_addr_i_5_, boot_addr_i_6_, boot_addr_i_7_, boot_addr_i_8_, boot_addr_i_9_, boot_addr_i_10_, boot_addr_i_11_, boot_addr_i_12_, boot_addr_i_13_, boot_addr_i_14_, boot_addr_i_15_, boot_addr_i_16_, boot_addr_i_17_, boot_addr_i_18_
@@ -186368,29 +190436,29 @@ module \soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl (clk_i, rst_ni, obi
     .C(_160_),
     .Y(_161_)
   );
-  OAOI211X1 _373_ (
-    .A(_121_),
-    .B(_161_),
-    .C(_127_),
-    .D(_129_),
-    .Y(obi_rsp_o_16_)
-  );
-  NOR3BX1 _374_ (
-    .AB(boot_addr_q_8_),
-    .B(_142_),
-    .C(_153_),
-    .Y(_162_)
-  );
-  AOI21X1 _375_ (
-    .A(_159_),
-    .B(core_status_q_8_),
-    .C(_162_),
-    .Y(_163_)
-  );
-  OAI21X1 _376_ (
+  OAI21X1 _373_ (
     .A(_117_),
     .B(_123_),
     .C(_120_),
+    .Y(_162_)
+  );
+  OAOI211X1 _374_ (
+    .A(_121_),
+    .B(_161_),
+    .C(_162_),
+    .D(_129_),
+    .Y(obi_rsp_o_16_)
+  );
+  NOR3BX1 _375_ (
+    .AB(boot_addr_q_8_),
+    .B(_142_),
+    .C(_153_),
+    .Y(_163_)
+  );
+  AOI21X1 _376_ (
+    .A(_159_),
+    .B(core_status_q_8_),
+    .C(_163_),
     .Y(_164_)
   );
   BUFX3 _377_ (
@@ -186399,8 +190467,8 @@ module \soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl (clk_i, rst_ni, obi
   );
   OAOI211X1 _378_ (
     .A(_121_),
-    .B(_163_),
-    .C(_164_),
+    .B(_164_),
+    .C(_127_),
     .D(_165_),
     .Y(obi_rsp_o_15_)
   );
@@ -186509,7 +190577,7 @@ module \soc_ctrl_regs$croc_chip.i_croc_soc.i_croc.i_soc_ctrl (clk_i, rst_ni, obi
   OAOI211X1 _396_ (
     .A(_147_),
     .B(_176_),
-    .C(_164_),
+    .C(_162_),
     .D(_165_),
     .Y(obi_rsp_o_35_)
   );
@@ -188547,14 +192615,14 @@ module \tc_clk_mux2$croc_chip.i_croc_soc.i_rstgen.i_rstgen_bypass.i_tc_clk_mux2_
   );
 endmodule
 
-module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_, wdata_i_6_
-, wdata_i_7_, wdata_i_8_, wdata_i_9_, wdata_i_10_, wdata_i_11_, wdata_i_12_, wdata_i_13_, wdata_i_14_, wdata_i_15_, wdata_i_16_, wdata_i_17_, wdata_i_18_, wdata_i_19_, wdata_i_20_, wdata_i_21_, wdata_i_22_, wdata_i_23_, wdata_i_24_, wdata_i_25_, wdata_i_26_, wdata_i_27_
-, wdata_i_28_, wdata_i_29_, wdata_i_30_, wdata_i_31_, wdata_i_32_, wdata_i_33_, wdata_i_34_, wdata_i_35_, wdata_i_36_, wdata_i_37_, wdata_i_38_, wdata_i_39_, wdata_i_40_, wdata_i_41_, wdata_i_42_, wdata_i_43_, wdata_i_44_, wdata_i_45_, wdata_i_46_, wdata_i_47_, wdata_i_48_
-, wdata_i_49_, wdata_i_50_, wdata_i_51_, wdata_i_52_, wdata_i_53_, wdata_i_54_, wdata_i_55_, wdata_i_56_, wdata_i_57_, wdata_i_58_, wdata_i_59_, wdata_i_60_, wdata_i_61_, wdata_i_62_, wdata_i_63_, be_i_0_, be_i_1_, be_i_2_, be_i_3_, rdata_o_0_, rdata_o_1_
-, rdata_o_2_, rdata_o_3_, rdata_o_4_, rdata_o_5_, rdata_o_6_, rdata_o_7_, rdata_o_8_, rdata_o_9_, rdata_o_10_, rdata_o_11_, rdata_o_12_, rdata_o_13_, rdata_o_14_, rdata_o_15_, rdata_o_16_, rdata_o_17_, rdata_o_18_, rdata_o_19_, rdata_o_20_, rdata_o_21_, rdata_o_22_
-, rdata_o_23_, rdata_o_24_, rdata_o_25_, rdata_o_26_, rdata_o_27_, rdata_o_28_, rdata_o_29_, rdata_o_30_, rdata_o_31_, rdata_o_32_, rdata_o_33_, rdata_o_34_, rdata_o_35_, rdata_o_36_, rdata_o_37_, rdata_o_38_, rdata_o_39_, rdata_o_40_, rdata_o_41_, rdata_o_42_, rdata_o_43_
-, rdata_o_44_, rdata_o_45_, rdata_o_46_, rdata_o_47_, rdata_o_48_, rdata_o_49_, rdata_o_50_, rdata_o_51_, rdata_o_52_, rdata_o_53_, rdata_o_54_, rdata_o_55_, rdata_o_56_, rdata_o_57_, rdata_o_58_, rdata_o_59_, rdata_o_60_, rdata_o_61_, rdata_o_62_, rdata_o_63_, impl_o
-);
+module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, addr_i_9_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_
+, wdata_i_6_, wdata_i_7_, wdata_i_8_, wdata_i_9_, wdata_i_10_, wdata_i_11_, wdata_i_12_, wdata_i_13_, wdata_i_14_, wdata_i_15_, wdata_i_16_, wdata_i_17_, wdata_i_18_, wdata_i_19_, wdata_i_20_, wdata_i_21_, wdata_i_22_, wdata_i_23_, wdata_i_24_, wdata_i_25_, wdata_i_26_
+, wdata_i_27_, wdata_i_28_, wdata_i_29_, wdata_i_30_, wdata_i_31_, wdata_i_32_, wdata_i_33_, wdata_i_34_, wdata_i_35_, wdata_i_36_, wdata_i_37_, wdata_i_38_, wdata_i_39_, wdata_i_40_, wdata_i_41_, wdata_i_42_, wdata_i_43_, wdata_i_44_, wdata_i_45_, wdata_i_46_, wdata_i_47_
+, wdata_i_48_, wdata_i_49_, wdata_i_50_, wdata_i_51_, wdata_i_52_, wdata_i_53_, wdata_i_54_, wdata_i_55_, wdata_i_56_, wdata_i_57_, wdata_i_58_, wdata_i_59_, wdata_i_60_, wdata_i_61_, wdata_i_62_, wdata_i_63_, be_i_0_, be_i_1_, be_i_2_, be_i_3_, rdata_o_0_
+, rdata_o_1_, rdata_o_2_, rdata_o_3_, rdata_o_4_, rdata_o_5_, rdata_o_6_, rdata_o_7_, rdata_o_8_, rdata_o_9_, rdata_o_10_, rdata_o_11_, rdata_o_12_, rdata_o_13_, rdata_o_14_, rdata_o_15_, rdata_o_16_, rdata_o_17_, rdata_o_18_, rdata_o_19_, rdata_o_20_, rdata_o_21_
+, rdata_o_22_, rdata_o_23_, rdata_o_24_, rdata_o_25_, rdata_o_26_, rdata_o_27_, rdata_o_28_, rdata_o_29_, rdata_o_30_, rdata_o_31_, rdata_o_32_, rdata_o_33_, rdata_o_34_, rdata_o_35_, rdata_o_36_, rdata_o_37_, rdata_o_38_, rdata_o_39_, rdata_o_40_, rdata_o_41_, rdata_o_42_
+, rdata_o_43_, rdata_o_44_, rdata_o_45_, rdata_o_46_, rdata_o_47_, rdata_o_48_, rdata_o_49_, rdata_o_50_, rdata_o_51_, rdata_o_52_, rdata_o_53_, rdata_o_54_, rdata_o_55_, rdata_o_56_, rdata_o_57_, rdata_o_58_, rdata_o_59_, rdata_o_60_, rdata_o_61_, rdata_o_62_, rdata_o_63_
+, impl_o);
   input clk_i;
   wire clk_i;
   input rst_ni;
@@ -188577,6 +192645,8 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.g
   wire addr_i_7_;
   input addr_i_8_;
   wire addr_i_8_;
+  input addr_i_9_;
+  wire addr_i_9_;
   input impl_i;
   wire impl_i;
   input req_i;
@@ -188850,17 +192920,17 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.g
   output impl_o;
   wire impl_o;
   wire _0_;
-  wire \gen_512x64xBx1.i_cut_A_REN ;
+  wire \gen_1024x64xBx1.i_cut_A_REN ;
   INVX1 _1_ (
     .A(we_i),
-    .Y(\gen_512x64xBx1.i_cut_A_REN )
+    .Y(\gen_1024x64xBx1.i_cut_A_REN )
   );
   TIELO _2_ (
     .Y(_0_)
   );
-  RM_IHPSG13_1P_512x64_c2_bm_bist \gen_512x64xBx1.i_cut  (
-    .A_ADDR({ addr_i_8_, addr_i_7_, addr_i_6_, addr_i_5_, addr_i_4_, addr_i_3_, addr_i_2_, addr_i_1_, addr_i_0_ }),
-    .A_BIST_ADDR({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
+  RM_IHPSG13_1P_1024x64_c2_bm_bist \gen_1024x64xBx1.i_cut  (
+    .A_ADDR({ addr_i_9_, addr_i_8_, addr_i_7_, addr_i_6_, addr_i_5_, addr_i_4_, addr_i_3_, addr_i_2_, addr_i_1_, addr_i_0_ }),
+    .A_BIST_ADDR({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
     .A_BIST_BM({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
     .A_BIST_CLK(_0_),
     .A_BIST_DIN({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
@@ -188874,20 +192944,20 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.g
     .A_DLY(impl_i),
     .A_DOUT({ rdata_o_63_, rdata_o_62_, rdata_o_61_, rdata_o_60_, rdata_o_59_, rdata_o_58_, rdata_o_57_, rdata_o_56_, rdata_o_55_, rdata_o_54_, rdata_o_53_, rdata_o_52_, rdata_o_51_, rdata_o_50_, rdata_o_49_, rdata_o_48_, rdata_o_47_, rdata_o_46_, rdata_o_45_, rdata_o_44_, rdata_o_43_, rdata_o_42_, rdata_o_41_, rdata_o_40_, rdata_o_39_, rdata_o_38_, rdata_o_37_, rdata_o_36_, rdata_o_35_, rdata_o_34_, rdata_o_33_, rdata_o_32_, rdata_o_31_, rdata_o_30_, rdata_o_29_, rdata_o_28_, rdata_o_27_, rdata_o_26_, rdata_o_25_, rdata_o_24_, rdata_o_23_, rdata_o_22_, rdata_o_21_, rdata_o_20_, rdata_o_19_, rdata_o_18_, rdata_o_17_, rdata_o_16_, rdata_o_15_, rdata_o_14_, rdata_o_13_, rdata_o_12_, rdata_o_11_, rdata_o_10_, rdata_o_9_, rdata_o_8_, rdata_o_7_, rdata_o_6_, rdata_o_5_, rdata_o_4_, rdata_o_3_, rdata_o_2_, rdata_o_1_, rdata_o_0_ }),
     .A_MEN(req_i),
-    .A_REN(\gen_512x64xBx1.i_cut_A_REN ),
+    .A_REN(\gen_1024x64xBx1.i_cut_A_REN ),
     .A_WEN(we_i)
   );
   assign impl_o = _0_;
 endmodule
 
-module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_, wdata_i_6_
-, wdata_i_7_, wdata_i_8_, wdata_i_9_, wdata_i_10_, wdata_i_11_, wdata_i_12_, wdata_i_13_, wdata_i_14_, wdata_i_15_, wdata_i_16_, wdata_i_17_, wdata_i_18_, wdata_i_19_, wdata_i_20_, wdata_i_21_, wdata_i_22_, wdata_i_23_, wdata_i_24_, wdata_i_25_, wdata_i_26_, wdata_i_27_
-, wdata_i_28_, wdata_i_29_, wdata_i_30_, wdata_i_31_, wdata_i_32_, wdata_i_33_, wdata_i_34_, wdata_i_35_, wdata_i_36_, wdata_i_37_, wdata_i_38_, wdata_i_39_, wdata_i_40_, wdata_i_41_, wdata_i_42_, wdata_i_43_, wdata_i_44_, wdata_i_45_, wdata_i_46_, wdata_i_47_, wdata_i_48_
-, wdata_i_49_, wdata_i_50_, wdata_i_51_, wdata_i_52_, wdata_i_53_, wdata_i_54_, wdata_i_55_, wdata_i_56_, wdata_i_57_, wdata_i_58_, wdata_i_59_, wdata_i_60_, wdata_i_61_, wdata_i_62_, wdata_i_63_, be_i_0_, be_i_1_, be_i_2_, be_i_3_, rdata_o_0_, rdata_o_1_
-, rdata_o_2_, rdata_o_3_, rdata_o_4_, rdata_o_5_, rdata_o_6_, rdata_o_7_, rdata_o_8_, rdata_o_9_, rdata_o_10_, rdata_o_11_, rdata_o_12_, rdata_o_13_, rdata_o_14_, rdata_o_15_, rdata_o_16_, rdata_o_17_, rdata_o_18_, rdata_o_19_, rdata_o_20_, rdata_o_21_, rdata_o_22_
-, rdata_o_23_, rdata_o_24_, rdata_o_25_, rdata_o_26_, rdata_o_27_, rdata_o_28_, rdata_o_29_, rdata_o_30_, rdata_o_31_, rdata_o_32_, rdata_o_33_, rdata_o_34_, rdata_o_35_, rdata_o_36_, rdata_o_37_, rdata_o_38_, rdata_o_39_, rdata_o_40_, rdata_o_41_, rdata_o_42_, rdata_o_43_
-, rdata_o_44_, rdata_o_45_, rdata_o_46_, rdata_o_47_, rdata_o_48_, rdata_o_49_, rdata_o_50_, rdata_o_51_, rdata_o_52_, rdata_o_53_, rdata_o_54_, rdata_o_55_, rdata_o_56_, rdata_o_57_, rdata_o_58_, rdata_o_59_, rdata_o_60_, rdata_o_61_, rdata_o_62_, rdata_o_63_, impl_o
-);
+module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram (clk_i, rst_ni, addr_i_0_, addr_i_1_, addr_i_2_, addr_i_3_, addr_i_4_, addr_i_5_, addr_i_6_, addr_i_7_, addr_i_8_, addr_i_9_, impl_i, req_i, we_i, wdata_i_0_, wdata_i_1_, wdata_i_2_, wdata_i_3_, wdata_i_4_, wdata_i_5_
+, wdata_i_6_, wdata_i_7_, wdata_i_8_, wdata_i_9_, wdata_i_10_, wdata_i_11_, wdata_i_12_, wdata_i_13_, wdata_i_14_, wdata_i_15_, wdata_i_16_, wdata_i_17_, wdata_i_18_, wdata_i_19_, wdata_i_20_, wdata_i_21_, wdata_i_22_, wdata_i_23_, wdata_i_24_, wdata_i_25_, wdata_i_26_
+, wdata_i_27_, wdata_i_28_, wdata_i_29_, wdata_i_30_, wdata_i_31_, wdata_i_32_, wdata_i_33_, wdata_i_34_, wdata_i_35_, wdata_i_36_, wdata_i_37_, wdata_i_38_, wdata_i_39_, wdata_i_40_, wdata_i_41_, wdata_i_42_, wdata_i_43_, wdata_i_44_, wdata_i_45_, wdata_i_46_, wdata_i_47_
+, wdata_i_48_, wdata_i_49_, wdata_i_50_, wdata_i_51_, wdata_i_52_, wdata_i_53_, wdata_i_54_, wdata_i_55_, wdata_i_56_, wdata_i_57_, wdata_i_58_, wdata_i_59_, wdata_i_60_, wdata_i_61_, wdata_i_62_, wdata_i_63_, be_i_0_, be_i_1_, be_i_2_, be_i_3_, rdata_o_0_
+, rdata_o_1_, rdata_o_2_, rdata_o_3_, rdata_o_4_, rdata_o_5_, rdata_o_6_, rdata_o_7_, rdata_o_8_, rdata_o_9_, rdata_o_10_, rdata_o_11_, rdata_o_12_, rdata_o_13_, rdata_o_14_, rdata_o_15_, rdata_o_16_, rdata_o_17_, rdata_o_18_, rdata_o_19_, rdata_o_20_, rdata_o_21_
+, rdata_o_22_, rdata_o_23_, rdata_o_24_, rdata_o_25_, rdata_o_26_, rdata_o_27_, rdata_o_28_, rdata_o_29_, rdata_o_30_, rdata_o_31_, rdata_o_32_, rdata_o_33_, rdata_o_34_, rdata_o_35_, rdata_o_36_, rdata_o_37_, rdata_o_38_, rdata_o_39_, rdata_o_40_, rdata_o_41_, rdata_o_42_
+, rdata_o_43_, rdata_o_44_, rdata_o_45_, rdata_o_46_, rdata_o_47_, rdata_o_48_, rdata_o_49_, rdata_o_50_, rdata_o_51_, rdata_o_52_, rdata_o_53_, rdata_o_54_, rdata_o_55_, rdata_o_56_, rdata_o_57_, rdata_o_58_, rdata_o_59_, rdata_o_60_, rdata_o_61_, rdata_o_62_, rdata_o_63_
+, impl_o);
   input clk_i;
   wire clk_i;
   input rst_ni;
@@ -188910,6 +192980,8 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.g
   wire addr_i_7_;
   input addr_i_8_;
   wire addr_i_8_;
+  input addr_i_9_;
+  wire addr_i_9_;
   input impl_i;
   wire impl_i;
   input req_i;
@@ -189183,17 +193255,17 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.g
   output impl_o;
   wire impl_o;
   wire _0_;
-  wire \gen_512x64xBx1.i_cut_A_REN ;
+  wire \gen_1024x64xBx1.i_cut_A_REN ;
   INVX1 _1_ (
     .A(we_i),
-    .Y(\gen_512x64xBx1.i_cut_A_REN )
+    .Y(\gen_1024x64xBx1.i_cut_A_REN )
   );
   TIELO _2_ (
     .Y(_0_)
   );
-  RM_IHPSG13_1P_512x64_c2_bm_bist \gen_512x64xBx1.i_cut  (
-    .A_ADDR({ addr_i_8_, addr_i_7_, addr_i_6_, addr_i_5_, addr_i_4_, addr_i_3_, addr_i_2_, addr_i_1_, addr_i_0_ }),
-    .A_BIST_ADDR({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
+  RM_IHPSG13_1P_1024x64_c2_bm_bist \gen_1024x64xBx1.i_cut  (
+    .A_ADDR({ addr_i_9_, addr_i_8_, addr_i_7_, addr_i_6_, addr_i_5_, addr_i_4_, addr_i_3_, addr_i_2_, addr_i_1_, addr_i_0_ }),
+    .A_BIST_ADDR({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
     .A_BIST_BM({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
     .A_BIST_CLK(_0_),
     .A_BIST_DIN({ _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_, _0_ }),
@@ -189207,25 +193279,25 @@ module \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.g
     .A_DLY(impl_i),
     .A_DOUT({ rdata_o_63_, rdata_o_62_, rdata_o_61_, rdata_o_60_, rdata_o_59_, rdata_o_58_, rdata_o_57_, rdata_o_56_, rdata_o_55_, rdata_o_54_, rdata_o_53_, rdata_o_52_, rdata_o_51_, rdata_o_50_, rdata_o_49_, rdata_o_48_, rdata_o_47_, rdata_o_46_, rdata_o_45_, rdata_o_44_, rdata_o_43_, rdata_o_42_, rdata_o_41_, rdata_o_40_, rdata_o_39_, rdata_o_38_, rdata_o_37_, rdata_o_36_, rdata_o_35_, rdata_o_34_, rdata_o_33_, rdata_o_32_, rdata_o_31_, rdata_o_30_, rdata_o_29_, rdata_o_28_, rdata_o_27_, rdata_o_26_, rdata_o_25_, rdata_o_24_, rdata_o_23_, rdata_o_22_, rdata_o_21_, rdata_o_20_, rdata_o_19_, rdata_o_18_, rdata_o_17_, rdata_o_16_, rdata_o_15_, rdata_o_14_, rdata_o_13_, rdata_o_12_, rdata_o_11_, rdata_o_10_, rdata_o_9_, rdata_o_8_, rdata_o_7_, rdata_o_6_, rdata_o_5_, rdata_o_4_, rdata_o_3_, rdata_o_2_, rdata_o_1_, rdata_o_0_ }),
     .A_MEN(req_i),
-    .A_REN(\gen_512x64xBx1.i_cut_A_REN ),
+    .A_REN(\gen_1024x64xBx1.i_cut_A_REN ),
     .A_WEN(we_i)
   );
   assign impl_o = _0_;
 endmodule
 
-module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testmode_i, user_sbr_obi_req_i_0_, user_sbr_obi_req_i_1_, user_sbr_obi_req_i_2_, user_sbr_obi_req_i_3_, user_sbr_obi_req_i_4_, user_sbr_obi_req_i_5_, user_sbr_obi_req_i_6_, user_sbr_obi_req_i_7_, user_sbr_obi_req_i_8_, user_sbr_obi_req_i_9_, user_sbr_obi_req_i_10_, user_sbr_obi_req_i_11_, user_sbr_obi_req_i_12_, user_sbr_obi_req_i_13_, user_sbr_obi_req_i_14_, user_sbr_obi_req_i_15_, user_sbr_obi_req_i_16_
-, user_sbr_obi_req_i_17_, user_sbr_obi_req_i_18_, user_sbr_obi_req_i_19_, user_sbr_obi_req_i_20_, user_sbr_obi_req_i_21_, user_sbr_obi_req_i_22_, user_sbr_obi_req_i_23_, user_sbr_obi_req_i_24_, user_sbr_obi_req_i_25_, user_sbr_obi_req_i_26_, user_sbr_obi_req_i_27_, user_sbr_obi_req_i_28_, user_sbr_obi_req_i_29_, user_sbr_obi_req_i_30_, user_sbr_obi_req_i_31_, user_sbr_obi_req_i_32_, user_sbr_obi_req_i_33_, user_sbr_obi_req_i_34_, user_sbr_obi_req_i_35_, user_sbr_obi_req_i_36_, user_sbr_obi_req_i_37_
-, user_sbr_obi_req_i_38_, user_sbr_obi_req_i_39_, user_sbr_obi_req_i_40_, user_sbr_obi_req_i_41_, user_sbr_obi_req_i_42_, user_sbr_obi_req_i_43_, user_sbr_obi_req_i_44_, user_sbr_obi_req_i_45_, user_sbr_obi_req_i_46_, user_sbr_obi_req_i_47_, user_sbr_obi_req_i_48_, user_sbr_obi_req_i_49_, user_sbr_obi_req_i_50_, user_sbr_obi_req_i_51_, user_sbr_obi_req_i_52_, user_sbr_obi_req_i_53_, user_sbr_obi_req_i_54_, user_sbr_obi_req_i_55_, user_sbr_obi_req_i_56_, user_sbr_obi_req_i_57_, user_sbr_obi_req_i_58_
-, user_sbr_obi_req_i_59_, user_sbr_obi_req_i_60_, user_sbr_obi_req_i_61_, user_sbr_obi_req_i_62_, user_sbr_obi_req_i_63_, user_sbr_obi_req_i_64_, user_sbr_obi_req_i_65_, user_sbr_obi_req_i_66_, user_sbr_obi_req_i_67_, user_sbr_obi_req_i_68_, user_sbr_obi_req_i_69_, user_sbr_obi_req_i_70_, user_sbr_obi_req_i_71_, user_sbr_obi_req_i_72_, user_sbr_obi_req_i_73_, user_sbr_obi_rsp_o_0_, user_sbr_obi_rsp_o_1_, user_sbr_obi_rsp_o_2_, user_sbr_obi_rsp_o_3_, user_sbr_obi_rsp_o_4_, user_sbr_obi_rsp_o_5_
-, user_sbr_obi_rsp_o_6_, user_sbr_obi_rsp_o_7_, user_sbr_obi_rsp_o_8_, user_sbr_obi_rsp_o_9_, user_sbr_obi_rsp_o_10_, user_sbr_obi_rsp_o_11_, user_sbr_obi_rsp_o_12_, user_sbr_obi_rsp_o_13_, user_sbr_obi_rsp_o_14_, user_sbr_obi_rsp_o_15_, user_sbr_obi_rsp_o_16_, user_sbr_obi_rsp_o_17_, user_sbr_obi_rsp_o_18_, user_sbr_obi_rsp_o_19_, user_sbr_obi_rsp_o_20_, user_sbr_obi_rsp_o_21_, user_sbr_obi_rsp_o_22_, user_sbr_obi_rsp_o_23_, user_sbr_obi_rsp_o_24_, user_sbr_obi_rsp_o_25_, user_sbr_obi_rsp_o_26_
-, user_sbr_obi_rsp_o_27_, user_sbr_obi_rsp_o_28_, user_sbr_obi_rsp_o_29_, user_sbr_obi_rsp_o_30_, user_sbr_obi_rsp_o_31_, user_sbr_obi_rsp_o_32_, user_sbr_obi_rsp_o_33_, user_sbr_obi_rsp_o_34_, user_sbr_obi_rsp_o_35_, user_sbr_obi_rsp_o_36_, user_sbr_obi_rsp_o_37_, user_sbr_obi_rsp_o_38_, user_mgr_obi_req_o_0_, user_mgr_obi_req_o_1_, user_mgr_obi_req_o_2_, user_mgr_obi_req_o_3_, user_mgr_obi_req_o_4_, user_mgr_obi_req_o_5_, user_mgr_obi_req_o_6_, user_mgr_obi_req_o_7_, user_mgr_obi_req_o_8_
-, user_mgr_obi_req_o_9_, user_mgr_obi_req_o_10_, user_mgr_obi_req_o_11_, user_mgr_obi_req_o_12_, user_mgr_obi_req_o_13_, user_mgr_obi_req_o_14_, user_mgr_obi_req_o_15_, user_mgr_obi_req_o_16_, user_mgr_obi_req_o_17_, user_mgr_obi_req_o_18_, user_mgr_obi_req_o_19_, user_mgr_obi_req_o_20_, user_mgr_obi_req_o_21_, user_mgr_obi_req_o_22_, user_mgr_obi_req_o_23_, user_mgr_obi_req_o_24_, user_mgr_obi_req_o_25_, user_mgr_obi_req_o_26_, user_mgr_obi_req_o_27_, user_mgr_obi_req_o_28_, user_mgr_obi_req_o_29_
-, user_mgr_obi_req_o_30_, user_mgr_obi_req_o_31_, user_mgr_obi_req_o_32_, user_mgr_obi_req_o_33_, user_mgr_obi_req_o_34_, user_mgr_obi_req_o_35_, user_mgr_obi_req_o_36_, user_mgr_obi_req_o_37_, user_mgr_obi_req_o_38_, user_mgr_obi_req_o_39_, user_mgr_obi_req_o_40_, user_mgr_obi_req_o_41_, user_mgr_obi_req_o_42_, user_mgr_obi_req_o_43_, user_mgr_obi_req_o_44_, user_mgr_obi_req_o_45_, user_mgr_obi_req_o_46_, user_mgr_obi_req_o_47_, user_mgr_obi_req_o_48_, user_mgr_obi_req_o_49_, user_mgr_obi_req_o_50_
-, user_mgr_obi_req_o_51_, user_mgr_obi_req_o_52_, user_mgr_obi_req_o_53_, user_mgr_obi_req_o_54_, user_mgr_obi_req_o_55_, user_mgr_obi_req_o_56_, user_mgr_obi_req_o_57_, user_mgr_obi_req_o_58_, user_mgr_obi_req_o_59_, user_mgr_obi_req_o_60_, user_mgr_obi_req_o_61_, user_mgr_obi_req_o_62_, user_mgr_obi_req_o_63_, user_mgr_obi_req_o_64_, user_mgr_obi_req_o_65_, user_mgr_obi_req_o_66_, user_mgr_obi_req_o_67_, user_mgr_obi_req_o_68_, user_mgr_obi_req_o_69_, user_mgr_obi_req_o_70_, user_mgr_obi_req_o_71_
-, user_mgr_obi_rsp_i_0_, user_mgr_obi_rsp_i_1_, user_mgr_obi_rsp_i_2_, user_mgr_obi_rsp_i_3_, user_mgr_obi_rsp_i_4_, user_mgr_obi_rsp_i_5_, user_mgr_obi_rsp_i_6_, user_mgr_obi_rsp_i_7_, user_mgr_obi_rsp_i_8_, user_mgr_obi_rsp_i_9_, user_mgr_obi_rsp_i_10_, user_mgr_obi_rsp_i_11_, user_mgr_obi_rsp_i_12_, user_mgr_obi_rsp_i_13_, user_mgr_obi_rsp_i_14_, user_mgr_obi_rsp_i_15_, user_mgr_obi_rsp_i_16_, user_mgr_obi_rsp_i_17_, user_mgr_obi_rsp_i_18_, user_mgr_obi_rsp_i_19_, user_mgr_obi_rsp_i_20_
-, user_mgr_obi_rsp_i_21_, user_mgr_obi_rsp_i_22_, user_mgr_obi_rsp_i_23_, user_mgr_obi_rsp_i_24_, user_mgr_obi_rsp_i_25_, user_mgr_obi_rsp_i_26_, user_mgr_obi_rsp_i_27_, user_mgr_obi_rsp_i_28_, user_mgr_obi_rsp_i_29_, user_mgr_obi_rsp_i_30_, user_mgr_obi_rsp_i_31_, user_mgr_obi_rsp_i_32_, user_mgr_obi_rsp_i_33_, user_mgr_obi_rsp_i_34_, user_mgr_obi_rsp_i_35_, user_mgr_obi_rsp_i_36_, gpio_in_sync_i_0_, gpio_in_sync_i_1_, gpio_in_sync_i_2_, gpio_in_sync_i_3_, gpio_in_sync_i_4_
-, gpio_in_sync_i_5_, gpio_in_sync_i_6_, gpio_in_sync_i_7_, gpio_in_sync_i_8_, gpio_in_sync_i_9_, gpio_in_sync_i_10_, gpio_in_sync_i_11_, gpio_in_sync_i_12_, gpio_in_sync_i_13_, gpio_in_sync_i_14_, gpio_in_sync_i_15_, gpio_in_sync_i_16_, gpio_in_sync_i_17_, gpio_in_sync_i_18_, gpio_in_sync_i_19_, gpio_in_sync_i_20_, gpio_in_sync_i_21_, gpio_in_sync_i_22_, gpio_in_sync_i_23_, gpio_in_sync_i_24_, gpio_in_sync_i_25_
-, gpio_in_sync_i_26_, gpio_in_sync_i_27_, gpio_in_sync_i_28_, gpio_in_sync_i_29_, gpio_in_sync_i_30_, gpio_in_sync_i_31_, interrupts_o_0_, interrupts_o_1_, interrupts_o_2_, interrupts_o_3_, sram_impl_i);
+module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testmode_i, all_banks_single_err_o_0_, all_banks_single_err_o_1_, user_sbr_obi_req_i_0_, user_sbr_obi_req_i_1_, user_sbr_obi_req_i_2_, user_sbr_obi_req_i_3_, user_sbr_obi_req_i_4_, user_sbr_obi_req_i_5_, user_sbr_obi_req_i_6_, user_sbr_obi_req_i_7_, user_sbr_obi_req_i_8_, user_sbr_obi_req_i_9_, user_sbr_obi_req_i_10_, user_sbr_obi_req_i_11_, user_sbr_obi_req_i_12_, user_sbr_obi_req_i_13_, user_sbr_obi_req_i_14_
+, user_sbr_obi_req_i_15_, user_sbr_obi_req_i_16_, user_sbr_obi_req_i_17_, user_sbr_obi_req_i_18_, user_sbr_obi_req_i_19_, user_sbr_obi_req_i_20_, user_sbr_obi_req_i_21_, user_sbr_obi_req_i_22_, user_sbr_obi_req_i_23_, user_sbr_obi_req_i_24_, user_sbr_obi_req_i_25_, user_sbr_obi_req_i_26_, user_sbr_obi_req_i_27_, user_sbr_obi_req_i_28_, user_sbr_obi_req_i_29_, user_sbr_obi_req_i_30_, user_sbr_obi_req_i_31_, user_sbr_obi_req_i_32_, user_sbr_obi_req_i_33_, user_sbr_obi_req_i_34_, user_sbr_obi_req_i_35_
+, user_sbr_obi_req_i_36_, user_sbr_obi_req_i_37_, user_sbr_obi_req_i_38_, user_sbr_obi_req_i_39_, user_sbr_obi_req_i_40_, user_sbr_obi_req_i_41_, user_sbr_obi_req_i_42_, user_sbr_obi_req_i_43_, user_sbr_obi_req_i_44_, user_sbr_obi_req_i_45_, user_sbr_obi_req_i_46_, user_sbr_obi_req_i_47_, user_sbr_obi_req_i_48_, user_sbr_obi_req_i_49_, user_sbr_obi_req_i_50_, user_sbr_obi_req_i_51_, user_sbr_obi_req_i_52_, user_sbr_obi_req_i_53_, user_sbr_obi_req_i_54_, user_sbr_obi_req_i_55_, user_sbr_obi_req_i_56_
+, user_sbr_obi_req_i_57_, user_sbr_obi_req_i_58_, user_sbr_obi_req_i_59_, user_sbr_obi_req_i_60_, user_sbr_obi_req_i_61_, user_sbr_obi_req_i_62_, user_sbr_obi_req_i_63_, user_sbr_obi_req_i_64_, user_sbr_obi_req_i_65_, user_sbr_obi_req_i_66_, user_sbr_obi_req_i_67_, user_sbr_obi_req_i_68_, user_sbr_obi_req_i_69_, user_sbr_obi_req_i_70_, user_sbr_obi_req_i_71_, user_sbr_obi_req_i_72_, user_sbr_obi_req_i_73_, user_sbr_obi_rsp_o_0_, user_sbr_obi_rsp_o_1_, user_sbr_obi_rsp_o_2_, user_sbr_obi_rsp_o_3_
+, user_sbr_obi_rsp_o_4_, user_sbr_obi_rsp_o_5_, user_sbr_obi_rsp_o_6_, user_sbr_obi_rsp_o_7_, user_sbr_obi_rsp_o_8_, user_sbr_obi_rsp_o_9_, user_sbr_obi_rsp_o_10_, user_sbr_obi_rsp_o_11_, user_sbr_obi_rsp_o_12_, user_sbr_obi_rsp_o_13_, user_sbr_obi_rsp_o_14_, user_sbr_obi_rsp_o_15_, user_sbr_obi_rsp_o_16_, user_sbr_obi_rsp_o_17_, user_sbr_obi_rsp_o_18_, user_sbr_obi_rsp_o_19_, user_sbr_obi_rsp_o_20_, user_sbr_obi_rsp_o_21_, user_sbr_obi_rsp_o_22_, user_sbr_obi_rsp_o_23_, user_sbr_obi_rsp_o_24_
+, user_sbr_obi_rsp_o_25_, user_sbr_obi_rsp_o_26_, user_sbr_obi_rsp_o_27_, user_sbr_obi_rsp_o_28_, user_sbr_obi_rsp_o_29_, user_sbr_obi_rsp_o_30_, user_sbr_obi_rsp_o_31_, user_sbr_obi_rsp_o_32_, user_sbr_obi_rsp_o_33_, user_sbr_obi_rsp_o_34_, user_sbr_obi_rsp_o_35_, user_sbr_obi_rsp_o_36_, user_sbr_obi_rsp_o_37_, user_sbr_obi_rsp_o_38_, user_mgr_obi_req_o_0_, user_mgr_obi_req_o_1_, user_mgr_obi_req_o_2_, user_mgr_obi_req_o_3_, user_mgr_obi_req_o_4_, user_mgr_obi_req_o_5_, user_mgr_obi_req_o_6_
+, user_mgr_obi_req_o_7_, user_mgr_obi_req_o_8_, user_mgr_obi_req_o_9_, user_mgr_obi_req_o_10_, user_mgr_obi_req_o_11_, user_mgr_obi_req_o_12_, user_mgr_obi_req_o_13_, user_mgr_obi_req_o_14_, user_mgr_obi_req_o_15_, user_mgr_obi_req_o_16_, user_mgr_obi_req_o_17_, user_mgr_obi_req_o_18_, user_mgr_obi_req_o_19_, user_mgr_obi_req_o_20_, user_mgr_obi_req_o_21_, user_mgr_obi_req_o_22_, user_mgr_obi_req_o_23_, user_mgr_obi_req_o_24_, user_mgr_obi_req_o_25_, user_mgr_obi_req_o_26_, user_mgr_obi_req_o_27_
+, user_mgr_obi_req_o_28_, user_mgr_obi_req_o_29_, user_mgr_obi_req_o_30_, user_mgr_obi_req_o_31_, user_mgr_obi_req_o_32_, user_mgr_obi_req_o_33_, user_mgr_obi_req_o_34_, user_mgr_obi_req_o_35_, user_mgr_obi_req_o_36_, user_mgr_obi_req_o_37_, user_mgr_obi_req_o_38_, user_mgr_obi_req_o_39_, user_mgr_obi_req_o_40_, user_mgr_obi_req_o_41_, user_mgr_obi_req_o_42_, user_mgr_obi_req_o_43_, user_mgr_obi_req_o_44_, user_mgr_obi_req_o_45_, user_mgr_obi_req_o_46_, user_mgr_obi_req_o_47_, user_mgr_obi_req_o_48_
+, user_mgr_obi_req_o_49_, user_mgr_obi_req_o_50_, user_mgr_obi_req_o_51_, user_mgr_obi_req_o_52_, user_mgr_obi_req_o_53_, user_mgr_obi_req_o_54_, user_mgr_obi_req_o_55_, user_mgr_obi_req_o_56_, user_mgr_obi_req_o_57_, user_mgr_obi_req_o_58_, user_mgr_obi_req_o_59_, user_mgr_obi_req_o_60_, user_mgr_obi_req_o_61_, user_mgr_obi_req_o_62_, user_mgr_obi_req_o_63_, user_mgr_obi_req_o_64_, user_mgr_obi_req_o_65_, user_mgr_obi_req_o_66_, user_mgr_obi_req_o_67_, user_mgr_obi_req_o_68_, user_mgr_obi_req_o_69_
+, user_mgr_obi_req_o_70_, user_mgr_obi_req_o_71_, user_mgr_obi_rsp_i_0_, user_mgr_obi_rsp_i_1_, user_mgr_obi_rsp_i_2_, user_mgr_obi_rsp_i_3_, user_mgr_obi_rsp_i_4_, user_mgr_obi_rsp_i_5_, user_mgr_obi_rsp_i_6_, user_mgr_obi_rsp_i_7_, user_mgr_obi_rsp_i_8_, user_mgr_obi_rsp_i_9_, user_mgr_obi_rsp_i_10_, user_mgr_obi_rsp_i_11_, user_mgr_obi_rsp_i_12_, user_mgr_obi_rsp_i_13_, user_mgr_obi_rsp_i_14_, user_mgr_obi_rsp_i_15_, user_mgr_obi_rsp_i_16_, user_mgr_obi_rsp_i_17_, user_mgr_obi_rsp_i_18_
+, user_mgr_obi_rsp_i_19_, user_mgr_obi_rsp_i_20_, user_mgr_obi_rsp_i_21_, user_mgr_obi_rsp_i_22_, user_mgr_obi_rsp_i_23_, user_mgr_obi_rsp_i_24_, user_mgr_obi_rsp_i_25_, user_mgr_obi_rsp_i_26_, user_mgr_obi_rsp_i_27_, user_mgr_obi_rsp_i_28_, user_mgr_obi_rsp_i_29_, user_mgr_obi_rsp_i_30_, user_mgr_obi_rsp_i_31_, user_mgr_obi_rsp_i_32_, user_mgr_obi_rsp_i_33_, user_mgr_obi_rsp_i_34_, user_mgr_obi_rsp_i_35_, user_mgr_obi_rsp_i_36_, gpio_in_sync_i_0_, gpio_in_sync_i_1_, gpio_in_sync_i_2_
+, gpio_in_sync_i_3_, gpio_in_sync_i_4_, gpio_in_sync_i_5_, gpio_in_sync_i_6_, gpio_in_sync_i_7_, gpio_in_sync_i_8_, gpio_in_sync_i_9_, gpio_in_sync_i_10_, gpio_in_sync_i_11_, gpio_in_sync_i_12_, gpio_in_sync_i_13_, gpio_in_sync_i_14_, gpio_in_sync_i_15_, gpio_in_sync_i_16_, gpio_in_sync_i_17_, gpio_in_sync_i_18_, gpio_in_sync_i_19_, gpio_in_sync_i_20_, gpio_in_sync_i_21_, gpio_in_sync_i_22_, gpio_in_sync_i_23_
+, gpio_in_sync_i_24_, gpio_in_sync_i_25_, gpio_in_sync_i_26_, gpio_in_sync_i_27_, gpio_in_sync_i_28_, gpio_in_sync_i_29_, gpio_in_sync_i_30_, gpio_in_sync_i_31_, interrupts_o_0_, interrupts_o_1_, interrupts_o_2_, interrupts_o_3_, sram_impl_i, all_banks_double_err_o_0_, all_banks_double_err_o_1_);
   input clk_i;
   wire clk_i;
   input rst_ni;
@@ -189234,6 +193306,10 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire ref_clk_i;
   input testmode_i;
   wire testmode_i;
+  output all_banks_single_err_o_0_;
+  wire all_banks_single_err_o_0_;
+  output all_banks_single_err_o_1_;
+  wire all_banks_single_err_o_1_;
   input user_sbr_obi_req_i_0_;
   wire user_sbr_obi_req_i_0_;
   input user_sbr_obi_req_i_1_;
@@ -189752,6 +193828,10 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire interrupts_o_3_;
   input sram_impl_i;
   wire sram_impl_i;
+  output all_banks_double_err_o_0_;
+  wire all_banks_double_err_o_0_;
+  output all_banks_double_err_o_1_;
+  wire all_banks_double_err_o_1_;
   wire _0000_;
   wire _0001_;
   wire _0002_;
@@ -190299,22 +194379,991 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire _0544_;
   wire _0545_;
   wire _0546_;
-  wire all_user_sbr_obi_req_100_;
-  wire all_user_sbr_obi_req_101_;
-  wire all_user_sbr_obi_req_102_;
-  wire all_user_sbr_obi_req_103_;
-  wire all_user_sbr_obi_req_104_;
-  wire all_user_sbr_obi_req_105_;
-  wire all_user_sbr_obi_req_106_;
-  wire all_user_sbr_obi_req_107_;
-  wire all_user_sbr_obi_req_108_;
-  wire all_user_sbr_obi_req_109_;
-  wire all_user_sbr_obi_req_110_;
-  wire all_user_sbr_obi_req_111_;
-  wire all_user_sbr_obi_req_112_;
-  wire all_user_sbr_obi_req_113_;
-  wire all_user_sbr_obi_req_114_;
-  wire all_user_sbr_obi_req_115_;
+  wire _0547_;
+  wire _0548_;
+  wire _0549_;
+  wire _0550_;
+  wire _0551_;
+  wire _0552_;
+  wire _0553_;
+  wire _0554_;
+  wire _0555_;
+  wire _0556_;
+  wire _0557_;
+  wire _0558_;
+  wire _0559_;
+  wire _0560_;
+  wire _0561_;
+  wire _0562_;
+  wire _0563_;
+  wire _0564_;
+  wire _0565_;
+  wire _0566_;
+  wire _0567_;
+  wire _0568_;
+  wire _0569_;
+  wire _0570_;
+  wire _0571_;
+  wire _0572_;
+  wire _0573_;
+  wire _0574_;
+  wire _0575_;
+  wire _0576_;
+  wire _0577_;
+  wire _0578_;
+  wire _0579_;
+  wire _0580_;
+  wire _0581_;
+  wire _0582_;
+  wire _0583_;
+  wire _0584_;
+  wire _0585_;
+  wire _0586_;
+  wire _0587_;
+  wire _0588_;
+  wire _0589_;
+  wire _0590_;
+  wire _0591_;
+  wire _0592_;
+  wire _0593_;
+  wire _0594_;
+  wire _0595_;
+  wire _0596_;
+  wire _0597_;
+  wire _0598_;
+  wire _0599_;
+  wire _0600_;
+  wire _0601_;
+  wire _0602_;
+  wire _0603_;
+  wire _0604_;
+  wire _0605_;
+  wire _0606_;
+  wire _0607_;
+  wire _0608_;
+  wire _0609_;
+  wire _0610_;
+  wire _0611_;
+  wire _0612_;
+  wire _0613_;
+  wire _0614_;
+  wire _0615_;
+  wire _0616_;
+  wire _0617_;
+  wire _0618_;
+  wire _0619_;
+  wire _0620_;
+  wire _0621_;
+  wire _0622_;
+  wire _0623_;
+  wire _0624_;
+  wire _0625_;
+  wire _0626_;
+  wire _0627_;
+  wire _0628_;
+  wire _0629_;
+  wire _0630_;
+  wire _0631_;
+  wire _0632_;
+  wire _0633_;
+  wire _0634_;
+  wire _0635_;
+  wire _0636_;
+  wire _0637_;
+  wire _0638_;
+  wire _0639_;
+  wire _0640_;
+  wire _0641_;
+  wire _0642_;
+  wire _0643_;
+  wire _0644_;
+  wire _0645_;
+  wire _0646_;
+  wire _0647_;
+  wire _0648_;
+  wire _0649_;
+  wire _0650_;
+  wire _0651_;
+  wire _0652_;
+  wire _0653_;
+  wire _0654_;
+  wire _0655_;
+  wire _0656_;
+  wire _0657_;
+  wire _0658_;
+  wire _0659_;
+  wire _0660_;
+  wire _0661_;
+  wire _0662_;
+  wire _0663_;
+  wire _0664_;
+  wire _0665_;
+  wire _0666_;
+  wire _0667_;
+  wire _0668_;
+  wire _0669_;
+  wire _0670_;
+  wire _0671_;
+  wire _0672_;
+  wire _0673_;
+  wire _0674_;
+  wire _0675_;
+  wire _0676_;
+  wire _0677_;
+  wire _0678_;
+  wire _0679_;
+  wire _0680_;
+  wire _0681_;
+  wire _0682_;
+  wire _0683_;
+  wire _0684_;
+  wire _0685_;
+  wire _0686_;
+  wire _0687_;
+  wire _0688_;
+  wire _0689_;
+  wire _0690_;
+  wire _0691_;
+  wire _0692_;
+  wire _0693_;
+  wire _0694_;
+  wire _0695_;
+  wire _0696_;
+  wire _0697_;
+  wire _0698_;
+  wire _0699_;
+  wire _0700_;
+  wire _0701_;
+  wire _0702_;
+  wire _0703_;
+  wire _0704_;
+  wire _0705_;
+  wire _0706_;
+  wire _0707_;
+  wire _0708_;
+  wire _0709_;
+  wire _0710_;
+  wire _0711_;
+  wire _0712_;
+  wire _0713_;
+  wire _0714_;
+  wire _0715_;
+  wire _0716_;
+  wire _0717_;
+  wire _0718_;
+  wire _0719_;
+  wire _0720_;
+  wire _0721_;
+  wire _0722_;
+  wire _0723_;
+  wire _0724_;
+  wire _0725_;
+  wire _0726_;
+  wire _0727_;
+  wire _0728_;
+  wire _0729_;
+  wire _0730_;
+  wire _0731_;
+  wire _0732_;
+  wire _0733_;
+  wire _0734_;
+  wire _0735_;
+  wire _0736_;
+  wire _0737_;
+  wire _0738_;
+  wire _0739_;
+  wire _0740_;
+  wire _0741_;
+  wire _0742_;
+  wire _0743_;
+  wire _0744_;
+  wire _0745_;
+  wire _0746_;
+  wire _0747_;
+  wire _0748_;
+  wire _0749_;
+  wire _0750_;
+  wire _0751_;
+  wire _0752_;
+  wire _0753_;
+  wire _0754_;
+  wire _0755_;
+  wire _0756_;
+  wire _0757_;
+  wire _0758_;
+  wire _0759_;
+  wire _0760_;
+  wire _0761_;
+  wire _0762_;
+  wire _0763_;
+  wire _0764_;
+  wire _0765_;
+  wire _0766_;
+  wire _0767_;
+  wire _0768_;
+  wire _0769_;
+  wire _0770_;
+  wire _0771_;
+  wire _0772_;
+  wire _0773_;
+  wire _0774_;
+  wire _0775_;
+  wire _0776_;
+  wire _0777_;
+  wire _0778_;
+  wire _0779_;
+  wire _0780_;
+  wire _0781_;
+  wire _0782_;
+  wire _0783_;
+  wire _0784_;
+  wire _0785_;
+  wire _0786_;
+  wire _0787_;
+  wire _0788_;
+  wire _0789_;
+  wire _0790_;
+  wire _0791_;
+  wire _0792_;
+  wire _0793_;
+  wire _0794_;
+  wire _0795_;
+  wire _0796_;
+  wire _0797_;
+  wire _0798_;
+  wire _0799_;
+  wire _0800_;
+  wire _0801_;
+  wire _0802_;
+  wire _0803_;
+  wire _0804_;
+  wire _0805_;
+  wire _0806_;
+  wire _0807_;
+  wire _0808_;
+  wire _0809_;
+  wire _0810_;
+  wire _0811_;
+  wire _0812_;
+  wire _0813_;
+  wire _0814_;
+  wire _0815_;
+  wire _0816_;
+  wire _0817_;
+  wire _0818_;
+  wire _0819_;
+  wire _0820_;
+  wire _0821_;
+  wire _0822_;
+  wire _0823_;
+  wire _0824_;
+  wire _0825_;
+  wire _0826_;
+  wire _0827_;
+  wire _0828_;
+  wire _0829_;
+  wire _0830_;
+  wire _0831_;
+  wire _0832_;
+  wire _0833_;
+  wire _0834_;
+  wire _0835_;
+  wire _0836_;
+  wire _0837_;
+  wire _0838_;
+  wire _0839_;
+  wire _0840_;
+  wire _0841_;
+  wire _0842_;
+  wire _0843_;
+  wire _0844_;
+  wire _0845_;
+  wire _0846_;
+  wire _0847_;
+  wire _0848_;
+  wire _0849_;
+  wire _0850_;
+  wire _0851_;
+  wire _0852_;
+  wire _0853_;
+  wire _0854_;
+  wire _0855_;
+  wire _0856_;
+  wire _0857_;
+  wire _0858_;
+  wire _0859_;
+  wire _0860_;
+  wire _0861_;
+  wire _0862_;
+  wire _0863_;
+  wire _0864_;
+  wire _0865_;
+  wire _0866_;
+  wire _0867_;
+  wire _0868_;
+  wire _0869_;
+  wire _0870_;
+  wire _0871_;
+  wire _0872_;
+  wire _0873_;
+  wire _0874_;
+  wire _0875_;
+  wire _0876_;
+  wire _0877_;
+  wire _0878_;
+  wire _0879_;
+  wire _0880_;
+  wire _0881_;
+  wire _0882_;
+  wire _0883_;
+  wire _0884_;
+  wire _0885_;
+  wire _0886_;
+  wire _0887_;
+  wire _0888_;
+  wire _0889_;
+  wire _0890_;
+  wire _0891_;
+  wire _0892_;
+  wire _0893_;
+  wire _0894_;
+  wire _0895_;
+  wire _0896_;
+  wire _0897_;
+  wire _0898_;
+  wire _0899_;
+  wire _0900_;
+  wire _0901_;
+  wire _0902_;
+  wire _0903_;
+  wire _0904_;
+  wire _0905_;
+  wire _0906_;
+  wire _0907_;
+  wire _0908_;
+  wire _0909_;
+  wire _0910_;
+  wire _0911_;
+  wire _0912_;
+  wire _0913_;
+  wire _0914_;
+  wire _0915_;
+  wire _0916_;
+  wire _0917_;
+  wire _0918_;
+  wire _0919_;
+  wire _0920_;
+  wire _0921_;
+  wire _0922_;
+  wire _0923_;
+  wire _0924_;
+  wire _0925_;
+  wire _0926_;
+  wire _0927_;
+  wire _0928_;
+  wire _0929_;
+  wire _0930_;
+  wire _0931_;
+  wire _0932_;
+  wire _0933_;
+  wire _0934_;
+  wire _0935_;
+  wire _0936_;
+  wire _0937_;
+  wire _0938_;
+  wire _0939_;
+  wire _0940_;
+  wire _0941_;
+  wire _0942_;
+  wire _0943_;
+  wire _0944_;
+  wire _0945_;
+  wire _0946_;
+  wire _0947_;
+  wire _0948_;
+  wire _0949_;
+  wire _0950_;
+  wire _0951_;
+  wire _0952_;
+  wire _0953_;
+  wire _0954_;
+  wire _0955_;
+  wire _0956_;
+  wire _0957_;
+  wire _0958_;
+  wire _0959_;
+  wire _0960_;
+  wire _0961_;
+  wire _0962_;
+  wire _0963_;
+  wire _0964_;
+  wire _0965_;
+  wire _0966_;
+  wire _0967_;
+  wire _0968_;
+  wire _0969_;
+  wire _0970_;
+  wire _0971_;
+  wire _0972_;
+  wire _0973_;
+  wire _0974_;
+  wire _0975_;
+  wire _0976_;
+  wire _0977_;
+  wire _0978_;
+  wire _0979_;
+  wire _0980_;
+  wire _0981_;
+  wire _0982_;
+  wire _0983_;
+  wire _0984_;
+  wire _0985_;
+  wire _0986_;
+  wire _0987_;
+  wire _0988_;
+  wire _0989_;
+  wire _0990_;
+  wire _0991_;
+  wire _0992_;
+  wire _0993_;
+  wire _0994_;
+  wire _0995_;
+  wire _0996_;
+  wire _0997_;
+  wire _0998_;
+  wire _0999_;
+  wire _1000_;
+  wire _1001_;
+  wire _1002_;
+  wire _1003_;
+  wire _1004_;
+  wire _1005_;
+  wire _1006_;
+  wire _1007_;
+  wire _1008_;
+  wire _1009_;
+  wire _1010_;
+  wire _1011_;
+  wire _1012_;
+  wire _1013_;
+  wire _1014_;
+  wire _1015_;
+  wire _1016_;
+  wire _1017_;
+  wire _1018_;
+  wire _1019_;
+  wire _1020_;
+  wire _1021_;
+  wire _1022_;
+  wire _1023_;
+  wire _1024_;
+  wire _1025_;
+  wire _1026_;
+  wire _1027_;
+  wire _1028_;
+  wire _1029_;
+  wire _1030_;
+  wire _1031_;
+  wire _1032_;
+  wire _1033_;
+  wire _1034_;
+  wire _1035_;
+  wire _1036_;
+  wire _1037_;
+  wire _1038_;
+  wire _1039_;
+  wire _1040_;
+  wire _1041_;
+  wire _1042_;
+  wire _1043_;
+  wire _1044_;
+  wire _1045_;
+  wire _1046_;
+  wire _1047_;
+  wire _1048_;
+  wire _1049_;
+  wire _1050_;
+  wire _1051_;
+  wire _1052_;
+  wire _1053_;
+  wire _1054_;
+  wire _1055_;
+  wire _1056_;
+  wire _1057_;
+  wire _1058_;
+  wire _1059_;
+  wire _1060_;
+  wire _1061_;
+  wire _1062_;
+  wire _1063_;
+  wire _1064_;
+  wire _1065_;
+  wire _1066_;
+  wire _1067_;
+  wire _1068_;
+  wire _1069_;
+  wire _1070_;
+  wire _1071_;
+  wire _1072_;
+  wire _1073_;
+  wire _1074_;
+  wire _1075_;
+  wire _1076_;
+  wire _1077_;
+  wire _1078_;
+  wire _1079_;
+  wire _1080_;
+  wire _1081_;
+  wire _1082_;
+  wire _1083_;
+  wire _1084_;
+  wire _1085_;
+  wire _1086_;
+  wire _1087_;
+  wire _1088_;
+  wire _1089_;
+  wire _1090_;
+  wire _1091_;
+  wire _1092_;
+  wire _1093_;
+  wire _1094_;
+  wire _1095_;
+  wire _1096_;
+  wire _1097_;
+  wire _1098_;
+  wire _1099_;
+  wire _1100_;
+  wire _1101_;
+  wire _1102_;
+  wire _1103_;
+  wire _1104_;
+  wire _1105_;
+  wire _1106_;
+  wire _1107_;
+  wire _1108_;
+  wire _1109_;
+  wire _1110_;
+  wire _1111_;
+  wire _1112_;
+  wire _1113_;
+  wire _1114_;
+  wire _1115_;
+  wire _1116_;
+  wire _1117_;
+  wire _1118_;
+  wire _1119_;
+  wire _1120_;
+  wire _1121_;
+  wire _1122_;
+  wire _1123_;
+  wire _1124_;
+  wire _1125_;
+  wire _1126_;
+  wire _1127_;
+  wire _1128_;
+  wire _1129_;
+  wire _1130_;
+  wire _1131_;
+  wire _1132_;
+  wire _1133_;
+  wire _1134_;
+  wire _1135_;
+  wire _1136_;
+  wire _1137_;
+  wire _1138_;
+  wire _1139_;
+  wire _1140_;
+  wire _1141_;
+  wire _1142_;
+  wire _1143_;
+  wire _1144_;
+  wire _1145_;
+  wire _1146_;
+  wire _1147_;
+  wire _1148_;
+  wire _1149_;
+  wire _1150_;
+  wire _1151_;
+  wire _1152_;
+  wire _1153_;
+  wire _1154_;
+  wire _1155_;
+  wire _1156_;
+  wire _1157_;
+  wire _1158_;
+  wire _1159_;
+  wire _1160_;
+  wire _1161_;
+  wire _1162_;
+  wire _1163_;
+  wire _1164_;
+  wire _1165_;
+  wire _1166_;
+  wire _1167_;
+  wire _1168_;
+  wire _1169_;
+  wire _1170_;
+  wire _1171_;
+  wire _1172_;
+  wire _1173_;
+  wire _1174_;
+  wire _1175_;
+  wire _1176_;
+  wire _1177_;
+  wire _1178_;
+  wire _1179_;
+  wire _1180_;
+  wire _1181_;
+  wire _1182_;
+  wire _1183_;
+  wire _1184_;
+  wire _1185_;
+  wire _1186_;
+  wire _1187_;
+  wire _1188_;
+  wire _1189_;
+  wire _1190_;
+  wire _1191_;
+  wire _1192_;
+  wire _1193_;
+  wire _1194_;
+  wire _1195_;
+  wire _1196_;
+  wire _1197_;
+  wire _1198_;
+  wire _1199_;
+  wire _1200_;
+  wire _1201_;
+  wire _1202_;
+  wire _1203_;
+  wire _1204_;
+  wire _1205_;
+  wire _1206_;
+  wire _1207_;
+  wire _1208_;
+  wire _1209_;
+  wire _1210_;
+  wire _1211_;
+  wire _1212_;
+  wire _1213_;
+  wire _1214_;
+  wire _1215_;
+  wire _1216_;
+  wire _1217_;
+  wire _1218_;
+  wire _1219_;
+  wire _1220_;
+  wire _1221_;
+  wire _1222_;
+  wire _1223_;
+  wire _1224_;
+  wire _1225_;
+  wire _1226_;
+  wire _1227_;
+  wire _1228_;
+  wire _1229_;
+  wire _1230_;
+  wire _1231_;
+  wire _1232_;
+  wire _1233_;
+  wire _1234_;
+  wire _1235_;
+  wire _1236_;
+  wire _1237_;
+  wire _1238_;
+  wire _1239_;
+  wire _1240_;
+  wire _1241_;
+  wire _1242_;
+  wire _1243_;
+  wire _1244_;
+  wire _1245_;
+  wire _1246_;
+  wire _1247_;
+  wire _1248_;
+  wire _1249_;
+  wire _1250_;
+  wire _1251_;
+  wire _1252_;
+  wire _1253_;
+  wire _1254_;
+  wire _1255_;
+  wire _1256_;
+  wire _1257_;
+  wire _1258_;
+  wire _1259_;
+  wire _1260_;
+  wire _1261_;
+  wire _1262_;
+  wire _1263_;
+  wire _1264_;
+  wire _1265_;
+  wire _1266_;
+  wire _1267_;
+  wire _1268_;
+  wire _1269_;
+  wire _1270_;
+  wire _1271_;
+  wire _1272_;
+  wire _1273_;
+  wire _1274_;
+  wire _1275_;
+  wire _1276_;
+  wire _1277_;
+  wire _1278_;
+  wire _1279_;
+  wire _1280_;
+  wire _1281_;
+  wire _1282_;
+  wire _1283_;
+  wire _1284_;
+  wire _1285_;
+  wire _1286_;
+  wire _1287_;
+  wire _1288_;
+  wire _1289_;
+  wire _1290_;
+  wire _1291_;
+  wire _1292_;
+  wire _1293_;
+  wire _1294_;
+  wire _1295_;
+  wire _1296_;
+  wire _1297_;
+  wire _1298_;
+  wire _1299_;
+  wire _1300_;
+  wire _1301_;
+  wire _1302_;
+  wire _1303_;
+  wire _1304_;
+  wire _1305_;
+  wire _1306_;
+  wire _1307_;
+  wire _1308_;
+  wire _1309_;
+  wire _1310_;
+  wire _1311_;
+  wire _1312_;
+  wire _1313_;
+  wire _1314_;
+  wire _1315_;
+  wire _1316_;
+  wire _1317_;
+  wire _1318_;
+  wire _1319_;
+  wire _1320_;
+  wire _1321_;
+  wire _1322_;
+  wire _1323_;
+  wire _1324_;
+  wire _1325_;
+  wire _1326_;
+  wire _1327_;
+  wire _1328_;
+  wire _1329_;
+  wire _1330_;
+  wire _1331_;
+  wire _1332_;
+  wire _1333_;
+  wire _1334_;
+  wire _1335_;
+  wire _1336_;
+  wire _1337_;
+  wire _1338_;
+  wire _1339_;
+  wire _1340_;
+  wire _1341_;
+  wire _1342_;
+  wire _1343_;
+  wire _1344_;
+  wire _1345_;
+  wire _1346_;
+  wire _1347_;
+  wire _1348_;
+  wire _1349_;
+  wire _1350_;
+  wire _1351_;
+  wire _1352_;
+  wire _1353_;
+  wire _1354_;
+  wire _1355_;
+  wire _1356_;
+  wire _1357_;
+  wire _1358_;
+  wire _1359_;
+  wire _1360_;
+  wire _1361_;
+  wire _1362_;
+  wire _1363_;
+  wire _1364_;
+  wire _1365_;
+  wire _1366_;
+  wire _1367_;
+  wire _1368_;
+  wire _1369_;
+  wire _1370_;
+  wire _1371_;
+  wire _1372_;
+  wire _1373_;
+  wire _1374_;
+  wire _1375_;
+  wire _1376_;
+  wire _1377_;
+  wire _1378_;
+  wire _1379_;
+  wire _1380_;
+  wire _1381_;
+  wire _1382_;
+  wire _1383_;
+  wire _1384_;
+  wire _1385_;
+  wire _1386_;
+  wire _1387_;
+  wire _1388_;
+  wire _1389_;
+  wire _1390_;
+  wire _1391_;
+  wire _1392_;
+  wire _1393_;
+  wire _1394_;
+  wire _1395_;
+  wire _1396_;
+  wire _1397_;
+  wire _1398_;
+  wire _1399_;
+  wire _1400_;
+  wire _1401_;
+  wire _1402_;
+  wire _1403_;
+  wire _1404_;
+  wire _1405_;
+  wire _1406_;
+  wire _1407_;
+  wire _1408_;
+  wire _1409_;
+  wire _1410_;
+  wire _1411_;
+  wire _1412_;
+  wire _1413_;
+  wire _1414_;
+  wire _1415_;
+  wire _1416_;
+  wire _1417_;
+  wire _1418_;
+  wire _1419_;
+  wire _1420_;
+  wire _1421_;
+  wire _1422_;
+  wire _1423_;
+  wire _1424_;
+  wire _1425_;
+  wire _1426_;
+  wire _1427_;
+  wire _1428_;
+  wire _1429_;
+  wire _1430_;
+  wire _1431_;
+  wire _1432_;
+  wire _1433_;
+  wire _1434_;
+  wire _1435_;
+  wire _1436_;
+  wire _1437_;
+  wire _1438_;
+  wire _1439_;
+  wire _1440_;
+  wire _1441_;
+  wire _1442_;
+  wire _1443_;
+  wire _1444_;
+  wire _1445_;
+  wire _1446_;
+  wire _1447_;
+  wire _1448_;
+  wire _1449_;
+  wire _1450_;
+  wire _1451_;
+  wire _1452_;
+  wire _1453_;
+  wire _1454_;
+  wire _1455_;
+  wire _1456_;
+  wire _1457_;
+  wire _1458_;
+  wire _1459_;
+  wire _1460_;
+  wire _1461_;
+  wire _1462_;
+  wire _1463_;
+  wire _1464_;
+  wire _1465_;
+  wire _1466_;
+  wire _1467_;
+  wire _1468_;
+  wire _1469_;
+  wire _1470_;
+  wire _1471_;
+  wire _1472_;
+  wire _1473_;
+  wire _1474_;
+  wire _1475_;
+  wire _1476_;
+  wire _1477_;
+  wire _1478_;
+  wire _1479_;
+  wire _1480_;
+  wire _1481_;
+  wire _1482_;
+  wire _1483_;
+  wire _1484_;
+  wire _1485_;
+  wire _1486_;
+  wire _1487_;
+  wire _1488_;
+  wire _1489_;
+  wire _1490_;
+  wire _1491_;
+  wire _1492_;
+  wire _1493_;
+  wire _1494_;
+  wire _1495_;
+  wire _1496_;
+  wire _1497_;
+  wire _1498_;
+  wire _1499_;
+  wire _1500_;
+  wire _1501_;
+  wire _1502_;
+  wire _1503_;
+  wire _1504_;
+  wire _1505_;
+  wire _1506_;
+  wire _1507_;
+  wire _1508_;
+  wire _1509_;
+  wire _1510_;
+  wire _1511_;
+  wire _1512_;
+  wire _1513_;
+  wire _1514_;
+  wire _1515_;
+  wire _1516_;
+  wire _1517_;
+  wire _1518_;
+  wire _1519_;
+  wire _1520_;
+  wire _1521_;
+  wire _1522_;
+  wire _1523_;
+  wire _1524_;
+  wire _1525_;
+  wire _1526_;
+  wire _1527_;
+  wire _1528_;
+  wire _1529_;
+  wire _1530_;
+  wire _1531_;
   wire all_user_sbr_obi_req_118_;
   wire all_user_sbr_obi_req_119_;
   wire all_user_sbr_obi_req_120_;
@@ -190324,47 +195373,10 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire all_user_sbr_obi_req_124_;
   wire all_user_sbr_obi_req_125_;
   wire all_user_sbr_obi_req_126_;
-  wire all_user_sbr_obi_req_148_;
+  wire all_user_sbr_obi_req_127_;
   wire all_user_sbr_obi_req_150_;
   wire all_user_sbr_obi_req_151_;
   wire all_user_sbr_obi_req_152_;
-  wire all_user_sbr_obi_req_153_;
-  wire all_user_sbr_obi_req_154_;
-  wire all_user_sbr_obi_req_155_;
-  wire all_user_sbr_obi_req_156_;
-  wire all_user_sbr_obi_req_157_;
-  wire all_user_sbr_obi_req_158_;
-  wire all_user_sbr_obi_req_159_;
-  wire all_user_sbr_obi_req_160_;
-  wire all_user_sbr_obi_req_161_;
-  wire all_user_sbr_obi_req_162_;
-  wire all_user_sbr_obi_req_163_;
-  wire all_user_sbr_obi_req_164_;
-  wire all_user_sbr_obi_req_165_;
-  wire all_user_sbr_obi_req_166_;
-  wire all_user_sbr_obi_req_167_;
-  wire all_user_sbr_obi_req_168_;
-  wire all_user_sbr_obi_req_169_;
-  wire all_user_sbr_obi_req_170_;
-  wire all_user_sbr_obi_req_171_;
-  wire all_user_sbr_obi_req_172_;
-  wire all_user_sbr_obi_req_173_;
-  wire all_user_sbr_obi_req_174_;
-  wire all_user_sbr_obi_req_175_;
-  wire all_user_sbr_obi_req_176_;
-  wire all_user_sbr_obi_req_177_;
-  wire all_user_sbr_obi_req_178_;
-  wire all_user_sbr_obi_req_179_;
-  wire all_user_sbr_obi_req_180_;
-  wire all_user_sbr_obi_req_181_;
-  wire all_user_sbr_obi_req_182_;
-  wire all_user_sbr_obi_req_183_;
-  wire all_user_sbr_obi_req_184_;
-  wire all_user_sbr_obi_req_185_;
-  wire all_user_sbr_obi_req_186_;
-  wire all_user_sbr_obi_req_187_;
-  wire all_user_sbr_obi_req_188_;
-  wire all_user_sbr_obi_req_189_;
   wire all_user_sbr_obi_req_192_;
   wire all_user_sbr_obi_req_193_;
   wire all_user_sbr_obi_req_194_;
@@ -190374,6 +195386,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire all_user_sbr_obi_req_198_;
   wire all_user_sbr_obi_req_199_;
   wire all_user_sbr_obi_req_200_;
+  wire all_user_sbr_obi_req_201_;
   wire all_user_sbr_obi_req_222_;
   wire all_user_sbr_obi_req_224_;
   wire all_user_sbr_obi_req_225_;
@@ -190385,31 +195398,9 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire all_user_sbr_obi_req_298_;
   wire all_user_sbr_obi_req_299_;
   wire all_user_sbr_obi_req_300_;
-  wire all_user_sbr_obi_req_74_;
   wire all_user_sbr_obi_req_76_;
   wire all_user_sbr_obi_req_77_;
   wire all_user_sbr_obi_req_78_;
-  wire all_user_sbr_obi_req_79_;
-  wire all_user_sbr_obi_req_80_;
-  wire all_user_sbr_obi_req_81_;
-  wire all_user_sbr_obi_req_82_;
-  wire all_user_sbr_obi_req_83_;
-  wire all_user_sbr_obi_req_84_;
-  wire all_user_sbr_obi_req_85_;
-  wire all_user_sbr_obi_req_86_;
-  wire all_user_sbr_obi_req_87_;
-  wire all_user_sbr_obi_req_88_;
-  wire all_user_sbr_obi_req_89_;
-  wire all_user_sbr_obi_req_90_;
-  wire all_user_sbr_obi_req_91_;
-  wire all_user_sbr_obi_req_92_;
-  wire all_user_sbr_obi_req_93_;
-  wire all_user_sbr_obi_req_94_;
-  wire all_user_sbr_obi_req_95_;
-  wire all_user_sbr_obi_req_96_;
-  wire all_user_sbr_obi_req_97_;
-  wire all_user_sbr_obi_req_98_;
-  wire all_user_sbr_obi_req_99_;
   wire all_user_sbr_obi_rsp_117_;
   wire all_user_sbr_obi_rsp_121_;
   wire all_user_sbr_obi_rsp_122_;
@@ -190429,6 +195420,101 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire all_user_sbr_obi_rsp_82_;
   wire all_user_sbr_obi_rsp_83_;
   wire all_user_sbr_obi_rsp_84_;
+  wire \gen_sram_bank[0].bank_read_valid ;
+  wire \gen_sram_bank[0].bank_sram_addr_0_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_1_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_2_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_3_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_4_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_5_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_6_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_7_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_8_ ;
+  wire \gen_sram_bank[0].bank_sram_addr_9_ ;
+  wire \gen_sram_bank[0].bank_sram_be_0_ ;
+  wire \gen_sram_bank[0].bank_sram_be_1_ ;
+  wire \gen_sram_bank[0].bank_sram_be_2_ ;
+  wire \gen_sram_bank[0].bank_sram_be_3_ ;
+  wire \gen_sram_bank[0].bank_sram_req ;
+  wire \gen_sram_bank[0].bank_sram_wdata_12_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_13_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_14_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_15_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_16_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_17_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_19_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_22_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_23_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_24_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_25_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_26_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_28_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_29_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_2_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_3_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_4_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_5_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_6_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_7_ ;
+  wire \gen_sram_bank[0].bank_sram_wdata_8_ ;
+  wire \gen_sram_bank[0].bank_sram_we ;
+  wire \gen_sram_bank[0].bank_word_addr_q_0_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_1_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_2_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_3_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_4_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_5_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_6_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_7_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_8_ ;
+  wire \gen_sram_bank[0].bank_word_addr_q_9_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_0_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_1_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_2_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_4_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_5_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_7_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_8_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_addr_q_9_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_be_q_0_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_be_q_1_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_be_q_2_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_be_q_3_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_0_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_10_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_11_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_12_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_13_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_14_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_15_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_16_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_17_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_18_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_19_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_1_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_20_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_21_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_22_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_23_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_24_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_25_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_26_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_27_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_28_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_29_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_2_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_30_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_31_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_3_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_4_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_5_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_6_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_7_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_8_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_data_q_9_ ;
+  wire \gen_sram_bank[0].i_repair_buffer.buf_valid_q ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ ;
@@ -190449,6 +195535,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].rvalid_q_0_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_10_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_11_ ;
@@ -190513,8 +195600,114 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_8_ ;
   wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_9_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_0_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_17_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_18_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_19_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_1_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_34_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_36_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_37_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_51_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_54_ ;
+  wire \gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_55_ ;
   wire \gen_sram_bank[0].i_sram_macro.impl_o ;
   wire \gen_sram_bank[0].i_sram_shim.rvalid_d ;
+  wire \gen_sram_bank[1].bank_read_valid ;
+  wire \gen_sram_bank[1].bank_sram_addr_0_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_1_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_2_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_3_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_4_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_5_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_6_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_7_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_8_ ;
+  wire \gen_sram_bank[1].bank_sram_addr_9_ ;
+  wire \gen_sram_bank[1].bank_sram_be_0_ ;
+  wire \gen_sram_bank[1].bank_sram_be_1_ ;
+  wire \gen_sram_bank[1].bank_sram_be_2_ ;
+  wire \gen_sram_bank[1].bank_sram_be_3_ ;
+  wire \gen_sram_bank[1].bank_sram_req ;
+  wire \gen_sram_bank[1].bank_sram_wdata_12_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_13_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_14_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_15_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_16_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_17_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_19_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_22_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_23_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_24_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_25_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_26_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_28_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_29_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_2_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_3_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_4_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_5_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_6_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_7_ ;
+  wire \gen_sram_bank[1].bank_sram_wdata_8_ ;
+  wire \gen_sram_bank[1].bank_sram_we ;
+  wire \gen_sram_bank[1].bank_word_addr_q_0_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_1_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_2_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_3_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_4_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_5_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_6_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_7_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_8_ ;
+  wire \gen_sram_bank[1].bank_word_addr_q_9_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_0_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_1_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_2_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_3_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_4_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_5_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_8_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_addr_q_9_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_be_q_0_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_be_q_1_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_be_q_2_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_be_q_3_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_0_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_11_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_12_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_13_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_14_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_15_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_16_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_17_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_19_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_1_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_20_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_21_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_22_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_23_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_24_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_25_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_26_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_27_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_28_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_29_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_2_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_30_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_31_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_3_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_4_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_5_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_6_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_7_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_8_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_data_q_9_ ;
+  wire \gen_sram_bank[1].i_repair_buffer.buf_valid_q ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ ;
@@ -190535,6 +195728,7 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].rvalid_q_0_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_0_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_10_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_11_ ;
@@ -190599,6 +195793,17 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_8_ ;
   wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_9_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_0_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_17_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_18_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_19_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_1_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_34_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_36_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_37_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_51_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_54_ ;
+  wire \gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_55_ ;
   wire \gen_sram_bank[1].i_sram_macro.impl_o ;
   wire \gen_sram_bank[1].i_sram_shim.rvalid_d ;
   wire \i_obi_demux.i_counter.overflow_o ;
@@ -190611,4005 +195816,9601 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   wire \i_user_rom.addr_q_2_ ;
   wire \i_user_rom.addr_q_3_ ;
   wire \i_user_rom.we_q ;
-  BUFX3 _0547_ (
-    .A(\i_obi_demux.select_q_2_ ),
-    .Y(_0137_)
+  BUFX3 _1532_ (
+    .A(user_sbr_obi_req_i_44_),
+    .Y(_1243_)
   );
-  INVX1 _0548_ (
-    .A(_0137_),
-    .Y(_0138_)
+  BUFX3 _1533_ (
+    .A(user_sbr_obi_req_i_70_),
+    .Y(_1244_)
   );
-  BUFX3 _0549_ (
-    .A(_0138_),
-    .Y(_0139_)
+  BUFX3 _1534_ (
+    .A(user_sbr_obi_req_i_71_),
+    .Y(_1245_)
   );
-  OR4X1 _0550_ (
-    .A(user_sbr_obi_req_i_66_),
-    .B(user_sbr_obi_req_i_65_),
-    .C(user_sbr_obi_req_i_63_),
-    .D(user_sbr_obi_req_i_55_),
-    .Y(_0140_)
+  NOR2BX1 _1535_ (
+    .AB(_1244_),
+    .B(_1245_),
+    .Y(_1246_)
   );
-  OR4X2 _0551_ (
-    .A(user_sbr_obi_req_i_58_),
-    .B(user_sbr_obi_req_i_57_),
-    .C(user_sbr_obi_req_i_56_),
-    .D(_0140_),
-    .Y(_0141_)
-  );
-  NAND2BX1 _0552_ (
-    .AB(user_sbr_obi_req_i_70_),
-    .B(user_sbr_obi_req_i_71_),
-    .Y(_0142_)
-  );
-  OR4X1 _0553_ (
+  OR4X1 _1536_ (
     .A(user_sbr_obi_req_i_62_),
     .B(user_sbr_obi_req_i_61_),
     .C(user_sbr_obi_req_i_60_),
     .D(user_sbr_obi_req_i_59_),
-    .Y(_0143_)
+    .Y(_1247_)
   );
-  OR4X1 _0554_ (
+  OR4X1 _1537_ (
+    .A(user_sbr_obi_req_i_66_),
+    .B(user_sbr_obi_req_i_65_),
+    .C(user_sbr_obi_req_i_63_),
+    .D(user_sbr_obi_req_i_55_),
+    .Y(_1248_)
+  );
+  NOR2X1 _1538_ (
+    .A(_1247_),
+    .B(_1248_),
+    .Y(_1249_)
+  );
+  OR3X2 _1539_ (
+    .A(user_sbr_obi_req_i_58_),
+    .B(user_sbr_obi_req_i_57_),
+    .C(user_sbr_obi_req_i_56_),
+    .Y(_1250_)
+  );
+  OR4X1 _1540_ (
     .A(user_sbr_obi_req_i_68_),
     .B(user_sbr_obi_req_i_73_),
     .C(user_sbr_obi_req_i_72_),
     .D(user_sbr_obi_req_i_69_),
-    .Y(_0144_)
+    .Y(_1251_)
   );
-  OR4X2 _0555_ (
+  NOR4X2 _1541_ (
     .A(user_sbr_obi_req_i_67_),
     .B(user_sbr_obi_req_i_64_),
-    .C(_0143_),
-    .D(_0144_),
-    .Y(_0145_)
+    .C(_1250_),
+    .D(_1251_),
+    .Y(_1252_)
   );
-  NOR4BX2 _0556_ (
+  NAND2X1 _1542_ (
+    .A(_1249_),
+    .B(_1252_),
+    .Y(_1253_)
+  );
+  NOR2BX1 _1543_ (
+    .AB(_1246_),
+    .B(_1253_),
+    .Y(_1254_)
+  );
+  INVX1 _1544_ (
+    .A(\i_obi_demux.select_q_1_ ),
+    .Y(_1255_)
+  );
+  NAND2BX1 _1545_ (
+    .AB(_1244_),
+    .B(_1245_),
+    .Y(_1256_)
+  );
+  BUFX3 _1546_ (
+    .A(\i_obi_demux.select_q_1_ ),
+    .Y(_1257_)
+  );
+  OR3BX1 _1547_ (
+    .AB(_1244_),
+    .B(_1245_),
+    .C(_1257_),
+    .Y(_1258_)
+  );
+  BUFX3 _1548_ (
+    .A(\i_obi_demux.select_q_0_ ),
+    .Y(_1259_)
+  );
+  NAND2BX1 _1549_ (
     .AB(user_sbr_obi_req_i_54_),
-    .B(_0141_),
-    .C(_0142_),
-    .D(_0145_),
-    .Y(_0146_)
+    .B(_1259_),
+    .Y(_1260_)
   );
-  XOR2X2 _0557_ (
-    .A(_0139_),
-    .B(_0146_),
-    .Y(_0147_)
+  OAOI211X1 _1550_ (
+    .A(_1255_),
+    .B(_1256_),
+    .C(_1258_),
+    .D(_1260_),
+    .Y(_1261_)
   );
-  NOR2BX1 _0558_ (
+  XOR2X2 _1551_ (
+    .A(_1245_),
+    .B(_1244_),
+    .Y(_1262_)
+  );
+  NAND4BX1 _1552_ (
+    .AB(_1245_),
+    .B(_1244_),
+    .C(user_sbr_obi_req_i_54_),
+    .D(_1257_),
+    .Y(_1263_)
+  );
+  OAOI211X1 _1553_ (
+    .A(_1257_),
+    .B(_1262_),
+    .C(_1263_),
+    .D(_1259_),
+    .Y(_1264_)
+  );
+  INVX1 _1554_ (
+    .A(\i_obi_demux.select_q_2_ ),
+    .Y(_1265_)
+  );
+  OAI21X1 _1555_ (
+    .A(_1261_),
+    .B(_1264_),
+    .C(_1265_),
+    .Y(_1266_)
+  );
+  NOR2BX1 _1556_ (
     .AB(user_sbr_obi_req_i_71_),
     .B(user_sbr_obi_req_i_70_),
-    .Y(_0148_)
+    .Y(_1267_)
   );
-  NOR2BX1 _0559_ (
-    .AB(user_sbr_obi_req_i_70_),
-    .B(user_sbr_obi_req_i_71_),
-    .Y(_0149_)
-  );
-  NOR2X1 _0560_ (
-    .A(_0148_),
-    .B(_0149_),
-    .Y(_0150_)
-  );
-  OR4X1 _0561_ (
-    .A(user_sbr_obi_req_i_54_),
-    .B(_0141_),
-    .C(_0145_),
-    .D(_0150_),
-    .Y(_0151_)
-  );
-  BUFX3 _0562_ (
+  NOR2X1 _1557_ (
     .A(\i_obi_demux.select_q_0_ ),
-    .Y(_0152_)
+    .B(\i_obi_demux.select_q_1_ ),
+    .Y(_1268_)
   );
-  BUFX3 _0563_ (
-    .A(\i_obi_demux.select_q_1_ ),
-    .Y(_0153_)
+  AND4X2 _1558_ (
+    .A(\i_obi_demux.select_q_2_ ),
+    .B(user_sbr_obi_req_i_54_),
+    .C(_1267_),
+    .D(_1268_),
+    .Y(_1269_)
   );
-  NOR2X1 _0564_ (
-    .A(_0152_),
-    .B(_0153_),
-    .Y(_0154_)
+  NAND2X1 _1559_ (
+    .A(\i_obi_demux.select_q_2_ ),
+    .B(all_user_sbr_obi_rsp_156_),
+    .Y(_1270_)
   );
-  NOR2X1 _0565_ (
-    .A(\i_obi_demux.select_q_1_ ),
-    .B(user_sbr_obi_req_i_53_),
-    .Y(_0155_)
+  NAND3BX1 _1560_ (
+    .AB(\i_obi_demux.select_q_2_ ),
+    .B(_1257_),
+    .C(all_user_sbr_obi_rsp_78_),
+    .Y(_1271_)
   );
-  AOI22X1 _0566_ (
-    .A(_0153_),
-    .B(_0148_),
-    .C(_0149_),
-    .D(_0155_),
-    .Y(_0156_)
+  OAOI211X1 _1561_ (
+    .A(_1257_),
+    .B(_1270_),
+    .C(_1271_),
+    .D(_1259_),
+    .Y(_1272_)
   );
-  NAND2X1 _0567_ (
-    .A(user_sbr_obi_req_i_53_),
-    .B(_0149_),
-    .Y(_0157_)
-  );
-  INVX2 _0568_ (
-    .A(\i_obi_demux.select_q_1_ ),
-    .Y(_0158_)
-  );
-  NOR2X1 _0569_ (
-    .A(_0152_),
-    .B(_0158_),
-    .Y(_0159_)
-  );
-  AOI2B2BX1 _0570_ (
-    .AB(_0156_),
-    .B(_0152_),
-    .CB(_0157_),
-    .D(_0159_),
-    .Y(_0160_)
-  );
-  OR3X2 _0571_ (
-    .A(user_sbr_obi_req_i_54_),
-    .B(_0141_),
-    .C(_0145_),
-    .Y(_0161_)
-  );
-  OAI2BB2X2 _0572_ (
-    .AB(_0151_),
-    .BB(_0154_),
-    .C(_0160_),
-    .D(_0161_),
-    .Y(_0162_)
-  );
-  INVX1 _0573_ (
-    .A(\i_obi_demux.select_q_0_ ),
-    .Y(_0163_)
-  );
-  AO22X2 _0574_ (
-    .A(all_user_sbr_obi_rsp_78_),
-    .B(_0138_),
-    .C(all_user_sbr_obi_rsp_156_),
-    .D(_0158_),
-    .Y(_0164_)
-  );
-  NAND2X1 _0575_ (
+  AOI21BX1 _1562_ (
     .A(\i_obi_demux.select_q_0_ ),
     .B(all_user_sbr_obi_rsp_117_),
-    .Y(_0165_)
+    .CB(_1257_),
+    .Y(_1273_)
   );
-  AOI21X1 _0576_ (
-    .A(\i_obi_demux.select_q_1_ ),
-    .B(_0165_),
-    .C(_0137_),
-    .Y(_0166_)
+  NOR3BX1 _1563_ (
+    .AB(\i_obi_demux.select_q_0_ ),
+    .B(all_user_sbr_obi_rsp_39_),
+    .C(_1257_),
+    .Y(_1274_)
   );
-  INVX1 _0577_ (
-    .A(all_user_sbr_obi_rsp_39_),
-    .Y(_0167_)
-  );
-  NOR3X1 _0578_ (
+  NOR3X1 _1564_ (
     .A(\i_obi_demux.select_q_0_ ),
     .B(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
     .C(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
-    .Y(_0168_)
+    .Y(_1275_)
   );
-  NOR2X1 _0579_ (
-    .A(\i_obi_demux.select_q_1_ ),
-    .B(_0137_),
-    .Y(_0169_)
+  NOR4X1 _1565_ (
+    .A(\i_obi_demux.select_q_2_ ),
+    .B(_1273_),
+    .C(_1274_),
+    .D(_1275_),
+    .Y(_1276_)
   );
-  AOAI211X1 _0580_ (
-    .A(\i_obi_demux.select_q_0_ ),
-    .B(_0167_),
-    .C(_0168_),
-    .D(_0169_),
-    .Y(_0170_)
+  NOR4BX1 _1566_ (
+    .AB(\i_obi_demux.i_counter.q_o ),
+    .B(_1269_),
+    .C(_1272_),
+    .D(_1276_),
+    .Y(_1277_)
   );
-  AOAI211X1 _0581_ (
-    .A(_0163_),
-    .B(_0164_),
-    .C(_0166_),
-    .D(_0170_),
-    .Y(_0171_)
+  NAND2X1 _1567_ (
+    .A(_1266_),
+    .B(_1277_),
+    .Y(_1278_)
   );
-  NAND2X1 _0582_ (
-    .A(\i_obi_demux.i_counter.q_o ),
-    .B(_0171_),
-    .Y(_0172_)
-  );
-  AO21X2 _0583_ (
-    .A(_0147_),
-    .B(_0162_),
-    .C(_0172_),
-    .Y(_0173_)
-  );
-  NAND2BX1 _0584_ (
-    .AB(_0161_),
-    .B(_0149_),
-    .Y(_0174_)
-  );
-  INVX1 _0585_ (
+  BUFX3 _1568_ (
     .A(\i_obi_demux.i_counter.overflow_o ),
-    .Y(_0175_)
+    .Y(_1279_)
   );
-  NAND2X1 _0586_ (
-    .A(_0175_),
-    .B(user_sbr_obi_req_i_0_),
-    .Y(_0176_)
+  BUFX3 _1569_ (
+    .A(user_sbr_obi_req_i_54_),
+    .Y(_1280_)
   );
-  OR3BX1 _0587_ (
-    .AB(_0173_),
-    .B(_0174_),
-    .C(_0176_),
-    .Y(_0177_)
+  NOR4BBX2 _1570_ (
+    .AB(_1254_),
+    .BB(_1278_),
+    .C(_1279_),
+    .D(_1280_),
+    .Y(_1281_)
   );
-  NOR2X1 _0588_ (
-    .A(user_sbr_obi_req_i_53_),
-    .B(_0177_),
-    .Y(all_user_sbr_obi_req_74_)
+  BUFX3 _1571_ (
+    .A(_1281_),
+    .Y(_1282_)
   );
-  AOI21X2 _0589_ (
-    .A(_0147_),
-    .B(_0162_),
-    .C(_0172_),
-    .Y(_0178_)
+  BUFX3 _1572_ (
+    .A(_1282_),
+    .Y(_1283_)
   );
-  OR4X2 _0590_ (
-    .A(\i_obi_demux.i_counter.overflow_o ),
-    .B(user_sbr_obi_req_i_53_),
-    .C(_0178_),
-    .D(_0174_),
-    .Y(_0179_)
-  );
-  BUFX12 _0591_ (
-    .A(_0179_),
-    .Y(_0180_)
-  );
-  BUFX24 _0592_ (
-    .A(_0180_),
-    .Y(_0181_)
-  );
-  NOR2BX1 _0593_ (
-    .AB(user_sbr_obi_req_i_26_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_100_)
-  );
-  NOR2BX1 _0594_ (
-    .AB(user_sbr_obi_req_i_27_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_101_)
-  );
-  NOR2BX1 _0595_ (
-    .AB(user_sbr_obi_req_i_28_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_102_)
-  );
-  NOR2BX1 _0596_ (
-    .AB(user_sbr_obi_req_i_29_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_103_)
-  );
-  NOR2BX1 _0597_ (
-    .AB(user_sbr_obi_req_i_32_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_106_)
-  );
-  NOR2BX1 _0598_ (
-    .AB(user_sbr_obi_req_i_30_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_104_)
-  );
-  NOR2BX1 _0599_ (
-    .AB(user_sbr_obi_req_i_31_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_105_)
-  );
-  NOR2BX1 _0600_ (
-    .AB(user_sbr_obi_req_i_33_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_107_)
-  );
-  NOR2BX1 _0601_ (
-    .AB(user_sbr_obi_req_i_34_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_108_)
-  );
-  NOR2BX1 _0602_ (
-    .AB(user_sbr_obi_req_i_35_),
-    .B(_0181_),
-    .Y(all_user_sbr_obi_req_109_)
-  );
-  BUFX3 _0603_ (
-    .A(_0179_),
-    .Y(_0182_)
-  );
-  NOR2BX1 _0604_ (
-    .AB(user_sbr_obi_req_i_36_),
-    .B(_0182_),
-    .Y(all_user_sbr_obi_req_110_)
-  );
-  NOR2BX1 _0605_ (
-    .AB(user_sbr_obi_req_i_37_),
-    .B(_0182_),
-    .Y(all_user_sbr_obi_req_111_)
-  );
-  NOR2BX1 _0606_ (
-    .AB(user_sbr_obi_req_i_38_),
-    .B(_0182_),
-    .Y(all_user_sbr_obi_req_112_)
-  );
-  NOR2BX1 _0607_ (
-    .AB(user_sbr_obi_req_i_39_),
-    .B(_0182_),
-    .Y(all_user_sbr_obi_req_113_)
-  );
-  NOR2BX1 _0608_ (
-    .AB(user_sbr_obi_req_i_40_),
-    .B(_0182_),
-    .Y(all_user_sbr_obi_req_114_)
-  );
-  NOR2BX1 _0609_ (
-    .AB(user_sbr_obi_req_i_44_),
-    .B(_0182_),
+  AND2X1 _1573_ (
+    .A(_1243_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_118_)
   );
-  NOR2BX1 _0610_ (
-    .AB(user_sbr_obi_req_i_45_),
-    .B(_0182_),
+  BUFX3 _1574_ (
+    .A(user_sbr_obi_req_i_45_),
+    .Y(_1284_)
+  );
+  AND2X1 _1575_ (
+    .A(_1284_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_119_)
   );
-  NOR2BX1 _0611_ (
-    .AB(user_sbr_obi_req_i_46_),
-    .B(_0182_),
+  AND2X1 _1576_ (
+    .A(user_sbr_obi_req_i_46_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_120_)
   );
-  NOR2BX1 _0612_ (
-    .AB(user_sbr_obi_req_i_47_),
-    .B(_0182_),
+  BUFX3 _1577_ (
+    .A(user_sbr_obi_req_i_47_),
+    .Y(_1285_)
+  );
+  AND2X1 _1578_ (
+    .A(_1285_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_121_)
   );
-  NOR2BX1 _0613_ (
-    .AB(user_sbr_obi_req_i_48_),
-    .B(_0182_),
+  BUFX3 _1579_ (
+    .A(user_sbr_obi_req_i_48_),
+    .Y(_1286_)
+  );
+  AND2X1 _1580_ (
+    .A(_1286_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_122_)
   );
-  BUFX3 _0614_ (
-    .A(_0179_),
-    .Y(_0183_)
+  BUFX3 _1581_ (
+    .A(user_sbr_obi_req_i_49_),
+    .Y(_1287_)
   );
-  NOR2BX1 _0615_ (
-    .AB(user_sbr_obi_req_i_49_),
-    .B(_0183_),
+  AND2X1 _1582_ (
+    .A(_1287_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_123_)
   );
-  NOR2BX1 _0616_ (
-    .AB(user_sbr_obi_req_i_50_),
-    .B(_0183_),
+  BUFX3 _1583_ (
+    .A(user_sbr_obi_req_i_50_),
+    .Y(_1288_)
+  );
+  BUFX3 _1584_ (
+    .A(_1281_),
+    .Y(_1289_)
+  );
+  AND2X1 _1585_ (
+    .A(_1288_),
+    .B(_1289_),
     .Y(all_user_sbr_obi_req_124_)
   );
-  NOR2BX1 _0617_ (
-    .AB(user_sbr_obi_req_i_51_),
-    .B(_0183_),
+  BUFX3 _1586_ (
+    .A(user_sbr_obi_req_i_51_),
+    .Y(_1290_)
+  );
+  AND2X1 _1587_ (
+    .A(_1290_),
+    .B(_1289_),
     .Y(all_user_sbr_obi_req_125_)
   );
-  NOR2BX1 _0618_ (
-    .AB(user_sbr_obi_req_i_52_),
-    .B(_0183_),
+  BUFX3 _1588_ (
+    .A(user_sbr_obi_req_i_52_),
+    .Y(_1291_)
+  );
+  AND2X1 _1589_ (
+    .A(_1291_),
+    .B(_1289_),
     .Y(all_user_sbr_obi_req_126_)
   );
-  INVX1 _0619_ (
+  BUFX3 _1590_ (
     .A(user_sbr_obi_req_i_53_),
-    .Y(_0184_)
+    .Y(_1292_)
   );
-  OR4X2 _0620_ (
-    .A(\i_obi_demux.i_counter.overflow_o ),
-    .B(_0184_),
-    .C(_0178_),
-    .D(_0174_),
-    .Y(_0185_)
+  AND2X1 _1591_ (
+    .A(_1292_),
+    .B(_1289_),
+    .Y(all_user_sbr_obi_req_127_)
   );
-  BUFX12 _0621_ (
-    .A(_0185_),
-    .Y(_0186_)
+  INVX1 _1592_ (
+    .A(_1279_),
+    .Y(_1293_)
   );
-  BUFX24 _0622_ (
-    .A(_0186_),
-    .Y(_0187_)
+  NAND2X1 _1593_ (
+    .A(_1293_),
+    .B(user_sbr_obi_req_i_54_),
+    .Y(_1294_)
   );
-  NOR2BX1 _0623_ (
-    .AB(user_sbr_obi_req_i_2_),
-    .B(_0187_),
+  NAND3X1 _1594_ (
+    .A(_1246_),
+    .B(_1249_),
+    .C(_1252_),
+    .Y(_1295_)
+  );
+  AOI211X2 _1595_ (
+    .A(_1266_),
+    .B(_1277_),
+    .C(_1294_),
+    .D(_1295_),
+    .Y(_1296_)
+  );
+  BUFX3 _1596_ (
+    .A(_1296_),
+    .Y(_1297_)
+  );
+  AND2X1 _1597_ (
+    .A(user_sbr_obi_req_i_2_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_150_)
   );
-  NOR2BX1 _0624_ (
-    .AB(user_sbr_obi_req_i_3_),
-    .B(_0187_),
+  AND2X1 _1598_ (
+    .A(user_sbr_obi_req_i_3_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_151_)
   );
-  NOR2BX1 _0625_ (
-    .AB(user_sbr_obi_req_i_4_),
-    .B(_0187_),
+  AND2X1 _1599_ (
+    .A(user_sbr_obi_req_i_4_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_152_)
   );
-  NOR2BX1 _0626_ (
-    .AB(user_sbr_obi_req_i_5_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_153_)
-  );
-  NOR2BX1 _0627_ (
-    .AB(user_sbr_obi_req_i_8_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_156_)
-  );
-  NOR2BX1 _0628_ (
-    .AB(user_sbr_obi_req_i_6_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_154_)
-  );
-  NOR2BX1 _0629_ (
-    .AB(user_sbr_obi_req_i_7_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_155_)
-  );
-  NOR2BX1 _0630_ (
-    .AB(user_sbr_obi_req_i_9_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_157_)
-  );
-  NOR2BX1 _0631_ (
-    .AB(user_sbr_obi_req_i_10_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_158_)
-  );
-  NOR2BX1 _0632_ (
-    .AB(user_sbr_obi_req_i_11_),
-    .B(_0187_),
-    .Y(all_user_sbr_obi_req_159_)
-  );
-  BUFX3 _0633_ (
-    .A(_0185_),
-    .Y(_0188_)
-  );
-  NOR2BX1 _0634_ (
-    .AB(user_sbr_obi_req_i_12_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_160_)
-  );
-  NOR2BX1 _0635_ (
-    .AB(user_sbr_obi_req_i_13_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_161_)
-  );
-  NOR2BX1 _0636_ (
-    .AB(user_sbr_obi_req_i_16_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_164_)
-  );
-  NOR2BX1 _0637_ (
-    .AB(user_sbr_obi_req_i_14_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_162_)
-  );
-  NOR2BX1 _0638_ (
-    .AB(user_sbr_obi_req_i_15_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_163_)
-  );
-  NOR2BX1 _0639_ (
-    .AB(user_sbr_obi_req_i_17_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_165_)
-  );
-  NOR2BX1 _0640_ (
-    .AB(user_sbr_obi_req_i_18_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_166_)
-  );
-  NOR2BX1 _0641_ (
-    .AB(user_sbr_obi_req_i_19_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_167_)
-  );
-  NOR2BX1 _0642_ (
-    .AB(user_sbr_obi_req_i_20_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_168_)
-  );
-  NOR2BX1 _0643_ (
-    .AB(user_sbr_obi_req_i_21_),
-    .B(_0188_),
-    .Y(all_user_sbr_obi_req_169_)
-  );
-  BUFX3 _0644_ (
-    .A(_0185_),
-    .Y(_0189_)
-  );
-  NOR2BX1 _0645_ (
-    .AB(user_sbr_obi_req_i_24_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_172_)
-  );
-  NOR2BX1 _0646_ (
-    .AB(user_sbr_obi_req_i_22_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_170_)
-  );
-  NOR2BX1 _0647_ (
-    .AB(user_sbr_obi_req_i_23_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_171_)
-  );
-  NOR2BX1 _0648_ (
-    .AB(user_sbr_obi_req_i_25_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_173_)
-  );
-  NOR2BX1 _0649_ (
-    .AB(user_sbr_obi_req_i_26_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_174_)
-  );
-  NOR2BX1 _0650_ (
-    .AB(user_sbr_obi_req_i_27_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_175_)
-  );
-  NOR2BX1 _0651_ (
-    .AB(user_sbr_obi_req_i_28_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_176_)
-  );
-  NOR2BX1 _0652_ (
-    .AB(user_sbr_obi_req_i_29_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_177_)
-  );
-  NOR2BX1 _0653_ (
-    .AB(user_sbr_obi_req_i_32_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_180_)
-  );
-  NOR2BX1 _0654_ (
-    .AB(user_sbr_obi_req_i_30_),
-    .B(_0189_),
-    .Y(all_user_sbr_obi_req_178_)
-  );
-  BUFX3 _0655_ (
-    .A(_0185_),
-    .Y(_0190_)
-  );
-  NOR2BX1 _0656_ (
-    .AB(user_sbr_obi_req_i_31_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_179_)
-  );
-  NOR2BX1 _0657_ (
-    .AB(user_sbr_obi_req_i_33_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_181_)
-  );
-  NOR2BX1 _0658_ (
-    .AB(user_sbr_obi_req_i_34_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_182_)
-  );
-  NOR2BX1 _0659_ (
-    .AB(user_sbr_obi_req_i_35_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_183_)
-  );
-  NOR2BX1 _0660_ (
-    .AB(user_sbr_obi_req_i_36_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_184_)
-  );
-  NOR2BX1 _0661_ (
-    .AB(user_sbr_obi_req_i_37_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_185_)
-  );
-  NOR2BX1 _0662_ (
-    .AB(user_sbr_obi_req_i_38_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_186_)
-  );
-  NOR2BX1 _0663_ (
-    .AB(user_sbr_obi_req_i_39_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_187_)
-  );
-  NOR2BX1 _0664_ (
-    .AB(user_sbr_obi_req_i_40_),
-    .B(_0190_),
-    .Y(all_user_sbr_obi_req_188_)
-  );
-  NOR2BX1 _0665_ (
-    .AB(user_sbr_obi_req_i_44_),
-    .B(_0190_),
+  AND2X1 _1600_ (
+    .A(_1243_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_192_)
   );
-  NOR2BX1 _0666_ (
-    .AB(user_sbr_obi_req_i_45_),
-    .B(_0186_),
+  AND2X1 _1601_ (
+    .A(_1284_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_193_)
   );
-  NOR2BX1 _0667_ (
-    .AB(user_sbr_obi_req_i_46_),
-    .B(_0186_),
+  AND2X1 _1602_ (
+    .A(user_sbr_obi_req_i_46_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_194_)
   );
-  NOR2BX1 _0668_ (
-    .AB(user_sbr_obi_req_i_47_),
-    .B(_0186_),
+  AND2X1 _1603_ (
+    .A(_1285_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_195_)
   );
-  NOR2BX1 _0669_ (
-    .AB(user_sbr_obi_req_i_48_),
-    .B(_0186_),
+  AND2X1 _1604_ (
+    .A(_1286_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_196_)
   );
-  NOR2BX1 _0670_ (
-    .AB(user_sbr_obi_req_i_49_),
-    .B(_0186_),
+  AND2X1 _1605_ (
+    .A(_1287_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_197_)
   );
-  NOR2BX1 _0671_ (
-    .AB(user_sbr_obi_req_i_50_),
-    .B(_0186_),
+  AND2X1 _1606_ (
+    .A(_1288_),
+    .B(_1297_),
     .Y(all_user_sbr_obi_req_198_)
   );
-  NOR2BX1 _0672_ (
-    .AB(user_sbr_obi_req_i_51_),
-    .B(_0186_),
+  AND2X1 _1607_ (
+    .A(_1290_),
+    .B(_1296_),
     .Y(all_user_sbr_obi_req_199_)
   );
-  NOR2BX1 _0673_ (
-    .AB(user_sbr_obi_req_i_52_),
-    .B(_0186_),
+  AND2X1 _1608_ (
+    .A(_1291_),
+    .B(_1296_),
     .Y(all_user_sbr_obi_req_200_)
   );
-  NOR2X1 _0674_ (
-    .A(_0184_),
-    .B(_0177_),
-    .Y(all_user_sbr_obi_req_148_)
+  AND2X1 _1609_ (
+    .A(_1292_),
+    .B(_1296_),
+    .Y(all_user_sbr_obi_req_201_)
   );
-  NOR4X1 _0675_ (
-    .A(user_sbr_obi_req_i_54_),
-    .B(_0141_),
-    .C(_0142_),
-    .D(_0145_),
-    .Y(_0191_)
+  INVX1 _1610_ (
+    .A(_1259_),
+    .Y(_1298_)
   );
-  AOAI211X1 _0676_ (
-    .A(_0139_),
-    .B(_0162_),
-    .C(_0172_),
-    .D(_0191_),
-    .Y(_0192_)
+  OR2X2 _1611_ (
+    .A(_1245_),
+    .B(_1244_),
+    .Y(_1299_)
   );
-  NOR2X1 _0677_ (
-    .A(_0176_),
-    .B(_0192_),
+  OAI21X1 _1612_ (
+    .A(_1244_),
+    .B(user_sbr_obi_req_i_54_),
+    .C(_1245_),
+    .Y(_1300_)
+  );
+  AOAI211X1 _1613_ (
+    .A(_1299_),
+    .B(_1300_),
+    .C(_1257_),
+    .D(_1263_),
+    .Y(_1301_)
+  );
+  AOI21X1 _1614_ (
+    .A(_1298_),
+    .B(_1301_),
+    .C(_1261_),
+    .Y(_1302_)
+  );
+  NAND2X1 _1615_ (
+    .A(_1298_),
+    .B(_1255_),
+    .Y(_1303_)
+  );
+  MUXI2X1 _1616_ (
+    .A0(_1302_),
+    .A1(_1303_),
+    .S0(_1253_),
+    .Y(_1304_)
+  );
+  NOR2X1 _1617_ (
+    .A(_1272_),
+    .B(_1276_),
+    .Y(_1305_)
+  );
+  NAND2X1 _1618_ (
+    .A(\i_obi_demux.i_counter.q_o ),
+    .B(_1305_),
+    .Y(_1306_)
+  );
+  INVX1 _1619_ (
+    .A(user_sbr_obi_req_i_0_),
+    .Y(_1307_)
+  );
+  NOR2X1 _1620_ (
+    .A(_1279_),
+    .B(_1307_),
+    .Y(_1308_)
+  );
+  AOAI211X1 _1621_ (
+    .A(_1265_),
+    .B(_1304_),
+    .C(_1306_),
+    .D(_1308_),
+    .Y(_1309_)
+  );
+  NOR4X1 _1622_ (
+    .A(_1280_),
+    .B(_1253_),
+    .C(_1256_),
+    .D(_1309_),
     .Y(all_user_sbr_obi_req_222_)
   );
-  NAND2BX1 _0678_ (
-    .AB(_0192_),
-    .B(_0175_),
-    .Y(_0193_)
+  AND4X2 _1623_ (
+    .A(_1280_),
+    .B(_1249_),
+    .C(_1252_),
+    .D(_1267_),
+    .Y(_1310_)
   );
-  NOR2BX1 _0679_ (
+  XOR2X2 _1624_ (
+    .A(_1265_),
+    .B(_1310_),
+    .Y(_1311_)
+  );
+  AOAI211X1 _1625_ (
+    .A(_1304_),
+    .B(_1311_),
+    .C(_1306_),
+    .D(_1293_),
+    .Y(_1312_)
+  );
+  OR4X1 _1626_ (
+    .A(_1280_),
+    .B(_1253_),
+    .C(_1256_),
+    .D(_1312_),
+    .Y(_1313_)
+  );
+  NOR2BX1 _1627_ (
     .AB(user_sbr_obi_req_i_2_),
-    .B(_0193_),
+    .B(_1313_),
     .Y(all_user_sbr_obi_req_224_)
   );
-  NOR2BX1 _0680_ (
+  NOR2BX1 _1628_ (
     .AB(user_sbr_obi_req_i_3_),
-    .B(_0193_),
+    .B(_1313_),
     .Y(all_user_sbr_obi_req_225_)
   );
-  NOR2BX1 _0681_ (
+  NOR2BX1 _1629_ (
     .AB(user_sbr_obi_req_i_4_),
-    .B(_0193_),
+    .B(_1313_),
     .Y(all_user_sbr_obi_req_226_)
   );
-  NOR2BX1 _0682_ (
+  NOR2BX1 _1630_ (
     .AB(user_sbr_obi_req_i_41_),
-    .B(_0193_),
+    .B(_1313_),
     .Y(all_user_sbr_obi_req_263_)
   );
-  NOR2BX1 _0683_ (
-    .AB(user_sbr_obi_req_i_44_),
-    .B(_0193_),
+  NOR2BX1 _1631_ (
+    .AB(_1243_),
+    .B(_1313_),
     .Y(all_user_sbr_obi_req_266_)
   );
-  NOR2BX1 _0684_ (
-    .AB(user_sbr_obi_req_i_45_),
-    .B(_0193_),
+  NOR2BX1 _1632_ (
+    .AB(_1284_),
+    .B(_1313_),
     .Y(all_user_sbr_obi_req_267_)
   );
-  AOAI211X1 _0685_ (
-    .A(_0137_),
-    .B(_0162_),
-    .C(_0172_),
-    .D(_0146_),
-    .Y(_0194_)
+  BUFX3 _1633_ (
+    .A(\i_obi_demux.select_q_2_ ),
+    .Y(_1314_)
   );
-  NOR3BX1 _0686_ (
-    .AB(_0174_),
-    .B(_0194_),
-    .C(_0176_),
+  AOI21X1 _1634_ (
+    .A(_1314_),
+    .B(_1304_),
+    .C(_1306_),
+    .Y(_1315_)
+  );
+  NAND2X1 _1635_ (
+    .A(_1293_),
+    .B(_1310_),
+    .Y(_1316_)
+  );
+  NOR3X1 _1636_ (
+    .A(_1307_),
+    .B(_1315_),
+    .C(_1316_),
     .Y(all_user_sbr_obi_req_296_)
   );
-  NAND2BX1 _0687_ (
-    .AB(_0194_),
-    .B(_0175_),
-    .Y(_0195_)
+  NOR2X1 _1637_ (
+    .A(_1315_),
+    .B(_1316_),
+    .Y(_1317_)
   );
-  NOR2BX1 _0688_ (
-    .AB(user_sbr_obi_req_i_2_),
-    .B(_0195_),
+  AND2X1 _1638_ (
+    .A(user_sbr_obi_req_i_2_),
+    .B(_1317_),
     .Y(all_user_sbr_obi_req_298_)
   );
-  NOR2BX1 _0689_ (
-    .AB(user_sbr_obi_req_i_3_),
-    .B(_0195_),
+  AND2X1 _1639_ (
+    .A(user_sbr_obi_req_i_3_),
+    .B(_1317_),
     .Y(all_user_sbr_obi_req_299_)
   );
-  NOR2BX1 _0690_ (
-    .AB(user_sbr_obi_req_i_4_),
-    .B(_0195_),
+  AND2X1 _1640_ (
+    .A(user_sbr_obi_req_i_4_),
+    .B(_1317_),
     .Y(all_user_sbr_obi_req_300_)
   );
-  NOR2BX1 _0691_ (
-    .AB(user_sbr_obi_req_i_2_),
-    .B(_0183_),
+  AND2X1 _1641_ (
+    .A(user_sbr_obi_req_i_2_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_76_)
   );
-  NOR2BX1 _0692_ (
-    .AB(user_sbr_obi_req_i_3_),
-    .B(_0183_),
+  AND2X1 _1642_ (
+    .A(user_sbr_obi_req_i_3_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_77_)
   );
-  NOR2BX1 _0693_ (
-    .AB(user_sbr_obi_req_i_4_),
-    .B(_0183_),
+  AND2X1 _1643_ (
+    .A(user_sbr_obi_req_i_4_),
+    .B(_1283_),
     .Y(all_user_sbr_obi_req_78_)
   );
-  NOR2BX1 _0694_ (
-    .AB(user_sbr_obi_req_i_5_),
-    .B(_0183_),
-    .Y(all_user_sbr_obi_req_79_)
+  INVX1 _1644_ (
+    .A(all_user_sbr_obi_rsp_4_),
+    .Y(_1318_)
   );
-  NOR2BX1 _0695_ (
-    .AB(user_sbr_obi_req_i_8_),
-    .B(_0183_),
-    .Y(all_user_sbr_obi_req_82_)
+  INVX1 _1645_ (
+    .A(_1253_),
+    .Y(_1319_)
   );
-  NOR2BX1 _0696_ (
-    .AB(user_sbr_obi_req_i_6_),
-    .B(_0183_),
-    .Y(all_user_sbr_obi_req_80_)
+  AO21X2 _1646_ (
+    .A(_1319_),
+    .B(_1262_),
+    .C(_1309_),
+    .Y(_1320_)
   );
-  BUFX3 _0697_ (
-    .A(_0179_),
-    .Y(_0196_)
+  INVX1 _1647_ (
+    .A(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
+    .Y(_1321_)
   );
-  NOR2BX1 _0698_ (
-    .AB(user_sbr_obi_req_i_7_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_81_)
+  NOR2X1 _1648_ (
+    .A(_1321_),
+    .B(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
+    .Y(_1322_)
   );
-  NOR2BX1 _0699_ (
-    .AB(user_sbr_obi_req_i_9_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_83_)
+  NOR2X1 _1649_ (
+    .A(_1320_),
+    .B(_1322_),
+    .Y(_1323_)
   );
-  NOR2BX1 _0700_ (
-    .AB(user_sbr_obi_req_i_10_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_84_)
+  AOI21X1 _1650_ (
+    .A(_1319_),
+    .B(_1262_),
+    .C(_1312_),
+    .Y(_1324_)
   );
-  NOR2BX1 _0701_ (
-    .AB(user_sbr_obi_req_i_11_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_85_)
+  NAND3X1 _1651_ (
+    .A(user_sbr_obi_req_i_2_),
+    .B(_1324_),
+    .C(_1323_),
+    .Y(_1325_)
   );
-  NOR2BX1 _0702_ (
-    .AB(user_sbr_obi_req_i_12_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_86_)
-  );
-  NOR2BX1 _0703_ (
-    .AB(user_sbr_obi_req_i_13_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_87_)
-  );
-  NOR2BX1 _0704_ (
-    .AB(user_sbr_obi_req_i_16_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_90_)
-  );
-  NOR2BX1 _0705_ (
-    .AB(user_sbr_obi_req_i_14_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_88_)
-  );
-  NOR2BX1 _0706_ (
-    .AB(user_sbr_obi_req_i_15_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_89_)
-  );
-  NOR2BX1 _0707_ (
-    .AB(user_sbr_obi_req_i_17_),
-    .B(_0196_),
-    .Y(all_user_sbr_obi_req_91_)
-  );
-  NOR2BX1 _0708_ (
-    .AB(user_sbr_obi_req_i_18_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_92_)
-  );
-  NOR2BX1 _0709_ (
-    .AB(user_sbr_obi_req_i_19_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_93_)
-  );
-  NOR2BX1 _0710_ (
-    .AB(user_sbr_obi_req_i_20_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_94_)
-  );
-  NOR2BX1 _0711_ (
-    .AB(user_sbr_obi_req_i_21_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_95_)
-  );
-  NOR2BX1 _0712_ (
-    .AB(user_sbr_obi_req_i_24_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_98_)
-  );
-  NOR2BX1 _0713_ (
-    .AB(user_sbr_obi_req_i_22_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_96_)
-  );
-  NOR2BX1 _0714_ (
-    .AB(user_sbr_obi_req_i_23_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_97_)
-  );
-  NOR2BX1 _0715_ (
-    .AB(user_sbr_obi_req_i_25_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_99_)
-  );
-  NAND2BX1 _0716_ (
-    .AB(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
-    .B(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
-    .Y(_0197_)
-  );
-  AOI2B1X1 _0717_ (
-    .AB(user_sbr_obi_req_i_54_),
-    .B(_0149_),
-    .C(_0148_),
-    .Y(_0198_)
-  );
-  NOR3X1 _0718_ (
-    .A(_0141_),
-    .B(_0145_),
-    .C(_0198_),
-    .Y(_0199_)
-  );
-  NOR2X1 _0719_ (
-    .A(_0176_),
-    .B(_0199_),
-    .Y(_0200_)
-  );
-  NAND3X1 _0720_ (
-    .A(_0173_),
-    .B(_0197_),
-    .C(_0200_),
-    .Y(_0201_)
-  );
-  MUX2X1 _0721_ (
-    .A0(user_sbr_obi_req_i_2_),
-    .A1(all_user_sbr_obi_rsp_4_),
-    .S0(_0201_),
+  OAI21X1 _1652_ (
+    .A(_1318_),
+    .B(_1323_),
+    .C(_1325_),
     .Y(_0000_)
   );
-  MUX2X1 _0722_ (
-    .A0(user_sbr_obi_req_i_3_),
-    .A1(all_user_sbr_obi_rsp_5_),
-    .S0(_0201_),
+  INVX1 _1653_ (
+    .A(all_user_sbr_obi_rsp_5_),
+    .Y(_1326_)
+  );
+  NAND3X1 _1654_ (
+    .A(user_sbr_obi_req_i_3_),
+    .B(_1324_),
+    .C(_1323_),
+    .Y(_1327_)
+  );
+  OAI21X1 _1655_ (
+    .A(_1326_),
+    .B(_1323_),
+    .C(_1327_),
     .Y(_0001_)
   );
-  MUX2X1 _0723_ (
-    .A0(user_sbr_obi_req_i_4_),
-    .A1(all_user_sbr_obi_rsp_6_),
-    .S0(_0201_),
+  INVX1 _1656_ (
+    .A(all_user_sbr_obi_rsp_6_),
+    .Y(_1328_)
+  );
+  NAND3X1 _1657_ (
+    .A(user_sbr_obi_req_i_4_),
+    .B(_1324_),
+    .C(_1323_),
+    .Y(_1329_)
+  );
+  OAI21X1 _1658_ (
+    .A(_1328_),
+    .B(_1323_),
+    .C(_1329_),
     .Y(_0002_)
   );
-  NOR2BX1 _0724_ (
-    .AB(user_sbr_obi_req_i_41_),
-    .B(_0180_),
-    .Y(all_user_sbr_obi_req_115_)
-  );
-  BUFX3 _0725_ (
-    .A(\i_obi_demux.i_counter.overflow_o ),
-    .Y(_0202_)
-  );
-  XOR2X2 _0726_ (
-    .A(user_sbr_obi_req_i_8_),
-    .B(user_sbr_obi_req_i_5_),
-    .Y(_0203_)
-  );
-  XOR2X2 _0727_ (
-    .A(user_sbr_obi_req_i_12_),
-    .B(user_sbr_obi_req_i_11_),
-    .Y(_0204_)
-  );
-  XNOR3X1 _0728_ (
-    .A(user_sbr_obi_req_i_9_),
-    .B(_0203_),
-    .C(_0204_),
-    .Y(_0205_)
-  );
-  NOR2X1 _0729_ (
-    .A(_0202_),
-    .B(_0205_),
-    .Y(_0206_)
-  );
-  NOR3X1 _0730_ (
-    .A(user_sbr_obi_req_i_53_),
-    .B(_0178_),
-    .C(_0174_),
-    .Y(_0207_)
-  );
-  BUFX3 _0731_ (
-    .A(_0207_),
-    .Y(_0208_)
-  );
-  NAND2X1 _0732_ (
-    .A(_0206_),
-    .B(_0208_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ )
-  );
-  BUFX3 _0733_ (
-    .A(_0207_),
-    .Y(_0209_)
-  );
-  XOR2X2 _0734_ (
-    .A(user_sbr_obi_req_i_6_),
-    .B(user_sbr_obi_req_i_10_),
-    .Y(_0210_)
-  );
-  XNOR3X1 _0735_ (
-    .A(user_sbr_obi_req_i_8_),
-    .B(user_sbr_obi_req_i_11_),
-    .C(_0210_),
-    .Y(_0211_)
-  );
-  NOR2X1 _0736_ (
-    .A(_0202_),
-    .B(_0211_),
-    .Y(_0212_)
-  );
-  NAND2X1 _0737_ (
-    .A(_0209_),
-    .B(_0212_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ )
-  );
-  XNOR2X1 _0738_ (
-    .A(user_sbr_obi_req_i_7_),
-    .B(user_sbr_obi_req_i_9_),
-    .Y(_0213_)
-  );
-  XOR2X2 _0739_ (
-    .A(user_sbr_obi_req_i_12_),
-    .B(user_sbr_obi_req_i_10_),
-    .Y(_0214_)
-  );
-  XOR2X2 _0740_ (
-    .A(_0213_),
-    .B(_0214_),
-    .Y(_0215_)
-  );
-  NOR2X1 _0741_ (
-    .A(_0202_),
-    .B(_0215_),
-    .Y(_0216_)
-  );
-  NAND2X1 _0742_ (
-    .A(_0209_),
-    .B(_0216_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ )
-  );
-  XOR2X2 _0743_ (
-    .A(_0210_),
-    .B(_0213_),
-    .Y(_0217_)
-  );
-  XOR2X2 _0744_ (
-    .A(_0203_),
-    .B(_0217_),
-    .Y(_0218_)
-  );
-  NOR2X1 _0745_ (
-    .A(_0202_),
-    .B(_0218_),
-    .Y(_0219_)
-  );
-  NAND2X1 _0746_ (
-    .A(_0209_),
-    .B(_0219_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_8_ )
-  );
-  XNOR3X1 _0747_ (
-    .A(user_sbr_obi_req_i_7_),
-    .B(user_sbr_obi_req_i_6_),
-    .C(user_sbr_obi_req_i_5_),
-    .Y(_0220_)
-  );
-  XOR2X2 _0748_ (
-    .A(_0204_),
-    .B(_0220_),
-    .Y(_0221_)
-  );
-  NOR2X1 _0749_ (
-    .A(_0202_),
-    .B(_0221_),
-    .Y(_0222_)
-  );
-  NAND2X1 _0750_ (
-    .A(_0209_),
-    .B(_0222_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_9_ )
-  );
-  XOR2X2 _0751_ (
-    .A(user_sbr_obi_req_i_20_),
-    .B(user_sbr_obi_req_i_19_),
-    .Y(_0223_)
-  );
-  XOR2X2 _0752_ (
-    .A(user_sbr_obi_req_i_17_),
-    .B(user_sbr_obi_req_i_16_),
-    .Y(_0224_)
-  );
-  XNOR3X1 _0753_ (
-    .A(user_sbr_obi_req_i_13_),
-    .B(_0223_),
-    .C(_0224_),
-    .Y(_0225_)
-  );
-  NOR2X1 _0754_ (
-    .A(_0202_),
-    .B(_0225_),
-    .Y(_0226_)
-  );
-  NAND2X1 _0755_ (
-    .A(_0209_),
-    .B(_0226_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_10_ )
-  );
-  XOR2X2 _0756_ (
-    .A(user_sbr_obi_req_i_18_),
-    .B(user_sbr_obi_req_i_14_),
-    .Y(_0227_)
-  );
-  XNOR3X1 _0757_ (
-    .A(user_sbr_obi_req_i_19_),
-    .B(user_sbr_obi_req_i_16_),
-    .C(_0227_),
-    .Y(_0228_)
-  );
-  NOR2X1 _0758_ (
-    .A(_0202_),
-    .B(_0228_),
-    .Y(_0229_)
-  );
-  NAND2X1 _0759_ (
-    .A(_0209_),
-    .B(_0229_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_11_ )
-  );
-  XOR2X2 _0760_ (
-    .A(user_sbr_obi_req_i_20_),
-    .B(user_sbr_obi_req_i_18_),
-    .Y(_0230_)
-  );
-  XNOR3X1 _0761_ (
-    .A(user_sbr_obi_req_i_17_),
-    .B(user_sbr_obi_req_i_15_),
-    .C(_0230_),
-    .Y(_0231_)
-  );
-  NOR2X1 _0762_ (
-    .A(_0202_),
-    .B(_0231_),
-    .Y(_0232_)
-  );
-  NAND2X1 _0763_ (
-    .A(_0209_),
-    .B(_0232_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_12_ )
-  );
-  XOR2X2 _0764_ (
-    .A(user_sbr_obi_req_i_15_),
-    .B(user_sbr_obi_req_i_13_),
-    .Y(_0233_)
-  );
-  XNOR3X1 _0765_ (
-    .A(_0224_),
-    .B(_0227_),
-    .C(_0233_),
-    .Y(_0234_)
-  );
-  NOR2X1 _0766_ (
-    .A(_0202_),
-    .B(_0234_),
-    .Y(_0235_)
-  );
-  NAND2X1 _0767_ (
-    .A(_0209_),
-    .B(_0235_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_8_ )
-  );
-  BUFX3 _0768_ (
-    .A(\i_obi_demux.i_counter.overflow_o ),
-    .Y(_0236_)
-  );
-  XNOR3X1 _0769_ (
-    .A(user_sbr_obi_req_i_14_),
-    .B(_0223_),
-    .C(_0233_),
-    .Y(_0237_)
-  );
-  NOR2X1 _0770_ (
-    .A(_0236_),
-    .B(_0237_),
-    .Y(_0238_)
-  );
-  NAND2X1 _0771_ (
-    .A(_0209_),
-    .B(_0238_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_9_ )
-  );
-  XOR2X2 _0772_ (
-    .A(user_sbr_obi_req_i_28_),
-    .B(user_sbr_obi_req_i_27_),
-    .Y(_0239_)
-  );
-  XOR2X2 _0773_ (
-    .A(user_sbr_obi_req_i_25_),
-    .B(user_sbr_obi_req_i_24_),
-    .Y(_0240_)
-  );
-  XNOR3X1 _0774_ (
-    .A(user_sbr_obi_req_i_21_),
-    .B(_0239_),
-    .C(_0240_),
-    .Y(_0241_)
-  );
-  NOR2X1 _0775_ (
-    .A(_0236_),
-    .B(_0241_),
-    .Y(_0242_)
-  );
-  NAND2X1 _0776_ (
-    .A(_0209_),
-    .B(_0242_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_10_ )
-  );
-  XOR2X2 _0777_ (
-    .A(user_sbr_obi_req_i_27_),
-    .B(user_sbr_obi_req_i_26_),
-    .Y(_0243_)
-  );
-  XNOR3X1 _0778_ (
-    .A(user_sbr_obi_req_i_24_),
-    .B(user_sbr_obi_req_i_22_),
-    .C(_0243_),
-    .Y(_0244_)
-  );
-  NOR2X1 _0779_ (
-    .A(_0236_),
-    .B(_0244_),
-    .Y(_0245_)
-  );
-  NAND2X1 _0780_ (
-    .A(_0208_),
-    .B(_0245_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_11_ )
-  );
-  XOR2X2 _0781_ (
-    .A(user_sbr_obi_req_i_28_),
-    .B(user_sbr_obi_req_i_26_),
-    .Y(_0246_)
-  );
-  XNOR3X1 _0782_ (
-    .A(user_sbr_obi_req_i_25_),
-    .B(user_sbr_obi_req_i_23_),
-    .C(_0246_),
-    .Y(_0247_)
-  );
-  NOR2X1 _0783_ (
-    .A(_0236_),
-    .B(_0247_),
-    .Y(_0248_)
-  );
-  NAND2X1 _0784_ (
-    .A(_0208_),
-    .B(_0248_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_12_ )
-  );
-  XNOR3X1 _0785_ (
-    .A(user_sbr_obi_req_i_23_),
-    .B(user_sbr_obi_req_i_22_),
-    .C(user_sbr_obi_req_i_21_),
-    .Y(_0249_)
-  );
-  XOR2X2 _0786_ (
-    .A(user_sbr_obi_req_i_26_),
-    .B(_0240_),
-    .Y(_0250_)
-  );
-  XOR2X2 _0787_ (
-    .A(_0249_),
-    .B(_0250_),
-    .Y(_0251_)
-  );
-  NOR2X1 _0788_ (
-    .A(_0236_),
-    .B(_0251_),
-    .Y(_0252_)
-  );
-  NAND2X1 _0789_ (
-    .A(_0208_),
-    .B(_0252_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_8_ )
-  );
-  XOR2X2 _0790_ (
-    .A(_0239_),
-    .B(_0249_),
-    .Y(_0253_)
-  );
-  NOR2X1 _0791_ (
-    .A(_0236_),
-    .B(_0253_),
-    .Y(_0254_)
-  );
-  NAND2X1 _0792_ (
-    .A(_0208_),
-    .B(_0254_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_9_ )
-  );
-  XOR2X2 _0793_ (
-    .A(user_sbr_obi_req_i_36_),
-    .B(user_sbr_obi_req_i_35_),
-    .Y(_0255_)
-  );
-  XOR2X2 _0794_ (
-    .A(user_sbr_obi_req_i_33_),
-    .B(user_sbr_obi_req_i_32_),
-    .Y(_0256_)
-  );
-  XNOR3X1 _0795_ (
-    .A(user_sbr_obi_req_i_29_),
-    .B(_0255_),
-    .C(_0256_),
-    .Y(_0257_)
-  );
-  NOR2X1 _0796_ (
-    .A(_0236_),
-    .B(_0257_),
-    .Y(_0258_)
-  );
-  NAND2X1 _0797_ (
-    .A(_0208_),
-    .B(_0258_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_10_ )
-  );
-  XOR2X2 _0798_ (
-    .A(user_sbr_obi_req_i_34_),
-    .B(user_sbr_obi_req_i_30_),
-    .Y(_0259_)
-  );
-  XNOR3X1 _0799_ (
-    .A(user_sbr_obi_req_i_35_),
-    .B(user_sbr_obi_req_i_32_),
-    .C(_0259_),
-    .Y(_0260_)
-  );
-  NOR2X1 _0800_ (
-    .A(_0236_),
-    .B(_0260_),
-    .Y(_0261_)
-  );
-  NAND2X1 _0801_ (
-    .A(_0208_),
-    .B(_0261_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_11_ )
-  );
-  XOR2X2 _0802_ (
-    .A(user_sbr_obi_req_i_36_),
-    .B(user_sbr_obi_req_i_34_),
-    .Y(_0262_)
-  );
-  XNOR3X1 _0803_ (
-    .A(user_sbr_obi_req_i_33_),
-    .B(user_sbr_obi_req_i_31_),
-    .C(_0262_),
-    .Y(_0263_)
-  );
-  NOR2X1 _0804_ (
-    .A(_0236_),
-    .B(_0263_),
-    .Y(_0264_)
-  );
-  NAND2X1 _0805_ (
-    .A(_0208_),
-    .B(_0264_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ )
-  );
-  XOR2X2 _0806_ (
-    .A(user_sbr_obi_req_i_31_),
-    .B(user_sbr_obi_req_i_29_),
-    .Y(_0265_)
-  );
-  XNOR3X1 _0807_ (
-    .A(_0256_),
-    .B(_0259_),
-    .C(_0265_),
-    .Y(_0266_)
-  );
-  NOR2X1 _0808_ (
-    .A(_0236_),
-    .B(_0266_),
-    .Y(_0267_)
-  );
-  NAND2X1 _0809_ (
-    .A(_0208_),
-    .B(_0267_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ )
-  );
-  XNOR3X1 _0810_ (
-    .A(user_sbr_obi_req_i_30_),
-    .B(_0255_),
-    .C(_0265_),
-    .Y(_0268_)
-  );
-  NOR2X1 _0811_ (
-    .A(\i_obi_demux.i_counter.overflow_o ),
-    .B(_0268_),
-    .Y(_0269_)
-  );
-  NAND2X1 _0812_ (
-    .A(_0208_),
-    .B(_0269_),
-    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ )
-  );
-  NOR2X1 _0813_ (
-    .A(user_sbr_obi_req_i_53_),
-    .B(_0177_),
-    .Y(\gen_sram_bank[0].i_sram_shim.rvalid_d )
-  );
-  NOR2BX1 _0814_ (
-    .AB(user_sbr_obi_req_i_41_),
-    .B(_0186_),
-    .Y(all_user_sbr_obi_req_189_)
-  );
-  NOR3X1 _0815_ (
-    .A(_0184_),
-    .B(_0178_),
-    .C(_0174_),
-    .Y(_0270_)
-  );
-  BUFX3 _0816_ (
-    .A(_0270_),
-    .Y(_0271_)
-  );
-  NAND2X1 _0817_ (
-    .A(_0206_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ )
-  );
-  NAND2X1 _0818_ (
-    .A(_0212_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ )
-  );
-  NAND2X1 _0819_ (
-    .A(_0216_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ )
-  );
-  NAND2X1 _0820_ (
-    .A(_0219_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_8_ )
-  );
-  NAND2X1 _0821_ (
-    .A(_0222_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_9_ )
-  );
-  NAND2X1 _0822_ (
-    .A(_0226_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_10_ )
-  );
-  NAND2X1 _0823_ (
-    .A(_0229_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_11_ )
-  );
-  NAND2X1 _0824_ (
-    .A(_0232_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_12_ )
-  );
-  NAND2X1 _0825_ (
-    .A(_0235_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_8_ )
-  );
-  NAND2X1 _0826_ (
-    .A(_0238_),
-    .B(_0271_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_9_ )
-  );
-  BUFX3 _0827_ (
-    .A(_0270_),
-    .Y(_0272_)
-  );
-  NAND2X1 _0828_ (
-    .A(_0242_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_10_ )
-  );
-  NAND2X1 _0829_ (
-    .A(_0245_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_11_ )
-  );
-  NAND2X1 _0830_ (
-    .A(_0248_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_12_ )
-  );
-  NAND2X1 _0831_ (
-    .A(_0252_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_8_ )
-  );
-  NAND2X1 _0832_ (
-    .A(_0254_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_9_ )
-  );
-  NAND2X1 _0833_ (
-    .A(_0258_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_10_ )
-  );
-  NAND2X1 _0834_ (
-    .A(_0261_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_11_ )
-  );
-  NAND2X1 _0835_ (
-    .A(_0264_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ )
-  );
-  NAND2X1 _0836_ (
-    .A(_0267_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ )
-  );
-  NAND2X1 _0837_ (
-    .A(_0269_),
-    .B(_0272_),
-    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ )
-  );
-  NOR2X1 _0838_ (
-    .A(_0184_),
-    .B(_0177_),
-    .Y(\gen_sram_bank[1].i_sram_shim.rvalid_d )
-  );
-  INVX1 _0839_ (
-    .A(_0171_),
-    .Y(user_sbr_obi_rsp_o_0_)
-  );
-  NAND2X1 _0840_ (
-    .A(_0147_),
-    .B(_0162_),
-    .Y(_0273_)
-  );
-  OR2X2 _0841_ (
-    .A(_0197_),
-    .B(_0199_),
-    .Y(_0274_)
-  );
-  NAND3X1 _0842_ (
-    .A(\i_obi_demux.i_counter.q_o ),
-    .B(user_sbr_obi_req_i_0_),
-    .C(_0274_),
-    .Y(_0275_)
-  );
-  OAOI211X1 _0843_ (
-    .A(_0273_),
-    .B(_0275_),
-    .C(_0175_),
-    .D(user_sbr_obi_rsp_o_0_),
-    .Y(_0276_)
-  );
-  OR2X2 _0844_ (
-    .A(\i_obi_demux.i_counter.q_o ),
-    .B(_0171_),
-    .Y(_0277_)
-  );
-  AOI211X1 _0845_ (
-    .A(user_sbr_obi_req_i_0_),
-    .B(_0274_),
-    .C(_0277_),
-    .D(\i_obi_demux.i_counter.overflow_o ),
-    .Y(_0278_)
-  );
-  AO211X2 _0846_ (
-    .A(_0202_),
-    .B(\i_obi_demux.i_counter.q_o ),
-    .C(_0276_),
-    .D(_0278_),
-    .Y(_0003_)
-  );
-  OA21X2 _0847_ (
-    .A(_0172_),
-    .B(_0273_),
-    .C(_0277_),
-    .Y(_0279_)
-  );
-  NAND2BX1 _0848_ (
-    .AB(_0176_),
-    .B(_0274_),
-    .Y(_0280_)
-  );
-  NAND3X1 _0849_ (
-    .A(_0172_),
-    .B(_0277_),
-    .C(_0280_),
-    .Y(_0281_)
-  );
-  OA21X2 _0850_ (
-    .A(_0279_),
-    .B(_0280_),
-    .C(_0281_),
-    .Y(_0004_)
-  );
-  OR4X1 _0851_ (
-    .A(user_sbr_obi_req_i_0_),
-    .B(_0141_),
-    .C(_0142_),
-    .D(_0145_),
-    .Y(_0282_)
-  );
-  AND4X2 _0852_ (
-    .A(_0175_),
-    .B(_0173_),
-    .C(_0274_),
-    .D(_0282_),
-    .Y(user_sbr_obi_rsp_o_1_)
-  );
-  BUFX3 _0853_ (
-    .A(_0152_),
-    .Y(_0283_)
-  );
-  NAND2X1 _0854_ (
-    .A(_0184_),
-    .B(_0149_),
-    .Y(_0284_)
-  );
-  AOI21X1 _0855_ (
-    .A(_0142_),
-    .B(_0284_),
-    .C(_0161_),
-    .Y(_0285_)
-  );
-  NOR2X1 _0856_ (
-    .A(_0178_),
-    .B(_0280_),
-    .Y(_0286_)
-  );
-  MUX2X1 _0857_ (
-    .A0(_0283_),
-    .A1(_0285_),
-    .S0(_0286_),
-    .Y(_0005_)
-  );
-  BUFX3 _0858_ (
-    .A(_0153_),
-    .Y(_0287_)
-  );
-  AOI21X1 _0859_ (
-    .A(_0142_),
-    .B(_0157_),
-    .C(_0161_),
-    .Y(_0288_)
-  );
-  MUX2X1 _0860_ (
-    .A0(_0287_),
-    .A1(_0288_),
-    .S0(_0286_),
-    .Y(_0006_)
-  );
-  BUFX3 _0861_ (
-    .A(_0137_),
-    .Y(_0289_)
-  );
-  NOR2BX1 _0862_ (
-    .AB(_0172_),
-    .B(_0280_),
-    .Y(_0290_)
-  );
-  MUX2X1 _0863_ (
-    .A0(_0289_),
-    .A1(_0146_),
-    .S0(_0290_),
-    .Y(_0007_)
-  );
-  AND2X1 _0864_ (
-    .A(_0173_),
-    .B(_0200_),
-    .Y(_0291_)
-  );
-  OA21X2 _0865_ (
-    .A(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
-    .B(_0291_),
-    .C(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
-    .Y(_0008_)
-  );
-  NAND2BX1 _0866_ (
-    .AB(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
-    .B(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
-    .Y(_0292_)
-  );
-  NAND2X1 _0867_ (
-    .A(_0197_),
-    .B(_0292_),
-    .Y(_0293_)
-  );
-  MUXI2X1 _0868_ (
-    .A0(_0292_),
-    .A1(_0293_),
-    .S0(_0291_),
-    .Y(_0009_)
-  );
-  XOR2X2 _0869_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_50_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_55_ ),
-    .Y(_0294_)
-  );
-  XNOR3X1 _0870_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_60_ ),
-    .Y(_0295_)
-  );
-  XOR2X2 _0871_ (
-    .A(_0294_),
-    .B(_0295_),
-    .Y(_0296_)
-  );
-  INVX1 _0872_ (
-    .A(_0296_),
-    .Y(_0297_)
-  );
-  XNOR3X1 _0873_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_49_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
-    .Y(_0298_)
-  );
-  XOR2X2 _0874_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_48_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_50_ ),
-    .Y(_0299_)
-  );
-  XNOR3X1 _0875_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_56_ ),
-    .C(_0299_),
-    .Y(_0300_)
-  );
-  XNOR2X1 _0876_ (
-    .A(_0298_),
-    .B(_0300_),
-    .Y(_0301_)
-  );
-  XOR2X2 _0877_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_54_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_59_ ),
-    .Y(_0302_)
-  );
-  XOR2X2 _0878_ (
-    .A(_0298_),
-    .B(_0302_),
-    .Y(_0303_)
-  );
-  XOR2X2 _0879_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_48_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_54_ ),
-    .Y(_0304_)
-  );
-  XOR2X2 _0880_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_49_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_57_ ),
-    .Y(_0305_)
-  );
-  XNOR3X1 _0881_ (
-    .A(_0294_),
-    .B(_0304_),
-    .C(_0305_),
-    .Y(_0306_)
-  );
-  XOR2X2 _0882_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_58_ ),
-    .Y(_0307_)
-  );
-  XOR2X2 _0883_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_55_ ),
-    .Y(_0308_)
-  );
-  XNOR3X1 _0884_ (
-    .A(_0304_),
-    .B(_0307_),
-    .C(_0308_),
-    .Y(_0309_)
-  );
-  NAND2X1 _0885_ (
-    .A(_0306_),
-    .B(_0309_),
-    .Y(_0310_)
-  );
-  OR4X1 _0886_ (
-    .A(_0297_),
-    .B(_0301_),
-    .C(_0303_),
-    .D(_0310_),
-    .Y(_0311_)
-  );
-  XOR2X2 _0887_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_55_ ),
-    .B(_0311_),
-    .Y(_0312_)
-  );
-  BUFX3 _0888_ (
-    .A(_0158_),
-    .Y(_0313_)
-  );
-  XOR2X2 _0889_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_55_ ),
-    .Y(_0314_)
-  );
-  XOR2X2 _0890_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_53_ ),
-    .Y(_0315_)
-  );
-  XNOR3X1 _0891_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_60_ ),
-    .B(_0314_),
-    .C(_0315_),
-    .Y(_0316_)
-  );
-  XOR2X2 _0892_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_49_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_54_ ),
-    .Y(_0317_)
-  );
-  XNOR3X1 _0893_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_51_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_53_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_59_ ),
-    .Y(_0318_)
-  );
-  XOR2X2 _0894_ (
-    .A(_0317_),
-    .B(_0318_),
-    .Y(_0319_)
-  );
-  NOR2BX1 _0895_ (
-    .AB(_0316_),
-    .B(_0319_),
-    .Y(_0320_)
-  );
-  XOR2X2 _0896_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_51_ ),
-    .Y(_0321_)
-  );
-  XNOR3X1 _0897_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_49_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_56_ ),
-    .Y(_0322_)
-  );
-  XNOR3X1 _0898_ (
-    .A(_0315_),
-    .B(_0321_),
-    .C(_0322_),
-    .Y(_0323_)
-  );
-  XOR2X2 _0899_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_58_ ),
-    .Y(_0324_)
-  );
-  XOR2X2 _0900_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_54_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_55_ ),
-    .Y(_0325_)
-  );
-  XNOR3X1 _0901_ (
-    .A(_0321_),
-    .B(_0324_),
-    .C(_0325_),
-    .Y(_0326_)
-  );
-  XOR2X2 _0902_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_57_ ),
-    .Y(_0327_)
-  );
-  XNOR3X1 _0903_ (
-    .A(_0314_),
-    .B(_0317_),
-    .C(_0327_),
-    .Y(_0328_)
-  );
-  AND4X2 _0904_ (
-    .A(_0320_),
-    .B(_0323_),
-    .C(_0326_),
-    .D(_0328_),
-    .Y(_0329_)
-  );
-  XOR2X2 _0905_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_55_ ),
-    .B(_0329_),
-    .Y(_0330_)
-  );
-  BUFX3 _0906_ (
-    .A(_0163_),
-    .Y(_0331_)
-  );
-  OAI21X1 _0907_ (
-    .A(_0313_),
-    .B(_0330_),
-    .C(_0331_),
-    .Y(_0332_)
-  );
-  BUFX3 _0908_ (
-    .A(_0137_),
-    .Y(_0333_)
-  );
-  OAOI211X1 _0909_ (
-    .A(_0287_),
-    .B(_0312_),
-    .C(_0332_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_38_)
-  );
-  NOR4BX1 _0910_ (
-    .AB(_0303_),
-    .B(_0310_),
-    .C(_0296_),
-    .D(_0301_),
-    .Y(_0334_)
-  );
-  XOR2X2 _0911_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_54_ ),
-    .B(_0334_),
-    .Y(_0335_)
-  );
-  NOR2X1 _0912_ (
-    .A(_0152_),
-    .B(_0137_),
-    .Y(_0336_)
-  );
-  NAND2X1 _0913_ (
-    .A(_0153_),
-    .B(_0336_),
-    .Y(_0337_)
-  );
-  NOR2BX1 _0914_ (
-    .AB(_0319_),
-    .B(_0316_),
-    .Y(_0338_)
-  );
-  AND4X2 _0915_ (
-    .A(_0323_),
-    .B(_0326_),
-    .C(_0328_),
-    .D(_0338_),
-    .Y(_0339_)
-  );
-  XOR2X2 _0916_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_54_ ),
-    .B(_0339_),
-    .Y(_0340_)
-  );
-  OR3BX1 _0917_ (
-    .AB(all_user_sbr_obi_rsp_117_),
-    .B(\i_user_rom.addr_q_2_ ),
-    .C(\i_user_rom.we_q ),
-    .Y(_0341_)
-  );
-  AOI211X1 _0918_ (
-    .A(_0153_),
-    .B(_0341_),
-    .C(_0137_),
-    .D(_0163_),
-    .Y(_0342_)
-  );
-  AOI2B1X1 _0919_ (
-    .AB(_0337_),
-    .B(_0340_),
-    .C(_0342_),
-    .Y(_0343_)
-  );
-  AOI2B1X1 _0920_ (
-    .AB(_0335_),
-    .B(_0313_),
-    .C(_0343_),
-    .Y(user_sbr_obi_rsp_o_37_)
-  );
-  NAND2X1P5 _0921_ (
-    .A(_0152_),
-    .B(_0158_),
-    .Y(_0344_)
-  );
-  XNOR3X1 _0922_ (
+  XNOR3X1 _1659_ (
     .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_32_ ),
     .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_38_ ),
     .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_39_ ),
-    .Y(_0345_)
+    .Y(_1330_)
   );
-  XNOR3X1 _0923_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_42_ ),
-    .Y(_0346_)
-  );
-  XNOR2X1 _0924_ (
-    .A(_0345_),
-    .B(_0346_),
-    .Y(_0347_)
-  );
-  XOR2X2 _0925_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_39_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_44_ ),
-    .Y(_0348_)
-  );
-  XNOR2X1 _0926_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_33_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
-    .Y(_0349_)
-  );
-  XOR2X2 _0927_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_32_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_40_ ),
-    .Y(_0350_)
-  );
-  XOR2X2 _0928_ (
-    .A(_0349_),
-    .B(_0350_),
-    .Y(_0351_)
-  );
-  XNOR3X1 _0929_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_34_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_37_ ),
-    .Y(_0352_)
-  );
-  OR3BX1 _0930_ (
-    .AB(_0348_),
-    .B(_0351_),
-    .C(_0352_),
-    .Y(_0353_)
-  );
-  INVX1 _0931_ (
-    .A(_0348_),
-    .Y(_0354_)
-  );
-  NAND3X1 _0932_ (
-    .A(_0354_),
-    .B(_0351_),
-    .C(_0352_),
-    .Y(_0355_)
-  );
-  NAND2X1 _0933_ (
-    .A(_0353_),
-    .B(_0355_),
-    .Y(_0356_)
-  );
-  XNOR3X1 _0934_ (
+  XNOR3X1 _1660_ (
     .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_33_ ),
     .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_34_ ),
     .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_41_ ),
-    .Y(_0357_)
+    .Y(_1331_)
   );
-  XNOR2X1 _0935_ (
-    .A(_0345_),
-    .B(_0357_),
-    .Y(_0358_)
+  XOR2X2 _1661_ (
+    .A(_1330_),
+    .B(_1331_),
+    .Y(_1332_)
   );
-  XNOR3X1 _0936_ (
+  XNOR3X1 _1662_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_37_ ),
+    .Y(_1333_)
+  );
+  XOR2X2 _1663_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_39_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_44_ ),
+    .Y(_1334_)
+  );
+  XOR2X2 _1664_ (
+    .A(_1333_),
+    .B(_1334_),
+    .Y(_1335_)
+  );
+  BUFX3 _1665_ (
+    .A(_1335_),
+    .Y(_1336_)
+  );
+  XNOR2X1 _1666_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_33_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .Y(_1337_)
+  );
+  XNOR3X1 _1667_ (
     .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_37_ ),
     .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_38_ ),
     .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_43_ ),
+    .Y(_1338_)
+  );
+  XOR2X2 _1668_ (
+    .A(_1337_),
+    .B(_1338_),
+    .Y(_1339_)
+  );
+  XNOR3X1 _1669_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_42_ ),
+    .Y(_1340_)
+  );
+  XOR2X2 _1670_ (
+    .A(_1330_),
+    .B(_1340_),
+    .Y(_1341_)
+  );
+  NAND2X1 _1671_ (
+    .A(_1339_),
+    .B(_1341_),
+    .Y(_1342_)
+  );
+  INVX1 _1672_ (
+    .A(_1336_),
+    .Y(_1343_)
+  );
+  MIN3X1 _1673_ (
+    .A(_1343_),
+    .B(_1339_),
+    .C(_1341_),
+    .Y(_1344_)
+  );
+  XOR2X2 _1674_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_32_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_40_ ),
+    .Y(_1345_)
+  );
+  XNOR3X2 _1675_ (
+    .A(_1337_),
+    .B(_1333_),
+    .C(_1345_),
+    .Y(_1346_)
+  );
+  OAI22X1 _1676_ (
+    .A(_1336_),
+    .B(_1342_),
+    .C(_1344_),
+    .D(_1346_),
+    .Y(_1347_)
+  );
+  NOR2X1 _1677_ (
+    .A(_1332_),
+    .B(_1341_),
+    .Y(_1348_)
+  );
+  NAND2X1 _1678_ (
+    .A(_1339_),
+    .B(_1348_),
+    .Y(_1349_)
+  );
+  XOR2X2 _1679_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_33_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .Y(_1350_)
+  );
+  XOR2X2 _1680_ (
+    .A(_1350_),
+    .B(_1338_),
+    .Y(_1351_)
+  );
+  AND3X2 _1681_ (
+    .A(_1332_),
+    .B(_1351_),
+    .C(_1341_),
+    .Y(_1352_)
+  );
+  NAND2X1 _1682_ (
+    .A(_1336_),
+    .B(_1352_),
+    .Y(_1353_)
+  );
+  OAI21X1 _1683_ (
+    .A(_1336_),
+    .B(_1349_),
+    .C(_1353_),
+    .Y(_1354_)
+  );
+  XOR2X2 _1684_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .Y(_1355_)
+  );
+  XNOR3X1 _1685_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_41_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_42_ ),
+    .C(_1355_),
+    .Y(_1356_)
+  );
+  XOR2X2 _1686_ (
+    .A(_1337_),
+    .B(_1356_),
+    .Y(_1357_)
+  );
+  MUXI2X1 _1687_ (
+    .A0(_1348_),
+    .A1(_1357_),
+    .S0(_1346_),
+    .Y(_1358_)
+  );
+  XOR2X2 _1688_ (
+    .A(_1336_),
+    .B(_1339_),
+    .Y(_1359_)
+  );
+  OR2X2 _1689_ (
+    .A(_1346_),
+    .B(_1336_),
+    .Y(_1360_)
+  );
+  OAI22X1 _1690_ (
+    .A(_1358_),
+    .B(_1359_),
+    .C(_1360_),
+    .D(_1342_),
+    .Y(_1361_)
+  );
+  AOI221X1 _1691_ (
+    .A(_1332_),
+    .B(_1347_),
+    .C(_1354_),
+    .D(_1346_),
+    .E(_1361_),
+    .Y(_1362_)
+  );
+  XNOR2X1 _1692_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .Y(_1363_)
+  );
+  XOR2X2 _1693_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_20_ ),
+    .Y(_1364_)
+  );
+  XNOR3X1 _1694_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_24_ ),
+    .Y(_1365_)
+  );
+  XNOR3X1 _1695_ (
+    .A(_1363_),
+    .B(_1364_),
+    .C(_1365_),
+    .Y(_1366_)
+  );
+  XNOR3X1 _1696_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_22_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
+    .Y(_1367_)
+  );
+  XNOR3X1 _1697_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_20_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_26_ ),
+    .Y(_1368_)
+  );
+  XOR2X2 _1698_ (
+    .A(_1367_),
+    .B(_1368_),
+    .Y(_1369_)
+  );
+  XNOR3X1 _1699_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_25_ ),
+    .Y(_1370_)
+  );
+  XOR2X2 _1700_ (
+    .A(_1367_),
+    .B(_1370_),
+    .Y(_1371_)
+  );
+  XOR2X2 _1701_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .Y(_1372_)
+  );
+  XNOR3X1 _1702_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_22_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_27_ ),
+    .Y(_1373_)
+  );
+  XOR2X2 _1703_ (
+    .A(_1372_),
+    .B(_1373_),
+    .Y(_1374_)
+  );
+  XNOR3X1 _1704_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_28_ ),
+    .Y(_1375_)
+  );
+  XOR2X2 _1705_ (
+    .A(_1364_),
+    .B(_1375_),
+    .Y(_1376_)
+  );
+  BUFX3 _1706_ (
+    .A(_1376_),
+    .Y(_1377_)
+  );
+  OR3X2 _1707_ (
+    .A(_1371_),
+    .B(_1374_),
+    .C(_1377_),
+    .Y(_1378_)
+  );
+  NAND2X1 _1708_ (
+    .A(_1374_),
+    .B(_1377_),
+    .Y(_1379_)
+  );
+  XOR2X2 _1709_ (
+    .A(_1368_),
+    .B(_1370_),
+    .Y(_1380_)
+  );
+  OAI21X1 _1710_ (
+    .A(_1374_),
+    .B(_1377_),
+    .C(_1380_),
+    .Y(_1381_)
+  );
+  OA211X2 _1711_ (
+    .A(_1369_),
+    .B(_1378_),
+    .C(_1379_),
+    .D(_1381_),
+    .Y(_1382_)
+  );
+  AND2X1 _1712_ (
+    .A(_1369_),
+    .B(_1371_),
+    .Y(_1383_)
+  );
+  OAI22X1 _1713_ (
+    .A(_1366_),
+    .B(_1382_),
+    .C(_1383_),
+    .D(_1379_),
+    .Y(_1384_)
+  );
+  NOR2X1 _1714_ (
+    .A(_1362_),
+    .B(_1384_),
+    .Y(_1385_)
+  );
+  XOR2X2 _1715_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_25_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_26_ ),
+    .Y(_1386_)
+  );
+  XNOR3X1 _1716_ (
+    .A(_1372_),
+    .B(_1364_),
+    .C(_1386_),
+    .Y(_1387_)
+  );
+  MUXI2X1 _1717_ (
+    .A0(_1380_),
+    .A1(_1387_),
+    .S0(_1374_),
+    .Y(_1388_)
+  );
+  INVX1 _1718_ (
+    .A(_1374_),
+    .Y(_1389_)
+  );
+  NAND2X1 _1719_ (
+    .A(_1387_),
+    .B(_1389_),
+    .Y(_1390_)
+  );
+  MUXI2X1 _1720_ (
+    .A0(_1388_),
+    .A1(_1390_),
+    .S0(_1377_),
+    .Y(_1391_)
+  );
+  XOR2X2 _1721_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_49_ ),
+    .Y(_1392_)
+  );
+  XOR2X2 _1722_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_54_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_55_ ),
+    .Y(_1393_)
+  );
+  XOR2X2 _1723_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_57_ ),
+    .Y(_1394_)
+  );
+  XNOR3X1 _1724_ (
+    .A(_1392_),
+    .B(_1393_),
+    .C(_1394_),
+    .Y(_1395_)
+  );
+  BUFX3 _1725_ (
+    .A(_1395_),
+    .Y(_1396_)
+  );
+  INVX1 _1726_ (
+    .A(_1396_),
+    .Y(_1397_)
+  );
+  XOR2X2 _1727_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .Y(_1398_)
+  );
+  XNOR3X1 _1728_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_55_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_60_ ),
+    .Y(_1399_)
+  );
+  XOR2X2 _1729_ (
+    .A(_1398_),
+    .B(_1399_),
+    .Y(_1400_)
+  );
+  XOR2X2 _1730_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .Y(_1401_)
+  );
+  XNOR3X1 _1731_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_49_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_54_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_59_ ),
+    .Y(_1402_)
+  );
+  XOR2X2 _1732_ (
+    .A(_1401_),
+    .B(_1402_),
+    .Y(_1403_)
+  );
+  NOR2X1 _1733_ (
+    .A(_1400_),
+    .B(_1403_),
+    .Y(_1404_)
+  );
+  BUFX3 _1734_ (
+    .A(_1400_),
+    .Y(_1405_)
+  );
+  AND2X1 _1735_ (
+    .A(_1405_),
+    .B(_1403_),
+    .Y(_1406_)
+  );
+  OR2X2 _1736_ (
+    .A(_1396_),
+    .B(_1406_),
+    .Y(_1407_)
+  );
+  XOR2X2 _1737_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_58_ ),
+    .Y(_1408_)
+  );
+  XOR2X2 _1738_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .Y(_1409_)
+  );
+  XNOR3X2 _1739_ (
+    .A(_1393_),
+    .B(_1408_),
+    .C(_1409_),
+    .Y(_1410_)
+  );
+  AOI2B1X1 _1740_ (
+    .AB(_1404_),
+    .B(_1407_),
+    .C(_1410_),
+    .Y(_1411_)
+  );
+  XNOR3X1 _1741_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_56_ ),
+    .Y(_1412_)
+  );
+  XNOR3X1 _1742_ (
+    .A(_1392_),
+    .B(_1398_),
+    .C(_1412_),
+    .Y(_1413_)
+  );
+  BUFX3 _1743_ (
+    .A(_1413_),
+    .Y(_1414_)
+  );
+  AOAI211X1 _1744_ (
+    .A(_1397_),
+    .B(_1404_),
+    .C(_1411_),
+    .D(_1414_),
+    .Y(_1415_)
+  );
+  XNOR2X1 _1745_ (
+    .A(_1395_),
+    .B(_1410_),
+    .Y(_1416_)
+  );
+  NAND3X1 _1746_ (
+    .A(_1396_),
+    .B(_1410_),
+    .C(_1414_),
+    .Y(_1417_)
+  );
+  OAI21X1 _1747_ (
+    .A(_1416_),
+    .B(_1414_),
+    .C(_1417_),
+    .Y(_1418_)
+  );
+  XOR2X2 _1748_ (
+    .A(_1405_),
+    .B(_1403_),
+    .Y(_1419_)
+  );
+  NOR3BX1 _1749_ (
+    .AB(_1406_),
+    .B(_1410_),
+    .C(_1396_),
+    .Y(_1420_)
+  );
+  AO31X2 _1750_ (
+    .A(_1396_),
+    .B(_1410_),
+    .C(_1404_),
+    .D(_1420_),
+    .Y(_1421_)
+  );
+  INVX1 _1751_ (
+    .A(_1414_),
+    .Y(_1422_)
+  );
+  NOR3BX1 _1752_ (
+    .AB(_1404_),
+    .B(_1410_),
+    .C(_1396_),
+    .Y(_1423_)
+  );
+  AOI221X1 _1753_ (
+    .A(_1418_),
+    .B(_1419_),
+    .C(_1421_),
+    .D(_1422_),
+    .E(_1423_),
+    .Y(_1424_)
+  );
+  XOR2X2 _1754_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_3_ ),
+    .Y(_1425_)
+  );
+  XOR2X2 _1755_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_4_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_10_ ),
+    .Y(_1426_)
+  );
+  XOR2X2 _1756_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_6_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
+    .Y(_1427_)
+  );
+  XNOR3X1 _1757_ (
+    .A(_1425_),
+    .B(_1426_),
+    .C(_1427_),
+    .Y(_1428_)
+  );
+  XOR2X2 _1758_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_4_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .Y(_1429_)
+  );
+  XNOR3X1 _1759_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_1_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_2_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_8_ ),
+    .Y(_1430_)
+  );
+  XNOR3X1 _1760_ (
+    .A(_1425_),
+    .B(_1429_),
+    .C(_1430_),
+    .Y(_1431_)
+  );
+  NOR2BX1 _1761_ (
+    .AB(_1428_),
+    .B(_1431_),
+    .Y(_1432_)
+  );
+  XOR2X2 _1762_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_9_ ),
+    .Y(_1433_)
+  );
+  XOR2X2 _1763_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_2_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
+    .Y(_1434_)
+  );
+  XNOR2X1 _1764_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_1_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_6_ ),
+    .Y(_1435_)
+  );
+  XNOR3X1 _1765_ (
+    .A(_1433_),
+    .B(_1434_),
+    .C(_1435_),
+    .Y(_1436_)
+  );
+  NOR2BX1 _1766_ (
+    .AB(_1431_),
+    .B(_1428_),
+    .Y(_1437_)
+  );
+  NOR3X1 _1767_ (
+    .A(_1432_),
+    .B(_1437_),
+    .C(_1436_),
+    .Y(_1438_)
+  );
+  AOI21X1 _1768_ (
+    .A(_1432_),
+    .B(_1436_),
+    .C(_1438_),
+    .Y(_1439_)
+  );
+  XNOR3X1 _1769_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_3_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_11_ ),
+    .Y(_1440_)
+  );
+  XNOR2X1 _1770_ (
+    .A(_1435_),
+    .B(_1440_),
+    .Y(_1441_)
+  );
+  INVX1 _1771_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_12_ ),
+    .Y(_1442_)
+  );
+  XNOR3X1 _1772_ (
+    .A(_1442_),
+    .B(_1429_),
+    .C(_1434_),
+    .Y(_1443_)
+  );
+  XOR2X2 _1773_ (
+    .A(_1441_),
+    .B(_1443_),
+    .Y(_1444_)
+  );
+  XNOR3X1 _1774_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_12_ ),
+    .B(_1429_),
+    .C(_1434_),
+    .Y(_1445_)
+  );
+  MIN3X1 _1775_ (
+    .A(_1428_),
+    .B(_1441_),
+    .C(_1445_),
+    .Y(_1446_)
+  );
+  NOR3X1 _1776_ (
+    .A(_1428_),
+    .B(_1441_),
+    .C(_1445_),
+    .Y(_1447_)
+  );
+  AOAI211X1 _1777_ (
+    .A(_1431_),
+    .B(_1446_),
+    .C(_1447_),
+    .D(_1436_),
+    .Y(_1448_)
+  );
+  NAND2X1 _1778_ (
+    .A(_1436_),
+    .B(_1441_),
+    .Y(_1449_)
+  );
+  NAND2BX1 _1779_ (
+    .AB(_1428_),
+    .B(_1445_),
+    .Y(_1450_)
+  );
+  XOR2X2 _1780_ (
+    .A(_1435_),
+    .B(_1440_),
+    .Y(_1451_)
+  );
+  NAND2X1 _1781_ (
+    .A(_1428_),
+    .B(_1451_),
+    .Y(_1452_)
+  );
+  NAND2BX1 _1782_ (
+    .AB(_1436_),
+    .B(_1443_),
+    .Y(_1453_)
+  );
+  OAI22X1 _1783_ (
+    .A(_1449_),
+    .B(_1450_),
+    .C(_1452_),
+    .D(_1453_),
+    .Y(_1454_)
+  );
+  MUXI2X1 _1784_ (
+    .A0(_1454_),
+    .A1(_1447_),
+    .S0(_1431_),
+    .Y(_1455_)
+  );
+  OA211X2 _1785_ (
+    .A(_1439_),
+    .B(_1444_),
+    .C(_1448_),
+    .D(_1455_),
+    .Y(_1456_)
+  );
+  AOI221X1 _1786_ (
+    .A(_1366_),
+    .B(_1391_),
+    .C(_1415_),
+    .D(_1424_),
+    .E(_1456_),
+    .Y(_1457_)
+  );
+  INVX1 _1787_ (
+    .A(\gen_sram_bank[0].bank_read_valid ),
+    .Y(_1458_)
+  );
+  AOI21X1 _1788_ (
+    .A(_1385_),
+    .B(_1457_),
+    .C(_1458_),
+    .Y(all_banks_double_err_o_0_)
+  );
+  XOR2X2 _1789_ (
+    .A(_1416_),
+    .B(_1414_),
+    .Y(_1459_)
+  );
+  MUXI2X1 _1790_ (
+    .A0(_1419_),
+    .A1(_1404_),
+    .S0(_1459_),
+    .Y(_1460_)
+  );
+  XNOR3X1 _1791_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_8_ ),
+    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_10_ ),
+    .Y(_1461_)
+  );
+  XOR2X2 _1792_ (
+    .A(_1433_),
+    .B(_1461_),
+    .Y(_1462_)
+  );
+  NAND2BX1 _1793_ (
+    .AB(_1444_),
+    .B(_1462_),
+    .Y(_1463_)
+  );
+  INVX1 _1794_ (
+    .A(_1436_),
+    .Y(_1464_)
+  );
+  OR2X2 _1795_ (
+    .A(_1431_),
+    .B(_1428_),
+    .Y(_1465_)
+  );
+  NOR2X1 _1796_ (
+    .A(_1451_),
+    .B(_1443_),
+    .Y(_1466_)
+  );
+  NOR3X1 _1797_ (
+    .A(_1441_),
+    .B(_1445_),
+    .C(_1462_),
+    .Y(_1467_)
+  );
+  OAOI211X1 _1798_ (
+    .A(_1464_),
+    .B(_1465_),
+    .C(_1466_),
+    .D(_1467_),
+    .Y(_1468_)
+  );
+  OR2X2 _1799_ (
+    .A(_1410_),
+    .B(_1413_),
+    .Y(_1469_)
+  );
+  XNOR2X1 _1800_ (
+    .A(_1401_),
+    .B(_1402_),
+    .Y(_1470_)
+  );
+  NOR4BX2 _1801_ (
+    .AB(_1405_),
+    .B(_1469_),
+    .C(_1470_),
+    .D(_1396_),
+    .Y(_1471_)
+  );
+  AOI21X1 _1802_ (
+    .A(_1463_),
+    .B(_1468_),
+    .C(_1471_),
+    .Y(_1472_)
+  );
+  AND2X1 _1803_ (
+    .A(_1374_),
+    .B(_1376_),
+    .Y(_1473_)
+  );
+  NOR3BX1 _1804_ (
+    .AB(_1387_),
+    .B(_1374_),
+    .C(_1377_),
+    .Y(_1474_)
+  );
+  AOAI211X1 _1805_ (
+    .A(_1473_),
+    .B(_1383_),
+    .C(_1474_),
+    .D(_1366_),
+    .Y(_1475_)
+  );
+  XOR2X2 _1806_ (
+    .A(_1374_),
+    .B(_1376_),
+    .Y(_1476_)
+  );
+  XOR2X2 _1807_ (
+    .A(_1366_),
+    .B(_1387_),
+    .Y(_1477_)
+  );
+  NOR4X1 _1808_ (
+    .A(_1366_),
+    .B(_1387_),
+    .C(_1374_),
+    .D(_1377_),
+    .Y(_1478_)
+  );
+  AOI21X1 _1809_ (
+    .A(_1476_),
+    .B(_1477_),
+    .C(_1478_),
+    .Y(_1479_)
+  );
+  NAND3X1 _1810_ (
+    .A(_1346_),
+    .B(_1336_),
+    .C(_1352_),
+    .Y(_1480_)
+  );
+  NAND2X1 _1811_ (
+    .A(_1350_),
+    .B(_1338_),
+    .Y(_1481_)
+  );
+  MUXI2X1 _1812_ (
+    .A0(_1338_),
+    .A1(_1481_),
+    .S0(_1335_),
+    .Y(_1482_)
+  );
+  NOR2X1 _1813_ (
+    .A(_1350_),
+    .B(_1338_),
+    .Y(_1483_)
+  );
+  MUX2X1 _1814_ (
+    .A0(_1338_),
+    .A1(_1483_),
+    .S0(_1335_),
+    .Y(_1484_)
+  );
+  XOR2X2 _1815_ (
+    .A(_1346_),
+    .B(_1356_),
+    .Y(_1485_)
+  );
+  MUXI2X1 _1816_ (
+    .A0(_1482_),
+    .A1(_1484_),
+    .S0(_1485_),
+    .Y(_1486_)
+  );
+  AND4X1 _1817_ (
+    .A(_1475_),
+    .B(_1479_),
+    .C(_1480_),
+    .D(_1486_),
+    .Y(_1487_)
+  );
+  AO31X2 _1818_ (
+    .A(_1460_),
+    .B(_1472_),
+    .C(_1487_),
+    .D(_1458_),
+    .Y(_1488_)
+  );
+  INVX3 _1819_ (
+    .A(_1488_),
+    .Y(all_banks_single_err_o_0_)
+  );
+  NAND2X3 _1820_ (
+    .A(user_sbr_obi_req_i_0_),
+    .B(_1281_),
+    .Y(_1489_)
+  );
+  INVX3 _1821_ (
+    .A(_1489_),
+    .Y(_1490_)
+  );
+  BUFX3 _1822_ (
+    .A(_1490_),
+    .Y(_1491_)
+  );
+  BUFX3 _1823_ (
+    .A(_1491_),
+    .Y(\gen_sram_bank[0].i_sram_shim.rvalid_d )
+  );
+  BUFX3 _1824_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_valid_q ),
+    .Y(_1492_)
+  );
+  BUFX3 _1825_ (
+    .A(_1492_),
+    .Y(_1493_)
+  );
+  BUFX3 _1826_ (
+    .A(_1489_),
+    .Y(_1494_)
+  );
+  AND3X2 _1827_ (
+    .A(_1493_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_0_ ),
+    .C(_1494_),
+    .Y(_1495_)
+  );
+  AO21X2 _1828_ (
+    .A(all_user_sbr_obi_req_118_),
+    .B(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .C(_1495_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_0_ )
+  );
+  AND3X2 _1829_ (
+    .A(_1493_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_1_ ),
+    .C(_1494_),
+    .Y(_1496_)
+  );
+  AO21X2 _1830_ (
+    .A(all_user_sbr_obi_req_119_),
+    .B(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .C(_1496_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_1_ )
+  );
+  BUFX3 _1831_ (
+    .A(_1492_),
+    .Y(_1497_)
+  );
+  AND3X2 _1832_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_2_ ),
+    .C(_1494_),
+    .Y(_1498_)
+  );
+  AO21X2 _1833_ (
+    .A(all_user_sbr_obi_req_120_),
+    .B(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .C(_1498_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_2_ )
+  );
+  AND3X2 _1834_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ),
+    .C(_1494_),
+    .Y(_1499_)
+  );
+  AO21X2 _1835_ (
+    .A(all_user_sbr_obi_req_121_),
+    .B(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .C(_1499_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_3_ )
+  );
+  AND3X2 _1836_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_4_ ),
+    .C(_1494_),
+    .Y(_1500_)
+  );
+  AO21X2 _1837_ (
+    .A(all_user_sbr_obi_req_122_),
+    .B(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .C(_1500_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_4_ )
+  );
+  BUFX3 _1838_ (
+    .A(_1491_),
+    .Y(_1501_)
+  );
+  AND3X2 _1839_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_5_ ),
+    .C(_1494_),
+    .Y(_1502_)
+  );
+  AO21X2 _1840_ (
+    .A(all_user_sbr_obi_req_123_),
+    .B(_1501_),
+    .C(_1502_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_5_ )
+  );
+  AND3X2 _1841_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ),
+    .C(_1494_),
+    .Y(_1503_)
+  );
+  AO21X2 _1842_ (
+    .A(all_user_sbr_obi_req_124_),
+    .B(_1501_),
+    .C(_1503_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_6_ )
+  );
+  BUFX3 _1843_ (
+    .A(_1489_),
+    .Y(_1504_)
+  );
+  AND3X2 _1844_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_7_ ),
+    .C(_1504_),
+    .Y(_1505_)
+  );
+  AO21X2 _1845_ (
+    .A(all_user_sbr_obi_req_125_),
+    .B(_1501_),
+    .C(_1505_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_7_ )
+  );
+  AND3X2 _1846_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_8_ ),
+    .C(_1504_),
+    .Y(_1506_)
+  );
+  AO21X2 _1847_ (
+    .A(all_user_sbr_obi_req_126_),
+    .B(_1501_),
+    .C(_1506_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_8_ )
+  );
+  AND3X2 _1848_ (
+    .A(_1497_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_9_ ),
+    .C(_1504_),
+    .Y(_1507_)
+  );
+  AO21X2 _1849_ (
+    .A(all_user_sbr_obi_req_127_),
+    .B(_1501_),
+    .C(_1507_),
+    .Y(\gen_sram_bank[0].bank_sram_addr_9_ )
+  );
+  BUFX3 _1850_ (
+    .A(user_sbr_obi_req_i_37_),
+    .Y(_1508_)
+  );
+  INVX1 _1851_ (
+    .A(_1508_),
+    .Y(_1509_)
+  );
+  BUFX3 _1852_ (
+    .A(_1489_),
+    .Y(_1510_)
+  );
+  BUFX3 _1853_ (
+    .A(_1510_),
+    .Y(_1511_)
+  );
+  BUFX3 _1854_ (
+    .A(_1492_),
+    .Y(_1512_)
+  );
+  BUFX3 _1855_ (
+    .A(_1512_),
+    .Y(_1513_)
+  );
+  BUFX3 _1856_ (
+    .A(_1504_),
+    .Y(_1514_)
+  );
+  NAND3X1 _1857_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_be_q_0_ ),
+    .C(_1514_),
+    .Y(_1515_)
+  );
+  OAI21X1 _1858_ (
+    .A(_1509_),
+    .B(_1511_),
+    .C(_1515_),
+    .Y(\gen_sram_bank[0].bank_sram_be_0_ )
+  );
+  BUFX3 _1859_ (
+    .A(user_sbr_obi_req_i_38_),
+    .Y(_1516_)
+  );
+  INVX1 _1860_ (
+    .A(_1516_),
+    .Y(_1517_)
+  );
+  NAND3X1 _1861_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_be_q_1_ ),
+    .C(_1514_),
+    .Y(_1518_)
+  );
+  OAI21X1 _1862_ (
+    .A(_1517_),
+    .B(_1511_),
+    .C(_1518_),
+    .Y(\gen_sram_bank[0].bank_sram_be_1_ )
+  );
+  BUFX3 _1863_ (
+    .A(user_sbr_obi_req_i_39_),
+    .Y(_1519_)
+  );
+  INVX1 _1864_ (
+    .A(_1519_),
+    .Y(_1520_)
+  );
+  NAND3X1 _1865_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_be_q_2_ ),
+    .C(_1514_),
+    .Y(_1521_)
+  );
+  OAI21X1 _1866_ (
+    .A(_1520_),
+    .B(_1511_),
+    .C(_1521_),
+    .Y(\gen_sram_bank[0].bank_sram_be_2_ )
+  );
+  INVX1 _1867_ (
+    .A(user_sbr_obi_req_i_40_),
+    .Y(_1522_)
+  );
+  NAND3X1 _1868_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_be_q_3_ ),
+    .C(_1514_),
+    .Y(_1523_)
+  );
+  OAI21X1 _1869_ (
+    .A(_1522_),
+    .B(_1511_),
+    .C(_1523_),
+    .Y(\gen_sram_bank[0].bank_sram_be_3_ )
+  );
+  NAND2BX1 _1870_ (
+    .AB(_1513_),
+    .B(_1511_),
+    .Y(\gen_sram_bank[0].bank_sram_req )
+  );
+  INVX1 _1871_ (
+    .A(user_sbr_obi_req_i_8_),
+    .Y(_1524_)
+  );
+  NAND3X1 _1872_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_3_ ),
+    .C(_1514_),
+    .Y(_1525_)
+  );
+  OAI21X1 _1873_ (
+    .A(_1524_),
+    .B(_1511_),
+    .C(_1525_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_3_ )
+  );
+  INVX1 _1874_ (
+    .A(user_sbr_obi_req_i_17_),
+    .Y(_1526_)
+  );
+  NAND3X1 _1875_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_12_ ),
+    .C(_1514_),
+    .Y(_1527_)
+  );
+  OAI21X1 _1876_ (
+    .A(_1526_),
+    .B(_1511_),
+    .C(_1527_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_12_ )
+  );
+  INVX1 _1877_ (
+    .A(user_sbr_obi_req_i_18_),
+    .Y(_1528_)
+  );
+  NAND3X1 _1878_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_13_ ),
+    .C(_1514_),
+    .Y(_1529_)
+  );
+  OAI21X1 _1879_ (
+    .A(_1528_),
+    .B(_1511_),
+    .C(_1529_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_13_ )
+  );
+  INVX1 _1880_ (
+    .A(user_sbr_obi_req_i_19_),
+    .Y(_1530_)
+  );
+  BUFX3 _1881_ (
+    .A(_1512_),
+    .Y(_0104_)
+  );
+  BUFX3 _1882_ (
+    .A(_1504_),
+    .Y(_0105_)
+  );
+  NAND3X1 _1883_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_14_ ),
+    .C(_0105_),
+    .Y(_0106_)
+  );
+  OAI21X1 _1884_ (
+    .A(_1530_),
+    .B(_1511_),
+    .C(_0106_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_14_ )
+  );
+  BUFX3 _1885_ (
+    .A(user_sbr_obi_req_i_20_),
+    .Y(_0107_)
+  );
+  INVX1 _1886_ (
+    .A(_0107_),
+    .Y(_0108_)
+  );
+  BUFX3 _1887_ (
+    .A(_1492_),
+    .Y(_0109_)
+  );
+  NAND3X1 _1888_ (
+    .A(_0109_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_15_ ),
+    .C(_1504_),
+    .Y(_0110_)
+  );
+  OAI21X1 _1889_ (
+    .A(_0108_),
+    .B(_1510_),
+    .C(_0110_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_15_ )
+  );
+  INVX1 _1890_ (
+    .A(user_sbr_obi_req_i_21_),
+    .Y(_0111_)
+  );
+  NAND3X1 _1891_ (
+    .A(_0109_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_16_ ),
+    .C(_1504_),
+    .Y(_0112_)
+  );
+  OAI21X1 _1892_ (
+    .A(_0111_),
+    .B(_1510_),
+    .C(_0112_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_16_ )
+  );
+  INVX1 _1893_ (
+    .A(user_sbr_obi_req_i_24_),
+    .Y(_0113_)
+  );
+  BUFX3 _1894_ (
+    .A(_1510_),
+    .Y(_0114_)
+  );
+  NAND3X1 _1895_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_19_ ),
+    .C(_0105_),
+    .Y(_0115_)
+  );
+  OAI21X1 _1896_ (
+    .A(_0113_),
+    .B(_0114_),
+    .C(_0115_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_19_ )
+  );
+  INVX1 _1897_ (
+    .A(user_sbr_obi_req_i_22_),
+    .Y(_0116_)
+  );
+  NAND3X1 _1898_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_17_ ),
+    .C(_0105_),
+    .Y(_0117_)
+  );
+  OAI21X1 _1899_ (
+    .A(_0116_),
+    .B(_0114_),
+    .C(_0117_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_17_ )
+  );
+  INVX1 _1900_ (
+    .A(user_sbr_obi_req_i_27_),
+    .Y(_0118_)
+  );
+  NAND3X1 _1901_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_22_ ),
+    .C(_0105_),
+    .Y(_0119_)
+  );
+  OAI21X1 _1902_ (
+    .A(_0118_),
+    .B(_0114_),
+    .C(_0119_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_22_ )
+  );
+  NAND2X1 _1903_ (
+    .A(user_sbr_obi_req_i_28_),
+    .B(_1501_),
+    .Y(_0120_)
+  );
+  NAND3X1 _1904_ (
+    .A(_1513_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_23_ ),
+    .C(_1514_),
+    .Y(_0121_)
+  );
+  NAND2X1 _1905_ (
+    .A(_0120_),
+    .B(_0121_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_23_ )
+  );
+  INVX1 _1906_ (
+    .A(user_sbr_obi_req_i_29_),
+    .Y(_0122_)
+  );
+  NAND3X1 _1907_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_24_ ),
+    .C(_0105_),
+    .Y(_0123_)
+  );
+  OAI21X1 _1908_ (
+    .A(_0122_),
+    .B(_0114_),
+    .C(_0123_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_24_ )
+  );
+  INVX1 _1909_ (
+    .A(user_sbr_obi_req_i_30_),
+    .Y(_0124_)
+  );
+  NAND3X1 _1910_ (
+    .A(_0109_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_25_ ),
+    .C(_1504_),
+    .Y(_0125_)
+  );
+  OAI21X1 _1911_ (
+    .A(_0124_),
+    .B(_1510_),
+    .C(_0125_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_25_ )
+  );
+  BUFX3 _1912_ (
+    .A(_1492_),
+    .Y(_0126_)
+  );
+  AND3X2 _1913_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_26_ ),
+    .C(_1489_),
+    .Y(_0127_)
+  );
+  AOI21X2 _1914_ (
+    .A(user_sbr_obi_req_i_31_),
+    .B(_1491_),
+    .C(_0127_),
+    .Y(_0128_)
+  );
+  INVX1 _1915_ (
+    .A(_0128_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_26_ )
+  );
+  INVX1 _1916_ (
+    .A(user_sbr_obi_req_i_33_),
+    .Y(_0129_)
+  );
+  NAND3X1 _1917_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_28_ ),
+    .C(_0105_),
+    .Y(_0130_)
+  );
+  OAI21X1 _1918_ (
+    .A(_0129_),
+    .B(_0114_),
+    .C(_0130_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_28_ )
+  );
+  INVX1 _1919_ (
+    .A(user_sbr_obi_req_i_34_),
+    .Y(_0131_)
+  );
+  NAND3X1 _1920_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_29_ ),
+    .C(_0105_),
+    .Y(_0132_)
+  );
+  OAI21X1 _1921_ (
+    .A(_0131_),
+    .B(_0114_),
+    .C(_0132_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_29_ )
+  );
+  INVX1 _1922_ (
+    .A(user_sbr_obi_req_i_7_),
+    .Y(_0133_)
+  );
+  NAND3X1 _1923_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_2_ ),
+    .C(_0105_),
+    .Y(_0134_)
+  );
+  OAI21X1 _1924_ (
+    .A(_0133_),
+    .B(_0114_),
+    .C(_0134_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_2_ )
+  );
+  INVX1 _1925_ (
+    .A(user_sbr_obi_req_i_9_),
+    .Y(_0135_)
+  );
+  NAND3X1 _1926_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_4_ ),
+    .C(_0105_),
+    .Y(_0136_)
+  );
+  OAI21X1 _1927_ (
+    .A(_0135_),
+    .B(_0114_),
+    .C(_0136_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_4_ )
+  );
+  INVX1 _1928_ (
+    .A(user_sbr_obi_req_i_10_),
+    .Y(_0137_)
+  );
+  NAND3X1 _1929_ (
+    .A(_0104_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_5_ ),
+    .C(_0105_),
+    .Y(_0138_)
+  );
+  OAI21X1 _1930_ (
+    .A(_0137_),
+    .B(_0114_),
+    .C(_0138_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_5_ )
+  );
+  INVX1 _1931_ (
+    .A(user_sbr_obi_req_i_11_),
+    .Y(_0139_)
+  );
+  NAND3X1 _1932_ (
+    .A(_1512_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_6_ ),
+    .C(_1504_),
+    .Y(_0140_)
+  );
+  OAI21X1 _1933_ (
+    .A(_0139_),
+    .B(_1510_),
+    .C(_0140_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_6_ )
+  );
+  NAND2X1 _1934_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_7_ ),
+    .Y(_0141_)
+  );
+  BUFX3 _1935_ (
+    .A(user_sbr_obi_req_i_12_),
+    .Y(_0142_)
+  );
+  BUFX3 _1936_ (
+    .A(_1490_),
+    .Y(_0143_)
+  );
+  NAND2X1 _1937_ (
+    .A(_0142_),
+    .B(_0143_),
+    .Y(_0144_)
+  );
+  OAI21X1 _1938_ (
+    .A(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .B(_0141_),
+    .C(_0144_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_7_ )
+  );
+  INVX1 _1939_ (
+    .A(user_sbr_obi_req_i_13_),
+    .Y(_0145_)
+  );
+  NAND3X1 _1940_ (
+    .A(_1493_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_8_ ),
+    .C(_1510_),
+    .Y(_0146_)
+  );
+  OAI21X1 _1941_ (
+    .A(_0145_),
+    .B(_0114_),
+    .C(_0146_),
+    .Y(\gen_sram_bank[0].bank_sram_wdata_8_ )
+  );
+  MUX2X1 _1942_ (
+    .A0(_1513_),
+    .A1(user_sbr_obi_req_i_41_),
+    .S0(_1501_),
+    .Y(\gen_sram_bank[0].bank_sram_we )
+  );
+  BUFX3 _1943_ (
+    .A(_1488_),
+    .Y(_0147_)
+  );
+  BUFX3 _1944_ (
+    .A(_0147_),
+    .Y(_0148_)
+  );
+  MUX2X1 _1945_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_0_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_0_ ),
+    .S0(_0148_),
+    .Y(_0003_)
+  );
+  MUX2X1 _1946_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_1_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_1_ ),
+    .S0(_0147_),
+    .Y(_0004_)
+  );
+  MUX2X1 _1947_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_2_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_2_ ),
+    .S0(_0147_),
+    .Y(_0005_)
+  );
+  MUX2X1 _1948_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_3_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ),
+    .S0(_0147_),
+    .Y(_0006_)
+  );
+  MUX2X1 _1949_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_4_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_4_ ),
+    .S0(_0147_),
+    .Y(_0007_)
+  );
+  MUX2X1 _1950_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_5_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_5_ ),
+    .S0(_0147_),
+    .Y(_0008_)
+  );
+  MUX2X1 _1951_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_6_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ),
+    .S0(_0147_),
+    .Y(_0009_)
+  );
+  MUX2X1 _1952_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_7_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_7_ ),
+    .S0(_0147_),
+    .Y(_0010_)
+  );
+  MUX2X1 _1953_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_8_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_8_ ),
+    .S0(_0147_),
+    .Y(_0011_)
+  );
+  MUX2X1 _1954_ (
+    .A0(\gen_sram_bank[0].bank_word_addr_q_9_ ),
+    .A1(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_9_ ),
+    .S0(_0147_),
+    .Y(_0012_)
+  );
+  INVX1 _1955_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_be_q_0_ ),
+    .Y(_0149_)
+  );
+  XOR2X2 _1956_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ),
+    .B(_1288_),
+    .Y(_0150_)
+  );
+  NAND2X1 _1957_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ),
+    .B(_1285_),
+    .Y(_0151_)
+  );
+  NAND4BBX1 _1958_ (
+    .AB(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ),
+    .BB(_1285_),
+    .C(_1288_),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ),
+    .Y(_0152_)
+  );
+  OAOI211X1 _1959_ (
+    .A(_0150_),
+    .B(_0151_),
+    .C(_0152_),
+    .D(_1279_),
+    .Y(_0153_)
+  );
+  OR2X2 _1960_ (
+    .A(_1288_),
+    .B(_1285_),
+    .Y(_0154_)
+  );
+  AOI211X1 _1961_ (
+    .A(_1293_),
+    .B(_0154_),
+    .C(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ),
+    .Y(_0155_)
+  );
+  XOR2X2 _1962_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_8_ ),
+    .B(_1291_),
+    .Y(_0156_)
+  );
+  XOR2X2 _1963_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_0_ ),
+    .B(_1243_),
+    .Y(_0157_)
+  );
+  XOR2X2 _1964_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_7_ ),
+    .B(_1290_),
+    .Y(_0158_)
+  );
+  XOR2X2 _1965_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_4_ ),
+    .B(_1286_),
+    .Y(_0159_)
+  );
+  NOR4X1 _1966_ (
+    .A(_0156_),
+    .B(_0157_),
+    .C(_0158_),
+    .D(_0159_),
+    .Y(_0160_)
+  );
+  NOR2BX1 _1967_ (
+    .AB(user_sbr_obi_req_i_46_),
+    .B(_1279_),
+    .Y(_0161_)
+  );
+  XOR2X2 _1968_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_2_ ),
+    .B(_0161_),
+    .Y(_0162_)
+  );
+  XOR2X2 _1969_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_5_ ),
+    .B(_1287_),
+    .Y(_0163_)
+  );
+  XOR2X2 _1970_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_9_ ),
+    .B(_1292_),
+    .Y(_0164_)
+  );
+  XOR2X2 _1971_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_1_ ),
+    .B(_1284_),
+    .Y(_0165_)
+  );
+  NAND2X1 _1972_ (
+    .A(user_sbr_obi_req_i_0_),
+    .B(user_sbr_obi_req_i_41_),
+    .Y(_0166_)
+  );
+  OR3BX1 _1973_ (
+    .AB(\gen_sram_bank[0].i_repair_buffer.buf_valid_q ),
+    .B(_0165_),
+    .C(_0166_),
+    .Y(_0167_)
+  );
+  NOR4X1 _1974_ (
+    .A(_0162_),
+    .B(_0163_),
+    .C(_0164_),
+    .D(_0167_),
+    .Y(_0168_)
+  );
+  OAI211X1 _1975_ (
+    .A(_0153_),
+    .B(_0155_),
+    .C(_0160_),
+    .D(_0168_),
+    .Y(_0169_)
+  );
+  INVX1 _1976_ (
+    .A(_0169_),
+    .Y(_0170_)
+  );
+  AND2X1 _1977_ (
+    .A(_1281_),
+    .B(_0170_),
+    .Y(_0171_)
+  );
+  AO21X2 _1978_ (
+    .A(_1508_),
+    .B(_0171_),
+    .C(all_banks_single_err_o_0_),
+    .Y(_0172_)
+  );
+  BUFX3 _1979_ (
+    .A(_0172_),
+    .Y(_0173_)
+  );
+  XOR2X2 _1980_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_6_ ),
+    .B(_1288_),
+    .Y(_0174_)
+  );
+  XOR2X2 _1981_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_1_ ),
+    .B(_1284_),
+    .Y(_0175_)
+  );
+  XOR2X2 _1982_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_4_ ),
+    .B(_1286_),
+    .Y(_0176_)
+  );
+  NOR3X1 _1983_ (
+    .A(_0174_),
+    .B(_0175_),
+    .C(_0176_),
+    .Y(_0177_)
+  );
+  XOR2X2 _1984_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_8_ ),
+    .B(_1291_),
+    .Y(_0178_)
+  );
+  XOR2X2 _1985_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_9_ ),
+    .B(_1292_),
+    .Y(_0179_)
+  );
+  XOR2X2 _1986_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_0_ ),
+    .B(_1243_),
+    .Y(_0180_)
+  );
+  XOR2X2 _1987_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_2_ ),
+    .B(user_sbr_obi_req_i_46_),
+    .Y(_0181_)
+  );
+  NOR4X1 _1988_ (
+    .A(_0178_),
+    .B(_0179_),
+    .C(_0180_),
+    .D(_0181_),
+    .Y(_0182_)
+  );
+  XOR2X2 _1989_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_7_ ),
+    .B(_1290_),
+    .Y(_0183_)
+  );
+  XOR2X2 _1990_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_5_ ),
+    .B(_1287_),
+    .Y(_0184_)
+  );
+  XOR2X2 _1991_ (
+    .A(\gen_sram_bank[0].bank_word_addr_q_3_ ),
+    .B(_1285_),
+    .Y(_0185_)
+  );
+  NOR4X1 _1992_ (
+    .A(_0166_),
+    .B(_0183_),
+    .C(_0184_),
+    .D(_0185_),
+    .Y(_0186_)
+  );
+  NAND3X1 _1993_ (
+    .A(_0177_),
+    .B(_0182_),
+    .C(_0186_),
+    .Y(_0187_)
+  );
+  OR3X2 _1994_ (
+    .A(_1280_),
+    .B(_1295_),
+    .C(_0187_),
+    .Y(_0188_)
+  );
+  NOR2X1 _1995_ (
+    .A(_1312_),
+    .B(_0188_),
+    .Y(_0189_)
+  );
+  NOR2X1 _1996_ (
+    .A(_1441_),
+    .B(_1445_),
+    .Y(_0190_)
+  );
+  NOR2X1 _1997_ (
+    .A(_1444_),
+    .B(_1462_),
+    .Y(_0191_)
+  );
+  NOR3X1 _1998_ (
+    .A(_1443_),
+    .B(_1449_),
+    .C(_1465_),
+    .Y(_0192_)
+  );
+  AOI211X1 _1999_ (
+    .A(_1462_),
+    .B(_0190_),
+    .C(_0191_),
+    .D(_0192_),
+    .Y(_0193_)
+  );
+  AO211X2 _2000_ (
+    .A(_1508_),
+    .B(_0189_),
+    .C(_0193_),
+    .D(_1458_),
+    .Y(_0194_)
+  );
+  OAI21X1 _2001_ (
+    .A(_0149_),
+    .B(_0173_),
+    .C(_0194_),
+    .Y(_0013_)
+  );
+  AND2X1 _2002_ (
+    .A(_1475_),
+    .B(_1479_),
+    .Y(_0195_)
+  );
+  INVX1 _2003_ (
+    .A(_0187_),
+    .Y(_0196_)
+  );
+  NAND3X2 _2004_ (
+    .A(_1516_),
+    .B(_1282_),
+    .C(_0196_),
+    .Y(_0197_)
+  );
+  NAND2X1 _2005_ (
+    .A(\gen_sram_bank[0].bank_read_valid ),
+    .B(_0197_),
+    .Y(_0198_)
+  );
+  AND3X2 _2006_ (
+    .A(_1516_),
+    .B(_1281_),
+    .C(_0170_),
+    .Y(_0199_)
+  );
+  BUFX3 _2007_ (
+    .A(_0199_),
+    .Y(_0200_)
+  );
+  OR3BX1 _2008_ (
+    .AB(\gen_sram_bank[0].i_repair_buffer.buf_be_q_1_ ),
+    .B(all_banks_single_err_o_0_),
+    .C(_0200_),
+    .Y(_0201_)
+  );
+  OAI21X1 _2009_ (
+    .A(_0195_),
+    .B(_0198_),
+    .C(_0201_),
+    .Y(_0014_)
+  );
+  INVX1 _2010_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_be_q_2_ ),
+    .Y(_0202_)
+  );
+  AO21X2 _2011_ (
+    .A(_1519_),
+    .B(_0171_),
+    .C(all_banks_single_err_o_0_),
+    .Y(_0203_)
+  );
+  BUFX3 _2012_ (
+    .A(_0203_),
+    .Y(_0204_)
+  );
+  AND2X1 _2013_ (
+    .A(_1480_),
+    .B(_1486_),
+    .Y(_0205_)
+  );
+  AO211X2 _2014_ (
+    .A(_1519_),
+    .B(_0189_),
+    .C(_0205_),
+    .D(_1458_),
+    .Y(_0206_)
+  );
+  OAI21X1 _2015_ (
+    .A(_0202_),
+    .B(_0204_),
+    .C(_0206_),
+    .Y(_0015_)
+  );
+  NOR2X1 _2016_ (
+    .A(_1279_),
+    .B(_1522_),
+    .Y(_0207_)
+  );
+  NAND4BX1 _2017_ (
+    .AB(_1280_),
+    .B(_1254_),
+    .C(_1278_),
+    .D(_0207_),
+    .Y(_0208_)
+  );
+  OA21X2 _2018_ (
+    .A(_0169_),
+    .B(_0208_),
+    .C(_1488_),
+    .Y(_0209_)
+  );
+  BUFX3 _2019_ (
+    .A(_0209_),
+    .Y(_0210_)
+  );
+  XOR2X2 _2020_ (
+    .A(_1414_),
+    .B(_1405_),
+    .Y(_0211_)
+  );
+  OR3BX1 _2021_ (
+    .AB(_1414_),
+    .B(_1405_),
+    .C(_1470_),
+    .Y(_0212_)
+  );
+  OAI21X1 _2022_ (
+    .A(_1403_),
+    .B(_0211_),
+    .C(_0212_),
+    .Y(_0213_)
+  );
+  OR3X2 _2023_ (
+    .A(_1414_),
+    .B(_1405_),
+    .C(_1470_),
+    .Y(_0214_)
+  );
+  NAND2X1 _2024_ (
+    .A(_1470_),
+    .B(_0211_),
+    .Y(_0215_)
+  );
+  AOI21X1 _2025_ (
+    .A(_0214_),
+    .B(_0215_),
+    .C(_1416_),
+    .Y(_0216_)
+  );
+  AOI211X1 _2026_ (
+    .A(_1416_),
+    .B(_0213_),
+    .C(_0216_),
+    .D(_1471_),
+    .Y(_0217_)
+  );
+  OAI21X1 _2027_ (
+    .A(_0187_),
+    .B(_0208_),
+    .C(\gen_sram_bank[0].bank_read_valid ),
+    .Y(_0218_)
+  );
+  OAI2BB2X2 _2028_ (
+    .AB(\gen_sram_bank[0].i_repair_buffer.buf_be_q_3_ ),
+    .BB(_0210_),
+    .C(_0217_),
+    .D(_0218_),
+    .Y(_0016_)
+  );
+  INVX1 _2029_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_0_ ),
+    .Y(_0219_)
+  );
+  AND2X1 _2030_ (
+    .A(user_sbr_obi_req_i_5_),
+    .B(_1289_),
+    .Y(_0220_)
+  );
+  NOR3X1 _2031_ (
+    .A(_1431_),
+    .B(_1452_),
+    .C(_1453_),
+    .Y(_0221_)
+  );
+  XOR2X2 _2032_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ),
+    .B(_0221_),
+    .Y(_0222_)
+  );
+  AND3X2 _2033_ (
+    .A(_1460_),
+    .B(_1472_),
+    .C(_1487_),
+    .Y(_0223_)
+  );
+  AOI211X2 _2034_ (
+    .A(_1508_),
+    .B(_0189_),
+    .C(_0223_),
+    .D(_1458_),
+    .Y(_0224_)
+  );
+  MUXI2X1 _2035_ (
+    .A0(_0220_),
+    .A1(_0222_),
+    .S0(_0224_),
+    .Y(_0225_)
+  );
+  MUXI2X1 _2036_ (
+    .A0(_0219_),
+    .A1(_0225_),
+    .S0(_0173_),
+    .Y(_0017_)
+  );
+  BUFX3 _2037_ (
+    .A(user_sbr_obi_req_i_15_),
+    .Y(_0226_)
+  );
+  NAND2X1 _2038_ (
+    .A(_0226_),
+    .B(_1289_),
+    .Y(_0227_)
+  );
+  AND2X1 _2039_ (
+    .A(_1366_),
+    .B(_1369_),
+    .Y(_0228_)
+  );
+  NOR3BX1 _2040_ (
+    .AB(_1377_),
+    .B(_1374_),
+    .C(_1371_),
+    .Y(_0229_)
+  );
+  NAND2X1 _2041_ (
+    .A(_0228_),
+    .B(_0229_),
+    .Y(_0230_)
+  );
+  XOR2X2 _2042_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .B(_0230_),
+    .Y(_0231_)
+  );
+  MUX2X1 _2043_ (
+    .A0(_0227_),
+    .A1(_0231_),
+    .S0(_0197_),
+    .Y(_0232_)
+  );
+  MUXI2X1 _2044_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_10_ ),
+    .A1(_0226_),
+    .S0(_0200_),
+    .Y(_0233_)
+  );
+  MUXI2X1 _2045_ (
+    .A0(_0232_),
+    .A1(_0233_),
+    .S0(_0148_),
+    .Y(_0018_)
+  );
+  BUFX3 _2046_ (
+    .A(user_sbr_obi_req_i_16_),
+    .Y(_0234_)
+  );
+  NAND2X1 _2047_ (
+    .A(_0234_),
+    .B(_1289_),
+    .Y(_0235_)
+  );
+  NAND2BX1 _2048_ (
+    .AB(_1369_),
+    .B(_1366_),
+    .Y(_0236_)
+  );
+  NOR2BX1 _2049_ (
+    .AB(_1371_),
+    .B(_0236_),
+    .Y(_0237_)
+  );
+  OR3BX1 _2050_ (
+    .AB(_0237_),
+    .B(_1389_),
+    .C(_1377_),
+    .Y(_0238_)
+  );
+  XOR2X2 _2051_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .B(_0238_),
+    .Y(_0239_)
+  );
+  MUX2X1 _2052_ (
+    .A0(_0235_),
+    .A1(_0239_),
+    .S0(_0197_),
+    .Y(_0240_)
+  );
+  MUXI2X1 _2053_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_11_ ),
+    .A1(_0234_),
+    .S0(_0200_),
+    .Y(_0241_)
+  );
+  MUXI2X1 _2054_ (
+    .A0(_0240_),
+    .A1(_0241_),
+    .S0(_0148_),
+    .Y(_0019_)
+  );
+  NAND2X1 _2055_ (
+    .A(user_sbr_obi_req_i_17_),
+    .B(_1289_),
+    .Y(_0242_)
+  );
+  NAND3X1 _2056_ (
+    .A(_1389_),
+    .B(_1377_),
+    .C(_0237_),
+    .Y(_0243_)
+  );
+  XOR2X2 _2057_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_20_ ),
+    .B(_0243_),
+    .Y(_0244_)
+  );
+  MUX2X1 _2058_ (
+    .A0(_0242_),
+    .A1(_0244_),
+    .S0(_0197_),
+    .Y(_0245_)
+  );
+  MUXI2X1 _2059_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_12_ ),
+    .A1(user_sbr_obi_req_i_17_),
+    .S0(_0200_),
+    .Y(_0246_)
+  );
+  MUXI2X1 _2060_ (
+    .A0(_0245_),
+    .A1(_0246_),
+    .S0(_0148_),
+    .Y(_0020_)
+  );
+  AND3X2 _2061_ (
+    .A(_1371_),
+    .B(_1473_),
+    .C(_0228_),
+    .Y(_0247_)
+  );
+  XOR2X2 _2062_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .B(_0247_),
+    .Y(_0248_)
+  );
+  AND4X2 _2063_ (
+    .A(_1516_),
+    .B(user_sbr_obi_req_i_18_),
+    .C(_1282_),
+    .D(_0196_),
+    .Y(_0249_)
+  );
+  AOI21X1 _2064_ (
+    .A(_0197_),
+    .B(_0248_),
+    .C(_0249_),
+    .Y(_0250_)
+  );
+  MUXI2X1 _2065_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_13_ ),
+    .A1(user_sbr_obi_req_i_18_),
+    .S0(_0200_),
+    .Y(_0251_)
+  );
+  MUXI2X1 _2066_ (
+    .A0(_0250_),
+    .A1(_0251_),
+    .S0(_0148_),
+    .Y(_0021_)
+  );
+  NAND2X1 _2067_ (
+    .A(user_sbr_obi_req_i_19_),
+    .B(_1289_),
+    .Y(_0252_)
+  );
+  NOR3X1 _2068_ (
+    .A(_1371_),
+    .B(_1389_),
+    .C(_1377_),
+    .Y(_0253_)
+  );
+  NOR2X1 _2069_ (
+    .A(_1366_),
+    .B(_1369_),
+    .Y(_0254_)
+  );
+  NAND2X1 _2070_ (
+    .A(_0253_),
+    .B(_0254_),
+    .Y(_0255_)
+  );
+  XOR2X2 _2071_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_22_ ),
+    .B(_0255_),
+    .Y(_0256_)
+  );
+  MUX2X1 _2072_ (
+    .A0(_0252_),
+    .A1(_0256_),
+    .S0(_0197_),
+    .Y(_0257_)
+  );
+  MUXI2X1 _2073_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_14_ ),
+    .A1(user_sbr_obi_req_i_19_),
+    .S0(_0200_),
+    .Y(_0258_)
+  );
+  MUXI2X1 _2074_ (
+    .A0(_0257_),
+    .A1(_0258_),
+    .S0(_0148_),
+    .Y(_0022_)
+  );
+  BUFX3 _2075_ (
+    .A(_1281_),
+    .Y(_0259_)
+  );
+  NAND2X1 _2076_ (
+    .A(_0107_),
+    .B(_0259_),
+    .Y(_0260_)
+  );
+  NAND2X1 _2077_ (
+    .A(_0229_),
+    .B(_0254_),
+    .Y(_0261_)
+  );
+  XOR2X2 _2078_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
+    .B(_0261_),
+    .Y(_0262_)
+  );
+  MUX2X1 _2079_ (
+    .A0(_0260_),
+    .A1(_0262_),
+    .S0(_0197_),
+    .Y(_0263_)
+  );
+  MUXI2X1 _2080_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_15_ ),
+    .A1(_0107_),
+    .S0(_0200_),
+    .Y(_0264_)
+  );
+  MUXI2X1 _2081_ (
+    .A0(_0263_),
+    .A1(_0264_),
+    .S0(_0148_),
+    .Y(_0023_)
+  );
+  AND2X1 _2082_ (
+    .A(user_sbr_obi_req_i_21_),
+    .B(_1282_),
+    .Y(_0265_)
+  );
+  NOR2BX1 _2083_ (
+    .AB(_1346_),
+    .B(_1336_),
+    .Y(_0266_)
+  );
+  AND3X2 _2084_ (
+    .A(_1339_),
+    .B(_1348_),
+    .C(_0266_),
+    .Y(_0267_)
+  );
+  XOR2X2 _2085_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_32_ ),
+    .B(_0267_),
+    .Y(_0268_)
+  );
+  AOI211X2 _2086_ (
+    .A(_1519_),
+    .B(_0189_),
+    .C(_0223_),
+    .D(_1458_),
+    .Y(_0269_)
+  );
+  MUX2X1 _2087_ (
+    .A0(_0265_),
+    .A1(_0268_),
+    .S0(_0269_),
+    .Y(_0270_)
+  );
+  MUX2X1 _2088_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_16_ ),
+    .A1(_0270_),
+    .S0(_0204_),
+    .Y(_0024_)
+  );
+  NAND2X1 _2089_ (
+    .A(user_sbr_obi_req_i_22_),
+    .B(_0259_),
+    .Y(_0271_)
+  );
+  NAND2BX1 _2090_ (
+    .AB(_1332_),
+    .B(_1341_),
+    .Y(_0272_)
+  );
+  OR3BX1 _2091_ (
+    .AB(_0266_),
+    .B(_0272_),
+    .C(_1339_),
+    .Y(_0273_)
+  );
+  XOR2X2 _2092_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_33_ ),
+    .B(_0273_),
+    .Y(_0274_)
+  );
+  MUXI2X1 _2093_ (
+    .A0(_0271_),
+    .A1(_0274_),
+    .S0(_0269_),
+    .Y(_0275_)
+  );
+  MUX2X1 _2094_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_17_ ),
+    .A1(_0275_),
+    .S0(_0204_),
+    .Y(_0025_)
+  );
+  BUFX3 _2095_ (
+    .A(user_sbr_obi_req_i_23_),
+    .Y(_0276_)
+  );
+  NAND2X1 _2096_ (
+    .A(_0276_),
+    .B(_0259_),
+    .Y(_0277_)
+  );
+  AND2X1 _2097_ (
+    .A(_1346_),
+    .B(_1336_),
+    .Y(_0278_)
+  );
+  NAND2X1 _2098_ (
+    .A(_1339_),
+    .B(_0278_),
+    .Y(_0279_)
+  );
+  OR2X2 _2099_ (
+    .A(_0272_),
+    .B(_0279_),
+    .Y(_0280_)
+  );
+  XOR2X2 _2100_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .B(_0280_),
+    .Y(_0281_)
+  );
+  MUXI2X1 _2101_ (
+    .A0(_0277_),
+    .A1(_0281_),
+    .S0(_0269_),
+    .Y(_0282_)
+  );
+  MUX2X1 _2102_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_18_ ),
+    .A1(_0282_),
+    .S0(_0204_),
+    .Y(_0026_)
+  );
+  NAND2X1 _2103_ (
+    .A(user_sbr_obi_req_i_24_),
+    .B(_0259_),
+    .Y(_0283_)
+  );
+  NAND4BX1 _2104_ (
+    .AB(_1341_),
+    .B(_0266_),
+    .C(_1332_),
+    .D(_1351_),
+    .Y(_0284_)
+  );
+  XOR2X2 _2105_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .B(_0284_),
+    .Y(_0285_)
+  );
+  MUXI2X1 _2106_ (
+    .A0(_0283_),
+    .A1(_0285_),
+    .S0(_0269_),
+    .Y(_0286_)
+  );
+  MUX2X1 _2107_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_19_ ),
+    .A1(_0286_),
+    .S0(_0204_),
+    .Y(_0027_)
+  );
+  NAND2X1 _2108_ (
+    .A(user_sbr_obi_req_i_6_),
+    .B(_0259_),
+    .Y(_0287_)
+  );
+  OR3BX1 _2109_ (
+    .AB(_1441_),
+    .B(_1453_),
+    .C(_1465_),
+    .Y(_0288_)
+  );
+  XOR2X2 _2110_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_1_ ),
+    .B(_0288_),
+    .Y(_0289_)
+  );
+  MUXI2X1 _2111_ (
+    .A0(_0287_),
+    .A1(_0289_),
+    .S0(_0224_),
+    .Y(_0290_)
+  );
+  MUX2X1 _2112_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_1_ ),
+    .A1(_0290_),
+    .S0(_0173_),
+    .Y(_0028_)
+  );
+  NAND2X1 _2113_ (
+    .A(user_sbr_obi_req_i_25_),
+    .B(_0259_),
+    .Y(_0291_)
+  );
+  OR3BX1 _2114_ (
+    .AB(_1332_),
+    .B(_1341_),
+    .C(_0279_),
+    .Y(_0292_)
+  );
+  XOR2X2 _2115_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .B(_0292_),
+    .Y(_0293_)
+  );
+  MUXI2X1 _2116_ (
+    .A0(_0291_),
+    .A1(_0293_),
+    .S0(_0269_),
+    .Y(_0294_)
+  );
+  MUX2X1 _2117_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_20_ ),
+    .A1(_0294_),
+    .S0(_0204_),
+    .Y(_0029_)
+  );
+  NAND2X1 _2118_ (
+    .A(user_sbr_obi_req_i_26_),
+    .B(_0259_),
+    .Y(_0295_)
+  );
+  NAND2X1 _2119_ (
+    .A(_1352_),
+    .B(_0278_),
+    .Y(_0296_)
+  );
+  XOR2X2 _2120_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_37_ ),
+    .B(_0296_),
+    .Y(_0297_)
+  );
+  MUXI2X1 _2121_ (
+    .A0(_0295_),
+    .A1(_0297_),
+    .S0(_0269_),
+    .Y(_0298_)
+  );
+  MUX2X1 _2122_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_21_ ),
+    .A1(_0298_),
+    .S0(_0204_),
+    .Y(_0030_)
+  );
+  NAND2X1 _2123_ (
+    .A(user_sbr_obi_req_i_27_),
+    .B(_0259_),
+    .Y(_0299_)
+  );
+  OR3BX1 _2124_ (
+    .AB(_1348_),
+    .B(_1360_),
+    .C(_1339_),
+    .Y(_0300_)
+  );
+  XOR2X2 _2125_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_38_ ),
+    .B(_0300_),
+    .Y(_0301_)
+  );
+  MUXI2X1 _2126_ (
+    .A0(_0299_),
+    .A1(_0301_),
+    .S0(_0269_),
+    .Y(_0302_)
+  );
+  MUX2X1 _2127_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_22_ ),
+    .A1(_0302_),
+    .S0(_0204_),
+    .Y(_0031_)
+  );
+  NAND2X1 _2128_ (
+    .A(user_sbr_obi_req_i_28_),
+    .B(_0259_),
+    .Y(_0303_)
+  );
+  OR3BX1 _2129_ (
+    .AB(_1336_),
+    .B(_1349_),
+    .C(_1346_),
+    .Y(_0304_)
+  );
+  XOR2X2 _2130_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_39_ ),
+    .B(_0304_),
+    .Y(_0305_)
+  );
+  MUXI2X1 _2131_ (
+    .A0(_0303_),
+    .A1(_0305_),
+    .S0(_0269_),
+    .Y(_0306_)
+  );
+  MUX2X1 _2132_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_23_ ),
+    .A1(_0306_),
+    .S0(_0204_),
+    .Y(_0032_)
+  );
+  NOR2X1 _2133_ (
+    .A(_0223_),
+    .B(_0218_),
+    .Y(_0307_)
+  );
+  NOR2X1 _2134_ (
+    .A(_0209_),
+    .B(_0307_),
+    .Y(_0308_)
+  );
+  BUFX3 _2135_ (
+    .A(_0307_),
+    .Y(_0309_)
+  );
+  OR2X2 _2136_ (
+    .A(_1397_),
+    .B(_1405_),
+    .Y(_0310_)
+  );
+  NAND2X1 _2137_ (
+    .A(_1410_),
+    .B(_1422_),
+    .Y(_0311_)
+  );
+  NOR2X1 _2138_ (
+    .A(_1403_),
+    .B(_0311_),
+    .Y(_0312_)
+  );
+  NAND2BX1 _2139_ (
+    .AB(_0310_),
+    .B(_0312_),
+    .Y(_0313_)
+  );
+  XOR2X2 _2140_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(_0313_),
+    .Y(_0314_)
+  );
+  AOI2B2X1 _2141_ (
+    .AB(\gen_sram_bank[0].i_repair_buffer.buf_data_q_24_ ),
+    .B(_0209_),
+    .C(_0309_),
+    .D(_0314_),
+    .Y(_0315_)
+  );
+  AOI21BX1 _2142_ (
+    .A(_0122_),
+    .B(_0308_),
+    .CB(_0315_),
+    .Y(_0033_)
+  );
+  NOR3X1 _2143_ (
+    .A(_1470_),
+    .B(_1469_),
+    .C(_0310_),
+    .Y(_0316_)
+  );
+  XOR2X2 _2144_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_49_ ),
+    .B(_0316_),
+    .Y(_0317_)
+  );
+  OAI2B2BX1 _2145_ (
+    .AB(_0309_),
+    .B(_0317_),
+    .CB(_0210_),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_data_q_25_ ),
+    .Y(_0318_)
+  );
+  AOI21X1 _2146_ (
+    .A(_0124_),
+    .B(_0308_),
+    .C(_0318_),
+    .Y(_0034_)
+  );
+  INVX1 _2147_ (
+    .A(user_sbr_obi_req_i_31_),
+    .Y(_0319_)
+  );
+  NAND3X1 _2148_ (
+    .A(_1396_),
+    .B(_1405_),
+    .C(_1470_),
+    .Y(_0320_)
+  );
+  NOR2X1 _2149_ (
+    .A(_1469_),
+    .B(_0320_),
+    .Y(_0321_)
+  );
+  XOR2X2 _2150_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .B(_0321_),
+    .Y(_0322_)
+  );
+  OAI2B2BX1 _2151_ (
+    .AB(_0309_),
+    .B(_0322_),
+    .CB(_0210_),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_data_q_26_ ),
+    .Y(_0323_)
+  );
+  AOI21X1 _2152_ (
+    .A(_0319_),
+    .B(_0308_),
+    .C(_0323_),
+    .Y(_0035_)
+  );
+  INVX1 _2153_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_27_ ),
+    .Y(_0324_)
+  );
+  OR4X1 _2154_ (
+    .A(_1396_),
+    .B(_1405_),
+    .C(_1470_),
+    .D(_0311_),
+    .Y(_0325_)
+  );
+  XOR2X2 _2155_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .B(_0325_),
+    .Y(_0326_)
+  );
+  NOR3X1 _2156_ (
+    .A(user_sbr_obi_req_i_32_),
+    .B(_0210_),
+    .C(_0309_),
+    .Y(_0327_)
+  );
+  AOI221X1 _2157_ (
+    .A(_0324_),
+    .B(_0210_),
+    .C(_0309_),
+    .D(_0326_),
+    .E(_0327_),
+    .Y(_0036_)
+  );
+  NAND3X1 _2158_ (
+    .A(_1397_),
+    .B(_1405_),
+    .C(_0312_),
+    .Y(_0328_)
+  );
+  XOR2X2 _2159_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .B(_0328_),
+    .Y(_0329_)
+  );
+  AOI2B2X1 _2160_ (
+    .AB(\gen_sram_bank[0].i_repair_buffer.buf_data_q_28_ ),
+    .B(_0209_),
+    .C(_0307_),
+    .D(_0329_),
+    .Y(_0330_)
+  );
+  AOI21BX1 _2161_ (
+    .A(_0129_),
+    .B(_0308_),
+    .CB(_0330_),
+    .Y(_0037_)
+  );
+  XOR2X2 _2162_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .B(_1471_),
+    .Y(_0331_)
+  );
+  OAI2B2BX1 _2163_ (
+    .AB(_0309_),
+    .B(_0331_),
+    .CB(_0210_),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_data_q_29_ ),
+    .Y(_0332_)
+  );
+  AOI21X1 _2164_ (
+    .A(_0131_),
+    .B(_0308_),
+    .C(_0332_),
+    .Y(_0038_)
+  );
+  NAND2X1 _2165_ (
+    .A(user_sbr_obi_req_i_7_),
+    .B(_1282_),
+    .Y(_0333_)
+  );
+  OR4X1 _2166_ (
+    .A(_1436_),
+    .B(_1441_),
+    .C(_1443_),
+    .D(_1465_),
+    .Y(_0334_)
+  );
+  XOR2X2 _2167_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_2_ ),
+    .B(_0334_),
+    .Y(_0335_)
+  );
+  MUXI2X1 _2168_ (
+    .A0(_0333_),
+    .A1(_0335_),
+    .S0(_0224_),
+    .Y(_0336_)
+  );
+  MUX2X1 _2169_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_2_ ),
+    .A1(_0336_),
+    .S0(_0173_),
+    .Y(_0039_)
+  );
+  INVX1 _2170_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_30_ ),
+    .Y(_0337_)
+  );
+  NAND2X1 _2171_ (
+    .A(_1410_),
+    .B(_1414_),
+    .Y(_0338_)
+  );
+  OR3BX1 _2172_ (
+    .AB(_1403_),
+    .B(_0310_),
+    .C(_0338_),
+    .Y(_0339_)
+  );
+  XOR2X2 _2173_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_54_ ),
+    .B(_0339_),
+    .Y(_0340_)
+  );
+  NOR3X1 _2174_ (
+    .A(user_sbr_obi_req_i_35_),
+    .B(_0210_),
+    .C(_0309_),
+    .Y(_0341_)
+  );
+  AOI221X1 _2175_ (
+    .A(_0337_),
+    .B(_0210_),
+    .C(_0309_),
+    .D(_0340_),
+    .E(_0341_),
+    .Y(_0040_)
+  );
+  INVX1 _2176_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_31_ ),
+    .Y(_0342_)
+  );
+  OR2X2 _2177_ (
+    .A(_0320_),
+    .B(_0338_),
+    .Y(_0343_)
+  );
+  XOR2X2 _2178_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_55_ ),
+    .B(_0343_),
+    .Y(_0344_)
+  );
+  NOR3X1 _2179_ (
+    .A(user_sbr_obi_req_i_36_),
+    .B(_0210_),
+    .C(_0309_),
+    .Y(_0345_)
+  );
+  AOI221X1 _2180_ (
+    .A(_0342_),
+    .B(_0210_),
+    .C(_0309_),
+    .D(_0344_),
+    .E(_0345_),
+    .Y(_0041_)
+  );
+  NAND2X1 _2181_ (
+    .A(user_sbr_obi_req_i_8_),
+    .B(_1282_),
+    .Y(_0346_)
+  );
+  OR3BX1 _2182_ (
+    .AB(_1432_),
+    .B(_1445_),
+    .C(_1449_),
+    .Y(_0347_)
+  );
+  XOR2X2 _2183_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_3_ ),
+    .B(_0347_),
+    .Y(_0348_)
+  );
+  MUXI2X1 _2184_ (
+    .A0(_0346_),
+    .A1(_0348_),
+    .S0(_0224_),
+    .Y(_0349_)
+  );
+  MUX2X1 _2185_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_3_ ),
+    .A1(_0349_),
+    .S0(_0173_),
+    .Y(_0042_)
+  );
+  NAND2X1 _2186_ (
+    .A(user_sbr_obi_req_i_9_),
+    .B(_1282_),
+    .Y(_0350_)
+  );
+  NOR2X1 _2187_ (
+    .A(_1443_),
+    .B(_1452_),
+    .Y(_0351_)
+  );
+  OR3BX1 _2188_ (
+    .AB(_0351_),
+    .B(_1464_),
+    .C(_1431_),
+    .Y(_0352_)
+  );
+  XOR2X2 _2189_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_4_ ),
+    .B(_0352_),
+    .Y(_0353_)
+  );
+  MUXI2X1 _2190_ (
+    .A0(_0350_),
+    .A1(_0353_),
+    .S0(_0224_),
+    .Y(_0354_)
+  );
+  MUX2X1 _2191_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_4_ ),
+    .A1(_0354_),
+    .S0(_0173_),
+    .Y(_0043_)
+  );
+  NAND2X1 _2192_ (
+    .A(user_sbr_obi_req_i_10_),
+    .B(_1282_),
+    .Y(_0355_)
+  );
+  XNOR2X1 _2193_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .B(_0192_),
+    .Y(_0356_)
+  );
+  MUXI2X1 _2194_ (
+    .A0(_0355_),
+    .A1(_0356_),
+    .S0(_0224_),
+    .Y(_0357_)
+  );
+  MUX2X1 _2195_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_5_ ),
+    .A1(_0357_),
+    .S0(_0173_),
+    .Y(_0044_)
+  );
+  INVX1 _2196_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_6_ ),
+    .Y(_0358_)
+  );
+  AND2X1 _2197_ (
+    .A(user_sbr_obi_req_i_11_),
+    .B(_1289_),
     .Y(_0359_)
   );
-  XOR2X2 _0937_ (
-    .A(_0349_),
-    .B(_0359_),
+  NAND3X1 _2198_ (
+    .A(_1431_),
+    .B(_1428_),
+    .C(_1441_),
     .Y(_0360_)
   );
-  NOR2X1 _0938_ (
-    .A(_0358_),
+  NOR2X1 _2199_ (
+    .A(_1453_),
     .B(_0360_),
     .Y(_0361_)
   );
-  NAND3BX1 _0939_ (
-    .AB(_0347_),
-    .B(_0356_),
-    .C(_0361_),
+  XOR2X2 _2200_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_6_ ),
+    .B(_0361_),
     .Y(_0362_)
   );
-  XOR2X2 _0940_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_37_ ),
-    .B(_0362_),
+  MUXI2X1 _2201_ (
+    .A0(_0359_),
+    .A1(_0362_),
+    .S0(_0224_),
     .Y(_0363_)
   );
-  XNOR2X1 _0941_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+  MUXI2X1 _2202_ (
+    .A0(_0358_),
+    .A1(_0363_),
+    .S0(_0173_),
+    .Y(_0045_)
+  );
+  NAND2X1 _2203_ (
+    .A(_0142_),
+    .B(_1282_),
     .Y(_0364_)
   );
-  XNOR3X1 _0942_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_39_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_44_ ),
+  NAND3X1 _2204_ (
+    .A(_1431_),
+    .B(_1464_),
+    .C(_0351_),
     .Y(_0365_)
   );
-  XNOR2X1 _0943_ (
-    .A(_0364_),
+  XOR2X2 _2205_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
     .B(_0365_),
     .Y(_0366_)
   );
-  XOR2X2 _0944_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_38_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_39_ ),
+  MUXI2X1 _2206_ (
+    .A0(_0364_),
+    .A1(_0366_),
+    .S0(_0224_),
     .Y(_0367_)
   );
-  XOR2X2 _0945_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_32_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_42_ ),
+  MUX2X1 _2207_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_7_ ),
+    .A1(_0367_),
+    .S0(_0173_),
+    .Y(_0046_)
+  );
+  NOR2X1 _2208_ (
+    .A(_1378_),
+    .B(_0236_),
     .Y(_0368_)
   );
-  XOR2X2 _0946_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+  XOR2X2 _2209_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(_0368_),
     .Y(_0369_)
   );
-  XNOR3X1 _0947_ (
-    .A(_0367_),
-    .B(_0368_),
-    .C(_0369_),
+  AND4X2 _2210_ (
+    .A(_1516_),
+    .B(user_sbr_obi_req_i_13_),
+    .C(_1282_),
+    .D(_0196_),
     .Y(_0370_)
   );
-  NOR2BX1 _0948_ (
-    .AB(_0366_),
-    .B(_0370_),
+  AOI21X1 _2211_ (
+    .A(_0197_),
+    .B(_0369_),
+    .C(_0370_),
     .Y(_0371_)
   );
-  XOR2X2 _0949_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_32_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_33_ ),
+  MUXI2X1 _2212_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_8_ ),
+    .A1(user_sbr_obi_req_i_13_),
+    .S0(_0200_),
     .Y(_0372_)
   );
-  XNOR2X1 _0950_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_41_ ),
+  MUXI2X1 _2213_ (
+    .A0(_0371_),
+    .A1(_0372_),
+    .S0(_0148_),
+    .Y(_0047_)
+  );
+  BUFX3 _2214_ (
+    .A(user_sbr_obi_req_i_14_),
     .Y(_0373_)
   );
-  XNOR3X1 _0951_ (
-    .A(_0367_),
-    .B(_0372_),
-    .C(_0373_),
+  NAND2X1 _2215_ (
+    .A(_0373_),
+    .B(_0259_),
     .Y(_0374_)
   );
-  INVX1 _0952_ (
-    .A(_0374_),
+  NAND2X1 _2216_ (
+    .A(_0228_),
+    .B(_0253_),
     .Y(_0375_)
   );
-  XNOR3X1 _0953_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_33_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_38_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_43_ ),
+  XOR2X2 _2217_ (
+    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(_0375_),
     .Y(_0376_)
   );
-  XNOR3X1 _0954_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
-    .C(_0376_),
+  MUX2X1 _2218_ (
+    .A0(_0374_),
+    .A1(_0376_),
+    .S0(_0197_),
     .Y(_0377_)
   );
-  XNOR3X1 _0955_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_40_ ),
+  MUXI2X1 _2219_ (
+    .A0(\gen_sram_bank[0].i_repair_buffer.buf_data_q_9_ ),
+    .A1(_0373_),
+    .S0(_0200_),
     .Y(_0378_)
   );
-  XNOR3X1 _0956_ (
-    .A(_0364_),
-    .B(_0372_),
-    .C(_0378_),
+  MUXI2X1 _2220_ (
+    .A0(_0377_),
+    .A1(_0378_),
+    .S0(_0148_),
+    .Y(_0048_)
+  );
+  AO22X2 _2221_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_be_q_3_ ),
+    .B(_1522_),
+    .C(_1509_),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_be_q_0_ ),
     .Y(_0379_)
   );
-  NAND2BX1 _0957_ (
-    .AB(_0377_),
-    .B(_0379_),
+  AOI221X1 _2222_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_be_q_2_ ),
+    .B(_1520_),
+    .C(_1517_),
+    .D(\gen_sram_bank[0].i_repair_buffer.buf_be_q_1_ ),
+    .E(_0379_),
     .Y(_0380_)
   );
-  NOR3BX1 _0958_ (
-    .AB(_0371_),
-    .B(_0375_),
-    .C(_0380_),
+  MUXI2X1 _2223_ (
+    .A0(_0380_),
+    .A1(_1307_),
+    .S0(_0169_),
     .Y(_0381_)
   );
-  XOR2X2 _0959_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
-    .B(_0381_),
+  NAND3X1 _2224_ (
+    .A(_1493_),
+    .B(_1283_),
+    .C(_0381_),
     .Y(_0382_)
   );
-  NAND3BX1 _0960_ (
-    .AB(\i_user_rom.we_q ),
-    .B(all_user_sbr_obi_rsp_117_),
-    .C(_0152_),
+  MUX2X1 _2225_ (
+    .A0(_1419_),
+    .A1(_1404_),
+    .S0(_1422_),
     .Y(_0383_)
   );
-  NOR2X1 _0961_ (
-    .A(\i_user_rom.addr_q_3_ ),
-    .B(_0383_),
+  NOR2X1 _2226_ (
+    .A(_1396_),
+    .B(_1469_),
     .Y(_0384_)
   );
-  NOR2X1 _0962_ (
-    .A(_0158_),
-    .B(_0137_),
+  MUXI2X1 _2227_ (
+    .A0(_1419_),
+    .A1(_1404_),
+    .S0(_1414_),
     .Y(_0385_)
   );
-  AOAI211X1 _0963_ (
-    .A(_0331_),
-    .B(_0382_),
-    .C(_0384_),
-    .D(_0385_),
+  NOR2X1 _2228_ (
+    .A(_1416_),
+    .B(_0385_),
     .Y(_0386_)
   );
-  OAI31X1 _0964_ (
-    .A(_0289_),
-    .B(_0344_),
-    .C(_0363_),
-    .D(_0386_),
-    .Y(user_sbr_obi_rsp_o_28_)
-  );
-  NOR2X1 _0965_ (
-    .A(_0163_),
-    .B(_0153_),
+  AOI221X1 _2229_ (
+    .A(_1416_),
+    .B(_0383_),
+    .C(_0384_),
+    .D(_1406_),
+    .E(_0386_),
     .Y(_0387_)
   );
-  NAND4BX1 _0966_ (
-    .AB(_0358_),
-    .B(_0360_),
-    .C(_0347_),
-    .D(_0356_),
+  NAND2X1 _2230_ (
+    .A(_1293_),
+    .B(_1278_),
     .Y(_0388_)
   );
-  XOR2X2 _0967_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_36_ ),
-    .B(_0388_),
+  NOR2X1 _2231_ (
+    .A(_1516_),
+    .B(_0195_),
     .Y(_0389_)
   );
-  AOAI211X1 _0968_ (
-    .A(\i_user_rom.addr_q_2_ ),
-    .B(_0384_),
-    .C(_0158_),
-    .D(_0139_),
+  OAI22X1 _2232_ (
+    .A(_1519_),
+    .B(_0205_),
+    .C(_0193_),
+    .D(_1508_),
     .Y(_0390_)
   );
-  NAND2X1 _0969_ (
-    .A(_0377_),
-    .B(_0379_),
+  NOR4X1 _2233_ (
+    .A(_0388_),
+    .B(_0188_),
+    .C(_0389_),
+    .D(_0390_),
     .Y(_0391_)
   );
-  NAND3X1 _0970_ (
-    .A(_0366_),
-    .B(_0370_),
-    .C(_0374_),
+  OA211X2 _2234_ (
+    .A(user_sbr_obi_req_i_40_),
+    .B(_0387_),
+    .C(_0391_),
+    .D(all_banks_single_err_o_0_),
     .Y(_0392_)
   );
-  NOR2X1 _0971_ (
-    .A(_0391_),
-    .B(_0392_),
+  AOI21X1 _2235_ (
+    .A(_0148_),
+    .B(_0382_),
+    .C(_0392_),
+    .Y(_0049_)
+  );
+  XOR2X2 _2236_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_0_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_3_ ),
     .Y(_0393_)
   );
-  XOR2X2 _0972_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
-    .B(_0393_),
+  XOR2X2 _2237_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_4_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_7_ ),
     .Y(_0394_)
   );
-  NAND2X1 _0973_ (
-    .A(_0336_),
+  XOR2X2 _2238_ (
+    .A(_0393_),
     .B(_0394_),
     .Y(_0395_)
   );
-  AOAI211X1 _0974_ (
-    .A(_0387_),
-    .B(_0389_),
-    .C(_0390_),
-    .D(_0395_),
-    .Y(user_sbr_obi_rsp_o_27_)
-  );
-  NOR2BX1 _0975_ (
-    .AB(\i_user_rom.addr_q_3_ ),
-    .B(_0341_),
+  XOR2X2 _2239_ (
+    .A(_1524_),
+    .B(user_sbr_obi_req_i_5_),
     .Y(_0396_)
   );
-  OR3BX1 _0976_ (
-    .AB(_0354_),
-    .B(_0351_),
-    .C(_0352_),
+  XOR2X2 _2240_ (
+    .A(user_sbr_obi_req_i_9_),
+    .B(_0142_),
     .Y(_0397_)
   );
-  NAND3X1 _0977_ (
-    .A(_0348_),
-    .B(_0351_),
-    .C(_0352_),
+  XOR2X2 _2241_ (
+    .A(_0396_),
+    .B(_0397_),
     .Y(_0398_)
   );
-  OR3BX1 _0978_ (
-    .AB(_0347_),
-    .B(_0360_),
-    .C(_0358_),
+  NAND2X1 _2242_ (
+    .A(_1490_),
+    .B(_0398_),
     .Y(_0399_)
   );
-  AOI21X1 _0979_ (
-    .A(_0397_),
-    .B(_0398_),
-    .C(_0399_),
+  AOAI211X1 _2243_ (
+    .A(_1493_),
+    .B(_0395_),
+    .C(_1491_),
+    .D(_0399_),
     .Y(_0400_)
   );
-  XOR2X2 _0980_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_35_ ),
+  XOR2X2 _2244_ (
+    .A(\gen_sram_bank[0].bank_sram_wdata_6_ ),
     .B(_0400_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ )
+  );
+  BUFX3 _2245_ (
+    .A(_1494_),
     .Y(_0401_)
   );
-  MUXI2X1 _0981_ (
-    .A0(_0396_),
-    .A1(_0401_),
-    .S0(_0158_),
+  XOR2X2 _2246_ (
+    .A(user_sbr_obi_req_i_6_),
+    .B(user_sbr_obi_req_i_11_),
     .Y(_0402_)
   );
-  NAND2BX1 _0982_ (
-    .AB(_0366_),
-    .B(_0370_),
+  XOR2X2 _2247_ (
+    .A(user_sbr_obi_req_i_10_),
+    .B(user_sbr_obi_req_i_8_),
     .Y(_0403_)
   );
-  OR3BX1 _0983_ (
-    .AB(_0374_),
-    .B(_0380_),
-    .C(_0403_),
+  XOR2X2 _2248_ (
+    .A(_0402_),
+    .B(_0403_),
     .Y(_0404_)
   );
-  XOR2X2 _0984_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
-    .B(_0404_),
+  XOR2X2 _2249_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_1_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_6_ ),
     .Y(_0405_)
   );
-  AOI221X1 _0985_ (
-    .A(_0283_),
-    .B(_0402_),
-    .C(_0405_),
-    .D(_0159_),
-    .E(_0289_),
-    .Y(user_sbr_obi_rsp_o_26_)
-  );
-  NOR2X1 _0986_ (
-    .A(_0374_),
-    .B(_0391_),
+  XOR2X2 _2250_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_3_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_5_ ),
     .Y(_0406_)
   );
-  NAND2X1 _0987_ (
-    .A(_0371_),
+  XOR2X2 _2251_ (
+    .A(_0405_),
     .B(_0406_),
     .Y(_0407_)
   );
-  XOR2X2 _0988_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
+  AO21X2 _2252_ (
+    .A(_1493_),
     .B(_0407_),
+    .C(_0143_),
     .Y(_0408_)
   );
-  NOR3X1 _0989_ (
-    .A(\i_user_rom.addr_q_2_ ),
-    .B(\i_user_rom.addr_q_3_ ),
-    .C(_0383_),
+  OAI21X1 _2253_ (
+    .A(_0401_),
+    .B(_0404_),
+    .C(_0408_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ )
+  );
+  XOR2X2 _2254_ (
+    .A(user_sbr_obi_req_i_9_),
+    .B(user_sbr_obi_req_i_7_),
     .Y(_0409_)
   );
-  NOR2X1 _0990_ (
-    .A(_0313_),
+  XOR2X2 _2255_ (
+    .A(_0137_),
     .B(_0409_),
     .Y(_0410_)
   );
-  NAND2X1 _0991_ (
-    .A(_0358_),
-    .B(_0360_),
+  XOR2X2 _2256_ (
+    .A(_0142_),
+    .B(_0410_),
     .Y(_0411_)
   );
-  AOI211X1 _0992_ (
-    .A(_0353_),
-    .B(_0355_),
-    .C(_0411_),
-    .D(_0347_),
+  XOR2X2 _2257_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_4_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_5_ ),
     .Y(_0412_)
   );
-  XOR2X2 _0993_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_34_ ),
+  XOR2X2 _2258_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_2_ ),
     .B(_0412_),
     .Y(_0413_)
   );
-  OAI21X1 _0994_ (
-    .A(_0344_),
+  AND2X1 _2259_ (
+    .A(_1492_),
     .B(_0413_),
-    .C(_0139_),
     .Y(_0414_)
   );
-  OAOI211X1 _0995_ (
-    .A(_0283_),
-    .B(_0408_),
-    .C(_0410_),
-    .D(_0414_),
-    .Y(user_sbr_obi_rsp_o_25_)
-  );
-  OR3BX1 _0996_ (
-    .AB(_0358_),
-    .B(_0360_),
-    .C(_0347_),
+  XOR2X2 _2260_ (
+    .A(_0141_),
+    .B(_0414_),
     .Y(_0415_)
   );
-  AOI21X1 _0997_ (
-    .A(_0397_),
-    .B(_0398_),
-    .C(_0415_),
+  MUX2X1 _2261_ (
+    .A0(_0411_),
+    .A1(_0415_),
+    .S0(_1514_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ )
+  );
+  XOR2X2 _2262_ (
+    .A(_0396_),
+    .B(_0410_),
     .Y(_0416_)
   );
-  XOR2X2 _0998_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_33_ ),
+  XOR2X2 _2263_ (
+    .A(user_sbr_obi_req_i_6_),
     .B(_0416_),
     .Y(_0417_)
   );
-  NAND2X1 _0999_ (
-    .A(_0283_),
-    .B(_0417_),
+  XOR2X2 _2264_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_1_ ),
+    .B(_0393_),
     .Y(_0418_)
   );
-  NOR4X1 _1000_ (
-    .A(_0366_),
-    .B(_0370_),
-    .C(_0374_),
-    .D(_0380_),
+  NAND2X1 _2265_ (
+    .A(_0126_),
+    .B(_0418_),
     .Y(_0419_)
   );
-  XOR2X2 _1001_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_33_ ),
+  XOR2X2 _2266_ (
+    .A(_0414_),
     .B(_0419_),
     .Y(_0420_)
   );
-  BUFX3 _1002_ (
-    .A(_0153_),
+  NAND2X1 _2267_ (
+    .A(_1514_),
+    .B(_0420_),
     .Y(_0421_)
   );
-  AOAI211X1 _1003_ (
-    .A(_0331_),
-    .B(_0420_),
-    .C(_0384_),
-    .D(_0421_),
+  OAI21X1 _2268_ (
+    .A(_0401_),
+    .B(_0417_),
+    .C(_0421_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_8_ )
+  );
+  XOR2X2 _2269_ (
+    .A(user_sbr_obi_req_i_5_),
+    .B(_0142_),
     .Y(_0422_)
   );
-  OAOI211X1 _1004_ (
-    .A(_0287_),
-    .B(_0418_),
-    .C(_0422_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_24_)
-  );
-  XOR2X2 _1005_ (
-    .A(\i_user_rom.addr_q_2_ ),
-    .B(\i_user_rom.addr_q_3_ ),
+  XOR2X2 _2270_ (
+    .A(user_sbr_obi_req_i_7_),
+    .B(_0402_),
     .Y(_0423_)
   );
-  NOR2BX1 _1006_ (
-    .AB(_0423_),
-    .B(_0383_),
+  XOR2X2 _2271_ (
+    .A(_0422_),
+    .B(_0423_),
     .Y(_0424_)
   );
-  OAI21X1 _1007_ (
-    .A(_0158_),
-    .B(_0424_),
-    .C(_0139_),
+  XOR2X2 _2272_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_0_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_2_ ),
     .Y(_0425_)
   );
-  NAND3X1 _1008_ (
-    .A(_0358_),
-    .B(_0360_),
-    .C(_0347_),
+  XOR2X2 _2273_ (
+    .A(_0405_),
+    .B(_0425_),
     .Y(_0426_)
   );
-  AOI21X1 _1009_ (
-    .A(_0397_),
-    .B(_0398_),
-    .C(_0426_),
+  NAND2X1 _2274_ (
+    .A(_0109_),
+    .B(_0426_),
     .Y(_0427_)
   );
-  XOR2X2 _1010_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_32_ ),
+  XOR2X2 _2275_ (
+    .A(_0141_),
     .B(_0427_),
     .Y(_0428_)
   );
-  AOI21X1 _1011_ (
-    .A(_0283_),
-    .B(_0428_),
-    .C(_0421_),
+  MUXI2X1 _2276_ (
+    .A0(_0424_),
+    .A1(_0428_),
+    .S0(_0401_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_9_ )
+  );
+  XOR2X2 _2277_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_12_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_15_ ),
     .Y(_0429_)
   );
-  NAND2BX1 _1012_ (
-    .AB(_0403_),
-    .B(_0406_),
+  NAND2X1 _2278_ (
+    .A(_1512_),
+    .B(_0429_),
     .Y(_0430_)
   );
-  XOR2X2 _1013_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_32_ ),
-    .B(_0430_),
+  XOR2X2 _2279_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_14_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_8_ ),
     .Y(_0431_)
   );
-  OAI22X1 _1014_ (
-    .A(_0425_),
-    .B(_0429_),
-    .C(_0431_),
-    .D(_0337_),
-    .Y(user_sbr_obi_rsp_o_23_)
-  );
-  XOR2X2 _1015_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_22_ ),
+  XOR2X2 _2280_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_11_ ),
+    .B(_0431_),
     .Y(_0432_)
   );
-  XOR2X2 _1016_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_16_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_25_ ),
+  NAND2X1 _2281_ (
+    .A(_1497_),
+    .B(_0432_),
     .Y(_0433_)
   );
-  XOR2X2 _1017_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_18_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
+  XOR2X2 _2282_ (
+    .A(_0430_),
+    .B(_0433_),
     .Y(_0434_)
   );
-  XNOR3X1 _1018_ (
-    .A(_0432_),
-    .B(_0433_),
-    .C(_0434_),
+  XOR2X2 _2283_ (
+    .A(_1530_),
+    .B(user_sbr_obi_req_i_13_),
     .Y(_0435_)
   );
-  XNOR3X1 _1019_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_27_ ),
+  XOR2X2 _2284_ (
+    .A(_0107_),
+    .B(_0234_),
     .Y(_0436_)
   );
-  XOR2X2 _1020_ (
-    .A(_0432_),
+  XOR2X2 _2285_ (
+    .A(user_sbr_obi_req_i_17_),
     .B(_0436_),
     .Y(_0437_)
   );
-  XOR2X2 _1021_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_16_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
+  XOR2X2 _2286_ (
+    .A(_0435_),
+    .B(_0437_),
     .Y(_0438_)
   );
-  XOR2X2 _1022_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_20_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_26_ ),
+  NAND2X1 _2287_ (
+    .A(_1501_),
+    .B(_0438_),
     .Y(_0439_)
   );
-  XOR2X2 _1023_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_22_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
+  OAI21X1 _2288_ (
+    .A(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .B(_0434_),
+    .C(_0439_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_10_ )
+  );
+  XNOR3X1 _2289_ (
+    .A(user_sbr_obi_req_i_18_),
+    .B(_0234_),
+    .C(_0373_),
     .Y(_0440_)
   );
-  XNOR3X1 _1024_ (
-    .A(_0438_),
-    .B(_0439_),
-    .C(_0440_),
+  XOR2X2 _2290_ (
+    .A(_1530_),
+    .B(_0440_),
     .Y(_0441_)
   );
-  NAND2BX1 _1025_ (
-    .AB(_0437_),
-    .B(_0441_),
+  XOR2X2 _2291_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_11_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_13_ ),
     .Y(_0442_)
   );
-  XNOR3X1 _1026_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_18_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_20_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
+  NAND2X1 _2292_ (
+    .A(_1512_),
+    .B(_0442_),
     .Y(_0443_)
   );
-  XOR2X2 _1027_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_28_ ),
+  XOR2X2 _2293_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_14_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_9_ ),
     .Y(_0444_)
   );
-  XOR2X2 _1028_ (
-    .A(_0443_),
+  NAND2X1 _2294_ (
+    .A(_0109_),
     .B(_0444_),
     .Y(_0445_)
   );
-  XOR2X2 _1029_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_24_ ),
+  XOR2X2 _2295_ (
+    .A(_0443_),
+    .B(_0445_),
     .Y(_0446_)
   );
-  XNOR3X1 _1030_ (
-    .A(_0443_),
-    .B(_0438_),
-    .C(_0446_),
+  MUXI2X1 _2296_ (
+    .A0(_0441_),
+    .A1(_0446_),
+    .S0(_0401_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_11_ )
+  );
+  XOR2X2 _2297_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_10_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_13_ ),
     .Y(_0447_)
   );
-  NAND2X1 _1031_ (
-    .A(_0445_),
+  NAND2X1 _2298_ (
+    .A(_1497_),
     .B(_0447_),
     .Y(_0448_)
   );
-  OR3BX1 _1032_ (
-    .AB(_0435_),
-    .B(_0442_),
-    .C(_0448_),
+  XOR2X2 _2299_ (
+    .A(_0430_),
+    .B(_0448_),
     .Y(_0449_)
   );
-  XOR2X2 _1033_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_23_ ),
-    .B(_0449_),
+  XOR2X2 _2300_ (
+    .A(_1526_),
+    .B(_0226_),
     .Y(_0450_)
   );
-  XOR2X2 _1034_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_28_ ),
+  XOR2X2 _2301_ (
+    .A(_0107_),
+    .B(user_sbr_obi_req_i_18_),
     .Y(_0451_)
   );
-  XNOR3X1 _1035_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_23_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+  XOR2X2 _2302_ (
+    .A(_0450_),
+    .B(_0451_),
     .Y(_0452_)
   );
-  XOR2X2 _1036_ (
-    .A(_0451_),
+  NAND2X1 _2303_ (
+    .A(_1501_),
     .B(_0452_),
     .Y(_0453_)
   );
-  XOR2X2 _1037_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_22_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_27_ ),
+  OAI21X1 _2304_ (
+    .A(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .B(_0449_),
+    .C(_0453_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_12_ )
+  );
+  XOR2X2 _2305_ (
+    .A(user_sbr_obi_req_i_13_),
+    .B(_0450_),
     .Y(_0454_)
   );
-  XNOR3X1 _1038_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
+  XOR2X2 _2306_ (
+    .A(_0440_),
+    .B(_0454_),
     .Y(_0455_)
   );
-  XOR2X2 _1039_ (
-    .A(_0454_),
-    .B(_0455_),
+  XOR2X2 _2307_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_10_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_9_ ),
     .Y(_0456_)
   );
-  XOR2X2 _1040_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+  XOR2X2 _2308_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_12_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_8_ ),
     .Y(_0457_)
   );
-  XNOR3X1 _1041_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_23_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_22_ ),
+  XOR2X2 _2309_ (
+    .A(_0456_),
+    .B(_0457_),
     .Y(_0458_)
   );
-  XNOR3X1 _1042_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_26_ ),
-    .B(_0457_),
-    .C(_0458_),
+  NAND2X1 _2310_ (
+    .A(_0109_),
+    .B(_0458_),
     .Y(_0459_)
   );
-  NOR2X1 _1043_ (
-    .A(_0456_),
+  XOR2X2 _2311_ (
+    .A(_0443_),
     .B(_0459_),
     .Y(_0460_)
   );
-  INVX1 _1044_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_25_ ),
+  MUXI2X1 _2312_ (
+    .A0(_0455_),
+    .A1(_0460_),
+    .S0(_0401_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_8_ )
+  );
+  XOR2X2 _2313_ (
+    .A(_0431_),
+    .B(_0456_),
     .Y(_0461_)
   );
-  XOR2X2 _1045_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
+  XOR2X2 _2314_ (
+    .A(_0226_),
+    .B(_0373_),
     .Y(_0462_)
   );
-  XNOR3X1 _1046_ (
-    .A(_0461_),
-    .B(_0458_),
-    .C(_0462_),
+  XOR2X2 _2315_ (
+    .A(_0435_),
+    .B(_0462_),
     .Y(_0463_)
   );
-  XNOR3X1 _1047_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_24_ ),
+  NAND2X1 _2316_ (
+    .A(_1490_),
+    .B(_0463_),
     .Y(_0464_)
   );
-  XNOR3X1 _1048_ (
-    .A(_0457_),
-    .B(_0462_),
-    .C(_0464_),
+  AOAI211X1 _2317_ (
+    .A(_1493_),
+    .B(_0461_),
+    .C(_1491_),
+    .D(_0464_),
     .Y(_0465_)
   );
-  AND2X1 _1049_ (
-    .A(_0463_),
+  XOR2X2 _2318_ (
+    .A(\gen_sram_bank[0].bank_sram_wdata_15_ ),
     .B(_0465_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_9_ )
+  );
+  XOR2X2 _2319_ (
+    .A(user_sbr_obi_req_i_28_),
+    .B(user_sbr_obi_req_i_25_),
     .Y(_0466_)
   );
-  AND3X2 _1050_ (
-    .A(_0453_),
-    .B(_0460_),
-    .C(_0466_),
+  XOR2X2 _2320_ (
+    .A(user_sbr_obi_req_i_27_),
+    .B(user_sbr_obi_req_i_24_),
     .Y(_0467_)
   );
-  XOR2X2 _1051_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_23_ ),
+  XOR2X2 _2321_ (
+    .A(_0466_),
     .B(_0467_),
     .Y(_0468_)
   );
-  OAI21X1 _1052_ (
-    .A(_0313_),
-    .B(_0468_),
-    .C(_0331_),
+  XOR2X2 _2322_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_19_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_22_ ),
     .Y(_0469_)
   );
-  OAOI211X1 _1053_ (
-    .A(_0287_),
-    .B(_0450_),
-    .C(_0469_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_22_)
-  );
-  AND2X1 _1054_ (
-    .A(_0437_),
-    .B(_0441_),
+  NAND2X1 _2323_ (
+    .A(_1492_),
+    .B(_0469_),
     .Y(_0470_)
   );
-  NAND4BX1 _1055_ (
-    .AB(_0445_),
-    .B(_0435_),
-    .C(_0447_),
-    .D(_0470_),
+  XOR2X2 _2324_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_20_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_23_ ),
     .Y(_0471_)
   );
-  XOR2X2 _1056_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_22_ ),
+  NAND2X1 _2325_ (
+    .A(_1492_),
     .B(_0471_),
     .Y(_0472_)
   );
-  OR3BX1 _1057_ (
-    .AB(_0456_),
-    .B(_0459_),
-    .C(_0453_),
+  XOR2X2 _2326_ (
+    .A(_0470_),
+    .B(_0472_),
     .Y(_0473_)
   );
-  NOR2BX1 _1058_ (
-    .AB(_0466_),
-    .B(_0473_),
+  MUXI2X1 _2327_ (
+    .A0(_0468_),
+    .A1(_0473_),
+    .S0(_1510_),
     .Y(_0474_)
   );
-  XOR2X2 _1059_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_22_ ),
+  XOR2X2 _2328_ (
+    .A(\gen_sram_bank[0].bank_sram_wdata_16_ ),
     .B(_0474_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_10_ )
+  );
+  XOR2X2 _2329_ (
+    .A(user_sbr_obi_req_i_24_),
+    .B(user_sbr_obi_req_i_22_),
     .Y(_0475_)
   );
-  NOR2X1 _1060_ (
-    .A(\i_user_rom.addr_q_2_ ),
-    .B(_0383_),
+  XOR2X2 _2330_ (
+    .A(user_sbr_obi_req_i_26_),
+    .B(_0475_),
     .Y(_0476_)
   );
-  AOAI211X1 _1061_ (
-    .A(_0331_),
-    .B(_0475_),
-    .C(_0476_),
-    .D(_0421_),
+  XOR2X2 _2331_ (
+    .A(user_sbr_obi_req_i_27_),
+    .B(_0476_),
     .Y(_0477_)
   );
-  OAOI211X1 _1062_ (
-    .A(_0344_),
-    .B(_0472_),
-    .C(_0477_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_21_)
-  );
-  NAND2X1 _1063_ (
-    .A(_0163_),
-    .B(_0139_),
+  XOR2X2 _2332_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_17_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_21_ ),
     .Y(_0478_)
   );
-  NOR3BX1 _1064_ (
-    .AB(_0453_),
-    .B(_0463_),
-    .C(_0465_),
+  NAND2X1 _2333_ (
+    .A(_0109_),
+    .B(_0478_),
     .Y(_0479_)
   );
-  NAND3X1 _1065_ (
-    .A(_0456_),
-    .B(_0459_),
-    .C(_0479_),
+  XOR2X2 _2334_ (
+    .A(_0470_),
+    .B(_0479_),
     .Y(_0480_)
   );
-  XOR2X2 _1066_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
-    .B(_0480_),
+  MUXI2X1 _2335_ (
+    .A0(_0477_),
+    .A1(_0480_),
+    .S0(_0401_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_11_ )
+  );
+  XOR2X2 _2336_ (
+    .A(user_sbr_obi_req_i_26_),
+    .B(_0276_),
     .Y(_0481_)
   );
-  OR3BX1 _1067_ (
-    .AB(_0445_),
-    .B(_0435_),
-    .C(_0447_),
+  XOR2X2 _2337_ (
+    .A(_0466_),
+    .B(_0481_),
     .Y(_0482_)
   );
-  NOR3BX1 _1068_ (
-    .AB(_0437_),
-    .B(_0441_),
-    .C(_0482_),
+  XOR2X2 _2338_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_18_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_21_ ),
     .Y(_0483_)
   );
-  XOR2X2 _1069_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_21_ ),
+  NAND2X1 _2339_ (
+    .A(_0109_),
     .B(_0483_),
     .Y(_0484_)
   );
-  NOR2X1 _1070_ (
-    .A(_0344_),
+  XOR2X2 _2340_ (
+    .A(_0472_),
     .B(_0484_),
     .Y(_0485_)
   );
-  OAI22X1 _1071_ (
-    .A(_0478_),
-    .B(_0481_),
-    .C(_0485_),
-    .D(_0390_),
-    .Y(user_sbr_obi_rsp_o_20_)
+  MUXI2X1 _2341_ (
+    .A0(_0482_),
+    .A1(_0485_),
+    .S0(_0401_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_12_ )
   );
-  NAND2X1 _1072_ (
-    .A(_0460_),
-    .B(_0479_),
+  XOR2X2 _2342_ (
+    .A(user_sbr_obi_req_i_25_),
+    .B(_0111_),
     .Y(_0486_)
   );
-  XOR2X2 _1073_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+  XOR2X2 _2343_ (
+    .A(_0475_),
     .B(_0486_),
     .Y(_0487_)
   );
-  NOR2X1 _1074_ (
-    .A(_0442_),
-    .B(_0482_),
+  XOR2X2 _2344_ (
+    .A(_0481_),
+    .B(_0487_),
     .Y(_0488_)
   );
-  XOR2X2 _1075_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_20_ ),
-    .B(_0488_),
+  XOR2X2 _2345_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_16_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_17_ ),
     .Y(_0489_)
   );
-  OAI21X1 _1076_ (
-    .A(_0421_),
-    .B(_0489_),
-    .C(_0342_),
+  XOR2X2 _2346_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_19_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_20_ ),
     .Y(_0490_)
   );
-  OAI21X1 _1077_ (
-    .A(_0337_),
-    .B(_0487_),
-    .C(_0490_),
-    .Y(user_sbr_obi_rsp_o_19_)
-  );
-  NOR2X1 _1078_ (
-    .A(_0306_),
-    .B(_0309_),
+  XOR2X2 _2347_ (
+    .A(_0483_),
+    .B(_0490_),
     .Y(_0491_)
   );
-  NAND4X2 _1079_ (
-    .A(_0296_),
-    .B(_0301_),
-    .C(_0303_),
-    .D(_0491_),
+  XOR2X2 _2348_ (
+    .A(_0489_),
+    .B(_0491_),
     .Y(_0492_)
   );
-  XOR2X2 _1080_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_53_ ),
-    .B(_0492_),
+  NAND3X1 _2349_ (
+    .A(_1493_),
+    .B(_1494_),
+    .C(_0492_),
     .Y(_0493_)
   );
-  OR2X2 _1081_ (
-    .A(_0323_),
-    .B(_0328_),
+  OA21X2 _2350_ (
+    .A(_0401_),
+    .B(_0488_),
+    .C(_0493_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_8_ )
+  );
+  XOR2X2 _2351_ (
+    .A(user_sbr_obi_req_i_27_),
+    .B(user_sbr_obi_req_i_21_),
     .Y(_0494_)
   );
-  NOR4BBX1 _1082_ (
-    .AB(_0316_),
-    .BB(_0319_),
-    .C(_0326_),
-    .D(_0494_),
+  XNOR3X1 _2352_ (
+    .A(user_sbr_obi_req_i_28_),
+    .B(_0276_),
+    .C(user_sbr_obi_req_i_22_),
     .Y(_0495_)
   );
-  XOR2X2 _1083_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_53_ ),
+  XOR2X2 _2353_ (
+    .A(_0494_),
     .B(_0495_),
     .Y(_0496_)
   );
-  NAND2X1 _1084_ (
-    .A(_0336_),
-    .B(_0496_),
+  XOR2X2 _2354_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_18_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_23_ ),
     .Y(_0497_)
   );
-  AOAI211X1 _1085_ (
-    .A(_0387_),
-    .B(_0493_),
-    .C(_0390_),
-    .D(_0497_),
-    .Y(user_sbr_obi_rsp_o_36_)
-  );
-  NOR3X1 _1086_ (
-    .A(_0445_),
-    .B(_0435_),
-    .C(_0447_),
+  XOR2X2 _2355_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_22_ ),
+    .B(_0497_),
     .Y(_0498_)
   );
-  NAND2X1 _1087_ (
-    .A(_0470_),
+  XOR2X2 _2356_ (
+    .A(_0489_),
     .B(_0498_),
     .Y(_0499_)
   );
-  XOR2X2 _1088_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_19_ ),
-    .B(_0499_),
+  NAND3X1 _2357_ (
+    .A(_1493_),
+    .B(_1494_),
+    .C(_0499_),
     .Y(_0500_)
   );
-  NOR3X1 _1089_ (
-    .A(_0463_),
-    .B(_0465_),
-    .C(_0473_),
+  OA21X2 _2358_ (
+    .A(_0401_),
+    .B(_0496_),
+    .C(_0500_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_9_ )
+  );
+  XOR2X2 _2359_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_27_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_28_ ),
     .Y(_0501_)
   );
-  XOR2X2 _1090_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
+  XOR2X2 _2360_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_24_ ),
     .B(_0501_),
     .Y(_0502_)
   );
-  OAI21X1 _1091_ (
-    .A(_0313_),
+  NAND2X1 _2361_ (
+    .A(_1492_),
     .B(_0502_),
-    .C(_0331_),
     .Y(_0503_)
   );
-  OAOI211X1 _1092_ (
-    .A(_0287_),
-    .B(_0500_),
-    .C(_0503_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_18_)
-  );
-  XNOR2X1 _1093_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+  XOR2X2 _2362_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_30_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_31_ ),
     .Y(_0504_)
   );
-  XNOR3X1 _1094_ (
-    .A(_0504_),
-    .B(_0462_),
-    .C(_0464_),
+  NAND2X1 _2363_ (
+    .A(_0109_),
+    .B(_0504_),
     .Y(_0505_)
   );
-  NAND3X1 _1095_ (
-    .A(_0459_),
-    .B(_0463_),
-    .C(_0505_),
+  XOR2X2 _2364_ (
+    .A(_0503_),
+    .B(_0505_),
     .Y(_0506_)
   );
-  NOR3BX1 _1096_ (
-    .AB(_0453_),
-    .B(_0456_),
-    .C(_0506_),
+  XOR2X2 _2365_ (
+    .A(_0129_),
+    .B(user_sbr_obi_req_i_29_),
     .Y(_0507_)
   );
-  XOR2X2 _1097_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
+  XOR2X2 _2366_ (
+    .A(user_sbr_obi_req_i_32_),
     .B(_0507_),
     .Y(_0508_)
   );
-  AOAI211X1 _1098_ (
-    .A(_0331_),
-    .B(_0508_),
-    .C(_0384_),
-    .D(_0421_),
+  XOR2X2 _2367_ (
+    .A(user_sbr_obi_req_i_36_),
+    .B(user_sbr_obi_req_i_35_),
     .Y(_0509_)
   );
-  XNOR2X1 _1099_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_24_ ),
+  XOR2X2 _2368_ (
+    .A(_0508_),
+    .B(_0509_),
     .Y(_0510_)
   );
-  XNOR3X1 _1100_ (
-    .A(_0443_),
-    .B(_0438_),
-    .C(_0510_),
+  NAND2X1 _2369_ (
+    .A(_1501_),
+    .B(_0510_),
     .Y(_0511_)
   );
-  NAND2X1 _1101_ (
-    .A(_0445_),
-    .B(_0511_),
+  OAI21X1 _2370_ (
+    .A(\gen_sram_bank[0].i_sram_shim.rvalid_d ),
+    .B(_0506_),
+    .C(_0511_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_10_ )
+  );
+  XOR2X2 _2371_ (
+    .A(user_sbr_obi_req_i_34_),
+    .B(user_sbr_obi_req_i_30_),
     .Y(_0512_)
   );
-  NOR4BX1 _1102_ (
-    .AB(_0435_),
-    .B(_0437_),
-    .C(_0441_),
-    .D(_0512_),
+  XOR2X2 _2372_ (
+    .A(user_sbr_obi_req_i_32_),
+    .B(_0512_),
     .Y(_0513_)
   );
-  XOR2X2 _1103_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_18_ ),
+  XOR2X2 _2373_ (
+    .A(user_sbr_obi_req_i_35_),
     .B(_0513_),
     .Y(_0514_)
   );
-  NAND3X1 _1104_ (
-    .A(_0283_),
-    .B(_0313_),
-    .C(_0514_),
+  XOR2X2 _2374_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_25_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_29_ ),
     .Y(_0515_)
   );
-  AOI21X1 _1105_ (
-    .A(_0509_),
+  NAND2X1 _2375_ (
+    .A(_1492_),
     .B(_0515_),
-    .C(_0333_),
-    .Y(user_sbr_obi_rsp_o_17_)
-  );
-  NAND3BX1 _1106_ (
-    .AB(_0445_),
-    .B(_0435_),
-    .C(_0511_),
     .Y(_0516_)
   );
-  OR3BX1 _1107_ (
-    .AB(_0437_),
-    .B(_0441_),
-    .C(_0516_),
+  XOR2X2 _2376_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_27_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_30_ ),
     .Y(_0517_)
   );
-  XOR2X2 _1108_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_17_ ),
+  NAND2X1 _2377_ (
+    .A(_0109_),
     .B(_0517_),
     .Y(_0518_)
   );
-  NOR3BX1 _1109_ (
-    .AB(_0456_),
-    .B(_0506_),
-    .C(_0453_),
+  XOR2X2 _2378_ (
+    .A(_0516_),
+    .B(_0518_),
     .Y(_0519_)
   );
-  XOR2X2 _1110_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
-    .B(_0519_),
+  MUXI2X1 _2379_ (
+    .A0(_0514_),
+    .A1(_0519_),
+    .S0(_0401_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_11_ )
+  );
+  XNOR3X1 _2380_ (
+    .A(user_sbr_obi_req_i_36_),
+    .B(user_sbr_obi_req_i_34_),
+    .C(user_sbr_obi_req_i_33_),
     .Y(_0520_)
   );
-  AOI21X1 _1111_ (
-    .A(\i_user_rom.addr_q_2_ ),
-    .B(\i_user_rom.addr_q_3_ ),
-    .C(_0383_),
+  BUFX3 _2381_ (
+    .A(_1489_),
     .Y(_0521_)
   );
-  AOI211X1 _1112_ (
-    .A(_0331_),
-    .B(_0520_),
-    .C(_0521_),
-    .D(_0313_),
+  XOR2X2 _2382_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_29_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_31_ ),
     .Y(_0522_)
   );
-  AOI211X1 _1113_ (
-    .A(_0387_),
-    .B(_0518_),
-    .C(_0522_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_16_)
-  );
-  NAND4BX1 _1114_ (
-    .AB(_0453_),
-    .B(_0460_),
-    .C(_0463_),
-    .D(_0505_),
+  XOR2X2 _2383_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_28_ ),
+    .B(_0522_),
     .Y(_0523_)
   );
-  XOR2X2 _1115_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
-    .B(_0523_),
+  NAND3X1 _2384_ (
+    .A(_1512_),
+    .B(_0521_),
+    .C(_0523_),
     .Y(_0524_)
   );
-  NOR2X1 _1116_ (
-    .A(_0442_),
-    .B(_0516_),
+  OAI21X1 _2385_ (
+    .A(_1510_),
+    .B(_0520_),
+    .C(_0524_),
     .Y(_0525_)
   );
-  XOR2X2 _1117_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_16_ ),
+  XOR2X2 _2386_ (
+    .A(_0128_),
     .B(_0525_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ )
+  );
+  XOR2X2 _2387_ (
+    .A(_0508_),
+    .B(_0512_),
     .Y(_0526_)
   );
-  NOR2X1 _1118_ (
-    .A(_0344_),
-    .B(_0526_),
+  XOR2X2 _2388_ (
+    .A(_0503_),
+    .B(_0516_),
     .Y(_0527_)
   );
-  OAOI211X1 _1119_ (
-    .A(_0478_),
-    .B(_0524_),
-    .C(_0425_),
-    .D(_0527_),
-    .Y(user_sbr_obi_rsp_o_15_)
-  );
-  XOR2X2 _1120_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_2_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
+  NOR2X1 _2389_ (
+    .A(_1491_),
+    .B(_0527_),
     .Y(_0528_)
   );
-  XNOR2X1 _1121_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_4_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
+  AOI21X1 _2390_ (
+    .A(_1491_),
+    .B(_0526_),
+    .C(_0528_),
     .Y(_0529_)
   );
-  XOR2X2 _1122_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_12_ ),
+  XOR2X2 _2391_ (
+    .A(_0128_),
     .B(_0529_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ )
+  );
+  XOR2X2 _2392_ (
+    .A(\gen_sram_bank[0].i_repair_buffer.buf_data_q_24_ ),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_26_ ),
     .Y(_0530_)
   );
-  XOR2X2 _1123_ (
-    .A(_0528_),
+  XOR2X2 _2393_ (
+    .A(_0504_),
     .B(_0530_),
     .Y(_0531_)
   );
-  XOR2X2 _1124_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_3_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_6_ ),
+  XNOR3X1 _2394_ (
+    .A(_0319_),
+    .B(_0122_),
+    .C(_0509_),
     .Y(_0532_)
   );
-  XNOR3X1 _1125_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_1_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_11_ ),
+  NAND2X1 _2395_ (
+    .A(_1490_),
+    .B(_0532_),
     .Y(_0533_)
   );
-  XOR2X2 _1126_ (
-    .A(_0532_),
-    .B(_0533_),
+  AOAI211X1 _2396_ (
+    .A(_1493_),
+    .B(_0531_),
+    .C(_1491_),
+    .D(_0533_),
     .Y(_0534_)
   );
-  NOR2BX1 _1127_ (
-    .AB(_0531_),
+  XOR2X2 _2397_ (
+    .A(\gen_sram_bank[0].bank_sram_wdata_25_ ),
     .B(_0534_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ )
+  );
+  NOR2X1 _2398_ (
+    .A(user_sbr_obi_req_i_41_),
+    .B(_1511_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].rvalid_q_0_ )
+  );
+  INVX1 _2399_ (
+    .A(user_sbr_obi_req_i_5_),
     .Y(_0535_)
   );
-  XOR2X2 _1128_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_2_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_3_ ),
+  NAND3X1 _2400_ (
+    .A(_1512_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_0_ ),
+    .C(_1504_),
     .Y(_0536_)
   );
-  XNOR3X1 _1129_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_8_ ),
-    .B(_0529_),
+  OAI21X1 _2401_ (
+    .A(_0535_),
+    .B(_1510_),
     .C(_0536_),
     .Y(_0537_)
   );
-  XOR2X2 _1130_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_1_ ),
+  XOR2X2 _2402_ (
+    .A(gpio_in_sync_i_16_),
+    .B(_0537_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_0_ )
+  );
+  NAND2BX1 _2403_ (
+    .AB(gpio_in_sync_i_18_),
+    .B(gpio_in_sync_i_16_),
     .Y(_0538_)
   );
-  XOR2X2 _1131_ (
-    .A(_0537_),
-    .B(_0538_),
+  AND3X2 _2404_ (
+    .A(_1512_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_9_ ),
+    .C(_0521_),
     .Y(_0539_)
   );
-  XOR2X2 _1132_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_10_ ),
+  AOI21X2 _2405_ (
+    .A(_0373_),
+    .B(_0143_),
+    .C(_0539_),
     .Y(_0540_)
   );
-  XOR2X2 _1133_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_4_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
+  XOR2X2 _2406_ (
+    .A(_0538_),
+    .B(_0540_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_17_ )
+  );
+  NAND2X2 _2407_ (
+    .A(gpio_in_sync_i_18_),
+    .B(gpio_in_sync_i_16_),
     .Y(_0541_)
   );
-  XNOR3X1 _1134_ (
-    .A(_0532_),
-    .B(_0540_),
-    .C(_0541_),
+  AND3X2 _2408_ (
+    .A(_1512_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_10_ ),
+    .C(_0521_),
     .Y(_0542_)
   );
-  XOR2X2 _1135_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_6_ ),
-    .B(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_9_ ),
+  AOI21X2 _2409_ (
+    .A(_0226_),
+    .B(_0143_),
+    .C(_0542_),
     .Y(_0543_)
   );
-  XNOR3X1 _1136_ (
-    .A(_0528_),
-    .B(_0538_),
-    .C(_0543_),
+  XOR2X2 _2410_ (
+    .A(_0541_),
+    .B(_0543_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_18_ )
+  );
+  AND3X2 _2411_ (
+    .A(_1512_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_11_ ),
+    .C(_0521_),
     .Y(_0544_)
   );
-  NAND2X1 _1137_ (
-    .A(_0542_),
-    .B(_0544_),
+  AOI21X2 _2412_ (
+    .A(_0234_),
+    .B(_0143_),
+    .C(_0544_),
     .Y(_0545_)
   );
-  NOR2BX1 _1138_ (
-    .AB(_0539_),
+  XOR2X2 _2413_ (
+    .A(_0541_),
     .B(_0545_),
-    .Y(_0010_)
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_19_ )
   );
-  NAND2X1 _1139_ (
-    .A(_0535_),
-    .B(_0010_),
-    .Y(_0011_)
+  AND3X2 _2414_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_1_ ),
+    .C(_0521_),
+    .Y(_0546_)
   );
-  XOR2X2 _1140_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
-    .B(_0011_),
-    .Y(_0012_)
+  AOI21X1 _2415_ (
+    .A(user_sbr_obi_req_i_6_),
+    .B(_0143_),
+    .C(_0546_),
+    .Y(_0547_)
   );
-  XOR2X2 _1141_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_2_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
-    .Y(_0013_)
+  XOR2X2 _2416_ (
+    .A(_0541_),
+    .B(_0547_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_1_ )
   );
-  XNOR3X1 _1142_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_12_ ),
-    .Y(_0014_)
+  AND3X2 _2417_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_18_ ),
+    .C(_0521_),
+    .Y(_0548_)
   );
-  XOR2X2 _1143_ (
-    .A(_0013_),
-    .B(_0014_),
-    .Y(_0015_)
+  AOI21X2 _2418_ (
+    .A(_0276_),
+    .B(_0143_),
+    .C(_0548_),
+    .Y(_0549_)
   );
-  XOR2X2 _1144_ (
+  XOR2X2 _2419_ (
+    .A(_0538_),
+    .B(_0549_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_34_ )
+  );
+  AND3X2 _2420_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_20_ ),
+    .C(_0521_),
+    .Y(_0550_)
+  );
+  AOI21X1 _2421_ (
+    .A(user_sbr_obi_req_i_25_),
+    .B(_0143_),
+    .C(_0550_),
+    .Y(_0551_)
+  );
+  XOR2X2 _2422_ (
+    .A(_0541_),
+    .B(_0551_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_36_ )
+  );
+  AND3X2 _2423_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_21_ ),
+    .C(_0521_),
+    .Y(_0552_)
+  );
+  AOI21X1 _2424_ (
+    .A(user_sbr_obi_req_i_26_),
+    .B(_0143_),
+    .C(_0552_),
+    .Y(_0553_)
+  );
+  XOR2X2 _2425_ (
+    .A(_0541_),
+    .B(_0553_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_37_ )
+  );
+  AND3X2 _2426_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_27_ ),
+    .C(_0521_),
+    .Y(_0554_)
+  );
+  AOI21X1 _2427_ (
+    .A(user_sbr_obi_req_i_32_),
+    .B(_0143_),
+    .C(_0554_),
+    .Y(_0555_)
+  );
+  XOR2X2 _2428_ (
+    .A(_0538_),
+    .B(_0555_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_51_ )
+  );
+  AND3X2 _2429_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_30_ ),
+    .C(_0521_),
+    .Y(_0556_)
+  );
+  AOI21X1 _2430_ (
+    .A(user_sbr_obi_req_i_35_),
+    .B(_1491_),
+    .C(_0556_),
+    .Y(_0557_)
+  );
+  XOR2X2 _2431_ (
+    .A(_0541_),
+    .B(_0557_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_54_ )
+  );
+  AND3X2 _2432_ (
+    .A(_0126_),
+    .B(\gen_sram_bank[0].i_repair_buffer.buf_data_q_31_ ),
+    .C(_1489_),
+    .Y(_0558_)
+  );
+  AOI21X1 _2433_ (
+    .A(user_sbr_obi_req_i_36_),
+    .B(_1491_),
+    .C(_0558_),
+    .Y(_0559_)
+  );
+  XOR2X2 _2434_ (
+    .A(_0541_),
+    .B(_0559_),
+    .Y(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_55_ )
+  );
+  XOR2X2 _2435_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_33_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .Y(_0560_)
+  );
+  XOR2X2 _2436_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_32_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .Y(_0561_)
+  );
+  XNOR3X1 _2437_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_40_ ),
+    .Y(_0562_)
+  );
+  XNOR3X1 _2438_ (
+    .A(_0560_),
+    .B(_0561_),
+    .C(_0562_),
+    .Y(_0563_)
+  );
+  INVX1 _2439_ (
+    .A(_0563_),
+    .Y(_0564_)
+  );
+  XNOR2X1 _2440_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_38_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_39_ ),
+    .Y(_0565_)
+  );
+  XOR2X2 _2441_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_32_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_42_ ),
+    .Y(_0566_)
+  );
+  XOR2X2 _2442_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .Y(_0567_)
+  );
+  XNOR3X1 _2443_ (
+    .A(_0565_),
+    .B(_0566_),
+    .C(_0567_),
+    .Y(_0568_)
+  );
+  XOR2X2 _2444_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_33_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_41_ ),
+    .Y(_0569_)
+  );
+  XNOR3X1 _2445_ (
+    .A(_0561_),
+    .B(_0565_),
+    .C(_0569_),
+    .Y(_0570_)
+  );
+  OR2X2 _2446_ (
+    .A(_0568_),
+    .B(_0570_),
+    .Y(_0571_)
+  );
+  XNOR3X1 _2447_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_38_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_43_ ),
+    .Y(_0572_)
+  );
+  XNOR2X1 _2448_ (
+    .A(_0560_),
+    .B(_0572_),
+    .Y(_0573_)
+  );
+  XNOR3X1 _2449_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_44_ ),
+    .Y(_0574_)
+  );
+  XOR2X2 _2450_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_39_ ),
+    .Y(_0575_)
+  );
+  XNOR2X1 _2451_ (
+    .A(_0574_),
+    .B(_0575_),
+    .Y(_0576_)
+  );
+  NAND2X1 _2452_ (
+    .A(_0573_),
+    .B(_0576_),
+    .Y(_0577_)
+  );
+  XOR2X2 _2453_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .Y(_0578_)
+  );
+  XNOR3X1 _2454_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_41_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_42_ ),
+    .C(_0578_),
+    .Y(_0579_)
+  );
+  XNOR3X1 _2455_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_43_ ),
+    .B(_0574_),
+    .C(_0565_),
+    .Y(_0580_)
+  );
+  NAND3X1 _2456_ (
+    .A(_0560_),
+    .B(_0579_),
+    .C(_0580_),
+    .Y(_0581_)
+  );
+  OR3X2 _2457_ (
+    .A(_0560_),
+    .B(_0579_),
+    .C(_0580_),
+    .Y(_0582_)
+  );
+  OAI211X1 _2458_ (
+    .A(_0571_),
+    .B(_0577_),
+    .C(_0581_),
+    .D(_0582_),
+    .Y(_0583_)
+  );
+  XOR2X2 _2459_ (
+    .A(_0574_),
+    .B(_0575_),
+    .Y(_0584_)
+  );
+  NAND2X1 _2460_ (
+    .A(_0568_),
+    .B(_0570_),
+    .Y(_0585_)
+  );
+  OAI21X1 _2461_ (
+    .A(_0576_),
+    .B(_0571_),
+    .C(_0585_),
+    .Y(_0586_)
+  );
+  AOAI211X1 _2462_ (
+    .A(_0576_),
+    .B(_0571_),
+    .C(_0586_),
+    .D(_0563_),
+    .Y(_0587_)
+  );
+  OAI21X1 _2463_ (
+    .A(_0584_),
+    .B(_0585_),
+    .C(_0587_),
+    .Y(_0588_)
+  );
+  NAND2X1 _2464_ (
+    .A(_0563_),
+    .B(_0576_),
+    .Y(_0589_)
+  );
+  NOR2X1 _2465_ (
+    .A(_0576_),
+    .B(_0585_),
+    .Y(_0590_)
+  );
+  NOR2X1 _2466_ (
+    .A(_0571_),
+    .B(_0589_),
+    .Y(_0591_)
+  );
+  AOI21X1 _2467_ (
+    .A(_0564_),
+    .B(_0590_),
+    .C(_0591_),
+    .Y(_0592_)
+  );
+  OAI22X1 _2468_ (
+    .A(_0585_),
+    .B(_0589_),
+    .C(_0592_),
+    .D(_0573_),
+    .Y(_0593_)
+  );
+  AOI221X1 _2469_ (
+    .A(_0564_),
+    .B(_0583_),
+    .C(_0588_),
+    .D(_0573_),
+    .E(_0593_),
+    .Y(_0594_)
+  );
+  XNOR3X1 _2470_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_24_ ),
+    .Y(_0595_)
+  );
+  XNOR2X1 _2471_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .Y(_0596_)
+  );
+  XOR2X2 _2472_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+    .Y(_0597_)
+  );
+  XOR2X2 _2473_ (
+    .A(_0596_),
+    .B(_0597_),
+    .Y(_0598_)
+  );
+  XOR2X2 _2474_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_23_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_25_ ),
+    .Y(_0599_)
+  );
+  XOR2X2 _2475_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_22_ ),
+    .Y(_0600_)
+  );
+  XNOR3X1 _2476_ (
+    .A(_0596_),
+    .B(_0599_),
+    .C(_0600_),
+    .Y(_0601_)
+  );
+  XOR2X2 _2477_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_23_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+    .Y(_0602_)
+  );
+  XOR2X2 _2478_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_22_ ),
+    .Y(_0603_)
+  );
+  XNOR2X1 _2479_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_26_ ),
+    .Y(_0604_)
+  );
+  XNOR3X1 _2480_ (
+    .A(_0602_),
+    .B(_0603_),
+    .C(_0604_),
+    .Y(_0605_)
+  );
+  NOR2X1 _2481_ (
+    .A(_0601_),
+    .B(_0605_),
+    .Y(_0606_)
+  );
+  XOR2X2 _2482_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_25_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_26_ ),
+    .Y(_0607_)
+  );
+  NOR2X1 _2483_ (
+    .A(_0598_),
+    .B(_0607_),
+    .Y(_0608_)
+  );
+  AOI21X1 _2484_ (
+    .A(_0598_),
+    .B(_0606_),
+    .C(_0608_),
+    .Y(_0609_)
+  );
+  MUX2X1 _2485_ (
+    .A0(_0606_),
+    .A1(_0607_),
+    .S0(_0598_),
+    .Y(_0610_)
+  );
+  NAND2X1 _2486_ (
+    .A(_0595_),
+    .B(_0610_),
+    .Y(_0611_)
+  );
+  XNOR3X1 _2487_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_28_ ),
+    .Y(_0612_)
+  );
+  XOR2X2 _2488_ (
+    .A(_0602_),
+    .B(_0612_),
+    .Y(_0613_)
+  );
+  XNOR3X1 _2489_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_27_ ),
+    .Y(_0614_)
+  );
+  XNOR2X2 _2490_ (
+    .A(_0603_),
+    .B(_0614_),
+    .Y(_0615_)
+  );
+  XOR2X2 _2491_ (
+    .A(_0613_),
+    .B(_0615_),
+    .Y(_0616_)
+  );
+  OAOI211X1 _2492_ (
+    .A(_0595_),
+    .B(_0609_),
+    .C(_0611_),
+    .D(_0616_),
+    .Y(_0617_)
+  );
+  XOR2X2 _2493_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .Y(_0618_)
+  );
+  XNOR3X1 _2494_ (
+    .A(_0618_),
+    .B(_0597_),
+    .C(_0595_),
+    .Y(_0619_)
+  );
+  XOR2X2 _2495_ (
+    .A(_0603_),
+    .B(_0614_),
+    .Y(_0620_)
+  );
+  NOR2X1 _2496_ (
+    .A(_0613_),
+    .B(_0620_),
+    .Y(_0621_)
+  );
+  INVX1 _2497_ (
+    .A(_0613_),
+    .Y(_0622_)
+  );
+  NAND2X1 _2498_ (
+    .A(_0601_),
+    .B(_0605_),
+    .Y(_0623_)
+  );
+  NOR3X1 _2499_ (
+    .A(_0622_),
+    .B(_0615_),
+    .C(_0623_),
+    .Y(_0624_)
+  );
+  AOI21X1 _2500_ (
+    .A(_0606_),
+    .B(_0621_),
+    .C(_0624_),
+    .Y(_0625_)
+  );
+  OAOI211X1 _2501_ (
+    .A(_0620_),
+    .B(_0606_),
+    .C(_0623_),
+    .D(_0613_),
+    .Y(_0626_)
+  );
+  NOR2X1 _2502_ (
+    .A(_0620_),
+    .B(_0623_),
+    .Y(_0627_)
+  );
+  OAI21X1 _2503_ (
+    .A(_0626_),
+    .B(_0627_),
+    .C(_0619_),
+    .Y(_0628_)
+  );
+  NAND2BX1 _2504_ (
+    .AB(_0623_),
+    .B(_0621_),
+    .Y(_0629_)
+  );
+  OAI211X1 _2505_ (
+    .A(_0619_),
+    .B(_0625_),
+    .C(_0628_),
+    .D(_0629_),
+    .Y(_0630_)
+  );
+  XNOR3X2 _2506_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_49_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .Y(_0631_)
+  );
+  XNOR2X1 _2507_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .Y(_0632_)
+  );
+  XOR2X2 _2508_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_56_ ),
+    .Y(_0633_)
+  );
+  XOR2X2 _2509_ (
+    .A(_0632_),
+    .B(_0633_),
+    .Y(_0634_)
+  );
+  XOR2X1 _2510_ (
+    .A(_0631_),
+    .B(_0634_),
+    .Y(_0635_)
+  );
+  XOR2X2 _2511_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_58_ ),
+    .Y(_0636_)
+  );
+  XOR2X2 _2512_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .Y(_0637_)
+  );
+  XNOR2X1 _2513_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_54_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_55_ ),
+    .Y(_0638_)
+  );
+  XNOR3X1 _2514_ (
+    .A(_0636_),
+    .B(_0637_),
+    .C(_0638_),
+    .Y(_0639_)
+  );
+  XOR2X1 _2515_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_49_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_57_ ),
+    .Y(_0640_)
+  );
+  XOR2X2 _2516_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .Y(_0641_)
+  );
+  XNOR3X1 _2517_ (
+    .A(_0640_),
+    .B(_0641_),
+    .C(_0638_),
+    .Y(_0642_)
+  );
+  OR2X2 _2518_ (
+    .A(_0639_),
+    .B(_0642_),
+    .Y(_0643_)
+  );
+  XOR2X2 _2519_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_55_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_60_ ),
+    .Y(_0644_)
+  );
+  XNOR3X1 _2520_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .Y(_0645_)
+  );
+  XOR2X2 _2521_ (
+    .A(_0644_),
+    .B(_0645_),
+    .Y(_0646_)
+  );
+  XOR2X2 _2522_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_54_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_59_ ),
+    .Y(_0647_)
+  );
+  XOR2X1 _2523_ (
+    .A(_0631_),
+    .B(_0647_),
+    .Y(_0648_)
+  );
+  NOR2X1 _2524_ (
+    .A(_0646_),
+    .B(_0648_),
+    .Y(_0649_)
+  );
+  AND2X1 _2525_ (
+    .A(_0639_),
+    .B(_0642_),
+    .Y(_0650_)
+  );
+  AND3X2 _2526_ (
+    .A(_0646_),
+    .B(_0648_),
+    .C(_0650_),
+    .Y(_0651_)
+  );
+  AOI2B1X1 _2527_ (
+    .AB(_0643_),
+    .B(_0649_),
+    .C(_0651_),
+    .Y(_0652_)
+  );
+  XNOR2X1 _2528_ (
+    .A(_0631_),
+    .B(_0647_),
+    .Y(_0653_)
+  );
+  MIN3X1 _2529_ (
+    .A(_0653_),
+    .B(_0639_),
+    .C(_0642_),
+    .Y(_0654_)
+  );
+  NOR2X1 _2530_ (
+    .A(_0646_),
+    .B(_0654_),
+    .Y(_0655_)
+  );
+  AOAI211X1 _2531_ (
+    .A(_0653_),
+    .B(_0650_),
+    .C(_0655_),
+    .D(_0635_),
+    .Y(_0656_)
+  );
+  XOR2X2 _2532_ (
+    .A(_0646_),
+    .B(_0648_),
+    .Y(_0657_)
+  );
+  XOR2X2 _2533_ (
+    .A(_0640_),
+    .B(_0641_),
+    .Y(_0658_)
+  );
+  XOR2X2 _2534_ (
+    .A(_0636_),
+    .B(_0632_),
+    .Y(_0659_)
+  );
+  XOR2X2 _2535_ (
+    .A(_0658_),
+    .B(_0659_),
+    .Y(_0660_)
+  );
+  MUXI2X1 _2536_ (
+    .A0(_0660_),
+    .A1(_0643_),
+    .S0(_0635_),
+    .Y(_0661_)
+  );
+  AOI22X1 _2537_ (
+    .A(_0657_),
+    .B(_0661_),
+    .C(_0650_),
+    .D(_0649_),
+    .Y(_0662_)
+  );
+  OAI211X1 _2538_ (
+    .A(_0635_),
+    .B(_0652_),
+    .C(_0656_),
+    .D(_0662_),
+    .Y(_0663_)
+  );
+  XOR2X2 _2539_ (
     .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_0_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_1_ ),
-    .Y(_0016_)
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
+    .Y(_0664_)
   );
-  XOR2X2 _1145_ (
+  XOR2X2 _2540_ (
     .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_6_ ),
     .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ),
-    .Y(_0017_)
+    .Y(_0665_)
   );
-  XOR2X2 _1146_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_2_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_9_ ),
-    .Y(_0018_)
+  XOR2X2 _2541_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_10_ ),
+    .Y(_0666_)
   );
-  XNOR3X1 _1147_ (
-    .A(_0016_),
-    .B(_0017_),
-    .C(_0018_),
-    .Y(_0019_)
+  XNOR3X1 _2542_ (
+    .A(_0664_),
+    .B(_0665_),
+    .C(_0666_),
+    .Y(_0667_)
   );
-  XNOR3X1 _1148_ (
+  XOR2X2 _2543_ (
     .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_1_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_6_ ),
-    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_11_ ),
-    .Y(_0020_)
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_2_ ),
+    .Y(_0668_)
   );
-  XNOR3X1 _1149_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
-    .C(_0020_),
-    .Y(_0021_)
+  XOR2X2 _2544_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_0_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_9_ ),
+    .Y(_0669_)
   );
-  NAND3X1 _1150_ (
-    .A(_0015_),
-    .B(_0019_),
-    .C(_0021_),
-    .Y(_0022_)
+  XNOR3X1 _2545_ (
+    .A(_0665_),
+    .B(_0668_),
+    .C(_0669_),
+    .Y(_0670_)
   );
-  XNOR3X1 _1151_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
+  XNOR2X1 _2546_ (
+    .A(_0667_),
+    .B(_0670_),
+    .Y(_0671_)
+  );
+  BUFX3 _2547_ (
+    .A(_0670_),
+    .Y(_0672_)
+  );
+  NAND2X1 _2548_ (
+    .A(_0667_),
+    .B(_0672_),
+    .Y(_0673_)
+  );
+  XNOR3X1 _2549_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
     .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
     .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_8_ ),
-    .Y(_0023_)
+    .Y(_0674_)
   );
-  XNOR3X1 _1152_ (
-    .A(_0013_),
-    .B(_0016_),
-    .C(_0023_),
-    .Y(_0024_)
+  XNOR3X1 _2550_ (
+    .A(_0664_),
+    .B(_0668_),
+    .C(_0674_),
+    .Y(_0675_)
   );
-  XOR2X2 _1153_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_0_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_10_ ),
-    .Y(_0025_)
+  MUX2X1 _2551_ (
+    .A0(_0671_),
+    .A1(_0673_),
+    .S0(_0675_),
+    .Y(_0676_)
   );
-  XOR2X2 _1154_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
-    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
-    .Y(_0026_)
+  XNOR3X1 _2552_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_2_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_12_ ),
+    .Y(_0677_)
   );
-  XNOR3X1 _1155_ (
-    .A(_0017_),
-    .B(_0025_),
-    .C(_0026_),
-    .Y(_0027_)
+  XNOR3X2 _2553_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .C(_0677_),
+    .Y(_0678_)
   );
-  NAND2X1 _1156_ (
-    .A(_0024_),
-    .B(_0027_),
-    .Y(_0028_)
-  );
-  NOR2X1 _1157_ (
-    .A(_0022_),
-    .B(_0028_),
-    .Y(_0029_)
-  );
-  XOR2X2 _1158_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ),
-    .B(_0029_),
-    .Y(_0030_)
-  );
-  NAND2X1 _1159_ (
-    .A(_0159_),
-    .B(_0030_),
-    .Y(_0031_)
-  );
-  OAOI211X1 _1160_ (
-    .A(_0344_),
-    .B(_0012_),
-    .C(_0031_),
-    .D(_0333_),
-    .Y(user_sbr_obi_rsp_o_14_)
-  );
-  NOR2BX1 _1161_ (
-    .AB(_0534_),
-    .B(_0531_),
-    .Y(_0032_)
-  );
-  NAND2X1 _1162_ (
-    .A(_0010_),
-    .B(_0032_),
-    .Y(_0033_)
-  );
-  XOR2X2 _1163_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_6_ ),
-    .B(_0033_),
-    .Y(_0034_)
-  );
-  OR2X2 _1164_ (
-    .A(_0015_),
-    .B(_0021_),
-    .Y(_0035_)
-  );
-  NOR3BX1 _1165_ (
-    .AB(_0019_),
-    .B(_0028_),
-    .C(_0035_),
-    .Y(_0036_)
-  );
-  XOR2X2 _1166_ (
+  XOR2X2 _2554_ (
     .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_6_ ),
-    .B(_0036_),
-    .Y(_0037_)
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_11_ ),
+    .Y(_0679_)
   );
-  AOAI211X1 _1167_ (
-    .A(_0331_),
-    .B(_0037_),
-    .C(_0521_),
-    .D(_0421_),
-    .Y(_0038_)
+  XNOR3X1 _2555_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_1_ ),
+    .B(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
+    .C(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .Y(_0680_)
   );
-  OAOI211X1 _1168_ (
-    .A(_0344_),
-    .B(_0034_),
-    .C(_0038_),
-    .D(_0289_),
-    .Y(user_sbr_obi_rsp_o_13_)
+  XOR2X2 _2556_ (
+    .A(_0679_),
+    .B(_0680_),
+    .Y(_0681_)
   );
-  NAND2X1 _1169_ (
-    .A(_0534_),
-    .B(_0531_),
-    .Y(_0039_)
+  XOR2X2 _2557_ (
+    .A(_0678_),
+    .B(_0681_),
+    .Y(_0682_)
   );
-  OR4X1 _1170_ (
-    .A(_0539_),
-    .B(_0542_),
-    .C(_0544_),
-    .D(_0039_),
-    .Y(_0040_)
+  XNOR2X1 _2558_ (
+    .A(_0679_),
+    .B(_0680_),
+    .Y(_0683_)
   );
-  XOR2X2 _1171_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_5_ ),
-    .B(_0040_),
-    .Y(_0041_)
+  NOR2X1 _2559_ (
+    .A(_0678_),
+    .B(_0683_),
+    .Y(_0684_)
   );
-  NOR2BX1 _1172_ (
-    .AB(_0015_),
-    .B(_0019_),
-    .Y(_0042_)
+  NAND2X1 _2560_ (
+    .A(_0678_),
+    .B(_0683_),
+    .Y(_0685_)
   );
-  OR2X2 _1173_ (
-    .A(_0024_),
-    .B(_0027_),
-    .Y(_0043_)
+  OAOI211X1 _2561_ (
+    .A(_0672_),
+    .B(_0684_),
+    .C(_0685_),
+    .D(_0667_),
+    .Y(_0686_)
   );
-  NOR3BX1 _1174_ (
-    .AB(_0042_),
-    .B(_0021_),
-    .C(_0043_),
-    .Y(_0044_)
+  NOR2X1 _2562_ (
+    .A(_0672_),
+    .B(_0685_),
+    .Y(_0687_)
   );
-  XOR2X2 _1175_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
-    .B(_0044_),
-    .Y(_0045_)
+  OAI21X1 _2563_ (
+    .A(_0686_),
+    .B(_0687_),
+    .C(_0675_),
+    .Y(_0688_)
   );
-  NAND2X1 _1176_ (
-    .A(_0159_),
-    .B(_0045_),
-    .Y(_0046_)
+  NOR2X1 _2564_ (
+    .A(_0667_),
+    .B(_0672_),
+    .Y(_0689_)
   );
-  OAOI211X1 _1177_ (
-    .A(_0344_),
-    .B(_0041_),
-    .C(_0046_),
-    .D(_0289_),
-    .Y(user_sbr_obi_rsp_o_12_)
+  OAI2BB2X2 _2565_ (
+    .AB(_0684_),
+    .BB(_0689_),
+    .C(_0685_),
+    .D(_0673_),
+    .Y(_0690_)
   );
-  OR3BX1 _1178_ (
-    .AB(_0542_),
-    .B(_0544_),
-    .C(_0539_),
-    .Y(_0047_)
+  INVX1 _2566_ (
+    .A(_0685_),
+    .Y(_0691_)
   );
-  NOR2BX1 _1179_ (
-    .AB(_0535_),
-    .B(_0047_),
-    .Y(_0048_)
+  AOI2B2X1 _2567_ (
+    .AB(_0675_),
+    .B(_0690_),
+    .C(_0691_),
+    .D(_0689_),
+    .Y(_0692_)
   );
-  XOR2X2 _1180_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_4_ ),
-    .B(_0048_),
-    .Y(_0049_)
+  OAI211X1 _2568_ (
+    .A(_0676_),
+    .B(_0682_),
+    .C(_0688_),
+    .D(_0692_),
+    .Y(_0693_)
   );
-  NOR2BX1 _1181_ (
-    .AB(_0027_),
-    .B(_0024_),
+  OAI211X1 _2569_ (
+    .A(_0617_),
+    .B(_0630_),
+    .C(_0663_),
+    .D(_0693_),
+    .Y(_0694_)
+  );
+  BUFX3 _2570_ (
+    .A(\gen_sram_bank[1].bank_read_valid ),
+    .Y(_0695_)
+  );
+  OA21X2 _2571_ (
+    .A(_0594_),
+    .B(_0694_),
+    .C(_0695_),
+    .Y(all_banks_double_err_o_1_)
+  );
+  XOR2X2 _2572_ (
+    .A(_0595_),
+    .B(_0607_),
+    .Y(_0696_)
+  );
+  NAND4BX1 _2573_ (
+    .AB(_0619_),
+    .B(_0620_),
+    .C(_0601_),
+    .D(_0605_),
+    .Y(_0697_)
+  );
+  OAI211X1 _2574_ (
+    .A(_0620_),
+    .B(_0696_),
+    .C(_0697_),
+    .D(_0613_),
+    .Y(_0698_)
+  );
+  XOR2X2 _2575_ (
+    .A(_0615_),
+    .B(_0696_),
+    .Y(_0699_)
+  );
+  NAND2X1 _2576_ (
+    .A(_0622_),
+    .B(_0699_),
+    .Y(_0700_)
+  );
+  XNOR3X2 _2577_ (
+    .A(_0631_),
+    .B(_0632_),
+    .C(_0633_),
+    .Y(_0701_)
+  );
+  XNOR3X1 _2578_ (
+    .A(_0658_),
+    .B(_0659_),
+    .C(_0701_),
+    .Y(_0702_)
+  );
+  NOR2BX1 _2579_ (
+    .AB(_0657_),
+    .B(_0702_),
+    .Y(_0703_)
+  );
+  NAND2X1 _2580_ (
+    .A(_0646_),
+    .B(_0701_),
+    .Y(_0704_)
+  );
+  NAND3X1 _2581_ (
+    .A(_0648_),
+    .B(_0639_),
+    .C(_0642_),
+    .Y(_0705_)
+  );
+  OAI2BB2X2 _2582_ (
+    .AB(_0649_),
+    .BB(_0702_),
+    .C(_0704_),
+    .D(_0705_),
+    .Y(_0706_)
+  );
+  AOI211X2 _2583_ (
+    .A(_0698_),
+    .B(_0700_),
+    .C(_0703_),
+    .D(_0706_),
+    .Y(_0707_)
+  );
+  OR3X2 _2584_ (
+    .A(_0560_),
+    .B(_0572_),
+    .C(_0579_),
+    .Y(_0708_)
+  );
+  NAND3X1 _2585_ (
+    .A(_0560_),
+    .B(_0572_),
+    .C(_0579_),
+    .Y(_0709_)
+  );
+  OAI211X1 _2586_ (
+    .A(_0573_),
+    .B(_0585_),
+    .C(_0708_),
+    .D(_0709_),
+    .Y(_0710_)
+  );
+  XOR2X2 _2587_ (
+    .A(_0572_),
+    .B(_0579_),
+    .Y(_0711_)
+  );
+  AND2X1 _2588_ (
+    .A(_0576_),
+    .B(_0711_),
+    .Y(_0712_)
+  );
+  AOAI211X1 _2589_ (
+    .A(_0584_),
+    .B(_0710_),
+    .C(_0712_),
+    .D(_0564_),
+    .Y(_0713_)
+  );
+  NAND3BX1 _2590_ (
+    .AB(_0560_),
+    .B(_0584_),
+    .C(_0579_),
+    .Y(_0714_)
+  );
+  OAI21X1 _2591_ (
+    .A(_0584_),
+    .B(_0579_),
+    .C(_0714_),
+    .Y(_0715_)
+  );
+  OR3BX1 _2592_ (
+    .AB(_0560_),
+    .B(_0576_),
+    .C(_0579_),
+    .Y(_0716_)
+  );
+  NAND2X1 _2593_ (
+    .A(_0576_),
+    .B(_0579_),
+    .Y(_0717_)
+  );
+  NAND3X1 _2594_ (
+    .A(_0572_),
+    .B(_0716_),
+    .C(_0717_),
+    .Y(_0718_)
+  );
+  OAI211X1 _2595_ (
+    .A(_0572_),
+    .B(_0715_),
+    .C(_0718_),
+    .D(_0563_),
+    .Y(_0719_)
+  );
+  MUXI2X1 _2596_ (
+    .A0(_0685_),
+    .A1(_0682_),
+    .S0(_0675_),
+    .Y(_0720_)
+  );
+  OR2X2 _2597_ (
+    .A(_0667_),
+    .B(_0675_),
+    .Y(_0721_)
+  );
+  NOR2X1 _2598_ (
+    .A(_0672_),
+    .B(_0721_),
+    .Y(_0722_)
+  );
+  NAND3X1 _2599_ (
+    .A(_0675_),
+    .B(_0678_),
+    .C(_0683_),
+    .Y(_0723_)
+  );
+  OAOI211X1 _2600_ (
+    .A(_0675_),
+    .B(_0682_),
+    .C(_0723_),
+    .D(_0671_),
+    .Y(_0724_)
+  );
+  AOI221X3 _2601_ (
+    .A(_0671_),
+    .B(_0720_),
+    .C(_0722_),
+    .D(_0684_),
+    .E(_0724_),
+    .Y(_0725_)
+  );
+  NAND4X2 _2602_ (
+    .A(_0707_),
+    .B(_0713_),
+    .C(_0719_),
+    .D(_0725_),
+    .Y(_0726_)
+  );
+  NAND2X4 _2603_ (
+    .A(_0695_),
+    .B(_0726_),
+    .Y(_0727_)
+  );
+  INVX6 _2604_ (
+    .A(_0727_),
+    .Y(all_banks_single_err_o_1_)
+  );
+  NAND2X1 _2605_ (
+    .A(user_sbr_obi_req_i_0_),
+    .B(_1296_),
+    .Y(_0728_)
+  );
+  INVX1 _2606_ (
+    .A(_0728_),
+    .Y(_0729_)
+  );
+  BUFX3 _2607_ (
+    .A(_0729_),
+    .Y(_0730_)
+  );
+  BUFX3 _2608_ (
+    .A(_0730_),
+    .Y(\gen_sram_bank[1].i_sram_shim.rvalid_d )
+  );
+  BUFX3 _2609_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_valid_q ),
+    .Y(_0731_)
+  );
+  BUFX3 _2610_ (
+    .A(_0731_),
+    .Y(_0732_)
+  );
+  BUFX3 _2611_ (
+    .A(_0732_),
+    .Y(_0733_)
+  );
+  BUFX3 _2612_ (
+    .A(_0728_),
+    .Y(_0734_)
+  );
+  BUFX3 _2613_ (
+    .A(_0734_),
+    .Y(_0735_)
+  );
+  AND3X2 _2614_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_0_ ),
+    .C(_0735_),
+    .Y(_0736_)
+  );
+  AO21X2 _2615_ (
+    .A(all_user_sbr_obi_req_192_),
+    .B(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .C(_0736_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_0_ )
+  );
+  AND3X2 _2616_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_1_ ),
+    .C(_0735_),
+    .Y(_0737_)
+  );
+  AO21X2 _2617_ (
+    .A(all_user_sbr_obi_req_193_),
+    .B(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .C(_0737_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_1_ )
+  );
+  AND3X2 _2618_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_2_ ),
+    .C(_0735_),
+    .Y(_0738_)
+  );
+  AO21X2 _2619_ (
+    .A(all_user_sbr_obi_req_194_),
+    .B(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .C(_0738_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_2_ )
+  );
+  BUFX3 _2620_ (
+    .A(_0732_),
+    .Y(_0739_)
+  );
+  BUFX3 _2621_ (
+    .A(_0734_),
+    .Y(_0740_)
+  );
+  AND3X2 _2622_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_3_ ),
+    .C(_0740_),
+    .Y(_0741_)
+  );
+  AO21X2 _2623_ (
+    .A(all_user_sbr_obi_req_195_),
+    .B(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .C(_0741_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_3_ )
+  );
+  AND3X2 _2624_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_4_ ),
+    .C(_0740_),
+    .Y(_0742_)
+  );
+  AO21X2 _2625_ (
+    .A(all_user_sbr_obi_req_196_),
+    .B(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .C(_0742_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_4_ )
+  );
+  AND3X2 _2626_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_5_ ),
+    .C(_0740_),
+    .Y(_0743_)
+  );
+  AO21X2 _2627_ (
+    .A(all_user_sbr_obi_req_197_),
+    .B(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .C(_0743_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_5_ )
+  );
+  BUFX3 _2628_ (
+    .A(_0730_),
+    .Y(_0744_)
+  );
+  AND3X2 _2629_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ),
+    .C(_0740_),
+    .Y(_0745_)
+  );
+  AO21X2 _2630_ (
+    .A(all_user_sbr_obi_req_198_),
+    .B(_0744_),
+    .C(_0745_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_6_ )
+  );
+  AND3X2 _2631_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ),
+    .C(_0740_),
+    .Y(_0746_)
+  );
+  AO21X2 _2632_ (
+    .A(all_user_sbr_obi_req_199_),
+    .B(_0744_),
+    .C(_0746_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_7_ )
+  );
+  AND3X2 _2633_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_8_ ),
+    .C(_0740_),
+    .Y(_0747_)
+  );
+  AO21X2 _2634_ (
+    .A(all_user_sbr_obi_req_200_),
+    .B(_0744_),
+    .C(_0747_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_8_ )
+  );
+  AND3X2 _2635_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_9_ ),
+    .C(_0740_),
+    .Y(_0748_)
+  );
+  AO21X2 _2636_ (
+    .A(all_user_sbr_obi_req_201_),
+    .B(_0744_),
+    .C(_0748_),
+    .Y(\gen_sram_bank[1].bank_sram_addr_9_ )
+  );
+  BUFX3 _2637_ (
+    .A(_0734_),
+    .Y(_0749_)
+  );
+  BUFX3 _2638_ (
+    .A(_0749_),
+    .Y(_0750_)
+  );
+  BUFX3 _2639_ (
+    .A(_0731_),
+    .Y(_0751_)
+  );
+  BUFX3 _2640_ (
+    .A(_0751_),
+    .Y(_0752_)
+  );
+  BUFX3 _2641_ (
+    .A(_0734_),
+    .Y(_0753_)
+  );
+  BUFX3 _2642_ (
+    .A(_0753_),
+    .Y(_0754_)
+  );
+  NAND3X1 _2643_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_be_q_0_ ),
+    .C(_0754_),
+    .Y(_0755_)
+  );
+  OAI21X1 _2644_ (
+    .A(_1509_),
+    .B(_0750_),
+    .C(_0755_),
+    .Y(\gen_sram_bank[1].bank_sram_be_0_ )
+  );
+  NAND3X1 _2645_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_be_q_1_ ),
+    .C(_0754_),
+    .Y(_0756_)
+  );
+  OAI21X1 _2646_ (
+    .A(_1517_),
+    .B(_0750_),
+    .C(_0756_),
+    .Y(\gen_sram_bank[1].bank_sram_be_1_ )
+  );
+  NAND3X1 _2647_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_be_q_2_ ),
+    .C(_0754_),
+    .Y(_0757_)
+  );
+  OAI21X1 _2648_ (
+    .A(_1520_),
+    .B(_0750_),
+    .C(_0757_),
+    .Y(\gen_sram_bank[1].bank_sram_be_2_ )
+  );
+  NAND3X1 _2649_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_be_q_3_ ),
+    .C(_0754_),
+    .Y(_0758_)
+  );
+  OAI21X1 _2650_ (
+    .A(_1522_),
+    .B(_0750_),
+    .C(_0758_),
+    .Y(\gen_sram_bank[1].bank_sram_be_3_ )
+  );
+  NAND2BX1 _2651_ (
+    .AB(_0752_),
+    .B(_0750_),
+    .Y(\gen_sram_bank[1].bank_sram_req )
+  );
+  NAND2X1 _2652_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_3_ ),
+    .Y(_0759_)
+  );
+  BUFX3 _2653_ (
+    .A(_0735_),
+    .Y(_0760_)
+  );
+  MUXI2X1 _2654_ (
+    .A0(_1524_),
+    .A1(_0759_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_3_ )
+  );
+  NAND3X1 _2655_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_12_ ),
+    .C(_0754_),
+    .Y(_0761_)
+  );
+  OAI21X1 _2656_ (
+    .A(_1526_),
+    .B(_0750_),
+    .C(_0761_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_12_ )
+  );
+  NAND3X1 _2657_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_13_ ),
+    .C(_0754_),
+    .Y(_0762_)
+  );
+  OAI21X1 _2658_ (
+    .A(_1528_),
+    .B(_0750_),
+    .C(_0762_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_13_ )
+  );
+  NAND3X1 _2659_ (
+    .A(_0751_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_14_ ),
+    .C(_0740_),
+    .Y(_0763_)
+  );
+  OAI21X1 _2660_ (
+    .A(_1530_),
+    .B(_0749_),
+    .C(_0763_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_14_ )
+  );
+  NAND3X1 _2661_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_15_ ),
+    .C(_0754_),
+    .Y(_0764_)
+  );
+  OAI21X1 _2662_ (
+    .A(_0108_),
+    .B(_0750_),
+    .C(_0764_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_15_ )
+  );
+  AND2X1 _2663_ (
+    .A(_0731_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_16_ ),
+    .Y(_0765_)
+  );
+  MUX2X1 _2664_ (
+    .A0(user_sbr_obi_req_i_21_),
+    .A1(_0765_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_16_ )
+  );
+  BUFX3 _2665_ (
+    .A(_0731_),
+    .Y(_0766_)
+  );
+  NAND2X1 _2666_ (
+    .A(_0766_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_19_ ),
+    .Y(_0767_)
+  );
+  MUXI2X1 _2667_ (
+    .A0(_0113_),
+    .A1(_0767_),
+    .S0(_0753_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_19_ )
+  );
+  NAND2X1 _2668_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_17_ ),
+    .Y(_0768_)
+  );
+  MUXI2X1 _2669_ (
+    .A0(_0116_),
+    .A1(_0768_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_17_ )
+  );
+  NAND3X1 _2670_ (
+    .A(_0751_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_22_ ),
+    .C(_0740_),
+    .Y(_0769_)
+  );
+  OAI21X1 _2671_ (
+    .A(_0118_),
+    .B(_0749_),
+    .C(_0769_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_22_ )
+  );
+  AND2X1 _2672_ (
+    .A(_0766_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_23_ ),
+    .Y(_0770_)
+  );
+  MUX2X1 _2673_ (
+    .A0(user_sbr_obi_req_i_28_),
+    .A1(_0770_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_23_ )
+  );
+  NAND2X1 _2674_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_24_ ),
+    .Y(_0771_)
+  );
+  MUXI2X1 _2675_ (
+    .A0(_0122_),
+    .A1(_0771_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_24_ )
+  );
+  NAND2X1 _2676_ (
+    .A(_0739_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_25_ ),
+    .Y(_0772_)
+  );
+  MUXI2X1 _2677_ (
+    .A0(_0124_),
+    .A1(_0772_),
+    .S0(_0749_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_25_ )
+  );
+  AND3X2 _2678_ (
+    .A(_0766_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_26_ ),
+    .C(_0734_),
+    .Y(_0773_)
+  );
+  AOI21X1 _2679_ (
+    .A(user_sbr_obi_req_i_31_),
+    .B(_0730_),
+    .C(_0773_),
+    .Y(_0774_)
+  );
+  INVX1 _2680_ (
+    .A(_0774_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_26_ )
+  );
+  NAND2X1 _2681_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_28_ ),
+    .Y(_0775_)
+  );
+  MUXI2X1 _2682_ (
+    .A0(_0129_),
+    .A1(_0775_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_28_ )
+  );
+  NAND2X1 _2683_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_29_ ),
+    .Y(_0776_)
+  );
+  MUXI2X1 _2684_ (
+    .A0(_0131_),
+    .A1(_0776_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_29_ )
+  );
+  NAND2X1 _2685_ (
+    .A(_0752_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_2_ ),
+    .Y(_0777_)
+  );
+  MUXI2X1 _2686_ (
+    .A0(_0133_),
+    .A1(_0777_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_2_ )
+  );
+  NAND2X1 _2687_ (
+    .A(_0732_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_4_ ),
+    .Y(_0778_)
+  );
+  MUXI2X1 _2688_ (
+    .A0(_0135_),
+    .A1(_0778_),
+    .S0(_0753_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_4_ )
+  );
+  NAND2X1 _2689_ (
+    .A(_0751_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_5_ ),
+    .Y(_0779_)
+  );
+  MUXI2X1 _2690_ (
+    .A0(_0137_),
+    .A1(_0779_),
+    .S0(_0749_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_5_ )
+  );
+  NAND2X1 _2691_ (
+    .A(_0732_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_6_ ),
+    .Y(_0780_)
+  );
+  MUXI2X1 _2692_ (
+    .A0(_0139_),
+    .A1(_0780_),
+    .S0(_0760_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_6_ )
+  );
+  BUFX3 _2693_ (
+    .A(_0731_),
+    .Y(_0781_)
+  );
+  NAND2X1 _2694_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_7_ ),
+    .Y(_0782_)
+  );
+  NAND2X1 _2695_ (
+    .A(_0142_),
+    .B(_0744_),
+    .Y(_0783_)
+  );
+  OAI21X1 _2696_ (
+    .A(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .B(_0782_),
+    .C(_0783_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_7_ )
+  );
+  NAND3X1 _2697_ (
+    .A(_0733_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_8_ ),
+    .C(_0754_),
+    .Y(_0784_)
+  );
+  OAI21X1 _2698_ (
+    .A(_0145_),
+    .B(_0750_),
+    .C(_0784_),
+    .Y(\gen_sram_bank[1].bank_sram_wdata_8_ )
+  );
+  MUX2X1 _2699_ (
+    .A0(_0752_),
+    .A1(user_sbr_obi_req_i_41_),
+    .S0(_0744_),
+    .Y(\gen_sram_bank[1].bank_sram_we )
+  );
+  BUFX3 _2700_ (
+    .A(_0727_),
+    .Y(_0785_)
+  );
+  MUX2X1 _2701_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_0_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_0_ ),
+    .S0(_0785_),
     .Y(_0050_)
   );
-  NAND3X1 _1182_ (
-    .A(_0021_),
-    .B(_0042_),
-    .C(_0050_),
+  MUX2X1 _2702_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_1_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_1_ ),
+    .S0(_0785_),
     .Y(_0051_)
   );
-  XOR2X2 _1183_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
-    .B(_0051_),
+  MUX2X1 _2703_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_2_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_2_ ),
+    .S0(_0785_),
     .Y(_0052_)
   );
-  AOI21X1 _1184_ (
-    .A(_0421_),
-    .B(_0052_),
-    .C(_0478_),
+  MUX2X1 _2704_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_3_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_3_ ),
+    .S0(_0785_),
     .Y(_0053_)
   );
-  AO21X2 _1185_ (
-    .A(_0169_),
-    .B(_0049_),
-    .C(_0053_),
-    .Y(user_sbr_obi_rsp_o_11_)
-  );
-  NOR2BX1 _1186_ (
-    .AB(_0032_),
-    .B(_0047_),
+  MUX2X1 _2705_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_4_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_4_ ),
+    .S0(_0785_),
     .Y(_0054_)
   );
-  XOR2X2 _1187_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_3_ ),
-    .B(_0054_),
+  MUX2X1 _2706_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_5_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_5_ ),
+    .S0(_0785_),
     .Y(_0055_)
   );
-  OR3BX1 _1188_ (
-    .AB(_0050_),
-    .B(_0019_),
-    .C(_0035_),
+  MUX2X1 _2707_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_6_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ),
+    .S0(_0785_),
     .Y(_0056_)
   );
-  XOR2X2 _1189_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
-    .B(_0056_),
+  MUX2X1 _2708_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_7_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ),
+    .S0(_0785_),
     .Y(_0057_)
   );
-  AOI21X1 _1190_ (
-    .A(_0421_),
-    .B(_0057_),
-    .C(_0478_),
+  MUX2X1 _2709_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_8_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_8_ ),
+    .S0(_0727_),
     .Y(_0058_)
   );
-  AO21X2 _1191_ (
-    .A(_0169_),
-    .B(_0055_),
-    .C(_0058_),
-    .Y(user_sbr_obi_rsp_o_10_)
-  );
-  NOR3BX1 _1192_ (
-    .AB(_0544_),
-    .B(_0542_),
-    .C(_0539_),
+  MUX2X1 _2710_ (
+    .A0(\gen_sram_bank[1].bank_word_addr_q_9_ ),
+    .A1(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_9_ ),
+    .S0(_0727_),
     .Y(_0059_)
   );
-  NAND2X1 _1193_ (
-    .A(_0535_),
-    .B(_0059_),
+  INVX1 _2711_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_be_q_0_ ),
+    .Y(_0786_)
+  );
+  NOR2X2 _2712_ (
+    .A(_1295_),
+    .B(_1294_),
+    .Y(_0787_)
+  );
+  XOR2X2 _2713_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ),
+    .B(_1290_),
+    .Y(_0788_)
+  );
+  NAND2X1 _2714_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ),
+    .B(_1288_),
+    .Y(_0789_)
+  );
+  NAND4BBX1 _2715_ (
+    .AB(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ),
+    .BB(_1288_),
+    .C(_1290_),
+    .D(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ),
+    .Y(_0790_)
+  );
+  OAOI211X1 _2716_ (
+    .A(_0788_),
+    .B(_0789_),
+    .C(_0790_),
+    .D(_1279_),
+    .Y(_0791_)
+  );
+  OR2X2 _2717_ (
+    .A(_1290_),
+    .B(_1288_),
+    .Y(_0792_)
+  );
+  AOI211X1 _2718_ (
+    .A(_1293_),
+    .B(_0792_),
+    .C(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ),
+    .D(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ),
+    .Y(_0793_)
+  );
+  XOR2X2 _2719_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_1_ ),
+    .B(_1284_),
+    .Y(_0794_)
+  );
+  XOR2X2 _2720_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_9_ ),
+    .B(_1292_),
+    .Y(_0795_)
+  );
+  XOR2X2 _2721_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_8_ ),
+    .B(_1291_),
+    .Y(_0796_)
+  );
+  NOR3X1 _2722_ (
+    .A(_0794_),
+    .B(_0795_),
+    .C(_0796_),
+    .Y(_0797_)
+  );
+  NOR2BX1 _2723_ (
+    .AB(_1285_),
+    .B(_1279_),
+    .Y(_0798_)
+  );
+  XOR2X2 _2724_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_3_ ),
+    .B(_0798_),
+    .Y(_0799_)
+  );
+  XOR2X2 _2725_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_2_ ),
+    .B(_0161_),
+    .Y(_0800_)
+  );
+  XOR2X2 _2726_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_5_ ),
+    .B(_1287_),
+    .Y(_0801_)
+  );
+  XOR2X2 _2727_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_4_ ),
+    .B(_1286_),
+    .Y(_0802_)
+  );
+  XOR2X2 _2728_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_0_ ),
+    .B(_1243_),
+    .Y(_0803_)
+  );
+  NAND3X1 _2729_ (
+    .A(_0731_),
+    .B(user_sbr_obi_req_i_0_),
+    .C(user_sbr_obi_req_i_41_),
+    .Y(_0804_)
+  );
+  OR4X1 _2730_ (
+    .A(_0801_),
+    .B(_0802_),
+    .C(_0803_),
+    .D(_0804_),
+    .Y(_0805_)
+  );
+  NOR3X1 _2731_ (
+    .A(_0799_),
+    .B(_0800_),
+    .C(_0805_),
+    .Y(_0806_)
+  );
+  OAI211X1 _2732_ (
+    .A(_0791_),
+    .B(_0793_),
+    .C(_0797_),
+    .D(_0806_),
+    .Y(_0807_)
+  );
+  NOR2BX1 _2733_ (
+    .AB(_1278_),
+    .B(_0807_),
+    .Y(_0808_)
+  );
+  AO31X1 _2734_ (
+    .A(_1508_),
+    .B(_0787_),
+    .C(_0808_),
+    .D(all_banks_single_err_o_1_),
+    .Y(_0809_)
+  );
+  BUFX6 _2735_ (
+    .A(_0809_),
+    .Y(_0810_)
+  );
+  XOR2X2 _2736_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_8_ ),
+    .B(_1291_),
+    .Y(_0811_)
+  );
+  XOR2X2 _2737_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_4_ ),
+    .B(_1286_),
+    .Y(_0812_)
+  );
+  XOR2X2 _2738_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_9_ ),
+    .B(_1292_),
+    .Y(_0813_)
+  );
+  NOR3X1 _2739_ (
+    .A(_0811_),
+    .B(_0812_),
+    .C(_0813_),
+    .Y(_0814_)
+  );
+  XOR2X2 _2740_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_7_ ),
+    .B(_1290_),
+    .Y(_0815_)
+  );
+  XOR2X2 _2741_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_6_ ),
+    .B(_1288_),
+    .Y(_0816_)
+  );
+  XOR2X2 _2742_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_2_ ),
+    .B(user_sbr_obi_req_i_46_),
+    .Y(_0817_)
+  );
+  XOR2X2 _2743_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_5_ ),
+    .B(_1287_),
+    .Y(_0818_)
+  );
+  NOR4X1 _2744_ (
+    .A(_0815_),
+    .B(_0816_),
+    .C(_0817_),
+    .D(_0818_),
+    .Y(_0819_)
+  );
+  XOR2X2 _2745_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_3_ ),
+    .B(_1285_),
+    .Y(_0820_)
+  );
+  XOR2X2 _2746_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_1_ ),
+    .B(_1284_),
+    .Y(_0821_)
+  );
+  XOR2X2 _2747_ (
+    .A(\gen_sram_bank[1].bank_word_addr_q_0_ ),
+    .B(_1243_),
+    .Y(_0822_)
+  );
+  NOR4X1 _2748_ (
+    .A(_0166_),
+    .B(_0820_),
+    .C(_0821_),
+    .D(_0822_),
+    .Y(_0823_)
+  );
+  NAND3X1 _2749_ (
+    .A(_0814_),
+    .B(_0819_),
+    .C(_0823_),
+    .Y(_0824_)
+  );
+  AOI21X1 _2750_ (
+    .A(_1266_),
+    .B(_1277_),
+    .C(_0824_),
+    .Y(_0825_)
+  );
+  NAND3X1 _2751_ (
+    .A(_1508_),
+    .B(_0787_),
+    .C(_0825_),
+    .Y(_0826_)
+  );
+  NAND2X1 _2752_ (
+    .A(_0695_),
+    .B(_0826_),
+    .Y(_0827_)
+  );
+  OAI22X1 _2753_ (
+    .A(_0786_),
+    .B(_0810_),
+    .C(_0827_),
+    .D(_0725_),
     .Y(_0060_)
   );
-  XOR2X2 _1194_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_2_ ),
-    .B(_0060_),
+  INVX1 _2754_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_be_q_1_ ),
+    .Y(_0828_)
+  );
+  AND3X2 _2755_ (
+    .A(_1516_),
+    .B(_0787_),
+    .C(_0808_),
+    .Y(_0829_)
+  );
+  BUFX3 _2756_ (
+    .A(_0829_),
+    .Y(_0830_)
+  );
+  AND2X1 _2757_ (
+    .A(_0698_),
+    .B(_0700_),
+    .Y(_0831_)
+  );
+  NAND3X2 _2758_ (
+    .A(_1516_),
+    .B(_0787_),
+    .C(_0825_),
+    .Y(_0832_)
+  );
+  NAND3X1 _2759_ (
+    .A(_0695_),
+    .B(_0831_),
+    .C(_0832_),
+    .Y(_0833_)
+  );
+  OAI31X1 _2760_ (
+    .A(_0828_),
+    .B(all_banks_single_err_o_1_),
+    .C(_0830_),
+    .D(_0833_),
     .Y(_0061_)
   );
-  NOR2X1 _1195_ (
-    .A(_0022_),
-    .B(_0043_),
+  NAND3X1 _2761_ (
+    .A(_1519_),
+    .B(_0787_),
+    .C(_0808_),
+    .Y(_0834_)
+  );
+  AND2X1 _2762_ (
+    .A(_0727_),
+    .B(_0834_),
+    .Y(_0835_)
+  );
+  BUFX3 _2763_ (
+    .A(_0835_),
+    .Y(_0836_)
+  );
+  NAND3X1 _2764_ (
+    .A(_1519_),
+    .B(_0787_),
+    .C(_0825_),
+    .Y(_0837_)
+  );
+  NAND2X1 _2765_ (
+    .A(_0695_),
+    .B(_0837_),
+    .Y(_0838_)
+  );
+  AND2X1 _2766_ (
+    .A(_0713_),
+    .B(_0719_),
+    .Y(_0839_)
+  );
+  OAI2BB2X2 _2767_ (
+    .AB(\gen_sram_bank[1].i_repair_buffer.buf_be_q_2_ ),
+    .BB(_0836_),
+    .C(_0838_),
+    .D(_0839_),
     .Y(_0062_)
   );
-  XOR2X2 _1196_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_2_ ),
-    .B(_0062_),
+  NAND3X1 _2768_ (
+    .A(user_sbr_obi_req_i_40_),
+    .B(_0787_),
+    .C(_0808_),
+    .Y(_0840_)
+  );
+  AND2X1 _2769_ (
+    .A(_0727_),
+    .B(_0840_),
+    .Y(_0841_)
+  );
+  BUFX3 _2770_ (
+    .A(_0841_),
+    .Y(_0842_)
+  );
+  NAND3X1 _2771_ (
+    .A(user_sbr_obi_req_i_40_),
+    .B(_0787_),
+    .C(_0825_),
+    .Y(_0843_)
+  );
+  NAND2X1 _2772_ (
+    .A(_0695_),
+    .B(_0843_),
+    .Y(_0844_)
+  );
+  NOR2X1 _2773_ (
+    .A(_0703_),
+    .B(_0706_),
+    .Y(_0845_)
+  );
+  OAI2BB2X2 _2774_ (
+    .AB(\gen_sram_bank[1].i_repair_buffer.buf_be_q_3_ ),
+    .BB(_0842_),
+    .C(_0844_),
+    .D(_0845_),
     .Y(_0063_)
   );
-  NAND2X1 _1197_ (
-    .A(_0336_),
-    .B(_0063_),
+  INVX1 _2775_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_0_ ),
+    .Y(_0846_)
+  );
+  AND2X1 _2776_ (
+    .A(_0672_),
+    .B(_0678_),
+    .Y(_0847_)
+  );
+  NAND2BX1 _2777_ (
+    .AB(_0675_),
+    .B(_0667_),
+    .Y(_0848_)
+  );
+  NOR2X1 _2778_ (
+    .A(_0681_),
+    .B(_0848_),
+    .Y(_0849_)
+  );
+  AND2X1 _2779_ (
+    .A(_0847_),
+    .B(_0849_),
+    .Y(_0850_)
+  );
+  XOR2X2 _2780_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_0_ ),
+    .B(_0850_),
+    .Y(_0851_)
+  );
+  NOR2BX1 _2781_ (
+    .AB(_0726_),
+    .B(_0827_),
+    .Y(_0852_)
+  );
+  NAND2X1 _2782_ (
+    .A(_1278_),
+    .B(_0787_),
+    .Y(_0853_)
+  );
+  AOAI211X1 _2783_ (
+    .A(_0695_),
+    .B(_0726_),
+    .C(_0853_),
+    .D(_0826_),
+    .Y(_0854_)
+  );
+  AOI22X1 _2784_ (
+    .A(_0851_),
+    .B(_0852_),
+    .C(_0854_),
+    .D(user_sbr_obi_req_i_5_),
+    .Y(_0855_)
+  );
+  MUXI2X1 _2785_ (
+    .A0(_0846_),
+    .A1(_0855_),
+    .S0(_0810_),
     .Y(_0064_)
   );
-  AOAI211X1 _1198_ (
-    .A(_0387_),
-    .B(_0061_),
-    .C(_0390_),
-    .D(_0064_),
-    .Y(user_sbr_obi_rsp_o_9_)
+  AND3X2 _2786_ (
+    .A(_0226_),
+    .B(_1296_),
+    .C(_0830_),
+    .Y(_0856_)
   );
-  NOR2BX1 _1199_ (
-    .AB(_0326_),
-    .B(_0494_),
+  AOI2B1X1 _2787_ (
+    .AB(_0830_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ),
+    .C(_0856_),
+    .Y(_0857_)
+  );
+  NAND2BX1 _2788_ (
+    .AB(_0601_),
+    .B(_0605_),
+    .Y(_0858_)
+  );
+  NOR2X1 _2789_ (
+    .A(_0619_),
+    .B(_0622_),
+    .Y(_0859_)
+  );
+  NAND2X1 _2790_ (
+    .A(_0615_),
+    .B(_0859_),
+    .Y(_0860_)
+  );
+  NOR2X1 _2791_ (
+    .A(_0858_),
+    .B(_0860_),
+    .Y(_0861_)
+  );
+  XOR2X2 _2792_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_18_ ),
+    .B(_0861_),
+    .Y(_0862_)
+  );
+  MUXI2X1 _2793_ (
+    .A0(_0226_),
+    .A1(_0862_),
+    .S0(_0832_),
+    .Y(_0863_)
+  );
+  MUXI2X1 _2794_ (
+    .A0(_0857_),
+    .A1(_0863_),
+    .S0(all_banks_single_err_o_1_),
     .Y(_0065_)
   );
-  NAND2X1 _1200_ (
-    .A(_0320_),
-    .B(_0065_),
+  AND3X2 _2795_ (
+    .A(_0234_),
+    .B(_1296_),
+    .C(_0829_),
+    .Y(_0864_)
+  );
+  AOI2B1X1 _2796_ (
+    .AB(_0830_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_11_ ),
+    .C(_0864_),
+    .Y(_0865_)
+  );
+  NOR2X1 _2797_ (
+    .A(_0619_),
+    .B(_0613_),
+    .Y(_0866_)
+  );
+  NAND2X1 _2798_ (
+    .A(_0620_),
+    .B(_0866_),
+    .Y(_0867_)
+  );
+  NAND2BX1 _2799_ (
+    .AB(_0605_),
+    .B(_0601_),
+    .Y(_0868_)
+  );
+  NOR2X1 _2800_ (
+    .A(_0867_),
+    .B(_0868_),
+    .Y(_0869_)
+  );
+  XOR2X2 _2801_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_19_ ),
+    .B(_0869_),
+    .Y(_0870_)
+  );
+  MUXI2X1 _2802_ (
+    .A0(_0234_),
+    .A1(_0870_),
+    .S0(_0832_),
+    .Y(_0871_)
+  );
+  MUXI2X1 _2803_ (
+    .A0(_0865_),
+    .A1(_0871_),
+    .S0(all_banks_single_err_o_1_),
     .Y(_0066_)
   );
-  XOR2X2 _1201_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(_0066_),
+  NOR2X1 _2804_ (
+    .A(_1526_),
+    .B(_0853_),
+    .Y(_0872_)
+  );
+  MUXI2X1 _2805_ (
+    .A0(\gen_sram_bank[1].i_repair_buffer.buf_data_q_12_ ),
+    .A1(_0872_),
+    .S0(_0830_),
+    .Y(_0873_)
+  );
+  NOR2X1 _2806_ (
+    .A(_0860_),
+    .B(_0868_),
+    .Y(_0874_)
+  );
+  XOR2X2 _2807_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_20_ ),
+    .B(_0874_),
+    .Y(_0875_)
+  );
+  MUXI2X1 _2808_ (
+    .A0(user_sbr_obi_req_i_17_),
+    .A1(_0875_),
+    .S0(_0832_),
+    .Y(_0876_)
+  );
+  MUXI2X1 _2809_ (
+    .A0(_0873_),
+    .A1(_0876_),
+    .S0(all_banks_single_err_o_1_),
     .Y(_0067_)
   );
-  NAND3X1 _1202_ (
-    .A(_0298_),
-    .B(_0300_),
-    .C(_0302_),
+  NOR2X1 _2810_ (
+    .A(_1528_),
+    .B(_0853_),
+    .Y(_0877_)
+  );
+  NOR3BX1 _2811_ (
+    .AB(_0859_),
+    .B(_0615_),
+    .C(_0623_),
+    .Y(_0878_)
+  );
+  XOR2X2 _2812_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_21_ ),
+    .B(_0878_),
+    .Y(_0879_)
+  );
+  MUXI2X1 _2813_ (
+    .A0(_0877_),
+    .A1(_0879_),
+    .S0(_0832_),
+    .Y(_0880_)
+  );
+  MUXI2X1 _2814_ (
+    .A0(\gen_sram_bank[1].i_repair_buffer.buf_data_q_13_ ),
+    .A1(_0877_),
+    .S0(_0830_),
+    .Y(_0881_)
+  );
+  MUXI2X1 _2815_ (
+    .A0(_0880_),
+    .A1(_0881_),
+    .S0(_0785_),
     .Y(_0068_)
   );
-  OR3X2 _1203_ (
-    .A(_0298_),
-    .B(_0300_),
-    .C(_0302_),
+  NOR2X1 _2816_ (
+    .A(_1530_),
+    .B(_0853_),
+    .Y(_0882_)
+  );
+  MUXI2X1 _2817_ (
+    .A0(\gen_sram_bank[1].i_repair_buffer.buf_data_q_14_ ),
+    .A1(_0882_),
+    .S0(_0830_),
+    .Y(_0883_)
+  );
+  NAND2X1 _2818_ (
+    .A(_0619_),
+    .B(_0606_),
+    .Y(_0884_)
+  );
+  NOR3X1 _2819_ (
+    .A(_0613_),
+    .B(_0615_),
+    .C(_0884_),
+    .Y(_0885_)
+  );
+  XOR2X2 _2820_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_22_ ),
+    .B(_0885_),
+    .Y(_0886_)
+  );
+  MUXI2X1 _2821_ (
+    .A0(user_sbr_obi_req_i_19_),
+    .A1(_0886_),
+    .S0(_0832_),
+    .Y(_0887_)
+  );
+  MUXI2X1 _2822_ (
+    .A0(_0883_),
+    .A1(_0887_),
+    .S0(all_banks_single_err_o_1_),
     .Y(_0069_)
   );
-  NAND2BX1 _1204_ (
-    .AB(_0306_),
-    .B(_0309_),
+  NOR2X1 _2823_ (
+    .A(_0108_),
+    .B(_0853_),
+    .Y(_0888_)
+  );
+  MUXI2X1 _2824_ (
+    .A0(\gen_sram_bank[1].i_repair_buffer.buf_data_q_15_ ),
+    .A1(_0888_),
+    .S0(_0830_),
+    .Y(_0889_)
+  );
+  NOR3X1 _2825_ (
+    .A(_0622_),
+    .B(_0620_),
+    .C(_0884_),
+    .Y(_0890_)
+  );
+  XOR2X2 _2826_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_23_ ),
+    .B(_0890_),
+    .Y(_0891_)
+  );
+  MUXI2X1 _2827_ (
+    .A0(_0107_),
+    .A1(_0891_),
+    .S0(_0832_),
+    .Y(_0892_)
+  );
+  MUXI2X1 _2828_ (
+    .A0(_0889_),
+    .A1(_0892_),
+    .S0(all_banks_single_err_o_1_),
     .Y(_0070_)
   );
-  AOI211X1 _1205_ (
-    .A(_0068_),
-    .B(_0069_),
-    .C(_0070_),
-    .D(_0297_),
+  NOR2X1 _2829_ (
+    .A(_0584_),
+    .B(_0571_),
+    .Y(_0893_)
+  );
+  NAND3X1 _2830_ (
+    .A(_0573_),
+    .B(_0564_),
+    .C(_0893_),
+    .Y(_0894_)
+  );
+  XOR2X2 _2831_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_32_ ),
+    .B(_0894_),
+    .Y(_0895_)
+  );
+  NOR2BX1 _2832_ (
+    .AB(_0726_),
+    .B(_0838_),
+    .Y(_0896_)
+  );
+  AOAI211X1 _2833_ (
+    .A(_0695_),
+    .B(_0726_),
+    .C(_0853_),
+    .D(_0837_),
+    .Y(_0897_)
+  );
+  AOI2B2X1 _2834_ (
+    .AB(_0895_),
+    .B(_0896_),
+    .C(_0897_),
+    .D(user_sbr_obi_req_i_21_),
+    .Y(_0898_)
+  );
+  INVX1 _2835_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_16_ ),
+    .Y(_0899_)
+  );
+  MUXI2X1 _2836_ (
+    .A0(_0898_),
+    .A1(_0899_),
+    .S0(_0836_),
     .Y(_0071_)
   );
-  XOR2X2 _1206_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_52_ ),
-    .B(_0071_),
+  NAND2BX1 _2837_ (
+    .AB(_0570_),
+    .B(_0568_),
+    .Y(_0900_)
+  );
+  NOR2X1 _2838_ (
+    .A(_0573_),
+    .B(_0563_),
+    .Y(_0901_)
+  );
+  NAND2X1 _2839_ (
+    .A(_0576_),
+    .B(_0901_),
+    .Y(_0902_)
+  );
+  NOR2X1 _2840_ (
+    .A(_0900_),
+    .B(_0902_),
+    .Y(_0903_)
+  );
+  XOR2X2 _2841_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_33_ ),
+    .B(_0903_),
+    .Y(_0904_)
+  );
+  AOI22X1 _2842_ (
+    .A(user_sbr_obi_req_i_22_),
+    .B(_0897_),
+    .C(_0904_),
+    .D(_0896_),
+    .Y(_0905_)
+  );
+  INVX1 _2843_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_17_ ),
+    .Y(_0906_)
+  );
+  MUXI2X1 _2844_ (
+    .A0(_0905_),
+    .A1(_0906_),
+    .S0(_0836_),
     .Y(_0072_)
   );
-  NAND2X1 _1207_ (
-    .A(_0169_),
-    .B(_0072_),
+  NAND3X1 _2845_ (
+    .A(_0573_),
+    .B(_0564_),
+    .C(_0584_),
+    .Y(_0907_)
+  );
+  OR2X2 _2846_ (
+    .A(_0900_),
+    .B(_0907_),
+    .Y(_0908_)
+  );
+  XOR2X2 _2847_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_34_ ),
+    .B(_0908_),
+    .Y(_0909_)
+  );
+  AOI2B2X1 _2848_ (
+    .AB(_0909_),
+    .B(_0896_),
+    .C(_0276_),
+    .D(_0897_),
+    .Y(_0910_)
+  );
+  INVX1 _2849_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ),
+    .Y(_0911_)
+  );
+  MUXI2X1 _2850_ (
+    .A0(_0910_),
+    .A1(_0911_),
+    .S0(_0836_),
     .Y(_0073_)
   );
-  AOAI211X1 _1208_ (
-    .A(_0287_),
-    .B(_0067_),
-    .C(_0478_),
-    .D(_0073_),
-    .Y(user_sbr_obi_rsp_o_35_)
+  NAND2BX1 _2851_ (
+    .AB(_0568_),
+    .B(_0570_),
+    .Y(_0912_)
   );
-  NAND2X1 _1209_ (
-    .A(_0032_),
-    .B(_0059_),
+  NOR2X1 _2852_ (
+    .A(_0902_),
+    .B(_0912_),
+    .Y(_0913_)
+  );
+  XOR2X2 _2853_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_35_ ),
+    .B(_0913_),
+    .Y(_0914_)
+  );
+  AOI22X1 _2854_ (
+    .A(user_sbr_obi_req_i_24_),
+    .B(_0897_),
+    .C(_0914_),
+    .D(_0896_),
+    .Y(_0915_)
+  );
+  INVX1 _2855_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_19_ ),
+    .Y(_0916_)
+  );
+  MUXI2X1 _2856_ (
+    .A0(_0915_),
+    .A1(_0916_),
+    .S0(_0836_),
     .Y(_0074_)
   );
-  XOR2X2 _1210_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_1_ ),
-    .B(_0074_),
+  INVX1 _2857_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_1_ ),
+    .Y(_0917_)
+  );
+  NAND2X1 _2858_ (
+    .A(_0681_),
+    .B(_0847_),
+    .Y(_0918_)
+  );
+  NOR2X1 _2859_ (
+    .A(_0721_),
+    .B(_0918_),
+    .Y(_0919_)
+  );
+  XOR2X2 _2860_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_1_ ),
+    .B(_0919_),
+    .Y(_0920_)
+  );
+  AOI22X1 _2861_ (
+    .A(user_sbr_obi_req_i_6_),
+    .B(_0854_),
+    .C(_0920_),
+    .D(_0852_),
+    .Y(_0921_)
+  );
+  MUXI2X1 _2862_ (
+    .A0(_0917_),
+    .A1(_0921_),
+    .S0(_0810_),
     .Y(_0075_)
   );
-  NOR3BX1 _1211_ (
-    .AB(_0019_),
-    .B(_0035_),
-    .C(_0043_),
+  OR2X2 _2863_ (
+    .A(_0907_),
+    .B(_0912_),
+    .Y(_0922_)
+  );
+  XOR2X2 _2864_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_36_ ),
+    .B(_0922_),
+    .Y(_0923_)
+  );
+  AOI2B2X1 _2865_ (
+    .AB(_0923_),
+    .B(_0896_),
+    .C(user_sbr_obi_req_i_25_),
+    .D(_0897_),
+    .Y(_0924_)
+  );
+  INVX1 _2866_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_20_ ),
+    .Y(_0925_)
+  );
+  MUXI2X1 _2867_ (
+    .A0(_0924_),
+    .A1(_0925_),
+    .S0(_0836_),
     .Y(_0076_)
   );
-  XOR2X2 _1212_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_1_ ),
-    .B(_0076_),
+  AND2X1 _2868_ (
+    .A(_0590_),
+    .B(_0901_),
+    .Y(_0926_)
+  );
+  XOR2X2 _2869_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_37_ ),
+    .B(_0926_),
+    .Y(_0927_)
+  );
+  AOI22X1 _2870_ (
+    .A(user_sbr_obi_req_i_26_),
+    .B(_0897_),
+    .C(_0927_),
+    .D(_0896_),
+    .Y(_0928_)
+  );
+  INVX1 _2871_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_21_ ),
+    .Y(_0929_)
+  );
+  MUXI2X1 _2872_ (
+    .A0(_0928_),
+    .A1(_0929_),
+    .S0(_0836_),
     .Y(_0077_)
   );
-  NAND2X1 _1213_ (
-    .A(_0336_),
-    .B(_0077_),
+  NOR3X1 _2873_ (
+    .A(_0573_),
+    .B(_0571_),
+    .C(_0589_),
+    .Y(_0930_)
+  );
+  XOR2X2 _2874_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_38_ ),
+    .B(_0930_),
+    .Y(_0931_)
+  );
+  AOI22X1 _2875_ (
+    .A(user_sbr_obi_req_i_27_),
+    .B(_0897_),
+    .C(_0931_),
+    .D(_0896_),
+    .Y(_0932_)
+  );
+  INVX1 _2876_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_22_ ),
+    .Y(_0933_)
+  );
+  MUXI2X1 _2877_ (
+    .A0(_0932_),
+    .A1(_0933_),
+    .S0(_0836_),
     .Y(_0078_)
   );
-  AOAI211X1 _1214_ (
-    .A(_0387_),
-    .B(_0075_),
-    .C(_0390_),
-    .D(_0078_),
-    .Y(user_sbr_obi_rsp_o_8_)
+  AND3X2 _2878_ (
+    .A(_0695_),
+    .B(_0726_),
+    .C(_0824_),
+    .Y(_0934_)
   );
-  NAND4BX1 _1215_ (
-    .AB(_0015_),
-    .B(_0019_),
-    .C(_0021_),
-    .D(_0050_),
+  AO211X2 _2879_ (
+    .A(_0727_),
+    .B(_0807_),
+    .C(_0934_),
+    .D(_0853_),
+    .Y(_0935_)
+  );
+  NAND2X1 _2880_ (
+    .A(_1519_),
+    .B(user_sbr_obi_req_i_28_),
+    .Y(_0936_)
+  );
+  NOR4BX1 _2881_ (
+    .AB(_0573_),
+    .B(_0564_),
+    .C(_0576_),
+    .D(_0571_),
+    .Y(_0937_)
+  );
+  XOR2X2 _2882_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_39_ ),
+    .B(_0937_),
+    .Y(_0938_)
+  );
+  NAND2X1 _2883_ (
+    .A(_0896_),
+    .B(_0938_),
+    .Y(_0939_)
+  );
+  NAND3X1 _2884_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_23_ ),
+    .B(_0727_),
+    .C(_0834_),
+    .Y(_0940_)
+  );
+  OAI211X1 _2885_ (
+    .A(_0935_),
+    .B(_0936_),
+    .C(_0939_),
+    .D(_0940_),
     .Y(_0079_)
   );
-  XOR2X2 _1216_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_0_ ),
-    .B(_0079_),
+  NAND2BX1 _2886_ (
+    .AB(_0646_),
+    .B(_0701_),
+    .Y(_0941_)
+  );
+  NOR3X1 _2887_ (
+    .A(_0648_),
+    .B(_0643_),
+    .C(_0941_),
+    .Y(_0942_)
+  );
+  XOR2X2 _2888_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
+    .B(_0942_),
+    .Y(_0943_)
+  );
+  NOR2BX1 _2889_ (
+    .AB(_0726_),
+    .B(_0844_),
+    .Y(_0944_)
+  );
+  AOAI211X1 _2890_ (
+    .A(_0695_),
+    .B(_0726_),
+    .C(_0853_),
+    .D(_0843_),
+    .Y(_0945_)
+  );
+  AOI22X1 _2891_ (
+    .A(_0943_),
+    .B(_0944_),
+    .C(_0945_),
+    .D(user_sbr_obi_req_i_29_),
+    .Y(_0946_)
+  );
+  INVX1 _2892_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_24_ ),
+    .Y(_0947_)
+  );
+  MUXI2X1 _2893_ (
+    .A0(_0946_),
+    .A1(_0947_),
+    .S0(_0842_),
     .Y(_0080_)
   );
-  INVX1 _1217_ (
-    .A(_0521_),
+  NAND2BX1 _2894_ (
+    .AB(_0642_),
+    .B(_0639_),
+    .Y(_0948_)
+  );
+  NAND2BX1 _2895_ (
+    .AB(_0941_),
+    .B(_0648_),
+    .Y(_0949_)
+  );
+  NOR2X1 _2896_ (
+    .A(_0948_),
+    .B(_0949_),
+    .Y(_0950_)
+  );
+  XOR2X1 _2897_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_49_ ),
+    .B(_0950_),
+    .Y(_0951_)
+  );
+  AOI22X1 _2898_ (
+    .A(user_sbr_obi_req_i_30_),
+    .B(_0945_),
+    .C(_0951_),
+    .D(_0944_),
+    .Y(_0952_)
+  );
+  INVX1 _2899_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_25_ ),
+    .Y(_0953_)
+  );
+  MUXI2X1 _2900_ (
+    .A0(_0952_),
+    .A1(_0953_),
+    .S0(_0842_),
     .Y(_0081_)
   );
-  OAOI211X1 _1218_ (
-    .A(_0283_),
-    .B(_0080_),
-    .C(_0081_),
-    .D(_0313_),
+  NAND3X1 _2901_ (
+    .A(_0646_),
+    .B(_0653_),
+    .C(_0701_),
+    .Y(_0954_)
+  );
+  NOR2X1 _2902_ (
+    .A(_0948_),
+    .B(_0954_),
+    .Y(_0955_)
+  );
+  XOR2X2 _2903_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
+    .B(_0955_),
+    .Y(_0956_)
+  );
+  AOI22X1 _2904_ (
+    .A(user_sbr_obi_req_i_31_),
+    .B(_0945_),
+    .C(_0956_),
+    .D(_0944_),
+    .Y(_0957_)
+  );
+  INVX1 _2905_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_26_ ),
+    .Y(_0958_)
+  );
+  MUXI2X1 _2906_ (
+    .A0(_0957_),
+    .A1(_0958_),
+    .S0(_0842_),
     .Y(_0082_)
   );
-  NOR4X1 _1219_ (
-    .A(_0534_),
-    .B(_0531_),
-    .C(_0539_),
-    .D(_0545_),
+  NAND2BX1 _2907_ (
+    .AB(_0639_),
+    .B(_0642_),
+    .Y(_0959_)
+  );
+  NOR2X1 _2908_ (
+    .A(_0949_),
+    .B(_0959_),
+    .Y(_0960_)
+  );
+  XOR2X2 _2909_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_51_ ),
+    .B(_0960_),
+    .Y(_0961_)
+  );
+  AOI22X1 _2910_ (
+    .A(user_sbr_obi_req_i_32_),
+    .B(_0945_),
+    .C(_0961_),
+    .D(_0944_),
+    .Y(_0962_)
+  );
+  INVX1 _2911_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_27_ ),
+    .Y(_0963_)
+  );
+  MUXI2X1 _2912_ (
+    .A0(_0962_),
+    .A1(_0963_),
+    .S0(_0842_),
     .Y(_0083_)
   );
-  XOR2X2 _1220_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_0_ ),
-    .B(_0083_),
+  NOR2X1 _2913_ (
+    .A(_0954_),
+    .B(_0959_),
+    .Y(_0964_)
+  );
+  XOR2X2 _2914_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_52_ ),
+    .B(_0964_),
+    .Y(_0965_)
+  );
+  AOI22X1 _2915_ (
+    .A(user_sbr_obi_req_i_33_),
+    .B(_0945_),
+    .C(_0965_),
+    .D(_0944_),
+    .Y(_0966_)
+  );
+  INVX1 _2916_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_28_ ),
+    .Y(_0967_)
+  );
+  MUXI2X1 _2917_ (
+    .A0(_0966_),
+    .A1(_0967_),
+    .S0(_0842_),
     .Y(_0084_)
   );
-  NAND3X1 _1221_ (
-    .A(_0283_),
-    .B(_0313_),
-    .C(_0084_),
+  NAND2X1 _2918_ (
+    .A(user_sbr_obi_req_i_40_),
+    .B(user_sbr_obi_req_i_34_),
+    .Y(_0968_)
+  );
+  NAND3X1 _2919_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_29_ ),
+    .B(_0727_),
+    .C(_0840_),
+    .Y(_0969_)
+  );
+  NOR2X1 _2920_ (
+    .A(_0704_),
+    .B(_0705_),
+    .Y(_0970_)
+  );
+  XNOR2X1 _2921_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_53_ ),
+    .B(_0970_),
+    .Y(_0971_)
+  );
+  NAND2BX1 _2922_ (
+    .AB(_0971_),
+    .B(_0944_),
+    .Y(_0972_)
+  );
+  OAI211X1 _2923_ (
+    .A(_0935_),
+    .B(_0968_),
+    .C(_0969_),
+    .D(_0972_),
     .Y(_0085_)
   );
-  AOI2B1X1 _1222_ (
-    .AB(_0082_),
-    .B(_0085_),
-    .C(_0333_),
+  INVX1 _2924_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_2_ ),
+    .Y(_0973_)
+  );
+  OR3BX1 _2925_ (
+    .AB(_0672_),
+    .B(_0678_),
+    .C(_0681_),
+    .Y(_0974_)
+  );
+  OR2X2 _2926_ (
+    .A(_0721_),
+    .B(_0974_),
+    .Y(_0975_)
+  );
+  XOR2X2 _2927_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_2_ ),
+    .B(_0975_),
+    .Y(_0976_)
+  );
+  AOI2B2X1 _2928_ (
+    .AB(_0976_),
+    .B(_0852_),
+    .C(user_sbr_obi_req_i_7_),
+    .D(_0854_),
+    .Y(_0977_)
+  );
+  MUXI2X1 _2929_ (
+    .A0(_0973_),
+    .A1(_0977_),
+    .S0(_0810_),
+    .Y(_0086_)
+  );
+  NOR4X1 _2930_ (
+    .A(_0646_),
+    .B(_0653_),
+    .C(_0643_),
+    .D(_0701_),
+    .Y(_0978_)
+  );
+  XOR2X2 _2931_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_54_ ),
+    .B(_0978_),
+    .Y(_0979_)
+  );
+  AOI22X1 _2932_ (
+    .A(user_sbr_obi_req_i_35_),
+    .B(_0945_),
+    .C(_0979_),
+    .D(_0944_),
+    .Y(_0980_)
+  );
+  INVX1 _2933_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_30_ ),
+    .Y(_0981_)
+  );
+  MUXI2X1 _2934_ (
+    .A0(_0980_),
+    .A1(_0981_),
+    .S0(_0842_),
+    .Y(_0087_)
+  );
+  NOR4BX1 _2935_ (
+    .AB(_0646_),
+    .B(_0648_),
+    .C(_0643_),
+    .D(_0701_),
+    .Y(_0982_)
+  );
+  XOR2X2 _2936_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_55_ ),
+    .B(_0982_),
+    .Y(_0983_)
+  );
+  AOI22X1 _2937_ (
+    .A(user_sbr_obi_req_i_36_),
+    .B(_0945_),
+    .C(_0983_),
+    .D(_0944_),
+    .Y(_0984_)
+  );
+  INVX1 _2938_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_31_ ),
+    .Y(_0985_)
+  );
+  MUXI2X1 _2939_ (
+    .A0(_0984_),
+    .A1(_0985_),
+    .S0(_0842_),
+    .Y(_0088_)
+  );
+  INVX1 _2940_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_3_ ),
+    .Y(_0986_)
+  );
+  NOR4BX1 _2941_ (
+    .AB(_0678_),
+    .B(_0683_),
+    .C(_0848_),
+    .D(_0672_),
+    .Y(_0987_)
+  );
+  XOR2X2 _2942_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_3_ ),
+    .B(_0987_),
+    .Y(_0988_)
+  );
+  AOI22X1 _2943_ (
+    .A(user_sbr_obi_req_i_8_),
+    .B(_0854_),
+    .C(_0988_),
+    .D(_0852_),
+    .Y(_0989_)
+  );
+  MUXI2X1 _2944_ (
+    .A0(_0986_),
+    .A1(_0989_),
+    .S0(_0810_),
+    .Y(_0089_)
+  );
+  INVX1 _2945_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_4_ ),
+    .Y(_0990_)
+  );
+  OR3BX1 _2946_ (
+    .AB(_0849_),
+    .B(_0678_),
+    .C(_0672_),
+    .Y(_0991_)
+  );
+  XNOR2X1 _2947_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_4_ ),
+    .B(_0991_),
+    .Y(_0992_)
+  );
+  AOI22X1 _2948_ (
+    .A(user_sbr_obi_req_i_9_),
+    .B(_0854_),
+    .C(_0992_),
+    .D(_0852_),
+    .Y(_0993_)
+  );
+  MUXI2X1 _2949_ (
+    .A0(_0990_),
+    .A1(_0993_),
+    .S0(_0810_),
+    .Y(_0090_)
+  );
+  INVX1 _2950_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_5_ ),
+    .Y(_0994_)
+  );
+  NAND2X1 _2951_ (
+    .A(user_sbr_obi_req_i_10_),
+    .B(_1508_),
+    .Y(_0995_)
+  );
+  OR4X1 _2952_ (
+    .A(_0672_),
+    .B(_0678_),
+    .C(_0683_),
+    .D(_0721_),
+    .Y(_0996_)
+  );
+  XNOR2X1 _2953_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_5_ ),
+    .B(_0996_),
+    .Y(_0997_)
+  );
+  NAND2X1 _2954_ (
+    .A(_0852_),
+    .B(_0997_),
+    .Y(_0998_)
+  );
+  OAI221X1 _2955_ (
+    .A(_0994_),
+    .B(_0810_),
+    .C(_0935_),
+    .D(_0995_),
+    .E(_0998_),
+    .Y(_0091_)
+  );
+  INVX1 _2956_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_6_ ),
+    .Y(_0999_)
+  );
+  NAND2X1 _2957_ (
+    .A(_0667_),
+    .B(_0675_),
+    .Y(_1000_)
+  );
+  NOR2X1 _2958_ (
+    .A(_0918_),
+    .B(_1000_),
+    .Y(_1001_)
+  );
+  XOR2X2 _2959_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_6_ ),
+    .B(_1001_),
+    .Y(_1002_)
+  );
+  AOI22X1 _2960_ (
+    .A(user_sbr_obi_req_i_11_),
+    .B(_0854_),
+    .C(_1002_),
+    .D(_0852_),
+    .Y(_1003_)
+  );
+  MUXI2X1 _2961_ (
+    .A0(_0999_),
+    .A1(_1003_),
+    .S0(_0810_),
+    .Y(_0092_)
+  );
+  INVX1 _2962_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_7_ ),
+    .Y(_1004_)
+  );
+  NOR2X1 _2963_ (
+    .A(_0974_),
+    .B(_1000_),
+    .Y(_1005_)
+  );
+  XOR2X2 _2964_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ),
+    .B(_1005_),
+    .Y(_1006_)
+  );
+  AOI22X1 _2965_ (
+    .A(_0142_),
+    .B(_0854_),
+    .C(_1006_),
+    .D(_0852_),
+    .Y(_1007_)
+  );
+  MUXI2X1 _2966_ (
+    .A0(_1004_),
+    .A1(_1007_),
+    .S0(_0810_),
+    .Y(_0093_)
+  );
+  NOR2X1 _2967_ (
+    .A(_0145_),
+    .B(_0853_),
+    .Y(_1008_)
+  );
+  MUXI2X1 _2968_ (
+    .A0(\gen_sram_bank[1].i_repair_buffer.buf_data_q_8_ ),
+    .A1(_1008_),
+    .S0(_0830_),
+    .Y(_1009_)
+  );
+  AND3X2 _2969_ (
+    .A(_0615_),
+    .B(_0606_),
+    .C(_0866_),
+    .Y(_1010_)
+  );
+  XOR2X2 _2970_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_16_ ),
+    .B(_1010_),
+    .Y(_1011_)
+  );
+  MUXI2X1 _2971_ (
+    .A0(user_sbr_obi_req_i_13_),
+    .A1(_1011_),
+    .S0(_0832_),
+    .Y(_1012_)
+  );
+  MUXI2X1 _2972_ (
+    .A0(_1009_),
+    .A1(_1012_),
+    .S0(all_banks_single_err_o_1_),
+    .Y(_0094_)
+  );
+  AND3X2 _2973_ (
+    .A(_0373_),
+    .B(_1296_),
+    .C(_0829_),
+    .Y(_1013_)
+  );
+  AOI2B1X1 _2974_ (
+    .AB(_0830_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_9_ ),
+    .C(_1013_),
+    .Y(_1014_)
+  );
+  NOR2X1 _2975_ (
+    .A(_0858_),
+    .B(_0867_),
+    .Y(_1015_)
+  );
+  XOR2X2 _2976_ (
+    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_17_ ),
+    .B(_1015_),
+    .Y(_1016_)
+  );
+  MUXI2X1 _2977_ (
+    .A0(_0373_),
+    .A1(_1016_),
+    .S0(_0832_),
+    .Y(_1017_)
+  );
+  MUXI2X1 _2978_ (
+    .A0(_1014_),
+    .A1(_1017_),
+    .S0(all_banks_single_err_o_1_),
+    .Y(_0095_)
+  );
+  NAND2X1 _2979_ (
+    .A(_0787_),
+    .B(_0825_),
+    .Y(_1018_)
+  );
+  NOR2X1 _2980_ (
+    .A(user_sbr_obi_req_i_40_),
+    .B(_0845_),
+    .Y(_1019_)
+  );
+  AOI211X1 _2981_ (
+    .A(_1517_),
+    .B(_0831_),
+    .C(_1018_),
+    .D(_1019_),
+    .Y(_1020_)
+  );
+  OAI221X1 _2982_ (
+    .A(_1519_),
+    .B(_0839_),
+    .C(_0725_),
+    .D(_1508_),
+    .E(_1020_),
+    .Y(_1021_)
+  );
+  AO22X2 _2983_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_be_q_2_ ),
+    .B(_1520_),
+    .C(_1517_),
+    .D(\gen_sram_bank[1].i_repair_buffer.buf_be_q_1_ ),
+    .Y(_1022_)
+  );
+  AO22X2 _2984_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_be_q_3_ ),
+    .B(_1522_),
+    .C(_1509_),
+    .D(\gen_sram_bank[1].i_repair_buffer.buf_be_q_0_ ),
+    .Y(_1023_)
+  );
+  OAI31X1 _2985_ (
+    .A(_0807_),
+    .B(_1022_),
+    .C(_1023_),
+    .D(_0751_),
+    .Y(_1024_)
+  );
+  OAI21X1 _2986_ (
+    .A(_0735_),
+    .B(_1024_),
+    .C(_0727_),
+    .Y(_1025_)
+  );
+  OA21X2 _2987_ (
+    .A(_0785_),
+    .B(_1021_),
+    .C(_1025_),
+    .Y(_0096_)
+  );
+  XOR2X2 _2988_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_0_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_7_ ),
+    .Y(_1026_)
+  );
+  NAND2X1 _2989_ (
+    .A(_0732_),
+    .B(_1026_),
+    .Y(_1027_)
+  );
+  NAND2X1 _2990_ (
+    .A(_0422_),
+    .B(_0729_),
+    .Y(_1028_)
+  );
+  OAI21X1 _2991_ (
+    .A(_0730_),
+    .B(_1027_),
+    .C(_1028_),
+    .Y(_1029_)
+  );
+  XOR2X2 _2992_ (
+    .A(_1524_),
+    .B(user_sbr_obi_req_i_11_),
+    .Y(_1030_)
+  );
+  XOR2X2 _2993_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_3_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_6_ ),
+    .Y(_1031_)
+  );
+  AOI21X1 _2994_ (
+    .A(_0731_),
+    .B(_1031_),
+    .C(_0729_),
+    .Y(_1032_)
+  );
+  AOI21X1 _2995_ (
+    .A(_0730_),
+    .B(_1030_),
+    .C(_1032_),
+    .Y(_1033_)
+  );
+  XNOR3X1 _2996_ (
+    .A(\gen_sram_bank[1].bank_sram_wdata_4_ ),
+    .B(_1029_),
+    .C(_1033_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ )
+  );
+  AND3X2 _2997_ (
+    .A(_0731_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_1_ ),
+    .C(_0734_),
+    .Y(_1034_)
+  );
+  AOI21X2 _2998_ (
+    .A(user_sbr_obi_req_i_6_),
+    .B(_0729_),
+    .C(_1034_),
+    .Y(_1035_)
+  );
+  XOR2X2 _2999_ (
+    .A(_1033_),
+    .B(_1035_),
+    .Y(_1036_)
+  );
+  XOR2X2 _3000_ (
+    .A(\gen_sram_bank[1].bank_sram_wdata_5_ ),
+    .B(_1036_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ )
+  );
+  XOR2X2 _3001_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_4_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_5_ ),
+    .Y(_1037_)
+  );
+  XOR2X2 _3002_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_2_ ),
+    .B(_1037_),
+    .Y(_1038_)
+  );
+  AND2X1 _3003_ (
+    .A(_0731_),
+    .B(_1038_),
+    .Y(_1039_)
+  );
+  XOR2X2 _3004_ (
+    .A(_0782_),
+    .B(_1039_),
+    .Y(_1040_)
+  );
+  MUX2X1 _3005_ (
+    .A0(_0411_),
+    .A1(_1040_),
+    .S0(_0754_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ )
+  );
+  XOR2X2 _3006_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_0_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_3_ ),
+    .Y(_1041_)
+  );
+  NAND2X1 _3007_ (
+    .A(_0732_),
+    .B(_1041_),
+    .Y(_1042_)
+  );
+  XOR2X2 _3008_ (
+    .A(_1039_),
+    .B(_1042_),
+    .Y(_1043_)
+  );
+  NOR2X1 _3009_ (
+    .A(_0416_),
+    .B(_0740_),
+    .Y(_1044_)
+  );
+  AOI21X1 _3010_ (
+    .A(_0749_),
+    .B(_1043_),
+    .C(_1044_),
+    .Y(_1045_)
+  );
+  XOR2X2 _3011_ (
+    .A(_1035_),
+    .B(_1045_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_8_ )
+  );
+  XOR2X2 _3012_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_1_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_2_ ),
+    .Y(_1046_)
+  );
+  NAND2X1 _3013_ (
+    .A(_0732_),
+    .B(_1046_),
+    .Y(_1047_)
+  );
+  XOR2X2 _3014_ (
+    .A(_0780_),
+    .B(_1047_),
+    .Y(_1048_)
+  );
+  MUXI2X1 _3015_ (
+    .A0(_0423_),
+    .A1(_1048_),
+    .S0(_0749_),
+    .Y(_1049_)
+  );
+  XOR2X2 _3016_ (
+    .A(_1029_),
+    .B(_1049_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_9_ )
+  );
+  XOR2X2 _3017_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_12_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_15_ ),
+    .Y(_1050_)
+  );
+  NAND2X1 _3018_ (
+    .A(_0751_),
+    .B(_1050_),
+    .Y(_1051_)
+  );
+  XOR2X2 _3019_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_14_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_8_ ),
+    .Y(_1052_)
+  );
+  XOR2X2 _3020_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_11_ ),
+    .B(_1052_),
+    .Y(_1053_)
+  );
+  NAND2X1 _3021_ (
+    .A(_0739_),
+    .B(_1053_),
+    .Y(_1054_)
+  );
+  XOR2X2 _3022_ (
+    .A(_1051_),
+    .B(_1054_),
+    .Y(_1055_)
+  );
+  NAND2X1 _3023_ (
+    .A(_0438_),
+    .B(_0744_),
+    .Y(_1056_)
+  );
+  OAI21X1 _3024_ (
+    .A(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .B(_1055_),
+    .C(_1056_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_10_ )
+  );
+  XOR2X2 _3025_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_13_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_9_ ),
+    .Y(_1057_)
+  );
+  XOR2X2 _3026_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_11_ ),
+    .B(_1057_),
+    .Y(_1058_)
+  );
+  NAND3X1 _3027_ (
+    .A(_0781_),
+    .B(_0753_),
+    .C(_1058_),
+    .Y(_1059_)
+  );
+  OAI21X1 _3028_ (
+    .A(_0440_),
+    .B(_0735_),
+    .C(_1059_),
+    .Y(_1060_)
+  );
+  XNOR2X1 _3029_ (
+    .A(\gen_sram_bank[1].bank_sram_wdata_14_ ),
+    .B(_1060_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_11_ )
+  );
+  XOR2X2 _3030_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_13_ ),
+    .Y(_1061_)
+  );
+  NAND2X1 _3031_ (
+    .A(_0739_),
+    .B(_1061_),
+    .Y(_1062_)
+  );
+  XOR2X2 _3032_ (
+    .A(_1051_),
+    .B(_1062_),
+    .Y(_1063_)
+  );
+  NAND2X1 _3033_ (
+    .A(_0452_),
+    .B(_0744_),
+    .Y(_1064_)
+  );
+  OAI21X1 _3034_ (
+    .A(\gen_sram_bank[1].i_sram_shim.rvalid_d ),
+    .B(_1063_),
+    .C(_1064_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_12_ )
+  );
+  BUFX3 _3035_ (
+    .A(_0734_),
+    .Y(_1065_)
+  );
+  XOR2X2 _3036_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_12_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_8_ ),
+    .Y(_1066_)
+  );
+  XOR2X2 _3037_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ),
+    .B(_1066_),
+    .Y(_1067_)
+  );
+  NAND3X1 _3038_ (
+    .A(_0766_),
+    .B(_1065_),
+    .C(_1067_),
+    .Y(_1068_)
+  );
+  OA21X2 _3039_ (
+    .A(_0454_),
+    .B(_0735_),
+    .C(_1068_),
+    .Y(_1069_)
+  );
+  XOR2X2 _3040_ (
+    .A(_1060_),
+    .B(_1069_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_8_ )
+  );
+  XOR2X2 _3041_ (
+    .A(_0107_),
+    .B(_0462_),
+    .Y(_1070_)
+  );
+  XOR2X2 _3042_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_15_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_9_ ),
+    .Y(_1071_)
+  );
+  XOR2X2 _3043_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ),
+    .B(_1071_),
+    .Y(_1072_)
+  );
+  AND3X2 _3044_ (
+    .A(_0781_),
+    .B(_0753_),
+    .C(_1072_),
+    .Y(_1073_)
+  );
+  AOI21X1 _3045_ (
+    .A(_0744_),
+    .B(_1070_),
+    .C(_1073_),
+    .Y(_1074_)
+  );
+  NAND3X1 _3046_ (
+    .A(_0751_),
+    .B(_0753_),
+    .C(_1052_),
+    .Y(_1075_)
+  );
+  OAI21X1 _3047_ (
+    .A(_0435_),
+    .B(_0749_),
+    .C(_1075_),
+    .Y(_1076_)
+  );
+  XOR2X2 _3048_ (
+    .A(_1074_),
+    .B(_1076_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_9_ )
+  );
+  XOR2X2 _3049_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_20_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_23_ ),
+    .Y(_1077_)
+  );
+  AND3X2 _3050_ (
+    .A(_0731_),
+    .B(_0734_),
+    .C(_1077_),
+    .Y(_1078_)
+  );
+  AOI21X1 _3051_ (
+    .A(_0466_),
+    .B(_0730_),
+    .C(_1078_),
+    .Y(_1079_)
+  );
+  BUFX3 _3052_ (
+    .A(_0730_),
+    .Y(_1080_)
+  );
+  XOR2X2 _3053_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_16_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_22_ ),
+    .Y(_1081_)
+  );
+  AND3X2 _3054_ (
+    .A(_0766_),
+    .B(_1065_),
+    .C(_1081_),
+    .Y(_1082_)
+  );
+  AOI21X1 _3055_ (
+    .A(_0494_),
+    .B(_1080_),
+    .C(_1082_),
+    .Y(_1083_)
+  );
+  XNOR3X1 _3056_ (
+    .A(\gen_sram_bank[1].bank_sram_wdata_19_ ),
+    .B(_1079_),
+    .C(_1083_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_10_ )
+  );
+  XOR2X2 _3057_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_19_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_21_ ),
+    .Y(_1084_)
+  );
+  XOR2X2 _3058_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_17_ ),
+    .B(_1084_),
+    .Y(_1085_)
+  );
+  AND3X2 _3059_ (
+    .A(_0766_),
+    .B(_1065_),
+    .C(_1085_),
+    .Y(_1086_)
+  );
+  AOI21X1 _3060_ (
+    .A(_0476_),
+    .B(_1080_),
+    .C(_1086_),
+    .Y(_1087_)
+  );
+  XOR2X2 _3061_ (
+    .A(\gen_sram_bank[1].bank_sram_wdata_22_ ),
+    .B(_1087_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_11_ )
+  );
+  XOR2X2 _3062_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_21_ ),
+    .Y(_1088_)
+  );
+  NAND2X1 _3063_ (
+    .A(_0751_),
+    .B(_1088_),
+    .Y(_1089_)
+  );
+  NAND2X1 _3064_ (
+    .A(_0481_),
+    .B(_0730_),
+    .Y(_1090_)
+  );
+  OAI21X1 _3065_ (
+    .A(_1080_),
+    .B(_1089_),
+    .C(_1090_),
+    .Y(_1091_)
+  );
+  XOR2X2 _3066_ (
+    .A(_1079_),
+    .B(_1091_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_12_ )
+  );
+  XOR2X2 _3067_ (
+    .A(_0276_),
+    .B(_0486_),
+    .Y(_1092_)
+  );
+  XOR2X2 _3068_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_20_ ),
+    .Y(_1093_)
+  );
+  NAND2X1 _3069_ (
+    .A(_0732_),
+    .B(_1093_),
+    .Y(_1094_)
+  );
+  XOR2X2 _3070_ (
+    .A(_0765_),
+    .B(_1094_),
+    .Y(_1095_)
+  );
+  MUXI2X1 _3071_ (
+    .A0(_1092_),
+    .A1(_1095_),
+    .S0(_0749_),
+    .Y(_1096_)
+  );
+  XOR2X2 _3072_ (
+    .A(_1087_),
+    .B(_1096_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_8_ )
+  );
+  XOR2X2 _3073_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_17_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ),
+    .Y(_1097_)
+  );
+  XOR2X2 _3074_ (
+    .A(_1081_),
+    .B(_1097_),
+    .Y(_1098_)
+  );
+  NAND2X1 _3075_ (
+    .A(_0781_),
+    .B(_1098_),
+    .Y(_1099_)
+  );
+  XOR2X2 _3076_ (
+    .A(_0770_),
+    .B(_1099_),
+    .Y(_1100_)
+  );
+  MUX2X1 _3077_ (
+    .A0(_0496_),
+    .A1(_1100_),
+    .S0(_0754_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_9_ )
+  );
+  XOR2X2 _3078_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_30_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_31_ ),
+    .Y(_1101_)
+  );
+  XOR2X2 _3079_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_24_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_28_ ),
+    .Y(_1102_)
+  );
+  XOR2X2 _3080_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_27_ ),
+    .B(_1102_),
+    .Y(_1103_)
+  );
+  XOR2X2 _3081_ (
+    .A(_1101_),
+    .B(_1103_),
+    .Y(_1104_)
+  );
+  NAND3X1 _3082_ (
+    .A(_0733_),
+    .B(_0735_),
+    .C(_1104_),
+    .Y(_1105_)
+  );
+  OA21X2 _3083_ (
+    .A(_0510_),
+    .B(_0760_),
+    .C(_1105_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_10_ )
+  );
+  XOR2X2 _3084_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_27_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_29_ ),
+    .Y(_1106_)
+  );
+  XOR2X2 _3085_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_25_ ),
+    .B(_1106_),
+    .Y(_1107_)
+  );
+  NAND2X1 _3086_ (
+    .A(_0732_),
+    .B(_1107_),
+    .Y(_1108_)
+  );
+  NAND2X1 _3087_ (
+    .A(_0513_),
+    .B(_0729_),
+    .Y(_1109_)
+  );
+  OAI21X1 _3088_ (
+    .A(_0730_),
+    .B(_1108_),
+    .C(_1109_),
+    .Y(_1110_)
+  );
+  AND3X2 _3089_ (
+    .A(_0766_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_30_ ),
+    .C(_0734_),
+    .Y(_1111_)
+  );
+  AOI21X1 _3090_ (
+    .A(user_sbr_obi_req_i_35_),
+    .B(_0730_),
+    .C(_1111_),
+    .Y(_1112_)
+  );
+  XOR2X2 _3091_ (
+    .A(_1110_),
+    .B(_1112_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_11_ )
+  );
+  XOR2X2 _3092_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_29_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_31_ ),
+    .Y(_1113_)
+  );
+  XOR2X2 _3093_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_28_ ),
+    .B(_1113_),
+    .Y(_1114_)
+  );
+  NAND3X1 _3094_ (
+    .A(_0751_),
+    .B(_0753_),
+    .C(_1114_),
+    .Y(_1115_)
+  );
+  OAI21X1 _3095_ (
+    .A(_0520_),
+    .B(_0749_),
+    .C(_1115_),
+    .Y(_1116_)
+  );
+  XOR2X2 _3096_ (
+    .A(_0774_),
+    .B(_1116_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ )
+  );
+  NAND3X1 _3097_ (
+    .A(_0732_),
+    .B(_0734_),
+    .C(_1102_),
+    .Y(_1117_)
+  );
+  OAI21X1 _3098_ (
+    .A(_0507_),
+    .B(_0753_),
+    .C(_1117_),
+    .Y(_1118_)
+  );
+  XOR2X2 _3099_ (
+    .A(_1110_),
+    .B(_1118_),
+    .Y(_1119_)
+  );
+  XOR2X2 _3100_ (
+    .A(_0774_),
+    .B(_1119_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ )
+  );
+  XOR2X2 _3101_ (
+    .A(\gen_sram_bank[1].i_repair_buffer.buf_data_q_24_ ),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_26_ ),
+    .Y(_1120_)
+  );
+  XOR2X2 _3102_ (
+    .A(_1101_),
+    .B(_1120_),
+    .Y(_1121_)
+  );
+  NAND3X1 _3103_ (
+    .A(_0766_),
+    .B(_1065_),
+    .C(_1121_),
+    .Y(_1122_)
+  );
+  OA21X2 _3104_ (
+    .A(_0532_),
+    .B(_0735_),
+    .C(_1122_),
+    .Y(_1123_)
+  );
+  XOR2X2 _3105_ (
+    .A(\gen_sram_bank[1].bank_sram_wdata_25_ ),
+    .B(_1123_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ )
+  );
+  NOR2X1 _3106_ (
+    .A(user_sbr_obi_req_i_41_),
+    .B(_0750_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].rvalid_q_0_ )
+  );
+  NAND2X1 _3107_ (
+    .A(_0751_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_0_ ),
+    .Y(_1124_)
+  );
+  MUXI2X1 _3108_ (
+    .A0(_0535_),
+    .A1(_1124_),
+    .S0(_0735_),
+    .Y(_1125_)
+  );
+  XOR2X2 _3109_ (
+    .A(gpio_in_sync_i_19_),
+    .B(_1125_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_0_ )
+  );
+  NAND2BX1 _3110_ (
+    .AB(gpio_in_sync_i_18_),
+    .B(gpio_in_sync_i_19_),
+    .Y(_1126_)
+  );
+  AND3X2 _3111_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_9_ ),
+    .C(_0753_),
+    .Y(_1127_)
+  );
+  AOI21X1 _3112_ (
+    .A(_0373_),
+    .B(_0744_),
+    .C(_1127_),
+    .Y(_1128_)
+  );
+  XOR2X2 _3113_ (
+    .A(_1126_),
+    .B(_1128_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_17_ )
+  );
+  NAND2X2 _3114_ (
+    .A(gpio_in_sync_i_18_),
+    .B(gpio_in_sync_i_19_),
+    .Y(_1129_)
+  );
+  AND3X2 _3115_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ),
+    .C(_0753_),
+    .Y(_1130_)
+  );
+  AOI21X1 _3116_ (
+    .A(_0226_),
+    .B(_1080_),
+    .C(_1130_),
+    .Y(_1131_)
+  );
+  XOR2X2 _3117_ (
+    .A(_1129_),
+    .B(_1131_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_18_ )
+  );
+  AND3X2 _3118_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_11_ ),
+    .C(_1065_),
+    .Y(_1132_)
+  );
+  AOI21X1 _3119_ (
+    .A(_0234_),
+    .B(_1080_),
+    .C(_1132_),
+    .Y(_1133_)
+  );
+  XOR2X2 _3120_ (
+    .A(_1129_),
+    .B(_1133_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_19_ )
+  );
+  XOR2X2 _3121_ (
+    .A(_1035_),
+    .B(_1129_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_1_ )
+  );
+  AND3X2 _3122_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ),
+    .C(_1065_),
+    .Y(_1134_)
+  );
+  AOI21X1 _3123_ (
+    .A(_0276_),
+    .B(_1080_),
+    .C(_1134_),
+    .Y(_1135_)
+  );
+  XOR2X2 _3124_ (
+    .A(_1126_),
+    .B(_1135_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_34_ )
+  );
+  AND3X2 _3125_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_20_ ),
+    .C(_1065_),
+    .Y(_1136_)
+  );
+  AOI21X1 _3126_ (
+    .A(user_sbr_obi_req_i_25_),
+    .B(_1080_),
+    .C(_1136_),
+    .Y(_1137_)
+  );
+  XOR2X2 _3127_ (
+    .A(_1129_),
+    .B(_1137_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_36_ )
+  );
+  AND3X2 _3128_ (
+    .A(_0781_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_21_ ),
+    .C(_1065_),
+    .Y(_1138_)
+  );
+  AOI21X1 _3129_ (
+    .A(user_sbr_obi_req_i_26_),
+    .B(_1080_),
+    .C(_1138_),
+    .Y(_1139_)
+  );
+  XOR2X2 _3130_ (
+    .A(_1129_),
+    .B(_1139_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_37_ )
+  );
+  AND3X2 _3131_ (
+    .A(_0766_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_27_ ),
+    .C(_1065_),
+    .Y(_1140_)
+  );
+  AOI21X1 _3132_ (
+    .A(user_sbr_obi_req_i_32_),
+    .B(_1080_),
+    .C(_1140_),
+    .Y(_1141_)
+  );
+  XOR2X2 _3133_ (
+    .A(_1126_),
+    .B(_1141_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_51_ )
+  );
+  XOR2X2 _3134_ (
+    .A(_1112_),
+    .B(_1129_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_54_ )
+  );
+  AND3X2 _3135_ (
+    .A(_0766_),
+    .B(\gen_sram_bank[1].i_repair_buffer.buf_data_q_31_ ),
+    .C(_1065_),
+    .Y(_1142_)
+  );
+  AOI21X1 _3136_ (
+    .A(user_sbr_obi_req_i_36_),
+    .B(_1080_),
+    .C(_1142_),
+    .Y(_1143_)
+  );
+  XOR2X2 _3137_ (
+    .A(_1129_),
+    .B(_1143_),
+    .Y(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_55_ )
+  );
+  INVX1 _3138_ (
+    .A(_1305_),
+    .Y(user_sbr_obi_rsp_o_0_)
+  );
+  OR2X2 _3139_ (
+    .A(\i_obi_demux.i_counter.q_o ),
+    .B(_1305_),
+    .Y(_1144_)
+  );
+  NAND2BX1 _3140_ (
+    .AB(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
+    .B(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
+    .Y(_1145_)
+  );
+  NOR3X1 _3141_ (
+    .A(_1244_),
+    .B(_1280_),
+    .C(_1253_),
+    .Y(_1146_)
+  );
+  AOAI211X1 _3142_ (
+    .A(_1244_),
+    .B(_1145_),
+    .C(_1146_),
+    .D(_1245_),
+    .Y(_1147_)
+  );
+  AO21X2 _3143_ (
+    .A(_1319_),
+    .B(_1299_),
+    .C(_1322_),
+    .Y(_1148_)
+  );
+  AOI21X1 _3144_ (
+    .A(_1147_),
+    .B(_1148_),
+    .C(_1309_),
+    .Y(_1149_)
+  );
+  NAND3X1 _3145_ (
+    .A(_1293_),
+    .B(_1254_),
+    .C(_1278_),
+    .Y(_1150_)
+  );
+  OAOI211X1 _3146_ (
+    .A(_1315_),
+    .B(_1316_),
+    .C(_1150_),
+    .D(_1307_),
+    .Y(_1151_)
+  );
+  OR2X2 _3147_ (
+    .A(_1149_),
+    .B(_1151_),
+    .Y(_1152_)
+  );
+  BUFX3 _3148_ (
+    .A(_1152_),
+    .Y(_1153_)
+  );
+  MUXI2X1 _3149_ (
+    .A0(_1144_),
+    .A1(_1306_),
+    .S0(_1153_),
+    .Y(_1154_)
+  );
+  XOR2X2 _3150_ (
+    .A(_1279_),
+    .B(_1154_),
+    .Y(_0097_)
+  );
+  XNOR3X1 _3151_ (
+    .A(\i_obi_demux.i_counter.q_o ),
+    .B(_1305_),
+    .C(_1153_),
+    .Y(_0098_)
+  );
+  OAI21X1 _3152_ (
+    .A(_1245_),
+    .B(_1253_),
+    .C(_1322_),
+    .Y(_1155_)
+  );
+  AOI21X1 _3153_ (
+    .A(_1245_),
+    .B(_1319_),
+    .C(_1322_),
+    .Y(_1156_)
+  );
+  AOI211X1 _3154_ (
+    .A(_1244_),
+    .B(_1155_),
+    .C(_1156_),
+    .D(all_user_sbr_obi_req_296_),
+    .Y(_1157_)
+  );
+  AOI2B1X1 _3155_ (
+    .AB(all_user_sbr_obi_req_222_),
+    .B(_1157_),
+    .C(_1312_),
+    .Y(user_sbr_obi_rsp_o_1_)
+  );
+  BUFX3 _3156_ (
+    .A(_1298_),
+    .Y(_1158_)
+  );
+  NAND4BX1 _3157_ (
+    .AB(_1280_),
+    .B(_1319_),
+    .C(_1262_),
+    .D(_1153_),
+    .Y(_1159_)
+  );
+  OAI21X1 _3158_ (
+    .A(_1158_),
+    .B(_1153_),
+    .C(_1159_),
+    .Y(_0099_)
+  );
+  BUFX3 _3159_ (
+    .A(_1257_),
+    .Y(_1160_)
+  );
+  BUFX3 _3160_ (
+    .A(_1160_),
+    .Y(_1161_)
+  );
+  NAND2X1 _3161_ (
+    .A(_1280_),
+    .B(_1246_),
+    .Y(_1162_)
+  );
+  OAOI211X1 _3162_ (
+    .A(_1280_),
+    .B(_1256_),
+    .C(_1162_),
+    .D(_1253_),
+    .Y(_1163_)
+  );
+  MUX2X1 _3163_ (
+    .A0(_1161_),
+    .A1(_1163_),
+    .S0(_1153_),
+    .Y(_0100_)
+  );
+  MUX2X1 _3164_ (
+    .A0(_1314_),
+    .A1(_1310_),
+    .S0(_1153_),
+    .Y(_0101_)
+  );
+  AOI21BX1 _3165_ (
+    .A(_1321_),
+    .B(_1320_),
+    .CB(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
+    .Y(_0102_)
+  );
+  NAND2X1 _3166_ (
+    .A(_1321_),
+    .B(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
+    .Y(_1164_)
+  );
+  NAND2X1 _3167_ (
+    .A(_1145_),
+    .B(_1164_),
+    .Y(_1165_)
+  );
+  MUXI2X1 _3168_ (
+    .A0(_1165_),
+    .A1(_1164_),
+    .S0(_1320_),
+    .Y(_0103_)
+  );
+  OR2X2 _3169_ (
+    .A(all_banks_double_err_o_0_),
+    .B(all_banks_double_err_o_1_),
+    .Y(interrupts_o_0_)
+  );
+  BUFX3 _3170_ (
+    .A(_1255_),
+    .Y(_1166_)
+  );
+  OAI21X1 _3171_ (
+    .A(_1166_),
+    .B(_0983_),
+    .C(_1158_),
+    .Y(_1167_)
+  );
+  BUFX3 _3172_ (
+    .A(_1314_),
+    .Y(_1168_)
+  );
+  OAOI211X1 _3173_ (
+    .A(_1161_),
+    .B(_0344_),
+    .C(_1167_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_38_)
+  );
+  NAND2X1 _3174_ (
+    .A(_1259_),
+    .B(_1255_),
+    .Y(_1169_)
+  );
+  BUFX3 _3175_ (
+    .A(_1169_),
+    .Y(_1170_)
+  );
+  BUFX3 _3176_ (
+    .A(_1298_),
+    .Y(_1171_)
+  );
+  NAND3BX1 _3177_ (
+    .AB(\i_user_rom.we_q ),
+    .B(all_user_sbr_obi_rsp_117_),
+    .C(_1259_),
+    .Y(_1172_)
+  );
+  NOR2X1 _3178_ (
+    .A(\i_user_rom.addr_q_2_ ),
+    .B(_1172_),
+    .Y(_1173_)
+  );
+  BUFX3 _3179_ (
+    .A(_1257_),
+    .Y(_1174_)
+  );
+  AOAI211X1 _3180_ (
+    .A(_1171_),
+    .B(_0979_),
+    .C(_1173_),
+    .D(_1174_),
+    .Y(_1175_)
+  );
+  OAOI211X1 _3181_ (
+    .A(_1170_),
+    .B(_0340_),
+    .C(_1175_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_37_)
+  );
+  OAI21X1 _3182_ (
+    .A(\i_user_rom.addr_q_3_ ),
+    .B(_1172_),
+    .C(_1160_),
+    .Y(_1176_)
+  );
+  OAI21X1 _3183_ (
+    .A(_1298_),
+    .B(_0297_),
+    .C(_1255_),
+    .Y(_1177_)
+  );
+  AND2X1 _3184_ (
+    .A(_1176_),
+    .B(_1177_),
+    .Y(_1178_)
+  );
+  BUFX3 _3185_ (
+    .A(_1259_),
+    .Y(_1179_)
+  );
+  NOR2X1 _3186_ (
+    .A(_1179_),
+    .B(_1255_),
+    .Y(_1180_)
+  );
+  NAND2X1 _3187_ (
+    .A(_0927_),
+    .B(_1180_),
+    .Y(_1181_)
+  );
+  AOI2B1X1 _3188_ (
+    .AB(_1178_),
+    .B(_1181_),
+    .C(_1168_),
+    .Y(user_sbr_obi_rsp_o_28_)
+  );
+  INVX1 _3189_ (
+    .A(_1169_),
+    .Y(_1182_)
+  );
+  OR3BX1 _3190_ (
+    .AB(\i_user_rom.addr_q_2_ ),
+    .B(\i_user_rom.addr_q_3_ ),
+    .C(_1172_),
+    .Y(_1183_)
+  );
+  AO22X2 _3191_ (
+    .A(_1182_),
+    .B(_0293_),
+    .C(_1183_),
+    .D(_1174_),
+    .Y(_1184_)
+  );
+  OAOI211X1 _3192_ (
+    .A(_1179_),
+    .B(_0923_),
+    .C(_1184_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_27_)
+  );
+  AOI221X1 _3193_ (
+    .A(_1298_),
+    .B(_0914_),
+    .C(_1173_),
+    .D(\i_user_rom.addr_q_3_ ),
+    .E(_1255_),
+    .Y(_1185_)
+  );
+  AOI211X1 _3194_ (
+    .A(_1182_),
+    .B(_0285_),
+    .C(_1185_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_26_)
+  );
+  NOR3X1 _3195_ (
+    .A(\i_user_rom.addr_q_2_ ),
+    .B(\i_user_rom.addr_q_3_ ),
+    .C(_1172_),
+    .Y(_1186_)
+  );
+  OAI2BB2X2 _3196_ (
+    .AB(_1182_),
+    .BB(_0281_),
+    .C(_1186_),
+    .D(_1166_),
+    .Y(_1187_)
+  );
+  OAOI211X1 _3197_ (
+    .A(_1179_),
+    .B(_0909_),
+    .C(_1187_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_25_)
+  );
+  BUFX3 _3198_ (
+    .A(_1314_),
+    .Y(_1188_)
+  );
+  OAI21X1 _3199_ (
+    .A(_1298_),
+    .B(_0274_),
+    .C(_1255_),
+    .Y(_1189_)
+  );
+  AOI22X1 _3200_ (
+    .A(_0904_),
+    .B(_1180_),
+    .C(_1189_),
+    .D(_1176_),
+    .Y(_1190_)
+  );
+  NOR2X1 _3201_ (
+    .A(_1188_),
+    .B(_1190_),
+    .Y(user_sbr_obi_rsp_o_24_)
+  );
+  NAND2X1 _3202_ (
+    .A(_1158_),
+    .B(_1161_),
+    .Y(_1191_)
+  );
+  XNOR2X1 _3203_ (
+    .A(\i_user_rom.addr_q_2_ ),
+    .B(\i_user_rom.addr_q_3_ ),
+    .Y(_1192_)
+  );
+  OAI21X1 _3204_ (
+    .A(_1172_),
+    .B(_1192_),
+    .C(_1160_),
+    .Y(_1193_)
+  );
+  AOAI211X1 _3205_ (
+    .A(_1179_),
+    .B(_0268_),
+    .C(_1174_),
+    .D(_1193_),
+    .Y(_1194_)
+  );
+  OAOI211X1 _3206_ (
+    .A(_0895_),
+    .B(_1191_),
+    .C(_1194_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_23_)
+  );
+  NOR2X1 _3207_ (
+    .A(_1174_),
+    .B(_0262_),
+    .Y(_1195_)
+  );
+  OAOI211X1 _3208_ (
+    .A(_1166_),
+    .B(_0891_),
+    .C(_1171_),
+    .D(_1195_),
+    .Y(_1196_)
+  );
+  NOR2X1 _3209_ (
+    .A(_1188_),
+    .B(_1196_),
+    .Y(user_sbr_obi_rsp_o_22_)
+  );
+  AOAI211X1 _3210_ (
+    .A(_1171_),
+    .B(_0886_),
+    .C(_1173_),
+    .D(_1174_),
+    .Y(_1197_)
+  );
+  OAOI211X1 _3211_ (
+    .A(_1170_),
+    .B(_0256_),
+    .C(_1197_),
+    .D(_1168_),
+    .Y(user_sbr_obi_rsp_o_21_)
+  );
+  NAND2X1 _3212_ (
+    .A(_1160_),
+    .B(_1183_),
+    .Y(_1198_)
+  );
+  OA21X2 _3213_ (
+    .A(_1170_),
+    .B(_0248_),
+    .C(_1198_),
+    .Y(_1199_)
+  );
+  AOI21X1 _3214_ (
+    .A(_1158_),
+    .B(_0879_),
+    .C(_1199_),
+    .Y(_1200_)
+  );
+  NOR2X1 _3215_ (
+    .A(_1188_),
+    .B(_1200_),
+    .Y(user_sbr_obi_rsp_o_20_)
+  );
+  AOAI211X1 _3216_ (
+    .A(_1171_),
+    .B(_0875_),
+    .C(_1173_),
+    .D(_1174_),
+    .Y(_1201_)
+  );
+  BUFX3 _3217_ (
+    .A(_1314_),
+    .Y(_1202_)
+  );
+  OAOI211X1 _3218_ (
+    .A(_1170_),
+    .B(_0244_),
+    .C(_1201_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_19_)
+  );
+  OAI21X1 _3219_ (
+    .A(_1170_),
+    .B(_0331_),
+    .C(_1198_),
+    .Y(_1203_)
+  );
+  OAOI211X1 _3220_ (
+    .A(_1179_),
+    .B(_0971_),
+    .C(_1203_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_36_)
+  );
+  OAI21X1 _3221_ (
+    .A(_1166_),
+    .B(_0870_),
+    .C(_1158_),
+    .Y(_1204_)
+  );
+  OAOI211X1 _3222_ (
+    .A(_1161_),
+    .B(_0239_),
+    .C(_1204_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_18_)
+  );
+  NOR2X1 _3223_ (
+    .A(_1298_),
+    .B(_0231_),
+    .Y(_1205_)
+  );
+  OA21X2 _3224_ (
+    .A(_1174_),
+    .B(_1205_),
+    .C(_1176_),
+    .Y(_1206_)
+  );
+  NAND2X1 _3225_ (
+    .A(_0862_),
+    .B(_1180_),
+    .Y(_1207_)
+  );
+  AOI2B1X1 _3226_ (
+    .AB(_1206_),
+    .B(_1207_),
+    .C(_1168_),
+    .Y(user_sbr_obi_rsp_o_17_)
+  );
+  AOAI211X1 _3227_ (
+    .A(\i_user_rom.addr_q_2_ ),
+    .B(\i_user_rom.addr_q_3_ ),
+    .C(_1172_),
+    .D(_1160_),
+    .Y(_1208_)
+  );
+  AOI21BX1 _3228_ (
+    .A(_1182_),
+    .B(_0376_),
+    .CB(_1208_),
+    .Y(_1209_)
+  );
+  AOI21X1 _3229_ (
+    .A(_1158_),
+    .B(_1016_),
+    .C(_1209_),
+    .Y(_1210_)
+  );
+  NOR2X1 _3230_ (
+    .A(_1188_),
+    .B(_1210_),
+    .Y(user_sbr_obi_rsp_o_16_)
+  );
+  OAI21X1 _3231_ (
+    .A(_1170_),
+    .B(_0369_),
+    .C(_1193_),
+    .Y(_1211_)
+  );
+  NAND2X1 _3232_ (
+    .A(_1158_),
+    .B(_1011_),
+    .Y(_1212_)
+  );
+  AOI21X1 _3233_ (
+    .A(_1211_),
+    .B(_1212_),
+    .C(_1188_),
+    .Y(user_sbr_obi_rsp_o_15_)
+  );
+  NAND2X1 _3234_ (
+    .A(_1006_),
+    .B(_1180_),
+    .Y(_1213_)
+  );
+  OAOI211X1 _3235_ (
+    .A(_1170_),
+    .B(_0366_),
+    .C(_1213_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_14_)
+  );
+  AOAI211X1 _3236_ (
+    .A(_1179_),
+    .B(_0362_),
+    .C(_1174_),
+    .D(_1208_),
+    .Y(_1214_)
+  );
+  AOI21BX1 _3237_ (
+    .A(_1002_),
+    .B(_1180_),
+    .CB(_1214_),
+    .Y(_1215_)
+  );
+  NOR2X1 _3238_ (
+    .A(_1188_),
+    .B(_1215_),
+    .Y(user_sbr_obi_rsp_o_13_)
+  );
+  NAND2X1 _3239_ (
+    .A(_0997_),
+    .B(_1180_),
+    .Y(_1216_)
+  );
+  OAOI211X1 _3240_ (
+    .A(_1170_),
+    .B(_0356_),
+    .C(_1216_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_12_)
+  );
+  OAI21X1 _3241_ (
+    .A(_1166_),
+    .B(_0992_),
+    .C(_1158_),
+    .Y(_1217_)
+  );
+  OAOI211X1 _3242_ (
+    .A(_1161_),
+    .B(_0353_),
+    .C(_1217_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_11_)
+  );
+  OAI21X1 _3243_ (
+    .A(_1166_),
+    .B(_0988_),
+    .C(_1158_),
+    .Y(_1218_)
+  );
+  OAOI211X1 _3244_ (
+    .A(_1161_),
+    .B(_0348_),
+    .C(_1218_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_10_)
+  );
+  NAND2X1 _3245_ (
+    .A(_1182_),
+    .B(_0335_),
+    .Y(_1219_)
+  );
+  NAND2X1 _3246_ (
+    .A(_1198_),
+    .B(_1219_),
+    .Y(_1220_)
+  );
+  OAOI211X1 _3247_ (
+    .A(_1179_),
+    .B(_0976_),
+    .C(_1220_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_9_)
+  );
+  OAI21X1 _3248_ (
+    .A(_1166_),
+    .B(_0965_),
+    .C(_1171_),
+    .Y(_1221_)
+  );
+  OAOI211X1 _3249_ (
+    .A(_1161_),
+    .B(_0329_),
+    .C(_1221_),
+    .D(_1202_),
+    .Y(user_sbr_obi_rsp_o_35_)
+  );
+  AOI21BX1 _3250_ (
+    .A(_1182_),
+    .B(_0289_),
+    .CB(_1198_),
+    .Y(_1222_)
+  );
+  AOI21X1 _3251_ (
+    .A(_1158_),
+    .B(_0920_),
+    .C(_1222_),
+    .Y(_1223_)
+  );
+  NOR2X1 _3252_ (
+    .A(_1188_),
+    .B(_1223_),
+    .Y(user_sbr_obi_rsp_o_8_)
+  );
+  AOAI211X1 _3253_ (
+    .A(_1179_),
+    .B(_0222_),
+    .C(_1174_),
+    .D(_1208_),
+    .Y(_1224_)
+  );
+  AOI21BX1 _3254_ (
+    .A(_0851_),
+    .B(_1180_),
+    .CB(_1224_),
+    .Y(_1225_)
+  );
+  NOR2X1 _3255_ (
+    .A(_1188_),
+    .B(_1225_),
     .Y(user_sbr_obi_rsp_o_7_)
   );
-  MUXT4X3 _1223_ (
+  MUXT4X3 _3256_ (
     .A0(all_user_sbr_obi_rsp_6_),
     .A1(all_user_sbr_obi_rsp_45_),
     .A2(all_user_sbr_obi_rsp_84_),
     .A3(all_user_sbr_obi_rsp_123_),
-    .S0(_0152_),
-    .S1(_0153_),
-    .Y(_0086_)
+    .S0(_1259_),
+    .S1(_1160_),
+    .Y(_1226_)
   );
-  AND2X1 _1224_ (
-    .A(_0139_),
-    .B(_0086_),
-    .Y(_0087_)
+  AND2X1 _3257_ (
+    .A(_1265_),
+    .B(_1226_),
+    .Y(_1227_)
   );
-  AO31X2 _1225_ (
+  AO31X2 _3258_ (
     .A(all_user_sbr_obi_rsp_162_),
-    .B(_0289_),
-    .C(_0154_),
-    .D(_0087_),
+    .B(_1314_),
+    .C(_1268_),
+    .D(_1227_),
     .Y(user_sbr_obi_rsp_o_6_)
   );
-  MUXT4X3 _1226_ (
+  MUXT4X3 _3259_ (
     .A0(all_user_sbr_obi_rsp_5_),
     .A1(all_user_sbr_obi_rsp_44_),
     .A2(all_user_sbr_obi_rsp_83_),
     .A3(all_user_sbr_obi_rsp_122_),
-    .S0(_0152_),
-    .S1(_0153_),
-    .Y(_0088_)
+    .S0(_1259_),
+    .S1(_1160_),
+    .Y(_1228_)
   );
-  AND2X1 _1227_ (
-    .A(_0139_),
-    .B(_0088_),
-    .Y(_0089_)
+  AND2X1 _3260_ (
+    .A(_1265_),
+    .B(_1228_),
+    .Y(_1229_)
   );
-  AO31X2 _1228_ (
+  AO31X2 _3261_ (
     .A(all_user_sbr_obi_rsp_161_),
-    .B(_0289_),
-    .C(_0154_),
-    .D(_0089_),
+    .B(_1314_),
+    .C(_1268_),
+    .D(_1229_),
     .Y(user_sbr_obi_rsp_o_5_)
   );
-  MUXT4X3 _1229_ (
+  MUXT4X3 _3262_ (
     .A0(all_user_sbr_obi_rsp_4_),
     .A1(all_user_sbr_obi_rsp_43_),
     .A2(all_user_sbr_obi_rsp_82_),
     .A3(all_user_sbr_obi_rsp_121_),
-    .S0(_0152_),
-    .S1(_0153_),
-    .Y(_0090_)
+    .S0(_1259_),
+    .S1(_1160_),
+    .Y(_1230_)
   );
-  AND2X1 _1230_ (
-    .A(_0139_),
-    .B(_0090_),
-    .Y(_0091_)
+  AND2X1 _3263_ (
+    .A(_1265_),
+    .B(_1230_),
+    .Y(_1231_)
   );
-  AO31X2 _1231_ (
+  AO31X2 _3264_ (
     .A(all_user_sbr_obi_rsp_160_),
-    .B(_0289_),
-    .C(_0154_),
-    .D(_0091_),
+    .B(_1314_),
+    .C(_1268_),
+    .D(_1231_),
     .Y(user_sbr_obi_rsp_o_4_)
   );
-  NAND4X2 _1232_ (
-    .A(_0283_),
+  NAND4X2 _3265_ (
+    .A(_1179_),
     .B(all_user_sbr_obi_rsp_117_),
-    .C(_0287_),
+    .C(_1161_),
     .D(\i_user_rom.we_q ),
-    .Y(_0092_)
+    .Y(_1232_)
   );
-  AOI2B1X1 _1233_ (
-    .AB(_0154_),
-    .B(_0092_),
-    .C(_0333_),
+  AOI21X1 _3266_ (
+    .A(_1303_),
+    .B(_1232_),
+    .C(_1168_),
     .Y(user_sbr_obi_rsp_o_3_)
   );
-  NAND2X1 _1234_ (
-    .A(_0338_),
-    .B(_0065_),
-    .Y(_0093_)
+  OAI21X1 _3267_ (
+    .A(_1166_),
+    .B(_0961_),
+    .C(_1171_),
+    .Y(_1233_)
   );
-  XOR2X2 _1235_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_51_ ),
-    .B(_0093_),
-    .Y(_0094_)
-  );
-  NAND3BX1 _1236_ (
-    .AB(_0302_),
-    .B(_0298_),
-    .C(_0300_),
-    .Y(_0095_)
-  );
-  OR3BX1 _1237_ (
-    .AB(_0302_),
-    .B(_0298_),
-    .C(_0300_),
-    .Y(_0096_)
-  );
-  AOI211X1 _1238_ (
-    .A(_0095_),
-    .B(_0096_),
-    .C(_0296_),
-    .D(_0070_),
-    .Y(_0097_)
-  );
-  XOR2X2 _1239_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_51_ ),
-    .B(_0097_),
-    .Y(_0098_)
-  );
-  NAND2X1 _1240_ (
-    .A(_0169_),
-    .B(_0098_),
-    .Y(_0099_)
-  );
-  AOAI211X1 _1241_ (
-    .A(_0287_),
-    .B(_0094_),
-    .C(_0478_),
-    .D(_0099_),
+  OAOI211X1 _3268_ (
+    .A(_1161_),
+    .B(_0326_),
+    .C(_1233_),
+    .D(_1202_),
     .Y(user_sbr_obi_rsp_o_34_)
   );
-  NAND2BX1 _1242_ (
-    .AB(_0309_),
-    .B(_0306_),
-    .Y(_0100_)
+  NAND2BX1 _3269_ (
+    .AB(_1186_),
+    .B(_1160_),
+    .Y(_1234_)
   );
-  AOI211X1 _1243_ (
-    .A(_0068_),
-    .B(_0069_),
-    .C(_0100_),
-    .D(_0297_),
-    .Y(_0101_)
+  AOAI211X1 _3270_ (
+    .A(_1179_),
+    .B(_0322_),
+    .C(_1160_),
+    .D(_1234_),
+    .Y(_1235_)
   );
-  XOR2X2 _1244_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_50_ ),
-    .B(_0101_),
-    .Y(_0102_)
+  AOI21BX1 _3271_ (
+    .A(_0956_),
+    .B(_1180_),
+    .CB(_1235_),
+    .Y(_1236_)
   );
-  NAND2X1 _1245_ (
-    .A(_0283_),
-    .B(_0102_),
-    .Y(_0103_)
-  );
-  NOR3BX1 _1246_ (
-    .AB(_0328_),
-    .B(_0326_),
-    .C(_0323_),
-    .Y(_0104_)
-  );
-  AND2X1 _1247_ (
-    .A(_0320_),
-    .B(_0104_),
-    .Y(_0105_)
-  );
-  XOR2X2 _1248_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_50_ ),
-    .B(_0105_),
-    .Y(_0106_)
-  );
-  AOAI211X1 _1249_ (
-    .A(_0163_),
-    .B(_0106_),
-    .C(_0409_),
-    .D(_0421_),
-    .Y(_0107_)
-  );
-  OAOI211X1 _1250_ (
-    .A(_0287_),
-    .B(_0103_),
-    .C(_0107_),
-    .D(_0289_),
+  NOR2X1 _3272_ (
+    .A(_1188_),
+    .B(_1236_),
     .Y(user_sbr_obi_rsp_o_33_)
   );
-  AOI211X1 _1251_ (
-    .A(_0095_),
-    .B(_0096_),
-    .C(_0100_),
-    .D(_0296_),
-    .Y(_0108_)
+  AOI211X1 _3273_ (
+    .A(_1171_),
+    .B(_0951_),
+    .C(_1173_),
+    .D(_1166_),
+    .Y(_1237_)
   );
-  XOR2X2 _1252_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_49_ ),
-    .B(_0108_),
-    .Y(_0109_)
+  OAI21X1 _3274_ (
+    .A(_1170_),
+    .B(_0317_),
+    .C(_1265_),
+    .Y(_1238_)
   );
-  AND2X1 _1253_ (
-    .A(_0338_),
-    .B(_0104_),
-    .Y(_0110_)
-  );
-  XOR2X2 _1254_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_49_ ),
-    .B(_0110_),
-    .Y(_0111_)
-  );
-  AO211X2 _1255_ (
-    .A(_0163_),
-    .B(_0111_),
-    .C(_0476_),
-    .D(_0158_),
-    .Y(_0112_)
-  );
-  OA211X2 _1256_ (
-    .A(_0344_),
-    .B(_0109_),
-    .C(_0112_),
-    .D(_0139_),
+  NOR2X1 _3275_ (
+    .A(_1237_),
+    .B(_1238_),
     .Y(user_sbr_obi_rsp_o_32_)
   );
-  NOR3X1 _1257_ (
-    .A(_0316_),
-    .B(_0319_),
-    .C(_0323_),
-    .Y(_0113_)
+  AOAI211X1 _3276_ (
+    .A(_1171_),
+    .B(_0943_),
+    .C(_1173_),
+    .D(_1174_),
+    .Y(_1239_)
   );
-  NAND3X1 _1258_ (
-    .A(_0326_),
-    .B(_0328_),
-    .C(_0113_),
-    .Y(_0114_)
-  );
-  XOR2X2 _1259_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_48_ ),
-    .B(_0114_),
-    .Y(_0115_)
-  );
-  NOR4BX1 _1260_ (
-    .AB(_0301_),
-    .B(_0303_),
-    .C(_0310_),
-    .D(_0296_),
-    .Y(_0116_)
-  );
-  XOR2X2 _1261_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_48_ ),
-    .B(_0116_),
-    .Y(_0117_)
-  );
-  OAI21X1 _1262_ (
-    .A(_0421_),
-    .B(_0117_),
-    .C(_0342_),
-    .Y(_0118_)
-  );
-  OAI21X1 _1263_ (
-    .A(_0337_),
-    .B(_0115_),
-    .C(_0118_),
+  OAOI211X1 _3277_ (
+    .A(_1170_),
+    .B(_0314_),
+    .C(_1239_),
+    .D(_1314_),
     .Y(user_sbr_obi_rsp_o_31_)
   );
-  INVX1 _1264_ (
-    .A(_0352_),
-    .Y(_0119_)
+  OAI21X1 _3278_ (
+    .A(_1166_),
+    .B(_0938_),
+    .C(_1171_),
+    .Y(_1240_)
   );
-  XOR2X2 _1265_ (
-    .A(_0351_),
-    .B(_0119_),
-    .Y(_0120_)
-  );
-  OR3X2 _1266_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_44_ ),
-    .B(_0351_),
-    .C(_0119_),
-    .Y(_0121_)
-  );
-  NAND3X1 _1267_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_44_ ),
-    .B(_0351_),
-    .C(_0119_),
-    .Y(_0122_)
-  );
-  AOI21X1 _1268_ (
-    .A(_0121_),
-    .B(_0122_),
-    .C(_0426_),
-    .Y(_0123_)
-  );
-  OAOI211X1 _1269_ (
-    .A(_0426_),
-    .B(_0120_),
-    .C(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_39_ ),
-    .D(_0123_),
-    .Y(_0124_)
-  );
-  NOR2X1 _1270_ (
-    .A(_0374_),
-    .B(_0379_),
-    .Y(_0125_)
-  );
-  AND4X2 _1271_ (
-    .A(_0366_),
-    .B(_0370_),
-    .C(_0377_),
-    .D(_0125_),
-    .Y(_0126_)
-  );
-  XOR2X2 _1272_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_39_ ),
-    .B(_0126_),
-    .Y(_0127_)
-  );
-  OAI21X1 _1273_ (
-    .A(_0313_),
-    .B(_0127_),
-    .C(_0331_),
-    .Y(_0128_)
-  );
-  OAOI211X1 _1274_ (
-    .A(_0287_),
-    .B(_0124_),
-    .C(_0128_),
-    .D(_0289_),
+  OAOI211X1 _3279_ (
+    .A(_1161_),
+    .B(_0305_),
+    .C(_1240_),
+    .D(_1314_),
     .Y(user_sbr_obi_rsp_o_30_)
   );
-  OR3BX1 _1275_ (
-    .AB(_0125_),
-    .B(_0377_),
-    .C(_0403_),
-    .Y(_0129_)
+  NAND2X1 _3280_ (
+    .A(_1182_),
+    .B(_0301_),
+    .Y(_1241_)
   );
-  XOR2X2 _1276_ (
-    .A(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_38_ ),
-    .B(_0129_),
-    .Y(_0130_)
+  AOI22X1 _3281_ (
+    .A(_1171_),
+    .B(_0931_),
+    .C(_1193_),
+    .D(_1241_),
+    .Y(_1242_)
   );
-  NAND2X1 _1277_ (
-    .A(_0354_),
-    .B(_0351_),
-    .Y(_0131_)
-  );
-  OR3BX1 _1278_ (
-    .AB(_0348_),
-    .B(_0351_),
-    .C(_0119_),
-    .Y(_0132_)
-  );
-  NAND3BX1 _1279_ (
-    .AB(_0360_),
-    .B(_0347_),
-    .C(_0358_),
-    .Y(_0133_)
-  );
-  OAOI211X1 _1280_ (
-    .A(_0131_),
-    .B(_0352_),
-    .C(_0132_),
-    .D(_0133_),
-    .Y(_0134_)
-  );
-  XOR2X2 _1281_ (
-    .A(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_38_ ),
-    .B(_0134_),
-    .Y(_0135_)
-  );
-  NOR2X1 _1282_ (
-    .A(_0344_),
-    .B(_0135_),
-    .Y(_0136_)
-  );
-  OAI22X1 _1283_ (
-    .A(_0478_),
-    .B(_0130_),
-    .C(_0136_),
-    .D(_0425_),
+  NOR2X1 _3282_ (
+    .A(_1188_),
+    .B(_1242_),
     .Y(user_sbr_obi_rsp_o_29_)
   );
-  TIELO _1284_ (
-    .Y(_0546_)
+  TIELO _3283_ (
+    .Y(_1531_)
   );
   DFFRQX3 all_user_sbr_obi_rsp_121__reg (
     .CK(clk_i),
@@ -194701,20 +205502,369 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Q(all_user_sbr_obi_rsp_84_),
     .RB(rst_ni)
   );
+  DFFRQX3 \gen_sram_bank[0].bank_read_valid_reg  (
+    .CK(clk_i),
+    .D(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].rvalid_q_0_ ),
+    .Q(\gen_sram_bank[0].bank_read_valid ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_0__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_118_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_1__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_119_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_2__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_120_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_3__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_121_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_4__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_122_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_4_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_5__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_123_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_5_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_6__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_124_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_6_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_7__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_125_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_7_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_8__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_126_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_8_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].bank_word_addr_q_9__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_127_),
+    .Q(\gen_sram_bank[0].bank_word_addr_q_9_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_0__reg  (
+    .CK(clk_i),
+    .D(_0003_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_1__reg  (
+    .CK(clk_i),
+    .D(_0004_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_2__reg  (
+    .CK(clk_i),
+    .D(_0005_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_3__reg  (
+    .CK(clk_i),
+    .D(_0006_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_4__reg  (
+    .CK(clk_i),
+    .D(_0007_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_4_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_5__reg  (
+    .CK(clk_i),
+    .D(_0008_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_5_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_6__reg  (
+    .CK(clk_i),
+    .D(_0009_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_6_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_7__reg  (
+    .CK(clk_i),
+    .D(_0010_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_7_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_8__reg  (
+    .CK(clk_i),
+    .D(_0011_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_8_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_addr_q_9__reg  (
+    .CK(clk_i),
+    .D(_0012_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_addr_q_9_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_be_q_0__reg  (
+    .CK(clk_i),
+    .D(_0013_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_be_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_be_q_1__reg  (
+    .CK(clk_i),
+    .D(_0014_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_be_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_be_q_2__reg  (
+    .CK(clk_i),
+    .D(_0015_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_be_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_be_q_3__reg  (
+    .CK(clk_i),
+    .D(_0016_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_be_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_0__reg  (
+    .CK(clk_i),
+    .D(_0017_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_10__reg  (
+    .CK(clk_i),
+    .D(_0018_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_10_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_11__reg  (
+    .CK(clk_i),
+    .D(_0019_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_11_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_12__reg  (
+    .CK(clk_i),
+    .D(_0020_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_12_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_13__reg  (
+    .CK(clk_i),
+    .D(_0021_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_13_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_14__reg  (
+    .CK(clk_i),
+    .D(_0022_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_14_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_15__reg  (
+    .CK(clk_i),
+    .D(_0023_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_15_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_16__reg  (
+    .CK(clk_i),
+    .D(_0024_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_16_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_17__reg  (
+    .CK(clk_i),
+    .D(_0025_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_17_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_18__reg  (
+    .CK(clk_i),
+    .D(_0026_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_18_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_19__reg  (
+    .CK(clk_i),
+    .D(_0027_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_19_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_1__reg  (
+    .CK(clk_i),
+    .D(_0028_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_20__reg  (
+    .CK(clk_i),
+    .D(_0029_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_20_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_21__reg  (
+    .CK(clk_i),
+    .D(_0030_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_21_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_22__reg  (
+    .CK(clk_i),
+    .D(_0031_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_22_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_23__reg  (
+    .CK(clk_i),
+    .D(_0032_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_23_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_24__reg  (
+    .CK(clk_i),
+    .D(_0033_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_24_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_25__reg  (
+    .CK(clk_i),
+    .D(_0034_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_25_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_26__reg  (
+    .CK(clk_i),
+    .D(_0035_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_26_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_27__reg  (
+    .CK(clk_i),
+    .D(_0036_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_27_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_28__reg  (
+    .CK(clk_i),
+    .D(_0037_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_28_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_29__reg  (
+    .CK(clk_i),
+    .D(_0038_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_29_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_2__reg  (
+    .CK(clk_i),
+    .D(_0039_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_30__reg  (
+    .CK(clk_i),
+    .D(_0040_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_30_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_31__reg  (
+    .CK(clk_i),
+    .D(_0041_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_31_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_3__reg  (
+    .CK(clk_i),
+    .D(_0042_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_4__reg  (
+    .CK(clk_i),
+    .D(_0043_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_4_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_5__reg  (
+    .CK(clk_i),
+    .D(_0044_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_5_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_6__reg  (
+    .CK(clk_i),
+    .D(_0045_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_6_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_7__reg  (
+    .CK(clk_i),
+    .D(_0046_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_7_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_8__reg  (
+    .CK(clk_i),
+    .D(_0047_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_8_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_data_q_9__reg  (
+    .CK(clk_i),
+    .D(_0048_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_data_q_9_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[0].i_repair_buffer.buf_valid_q_reg  (
+    .CK(clk_i),
+    .D(_0049_),
+    .Q(\gen_sram_bank[0].i_repair_buffer.buf_valid_q ),
+    .RB(rst_ni)
+  );
   \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[0].i_sram_macro.gen_secded.i_sram  \gen_sram_bank[0].i_sram_macro.gen_secded.i_sram  (
-    .addr_i_0_(all_user_sbr_obi_req_118_),
-    .addr_i_1_(all_user_sbr_obi_req_119_),
-    .addr_i_2_(all_user_sbr_obi_req_120_),
-    .addr_i_3_(all_user_sbr_obi_req_121_),
-    .addr_i_4_(all_user_sbr_obi_req_122_),
-    .addr_i_5_(all_user_sbr_obi_req_123_),
-    .addr_i_6_(all_user_sbr_obi_req_124_),
-    .addr_i_7_(all_user_sbr_obi_req_125_),
-    .addr_i_8_(all_user_sbr_obi_req_126_),
-    .be_i_0_(all_user_sbr_obi_req_111_),
-    .be_i_1_(all_user_sbr_obi_req_112_),
-    .be_i_2_(all_user_sbr_obi_req_113_),
-    .be_i_3_(all_user_sbr_obi_req_114_),
+    .addr_i_0_(\gen_sram_bank[0].bank_sram_addr_0_ ),
+    .addr_i_1_(\gen_sram_bank[0].bank_sram_addr_1_ ),
+    .addr_i_2_(\gen_sram_bank[0].bank_sram_addr_2_ ),
+    .addr_i_3_(\gen_sram_bank[0].bank_sram_addr_3_ ),
+    .addr_i_4_(\gen_sram_bank[0].bank_sram_addr_4_ ),
+    .addr_i_5_(\gen_sram_bank[0].bank_sram_addr_5_ ),
+    .addr_i_6_(\gen_sram_bank[0].bank_sram_addr_6_ ),
+    .addr_i_7_(\gen_sram_bank[0].bank_sram_addr_7_ ),
+    .addr_i_8_(\gen_sram_bank[0].bank_sram_addr_8_ ),
+    .addr_i_9_(\gen_sram_bank[0].bank_sram_addr_9_ ),
+    .be_i_0_(\gen_sram_bank[0].bank_sram_be_0_ ),
+    .be_i_1_(\gen_sram_bank[0].bank_sram_be_1_ ),
+    .be_i_2_(\gen_sram_bank[0].bank_sram_be_2_ ),
+    .be_i_3_(\gen_sram_bank[0].bank_sram_be_3_ ),
     .clk_i(clk_i),
     .impl_i(sram_impl_i),
     .impl_o(\gen_sram_bank[0].i_sram_macro.impl_o ),
@@ -194782,73 +205932,73 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .rdata_o_7_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_7_ ),
     .rdata_o_8_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_8_ ),
     .rdata_o_9_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_rdata_9_ ),
-    .req_i(all_user_sbr_obi_req_74_),
+    .req_i(\gen_sram_bank[0].bank_sram_req ),
     .rst_ni(rst_ni),
-    .wdata_i_0_(all_user_sbr_obi_req_79_),
+    .wdata_i_0_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_0_ ),
     .wdata_i_10_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ ),
     .wdata_i_11_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ ),
     .wdata_i_12_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ ),
-    .wdata_i_13_(_0546_),
-    .wdata_i_14_(_0546_),
-    .wdata_i_15_(_0546_),
-    .wdata_i_16_(all_user_sbr_obi_req_87_),
-    .wdata_i_17_(all_user_sbr_obi_req_88_),
-    .wdata_i_18_(all_user_sbr_obi_req_89_),
-    .wdata_i_19_(all_user_sbr_obi_req_90_),
-    .wdata_i_1_(all_user_sbr_obi_req_80_),
-    .wdata_i_20_(all_user_sbr_obi_req_91_),
-    .wdata_i_21_(all_user_sbr_obi_req_92_),
-    .wdata_i_22_(all_user_sbr_obi_req_93_),
-    .wdata_i_23_(all_user_sbr_obi_req_94_),
+    .wdata_i_13_(_1531_),
+    .wdata_i_14_(_1531_),
+    .wdata_i_15_(_1531_),
+    .wdata_i_16_(\gen_sram_bank[0].bank_sram_wdata_8_ ),
+    .wdata_i_17_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_17_ ),
+    .wdata_i_18_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_18_ ),
+    .wdata_i_19_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_19_ ),
+    .wdata_i_1_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_1_ ),
+    .wdata_i_20_(\gen_sram_bank[0].bank_sram_wdata_12_ ),
+    .wdata_i_21_(\gen_sram_bank[0].bank_sram_wdata_13_ ),
+    .wdata_i_22_(\gen_sram_bank[0].bank_sram_wdata_14_ ),
+    .wdata_i_23_(\gen_sram_bank[0].bank_sram_wdata_15_ ),
     .wdata_i_24_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_8_ ),
     .wdata_i_25_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_9_ ),
     .wdata_i_26_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_10_ ),
     .wdata_i_27_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_11_ ),
     .wdata_i_28_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_12_ ),
-    .wdata_i_29_(_0546_),
-    .wdata_i_2_(all_user_sbr_obi_req_81_),
-    .wdata_i_30_(_0546_),
-    .wdata_i_31_(_0546_),
-    .wdata_i_32_(all_user_sbr_obi_req_95_),
-    .wdata_i_33_(all_user_sbr_obi_req_96_),
-    .wdata_i_34_(all_user_sbr_obi_req_97_),
-    .wdata_i_35_(all_user_sbr_obi_req_98_),
-    .wdata_i_36_(all_user_sbr_obi_req_99_),
-    .wdata_i_37_(all_user_sbr_obi_req_100_),
-    .wdata_i_38_(all_user_sbr_obi_req_101_),
-    .wdata_i_39_(all_user_sbr_obi_req_102_),
-    .wdata_i_3_(all_user_sbr_obi_req_82_),
+    .wdata_i_29_(_1531_),
+    .wdata_i_2_(\gen_sram_bank[0].bank_sram_wdata_2_ ),
+    .wdata_i_30_(_1531_),
+    .wdata_i_31_(_1531_),
+    .wdata_i_32_(\gen_sram_bank[0].bank_sram_wdata_16_ ),
+    .wdata_i_33_(\gen_sram_bank[0].bank_sram_wdata_17_ ),
+    .wdata_i_34_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_34_ ),
+    .wdata_i_35_(\gen_sram_bank[0].bank_sram_wdata_19_ ),
+    .wdata_i_36_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_36_ ),
+    .wdata_i_37_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_37_ ),
+    .wdata_i_38_(\gen_sram_bank[0].bank_sram_wdata_22_ ),
+    .wdata_i_39_(\gen_sram_bank[0].bank_sram_wdata_23_ ),
+    .wdata_i_3_(\gen_sram_bank[0].bank_sram_wdata_3_ ),
     .wdata_i_40_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_8_ ),
     .wdata_i_41_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_9_ ),
     .wdata_i_42_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_10_ ),
     .wdata_i_43_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_11_ ),
     .wdata_i_44_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_12_ ),
-    .wdata_i_45_(_0546_),
-    .wdata_i_46_(_0546_),
-    .wdata_i_47_(_0546_),
-    .wdata_i_48_(all_user_sbr_obi_req_103_),
-    .wdata_i_49_(all_user_sbr_obi_req_104_),
-    .wdata_i_4_(all_user_sbr_obi_req_83_),
-    .wdata_i_50_(all_user_sbr_obi_req_105_),
-    .wdata_i_51_(all_user_sbr_obi_req_106_),
-    .wdata_i_52_(all_user_sbr_obi_req_107_),
-    .wdata_i_53_(all_user_sbr_obi_req_108_),
-    .wdata_i_54_(all_user_sbr_obi_req_109_),
-    .wdata_i_55_(all_user_sbr_obi_req_110_),
+    .wdata_i_45_(_1531_),
+    .wdata_i_46_(_1531_),
+    .wdata_i_47_(_1531_),
+    .wdata_i_48_(\gen_sram_bank[0].bank_sram_wdata_24_ ),
+    .wdata_i_49_(\gen_sram_bank[0].bank_sram_wdata_25_ ),
+    .wdata_i_4_(\gen_sram_bank[0].bank_sram_wdata_4_ ),
+    .wdata_i_50_(\gen_sram_bank[0].bank_sram_wdata_26_ ),
+    .wdata_i_51_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_51_ ),
+    .wdata_i_52_(\gen_sram_bank[0].bank_sram_wdata_28_ ),
+    .wdata_i_53_(\gen_sram_bank[0].bank_sram_wdata_29_ ),
+    .wdata_i_54_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_54_ ),
+    .wdata_i_55_(\gen_sram_bank[0].i_sram_macro.gen_secded.secded_wdata_55_ ),
     .wdata_i_56_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ ),
     .wdata_i_57_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ ),
     .wdata_i_58_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_10_ ),
     .wdata_i_59_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_11_ ),
-    .wdata_i_5_(all_user_sbr_obi_req_84_),
+    .wdata_i_5_(\gen_sram_bank[0].bank_sram_wdata_5_ ),
     .wdata_i_60_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ ),
-    .wdata_i_61_(_0546_),
-    .wdata_i_62_(_0546_),
-    .wdata_i_63_(_0546_),
-    .wdata_i_6_(all_user_sbr_obi_req_85_),
-    .wdata_i_7_(all_user_sbr_obi_req_86_),
+    .wdata_i_61_(_1531_),
+    .wdata_i_62_(_1531_),
+    .wdata_i_63_(_1531_),
+    .wdata_i_6_(\gen_sram_bank[0].bank_sram_wdata_6_ ),
+    .wdata_i_7_(\gen_sram_bank[0].bank_sram_wdata_7_ ),
     .wdata_i_8_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_8_ ),
     .wdata_i_9_(\gen_sram_bank[0].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_9_ ),
-    .we_i(all_user_sbr_obi_req_115_)
+    .we_i(\gen_sram_bank[0].bank_sram_we )
   );
   DFFRQX3 \gen_sram_bank[0].i_sram_shim.rvalid_q_reg  (
     .CK(clk_i),
@@ -194856,20 +206006,369 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Q(all_user_sbr_obi_rsp_39_),
     .RB(rst_ni)
   );
+  DFFRQX3 \gen_sram_bank[1].bank_read_valid_reg  (
+    .CK(clk_i),
+    .D(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].rvalid_q_0_ ),
+    .Q(\gen_sram_bank[1].bank_read_valid ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_0__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_192_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_1__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_193_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_2__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_194_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_3__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_195_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_4__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_196_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_4_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_5__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_197_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_5_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_6__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_198_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_6_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_7__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_199_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_7_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_8__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_200_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_8_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].bank_word_addr_q_9__reg  (
+    .CK(clk_i),
+    .D(all_user_sbr_obi_req_201_),
+    .Q(\gen_sram_bank[1].bank_word_addr_q_9_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_0__reg  (
+    .CK(clk_i),
+    .D(_0050_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_1__reg  (
+    .CK(clk_i),
+    .D(_0051_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_2__reg  (
+    .CK(clk_i),
+    .D(_0052_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_3__reg  (
+    .CK(clk_i),
+    .D(_0053_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_4__reg  (
+    .CK(clk_i),
+    .D(_0054_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_4_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_5__reg  (
+    .CK(clk_i),
+    .D(_0055_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_5_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_6__reg  (
+    .CK(clk_i),
+    .D(_0056_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_6_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_7__reg  (
+    .CK(clk_i),
+    .D(_0057_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_7_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_8__reg  (
+    .CK(clk_i),
+    .D(_0058_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_8_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_addr_q_9__reg  (
+    .CK(clk_i),
+    .D(_0059_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_addr_q_9_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_be_q_0__reg  (
+    .CK(clk_i),
+    .D(_0060_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_be_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_be_q_1__reg  (
+    .CK(clk_i),
+    .D(_0061_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_be_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_be_q_2__reg  (
+    .CK(clk_i),
+    .D(_0062_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_be_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_be_q_3__reg  (
+    .CK(clk_i),
+    .D(_0063_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_be_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_0__reg  (
+    .CK(clk_i),
+    .D(_0064_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_0_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_10__reg  (
+    .CK(clk_i),
+    .D(_0065_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_10_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_11__reg  (
+    .CK(clk_i),
+    .D(_0066_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_11_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_12__reg  (
+    .CK(clk_i),
+    .D(_0067_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_12_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_13__reg  (
+    .CK(clk_i),
+    .D(_0068_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_13_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_14__reg  (
+    .CK(clk_i),
+    .D(_0069_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_14_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_15__reg  (
+    .CK(clk_i),
+    .D(_0070_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_15_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_16__reg  (
+    .CK(clk_i),
+    .D(_0071_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_16_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_17__reg  (
+    .CK(clk_i),
+    .D(_0072_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_17_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_18__reg  (
+    .CK(clk_i),
+    .D(_0073_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_18_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_19__reg  (
+    .CK(clk_i),
+    .D(_0074_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_19_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_1__reg  (
+    .CK(clk_i),
+    .D(_0075_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_1_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_20__reg  (
+    .CK(clk_i),
+    .D(_0076_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_20_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_21__reg  (
+    .CK(clk_i),
+    .D(_0077_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_21_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_22__reg  (
+    .CK(clk_i),
+    .D(_0078_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_22_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_23__reg  (
+    .CK(clk_i),
+    .D(_0079_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_23_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_24__reg  (
+    .CK(clk_i),
+    .D(_0080_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_24_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_25__reg  (
+    .CK(clk_i),
+    .D(_0081_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_25_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_26__reg  (
+    .CK(clk_i),
+    .D(_0082_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_26_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_27__reg  (
+    .CK(clk_i),
+    .D(_0083_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_27_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_28__reg  (
+    .CK(clk_i),
+    .D(_0084_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_28_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_29__reg  (
+    .CK(clk_i),
+    .D(_0085_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_29_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_2__reg  (
+    .CK(clk_i),
+    .D(_0086_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_2_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_30__reg  (
+    .CK(clk_i),
+    .D(_0087_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_30_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_31__reg  (
+    .CK(clk_i),
+    .D(_0088_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_31_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_3__reg  (
+    .CK(clk_i),
+    .D(_0089_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_3_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_4__reg  (
+    .CK(clk_i),
+    .D(_0090_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_4_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_5__reg  (
+    .CK(clk_i),
+    .D(_0091_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_5_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_6__reg  (
+    .CK(clk_i),
+    .D(_0092_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_6_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_7__reg  (
+    .CK(clk_i),
+    .D(_0093_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_7_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_8__reg  (
+    .CK(clk_i),
+    .D(_0094_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_8_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_data_q_9__reg  (
+    .CK(clk_i),
+    .D(_0095_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_data_q_9_ ),
+    .RB(rst_ni)
+  );
+  DFFRQX3 \gen_sram_bank[1].i_repair_buffer.buf_valid_q_reg  (
+    .CK(clk_i),
+    .D(_0096_),
+    .Q(\gen_sram_bank[1].i_repair_buffer.buf_valid_q ),
+    .RB(rst_ni)
+  );
   \tc_sram_impl$croc_chip.i_croc_soc.i_user.gen_sram_bank[1].i_sram_macro.gen_secded.i_sram  \gen_sram_bank[1].i_sram_macro.gen_secded.i_sram  (
-    .addr_i_0_(all_user_sbr_obi_req_192_),
-    .addr_i_1_(all_user_sbr_obi_req_193_),
-    .addr_i_2_(all_user_sbr_obi_req_194_),
-    .addr_i_3_(all_user_sbr_obi_req_195_),
-    .addr_i_4_(all_user_sbr_obi_req_196_),
-    .addr_i_5_(all_user_sbr_obi_req_197_),
-    .addr_i_6_(all_user_sbr_obi_req_198_),
-    .addr_i_7_(all_user_sbr_obi_req_199_),
-    .addr_i_8_(all_user_sbr_obi_req_200_),
-    .be_i_0_(all_user_sbr_obi_req_185_),
-    .be_i_1_(all_user_sbr_obi_req_186_),
-    .be_i_2_(all_user_sbr_obi_req_187_),
-    .be_i_3_(all_user_sbr_obi_req_188_),
+    .addr_i_0_(\gen_sram_bank[1].bank_sram_addr_0_ ),
+    .addr_i_1_(\gen_sram_bank[1].bank_sram_addr_1_ ),
+    .addr_i_2_(\gen_sram_bank[1].bank_sram_addr_2_ ),
+    .addr_i_3_(\gen_sram_bank[1].bank_sram_addr_3_ ),
+    .addr_i_4_(\gen_sram_bank[1].bank_sram_addr_4_ ),
+    .addr_i_5_(\gen_sram_bank[1].bank_sram_addr_5_ ),
+    .addr_i_6_(\gen_sram_bank[1].bank_sram_addr_6_ ),
+    .addr_i_7_(\gen_sram_bank[1].bank_sram_addr_7_ ),
+    .addr_i_8_(\gen_sram_bank[1].bank_sram_addr_8_ ),
+    .addr_i_9_(\gen_sram_bank[1].bank_sram_addr_9_ ),
+    .be_i_0_(\gen_sram_bank[1].bank_sram_be_0_ ),
+    .be_i_1_(\gen_sram_bank[1].bank_sram_be_1_ ),
+    .be_i_2_(\gen_sram_bank[1].bank_sram_be_2_ ),
+    .be_i_3_(\gen_sram_bank[1].bank_sram_be_3_ ),
     .clk_i(clk_i),
     .impl_i(sram_impl_i),
     .impl_o(\gen_sram_bank[1].i_sram_macro.impl_o ),
@@ -194937,73 +206436,73 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .rdata_o_7_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_7_ ),
     .rdata_o_8_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_8_ ),
     .rdata_o_9_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_rdata_9_ ),
-    .req_i(all_user_sbr_obi_req_148_),
+    .req_i(\gen_sram_bank[1].bank_sram_req ),
     .rst_ni(rst_ni),
-    .wdata_i_0_(all_user_sbr_obi_req_153_),
+    .wdata_i_0_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_0_ ),
     .wdata_i_10_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_10_ ),
     .wdata_i_11_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_11_ ),
     .wdata_i_12_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_12_ ),
-    .wdata_i_13_(_0546_),
-    .wdata_i_14_(_0546_),
-    .wdata_i_15_(_0546_),
-    .wdata_i_16_(all_user_sbr_obi_req_161_),
-    .wdata_i_17_(all_user_sbr_obi_req_162_),
-    .wdata_i_18_(all_user_sbr_obi_req_163_),
-    .wdata_i_19_(all_user_sbr_obi_req_164_),
-    .wdata_i_1_(all_user_sbr_obi_req_154_),
-    .wdata_i_20_(all_user_sbr_obi_req_165_),
-    .wdata_i_21_(all_user_sbr_obi_req_166_),
-    .wdata_i_22_(all_user_sbr_obi_req_167_),
-    .wdata_i_23_(all_user_sbr_obi_req_168_),
+    .wdata_i_13_(_1531_),
+    .wdata_i_14_(_1531_),
+    .wdata_i_15_(_1531_),
+    .wdata_i_16_(\gen_sram_bank[1].bank_sram_wdata_8_ ),
+    .wdata_i_17_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_17_ ),
+    .wdata_i_18_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_18_ ),
+    .wdata_i_19_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_19_ ),
+    .wdata_i_1_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_1_ ),
+    .wdata_i_20_(\gen_sram_bank[1].bank_sram_wdata_12_ ),
+    .wdata_i_21_(\gen_sram_bank[1].bank_sram_wdata_13_ ),
+    .wdata_i_22_(\gen_sram_bank[1].bank_sram_wdata_14_ ),
+    .wdata_i_23_(\gen_sram_bank[1].bank_sram_wdata_15_ ),
     .wdata_i_24_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_8_ ),
     .wdata_i_25_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_9_ ),
     .wdata_i_26_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_10_ ),
     .wdata_i_27_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_11_ ),
     .wdata_i_28_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[1].enc_out_12_ ),
-    .wdata_i_29_(_0546_),
-    .wdata_i_2_(all_user_sbr_obi_req_155_),
-    .wdata_i_30_(_0546_),
-    .wdata_i_31_(_0546_),
-    .wdata_i_32_(all_user_sbr_obi_req_169_),
-    .wdata_i_33_(all_user_sbr_obi_req_170_),
-    .wdata_i_34_(all_user_sbr_obi_req_171_),
-    .wdata_i_35_(all_user_sbr_obi_req_172_),
-    .wdata_i_36_(all_user_sbr_obi_req_173_),
-    .wdata_i_37_(all_user_sbr_obi_req_174_),
-    .wdata_i_38_(all_user_sbr_obi_req_175_),
-    .wdata_i_39_(all_user_sbr_obi_req_176_),
-    .wdata_i_3_(all_user_sbr_obi_req_156_),
+    .wdata_i_29_(_1531_),
+    .wdata_i_2_(\gen_sram_bank[1].bank_sram_wdata_2_ ),
+    .wdata_i_30_(_1531_),
+    .wdata_i_31_(_1531_),
+    .wdata_i_32_(\gen_sram_bank[1].bank_sram_wdata_16_ ),
+    .wdata_i_33_(\gen_sram_bank[1].bank_sram_wdata_17_ ),
+    .wdata_i_34_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_34_ ),
+    .wdata_i_35_(\gen_sram_bank[1].bank_sram_wdata_19_ ),
+    .wdata_i_36_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_36_ ),
+    .wdata_i_37_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_37_ ),
+    .wdata_i_38_(\gen_sram_bank[1].bank_sram_wdata_22_ ),
+    .wdata_i_39_(\gen_sram_bank[1].bank_sram_wdata_23_ ),
+    .wdata_i_3_(\gen_sram_bank[1].bank_sram_wdata_3_ ),
     .wdata_i_40_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_8_ ),
     .wdata_i_41_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_9_ ),
     .wdata_i_42_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_10_ ),
     .wdata_i_43_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_11_ ),
     .wdata_i_44_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[2].enc_out_12_ ),
-    .wdata_i_45_(_0546_),
-    .wdata_i_46_(_0546_),
-    .wdata_i_47_(_0546_),
-    .wdata_i_48_(all_user_sbr_obi_req_177_),
-    .wdata_i_49_(all_user_sbr_obi_req_178_),
-    .wdata_i_4_(all_user_sbr_obi_req_157_),
-    .wdata_i_50_(all_user_sbr_obi_req_179_),
-    .wdata_i_51_(all_user_sbr_obi_req_180_),
-    .wdata_i_52_(all_user_sbr_obi_req_181_),
-    .wdata_i_53_(all_user_sbr_obi_req_182_),
-    .wdata_i_54_(all_user_sbr_obi_req_183_),
-    .wdata_i_55_(all_user_sbr_obi_req_184_),
+    .wdata_i_45_(_1531_),
+    .wdata_i_46_(_1531_),
+    .wdata_i_47_(_1531_),
+    .wdata_i_48_(\gen_sram_bank[1].bank_sram_wdata_24_ ),
+    .wdata_i_49_(\gen_sram_bank[1].bank_sram_wdata_25_ ),
+    .wdata_i_4_(\gen_sram_bank[1].bank_sram_wdata_4_ ),
+    .wdata_i_50_(\gen_sram_bank[1].bank_sram_wdata_26_ ),
+    .wdata_i_51_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_51_ ),
+    .wdata_i_52_(\gen_sram_bank[1].bank_sram_wdata_28_ ),
+    .wdata_i_53_(\gen_sram_bank[1].bank_sram_wdata_29_ ),
+    .wdata_i_54_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_54_ ),
+    .wdata_i_55_(\gen_sram_bank[1].i_sram_macro.gen_secded.secded_wdata_55_ ),
     .wdata_i_56_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_8_ ),
     .wdata_i_57_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_9_ ),
     .wdata_i_58_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_10_ ),
     .wdata_i_59_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_11_ ),
-    .wdata_i_5_(all_user_sbr_obi_req_158_),
+    .wdata_i_5_(\gen_sram_bank[1].bank_sram_wdata_5_ ),
     .wdata_i_60_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[3].enc_out_12_ ),
-    .wdata_i_61_(_0546_),
-    .wdata_i_62_(_0546_),
-    .wdata_i_63_(_0546_),
-    .wdata_i_6_(all_user_sbr_obi_req_159_),
-    .wdata_i_7_(all_user_sbr_obi_req_160_),
+    .wdata_i_61_(_1531_),
+    .wdata_i_62_(_1531_),
+    .wdata_i_63_(_1531_),
+    .wdata_i_6_(\gen_sram_bank[1].bank_sram_wdata_6_ ),
+    .wdata_i_7_(\gen_sram_bank[1].bank_sram_wdata_7_ ),
     .wdata_i_8_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_8_ ),
     .wdata_i_9_(\gen_sram_bank[1].i_sram_macro.gen_secded.gen_ports[0].gen_bytes[0].enc_out_9_ ),
-    .we_i(all_user_sbr_obi_req_189_)
+    .we_i(\gen_sram_bank[1].bank_sram_we )
   );
   DFFRQX3 \gen_sram_bank[1].i_sram_shim.rvalid_q_reg  (
     .CK(clk_i),
@@ -195013,31 +206512,31 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   );
   DFFRQX3 \i_obi_demux.i_counter.overflow_o_reg  (
     .CK(clk_i),
-    .D(_0003_),
+    .D(_0097_),
     .Q(\i_obi_demux.i_counter.overflow_o ),
     .RB(rst_ni)
   );
   DFFRQX3 \i_obi_demux.i_counter.q_o_reg  (
     .CK(clk_i),
-    .D(_0004_),
+    .D(_0098_),
     .Q(\i_obi_demux.i_counter.q_o ),
     .RB(rst_ni)
   );
   DFFRQX3 \i_obi_demux.select_q_0__reg  (
     .CK(clk_i),
-    .D(_0005_),
+    .D(_0099_),
     .Q(\i_obi_demux.select_q_0_ ),
     .RB(rst_ni)
   );
   DFFRQX3 \i_obi_demux.select_q_1__reg  (
     .CK(clk_i),
-    .D(_0006_),
+    .D(_0100_),
     .Q(\i_obi_demux.select_q_1_ ),
     .RB(rst_ni)
   );
   DFFRQX3 \i_obi_demux.select_q_2__reg  (
     .CK(clk_i),
-    .D(_0007_),
+    .D(_0101_),
     .Q(\i_obi_demux.select_q_2_ ),
     .RB(rst_ni)
   );
@@ -195049,13 +206548,13 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
   );
   DFFRQX3 \i_user_err.i_id_fifo.status_cnt_q_1__reg  (
     .CK(clk_i),
-    .D(_0008_),
+    .D(_0102_),
     .Q(\i_user_err.i_id_fifo.status_cnt_q_1_ ),
     .RB(rst_ni)
   );
   DFFRQX3 \i_user_err.i_id_fifo.usage_o_reg  (
     .CK(clk_i),
-    .D(_0009_),
+    .D(_0103_),
     .Q(\i_user_err.i_id_fifo.status_cnt_q_0_ ),
     .RB(rst_ni)
   );
@@ -195083,81 +206582,80 @@ module \user_domain$croc_chip.i_croc_soc.i_user (clk_i, rst_ni, ref_clk_i, testm
     .Q(\i_user_rom.we_q ),
     .RB(rst_ni)
   );
-  assign user_mgr_obi_req_o_71_ = _0546_;
-  assign user_mgr_obi_req_o_70_ = _0546_;
-  assign user_mgr_obi_req_o_69_ = _0546_;
-  assign user_mgr_obi_req_o_68_ = _0546_;
-  assign user_mgr_obi_req_o_67_ = _0546_;
-  assign user_mgr_obi_req_o_66_ = _0546_;
-  assign user_mgr_obi_req_o_65_ = _0546_;
-  assign user_mgr_obi_req_o_64_ = _0546_;
-  assign user_mgr_obi_req_o_63_ = _0546_;
-  assign user_mgr_obi_req_o_62_ = _0546_;
-  assign user_mgr_obi_req_o_61_ = _0546_;
-  assign user_mgr_obi_req_o_60_ = _0546_;
-  assign user_mgr_obi_req_o_59_ = _0546_;
-  assign user_mgr_obi_req_o_58_ = _0546_;
-  assign user_mgr_obi_req_o_57_ = _0546_;
-  assign user_mgr_obi_req_o_56_ = _0546_;
-  assign user_mgr_obi_req_o_55_ = _0546_;
-  assign user_mgr_obi_req_o_54_ = _0546_;
-  assign user_mgr_obi_req_o_53_ = _0546_;
-  assign user_mgr_obi_req_o_52_ = _0546_;
-  assign user_mgr_obi_req_o_51_ = _0546_;
-  assign user_mgr_obi_req_o_50_ = _0546_;
-  assign user_mgr_obi_req_o_49_ = _0546_;
-  assign user_mgr_obi_req_o_48_ = _0546_;
-  assign user_mgr_obi_req_o_47_ = _0546_;
-  assign user_mgr_obi_req_o_46_ = _0546_;
-  assign user_mgr_obi_req_o_45_ = _0546_;
-  assign user_mgr_obi_req_o_44_ = _0546_;
-  assign user_mgr_obi_req_o_43_ = _0546_;
-  assign user_mgr_obi_req_o_42_ = _0546_;
-  assign user_mgr_obi_req_o_41_ = _0546_;
-  assign user_mgr_obi_req_o_40_ = _0546_;
-  assign user_mgr_obi_req_o_39_ = _0546_;
-  assign user_mgr_obi_req_o_38_ = _0546_;
-  assign user_mgr_obi_req_o_37_ = _0546_;
-  assign user_mgr_obi_req_o_36_ = _0546_;
-  assign user_mgr_obi_req_o_35_ = _0546_;
-  assign user_mgr_obi_req_o_34_ = _0546_;
-  assign user_mgr_obi_req_o_33_ = _0546_;
-  assign user_mgr_obi_req_o_32_ = _0546_;
-  assign user_mgr_obi_req_o_31_ = _0546_;
-  assign user_mgr_obi_req_o_30_ = _0546_;
-  assign user_mgr_obi_req_o_29_ = _0546_;
-  assign user_mgr_obi_req_o_28_ = _0546_;
-  assign user_mgr_obi_req_o_27_ = _0546_;
-  assign user_mgr_obi_req_o_26_ = _0546_;
-  assign user_mgr_obi_req_o_25_ = _0546_;
-  assign user_mgr_obi_req_o_24_ = _0546_;
-  assign user_mgr_obi_req_o_23_ = _0546_;
-  assign user_mgr_obi_req_o_22_ = _0546_;
-  assign user_mgr_obi_req_o_21_ = _0546_;
-  assign user_mgr_obi_req_o_20_ = _0546_;
-  assign user_mgr_obi_req_o_19_ = _0546_;
-  assign user_mgr_obi_req_o_18_ = _0546_;
-  assign user_mgr_obi_req_o_17_ = _0546_;
-  assign user_mgr_obi_req_o_16_ = _0546_;
-  assign user_mgr_obi_req_o_15_ = _0546_;
-  assign user_mgr_obi_req_o_14_ = _0546_;
-  assign user_mgr_obi_req_o_13_ = _0546_;
-  assign user_mgr_obi_req_o_12_ = _0546_;
-  assign user_mgr_obi_req_o_11_ = _0546_;
-  assign user_mgr_obi_req_o_10_ = _0546_;
-  assign user_mgr_obi_req_o_9_ = _0546_;
-  assign user_mgr_obi_req_o_8_ = _0546_;
-  assign user_mgr_obi_req_o_7_ = _0546_;
-  assign user_mgr_obi_req_o_6_ = _0546_;
-  assign user_mgr_obi_req_o_5_ = _0546_;
-  assign user_mgr_obi_req_o_4_ = _0546_;
-  assign user_mgr_obi_req_o_3_ = _0546_;
-  assign user_mgr_obi_req_o_2_ = _0546_;
-  assign user_mgr_obi_req_o_1_ = _0546_;
-  assign user_mgr_obi_req_o_0_ = _0546_;
-  assign user_sbr_obi_rsp_o_2_ = _0546_;
-  assign interrupts_o_2_ = _0546_;
-  assign interrupts_o_3_ = _0546_;
-  assign interrupts_o_0_ = _0546_;
-  assign interrupts_o_1_ = _0546_;
+  assign user_mgr_obi_req_o_71_ = _1531_;
+  assign user_mgr_obi_req_o_70_ = _1531_;
+  assign user_mgr_obi_req_o_69_ = _1531_;
+  assign user_mgr_obi_req_o_68_ = _1531_;
+  assign user_mgr_obi_req_o_67_ = _1531_;
+  assign user_mgr_obi_req_o_66_ = _1531_;
+  assign user_mgr_obi_req_o_65_ = _1531_;
+  assign user_mgr_obi_req_o_64_ = _1531_;
+  assign user_mgr_obi_req_o_63_ = _1531_;
+  assign user_mgr_obi_req_o_62_ = _1531_;
+  assign user_mgr_obi_req_o_61_ = _1531_;
+  assign user_mgr_obi_req_o_60_ = _1531_;
+  assign user_mgr_obi_req_o_59_ = _1531_;
+  assign user_mgr_obi_req_o_58_ = _1531_;
+  assign user_mgr_obi_req_o_57_ = _1531_;
+  assign user_mgr_obi_req_o_56_ = _1531_;
+  assign user_mgr_obi_req_o_55_ = _1531_;
+  assign user_mgr_obi_req_o_54_ = _1531_;
+  assign user_mgr_obi_req_o_53_ = _1531_;
+  assign user_mgr_obi_req_o_52_ = _1531_;
+  assign user_mgr_obi_req_o_51_ = _1531_;
+  assign user_mgr_obi_req_o_50_ = _1531_;
+  assign user_mgr_obi_req_o_49_ = _1531_;
+  assign user_mgr_obi_req_o_48_ = _1531_;
+  assign user_mgr_obi_req_o_47_ = _1531_;
+  assign user_mgr_obi_req_o_46_ = _1531_;
+  assign user_mgr_obi_req_o_45_ = _1531_;
+  assign user_mgr_obi_req_o_44_ = _1531_;
+  assign user_mgr_obi_req_o_43_ = _1531_;
+  assign user_mgr_obi_req_o_42_ = _1531_;
+  assign user_mgr_obi_req_o_41_ = _1531_;
+  assign user_mgr_obi_req_o_40_ = _1531_;
+  assign user_mgr_obi_req_o_39_ = _1531_;
+  assign user_mgr_obi_req_o_38_ = _1531_;
+  assign user_mgr_obi_req_o_37_ = _1531_;
+  assign user_mgr_obi_req_o_36_ = _1531_;
+  assign user_mgr_obi_req_o_35_ = _1531_;
+  assign user_mgr_obi_req_o_34_ = _1531_;
+  assign user_mgr_obi_req_o_33_ = _1531_;
+  assign user_mgr_obi_req_o_32_ = _1531_;
+  assign user_mgr_obi_req_o_31_ = _1531_;
+  assign user_mgr_obi_req_o_30_ = _1531_;
+  assign user_mgr_obi_req_o_29_ = _1531_;
+  assign user_mgr_obi_req_o_28_ = _1531_;
+  assign user_mgr_obi_req_o_27_ = _1531_;
+  assign user_mgr_obi_req_o_26_ = _1531_;
+  assign user_mgr_obi_req_o_25_ = _1531_;
+  assign user_mgr_obi_req_o_24_ = _1531_;
+  assign user_mgr_obi_req_o_23_ = _1531_;
+  assign user_mgr_obi_req_o_22_ = _1531_;
+  assign user_mgr_obi_req_o_21_ = _1531_;
+  assign user_mgr_obi_req_o_20_ = _1531_;
+  assign user_mgr_obi_req_o_19_ = _1531_;
+  assign user_mgr_obi_req_o_18_ = _1531_;
+  assign user_mgr_obi_req_o_17_ = _1531_;
+  assign user_mgr_obi_req_o_16_ = _1531_;
+  assign user_mgr_obi_req_o_15_ = _1531_;
+  assign user_mgr_obi_req_o_14_ = _1531_;
+  assign user_mgr_obi_req_o_13_ = _1531_;
+  assign user_mgr_obi_req_o_12_ = _1531_;
+  assign user_mgr_obi_req_o_11_ = _1531_;
+  assign user_mgr_obi_req_o_10_ = _1531_;
+  assign user_mgr_obi_req_o_9_ = _1531_;
+  assign user_mgr_obi_req_o_8_ = _1531_;
+  assign user_mgr_obi_req_o_7_ = _1531_;
+  assign user_mgr_obi_req_o_6_ = _1531_;
+  assign user_mgr_obi_req_o_5_ = _1531_;
+  assign user_mgr_obi_req_o_4_ = _1531_;
+  assign user_mgr_obi_req_o_3_ = _1531_;
+  assign user_mgr_obi_req_o_2_ = _1531_;
+  assign user_mgr_obi_req_o_1_ = _1531_;
+  assign user_mgr_obi_req_o_0_ = _1531_;
+  assign user_sbr_obi_rsp_o_2_ = _1531_;
+  assign interrupts_o_2_ = _1531_;
+  assign interrupts_o_3_ = _1531_;
+  assign interrupts_o_1_ = _1531_;
 endmodule

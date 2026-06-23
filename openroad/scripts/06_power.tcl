@@ -18,7 +18,7 @@ set_power_activity -input -activity 0.1
 set_power_activity -input_port rst_ni -activity 0
 
 # Generate the statistical power report for the typical corner
-report_power -corner tt > reports/post_layout_statistical_power.rpt
+report_power -corner tt > reports/post_layout_statistical_power_tt.rpt
 
 ###############################################################################
 # 3. STIMULI-BASED POWER ANALYSIS
@@ -30,4 +30,4 @@ set_power_activity -input_port rst_ni -activity 0
 
 read_vcd -scope tb_croc_soc/i_croc_soc ../vsim/croc.vcd
 
-report_power -corner tt > reports/post_layout_stimuli_power.rpt
+report_power -corner tt > reports/post_layout_stimuli_power_tt.rpt
