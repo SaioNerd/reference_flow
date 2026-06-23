@@ -124,8 +124,8 @@ if __name__ == "__main__":
 
     # Remap the names of the components for better readability
     names = [
+        "SRAM Bank 0",
         "SRAM Bank 1",
-        "SRAM Bank 2",
         "Bootrom",
         "CLINT",
         "Core",
@@ -157,8 +157,8 @@ if __name__ == "__main__":
     os.makedirs("plots", exist_ok=True)
 
     # Save figure
-    plt.savefig("plots/01a_area_breakdown_bar.pdf")
-    plt.savefig("plots/01a_area_breakdown_bar.png")
+    plt.savefig("plots/area_breakdown_bar.pdf")
+    plt.savefig("plots/area_breakdown_bar.png")
 
     # Display the plot
     plt.show()

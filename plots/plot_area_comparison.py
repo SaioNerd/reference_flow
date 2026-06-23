@@ -32,8 +32,8 @@ def extract_area_breakdown(report_path):
     return breakdown
 
 pretty_names = {
-    "gen_sram_bank\\[0\\].i_sram": "SRAM\nBank 1",
-    "gen_sram_bank\\[1\\].i_sram": "SRAM\nBank 2",
+    "gen_sram_bank\\[0\\]": "SRAM\nBank 0",
+    "gen_sram_bank\\[1\\]": "SRAM\nBank 1",
     "i_bootrom": "Bootrom",
     "i_clint": "CLINT",
     "i_core_wrap": "Core",
@@ -43,7 +43,6 @@ pretty_names = {
     "i_obi_timer": "Timer",
     "i_soc_ctrl": "SoC\nControl",
     "i_uart": "UART",
-    "i_cordic_wrapper.i_cordic": "CORDIC"
 }
 
 def plot_area_comparison(our_report, baseline_report=None):
@@ -102,12 +101,12 @@ def plot_area_comparison(our_report, baseline_report=None):
     ax.legend(by_label.values(), by_label.keys(), loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=5)
     
     plt.tight_layout()
-    plt.savefig(os.path.join(OUTPUT_DIR, "04a_area_comparison.pdf"))
-    plt.savefig(os.path.join(OUTPUT_DIR, "04a_area_comparison.png"))
+    plt.savefig(os.path.join(OUTPUT_DIR, "area_comparison.pdf"))
+    plt.savefig(os.path.join(OUTPUT_DIR, "area_comparison.png"))
     plt.close()
-    print("Generated 04a_area_comparison.pdf and .png")
+    print("Generated area_comparison.pdf and .png")
 
 if __name__ == "__main__":
-    our_report = "Croc_Files/openroad/reports/04_croc.routed.rpt"
-    baseline_report = "tmp/baseline_run/Croc_Files/openroad/reports/02-02_croc.gpl1.rpt"
+    our_report = "../openroad/reports/04_croc.routed.rpt"
+    baseline_report = "../../reference_flow/openroad/reports/02-02_croc.gpl1.rpt" # 04_croc.routed.rpt
     plot_area_comparison(our_report, baseline_report)
