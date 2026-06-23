@@ -43,8 +43,10 @@ module secded_sram_impl #(
   output data_t [NumPorts-1:0] rdata_o,
 
   // SECDED specific outputs
-  output logic  [NumPorts-1:0] single_err_o,
-  output logic  [NumPorts-1:0] double_err_o,
+  output logic  [NumPorts-1:0]             single_err_o,
+  output logic  [NumPorts-1:0]             double_err_o,
+  output logic  [NumPorts-1:0][BeWidth-1:0] byte_single_err_o,
+  output logic  [NumPorts-1:0]             read_valid_o,
 
   // Fault injection ports (combinational, for testbench use)
   // When fault_inject_i is high, the encoded write data is XORed with
@@ -87,8 +89,10 @@ module secded_sram_impl #(
       );
 
       // Tie off error signals since ECC is disabled
-      assign single_err_o = '0;
-      assign double_err_o = '0;
+      assign single_err_o      = '0;
+      assign double_err_o      = '0;
+      assign byte_single_err_o = '0;
+      assign read_valid_o      = '0;
 
     end else begin : gen_secded
       // ====================================================================
@@ -192,8 +196,10 @@ module secded_sram_impl #(
 
         // Aggregate Error Flags for this port
         // Only trigger if an error happened AND we are actually doing a read cycle
-        assign single_err_o[p] = read_valid ? (|byte_single_err) : 1'b0;
-        assign double_err_o[p] = read_valid ? (|byte_double_err) : 1'b0;
+        assign single_err_o[p]      = read_valid ? (|byte_single_err) : 1'b0;
+        assign double_err_o[p]      = read_valid ? (|byte_double_err) : 1'b0;
+        assign byte_single_err_o[p] = read_valid ? byte_single_err : '0;
+        assign read_valid_o[p]      = read_valid;
       end
     end
   endgenerate

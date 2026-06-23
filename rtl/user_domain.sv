@@ -198,7 +198,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
     logic bank_req, bank_we, bank_gnt;
     logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;
-    logic [SramBankAddrWidth-1:0] bank_word_addr;
+    logic [SramBankAddrWidth-1:0]   bank_word_addr;
     logic [SbrObiCfg.DataWidth-1:0] bank_wdata, bank_rdata;
     logic [SbrObiCfg.DataWidth/8-1:0] bank_be;
 
@@ -223,64 +223,103 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       .rdata_i ( bank_rdata )
     );
 
-    // // Subtract the bank's base address offset, then convert byte address to word address
+    // Subtract the bank's base address offset, then convert byte address to word address
     logic [SbrObiCfg.AddrWidth-1:0] bank_byte_offset;
     assign bank_byte_offset = bank_byte_addr - i * SramBankNumWords * (SbrObiCfg.DataWidth/8);
-    assign bank_word_addr = bank_byte_offset[SbrObiCfg.AddrWidth-1:2];
+    assign bank_word_addr    = bank_byte_offset[SbrObiCfg.AddrWidth-1:2];
 
-    // assign bank_word_addr = bank_byte_addr[SbrObiCfg.AddrWidth-1:2];
+    // =========================================================================
+    // Read-address delay register (align with SECDED read latency = 1 cycle)
+    // =========================================================================
+    logic [SramBankAddrWidth-1:0] bank_word_addr_q;
 
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+      if (!rst_ni) begin
+        bank_word_addr_q <= '0;
+      end else begin
+        bank_word_addr_q <= bank_word_addr;
+      end
+    end
 
-    // Error signals for this specific bank
-    logic bank_double_err, bank_single_err;
+    // =========================================================================
+    // Per-bank SECDED status signals
+    // =========================================================================
+    logic                         bank_double_err, bank_single_err;
+    logic [SbrObiCfg.DataWidth/8-1:0] bank_byte_single_err;
+    logic                         bank_read_valid;
 
     // Map this bank's errors to the global error aggregation buses
     assign all_banks_single_err[i] = bank_single_err;
     assign all_banks_double_err[i] = bank_double_err;
 
+    // =========================================================================
+    // Muxed signals between shim (CPU) and secded_sram_impl
+    // =========================================================================
+    logic                         bank_sram_req;
+    logic                         bank_sram_we;
+    logic [SramBankAddrWidth-1:0] bank_sram_addr;
+    logic [SbrObiCfg.DataWidth-1:0] bank_sram_wdata;
+    logic [SbrObiCfg.DataWidth/8-1:0] bank_sram_be;
+
+    // =========================================================================
+    // SECDED Repair Buffer — detects single-bit errors and schedules write‑back
+    // =========================================================================
+    secded_repair_buffer #(
+      .AddrWidth ( SramBankAddrWidth      ),
+      .DataWidth ( SbrObiCfg.DataWidth    ),
+      .BeWidth   ( SbrObiCfg.DataWidth / 8 )
+    ) i_repair_buffer (
+      .clk_i,
+      .rst_ni,
+
+      // SECDED decoder side (delayed signals)
+      .sec_read_valid_i     ( bank_read_valid       ),
+      .sec_byte_single_err_i( bank_byte_single_err  ),
+      .sec_rdata_i          ( bank_rdata            ),
+      .sec_raddr_i          ( bank_word_addr_q      ),
+
+      // CPU / shim side
+      .cpu_req_i   ( bank_req       ),
+      .cpu_we_i    ( bank_we        ),
+      .cpu_addr_i  ( bank_word_addr ),
+      .cpu_wdata_i ( bank_wdata     ),
+      .cpu_be_i    ( bank_be        ),
+
+      // Mux control outputs -> secded_sram_impl
+      .sram_req_o   ( bank_sram_req   ),
+      .sram_we_o    ( bank_sram_we    ),
+      .sram_addr_o  ( bank_sram_addr  ),
+      .sram_wdata_o ( bank_sram_wdata ),
+      .sram_be_o    ( bank_sram_be    )
+    );
+
+    // =========================================================================
     // SECDED SRAM Implementation wrapper
-    secded_sram_impl2 #(
+    // =========================================================================
+    secded_sram_impl #(
       .NumWords   ( SramBankNumWords    ),
-      .DataWidth  ( SbrObiCfg.DataWidth ), 
+      .DataWidth  ( SbrObiCfg.DataWidth ),
       .ByteWidth  ( 8                   ),
       .NumPorts   ( 1                   ),
       .Latency    ( 1                   )
     ) i_sram_macro (
-      .clk_i          ( clk_i                ),
-      .rst_ni         ( rst_ni               ),
-      .impl_i         ( sram_impl_i          ), // Passed from user_domain inputs
-      .impl_o         ( /* unused */         ),
-      .req_i          ( bank_req             ),
-      .we_i           ( bank_we              ),
-      .addr_i         ( bank_word_addr       ),
-      .wdata_i        ( bank_wdata           ),
-      .be_i           ( bank_be              ),
-      .rdata_o        ( bank_rdata           ),
-      .single_err_o   ( bank_single_err      ),
-      .double_err_o   ( bank_double_err      ),
-      .fault_inject_i ( sram_fault_inject_i[i] ),
-      .fault_sel_i    ( sram_fault_sel_i       )
+      .clk_i              ( clk_i                 ),
+      .rst_ni             ( rst_ni                ),
+      .impl_i             ( sram_impl_i           ),
+      .impl_o             ( /* unused */          ),
+      .req_i              ( bank_sram_req         ),
+      .we_i               ( bank_sram_we          ),
+      .addr_i             ( bank_sram_addr        ),
+      .wdata_i            ( bank_sram_wdata       ),
+      .be_i               ( bank_sram_be          ),
+      .rdata_o            ( bank_rdata            ),
+      .single_err_o       ( bank_single_err       ),
+      .double_err_o       ( bank_double_err       ),
+      .byte_single_err_o  ( bank_byte_single_err  ),
+      .read_valid_o       ( bank_read_valid       ),
+      .fault_inject_i     ( sram_fault_inject_i[i] ),
+      .fault_sel_i        ( sram_fault_sel_i       )
     );
-    // tc_sram_impl #(
-    //   .NumWords  ( SramBankNumWords ),
-    //   .DataWidth ( 32 ),
-    //   .NumPorts  (  1 ),
-    //   .Latency   (  1 )
-    // ) i_sram (
-    //   .clk_i,
-    //   .rst_ni,
-
-    //   .impl_i  ( sram_impl_i    ),
-    //   .impl_o  (),
-
-    //   .req_i   ( bank_req       ),
-    //   .we_i    ( bank_we        ),
-    //   .addr_i  ( bank_word_addr ),
-
-    //   .wdata_i ( bank_wdata ),
-    //   .be_i    ( bank_be    ),
-    //   .rdata_o ( bank_rdata )
-    // );
 
     assign bank_gnt = 1'b1; // always ready for request
   end
