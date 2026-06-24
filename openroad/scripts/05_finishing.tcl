@@ -57,11 +57,12 @@ write_sdc                      ${out_dir}/${proj_name}.sdc
 
 # WARNING: Currently the extract_parasitics command removes metal patches (eg for min area)
 # So if you want to use it, do so at the very end after writing out the def and odb files
-define_process_corner -ext_model_index 0 tt
-extract_parasitics -ext_model_file ../../technology/rcx/IHP_rcx_patterns.rules
-write_spef out/croc.spef
-read_spef out/croc.spef; # readback parasitics for OpenSTA
-report_metrics "05_${proj_name}.extract"
+# define_process_corner -ext_model_index 0 tt
+# extract_parasitics -ext_model_file /scratch/vlsi2_14fs26/Croco_Krave/technology/rcx/IHP_rcx_patterns.rules
+# write_spef out/croc.spef
+# read_spef out/croc.spef; # readback parasitics for OpenSTA
+# report_metrics "05_${proj_name}.extract"
+
 
 utl::report "###############################################################################"
 utl::report "# Stage 05 complete: Final outputs written to ${out_dir}/"

@@ -141,19 +141,35 @@ set floor_midpointY   [expr $floor_bottomY + ($floor_topY - $floor_bottomY)/2]
 set sramHaloX          10.0
 set sramHaloY          10.0
 
-set shiftX 70
 
 utl::report "Place Macros"
 
-# Bank0: top-left, pins facing down
+# Disposizione centrale una Top, una Bottom
+set shiftX 20 
+#70
+# # Bank0: top-left, pins facing down
 set bank0X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]
 set bank0Y [expr $floor_topY - $RamSize1024x64_H - $sramHaloY]
 placeInstance $bank0_sram0 $bank0X $bank0Y R0
 
-# Bank1: top-right, pins facing down
+# # Bank1: top-right, pins facing down
 set bank1X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]
 set bank1Y [expr $floor_bottomY + $sramHaloY]
 placeInstance $bank1_sram0 $bank1X $bank1Y R180
+
+# Disposizione una sopra l'altra
+# set routingSpaceY 50.0 
+# # Bank0: Sopra, pin verso il basso (R0)
+# set bank0X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]
+# set bank0Y [expr $floor_topY - $RamSize1024x64_H - $sramHaloY]
+# placeInstance $bank0_sram0 $bank0X $bank0Y R0
+
+# # Bank1: Sotto il Bank0, pin verso il basso (R0)
+# set bank1X $bank0X
+# set bank1Y [expr $bank0Y - $routingSpaceY - $RamSize1024x64_H]
+# placeInstance $bank1_sram0 $bank1X $bank1Y R0
+
+
 
 utl::report "SRAM macro box: width ${RamSize1024x64_W} height ${RamSize1024x64_H}"
 utl::report "SRAM bank0 bbox: ($bank0X, $bank0Y) - ([expr {$bank0X + $RamSize1024x64_W}], [expr {$bank0Y + $RamSize1024x64_H}]) R0"

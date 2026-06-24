@@ -60,19 +60,24 @@ logic sram_impl;
 logic [GpioCount-1:0] croc_gpio_o;
 logic [GpioCount-1:0] croc_gpio_out_en_o;
 
+//ERROR FLAGS map to Output Pins
+logic [NumSramBanks-1:0] all_banks_double_err_o;
+logic [NumSramBanks-1:0] all_banks_single_err_o;
+
 //////////////////////
-// GPIO mapping //
+//  GPIO mapping   //
 /////////////////////
+
 always_comb begin
   gpio_o        = croc_gpio_o;
   gpio_out_en_o = croc_gpio_out_en_o;
 
   // Bank 0 double error mapping
-  gpio_o[20]        = all_banks_double_err_o_q[0];
+  gpio_o[20]        = all_banks_double_err_o[0];
   gpio_out_en_o[20] = 1'b1; 
 
   // Bank 1 double error mapping
-  gpio_o[15]        = all_banks_double_err_o_q[1];
+  gpio_o[15]        = all_banks_double_err_o[1];
   gpio_out_en_o[15] = 1'b1; 
 
   //Use pin 16, 18 and 19 as input for error injection
@@ -80,23 +85,6 @@ always_comb begin
   gpio_out_en_o[18] = 1'b0;
   gpio_out_en_o[19] = 1'b0;
 end
-
-//ERROR FLAGS map to Output Pins
-logic [NumSramBanks-1:0] all_banks_double_err_o_d , all_banks_double_err_o_q;
-logic [NumSramBanks-1:0] all_banks_single_err_o;
-
-// Added by Ale: Pipeline registers
-always_ff @(posedge clk_i or negedge rst_ni) begin
-  if (!rst_ni) begin
-    all_banks_double_err_o_q <= '0;
-
-  end else begin
-    all_banks_double_err_o_q <= all_banks_double_err_o_d;
-
-  end
-end
-
-
 
 croc_domain #(
   .GpioCount       ( GpioCount       ),
@@ -177,7 +165,7 @@ user_domain #(
   .sram_impl_i    ( sram_impl    ),
 
 // Added by Ale: for PIN
-  .all_banks_double_err_o ( all_banks_double_err_o_d ),
+  .all_banks_double_err_o ( all_banks_double_err_o ),
   .all_banks_single_err_o ( all_banks_single_err_o   )
 );
 

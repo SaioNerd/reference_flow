@@ -135,6 +135,7 @@ if __name__ == "__main__":
 
     # Split components into two groups
     first_row_names = [
+        "SRAM Bank 0",
         "SRAM Bank 1",
         "Core",
         "Debug\nModule",

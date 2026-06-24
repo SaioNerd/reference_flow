@@ -16,7 +16,7 @@ mkdir -p plots
 PYTHON_SCRIPTS_DIR="/scratch/vlsi2_14fs26/Croco_Krave/plots"
 
 # We use the final routed report which contains the Hierarchical Area Report
-AREA_REPORT="../openroad/reports/04_croc.routed.rpt"
+AREA_REPORT="/scratch/vlsi2_14fs26/Croco_Krave/openroad/reports/04_croc.routed.rpt"
 
 if [ ! -f "$AREA_REPORT" ]; then
     echo "Error: Area report $AREA_REPORT not found!"
@@ -43,10 +43,10 @@ echo ""
 echo "Done! All plots have been generated."
 echo "You can find them in: /scratch/vlsi2_14fs26/Croco_Krave/plots/"
 
-echo "Running plot_power_comparison.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_power_comparison.py
-echo "Running plot_die_area_breakdown.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_die_area_breakdown.py
-echo "Running plot_area_comparison.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_comparison.py
-echo "Done! All extended plots have been generated."
+# echo "Running plot_power_comparison.py..."
+# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_power_comparison.py
+# echo "Running plot_die_area_breakdown.py..."
+# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_die_area_breakdown.py
+# echo "Running plot_area_comparison.py..."
+# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_comparison.py
+# echo "Done! All extended plots have been generated."

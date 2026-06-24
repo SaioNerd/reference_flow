@@ -72,6 +72,9 @@ report_metrics "03_${proj_name}.cts_unrepaired"
 utl::report "Repair setup"
 repair_timing -setup -verbose
 
+utl::report "Repair hold"
+repair_timing -hold -verbose
+
 # Place inserted cells
 utl::report "Detailed placement"
 detailed_placement {*}$DPL_ARGS
