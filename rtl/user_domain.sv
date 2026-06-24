@@ -207,24 +207,24 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
 
     //EXTRA PIPELINE STAGE TO CUT PROPAGATION DELAY FROM OBI DEMUX TO SRAM MACRO
-    obi_cut #(
-    .ObiCfg    ( SbrObiCfg     ),
-    .obi_req_t ( sbr_obi_req_t ),
-    .obi_rsp_t ( sbr_obi_rsp_t ),
-    .Bypass    ( 1'b1          ),
-    .obi_a_chan_t(sbr_obi_a_chan_t),
-    .obi_r_chan_t(sbr_obi_r_chan_t)
-      ) i_obi_cut_mux2sram (
-    .clk_i          ( clk_i                 ),
-    .rst_ni         ( synced_rst_n          ),
-    .sbr_port_req_i ( user_mem_bank_obi_req_xbar[i] ), // From Xbar
-    .sbr_port_rsp_o ( user_mem_bank_obi_rsp_xbar[i] ), // To Xbar
-    .mgr_port_req_o ( user_mem_bank_obi_req_sram[i] ), // To Sram
-    .mgr_port_rsp_i ( user_mem_bank_obi_rsp_sram[i] )  // From Sram [cite: 4]
-    );
+    // obi_cut #(
+    // .ObiCfg    ( SbrObiCfg     ),
+    // .obi_req_t ( sbr_obi_req_t ),
+    // .obi_rsp_t ( sbr_obi_rsp_t ),
+    // .Bypass    ( 1'b0          ),
+    // .obi_a_chan_t(sbr_obi_a_chan_t),
+    // .obi_r_chan_t(sbr_obi_r_chan_t)
+    //   ) i_obi_cut_mux2sram (
+    // .clk_i          ( clk_i                 ),
+    // .rst_ni         ( synced_rst_n          ),
+    // .sbr_port_req_i ( user_mem_bank_obi_req_xbar[i] ), // From Xbar
+    // .sbr_port_rsp_o ( user_mem_bank_obi_rsp_xbar[i] ), // To Xbar
+    // .mgr_port_req_o ( user_mem_bank_obi_req_sram[i] ), // To Sram
+    // .mgr_port_rsp_i ( user_mem_bank_obi_rsp_sram[i] )  // From Sram [cite: 4]
+    // );
 
-    // assign user_mem_bank_obi_rsp_xbar[i] = user_mem_bank_obi_rsp_sram[i];  // NO PIPELINE DELAY
-    // assign user_mem_bank_obi_req_sram[i] = user_mem_bank_obi_req_xbar[i];
+    assign user_mem_bank_obi_rsp_xbar[i] = user_mem_bank_obi_rsp_sram[i];  // NO PIPELINE DELAY
+    assign user_mem_bank_obi_req_sram[i] = user_mem_bank_obi_req_xbar[i];
 
     logic bank_req, bank_we, bank_gnt;
     logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;
