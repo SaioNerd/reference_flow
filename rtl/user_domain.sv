@@ -37,8 +37,8 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   logic [NumSramBanks-1:0] sram_fault_inject_i;  // per-bank fault inject
   logic                    sram_fault_sel_i;      // 0=single, 1=double
 
-  assign sram_fault_inject_i[0] = gpio_in_sync_i[16];
-  assign sram_fault_inject_i[1] = gpio_in_sync_i[19];
+  assign sram_fault_inject_i[0] = gpio_in_sync_i[19];
+  assign sram_fault_inject_i[1] = gpio_in_sync_i[16];
 
   assign sram_fault_sel_i       = gpio_in_sync_i[18];
 
@@ -223,7 +223,8 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .mgr_port_rsp_i ( user_mem_bank_obi_rsp_sram[i] )  // From Sram [cite: 4]
     );
 
-
+    // assign user_mem_bank_obi_rsp_xbar[i] = user_mem_bank_obi_rsp_sram[i];  // NO PIPELINE DELAY
+    // assign user_mem_bank_obi_req_sram[i] = user_mem_bank_obi_req_xbar[i];
 
     logic bank_req, bank_we, bank_gnt;
     logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;

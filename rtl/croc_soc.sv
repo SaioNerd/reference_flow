@@ -136,26 +136,26 @@ croc_domain #(
 
 
 // Cut for Croc (Manager) to User (Subordinate)
-obi_cut #(
-  .ObiCfg    ( SbrObiCfg     ),
-  .obi_req_t ( sbr_obi_req_t ),
-  .obi_rsp_t ( sbr_obi_rsp_t ),
-  .Bypass    ( 1'b0          ),
-  .obi_a_chan_t(sbr_obi_a_chan_t),
-  .obi_r_chan_t(sbr_obi_r_chan_t)
-  // Note: If obi_a_chan_t and obi_r_chan_t are defined in croc_pkg, 
-  // assign them here to override the default 'logic' type. 
-) i_obi_cut_croc2user (
-  .clk_i          ( clk_i                 ),
-  .rst_ni         ( synced_rst_n          ),
-  .sbr_port_req_i ( user_sbr_obi_req_croc ), // From Croc
-  .sbr_port_rsp_o ( user_sbr_obi_rsp_croc ), // To Croc
-  .mgr_port_req_o ( user_sbr_obi_req_user ), // To User
-  .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User
-);
+// obi_cut #(
+//   .ObiCfg    ( SbrObiCfg     ),
+//   .obi_req_t ( sbr_obi_req_t ),
+//   .obi_rsp_t ( sbr_obi_rsp_t ),
+//   .Bypass    ( 1'b0          ),
+//   .obi_a_chan_t(sbr_obi_a_chan_t),
+//   .obi_r_chan_t(sbr_obi_r_chan_t)
+//   // Note: If obi_a_chan_t and obi_r_chan_t are defined in croc_pkg, 
+//   // assign them here to override the default 'logic' type. 
+// ) i_obi_cut_croc2user (
+//   .clk_i          ( clk_i                 ),
+//   .rst_ni         ( synced_rst_n          ),
+//   .sbr_port_req_i ( user_sbr_obi_req_croc ), // From Croc
+//   .sbr_port_rsp_o ( user_sbr_obi_rsp_croc ), // To Croc
+//   .mgr_port_req_o ( user_sbr_obi_req_user ), // To User
+//   .mgr_port_rsp_i ( user_sbr_obi_rsp_user )  // From User
+// );
 
-// assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
-// assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
+assign user_sbr_obi_req_user = user_sbr_obi_req_croc;
+assign user_sbr_obi_rsp_croc = user_sbr_obi_rsp_user;
 
 user_domain #(
   .GpioCount       ( GpioCount       ),
