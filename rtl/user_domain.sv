@@ -42,6 +42,10 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
   assign sram_fault_sel_i       = gpio_in_sync_i[18];
 
+  // Pipelined fault injection control signals (aligned with OBI pipeline stage)
+  logic [NumSramBanks-1:0] fault_inject_pipe_q;
+  logic [NumSramBanks-1:0] fault_sel_pipe_q;
+
 
   //////////////////////
   // User Manager MUX //
@@ -90,6 +94,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   // SRAM bank buses
   sbr_obi_req_t [NumSramBanks-1:0] user_mem_bank_obi_req_xbar, user_mem_bank_obi_req_sram;
   sbr_obi_rsp_t [NumSramBanks-1:0] user_mem_bank_obi_rsp_sram, user_mem_bank_obi_rsp_xbar;
+
 
   // Fanout into more readable signals
   assign user_error_obi_req               = all_user_sbr_obi_req[UserError];
@@ -206,25 +211,100 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
   for (genvar i = 0; i < NumSramBanks; i++) begin : gen_sram_bank
 
-    //EXTRA PIPELINE STAGE TO CUT PROPAGATION DELAY FROM OBI DEMUX TO SRAM MACRO
-    // obi_cut #(
-    // .ObiCfg    ( SbrObiCfg     ),
-    // .obi_req_t ( sbr_obi_req_t ),
-    // .obi_rsp_t ( sbr_obi_rsp_t ),
-    // .Bypass    ( 1'b0          ),
-    // .obi_a_chan_t(sbr_obi_a_chan_t),
-    // .obi_r_chan_t(sbr_obi_r_chan_t)
-    //   ) i_obi_cut_mux2sram (
-    // .clk_i          ( clk_i                 ),
-    // .rst_ni         ( synced_rst_n          ),
-    // .sbr_port_req_i ( user_mem_bank_obi_req_xbar[i] ), // From Xbar
-    // .sbr_port_rsp_o ( user_mem_bank_obi_rsp_xbar[i] ), // To Xbar
-    // .mgr_port_req_o ( user_mem_bank_obi_req_sram[i] ), // To Sram
-    // .mgr_port_rsp_i ( user_mem_bank_obi_rsp_sram[i] )  // From Sram [cite: 4]
-    // );
+    // -------------------------------------------------------------------------
+    // Full pipeline stage (registered output on both request and response).
+    // Behaves like obi_cut but uses always_ff instead of spill registers,
+    // guaranteeing 1 cycle of latency regardless of downstream readiness.
+    //
+    // Protocol: at most 1 transaction in flight through the pipeline.
+    //   PIPE_IDLE:     gnt=1, accept new req from xbar
+    //   PIPE_REQ:      present req to shim for exactly 1 cycle (shim gnt=1)
+    //   PIPE_WAIT_RSP: no req to shim, wait for rvalid from SRAM
+    //   PIPE_RSP:      present response to xbar for 1 cycle, then back to idle
+    // -------------------------------------------------------------------------
+    typedef enum logic [1:0] {
+      PIPE_IDLE,
+      PIPE_REQ,      // request presented to shim (1 cycle only)
+      PIPE_WAIT_RSP, // waiting for SRAM response
+      PIPE_RSP       // response presented to xbar (1 cycle)
+    } pipe_state_e;
 
-    assign user_mem_bank_obi_rsp_xbar[i] = user_mem_bank_obi_rsp_sram[i];  // NO PIPELINE DELAY
-    assign user_mem_bank_obi_req_sram[i] = user_mem_bank_obi_req_xbar[i];
+    pipe_state_e        pipe_state_q;
+    sbr_obi_req_t       obi_req_pipe_q;
+    sbr_obi_rsp_t       obi_rsp_pipe_q;
+
+    // ---------------
+    // Request capture (xbar → pipe)
+    // ---------------
+    logic               pipe_req_accepted;
+    assign pipe_req_accepted = (pipe_state_q == PIPE_IDLE) &&
+                                user_mem_bank_obi_req_xbar[i].req;
+
+    // ---------------
+    // Pipeline FSM + registers
+    // ---------------
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+      if (!rst_ni) begin
+        pipe_state_q            <= PIPE_IDLE;
+        obi_req_pipe_q          <= '0;
+        obi_rsp_pipe_q          <= '0;
+        fault_inject_pipe_q[i]  <= 1'b0;
+        fault_sel_pipe_q[i]     <= 1'b0;
+        bank_single_err_pipe_q  <= 1'b0;
+        bank_double_err_pipe_q  <= 1'b0;
+      end else begin
+        // Capture fault-inject at request acceptance (align with transaction)
+        if (pipe_req_accepted) begin
+          fault_inject_pipe_q[i] <= sram_fault_inject_i[i];
+          fault_sel_pipe_q[i]    <= sram_fault_sel_i;
+        end
+
+        case (pipe_state_q)
+          PIPE_IDLE: begin
+            if (pipe_req_accepted) begin
+              obi_req_pipe_q <= user_mem_bank_obi_req_xbar[i];
+              pipe_state_q   <= PIPE_REQ;
+            end
+          end
+
+          // Present request to shim for exactly 1 cycle, then wait for response
+          PIPE_REQ: begin
+            pipe_state_q <= PIPE_WAIT_RSP;
+          end
+
+          // Wait for SRAM response (rvalid from shim)
+          PIPE_WAIT_RSP: begin
+            if (user_mem_bank_obi_rsp_sram[i].rvalid) begin
+              obi_rsp_pipe_q          <= user_mem_bank_obi_rsp_sram[i];
+              bank_single_err_pipe_q  <= bank_single_err;
+              bank_double_err_pipe_q  <= bank_double_err;
+              pipe_state_q            <= PIPE_RSP;
+            end
+          end
+
+          // Present response to xbar for 1 cycle, then return to idle
+          PIPE_RSP: begin
+            obi_rsp_pipe_q <= '0;
+            pipe_state_q   <= PIPE_IDLE;
+          end
+
+          default: pipe_state_q <= PIPE_IDLE;
+        endcase
+      end
+    end
+
+    // ---------------
+    // Output connections
+    // ---------------
+    // Request to shim: present ONLY during PIPE_REQ (1 cycle pulse)
+    assign user_mem_bank_obi_req_sram[i] = (pipe_state_q == PIPE_REQ) ? obi_req_pipe_q : '0;
+
+    // gnt to xbar: accept only when idle (1 transaction at a time)
+    assign user_mem_bank_obi_rsp_xbar[i].gnt    = (pipe_state_q == PIPE_IDLE);
+
+    // Response to xbar: present only in PIPE_RSP state, gated for cleanliness
+    assign user_mem_bank_obi_rsp_xbar[i].rvalid = (pipe_state_q == PIPE_RSP) ? obi_rsp_pipe_q.rvalid : 1'b0;
+    assign user_mem_bank_obi_rsp_xbar[i].r      = (pipe_state_q == PIPE_RSP) ? obi_rsp_pipe_q.r      : '0;
 
     logic bank_req, bank_we, bank_gnt;
     logic [SbrObiCfg.AddrWidth-1:0] bank_byte_addr;
@@ -323,12 +403,13 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     );
 
     // -------------------------------------------------------------------------
-    // ERROR status signals routing
+    // ERROR status signals routing (pipelined to align with OBI response path)
     // -------------------------------------------------------------------------
-    logic                             bank_double_err, bank_single_err;
+    logic bank_double_err, bank_single_err;
+    logic bank_single_err_pipe_q, bank_double_err_pipe_q;
 
-    assign all_banks_single_err_o[i] = bank_single_err;
-    assign all_banks_double_err_o[i] = bank_double_err;
+    assign all_banks_single_err_o[i] = bank_single_err_pipe_q;
+    assign all_banks_double_err_o[i] = bank_double_err_pipe_q;
 
 
     // =========================================================================
@@ -355,8 +436,8 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
       .double_err_o       ( bank_double_err       ),
       .byte_single_err_o  ( bank_byte_single_err  ),
       .read_valid_o       ( bank_read_valid       ),
-      .fault_inject_i     ( sram_fault_inject_i[i] ),
-      .fault_sel_i        ( sram_fault_sel_i       )
+      .fault_inject_i     ( fault_inject_pipe_q[i] ),
+      .fault_sel_i        ( fault_sel_pipe_q[i]    )
     );
 
     assign bank_gnt = 1'b1; // always ready for request
