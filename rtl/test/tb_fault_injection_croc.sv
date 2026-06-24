@@ -19,7 +19,7 @@
 module tb_fault_injection_croc #(
   parameter int unsigned GpioCount = 32,
   // Fault type: 1 = single-bit error, 2 = double-bit error
-  parameter int unsigned FaultType = 2
+  parameter int unsigned FaultType = 1
 );
 
   import tb_croc_pkg::*;
@@ -44,6 +44,18 @@ module tb_fault_injection_croc #(
   logic [GpioCount-1:0] gpio_in;
   logic [GpioCount-1:0] gpio_out;
   logic [GpioCount-1:0] gpio_out_en;
+  logic [GpioCount-1:0] gpio_in_sync;
+
+  ////////////////////////////////////////
+  //  GPIO mapping for fault injection  //
+  ////////////////////////////////////////
+
+  always_comb begin : fault_injeciton_assignment
+    gpio_in_sync = gpio_in;
+    gpio_in_sync[19] = sram_fault_inject[0]; // Bank 0 fault injection
+    gpio_in_sync[16] = sram_fault_inject[1]; // Bank 1 fault injection
+    gpio_in_sync[18] = sram_fault_sel;        // Fault type: 0=single, 1=double
+  end
 
   /////////////////////////////
   //  Command Line Arguments //
@@ -94,7 +106,7 @@ module tb_fault_injection_croc #(
   `ifdef TARGET_NETLIST_YOSYS
   \croc_soc$croc_chip.i_croc_soc i_croc_soc (
   `else
-  croc_soc #(
+  croc_soc_sim #(
     .GpioCount ( GpioCount )
   ) i_croc_soc (
   `endif
@@ -113,8 +125,7 @@ module tb_fault_injection_croc #(
     .gpio_i        ( gpio_in     ),
     .gpio_o        ( gpio_out    ),
     .gpio_out_en_o ( gpio_out_en ),
-    .sram_fault_inject_i ( sram_fault_inject ),
-    .sram_fault_sel_i    ( sram_fault_sel    )
+    .gpio_in_sync  ( gpio_in_sync )
   );
 
   //////////////////////////////////////////////////////////////////
@@ -279,6 +290,27 @@ module tb_fault_injection_croc #(
     end
   end
 
+  //////////////////////////////////////////////////////////////////
+  // Error Flag Assertions: Display if flags are raised after corruption
+  //////////////////////////////////////////////////////////////////
+
+  assert_bank0_double_err: assert property (
+    @(posedge sys_clk) (|chunks_corrupted) |-> !$rose(i_croc_soc.all_banks_double_err_o_q[0])
+  ) else $display("@%t | [DOUBLE_ERR] Bank[0] double-bit error detected via SVA after injection!", $time);
+
+  assert_bank1_double_err: assert property (
+    @(posedge sys_clk) (|chunks_corrupted) |-> !$rose(i_croc_soc.all_banks_double_err_o_q[1])
+  ) else $display("@%t | [DOUBLE_ERR] Bank[1] double-bit error detected via SVA after injection!", $time);
+
+  assert_bank0_single_err: assert property (
+    @(posedge sys_clk) (|chunks_corrupted) |-> !$rose(i_croc_soc.all_banks_single_err_o[0])
+  ) else $display("@%t | [SINGLE_ERR] Bank[0] single-bit error detected via SVA after injection!", $time);
+
+  assert_bank1_single_err: assert property (
+    @(posedge sys_clk) (|chunks_corrupted) |-> !$rose(i_croc_soc.all_banks_single_err_o[1])
+  ) else $display("@%t | [SINGLE_ERR] Bank[1] single-bit error detected via SVA after injection!", $time);
+
+  
   ////////////////////
   //  Testbench     //
   ////////////////////

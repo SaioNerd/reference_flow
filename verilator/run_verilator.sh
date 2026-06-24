@@ -76,9 +76,9 @@ build_verilator() {
         --x-assign fast \
         --x-initial fast \
         -O3 \
-        --top tb_croc_soc \
+        --top tb_fault_injection_croc \
         -f croc.f 2>&1 | \
-        tee croc_soc_build.log"
+        tee fault_injection_croc_build.log"
 }
 
 
@@ -101,7 +101,7 @@ generate_flist() {
 
 run_binary() {
     run_cmd "echo [INFO][Verilator] Running $1"
-    run_cmd "obj_dir/Vtb_croc_soc +binary="$1" | tee ${PROJ_NAME}.log"
+    run_cmd "obj_dir/Vtb_fault_injection_croc +binary="$1" | tee ${PROJ_NAME}.log"
 }
 
 
