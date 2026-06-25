@@ -77,12 +77,12 @@ if __name__ == "__main__":
     # Remap the names of the components for better readability
     name_mapping = {
         # Keys must exactly match the node.name parsed from the OpenROAD report
-        "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
-        "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+        "gen_sram_bank\\[0\\].i_sram_macro": "SRAM\nBank 0",
+        "gen_sram_bank\\[1\\].i_sram_macro": "SRAM\nBank 1",
         "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
         "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
-        "i_user_rom": "User\nROM",
-        "i_user_design_sink": "User\nTest",
+        # "i_user_rom": "User\nROM",
+        # "i_user_design_sink": "User\nTest",
         
         
         "i_bootrom": "Bootrom",
@@ -154,8 +154,8 @@ if __name__ == "__main__":
     left_positions = [sum(norm_values[:i]) for i in range(len(norm_values))]
 
     # Split components into two groups
-    first_row_names = ["SRAM\nBank 0", "SRAM\nBank 1", "Core", "Debug\nModule", "User\nROM"]
-    second_row_names = ["UART", "JTAG", "GPIO", "SoC\nControl", "Timer", "CLINT", "User\nTest", "Repair\nBuffer 0", "Repair\nBuffer 1"]
+    first_row_names = ["SRAM\nBank 0", "SRAM\nBank 1", "UART", "JTAG", "Core", "Debug\nModule"]
+    second_row_names = ["Repair\nBuffer 0", "Repair\nBuffer 1", "GPIO", "SoC\nControl",]
 
     # Compute values
     rest_area = sum(areas_kge[names.index(n)] for n in second_row_names)
@@ -168,7 +168,8 @@ if __name__ == "__main__":
     second_row = dict(sorted(second_row.items(), key=lambda x: x[1]["area"], reverse=True))
 
     # Plot setup
-    fig, ax = plt.subplots(figsize=(10, 4))
+    # fig, ax = plt.subplots(figsize=(10, 4))
+    fig, ax = plt.subplots(figsize=(18, 5))
     ax.set_xlim(0, 1)
     ax.invert_yaxis()
     ax.axis("off")

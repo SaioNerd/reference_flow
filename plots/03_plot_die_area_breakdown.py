@@ -34,12 +34,12 @@ def plot_die_area(area_report):
     soc_area = node_soc.area
     free_area = CORE_AREA - soc_area
     
-    # Plotting
+    # Plotting Variables
     labels = ['SoC Logic & Macros', 'Pad Ring', 'Free Core Area']
     sizes = [soc_area, PAD_AREA, free_area]
     colors = ['#ff9999', '#66b3ff', '#c2c2f0']
     explode = (0.1, 0, 0)
-    
+
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
            shadow=True, startangle=140)
@@ -52,11 +52,8 @@ def plot_die_area(area_report):
     plt.close()
     print("Generated die_area_breakdown.pdf and .png")
 
-    if __name__ == "__main__":
-        report_path = "../openroad/reports/04_croc.routed.rpt"
-        if len(sys.argv) > 1:
-            report_path = sys.argv[1]
-        plot_die_area(report_path)
 
-    # Display the plot
-    plt.show()
+    # Add this line to open the interactive plot window
+    plt.show() 
+    
+    print("Generated die_area_breakdown.pdf and .png")

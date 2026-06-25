@@ -133,13 +133,12 @@ if __name__ == "__main__":
     # Remap the names of the components for better readability
     name_mapping = {
         # Keys must exactly match the node.name parsed from the OpenROAD report
-        "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
-        "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+        "gen_sram_bank\\[0\\].i_sram_macro": "SRAM\nBank 0",
+        "gen_sram_bank\\[1\\].i_sram_macro": "SRAM\nBank 1",
         "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
         "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
         "i_user_rom": "User\nROM",
         "i_user_design_sink": "User\nTest",
-        
         "i_bootrom": "Bootrom",
         "i_clint": "CLINT",
         "i_core_wrap": "Core",
@@ -160,7 +159,7 @@ if __name__ == "__main__":
     total = sum(areas)
     #percentages = [f"{a / total * 100:.1f}%" for a in areas]
 
-    modules_to_group = ["CLINT", "Bootrom", "SoC\nControl", "Timer"]
+    modules_to_group = ["CLINT", "Bootrom", "SoC\nControl", "Timer", "User\nTest", "User\nROM"]
 
     filtered_names = []
     filtered_areas = []
@@ -196,7 +195,7 @@ if __name__ == "__main__":
         autopct='%1.1f%%',
         pctdistance=0.8,
         labeldistance=1.05,
-        wedgeprops=dict(width=0.4, edgecolor="w"),
+        wedgeprops=dict(width=0.6, edgecolor="w"),
     )
 
     # Make labels bold
