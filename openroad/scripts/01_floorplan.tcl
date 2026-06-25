@@ -145,7 +145,7 @@ set sramHaloY          10.0
 utl::report "Place Macros"
 
 # Disposizione centrale una Top, una Bottom
-set shiftX 20 
+set shiftX 40 
 #70
 # # Bank0: top-left, pins facing down
 set bank0X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]

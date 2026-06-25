@@ -51,8 +51,8 @@ if __name__ == "__main__":
 
     # Extract the hierarchical area data
     node_i_croc = get_path(area_tree, ["<top>", "i_croc_soc", "i_croc"])
+    node_i_user = get_path(area_tree, ["<top>", "i_croc_soc", "i_user"])
 
-    # Extract names and convert areas to kGE
     names = []
     areas_kge = []
 
@@ -63,24 +63,87 @@ if __name__ == "__main__":
         areas_kge.append(area_kge)
         names.append(node.name)
 
+    for node in node_i_user.children:
+        print(node)
+        area_kge = node.area / (AREA_PER_GE * 1e3)
+        areas_kge.append(area_kge)
+        names.append(node.name)
+
         print(area_kge)
 
     # Remap the names of the components for better readability
-    names = [
-        "SRAM\nBank 0",
-        "SRAM\nBank 1",
-        "Bootrom",
-        "CLINT",
-        "Core",
-        "Debug\nModule",
-        "JTAG \nTAP",
-        "GPIO",
-        "Timer",
-        "SoC\nControl",
-        "UART",
-    ]
+    name_mapping = {
+        # Keys must exactly match the node.name parsed from the OpenROAD report
+        "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
+        "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+        "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
+        "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
+        "i_user_rom": "User\nROM",
+        "i_user_design_sink": "User\nTest",
+        
+        "i_bootrom": "Bootrom",
+        "i_clint": "CLINT",
+        "i_core_wrap": "Core",
+        "i_dm_top.i_dm_top": "Debug\nModule",
+        "i_dmi_jtag": "JTAG",
+        "i_gpio": "GPIO",
+        "i_obi_timer": "Timer",
+        "i_soc_ctrl": "SoC\nControl",
+        "i_uart": "UART"
+    }
 
-    colors = [PULP_COLORS_BASE[i] for i in range(len(names))]
+    # Apply the mapping: look up the raw name in the dictionary, 
+    # and if it is not found, default back to the raw name.
+    names = [name_mapping.get(name, name) for name in names]
+
+    modules_to_group = ["CLINT", "Bootrom", "SoC\nControl", "Timer"]
+
+    filtered_names = []
+    filtered_areas_kge = []
+    other_area_kge = 0
+
+    # Group the small modules
+    for name, area in zip(names, areas_kge):
+        if name in modules_to_group:
+            other_area_kge += area
+        else:
+            filtered_names.append(name)
+            filtered_areas_kge.append(area)
+
+    # Append the combined "Other" slice
+    if other_area_kge > 0:
+        filtered_names.append("Other")
+        filtered_areas_kge.append(other_area_kge)
+
+    # Overwrite the original lists so plt.pie uses the filtered data
+    names = filtered_names
+    areas_kge = filtered_areas_kge
+
+    # To obtain desidered order
+    ordine_desiderato = ["GPIO", "Core", "UART", "Debug\nModule", "JTAG\nTAP"]
+
+    nomi_riordinati = []
+    aree_riordinate = []
+
+    # 1. Inserisci prima i moduli nell'ordine specifico da sinistra a destra
+    for target in ordine_desiderato:
+        if target in names:
+            idx = names.index(target)
+            nomi_riordinati.append(names[idx])
+            aree_riordinate.append(areas_kge[idx])
+
+    # 2. Accoda tutti gli altri moduli rimasti ("e poi come è ora")
+    for name, area in zip(names, areas_kge):
+        if name not in ordine_desiderato:
+            nomi_riordinati.append(name)
+            aree_riordinate.append(area)
+
+    # Aggiorna definitivamente le liste per il plot
+    names = nomi_riordinati
+    areas_kge = aree_riordinate
+
+    # colors = [PULP_COLORS_BASE[i % len(PULP_COLORS_BASE)] for i in range(len(names))]
+    colors = [plt.cm.tab20.colors[i % 20] for i in range(len(names))]
 
     # ==========================================================================
     #  STUDENT TASKS - MODIFY THE CODE BELOW TO COMPLETE THE EXERCISE

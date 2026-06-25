@@ -11,12 +11,12 @@ OUTPUT_DIR = "plots"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # IHP-130 dimensions
-# According to report: die area = 2235 * 2235
-# Core area = 2017 * 2017
-# Pad area = 2235^2 - 2017^2 = 926936 um^2
+# According to report: die area = 2416 * 1916
+# Core area = 1916 * 1416
+# Pad area = 1916000 um^2
 
-TOTAL_DIE_AREA = 2235 * 2235
-CORE_AREA = 2017 * 2017
+TOTAL_DIE_AREA = 2416.0 * 1916.0
+CORE_AREA = 1916.0 * 1416.0
 PAD_AREA = TOTAL_DIE_AREA - CORE_AREA
 
 def plot_die_area(area_report):
@@ -52,8 +52,11 @@ def plot_die_area(area_report):
     plt.close()
     print("Generated die_area_breakdown.pdf and .png")
 
-if __name__ == "__main__":
-    report_path = "../openroad/reports/04_croc.routed.rpt"
-    if len(sys.argv) > 1:
-        report_path = sys.argv[1]
-    plot_die_area(report_path)
+    if __name__ == "__main__":
+        report_path = "../openroad/reports/04_croc.routed.rpt"
+        if len(sys.argv) > 1:
+            report_path = sys.argv[1]
+        plot_die_area(report_path)
+
+    # Display the plot
+    plt.show()

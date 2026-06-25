@@ -39,14 +39,15 @@ oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/a_plot_area_stacked_bar.py "$AREA_REP
 echo "Running b_plot_area_stacked_bar.py..."
 oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/b_plot_area_stacked_bar.py "$AREA_REPORT"
 
+echo "Running plot_die_area_breakdown.py..."
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_die_area_breakdown.py "$AREA_REPORT"
+
 echo ""
 echo "Done! All plots have been generated."
 echo "You can find them in: /scratch/vlsi2_14fs26/Croco_Krave/plots/"
 
 # echo "Running plot_power_comparison.py..."
 # oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_power_comparison.py
-# echo "Running plot_die_area_breakdown.py..."
-# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_die_area_breakdown.py
 # echo "Running plot_area_comparison.py..."
 # oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_comparison.py
 # echo "Done! All extended plots have been generated."

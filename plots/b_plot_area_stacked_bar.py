@@ -52,6 +52,8 @@ if __name__ == "__main__":
 
     # Extract the hierarchical area data
     node_i_croc = get_path(area_tree, ["<top>", "i_croc_soc", "i_croc"])
+    node_i_user = get_path(area_tree, ["<top>", "i_croc_soc", "i_user"])
+
 
     # Extract names and convert areas to kGE
     names = []
@@ -64,24 +66,42 @@ if __name__ == "__main__":
         areas_kge.append(area_kge)
         names.append(node.name)
 
+    for node in node_i_user.children:
+        print(node)
+        area_kge = node.area / (AREA_PER_GE * 1e3)
+        areas_kge.append(area_kge)
+        names.append(node.name)
+
         print(area_kge)
 
     # Remap the names of the components for better readability
-    names = [
-        "SRAM Bank 0",
-        "SRAM Bank 1",
-        "Bootrom",
-        "CLINT",
-        "Core",
-        "Debug\nModule",
-        "JTAG TAP",
-        "GPIO",
-        "Timer",
-        "SoC\nControl",
-        "UART",
-    ]
+    name_mapping = {
+        # Keys must exactly match the node.name parsed from the OpenROAD report
+        "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
+        "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+        "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
+        "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
+        "i_user_rom": "User\nROM",
+        "i_user_design_sink": "User\nTest",
+        
+        
+        "i_bootrom": "Bootrom",
+        "i_clint": "CLINT",
+        "i_core_wrap": "Core",
+        "i_dm_top.i_dm_top": "Debug\nModule",
+        "i_dmi_jtag": "JTAG",
+        "i_gpio": "GPIO",
+        "i_obi_timer": "Timer",
+        "i_soc_ctrl": "SoC\nControl",
+        "i_uart": "UART"
+    }
 
-    colors = [PULP_COLORS_BASE[i] for i in range(len(names))]
+    # Apply the mapping: look up the raw name in the dictionary, 
+    # and if it is not found, default back to the raw name.
+    names = [name_mapping.get(name, name) for name in names]
+
+    # colors = [PULP_COLORS_BASE[i] for i in range(len(names))]
+    colors = [plt.cm.tab20.colors[i % 20] for i in range(len(names))]
 
     # --------------------------------------------------------------------------
     #  STUDENT TASK 2b: Customize the stacked bar chart using an LLM
@@ -134,13 +154,8 @@ if __name__ == "__main__":
     left_positions = [sum(norm_values[:i]) for i in range(len(norm_values))]
 
     # Split components into two groups
-    first_row_names = [
-        "SRAM Bank 0",
-        "SRAM Bank 1",
-        "Core",
-        "Debug\nModule",
-    ]
-    second_row_names = ["UART", "JTAG TAP", "GPIO", "SoC\nControl", "Timer", "CLINT"]
+    first_row_names = ["SRAM\nBank 0", "SRAM\nBank 1", "Core", "Debug\nModule", "User\nROM"]
+    second_row_names = ["UART", "JTAG", "GPIO", "SoC\nControl", "Timer", "CLINT", "User\nTest", "Repair\nBuffer 0", "Repair\nBuffer 1"]
 
     # Compute values
     rest_area = sum(areas_kge[names.index(n)] for n in second_row_names)

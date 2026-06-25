@@ -34,7 +34,9 @@ puts "Clocks..."
 
 # We target 100 MHz
 # set TCK_SYS 10.0
-set TCK_SYS 13.5
+
+# We target 75 MHz
+set TCK_SYS 13.33
 create_clock -name clk_sys -period $TCK_SYS [get_ports clk_i]
 
 set TCK_JTG 25.0

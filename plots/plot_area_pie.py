@@ -46,12 +46,19 @@ if __name__ == "__main__":
 
     # Extract the hierarchical area data
     node_i_croc = get_path(area_tree, ["<top>", "i_croc_soc", "i_croc"])
+    node_i_user = get_path(area_tree, ["<top>", "i_croc_soc", "i_user"])
+
 
     # Extract names and areas
     names = []
     areas = []
 
     for node in node_i_croc.children:
+        print(node)
+        names.append(node.name)
+        areas.append(node.area)
+
+    for node in node_i_user.children:
         print(node)
         names.append(node.name)
         areas.append(node.area)
@@ -105,34 +112,90 @@ if __name__ == "__main__":
 
     # Generate a color map for the components
     cmap = plt.get_cmap("tab10")
-    colors = [cmap(i) for i in range(len(names))]
+    # colors = [cmap(i) for i in range(len(names))]
+    colors = [plt.cm.tab20.colors[i % 20] for i in range(len(names))]
+
+    # # Remap the names of the components for better readability
+    # names = [
+    #     "SRAM Bank 0",
+    #     "SRAM Bank 1",
+    #     "Bootrom",
+    #     "CLINT",
+    #     "Core",
+    #     "Debug Module",
+    #     "JTAG TAP",
+    #     "GPIO",
+    #     "Timer",
+    #     "SoC Control",
+    #     "UART",
+    # ]
 
     # Remap the names of the components for better readability
-    names = [
-        "SRAM Bank 0",
-        "SRAM Bank 1",
-        "Bootrom",
-        "CLINT",
-        "Core",
-        "Debug Module",
-        "JTAG TAP",
-        "GPIO",
-        "Timer",
-        "SoC Control",
-        "UART",
-    ]
+    name_mapping = {
+        # Keys must exactly match the node.name parsed from the OpenROAD report
+        "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
+        "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+        "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
+        "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
+        "i_user_rom": "User\nROM",
+        "i_user_design_sink": "User\nTest",
+        
+        "i_bootrom": "Bootrom",
+        "i_clint": "CLINT",
+        "i_core_wrap": "Core",
+        "i_dm_top.i_dm_top": "Debug\nModule",
+        "i_dmi_jtag": "JTAG",
+        "i_gpio": "GPIO",
+        "i_obi_timer": "Timer",
+        "i_soc_ctrl": "SoC\nControl",
+        "i_uart": "UART"
+    }
+
+    # Apply the mapping: look up the raw name in the dictionary, 
+    # and if it is not found, default back to the raw name.
+    names = [name_mapping.get(name, name) for name in names]
+
 
     # Calculate percentages
     total = sum(areas)
-    percentages = [f"{a / total * 100:.1f}%" for a in areas]
+    #percentages = [f"{a / total * 100:.1f}%" for a in areas]
+
+    modules_to_group = ["CLINT", "Bootrom", "SoC\nControl", "Timer"]
+
+    filtered_names = []
+    filtered_areas = []
+    filtered_colors = []
+    other_area = 0
+
+    # Group the small modules
+    for name, area, color in zip(names, areas, colors):
+        if name in modules_to_group:
+            other_area += area
+        else:
+            filtered_names.append(name)
+            filtered_areas.append(area)
+            filtered_colors.append(color)
+
+    # Append the combined "Other" slice
+    if other_area > 0:
+        filtered_names.append("Other")
+        filtered_areas.append(other_area)
+        filtered_colors.append("#808080")  # Grey color for the 'Other' slice
+
+    # Overwrite the original lists so plt.pie uses the filtered data
+    names = filtered_names
+    areas = filtered_areas
+    colors = filtered_colors
 
     # Plot pie chart without autopct
-    wedges, texts = plt.pie(
+    wedges, texts, autotexts = plt.pie(
         areas,
         labels=names,
         startangle=45,
         colors=colors,
-        labeldistance=1.2,
+        autopct='%1.1f%%',
+        pctdistance=0.8,
+        labeldistance=1.05,
         wedgeprops=dict(width=0.4, edgecolor="w"),
     )
 
@@ -142,13 +205,13 @@ if __name__ == "__main__":
         text.set_fontsize(10)
 
     # Add percentage text below each label
-    LABEL_OFFSET = 0.03
-    for i, text in enumerate(texts):
-        x, y = text.get_position()
-        if x < 0:
-            plt.text(x, y - LABEL_OFFSET, percentages[i], ha="right", va="top", fontsize=8)
-        else:
-            plt.text(x, y - LABEL_OFFSET, percentages[i], ha="left", va="top", fontsize=8)
+    # LABEL_OFFSET = 0.03
+    # for i, text in enumerate(texts):
+    #     x, y = text.get_position()
+    #     if x < 0:
+    #         plt.text(x, y - LABEL_OFFSET, ha="right", va="top", fontsize=8)
+    #     else:
+    #         plt.text(x, y - LABEL_OFFSET, ha="left", va="top", fontsize=8)
 
     # Title
     plt.title("Area Breakdown: i_croc", fontsize=12, fontweight="bold")

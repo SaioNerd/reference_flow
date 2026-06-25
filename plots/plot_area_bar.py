@@ -51,6 +51,8 @@ if __name__ == "__main__":
 
     # Extract the hierarchical area data
     node_i_croc = get_path(area_tree, ["<top>", "i_croc_soc", "i_croc"])
+    node_i_user = get_path(area_tree, ["<top>", "i_croc_soc", "i_user"])
+
 
     # Extract names and convert areas to kGE
     names = []
@@ -59,6 +61,12 @@ if __name__ == "__main__":
     for node in node_i_croc.children:
         print(node)
         # Convert area from um^2 to kGE
+        area_kge = node.area / (AREA_PER_GE * 1e3)
+        areas_kge.append(area_kge)
+        names.append(node.name)
+
+    for node in node_i_user.children:
+        print(node)
         area_kge = node.area / (AREA_PER_GE * 1e3)
         areas_kge.append(area_kge)
         names.append(node.name)
@@ -111,7 +119,9 @@ if __name__ == "__main__":
 
     # Use distinct colors for each bar
     cmap = plt.get_cmap("tab10")
-    colors = [cmap(i) for i in range(len(names))]
+    # colors = [cmap(i) for i in range(len(names))]
+    colors = [plt.cm.tab20.colors[i % 20] for i in range(len(names))]
+
 
     # --------------------------------------------------------------------------
     #  STUDENT TASK 1a.3: Remap the names of the components
@@ -123,19 +133,30 @@ if __name__ == "__main__":
     # --------------------------------------------------------------------------
 
     # Remap the names of the components for better readability
-    names = [
-        "SRAM Bank 0",
-        "SRAM Bank 1",
-        "Bootrom",
-        "CLINT",
-        "Core",
-        "Debug Module",
-        "JTAG TAP",
-        "GPIO",
-        "Timer",
-        "SoC Control",
-        "UART",
-    ]
+    name_mapping = {
+        # Keys must exactly match the node.name parsed from the OpenROAD report
+        "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
+        "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+        "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
+        "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
+        "i_user_rom": "User\nROM",
+        "i_user_design_sink": "User\nTest",
+        
+        
+        "i_bootrom": "Bootrom",
+        "i_clint": "CLINT",
+        "i_core_wrap": "Core",
+        "i_dm_top.i_dm_top": "Debug\nModule",
+        "i_dmi_jtag": "JTAG",
+        "i_gpio": "GPIO",
+        "i_obi_timer": "Timer",
+        "i_soc_ctrl": "SoC\nControl",
+        "i_uart": "UART"
+    }
+
+    # Apply the mapping: look up the raw name in the dictionary, 
+    # and if it is not found, default back to the raw name.
+    names = [name_mapping.get(name, name) for name in names]
 
     # --------------------------------------------------------------------------
     #  STUDENT TASK 1a.4: Save and display the plot
