@@ -179,6 +179,7 @@
 ../rtl/user_domain.sv
 ../rtl/croc_soc.sv
 ../rtl/croc_chip.sv
+../rtl/croc_soc_sim.sv
 ../rtl/user_domain/user_rom.sv
 ../rtl/user_domain/user_design_sink.sv
 ../rtl/user_domain/secded_byte.sv
@@ -192,6 +193,7 @@
 ../rtl/test/tb_fault_injection_croc.sv
 ../rtl/test/tb_memory_access_croc.sv
 ../rtl/test/tb_sec_repair.sv
-../rtl/croc_soc_sim.sv
+../rtl/test/tb_hw_secded_bench.sv
+
 
 
