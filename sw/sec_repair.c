@@ -16,7 +16,7 @@ int main() {
     volatile uint32_t test_word;
 
     // 2. Provide the address of the 32-bit word to the testbench (arm signal).
-    printf("Target address: 0x%08x\n", (uint32_t)&test_word);
+    printf("Target address: 0x%x\n", (uint32_t)&test_word);
     uart_write_flush();
     *ARM_ADDR = (uint32_t)&test_word;
 
@@ -35,7 +35,7 @@ int main() {
     uart_write_flush();
 
     // 3. Write a 32-bit pattern to memory
-    printf("Writing 0xDEADBEEF to 0x%08x...\n", (uint32_t)&test_word);
+    printf("Writing 0xDEADBEEF to 0x%x...\n", (uint32_t)&test_word);
     test_word = 0xDEADBEEF;
 
     // Compiler barrier: ensure the write completes before reading back
@@ -49,13 +49,13 @@ int main() {
 
     // 4. Read back the 32-bit word from memory
     uint32_t read_back = test_word;
-    printf("Read back  0x%08x from 0x%08x\n", read_back, (uint32_t)&test_word);
+    printf("Read back  0x%x from 0x%x\n", read_back, (uint32_t)&test_word);
 
     // 5. Verify integrity
     if (read_back == 0xDEADBEEF) {
         printf("PASS: Data integrity verified (read value matches written value)\n");
     } else {
-        printf("FAIL: Data mismatch! Expected 0xDEADBEEF, got 0x%08x\n", read_back);
+        printf("FAIL: Data mismatch! Expected 0xDEADBEEF, got 0x%x\n", read_back);
     }
 
 
@@ -75,12 +75,12 @@ int main() {
     asm volatile("" ::: "memory");
 
     read_back = test_word;
-    printf("Read back  0x%08x from 0x%08x\n", read_back, (uint32_t)&test_word);
+    printf("Read back  0x%x from 0x%x\n", read_back, (uint32_t)&test_word);
 
     if (read_back == 0xDEADBEEF) {
         printf("PASS: Data integrity verified (read value matches written value)\n");
     } else {
-        printf("FAIL: Data mismatch! Expected 0xDEADBEEF, got 0x%08x\n", read_back);
+        printf("FAIL: Data mismatch! Expected 0xDEADBEEF, got 0x%x\n", read_back);
     }
 
     uart_write_flush();

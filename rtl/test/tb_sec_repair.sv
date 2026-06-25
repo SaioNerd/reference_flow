@@ -18,7 +18,7 @@
 module tb_sec_repair #(
   parameter int unsigned GpioCount = 32,
   // Fault type: 1 = single-bit error, 2 = double-bit error
-  parameter int unsigned FaultType = 2
+  parameter int unsigned FaultType = 1
 );
 
   import tb_croc_pkg::*;
@@ -91,18 +91,6 @@ module tb_sec_repair #(
     .gpio_in_o     ( vip_gpio_in )
   );
 
-  // Fault injection signals driven by testbench, routed into
-  // croc_soc via gpio_i[16] (bank1), gpio_i[18] (sel), gpio_i[19] (bank0).
-  // All other GPIO bits pass through from the VIP unchanged.
-  logic [1:0] sram_fault_inject;  // bit0=bank0, bit1=bank1
-  logic       sram_fault_sel;     // 0=single, 1=double
-
-  always_comb begin
-    gpio_in = vip_gpio_in;
-    gpio_in[16] = sram_fault_inject[1];  // bank1
-    gpio_in[18] = sram_fault_sel;        // fault type
-    gpio_in[19] = sram_fault_inject[0];  // bank0
-  end
 
   `ifdef TARGET_NETLIST_YOSYS
   \croc_soc$croc_chip.i_croc_soc i_croc_soc (
@@ -271,16 +259,33 @@ module tb_sec_repair #(
   // all_banks_single_err_o[0] = bank0_single_err
   // all_banks_single_err_o[1] = bank1_single_err
   //////////////////////////////////////////////////////////////////
-  logic [NumSramBanks-1:0] single_err_q;
+  // logic [NumSramBanks-1:0] single_err_q;
 
-  always_ff @(posedge sys_clk) begin
-    single_err_q <= i_croc_soc.all_banks_single_err_o;
-    if (i_croc_soc.all_banks_single_err_o[0] && !single_err_q[0])
-      $display("@%t | [SINGLE_ERR] Bank[0] single-bit error detected!", $time);
-    if (i_croc_soc.all_banks_single_err_o[1] && !single_err_q[1])
-      $display("@%t | [SINGLE_ERR] Bank[1] single-bit error detected!", $time);
-  end
+  // always_ff @(posedge sys_clk) begin
+  //   single_err_q <= i_croc_soc.all_banks_single_err_o;
+  //   if (i_croc_soc.all_banks_single_err_o[0] && !single_err_q[0])
+  //     $display("@%t | [SINGLE_ERR] Bank[0] single-bit error detected!", $time);
+  //   if (i_croc_soc.all_banks_single_err_o[1] && !single_err_q[1])
+  //     $display("@%t | [SINGLE_ERR] Bank[1] single-bit error detected!", $time);
+  // end
 
+  //////////////////////////////////////////////////////////////////
+  // Single-Error Monitor via SystemVerilog Assertions (SVA)
+  // Detects a rising edge ($rose) on the error bits sampled at sys_clk
+  //////////////////////////////////////////////////////////////////
+
+ //////////////////////////////////////////////////////////////////
+  // Single-Error Monitor via SystemVerilog Assertions (SVA)
+  // Triggers ONLY after a fault injection has occurred (word_corrupted == 1)
+  //////////////////////////////////////////////////////////////////
+
+  assert_bank0_single_err: assert property (
+    @(posedge sys_clk) (word_corrupted && in_bank0) |-> !$rose(i_croc_soc.all_banks_single_err_o[0])
+  ) else $display("@%t | [SINGLE_ERR] Bank[0] single-bit error detected via SVA after injection!", $time);
+
+  assert_bank1_single_err: assert property (
+    @(posedge sys_clk) (word_corrupted && in_bank1) |-> !$rose(i_croc_soc.all_banks_single_err_o[1])
+  ) else $display("@%t | [SINGLE_ERR] Bank[1] single-bit error detected via SVA after injection!", $time);
   ////////////////////
   //  Testbench     //
   ////////////////////
