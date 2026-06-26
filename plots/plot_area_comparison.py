@@ -32,8 +32,13 @@ def extract_area_breakdown(report_path):
     return breakdown
 
 pretty_names = {
-    "gen_sram_bank\\[0\\]": "SRAM\nBank 0",
-    "gen_sram_bank\\[1\\]": "SRAM\nBank 1",
+    "gen_sram_bank\\[0\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 0",
+    "gen_sram_bank\\[1\\].i_sram_macro.gen_secded.i_sram": "SRAM\nBank 1",
+    "gen_sram_bank\\[0\\].i_repair_buffer": "Repair\nBuffer 0",
+    "gen_sram_bank\\[1\\].i_repair_buffer": "Repair\nBuffer 1",
+    "i_user_rom": "User\nROM",
+    "i_user_design_sink": "User\nTest",
+        
     "i_bootrom": "Bootrom",
     "i_clint": "CLINT",
     "i_core_wrap": "Core",
@@ -76,8 +81,9 @@ def plot_area_comparison(our_report, baseline_report=None):
     # Prepare stacked bar chart
     fig, ax = plt.subplots(figsize=(10, 4))
     
-    colors = [PULP_COLORS_BASE[i % len(PULP_COLORS_BASE)] for i in range(len(all_keys))]
-    
+    # colors = [PULP_COLORS_BASE[i % len(PULP_COLORS_BASE)] for i in range(len(all_keys))]
+    colors = [plt.cm.tab20.colors[i % 20] for i in range(len(names))]
+
     bottom_base = 0
     bottom_our = 0
     

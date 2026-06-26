@@ -16,7 +16,7 @@ mkdir -p plots
 PYTHON_SCRIPTS_DIR="/scratch/vlsi2_14fs26/Croco_Krave/plots"
 
 # We use the final routed report which contains the Hierarchical Area Report
-AREA_REPORT="../openroad/reports/04_croc.routed.rpt"
+AREA_REPORT="/scratch/vlsi2_14fs26/Croco_Krave/openroad/reports/04_croc.routed.rpt"
 
 if [ ! -f "$AREA_REPORT" ]; then
     echo "Error: Area report $AREA_REPORT not found!"
@@ -27,26 +27,28 @@ export PYTHONPATH="$PYTHON_SCRIPTS_DIR:$PYTHONPATH"
 
 # Run python using the Apptainer environment provided by oseda -2026.04
 # to make sure matplotlib and other dependencies are available!
-echo "Running plot_area_bar.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_bar.py "$AREA_REPORT"
+echo "Running 01a_plot_area_bar.py..."
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/01a_plot_area_bar.py "$AREA_REPORT"
 
 echo "Running plot_area_pie.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_pie.py "$AREA_REPORT"
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/01b_plot_area_pie.py "$AREA_REPORT"
 
-echo "Running a_plot_area_stacked_bar.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/a_plot_area_stacked_bar.py "$AREA_REPORT"
+# The output of 02a is not great at all
+# echo "Running 02a_plot_area_stacked_bar.py..."
+# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/02a_plot_area_stacked_bar.py "$AREA_REPORT"
 
-echo "Running b_plot_area_stacked_bar.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/b_plot_area_stacked_bar.py "$AREA_REPORT"
+echo "Running 02b_plot_area_stacked_bar.py..."
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/02b_plot_area_stacked_bar.py "$AREA_REPORT"
 
-echo ""
-echo "Done! All plots have been generated."
-echo "You can find them in: /scratch/vlsi2_14fs26/Croco_Krave/plots/"
+echo "Running 03_plot_die_area_breakdown.py..."
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/03_plot_die_area_breakdown.py "$AREA_REPORT"
 
-echo "Running plot_power_comparison.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_power_comparison.py
-echo "Running plot_die_area_breakdown.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_die_area_breakdown.py
-echo "Running plot_area_comparison.py..."
-oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_comparison.py
-echo "Done! All extended plots have been generated."
+# echo ""
+# echo "Done! All plots have been generated."
+# echo "You can find them in: /scratch/vlsi2_14fs26/Croco_Krave/plots/"
+
+# echo "Running plot_power_comparison.py..."
+# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_power_comparison.py
+# echo "Running plot_area_comparison.py..."
+# oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_area_comparison.py
+# echo "Done! All extended plots have been generated."

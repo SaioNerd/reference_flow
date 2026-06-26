@@ -37,10 +37,44 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   logic [NumSramBanks-1:0] sram_fault_inject_i;  // per-bank fault inject
   logic                    sram_fault_sel_i;      // 0=single, 1=double
 
-  assign sram_fault_inject_i[0] = gpio_in_sync_i[19];
-  assign sram_fault_inject_i[1] = gpio_in_sync_i[16];
+  // assign sram_fault_inject_i[0] = gpio_in_sync_i[19];
+  // assign sram_fault_inject_i[1] = gpio_in_sync_i[16];
 
-  assign sram_fault_sel_i       = gpio_in_sync_i[18];
+  // assign sram_fault_sel_i       = gpio_in_sync_i[18];
+
+ 
+  // Prova per fixare tempo di hold
+  // Yosys should not optmize these signals to make sure to place a logic gate
+  (* keep = "true" *) logic [1:0] delay_stage1_inject;
+  (* keep = "true" *) logic [1:0] delay_stage2_inject;
+  (* keep = "true" *) logic [1:0] delay_stage3_inject;
+  (* keep = "true" *) logic [1:0] delay_stage4_inject;
+  
+  (* keep = "true" *) logic       delay_stage1_sel;
+  (* keep = "true" *) logic       delay_stage2_sel;
+  (* keep = "true" *) logic       delay_stage3_sel;
+  (* keep = "true" *) logic       delay_stage4_sel;
+
+  // Fault Inject [0]
+  assign delay_stage1_inject[0] = ~gpio_in_sync_i[19];
+  assign delay_stage2_inject[0] = ~delay_stage1_inject[0];
+  assign delay_stage3_inject[0] = ~delay_stage2_inject[0];
+  assign delay_stage4_inject[0] = ~delay_stage3_inject[0];
+  assign sram_fault_inject_i[0] =  delay_stage4_inject[0];
+
+  // Fault Inject [1]
+  assign delay_stage1_inject[1] = ~gpio_in_sync_i[16];
+  assign delay_stage2_inject[1] = ~delay_stage1_inject[1];
+  assign delay_stage3_inject[1] = ~delay_stage2_inject[1];
+  assign delay_stage4_inject[1] = ~delay_stage3_inject[1];
+  assign sram_fault_inject_i[1] =  delay_stage4_inject[1];
+
+  // Fault Sel
+  assign delay_stage1_sel       = ~gpio_in_sync_i[18];
+  assign delay_stage2_sel       = ~delay_stage1_sel;
+  assign delay_stage3_sel       = ~delay_stage2_sel;
+  assign delay_stage4_sel       = ~delay_stage3_sel;
+  assign sram_fault_sel_i       =  delay_stage4_sel;
 
 
   //////////////////////
