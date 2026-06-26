@@ -67,8 +67,9 @@ utl::report "Perform buffer insertion..."
 repair_design -verbose
 
 utl::report "Repair setup and hold violations..."
-repair_timing -setup -verbose -setup_margin 0.3 -repair_tns 100
-repair_timing -hold -hold_margin 0.3 -verbose -repair_tns 100
+# repair_timing -setup -verbose -setup_margin 0.3 -repair_tns 100
+repair_timing -setup -verbose -setup_margin 0.05 -repair_tns 100
+repair_timing -hold -hold_margin 0.1 -verbose -repair_tns 100
 
 utl::report "GRT incremental..."
 # Run to get modified net by DPL

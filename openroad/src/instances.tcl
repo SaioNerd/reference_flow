@@ -26,10 +26,13 @@ set JTAG            $CROC/i_dmi_jtag
 set SRAM_1024x64     gen_1024x64xBx1.i_cut
 
 # memory banks
-set sram {\[0\].i_sram_macro/gen_secded.i_sram/}
+set sram {\[0\].i_sram_macro.gen_secded.i_sram/}
 set bank0_sram0 $SRAM$sram$SRAM_1024x64
-set sram {\[1\].i_sram_macro/gen_secded.i_sram/}
+set sram {\[1\].i_sram_macro.gen_secded.i_sram/}
 set bank1_sram0 $SRAM$sram$SRAM_1024x64
+
+# Note that depending on the flattening it can be: set sram {\[X\].i_sram_macro/gen_secded.i_sram/
+# or 
 
 # JTAG request and response CDCs
 # Goal: Find the async nets and their source and destination cells

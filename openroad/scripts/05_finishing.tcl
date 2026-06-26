@@ -46,7 +46,10 @@ utl::report "Global connect"
 global_connect
 
 save_checkpoint 05_${proj_name}.final
+# report_metrics "05_${proj_name}.final"
 report_image "05_${proj_name}.final" true true false true
+
+# report_check_types -max_slew -violators
 
 utl::report "Write output files"
 write_def                      ${out_dir}/${proj_name}.def
@@ -57,11 +60,11 @@ write_sdc                      ${out_dir}/${proj_name}.sdc
 
 # WARNING: Currently the extract_parasitics command removes metal patches (eg for min area)
 # So if you want to use it, do so at the very end after writing out the def and odb files
-# define_process_corner -ext_model_index 0 tt
-# extract_parasitics -ext_model_file /scratch/vlsi2_14fs26/Croco_Krave/technology/rcx/IHP_rcx_patterns.rules
-# write_spef out/croc.spef
-# read_spef out/croc.spef; # readback parasitics for OpenSTA
-# report_metrics "05_${proj_name}.extract"
+define_process_corner -ext_model_index 0 tt
+extract_parasitics -ext_model_file /scratch/vlsi2_14fs26/Croco_Krave/technology/rcx/IHP_rcx_patterns.rules
+write_spef out/croc.spef
+read_spef out/croc.spef; # readback parasitics for OpenSTA
+report_metrics "05_${proj_name}.extract"
 
 
 utl::report "###############################################################################"

@@ -146,10 +146,11 @@ utl::report "Place Macros"
 
 # Disposizione centrale una Top, una Bottom
 set shiftX 40 
-#70
+set shiftY 12
+
 # # Bank0: top-left, pins facing down
 set bank0X [expr $floor_leftX + $RamSize1024x64_W/2 + $shiftX]
-set bank0Y [expr $floor_topY - $RamSize1024x64_H - $sramHaloY]
+set bank0Y [expr $floor_topY - $RamSize1024x64_H - $sramHaloY - $shiftY]
 placeInstance $bank0_sram0 $bank0X $bank0Y R0
 
 # # Bank1: top-right, pins facing down
@@ -193,6 +194,11 @@ utl::report "###################################################################
 utl::report "# 01-05: Power Grid"
 utl::report "###############################################################################"
 source scripts/power_grid.tcl
+
+# check as in the IR drop there are issues
+check_power_grid -net VDD
+check_power_grid -net VSS
+
 
 # Save checkpoint
 save_checkpoint 01_${proj_name}.floorplan

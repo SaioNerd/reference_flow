@@ -41,10 +41,10 @@ yosys setattr -set keep_hierarchy 1 "t:croc_soc$*"
 yosys setattr -set keep_hierarchy 1 "t:croc_domain$*"
 yosys setattr -set keep_hierarchy 1 "t:user_domain$*"
 # To better plot impact of the additional logic
-yosys setattr -set keep_hierarchy 1 "t:user_rom$*"
-yosys setattr -set keep_hierarchy 1 "t:secded_repair_buffer$*"
-yosys setattr -set keep_hierarchy 1 "t:secded_sram_impl$*"
-yosys setattr -set keep_hierarchy 1 "t:user_design_sink$*"
+# yosys setattr -set keep_hierarchy 1 "t:user_rom$*"
+# yosys setattr -set keep_hierarchy 1 "t:user_design_sink$*"
+# yosys setattr -set keep_hierarchy 1 "t:secded_repair_buffer$*"
+# yosys setattr -set keep_hierarchy 1 "t:secded_sram_impl$*"
 
 yosys setattr -set keep_hierarchy 1 "t:core_wrap$*"
 yosys setattr -set keep_hierarchy 1 "t:cve2_register_file_ff$*"
@@ -152,7 +152,7 @@ yosys dfflibmap {*}$tech_cells_args
 
 # then perform bit-level optimization and mapping on all combinational clouds in ABC
 # target period (per optimized block/module) in picoseconds
-set period_ps 12000
+set period_ps 12500
 # pre-process abc file (written to tmp directory)
 set abc_comb_script   [processAbcScript scripts/abc-opt.script]
 # call ABC

@@ -66,7 +66,7 @@ utl::report "###################################################################
 
 set_thread_count 8
 
-set_placement_padding -left 1 -right 1
+set_placement_padding -left 2 -right 2
 
 # global_placement parameters:
 # density:            In every part of the chip, about N% of the area is occupied by standard cells
@@ -85,7 +85,14 @@ save_checkpoint 02-02_${proj_name}.gpl1
 utl::report "Estimate parasitics"
 estimate_parasitics -placement
 utl::report "Repair design"
-repair_design -verbose
+
+# modifiche losche
+# set_max_transition 0.48 [current_design]
+# set_max_capacitance 0.48 [current_design]
+# buffer_ports -inputs -outputs
+# repair_design -slew_margin 20 -cap_margin 20 -verbose
+
+# repair_design -verbose
 save_checkpoint 02-02_${proj_name}.gpl1_fix
 
 utl::report "Repair setup"

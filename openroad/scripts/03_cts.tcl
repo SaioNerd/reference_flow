@@ -53,6 +53,8 @@ utl::report "Clock Tree Synthesis"
 # ctsBuf and ctsBufRoot are set based on PDK
 clock_tree_synthesis -buf_list $ctsBuf -root_buf $ctsBufRoot \
                      -sink_clustering_enable \
+                     -sink_clustering_size 12 \
+                     -sink_clustering_max_diameter 40 \
                      -repair_clock_nets
 
 # Legalize CTS cells
@@ -72,8 +74,8 @@ report_metrics "03_${proj_name}.cts_unrepaired"
 utl::report "Repair setup"
 repair_timing -setup -verbose
 
-utl::report "Repair hold"
-repair_timing -hold -verbose
+# utl::report "Repair hold"
+# repair_timing -hold -verbose
 
 # Place inserted cells
 utl::report "Detailed placement"

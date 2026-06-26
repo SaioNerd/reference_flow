@@ -2,7 +2,7 @@ work
 transcript
 vsim.wlf
 modelsim.ini
-*.vcd
+#*.vcd
 *.fst
 *.log
 reports/
