@@ -144,6 +144,7 @@ int main(void) {
     unsigned int data, recovered, lo, hi;
     unsigned char se, de;
     unsigned int i, state;
+    unsigned int dec_mode;
 
     uart_init();
     printf("SECDED bench N=");
@@ -152,6 +153,15 @@ int main(void) {
 
     // Write NUM_SAMPLES to a register so the testbench can read it
     *NUM_SAMPLES_REG = NUM_SAMPLES;
+
+    // Set decode mode via compile-time define (default: 0 = clean)
+    // 0 = clean data (no errors)
+    // 1 = single-bit error injected
+    // 2 = double-bit error injected
+    dec_mode = 2;
+    printf("Dec mode=");
+    printf("%x", dec_mode);
+    printf("\n");
 
 #if NUM_TEST_PATTERNS > 0
     printf("Self-test N=");
@@ -194,13 +204,15 @@ int main(void) {
 
     // Generate samples
     unsigned int samples[NUM_SAMPLES];
+    unsigned int sample;
     state = 0xACE1;
     for (i = 0; i < NUM_SAMPLES; i++) samples[i] = lfsr_next(&state);
 
     // Use volatile for benchmark output variables to force the compiler
     // to actually execute the encode/decode operations (otherwise it may
     // optimize them away since their results are never used by the C code)
-    volatile unsigned int v_lo, v_hi, v_recovered;
+    volatile unsigned int v_lo[NUM_SAMPLES], v_hi[NUM_SAMPLES];
+    volatile unsigned int v_recovered;
     volatile unsigned char v_se, v_de;
 
     // Pre-encode for decode benchmarks
@@ -208,63 +220,77 @@ int main(void) {
     for (i = 0; i < NUM_SAMPLES; i++) encode_word(samples[i], &e_lo[i], &e_hi[i]);
 
     // ----- Encode -----
-    
-    for (i = 0; i < NUM_SAMPLES; i++){
-        enc_start();
-
-        // FORCE COMPILER BARRIER: Math cannot leak upward
-        asm volatile("" ::: "memory");
-
-        encode_word(samples[i], (unsigned int *)&v_lo, (unsigned int *)&v_hi);
-
-        // FORCE COMPILER BARRIER: Math cannot leak downward
-        asm volatile("" ::: "memory");
-
-        enc_stop();
-    };
-
-    // ----- Decode -----
-   
-    for (i = 0; i < NUM_SAMPLES; i++){
-        dec_start();
-
-        // FORCE COMPILER BARRIER: Math cannot leak downward
-        asm volatile("" ::: "memory");
-
-        decode_word(e_lo[i], e_hi[i], (unsigned int *)&v_recovered, (unsigned char *)&v_se, (unsigned char *)&v_de);
-
-        // FORCE COMPILER BARRIER: Math cannot leak downward
-        asm volatile("" ::: "memory");
-
-        dec_stop();
-    };
-
-    // ----- Combined -----
-    // enc_start();
-    // for (i = 0; i < NUM_SAMPLES; i++) {
-    //     encode_word(samples[i], (unsigned int *)&v_lo, (unsigned int *)&v_hi);
-    //     decode_word(v_lo, v_hi, (unsigned int *)&v_recovered, (unsigned char *)&v_se, (unsigned char *)&v_de);
-    // }
-    // enc_stop();
-
-    // ----- Decode + Correction -----
-    
     for (i = 0; i < NUM_SAMPLES; i++) {
-        unsigned int clo = e_lo[i], chi = e_hi[i];
-        clo ^= (1 << (i % 8));
-        dec_start();
+        unsigned int t_lo, t_hi;
 
-        // FORCE COMPILER BARRIER: Math cannot leak downward
+        enc_start();
         asm volatile("" ::: "memory");
+        encode_word(samples[i], &t_lo, &t_hi);
 
-        decode_word(clo, chi, (unsigned int *)&v_recovered, (unsigned char *)&v_se, (unsigned char *)&v_de);
-
-        // FORCE COMPILER BARRIER: Math cannot leak downward
-        asm volatile("" ::: "memory");// FORCE COMPILER BARRIER: Math cannot leak downward
-        
-        dec_stop();
+        v_lo[i] = t_lo;
+        v_hi[i] = t_hi;
+        asm volatile("" ::: "memory");
+        enc_stop();
     }
-    
+
+    // ----- Decode (mode-dependent) -----
+    for (i = 0; i < NUM_SAMPLES; i++) {
+
+        unsigned int mask_lo = 0;
+        unsigned int mask_hi = 0;
+
+        if (dec_mode == 1) {
+            // 1 bitflip per 16-bit block (only in the first 13 bits)
+            unsigned int b0 = i % 13;
+            unsigned int b1 = (i + 1) % 13;
+            unsigned int b2 = (i + 2) % 13;
+            unsigned int b3 = (i + 3) % 13;
+
+            mask_lo = (1u << b0) | (1u << (16 + b1));
+            mask_hi = (1u << b2) | (1u << (16 + b3));
+
+            e_lo[i] ^= mask_lo;
+            e_hi[i] ^= mask_hi;
+
+        } else if (dec_mode == 2) {
+            // 2 bitflips per 16-bit block (only in the first 13 bits)
+            unsigned int b0_a = i % 13;          unsigned int b0_b = (b0_a + 1) % 13;
+            unsigned int b1_a = (i + 2) % 13;    unsigned int b1_b = (b1_a + 1) % 13;
+            unsigned int b2_a = (i + 4) % 13;    unsigned int b2_b = (b2_a + 1) % 13;
+            unsigned int b3_a = (i + 6) % 13;    unsigned int b3_b = (b3_a + 1) % 13;
+
+            mask_lo = (1u << b0_a) | (1u << b0_b) | (1u << (16 + b1_a)) | (1u << (16 + b1_b));
+            mask_hi = (1u << b2_a) | (1u << b2_b) | (1u << (16 + b3_a)) | (1u << (16 + b3_b));
+
+            e_lo[i] ^= mask_lo;
+            e_hi[i] ^= mask_hi;
+        }
+        
+        unsigned int clo, chi;
+        unsigned int tmp_recovered;
+        unsigned char tmp_se, tmp_de;
+
+        dec_start();
+        asm volatile("" ::: "memory");
+        clo = e_lo[i];
+        chi = e_hi[i];
+
+        decode_word(clo, chi, &tmp_recovered, &tmp_se, &tmp_de);
+
+        asm volatile("" ::: "memory");
+        dec_stop();
+
+        // Finals assignation outside of timer
+        v_recovered = tmp_recovered;
+        v_se = tmp_se;
+        v_de = tmp_de;
+
+        // Original array values are restored for the next iteration
+        if (dec_mode == 1 || dec_mode == 2) {
+            e_lo[i] ^= mask_lo;
+            e_hi[i] ^= mask_hi;
+        }
+    }
 
     printf("Done\n");
     uart_write_flush();
