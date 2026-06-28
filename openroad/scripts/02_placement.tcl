@@ -77,7 +77,7 @@ set_placement_padding -left 2 -right 2
 
 # Rough placement to get parasitics from steiner-tree estimate so we can run repair_timing
 utl::report "Global Placement (1)"
-global_placement -density 0.60
+global_placement -density 0.65
 report_metrics "02-02_${proj_name}.gpl1"
 report_image "02-02_${proj_name}.gpl1" true true
 save_checkpoint 02-02_${proj_name}.gpl1
@@ -85,15 +85,7 @@ save_checkpoint 02-02_${proj_name}.gpl1
 utl::report "Estimate parasitics"
 estimate_parasitics -placement
 utl::report "Repair design"
-
-# modifiche losche
-# set_max_transition 0.48 [current_design]
-# set_max_capacitance 0.48 [current_design]
-# buffer_ports -inputs -outputs
-# repair_design -slew_margin 20 -cap_margin 20 -verbose
-
-# repair_design -verbose
-save_checkpoint 02-02_${proj_name}.gpl1_fix
+repair_design -verbose
 
 utl::report "Repair setup"
 repair_timing -setup -verbose
@@ -101,7 +93,7 @@ save_checkpoint 02-02_${proj_name}.gpl1_repaired
 
 # Actual global placement with routability and timing driven
 utl::report "Global Placement (2)"
-global_placement -density 0.60 \
+global_placement -density 0.65 \
                  -routability_driven \
                  -routability_check_overflow 0.30 \
                  -timing_driven
@@ -109,6 +101,10 @@ report_metrics "02-02_${proj_name}.gpl2"
 report_image "02-02_${proj_name}.gpl2" true true
 save_checkpoint 02-02_${proj_name}.gpl2
 
+utl::report "###############################################################################"
+utl::report "# 02-02b: MANUAL SRAM SLEW FIX (TARGETED NET REPAIR)"
+utl::report "###############################################################################"
+repair_design -max_wire_length 300 -slew_margin 20 -cap_margin 20
 
 utl::report "###############################################################################"
 utl::report "# 02-03: Detailed Placement"

@@ -3,6 +3,7 @@
 ###############################################################################
 source scripts/init_tech.tcl
 
+# read_db out/croc.odb
 read_verilog out/croc.v
 link_design croc_chip
 read_sdc out/croc.sdc

@@ -16,7 +16,6 @@ source src/instances.tcl
 # Not set in the liberty file of the EZ cells; limiting fanout often reduced routing stress
 set_max_fanout 16 [current_design]
 
-
 #############################
 ## Driving Cells and Loads ##
 #############################
@@ -36,7 +35,7 @@ puts "Clocks..."
 # set TCK_SYS 10.0
 
 # We target 75 MHz
-set TCK_SYS 13.9
+set TCK_SYS 13.7
 create_clock -name clk_sys -period $TCK_SYS [get_ports clk_i]
 
 set TCK_JTG 25.0

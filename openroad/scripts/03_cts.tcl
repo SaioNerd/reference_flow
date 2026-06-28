@@ -54,8 +54,19 @@ utl::report "Clock Tree Synthesis"
 clock_tree_synthesis -buf_list $ctsBuf -root_buf $ctsBufRoot \
                      -sink_clustering_enable \
                      -sink_clustering_size 12 \
-                     -sink_clustering_max_diameter 40 \
+                     -sink_clustering_max_diameter 50 \
+                     -clustering_unbalance_ratio 0.2 \
+                     -obstruction_aware \
+                     -apply_ndr full \
+                     -balance_levels \
+                     -sink_buffer_max_cap_derate 0.05 \
                      -repair_clock_nets
+
+# clock_tree_synthesis -buf_list $ctsBuf -root_buf $ctsBufRoot \
+                    #  -sink_clustering_enable \
+                    #  -sink_clustering_size 12 \
+                    #  -sink_clustering_max_diameter 40 \
+                    #  -repair_clock_nets
 
 # Legalize CTS cells
 utl::report "Detailed placement"
@@ -69,6 +80,10 @@ estimate_parasitics -placement
 set_propagated_clock [all_clocks]
 
 report_metrics "03_${proj_name}.cts_unrepaired"
+
+# Aggiunta
+# utl::report "Repair design"
+# repair_design -verbose
 
 # Repair all setup timing
 utl::report "Repair setup"

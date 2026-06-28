@@ -68,7 +68,7 @@ repair_design -verbose
 
 utl::report "Repair setup and hold violations..."
 # repair_timing -setup -verbose -setup_margin 0.3 -repair_tns 100
-repair_timing -setup -verbose -setup_margin 0.05 -repair_tns 100
+repair_timing -setup -verbose -setup_margin 0.07 -repair_tns 100
 repair_timing -hold -hold_margin 0.1 -verbose -repair_tns 100
 
 utl::report "GRT incremental..."
@@ -95,8 +95,8 @@ utl::report "###################################################################
 utl::report "# 04-02: Detailed Route"
 utl::report "###############################################################################"
 
-# Repair antennas (requires LEF cell with class 'CORE ANTENNACELL')
-# ratio_margin: 30% safety margin on antenna ratios
+# # Repair antennas (requires LEF cell with class 'CORE ANTENNACELL')
+# # ratio_margin: 30% safety margin on antenna ratios
 repair_antennas -ratio_margin 30 -iterations 5
 
 utl::report "Detailed route"
@@ -105,7 +105,7 @@ detailed_route -output_drc ${report_dir}/04_${proj_name}_route_drc.rpt \
                -drc_report_iter_step 5 \
                -save_guide_updates \
                -clean_patches \
-               -droute_end_iter 20 \
+               -droute_end_iter 25 \
                -verbose 1
 
 utl::report "Saving detailed route"

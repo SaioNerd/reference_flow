@@ -15,7 +15,7 @@ REPORT FILE NAME:         croc_chip.lvs.report
 LAYOUT NAME:              /scratch/vlsi2_14fs26/Croco_Krave/calibre/../calibre/lvs/croc_chip.lay.net ('croc_chip')
 SOURCE NAME:              /scratch/vlsi2_14fs26/Croco_Krave/calibre/lvs/croc_chip.spice ('croc_chip')
 RULE FILE:                /scratch/vlsi2_14fs26/Croco_Krave/calibre/../calibre/lvs/_lvs.tvf_
-CREATION TIME:            Wed Jun 24 21:06:23 2026
+CREATION TIME:            Sat Jun 27 00:41:15 2026
 CURRENT DIRECTORY:        /scratch/vlsi2_14fs26/Croco_Krave/calibre/lvs
 USER NAME:                vlsi2_14fs26
 CALIBRE VERSION:          v2021.3_35.19    Wed Sep 1 15:25:28 PDT 2021
@@ -283,16 +283,16 @@ INITIAL NUMBERS OF OBJECTS
                 ------    ------         --------------
  Ports:             52        52
 
- Nets:          870328    884946    *
+ Nets:          855464    870098    *
 
- Instances:    1212321   1195703    *    M (4 pins)
+ Instances:    1193001   1175853    *    M (4 pins)
                 394068    394068         R (2 pins): (p n)
                    249       249         R (3 pins): (p n) sub
-                   451       451         D (2 pins)
+                   502       502         D (2 pins)
                   1051         0    *    ptap1 (2 pins): TIE SUB
                      0       497    *    ptap1 (2 pins): TIE SUB
                 ------    ------
- Total Inst:   1608140   1590968
+ Total Inst:   1588871   1571169
 
 
 NUMBERS OF OBJECTS AFTER TRANSFORMATION
@@ -302,14 +302,14 @@ NUMBERS OF OBJECTS AFTER TRANSFORMATION
                 ------    ------         --------------
  Ports:             51        51
 
- Nets:          634931    634931
+ Nets:          619965    619965
 
- Instances:     982147    982147         M (4 pins)
+ Instances:     952198    952198         M (4 pins)
                 263492    263492         R (2 pins): (p n)
                     49        49         R (3 pins): (p n) sub
-                   297       297         D (2 pins)
-                 67658     67658         SM2 (4 pins)
-                 11920     11920         SM3 (5 pins)
+                   305       305         D (2 pins)
+                 67730     67730         SM2 (4 pins)
+                 11935     11935         SM3 (5 pins)
                    560       560         SM4 (6 pins)
                   4258      4258         SPM_2_1 (5 pins)
                   1361      1361         SPM_2_1_1 (6 pins)
@@ -318,7 +318,7 @@ NUMBERS OF OBJECTS AFTER TRANSFORMATION
                    308       308         SPM_3_1 (6 pins)
                    899       899         SPM((2+1)*1) (6 pins)
                 ------    ------
- Total Inst:   1334446   1334446
+ Total Inst:   1304592   1304592
 
 
        * = Number of objects in layout different from number in source.
@@ -335,18 +335,18 @@ NUMBERS OF OBJECTS AFTER TRANSFORMATION
                   -------    -------    ---------    ---------    ---------
    Ports:              51         51            0            0
 
-   Nets:           634931     634931            0            0
+   Nets:           619965     619965            0            0
 
    Instances:         338        338            0            0    M(sg13_hv_nmos)
                       322        322            0            0    M(sg13_hv_pmos)
-                   614468     614468            0            0    M(sg13_lv_nmos)
-                   367019     367019            0            0    M(sg13_lv_pmos)
+                   599487     599487            0            0    M(sg13_lv_nmos)
+                   352051     352051            0            0    M(sg13_lv_pmos)
                    263492     263492            0            0    R(lvsres)
                        49         49            0            0    R(res_rppd)
-                      168        168            0            0    D(dantenna)
+                      176        176            0            0    D(dantenna)
                       129        129            0            0    D(dpantenna)
-                    67658      67658            0            0    SM2
-                    11920      11920            0            0    SM3
+                    67730      67730            0            0    SM2
+                    11935      11935            0            0    SM3
                       560        560            0            0    SM4
                      4258       4258            0            0    SPM_2_1
                      1361       1361            0            0    SPM_2_1_1
@@ -355,7 +355,7 @@ NUMBERS OF OBJECTS AFTER TRANSFORMATION
                       308        308            0            0    SPM_3_1
                       899        899            0            0    SPM((2+1)*1)
                   -------    -------    ---------    ---------
-   Total Inst:    1334446    1334446            0            0
+   Total Inst:    1304592    1304592            0            0
 
 
 o Statistics:
@@ -364,34 +364,34 @@ o Statistics:
    497 source instances were filtered and their adjoining nets shorted.
 
    419 layout nets were deep shorted to 1.
-   15037 source nets were deep shorted to 2.
+   15053 source nets were deep shorted to 2.
 
    2 layout ports were deep shorted to 1.
    2 source ports were deep shorted to 1.
 
-   37764 layout mos transistors were reduced to 10382.
-     27382 mos transistors were deleted by parallel reduction.
-   11812 source mos transistors were reduced to 1048.
-     10764 mos transistors were deleted by parallel reduction.
+   49370 layout mos transistors were reduced to 11548.
+     37822 mos transistors were deleted by parallel reduction.
+   22980 source mos transistors were reduced to 2306.
+     20674 mos transistors were deleted by parallel reduction.
 
    261348 series layout resistors were reduced to 130572.  130776 connecting nets were deleted.
    261348 series source resistors were reduced to 130572.  130776 connecting nets were deleted.
 
-   254 parallel layout diodes were reduced to 100.
-   254 parallel source diodes were reduced to 100.
+   302 parallel layout diodes were reduced to 105.
+   302 parallel source diodes were reduced to 105.
 
-   54 nets and 4 instances were matched arbitrarily.
+   54 nets and 2 instances were matched arbitrarily.
 
 
 o Initial Correspondence Points:
 
-   Ports:        VDDIO VDD VSSIO status_o gpio20_io ref_clk_i gpio18_io gpio16_io gpio23_io
-                 gpio21_io gpio22_io gpio19_io gpio17_io gpio14_io gpio15_io gpio12_io gpio13_io
-                 unused3_o unused2_o unused1_o unused0_o gpio31_io gpio30_io gpio29_io gpio28_io
-                 gpio27_io gpio26_io gpio25_io gpio24_io uart_rx_i testmode_i uart_tx_o clk_i
-                 jtag_tck_i rst_ni jtag_tms_i jtag_trst_ni jtag_tdo_o jtag_tdi_i gpio0_io
-                 gpio1_io gpio2_io gpio3_io gpio4_io gpio5_io gpio6_io gpio7_io gpio8_io
-                 gpio9_io gpio10_io
+   Ports:        VDDIO VDD VSSIO uart_rx_i clk_i ref_clk_i gpio18_io rst_ni gpio17_io gpio16_io
+                 gpio20_io gpio21_io gpio22_io gpio23_io gpio19_io gpio14_io gpio15_io gpio12_io
+                 gpio13_io unused3_o unused2_o unused1_o unused0_o gpio31_io gpio30_io gpio29_io
+                 gpio28_io gpio27_io gpio26_io gpio25_io gpio24_io status_o testmode_i uart_tx_o
+                 jtag_tck_i jtag_tms_i jtag_trst_ni jtag_tdo_o jtag_tdi_i gpio0_io gpio1_io
+                 gpio2_io gpio3_io gpio4_io gpio5_io gpio6_io gpio7_io gpio8_io gpio9_io
+                 gpio10_io
 
 
 o Ambiguity Resolution Points:
@@ -406,56 +406,56 @@ o Ambiguity Resolution Points:
                                      Nets
                                      ----
 
-       X26/X125/6                                                Xpad_vddio0/net1
-       X26/X126/6                                                Xpad_vddio3/net1
-       X25/X8/6                                                  Xpad_vddio2/net1
-       X26/X40/6                                                 Xpad_vdd0/net1
-       X33/X44/6                                                 Xpad_vdd3/net1
-       X0/X0/6                                                   Xpad_vdd2/net1
-       X30/11235                                                 net294
-       X30/11229                                                 net288
-       X30/11399                                                 net258
-       X30/10663                                                 net268
-       X30/11338                                                 net281
-       X30/11355                                                 net284
-       X30/11261                                                 net265
-       X30/10744                                                 net276
-       X30/10685                                                 net290
-       X30/10667                                                 net273
-       X2/X476/X137/80                                           X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/a_tiel
-       X30/10670                                                 net269
-       X30/10682                                                 net271
-       X30/10013                                                 net244
-       X30/10027                                                 net246
-       X30/10267                                                 net249
-       X30/10244                                                 net251
-       X30/10258                                                 net250
-       X2/X476/X138/X121/5                                       X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<1>/net2
-       X2/X476/X138/X124/5                                       X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<0>/net2
-       X2/X476/X138/X120/5                                       X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<3>/net2
-       X2/X476/X138/X122/5                                       X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<2>/net2
-       X2/X476/X138/X119/5                                       X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<0>/net2
-       X2/X476/X138/X123/5                                       X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<1>/net2
-       X14/X544/X138/X121/5                                      X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<0>/net2
-       X14/X544/X138/X124/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<2>/net2
-       X14/X544/X138/X120/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<1>/net2
-       X14/X544/X138/X122/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<0>/net2
-       X14/X544/X138/X119/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<3>/net2
-       X14/X544/X131/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<2>/vdd_r
-       X2/X476/X130/X1/6                                         X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<4>/vdd_r
-       X2/X476/X132/X0/6                                         X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<3>/vdd_r
-       X14/X544/X130/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<2>/vdd_r
-       X14/X544/X130/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<2>/vdd_r
-       X14/X544/X134/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<4>/vdd_r
-       X14/X544/X134/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<5>/vdd_r
-       X14/X544/X133/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<1>/vdd_r
-       X14/X544/X133/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<6>/vdd_r
-       X2/X476/X131/X1/6                                         X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<1>/vdd_r
-       X14/X544/X132/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<4>/vdd_r
-       X14/X544/X132/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<1>/vdd_r
-       X14/X544/X131/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<2>/vdd_r
-       X2/X476/X133/X0/6                                         X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<3>/vdd_r
-       X2/X476/X134/X0/6                                         X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<4>/vdd_r
+       X27/X161/6                                                Xpad_vddio0/net1
+       X27/X160/6                                                Xpad_vddio3/net1
+       X34/X132/6                                                Xpad_vddio2/net1
+       X27/X70/6                                                 Xpad_vdd0/net1
+       X34/X74/6                                                 Xpad_vdd3/net1
+       X17/X0/6                                                  Xpad_vdd2/net1
+       X30/6235                                                  net288
+       X30/6231                                                  net294
+       X30/6338                                                  net258
+       X30/5910                                                  net276
+       X30/6207                                                  net281
+       X30/6266                                                  net284
+       X30/6259                                                  net265
+       X30/6005                                                  net268
+       X30/6004                                                  net290
+       X30/5988                                                  net273
+       X15/X544/X137/80                                          X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/a_tiel
+       X30/6106                                                  net269
+       X30/6099                                                  net271
+       X30/5779                                                  net244
+       X30/5767                                                  net246
+       X30/5815                                                  net249
+       X30/5797                                                  net251
+       X30/5802                                                  net250
+       X15/X544/X138/X121/5                                      X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<1>/net2
+       X15/X544/X138/X124/5                                      X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<0>/net2
+       X15/X544/X138/X120/5                                      X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<3>/net2
+       X15/X544/X138/X122/5                                      X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<2>/net2
+       X15/X544/X138/X119/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<0>/net2
+       X15/X544/X138/X123/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<1>/net2
+       X28/X580/X138/X121/5                                      X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<0>/net2
+       X28/X580/X138/X124/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<2>/net2
+       X28/X580/X138/X120/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<1>/net2
+       X28/X580/X138/X122/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI15<0>/net2
+       X28/X580/X138/X119/5                                      X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_COLDEC/XI17<3>/net2
+       X15/X544/X134/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<6>/vdd_r
+       X15/X544/X130/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<4>/vdd_r
+       X15/X544/X134/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<3>/vdd_r
+       X28/X580/X134/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<3>/vdd_r
+       X28/X580/X134/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<3>/vdd_r
+       X28/X580/X133/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<1>/vdd_r
+       X28/X580/X133/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<1>/vdd_r
+       X28/X580/X132/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<1>/vdd_r
+       X15/X544/X130/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<2>/vdd_r
+       X28/X580/X132/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<5>/vdd_r
+       X28/X580/X131/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<4>/vdd_r
+       X28/X580/X131/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[1].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<2>/vdd_r
+       X28/X580/X130/X1/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<1>/vdd_r
+       X28/X580/X130/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYL/XIDM<4>/vdd_r
+       X15/X544/X132/X0/6                                        X\i_croc_soc/i_user/gen_sram_bank[0].i_sram_macro.gen_secded.i_sram/gen_1024x64xBx1.i_cut/XA_DLYH/XIDM<5>/vdd_r
 
 
                                    Instances
@@ -463,23 +463,13 @@ o Ambiguity Resolution Points:
 
        (SM2)                                                     (SM2)
        Transistors:
-         X30/X84208/M6(1761.325,862.940)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_gpio/_1114_/MN0  M(sg13_lv_nmos)
-         X30/X84208/M7(1761.635,862.940)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_gpio/_1114_/MN1  M(sg13_lv_nmos)
+         X31/X38810/M6(1473.625,802.460)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_dm_top.i_dm_top/_6232_/MN0  M(sg13_lv_nmos)
+         X31/X38810/M7(1473.935,802.460)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_dm_top.i_dm_top/_6232_/MN1  M(sg13_lv_nmos)
 
        (SM2)                                                     (SM2)
        Transistors:
-         X30/X84205/M6(1386.265,830.500)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_dm_top.i_dm_top/_6283_/MN0  M(sg13_lv_nmos)
-         X30/X84205/M7(1386.575,830.500)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_dm_top.i_dm_top/_6283_/MN1  M(sg13_lv_nmos)
-
-       (SM2)                                                     (SM2)
-       Transistors:
-         X30/X84206/M6(1396.345,829.340)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_dm_top.i_dm_top/_6232_/MN0  M(sg13_lv_nmos)
-         X30/X84206/M7(1396.655,829.340)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_dm_top.i_dm_top/_6232_/MN1  M(sg13_lv_nmos)
-
-       (SM2)                                                     (SM2)
-       Transistors:
-         X30/X84207/M6(1547.125,889.820)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_clint/_0823_/MN0  M(sg13_lv_nmos)
-         X30/X84207/M7(1547.435,889.820)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_clint/_0823_/MN1  M(sg13_lv_nmos)
+         X30/X48772/M6(1597.945,903.260)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_clint/_0822_/MN0  M(sg13_lv_nmos)
+         X30/X48772/M7(1598.255,903.260)  M(sg13_lv_nmos)          X\i_croc_soc/i_croc/i_clint/_0822_/MN1  M(sg13_lv_nmos)
 
 
 

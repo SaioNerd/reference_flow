@@ -6,6 +6,8 @@
 # Authors:
 # - Thomas Benz <tbenz@iis.ee.ethz.ch>
 
+# ./run_artistic.sh --logo tuo_file_chip.gds
+# Note that in "croc_chip.gds.gz" -> final merged GDS with the logo
 set -e  # Exit on error
 set -u  # Error on undefined vars
 

@@ -38,13 +38,13 @@ set pgcrWidth 8
 set pgcrOffset [expr ($PowRingSpace - $pgcrSpacing - 2 * $pgcrWidth) / 2]
 
 # TopMetal1 Core Power Grid
-set tpg1Width     3; # arbitrary number
-set tpg1Pitch    90; # multiple of pad-pitch
-set tpg1Spacing  10; # big enough to skip over a pad
+set tpg1Width     2; # arbitrary number NEW: from 3
+set tpg1Pitch    108; # multiple of pad-pitch NEW: from 90 (79 for 0.69%)
+set tpg1Spacing  20; # big enough to skip over a pad
 set tpg1Offset   70; # offset from leftX of core
 
-set pg4Width      1; # two tracks on Metal4
-set pg4Pitch     90; # multiple of pad-pitch
+set pg4Width      1; # two tracks on Metal4 (2 for 0.69%)
+set pg4Pitch     200; # multiple of pad-pitch NEW: from 90 (85 for 0.69%)
 
 # Macro Power Rings -> M3 and M2
 ## Spacing must be larger than pitch of M2/M3
