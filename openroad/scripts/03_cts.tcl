@@ -54,8 +54,7 @@ utl::report "Clock Tree Synthesis"
 clock_tree_synthesis -buf_list $ctsBuf -root_buf $ctsBufRoot \
                      -sink_clustering_enable \
                      -sink_clustering_size 12 \
-                     -sink_clustering_max_diameter 50 \
-                     -clustering_unbalance_ratio 0.2 \
+                     -sink_clustering_max_diameter 40 \
                      -obstruction_aware \
                      -apply_ndr full \
                      -balance_levels \

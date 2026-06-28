@@ -11,11 +11,12 @@
 # - Thomas Benz     <tbenz@iis.ee.ethz.ch>
 
 # Since it gave problems:
+# Runnare fuori da oseda
 # # (1) Compile testbench + post-PnR netlist + technology libraries
 # sh > questa-2023.4 vsim -c -do "source compile_netlist.tcl; exit"
 
 # # (2a) Run in CLI mode (fastest; recommended for VCD generation)
-# sh > questa-2023.4 vsim +binary="../sw/bin_postsim/crc32.hex" \
+# sh > questa-2023.4 vsim +binary="../sw/bin/secded_print.hex" \
 #      -c tb_croc_soc -t 1ns -voptargs=+acc \
 #      -suppress vsim-3009 -suppress vsim-8683 -suppress vsim-8386 \
 #      -do "run -all; exit"

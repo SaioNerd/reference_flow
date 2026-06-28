@@ -101,10 +101,10 @@ report_metrics "02-02_${proj_name}.gpl2"
 report_image "02-02_${proj_name}.gpl2" true true
 save_checkpoint 02-02_${proj_name}.gpl2
 
-utl::report "###############################################################################"
-utl::report "# 02-02b: MANUAL SRAM SLEW FIX (TARGETED NET REPAIR)"
-utl::report "###############################################################################"
-repair_design -max_wire_length 300 -slew_margin 20 -cap_margin 20
+# utl::report "###############################################################################"
+# utl::report "# 02-02b: MANUAL SRAM SLEW FIX (TARGETED NET REPAIR)"
+# utl::report "###############################################################################"
+# repair_design -max_wire_length 300 -slew_margin 20 -cap_margin 20
 
 utl::report "###############################################################################"
 utl::report "# 02-03: Detailed Placement"
