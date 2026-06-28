@@ -43,9 +43,15 @@ oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/02b_plot_area_stacked_bar.py "$AREA_R
 echo "Running 03_plot_die_area_breakdown.py..."
 oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/03_plot_die_area_breakdown.py "$AREA_REPORT"
 
-# echo ""
-# echo "Done! All plots have been generated."
-# echo "You can find them in: /scratch/vlsi2_14fs26/Croco_Krave/plots/"
+echo "Running generate_power_plots.py..."
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/generate_power_plots.py
+
+echo "Running generate_area_plots.py..."
+oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/generate_area_plots.py
+
+echo ""
+echo "Done! All plots have been generated."
+echo "You can find them in: /scratch/vlsi2_14fs26/Croco_Krave/plots/"
 
 # echo "Running plot_power_comparison.py..."
 # oseda -2026.04 python3 $PYTHON_SCRIPTS_DIR/plot_power_comparison.py
